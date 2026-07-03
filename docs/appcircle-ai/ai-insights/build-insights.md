@@ -1,6 +1,6 @@
 ---
 title: Build Insights
-description: Understand the Appcircle Build Insights Report - every section and metric returned by the get_build_insights_report MCP tool, and how to generate the visual report with the Appcircle Claude Assistant.
+description: Understand the Appcircle Build Insights Report - every section and metric returned by the get_build_insights_report MCP tool, and how to generate the visual report with the Appcircle Claude Assistant or Appcircle Copilot Assistant.
 tags: [appcircle ai, ai insights, build insights]
 sidebar_position: 1
 ---
@@ -10,14 +10,19 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Build Insights Report
 
-The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) to get a visual report, or use the [Appcircle MCP client](/appcircle-ai/appcircle-mcp-server) directly.
+The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) or [Appcircle Copilot Assistant](/appcircle-ai/ai-assistants/appcircle-copilot-assistant) to get a visual report, or use the [Appcircle MCP client](/appcircle-ai/appcircle-mcp-server) directly.
 
 ## How to Generate a Report
 
 **With the Appcircle Claude Assistant**
 
 - Ask in natural language, for example *give me a build insights report for last month* or *how is our CI maturity*.
-- The `appcircle:build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
+- The `build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
+
+**With the Appcircle Copilot Assistant**
+
+- Ask in natural language, for example *give me a build insights report for last month* or *how is our CI maturity*.
+- The `build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
 
 **With Any Other MCP Client**
 
@@ -113,9 +118,9 @@ How long builds waited before starting, tree-wide for the period:
 
 The last 30 days, compared against the 30 days before that for deltas. Pass `start_date` and `end_date` to the tool to use a different window; the tool compares it against a preceding period of the same length.
 
-### Can I Get This Report Outside the Appcircle Claude Assistant?
+### Can I Get This Report Outside the Appcircle Claude or Copilot Assistant?
 
-Yes, for the underlying data. Any MCP client can call `get_build_insights_report` and get the same metrics as JSON. The visual HTML report rendering shown on this page is produced by the `appcircle:build-insights-report` skill, which is currently exclusive to the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant).
+Yes, for the underlying data. Any MCP client can call `get_build_insights_report` and get the same metrics as JSON. The visual HTML report rendering shown on this page is produced by the `build-insights-report` skill, which is currently exclusive to the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) and [Appcircle Copilot Assistant](/appcircle-ai/ai-assistants/appcircle-copilot-assistant).
 
 ### Why Is a Section Missing From My Report?
 

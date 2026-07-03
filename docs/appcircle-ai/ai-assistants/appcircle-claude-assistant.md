@@ -11,7 +11,7 @@ The **Appcircle Claude Plugin** connects Claude to the Appcircle platform, bundl
 
 ## How to Use Appcircle Claude Assistant
 
-The plugin registers the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) and the following Appcircle-aware skills, automatically namespaced under `appcircle:`:
+The plugin registers the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) and the following Appcircle-aware skills, automatically namespaced under `appcircle`:
 
 | Skill | Purpose |
 |-------|---------|
@@ -29,7 +29,7 @@ Claude Code and claude.ai install the plugin differently, so follow the steps fo
    The MCP server reads this from the process environment, so it must be set before you launch `claude`; exporting it later in an already-running session has no effect until you restart.
 2. Add the Appcircle marketplace:
    ```shell
-   /plugin marketplace add appcircleio/appcircle-claude-plugin
+   /plugin marketplace add appcircleio/appcircle-ai-plugins
    ```
 3. Install the plugin:
    ```shell
@@ -45,22 +45,24 @@ Claude Code and claude.ai install the plugin differently, so follow the steps fo
 
 You can install this plugin's skills in claude.ai too. MCP tools remain Claude Code-only for now.
 
-1. Click **Customize > Create plugin > Add marketplace**.
+1. Click **Customize > Plugins > Add > Add marketplace**.
 
-   <img src="https://cdn.appcircle.io/docs/assets/claude-assistant-1.png" alt="Create plugin, Add marketplace" width="480" style={{display: 'block', margin: 0}} />
+   <img src="https://cdn.appcircle.io/docs/assets/AI-115-claude-plugin.png" alt="Create plugin, Add marketplace" width="480" style={{display: 'block', margin: 0}} />
 
 2. You will see the following screen.
 
    <img src="https://cdn.appcircle.io/docs/assets/claude-assistant-2.png" alt="Add marketplace screen" width="480" style={{display: 'block', margin: 0}} />
 
-3. Enter the repository URL: `https://github.com/appcircleio/appcircle-claude-plugin`
+3. Enter the repository URL: `https://github.com/appcircleio/appcircle-ai-plugins`
 
-   <img src="https://cdn.appcircle.io/docs/assets/claude-assistant-3.png" alt="Enter the repository URL" width="480" style={{display: 'block', margin: 0}} />
+   <img src="https://cdn.appcircle.io/docs/assets/AI-115-claude-plugin-2.png" alt="Enter the repository URL" width="480" style={{display: 'block', margin: 0}} />
 
-4. Click **Sync**.
+4. Click **Sync**, then click **+**.
 
-   <img src="https://cdn.appcircle.io/docs/assets/claude-assistant-4.png" alt="Click Sync" width="480" style={{display: 'block', margin: 0}} />
+   <img src="https://cdn.appcircle.io/docs/assets/AI-115-claude-plugin-3.png" alt="Click Sync" width="480" style={{display: 'block', margin: 0}} />
 
 5. Ask Claude an Appcircle question, for example *How do I set up automatic code signing for my iOS builds*, and Claude will use the `doc-assistant` skill to answer.
 
-To access the source code of this plugin, please use [this link](https://github.com/appcircleio/appcircle-claude-plugin).
+To access the source code of this plugin, please use the following link:
+
+https://github.com/appcircleio/appcircle-ai-plugins

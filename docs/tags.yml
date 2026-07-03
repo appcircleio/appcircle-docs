@@ -3223,6 +3223,11 @@ quay:
   description: "Documentation related to Claude"
   permalink: "/claude"
 
+"copilot":
+  label: "copilot"
+  description: "Documentation related to GitHub Copilot"
+  permalink: "/copilot"
+
 "assistant":
   label: "assistant"
   description: "Documentation related to AI assistants"

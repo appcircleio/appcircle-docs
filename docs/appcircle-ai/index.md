@@ -19,7 +19,7 @@ The Appcircle MCP Server exposes Appcircle platform capabilities through the Mod
 
 ## [AI Assistants](/appcircle-ai/ai-assistants)
 
-Use the Appcircle GPT Assistant and Appcircle Claude Assistant for quick answers, step-by-step guidance, and troubleshooting support.
+Appcircle supports a wide variety of AI assistants across multiple vendors for quick answers, step-by-step guidance, and troubleshooting support.
 
 <ContentRef url="/appcircle-ai/ai-assistants">AI Assistants</ContentRef>
 
