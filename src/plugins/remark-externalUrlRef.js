@@ -66,9 +66,9 @@ const fetchData = async (url) => {
       const title = result.ogTitle || new URL(url).hostname;
       const description = result.ogDescription || "No description available"; // Default description
       const image =
-        result.ogImage && result.ogImage.url
-          ? result.ogImage.url
-          : "https://cdn.appcircle.io/docs/assets/appcircle-logo.png"; // Default image
+        result.ogImage && result.ogImage[0] && result.ogImage[0].url
+          ? result.ogImage[0].url
+          : "https://cdn.appcircle.io/docs/assets/appcircle-logo.png"; // Default image (open-graph-scraper v6 returns ogImage as an array)
       return { title, description, image };
     } else {
       throw new Error("OGS failed to fetch the title");

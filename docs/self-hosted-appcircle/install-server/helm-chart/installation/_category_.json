@@ -1,4 +1,5 @@
 {
+  "key": "helm-chart-installation",
   "label": "Installation",
   "position": 20,
   "collapsed": true,

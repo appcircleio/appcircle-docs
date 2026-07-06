@@ -7,6 +7,10 @@
 # Generated files
 .docusaurus
 .cache-loader
+.serena/
+
+# Cloudflare / Wrangler local state & cache
+.wrangler
 
 # Misc
 .DS_Store

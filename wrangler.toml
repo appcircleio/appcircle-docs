@@ -1,0 +1,12 @@
+# Cloudflare Workers (Static Assets) configuration for the Docusaurus site.
+# The site is fully static; `yarn build` outputs to ./build which is served directly.
+name = "appcircle-docs"
+compatibility_date = "2026-07-06"
+
+[assets]
+directory = "./build"
+# Docusaurus generates a top-level 404.html; serve it for unmatched paths.
+not_found_handling = "404-page"
+# Docusaurus is configured with trailingSlash:false and emits `foo.html`,
+# so serve `/foo` from foo.html and redirect `/foo/` -> `/foo`.
+html_handling = "drop-trailing-slash"
