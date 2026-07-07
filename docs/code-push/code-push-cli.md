@@ -50,7 +50,6 @@ appcircle-code-push login --accessKey <Your-Personal-Access-Key> --serverUrl <Se
 - `--serverUrl`: Specifies the CodePush API server URL used by self-hosted Appcircle instances (e.g. `https://api-appcircle.spacetech.com/codepush`).
 - `--authUrl`: Specifies the authentication endpoint used by self-hosted Appcircle instances (e.g. `https://auth-appcircle.spacetech.com`).
 
-
 ## CLI Experience
 
 This section explains all the necessary details to use Appcircle’s CodePush functionality via the CLI. You’ll find all the required commands and their execution logic below.
@@ -131,10 +130,8 @@ The table below summarizes the parameters used in this `release-react` command:
 | `--privateKeyPath`       | Relative path to the private `.pem` key used to sign the release so that devices can verify its authenticity. |
 | `--diffEnabled`          | Enables package diff so users will download only the changed files instead of the full package. |
 
-
 ### Releasing Signed CodePush Version
 
 With the Appcircle CodePush signing feature, you can safely deliver CodePush releases to every device running your application. The signing mechanism ensures that updates are ignored if the public and private keys do not match, preventing users from installing unverified bundles. 
 
 For full details and usage instructions, please refer to the CodePush Code Signing [documentation.](/code-push/code-push-code-signing)
-
