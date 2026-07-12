@@ -582,7 +582,8 @@ AutoDistribute picks up both artifacts and sends them to the Testing Distributio
 
 To distribute a single package, use only one signing path:
 
-- Disable gradle sign for the selected build variant, **or**
+- Disable gradle sign for the selected build variant,  
+**or**
 - Do not use the Appcircle Android Sign step.
 
 :::info AAB packages
