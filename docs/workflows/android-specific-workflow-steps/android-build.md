@@ -82,7 +82,7 @@ To distribute a single package, use only one signing path:
 - Disable gradle sign for the selected build variant,  
 **or** 
 - Do not use the **Android Sign** step.  
-See ([Why two Android packages are distributed])(/testing-distribution/create-or-select-a-distribution-profile#why-two-android-packages-are-distributed).
+See [(Why two Android packages are distributed)](/testing-distribution/create-or-select-a-distribution-profile#why-two-android-packages-are-distributed).
 
 :::
 
