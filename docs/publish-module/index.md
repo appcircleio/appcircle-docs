@@ -1,70 +1,94 @@
 ---
-title: Publish
+title: Publish to Stores
 sidebar_position: 1
+slug: /publish-to-stores-module
 tags: [publish, distribution, app store, google play, huawei appgallery, testflight, microsoft intune]
 description: The Publish module in Appcircle allows you to distribute your mobile applications to the App Store, Google Play, Huawei AppGallery and Microsoft Intune.
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import ContentRef from '@site/src/components/ContentRef';
 
-# Publish
+# Publish to Stores
 
-The Publish module is a powerful feature in Appcircle that allows you to distribute your mobile applications to the App Store, Google Play, Huawei AppGallery and Microsoft Intune. It provides a streamlined process for sending your apps directly to the stores or to TestFlight for beta testing.
+The Publish to Stores module is a powerful feature in Appcircle that allows you to distribute your mobile applications to the App Store, Google Play, Huawei AppGallery and Microsoft Intune. It provides a streamlined process for sending your apps directly to the stores or to TestFlight for beta testing.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-main.png' />
+:::tip Learn More
+For a complete overview of the Appcircle Publish to Stores module capabilities, check out the [Appcircle's Profile Section](https://appcircle.io/publish-to-stores).
+:::
 
-## Getting Started
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/4XDYGF6K4Jw?si=90sqkH_Um7SqAXti" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
 
-To access the Publish module:
-
-1. Click on the **Publish** icon in the left menu.
-2. If it's your first time, set up connections to the app stores under [API Integrations](/account/my-organization).
-
-## Key Features
-
-- **Automate Publishing**: Use predefined flows for standard processes or customize them to fit your needs.
-- **Manage Versions**: Add new app versions and track their status from submission to release.
-- **TestFlight Submission**: Submit iOS apps to TestFlight for beta testing with ease.
-- **App Store Submission**: Submit iOS apps to the App Store for review and release.
-- **Google Play Submission**: Submit Android apps to Google Play for review and release.
-- **Huawei AppGallery Submission**: Submit Android apps to Huawei AppGallery for review and release.
-- **Microsoft Intune Submission**: Submit [iOS and Android](/publish-integrations/common-publish-integrations/send-to-microsoft-intune) apps to Microsoft Intune.
-
-## Initial Setup
-
-Before publishing:
-
-- **App Store**: [Configure your App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key.md)
-- **Google Play**: [Set up your Google Play Service Account](/account/my-organization/security/credentials/adding-google-play-service-account.md)
-- **Huawei AppGallery**: [Add your Huawei API Key](/account/my-organization/security/credentials/adding-huawei-api-key)
-- **Microsoft Intune**: [Add Microsoft Intune API Credentials](/account/my-organization/security/credentials/adding-microsoft-intune-api-key)
-
-By following these steps, you can ensure a smooth publishing experience for your mobile applications.
-
-## [Creating Publish Profiles](/publish-module/creating-publish-profiles)
+## [Creating Publish Profiles](/publish-to-stores-module/creating-publish-profiles)
 
 After building the application, in order to start the publishing process, you will need to create a Publish profile.
 
-## [Binary Management](/publish-module/binary-management)
+<ContentRef url="/publish-to-stores-module/creating-publish-profiles">Creating Publish Profiles</ContentRef>
 
-Manage your binaries within the Publish module.
+## [Binary Management](/publish-to-stores-module/binary-management)
 
-## [Publish Flow](/publish-module/publish-flow)
+Manage your binaries within the Publish to Stores module.
 
-Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
+<ContentRef url="/publish-to-stores-module/binary-management">Binary Management</ContentRef>
 
-## [Publish Information](/publish-module/publish-information)
+## [Publish Flow](/publish-to-stores-module/publish-flow)
 
-The Publish module provides users with several key actions to manage their application versions effectively.
+Appcircle includes a predefined flow in the Publish to Stores module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
 
-## [Publish Settings](/publish-module/publish-settings)
+<ContentRef url="/publish-to-stores-module/publish-flow">Publish Flow</ContentRef>
+
+## [Publish Information](/publish-to-stores-module/publish-information)
+
+The Publish to Stores module provides users with several key actions to manage their application versions effectively.
+
+<ContentRef url="/publish-to-stores-module/publish-information">Publish Information</ContentRef>
+
+## [Publish Settings](/publish-to-stores-module/publish-settings)
 
 Manage your profile and publish settings via the Publish Settings.
 
-## [Publish Variables](/publish-module/publish-variables)
+<ContentRef url="/publish-to-stores-module/publish-settings">Publish Settings</ContentRef>
 
-The Publish Variables section within the Publish module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
+## [Publish Variables](/publish-to-stores-module/publish-variables)
 
-## [Publish Walkthrough for App Store](/publish-module/publish-walkthrough-for-app-store)
+The Publish Variables section within the Publish to Storesmodule is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
 
-The Publish module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play, and Huawei AppGallery. This module streamlines the complex process of app release.
+<ContentRef url="/publish-to-stores-module/publish-variables">Publish Variables</ContentRef>
+
+## [Publish Walkthrough for App Store](/publish-to-stores-module/publish-walkthrough-for-app-store)
+
+The Publish to Stores module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play, and Huawei AppGallery. This module streamlines the complex process of app release via App Store Connect.
+
+<ContentRef url="/publish-to-stores-module/publish-walkthrough-for-app-store">Publish Walkthrough for App Store</ContentRef>
+
+## [Publish Walkthrough for Google Play](/publish-to-stores-module/publish-walkthrough-for-google-play)
+
+The Publish to Stores module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play, and Huawei AppGallery. This module streamlines the complex process of app release via Google Play.
+
+<ContentRef url="/publish-to-stores-module/publish-walkthrough-for-google-play">Publish Walkthrough for Google Play</ContentRef>
+
+## [Publish Report](/publish-to-stores-module/publish-report)
+
+The Publish Report provides a detailed overview of all actions performed within the Publish to Stores Module. It allows users to monitor, filter, and export publish-related activities across different platforms, trigger types, and stores.
+
+<ContentRef url="/publish-to-stores-module/publish-report">Publish Report</ContentRef>
+
+## [Publish Re-sign Report](/publish-to-stores-module/publish-resign-report)
+
+The Publish Re-sign Report provides detailed visibility into the manual and automatic re-sign operations performed within the Publish to Stores module. This report helps you monitor and analyze re-sign activities across your organization over a selected time period.
+
+<ContentRef url="/publish-to-stores-module/publish-resign-report">Publish Re-sign Report</ContentRef>
+
+## [Publish Activity Log](/publish-to-stores-module/publish-activity-log)
+
+You can view Publish to Stores module actions such as Publish Flow and Publish Step statutes, along with resign binary operations within the Organizations or Sub Organizations in the Activity Log section.
+
+<ContentRef url="/publish-to-stores-module/publish-activity-log">Publish Activity Log</ContentRef>

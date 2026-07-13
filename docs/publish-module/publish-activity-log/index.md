@@ -1,18 +1,20 @@
 ---
 title: Publish Activity Log
 sidebar_position: 1
+slug: /publish-to-stores-module/publish-activity-log
 tags: [publish, activity log, search]
 description: Understand the Activity Log for Publish in Appcircle, providing visibility on the usage of publish module over a given time period.
 
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import CSVExport from '@site/docs/\_csv-export.mdx';
 
 # Activity Log
 
-You can view Publish module actions such as Publish Flow and Publish Step statutes, along with resign binary operations within the Organizations or Sub Organizations in the Activity Log section.
+You can view Publish to Stores module actions such as Publish Flow and Publish Step statutes, along with resign binary operations within the Organizations or Sub Organizations in the Activity Log section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4988-activity.png' alt="Activity Log for Publish" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-11.png' alt="Activity Log for Publish" />
 
 Here is the full list of actions that can be monitored:
 
@@ -28,6 +30,8 @@ Here is the full list of actions that can be monitored:
 - Publishing Success Without Artifacts
 - Publishing Restarted
 - Publishing Restart Cancelled
+- Play Store Release Updated
+- Play Store Release Update Failed
 - Metadata File Deleted
 - Metadata Imported
 - Metadata Updated
@@ -63,10 +67,10 @@ Organization Owners can also observe the actions of their Sub-Organizations.
 
 :::
 
-You can edit the required date range by clicking the time filter in the top right corner and selecting a time limit from various options. Alternatively, you can choose custom dates from the calendar.
+You can edit the required date range by clicking the time filter in the top filter header as the default search time option is the last 30 days. Alternatively, you can choose custom dates from the calendar by selecting 'In Between' option.
 
-Team activity logs also include filters to help users perform more precise searches. By clicking the 'All' option next to Organizations, you can select a specific organization or sub-organization from the list, provided you have access to monitor their signing identities activity.
+Another method to search is by **Actions**. Simply click the filter option and select **Actions**. Then you can choose a specific action to refine your search.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4988-activity-filter.png' alt="Filtering Activity Log for Publish" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-12.png' alt="Filtering Activity Log for Publish" />
 
-Another method to search is by **Actions**. Simply click the Organization drop-down box, select **Actions**, and then choose a specific action to refine your search.
+<CSVExport />

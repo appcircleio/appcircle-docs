@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Testing Distribution Task in Azure DevOps Pipeline
+title: Appcircle Testing Distribution Azure DevOps Task
 sidebar_label: Testing Distribution
 description: Overview of self-hosted Appcircle and related concepts regarding testing distribution
 tags:
@@ -13,6 +13,7 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 
 <!-- ATTENTION: Documentation at README of this extension's repository
 has table of contents that references to the titles in this document. -->
@@ -61,7 +62,7 @@ When visiting the installation guide, ensure you select the correct version of A
 
 For this extension to authenticate to your Appcircle, you need to create a Personal API Token, and use it in your task configuration.
 
-You can follow the [Generating and Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens) page to create a PAT.
+You can follow the [Generating and Managing Personal Access Keys](/account/my-organization/security/personal-access-key) page to create an Access Key for a PAT.
 
 #### 2. Add Task to Your Pipeline
 
@@ -139,6 +140,6 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 ## References
 
-- For details on generating an Appcircle Personel API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens)
+<PersonalApiTokenRef />
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile)

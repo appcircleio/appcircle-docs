@@ -1,8 +1,9 @@
 ---
 title: Reject Binary
 description: Learn how to reject binary in Appcircle
+slug: /publish-to-stores-module/publish-information/reject-binary
 tags: [publish, publish details, publish flow, reject binary]
-sidebar_position: 10
+sidebar_position: 17
 ---
 
 # Reject Binary
@@ -13,11 +14,11 @@ If there is a problem with the binary sent for publish or the metadata is invali
 
 :::danger Reject Binary
 
-When a binary file is **rejected**, it can no longer be [**Marked as Release Candidate**](/publish-module/publish-information/marking-release-candidates) and the rejection **cannot** be reversed.
+When a binary file is **rejected**, it can no longer be [**Marked as Release Candidate**](/publish-to-stores-module/publish-information/marking-release-candidates) and the rejection **cannot** be reversed.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4123-rejectAction.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-26.png' />
 
 ### Rejection Reason
 

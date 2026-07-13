@@ -64,24 +64,34 @@ keycloak:
   userLookupDecisionStrategy: affirmative
 ```
 
-:::info
 The `userLookupDecisionStrategy` variable can have three options: `affirmative` , `decisive` or `tolerant`.
 
 If you don't define it or it has an unknown value, it is assumed to be `decisive` by default.
 
 #### Affirmative
 
-When `userLookupDecisionStrategy` is set to "affirmative", the LDAP authentication process will check all LDAP settings, even if the user is found on a particular LDAP configuration. This means that if a user has multiple accounts on different LDAP configurations with different passwords, they will be able to login successfully. The authentication system will search across all LDAP configurations to find a matching username or email and validate the user's password, allowing the user to access the system.
+:::info
+
+Starting with Appcircle server version **3.30.0**, the behavior of the `affirmative` strategy has changed. Previously, an unreachable or erroring LDAP provider would cause authentication to fail immediately. As of 3.30.0, such providers are skipped and the process continues with the remaining providers — the same behavior as `tolerant`. Because of this change, `tolerant` is now deprecated.
+
+:::
+
+When `userLookupDecisionStrategy` is set to `affirmative`, the LDAP authentication process will check all LDAP settings, even if the user is found on a particular LDAP configuration. This means that if a user has multiple accounts on different LDAP configurations with different passwords, they will be able to login successfully. The authentication system will search across all LDAP configurations to find a matching username or email and validate the user's password. If an LDAP provider is unreachable or returns an error, it is skipped and the remaining providers are still checked.
 
 #### Decisive
 
-On the other hand, when `userLookupDecisionStrategy` is set to "decisive", the LDAP authentication process will check a specific LDAP configuration for the user's username or email. If the authentication system finds the username on a particular LDAP, it will verify the user's password only on that specific LDAP configuration. If the provided password is incorrect, the authentication system will not check other LDAP configurations and will immediately return invalid credentials, denying access to the user.
+When `userLookupDecisionStrategy` is set to `decisive`, the LDAP authentication process will check a specific LDAP configuration for the user's username or email. If the authentication system finds the username on a particular LDAP, it will verify the user's password only on that specific LDAP configuration. If the provided password is incorrect, the authentication system will not check other LDAP configurations and will immediately return invalid credentials, denying access to the user.
 
 #### Tolerant
 
-When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmative" strategy, it retrieves the list of LDAP providers where the user is found and checks the password sequentially. If the password is correct, the process ends. If it is incorrect, the search continues until the last LDAP provider. Unlike "affirmative", if an LDAP provider is unreachable or an error occurs, the process continues, and the faulty provider is ignored.
+:::caution
+
+The `tolerant` strategy is deprecated as of Appcircle server version **3.30.0**. The `affirmative` strategy now provides the same behavior. Use `affirmative` instead.
 
 :::
+
+When `userLookupDecisionStrategy` is set to `tolerant`, the authentication process retrieves all LDAP providers where the user is found and checks the password sequentially. If the password is correct on any provider, authentication succeeds and the process ends. If the password is incorrect, the search continues to the next provider. If an LDAP provider is unreachable or an error occurs during the check, that provider is skipped and the process continues with the remaining providers.
+
 
 ### Applying Changes
 
@@ -137,7 +147,7 @@ The `affirmative` LDAP authentication strategy will kick in during this test.
 
 If the "spacetechuser" provides the correct password that matches the user's credentials in one of the configured LDAPs, the authentication system will grant access to the Enterprise App Store or Testing Distribution profile.
 
-The `affirmative` strategy ensures that the authentication process checks all LDAP configurations to find a matching username and validate the user's password.
+The `affirmative` strategy ensures that the authentication process checks all LDAP configurations to find a matching username and validate the user's password. If an LDAP provider is unreachable during the check, it is skipped and the remaining providers are still tried.
 
 If the "spacetechuser" provides an incorrect password that does not match the user's credentials in any of the LDAP configurations, the authentication process will continue checking all the other LDAPs.
 
@@ -165,15 +175,49 @@ This feature only provides a solution for self-hosted Appcircle server installat
 
 ### Attribute Configuration Settings
 
-LDAP users must have an email address, regardless of whether or not it’s used to sign in.
+Appcircle requires users to log in using an email address.
+For LDAP integrations, all users must have a valid email address, even if that email isn’t used for signing in to other applications.
 
 Appcircle uses these LDAP attributes to create an account for the LDAP user.
 
-- The username LDAP attribute is a string. For example,'mail'.
-
 | Settings                | Description                                                                                                                                                     | Required | Examples   |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
-| Username LDAP Attribute | Name of LDAP attribute, which is mapped as username. For many LDAP server vendors it can be 'uid'. For an active directory, it can be 'sAMAccountName' or 'cn'. | Yes      | mail,email |
+| Name                        | Descriptive name for your LDAP configuration.                                                                                                                                                                                                                               | Yes           | ldap-europe, ldap-support         |
+| Order                       | Priority number for LDAP connections. Lower numbers have higher priority.                                                                                                                                                                                                   | Yes           | 1, 2, 3                                        |
+| Vendor                      | Type of LDAP server vendor. Used to apply vendor-specific defaults (e.g., AD, OpenLDAP).                                                                                                                                                                                    | Yes           | Active Directory, OpenLDAP, Other              |
+| User Mail LDAP Attribute    | Name of LDAP attribute, which is mapped as user mail. For many LDAP server vendors it can be 'mail'.                                                                                                                                                                        | Yes           | mail,email                                     |
+| RDN LDAP Attribute          | The attribute used as the Relative Distinguished Name (RDN) when building user DNs. Often `uid` or `cn`.                                                                                                                                                                    | Yes           | cn, uid                                        |
+| UUID LDAP Attribute         | Unique identifier for LDAP users. Commonly `entryUUID` or `uid`. For Active Directory it should be 'objectGUID'.                                                                                                                                                            | Yes           | objectGUID, entryUUID, uid                     |
+| User Object Classes         | Comma-separated list of LDAP object classes to be considered user entries.                                                                                                                                                                                                  | Yes           | person, organizationalPerson, user             |
+| Connection URL              | LDAP server connection URL. Must include the scheme (`ldap://` or `ldaps://`) and host (optionally with port).                                                                                                                                                              | Yes           | ldap://openldap:389 |
+| Users DN                    | Full DN of the LDAP tree where your users exist. This DN is the parent of LDAP users. It could be for example 'ou=users,dc=example,dc=com' assuming that your typical user will have a DN such as 'uid='john',ou=users,dc=example,dc=com'.                                  | Yes           | ou=users,dc=example,dc=com                             |
+| Custom User LDAP Filter     | Additional LDAP filter for filtering searched users. Leave this empty if you don't need an additional filter. Make sure that it starts with '(' and ends with ')'.                                                                                                          | No            | (objectClass=inetOrgPerson)                    |
+| Phone Number LDAP Attribute | The LDAP attribute that stores the user’s phone number.                                                                                                                                                                                                                     | No            | telephoneNumber, mobile                        |
+| Search Scope                | For one level, the search applies only for users in the DNs specified by User DNs. For subtree, the search applies to the whole subtree.                                                                                           | Yes           | One Level, Subtree                             |
+| Bind Type                   | Type of the authentication method used during LDAP bind operation. It is used in most of the requests sent to the LDAP server. Currently only 'none' or 'simple' (bind credential + bind password authentication) mechanisms are available. | Yes           | Simple, None                              |
+| Bind DN                     | DN of the LDAP admin, which will be used by Appcircle to access LDAP server.                                                                                                                                                                                                  | Yes           | cn=admin,dc=io                                 |
+| Bind Credential             | Password of LDAP admin.                                                                                                                                                                                                                                                     | Yes           | ******** (hidden)                              |
+| Enable StartTLS             | Encrypts the connection to LDAP using STARTTLS, which will disable connection pooling.                                                                                                                                                                                       | No            |                                                |
+| Connection Timeout          | LDAP connection timeout in milliseconds.                                                                                                                                                                                                                                     | No            |                                                |
+| Read Timeout                | LDAP read timeout in milliseconds. This timeout applies for LDAP read operations.                                                                                                                                                     | No            |                                                |
+| Pagination                  | Enables retrieving LDAP users and groups in smaller batches instead of all at once. This improves performance for large directories by reducing memory and network load.                                                                                                                                  | No            |                                                |
+| Test Connection             | Tests if the LDAP connection can be successfully established using the provided configuration and credentials.                                                                                                                                                              | -             |                                                |
+| Test Authentication         | Tests if LDAP authentication works correctly with the configured Bind DN and credentials.                                                                                                                                                                                   | -             |                                                |
+| Group Mapper                | Defines how LDAP groups are mapped to internal groups. Used in LDAP mapping for importing or synchronizing group memberships.                                                                                                                                                           | No |                                                |
+| Role Mapper                 | Defines how LDAP roles are mapped to internal roles. Used in LDAP mapping for importing or synchronizing group or attribute-based roles.                                                                                                                                                           | No |                                                |
+
+:::info
+Common LDAP distinguished name (DN) attributes and their abbreviations used in LDAP configurations:
+* **DC:** domainComponent
+* **CN:** commonName
+* **OU:** organizationalUnitName
+* **O:** organizationName
+* **STREET:** streetAddress
+* **L:** localityName
+* **ST:** stateOrProvinceName
+* **C:** countryName
+* **UID:** userid
+:::
 
 ### Adding LDAP Configuration
 
@@ -216,6 +260,14 @@ LDAP configuration with an order value of `1` will be used before LDAP configura
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-9.png' />
+
+:::warning LDAP Connection Timeout
+When the LDAP server is unreachable, login attempts by admin users not linked to LDAP may experience a delay.
+
+The authentication process will wait for the LDAP connection to time out before proceeding, after which the login will be successful. By default, this timeout is set to 2 minutes but can be adjusted in the LDAP configuration settings.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6160-timeout.png' />
 
 ### Remove User From LDAP Server
 
@@ -327,6 +379,20 @@ LDAP Role Mapping allows you to assign specific roles to users based on their LD
 #### Role and Permissions Management
 
 - Each role can have varied permissions across different modules such as Build, Deploy, and Admin settings. Configure these permissions to ensure users have appropriate access levels based on their role.
+
+
+:::info LDAP Mapping Different Role Assignment
+
+When mapping LDAP roles, a user may have different permissions in different modules. This means that the user can take action within the scope of the permissions granted in both modules. For example,
+
+| LDAP Group Name                      | Permissions                                     |
+|-------------------------------------------------|-------------------------------------------------|
+| Build Module Viewer | Only has build module viewer permission |
+| Publish Module Viewer | Only has publish module viewer permission |
+
+When the same user is added to two different groups, as mentioned above, the LDAP mapping will grant viewer permissions for that user in both modules. This means that within the scope of viewer permissions, the user will be able to view both the Publish and Build modules.
+
+:::
 
 ### LDAP Synchronization
 

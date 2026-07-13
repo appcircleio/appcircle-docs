@@ -28,50 +28,6 @@ In-app updates offer a seamless method for delivering and installing new version
 
 In-app updates offer several benefits, including a smoother user experience by enabling seamless updates without requiring users to manually download or install new versions. For example, critical bug fixes and feature enhancements can be automatically applied while the app is running, ensuring users always have access to the latest improvements and functionalities.
 
-## Implementing In-App Updates
-
-### Authentication Methods for Obtaining Appcircle Personal API Token
-
-There are two primary methods to implement authentication and retrieve the Appcircle Personal API token for in-app updates:
-
-1. Using a Custom Backend Endpoint
-2. Using Appcircle Services
-
-#### 1. Using a Custom Backend Endpoint
-
-This method involves creating a secure backend service that handles the authentication process and retrieves the Appcircle Personal API token on behalf of your app. Here's how it works:
-
-1. Your app sends a request to your custom backend endpoint Enterprise App Store profile id with authentication credentials such as email and password.
-2. The backend authenticates with Appcircle using profile-specific app secret and obtains the Personal API token.
-3. The backend returns the token to your app.
-
-Benefits of this approach:
-
-- Enhanced security as sensitive credentials are not stored in the app
-- Centralized management of authentication
-- Ability to implement additional security measures on the backend
-
-**Sample Backend Project:**
-
-https://github.com/appcircleio/in-app-update-backend-sample
-
-#### 2. Using Appcircle Services
-
-This method involves directly using Appcircle's authentication services from within your app. Here's how it works:
-
-1. Your app securely stores the profile-specific secret and profile id.
-2. The app sends the secret along with the profile ID to Appcircle authentication services.
-3. Appcircle validates the credentials and returns the necessary authentication token.
-4. Upon successful authentication, the app receives the Personal API token.
-
-Benefits of this approach:
-
-- Simpler implementation with fewer components
-- Reduced backend maintenance
-- Direct integration with Appcircle services
-
-Both methods have their merits, and the choice depends on your specific security requirements, infrastructure, and development preferences. The custom backend approach offers more control and security, while the direct Appcircle services method provides a more straightforward implementation.
-
 ## Prerequisites for Integration
 
 ### Authentication Requirements
@@ -90,19 +46,19 @@ Steps to Generate a Profile-Specific Secret:
 
 3- Select Generate Secret to create a profile-specific secret.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-in-app-secret.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-56.png' />
 
 #### Enterprise Portal Prefix
 
 Navigate to the Enterprise App Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE_4207-Enterprise-Store-Prefix-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-60.png' />
 
 #### Enterprise Portal URL
 
 Navigate to the Enterprise Store module and settings page to find the **STORE URL** information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-store-url.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-61.png' />
 
 #### Enterprise Store Profile Id
 
@@ -114,11 +70,11 @@ You can obtain your Enterprise Store Profile ID from the Profile Settings, the U
 
 2. Select the Settings from the top right corner.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-40.png' />
 
 3. Find and copy your Profile ID under the Info tab by clicking the copy button, next to your Profile ID.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4487.png' alt='Copy the Profile ID' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-57.png' alt='Copy the Profile ID' />
 
 ##### How to Extract Your Enterprise Store Profile ID from the URL
 
@@ -135,15 +91,16 @@ appcircle enterprise-app-store profile list
 
 ### Authentication for Updates
 
-#### Retrieving Access Token Using Personal API Token
+#### Retrieving Access Token Using In-App Update Secret
 
-To fetch app versions and download the binary, you first need to obtain an access token using a Personal API Token (PAT).
+To fetch app versions and download the binary, you first need to obtain an access token using your In-App Update Secret.
 
 <Tabs defaultValue="swift" values={[
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
-{ label: 'MAUI', value: 'maui' }
+{ label: 'MAUI', value: 'maui' },
+{ label: 'cURL', value: 'curl' }
 ]}>
 
   <TabItem value="android">
@@ -250,6 +207,19 @@ To fetch app versions and download the binary, you first need to obtain an acces
             return try await apiFetcher.request(request: request)
         }
     }
+    ```
+
+  </TabItem>
+
+  <TabItem value="curl">
+    ```bash
+    curl --X POST 'https://STORE_URL/api/auth/token' \
+    --H 'Content-Type: application/json' \
+    --D 
+   '{
+    "ProfileId": "PROFILE_ID",
+    "Secret": "PROFILE_IN_APP_UPDATE_SECRET"
+   }'
     ```
 
   </TabItem>
@@ -400,7 +370,8 @@ Fetch all available versions and compare them with the current version to determ
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
-{ label: 'MAUI', value: 'maui' }
+{ label: 'MAUI', value: 'maui' },
+{ label: 'cURL', value: 'curl' }
 ]}>
 
   <TabItem value="android">
@@ -510,6 +481,14 @@ Fetch all available versions and compare them with the current version to determ
     }
     ```
 
+  </TabItem>
+
+  <TabItem value="curl">
+```bash
+ curl -X GET "https://STORE_URL/api/app-versions" \
+  -H "Authorization: Bearer ACCESS_TOKEN" \
+  -H "Accept: */*"
+```
   </TabItem>
 
   <TabItem value="react-native">
@@ -920,7 +899,7 @@ public class InAppUpdateModel
 The code above compares major versions. For instance, if the current app version is 1.0 and the latest available version is 1.1, it **won't** be considered an update. However, if the latest available version is 2.0, it will be treated as an update in your enterprise portal. You can configure this logic based on your business requirements.
 :::
 
-#### Updating the App
+#### Updating / Downloading the App
 
 If a newer version is available, generate the platform-specific download URL and return it for background opening later.
 
@@ -929,6 +908,7 @@ If a newer version is available, generate the platform-specific download URL and
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
 { label: 'MAUI', value: 'maui' },
+{ label: 'cURL', value: 'curl' }
 ]}>
 
   <TabItem value="android">
@@ -1028,6 +1008,18 @@ If a newer version is available, generate the platform-specific download URL and
         }
     }
     ```
+
+  </TabItem>
+
+  <TabItem value="curl">
+
+```bash
+ curl -X GET "https://STORE_URL/api/app-versions/{AppVersionId}/download-version"
+  -H "Authorization: Bearer ACCESS_TOKEN" \
+  -H "user-id: USER_EMAIL" \
+  -H "Accept: */*"
+```
+
 
   </TabItem>
 
@@ -1211,9 +1203,41 @@ public class InAppUpdateModel
 </TabItem>
 </Tabs>
 
+
+:::caution Created Download URL
+
+The scripts provided above for each platform generate a **Download URL** required to upload a new version. This URL also includes a `userEmail` parameter. While this parameter is optional, if the `userEmail` information will not be used, the `/user/{userEmail}` section at the end of the URL should be removed, and the URL should be generated using only the token.
+
+For example;
+
+- **iOS-Swift**: **`itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)`**
+- **Android-Java/Kotlin**: **`https://%s/api/app-versions/%s/download-version/%s`**
+- **React Native Android**: **`${Environments.STORE_URL}/api/app-versions/${availableVersionId}/download-version/${accessToken}`**
+- **React Native iOS**: **`itms-services://?action=download-manifest&url=https://\(storeURL)/api/app-versions/\(availableVersion.id)/download-version/\(authResponse.accessToken)`**
+- **MAUI**: **`${Environment.GetEnvironmentVariable("STORE_URL")}/api/app-versions/{availableVersionId}/download-version/{accessToken}`**
+
+Adding the token and email as parameters is supported, but it is **recommended** to include them in the headers, as shown in the cURL example.
+:::
+
+:::caution User Email and Enterprise App Store Report
+
+Please note that the user email parameter is used for the reporting feature of the Enterprise App Store module. If the user email parameter is not provided, the **User** field in the report will appear as **`In-App Update User`**.
+
+For more detailed information about Enterprise App Store Reporting, please visit [**Enterprise Portal Reports documentation**](/enterprise-app-store/enterprise-reports).
+
+:::
+
 ### How to Prompt an Alert and Install the Latest Release
 
 After obtaining the download URL for a newer version, display an alert with options to update or cancel. Customize the alert based on your requirements, such as omitting the cancel button for mandatory updates.
+
+:::danger Simulators
+
+Apple and Android simulators do not support installing applications from any app store. One of the main reasons for this limitation is the architectural differences between simulators and physical devices. Therefore, to use Appcircle’s in-app update feature, please use a physical device.
+
+Please note that this feature **will not work** even if a simulator is used for testing during the development phase. **This functionality is exclusively supported on physical devices**.
+
+:::
 
 <Tabs defaultValue="swift" values={[
 { label: 'Swift', value: 'swift' },
@@ -1392,4 +1416,13 @@ var updateInfo = await InAppUpdateHelper.CheckForUpdate(currentVersion, "USER_EM
 </Tabs>
 
 :::caution
+
 With API Level 29 and above, the in-app update experience must be managed by allowing users to download and manually install the update due to increased security restrictions.
+
+:::
+
+### Mandatory Update
+
+The Appcircle Enterprise App Store module does not provide a direct mandatory update feature. To enforce users to update the application, you can customize the scripts provided in the [**How to Prompt an Alert and Install the Latest Release**](/enterprise-app-store/in-app-updates#how-to-prompt-an-alert-and-install-the-latest-release) section according to your requirements, allowing you to implement a force update mechanism.
+
+For instance, if the new release includes a major update and you want to make it mandatory, you can modify the update alert shown in the application by removing the cancel button or closing the application if the update is not performed. This approach ensures that the update becomes mandatory for users.

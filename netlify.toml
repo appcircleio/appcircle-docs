@@ -101,17 +101,42 @@ status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations/notification-integrations/slack"
-to = "/account/my-organization/notifications/slack"
+to = "/account/my-organization/notifications/slack-notifications"
 status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations/notification-integrations/slack/appcircle-bot-for-slack"
-to = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/notifications/slack-notifications"
 status = 301
 
 [[redirects]]
 from = "/account/my-organization/integrations/notification-integrations/slack/slack-notifications"
-to = "/account/my-organization/notifications/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/slack"
+to = "/account/my-organization/notifications/slack-notifications"
 status = 301
 
 [[redirects]]
@@ -162,11 +187,6 @@ status = 301
 [[redirects]]
 from = "/account/email-connection"
 to = "/account/my-organization/notifications/email-connection"
-status = 301
-
-[[redirects]]
-from = "/account/slack/appcircle-bot-for-slack"
-to = "/account/my-organization/notifications/slack/appcircle-bot-for-slack"
 status = 301
 
 [[redirects]]
@@ -225,11 +245,6 @@ to = "/account/my-account/sign-up-login"
 status = 301
 
 [[redirects]]
-from = "/account/slack/slack-notifications"
-to = "/account/my-organization/notifications/slack/slack-notifications"
-status = 301
-
-[[redirects]]
 from = "/account/sso-login/okta-saml"
 to = "/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration"
 status = 301
@@ -237,11 +252,6 @@ status = 301
 [[redirects]]
 from = "/account/my-organization/sso-providers-configuration/single-sign-on"
 to = "/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration"
-status = 301
-
-[[redirects]]
-from = "/account/my-organization/notifications-and-communication/slack/slack-notifications"
-to = "/account/my-organization/notifications/slack/slack-notifications"
 status = 301
 
 [[redirects]]
@@ -384,6 +394,36 @@ status = 301
 [[redirects]]
 from = "/appcircle-api/api-authentication#generatingmanaging-the-personal-api-tokens"
 to = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/personal-api-token"
+to = "/account/my-organization/security/personal-access-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/personal-api-token#generatingmanaging-the-personal-api-tokens"
+to = "/account/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api-and-cli/api-authentication#using-the-token-for-api-authentication"
+to = "/appcircle-api-and-cli/api-authentication#using-the-personal-access-key-for-api-authentication"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api-and-cli/api-authentication#using-the-token-for-api-authentication"
+to = "/appcircle-api-and-cli/api-authentication#using-the-personal-access-key-for-api-authentication"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/appcircle-cli#1-create-a-personal-api-token"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/appcircle-cli#1-create-a-personal-access-key"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api-and-cli/cli-authentication#login-with-personal-access-token-pat"
+to = "/appcircle-api-and-cli/cli-authentication#login-with-personal-access-key"
 status = 301
 
 # Best Practice related redirects
@@ -622,6 +662,11 @@ to = "/enterprise-app-store/portal-settings"
 status = 301
 
 [[redirects]]
+from = "/enterprise-app-store/enterprise-app-store-profile#share"
+to = "/enterprise-app-store/enterprise-app-store-profile#links"
+status = 301
+
+[[redirects]]
 from = "/enterprise-app-store/enterprise-store"
 to = "/enterprise-app-store/enterprise-portal"
 status = 301
@@ -826,6 +871,11 @@ status = 301
 [[redirects]]
 from = "/integrations/workflow-marketplace"
 to = "/build/build-process-management/build-workflows"
+status = 301
+
+[[redirects]]
+from = "/marketplace/open-ai"
+to = "/appcircle-ai/ai-assistants/appcircle-gpt-assistant"
 status = 301
 
 [[redirects]]
@@ -1247,4 +1297,264 @@ status = 301
 [[redirects]]
 from = "/self-hosted-appcircle/update"
 to = "/self-hosted-appcircle/install-server/linux-package/update"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/testinium"
+to = "/workflows/common-workflow-steps/testinium-steps/testinium"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps#app-center-codepush"
+to = "/workflows/react-native-specific-workflow-steps/appcircle-codepush"
+status = 301
+
+[[redirects]]
+from = "/account/slack/slack-notifications"
+to = "/account/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/account-management/change-password"
+to = "/account/my-account/account-management/signing-in"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/account-management/authenticator-two-factor-authentication"
+to = "/account/my-account/account-management/signing-in"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/account-management/active-sessions"
+to = "/account/my-account/account-management/device-activity"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/account-management/authentication-logs"
+to = "/account/my-account/account-management/device-activity"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens"
+to = "/account/my-organization/security/personal-api-token"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile"
+to = "/build/manage-the-connections/connection-guides"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance"
+to = "/build/manage-the-connections/connection-guides/connecting-multiple-instance"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-azure"
+to = "/build/manage-the-connections/connection-guides/connecting-to-azure"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket"
+to = "/build/manage-the-connections/connection-guides/connecting-to-bitbucket"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-github"
+to = "/build/manage-the-connections/connection-guides/connecting-to-github"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh"
+to = "/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository"
+to = "/build/manage-the-connections/connection-guides/connecting-to-public-repository"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab"
+to = "/build/manage-the-connections/connection-guides/connecting-to-gitlab"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides/connecting-to-azure"
+to = "/build/manage-the-connections/connection-guides/connecting-to-azure"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides"
+to = "/build/manage-the-connections/connection-guides"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides/connecting-to-gitlab"
+to = "/build/manage-the-connections/connection-guides/connecting-to-gitlab"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides/connecting-to-bitbucket"
+to = "/build/manage-the-connections/connection-guides/connecting-to-bitbucket"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides/connecting-to-github"
+to = "/build/manage-the-connections/connection-guides/connecting-to-github"
+status = 301
+
+[[redirects]]
+from = "/publish-module"
+to = "/publish-to-stores-module"
+status = 301
+
+[[redirects]]
+from = "/publish-module/binary-management"
+to = "/publish-to-stores-module/binary-management"
+status = 301
+
+[[redirects]]
+from = "/publish-module/creating-publish-profiles"
+to = "/publish-to-stores-module/creating-publish-profiles"
+status = 301
+
+[[redirects]]
+from = "/publish-module/creating-publish-profiles/managing-publish-profiles"
+to = "/publish-to-stores-module/creating-publish-profiles/managing-publish-profiles"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-activity-log"
+to = "/publish-to-stores-module/publish-activity-log"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-flow"
+to = "/publish-to-stores-module/publish-flow"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information"
+to = "/publish-to-stores-module/publish-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/app-information"
+to = "/publish-to-stores-module/publish-information/app-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/auto-resign-configuration"
+to = "/publish-to-stores-module/publish-information/auto-resign-configuration"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/binary-information"
+to = "/publish-to-stores-module/publish-information/binary-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/cancel-submission"
+to = "/publish-to-stores-module/publish-information/cancel-submission"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/check-release-status"
+to = "/publish-to-stores-module/publish-information/check-release-status"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/delete"
+to = "/publish-to-stores-module/publish-information/delete"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/download"
+to = "/publish-to-stores-module/publish-information/download"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/google-play-information"
+to = "/publish-to-stores-module/publish-information/google-play-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/history"
+to = "/publish-to-stores-module/publish-information/history"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/marking-release-candidates"
+to = "/publish-to-stores-module/publish-information/marking-release-candidates"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/meta-data-information"
+to = "/publish-to-stores-module/publish-information/meta-data-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/publish-details"
+to = "/publish-to-stores-module/publish-information/publish-details"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/reject-binary"
+to = "/publish-to-stores-module/publish-information/reject-binary"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/resign-binary"
+to = "/publish-to-stores-module/publish-information/resign-binary"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-report"
+to = "/publish-to-stores-module/publish-report"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-resign-report"
+to = "/publish-to-stores-module/publish-resign-report"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-settings"
+to = "/publish-to-stores-module/publish-settings"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-variables"
+to = "/publish-to-stores-module/publish-variables"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-walkthrough-for-app-store"
+to = "/publish-to-stores-module/publish-walkthrough-for-app-store"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-walkthrough-for-google-play"
+to = "/publish-to-stores-module/publish-walkthrough-for-google-play"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/profile-and-team/team-activity-log"
+to = "/account/my-organization/profile-and-team/organization-activity"
+status = 301
+
+[[redirects]]
+from = "/workflows/how-to-create-a-new-workflow-step"
+to = "/workflows/how-to-create-an-integration"
+status = 301
+
+[[redirects]]
+from = "/appcircle-ai/appcircle-gpt-assistant"
+to = "/appcircle-ai/ai-assistants/appcircle-gpt-assistant"
+status = 301
+
+[[redirects]]
+from = "/appcircle-ai/appcircle-claude-assistant"
+to = "/appcircle-ai/ai-assistants/appcircle-claude-assistant"
 status = 301

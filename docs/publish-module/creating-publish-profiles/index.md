@@ -1,6 +1,7 @@
 ---
 title: Creating Publish Profiles
 description: Learn how to create publish profiles in Appcircle
+slug: /publish-to-stores-module/creating-publish-profiles
 tags: [publish, publish profiles, distribution]
 sidebar_position: 1
 ---
@@ -9,18 +10,22 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-After building the application, we can start the publishing process by sending it to the Publish module.
+After building the application, we can start the publishing process by sending it to the Publish to Stores module.
 
-For this, it is necessary to first create a publish profile within the Publish module. Afterwards, the relevant publish profile must be selected from the **Distribution** tab in the configuration of the relevant profile in the Build module.
+For this, it is necessary to first create a publish profile within the Publish to Stores module. Afterwards, the relevant publish profile must be selected from the **Distribution** tab in the configuration of the relevant profile in the Build module.
 
-In order to create a publish profile, click on the "Add New" button in the Publish module.
+In order to create a publish profile, click on the "Add New" button in the Publish to Stores module.
+
+:::info 
+If it's your first time, set up connections to the app stores under [API Integrations](/account/my-organization).
+:::
 
 ### Adding a New Publish Profile
 
 
 There are 2 different options for creating a Publish Profile. One of them is manual creation and the other is to import your existing Store profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-createPublisModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-1.png' />
 
 :::caution Creating a Publish Profile
 
@@ -44,7 +49,7 @@ The Bundle ID set during manual creation cannot be changed later and is assigned
 
 When manual creation is selected, the name and BundleID fields required for the Publish profile must be filled in.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-createManually.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-2.png' />
 
 - **Publish Profile Name**: The name Publish profile is the name given to distinguish your profile from other profiles and appears on the profile card.
 - **BundleID**: BundleID is the unique identifier of your application. It is hard-coded when the profile is created and cannot be changed afterwards.
@@ -66,7 +71,7 @@ Once a main Bundle ID is set, this Bundle ID is assigned to the created profile.
 
 An exclamation mark appears next to the binary that does not match the main Bundle ID of the profile. This means that the current Bundle ID of the binary does not match the specified Bundle ID.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-bundleMatch1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-3.png' />
 
 :::
 
@@ -74,7 +79,17 @@ An exclamation mark appears next to the binary that does not match the main Bund
 
 Another option to create a profile is to import it. With this feature, a Publish profile is created with your existing app profile information on App Store Connect.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-importAppList1.png' />
+:::caution Apple Enterprise API Key
+
+The **Create from App Store Connect** feature requires an **Apple API** key to create a profile. However, since the **Apple Enterprise Program** does not include **TestFlight** or **App Store Connect** features, **Apple Enterprise API Keys** are **not** listed anywhere in the **Publish to Stores module**.
+
+If an **Apple Enterprise API** key has been added in your organization, it **cannot** be used in the Publish to Stores Module. For more information, please visit the [**Enterprise API Key Credential**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#enterprise-api-key-option-for-app-store-connect) documentation.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-4.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-6.png' />
 
 Profiles on App Store Connect are listed with API key connection. In this list, the profile is imported by selecting either multiple or single profiles.
 
@@ -100,7 +115,7 @@ The Package Name set during manual creation **cannot** be changed later and is a
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-7.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-2.png' />
 
@@ -109,7 +124,7 @@ When manual creation is selected, the name and Package Name fields required for 
 - **Publish Profile Name**: The name Publish profile is the name given to distinguish your profile from other profiles and appears on the profile card.
 - **Package Name**: Package Name is the unique identifier of your application. It is hard-coded when the profile is created and cannot be changed afterwards.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-8.png' />
 
 After manually creating your profile, you will see your profile card displayed on the Publish screen.
 

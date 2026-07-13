@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Enterprise App Store Plugin For Jenkins
+title: Appcircle Jenkins Enterprise App Store Plugin
 sidebar_label: Enterprise App Store
 description: Enhance powerful plugin to publish your builds to appcircle app store
 tags:
@@ -15,6 +15,7 @@ tags:
 sidebar_position: 2
 ---
 
+import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 
 ### Discover Plugin
@@ -22,7 +23,7 @@ import Screenshot from '@site/src/components/Screenshot';
 You can discover more about this action and install it from:
 https://plugins.jenkins.io/appcircle-enterprise-store/
 
-# Setting Up Appcircle Enterprise App Store Plugin
+## Setting Up Appcircle Enterprise App Store Plugin
 
 The Appcircle Enterprise App Store plugin enables users to publish their apps to the Appcircle App Store.
 
@@ -94,6 +95,6 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens).
+<PersonalApiTokenRef />
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).

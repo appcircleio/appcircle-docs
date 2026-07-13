@@ -1,19 +1,24 @@
 ---
 title: Metadata Details
 description: Detailed guide on filling out metadata for app distribution platforms within the Appcircle dashboard.
+slug: /publish-to-stores-module/publish-information/meta-data-information
 tags: [metadata, app distribution, appcircle dashboard]
-sidebar_position: 5
+sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # Metadata Details
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-metadataDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8751-3.png' />
 
 ## Overview
 
 The Metadata Information section in the Appcircle dashboard is essential for defining the presence of your application on digital distribution platforms. This document will guide you through each field and its significance to ensure your app's metadata is complete and effective.
+
+:::info
+Please note that accessing Metadata Details requires an organization with Enterprise License.
+:::
 
 ## iOS Metadata Information
 
@@ -80,19 +85,6 @@ Please note, this field is constantly visible on Appcircle. However, on App Stor
 - **Contact Information**: Provide the name, phone number, and email of the contact person for the App Review team.
 - **Notes**: Include any additional information that you want to share with the App Review team.
 
-#### App Release Information
-
-- **App Store Version Release**: Choose how you want to release your app on the App Store:
-  - Manually release this version
-  - Automatically release this version
-  - Automatically release this version after App Review, no earlier than a specified date and time
-- **Phased Release for App Store Automatic Updates**: Opt in to gradually release updates over a 7-day period to users.
-- **Reset iOS App Store Summary Rating**: Decide if you want to reset the app's rating when the new version is released.
-
-:::danger Reset iOS App Store Summary Rating
-Please note, this comes with **Keep Existing Rating** selected by default. If you choose to **Reset rating when this version released** option, it will reset all past **reviews and ratings** of your app in **App Store**.
-:::
-
 ## Android Metadata Information
 
 ### Localization Settings
@@ -113,7 +105,7 @@ If there is existing metadata associated with your app on the Google Play Consol
 
 **Updating Android Metadata:** You can easily update your Google Play Console metadata for your app via Appcircle by following these steps:
 
-- Update your app's metadata on Appcircle within the Publish module.
+- Update your app's metadata on Appcircle within the Publish to Stores module.
 - Add the **Update Metadata on Google Play Console** Publish flow step to your workflow.
 - Run your Publish Flow of your app by selecting the Publish Details under actions menu.
 
@@ -150,13 +142,30 @@ Your app version within the Publish profile needs to be marked as Release Candid
 - **Short Description**: A short description for your app. Users can expand to view your full description.
 - **Full Description**: A full description for your app.
 
+:::warning Mandatory Google Play Metadata Fields
+
+On **Google Play Console**, certain metadata fields are **mandatory** and must be completed before you can **save** the metadata details in Appcircle.
+
+The following fields are required by Google Play:
+
+- **App Name**
+- **Short Description**
+- **Full Description**
+- **App Icon**
+- **Feature Graphic**
+- **Phone Screenshots**
+
+If any of these required fields are missing, Google Play Console will not allow the metadata to be saved or updated. Make sure all mandatory fields are properly filled and uploaded before running the **Update Metadata on Google Play Console** publish step.
+
+:::
+
 ## Microsoft Intune Metadata Information
 
 The metadata information field can be changed according to the store credentials selection in Publish Settings. If Intune credential is selected as store credentials, the metadata screen will automatically include Microsoft Intune metadata information.
 
 :::danger Microsoft Intune Metadata and Credential
 
-If the Microsoft Intune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft Intune credential**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](/publish-module/publish-settings#store-credentials).
+If the Microsoft Intune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft Intune credential**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](/publish-to-stores-module/publish-settings#store-credentials).
 
 :::
 

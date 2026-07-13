@@ -40,9 +40,17 @@ Learn to streamline your workflows by pushing data to cache with our easy-to-fol
 
 Discover the essentials of cache retrieval in our cache-pull guide. Speed up your build processes by mastering the art of efficiently pulling cached data.
 
+## [Check Network Access](/workflows/common-workflow-steps/check-network-access)
+
+This component checks network access to external services commonly used in Appcircle build workflows. It validates connectivity to package managers, build services, APIs, and custom-defined URLs during build time.
+
 ## [Custom Script](/workflows/common-workflow-steps/custom-script)
 
 You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
+
+## [Custom Script from Git](/workflows/common-workflow-steps/custom-script-from-git)
+
+You can use **Custom Script from Git** to clone and run your own scripts directly from a Git repository as part of your Appcircle build. This step supports authenticated cloning (via username and PAT).
 
 ## [Code Reviews with Danger](/workflows/common-workflow-steps/danger)
 
@@ -86,6 +94,10 @@ This component uploads file or folders to given FTP server.
 
 Clones the Git repository to the build agent with the given arguments.
 
+## [KOBIL Appshield Scanner for Android/iOS](/workflows/common-workflow-steps/kobil-appshield-scanner)
+
+KOBIL Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an app is secure or not.
+
 ## [Maestro Cloud Upload](/workflows/common-workflow-steps/maestro-cloud-upload)
 
 This component uploads both your app binary and flows to Maestro Cloud.
@@ -122,9 +134,17 @@ By utilizing this step, you will be able to test your project dependencies for v
 
 You can use **SonarQube** component to check your code quality.
 
-## [Testinium](/workflows/common-workflow-steps/testinium)
+## [Testinium Upload App](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app)
 
-This component runs your test plans with **Testinium**.
+The **Testinium Upload App** step uploads mobile apps from Appcircle to Testinium, supporting both cloud and enterprise environments.
+
+## [Testinium Run Test Plan](/workflows/common-workflow-steps/testinium-steps/testinium-run-test-plan)
+
+The **Testinium Run Test Plan** step allows you to run automated tests on your mobile applications directly from Appcircle, whether using Testinium cloud or enterprise setup.
+
+## [Testinium](/workflows/common-workflow-steps/testinium-steps/testinium)
+
+The **Testinium** step allows users to upload their mobile applications to **Testinium** and run a test plan for Testinium cloud users.
 
 ## [Upload Files to Amazon S3](/workflows/common-workflow-steps/upload-files-to-amazon-s3)
 

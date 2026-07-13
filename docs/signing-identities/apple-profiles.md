@@ -46,6 +46,12 @@ You can use the Appcircle Testing Distribution or the Enterprise App Store modul
 
 There is no need for device registration, but Apple requires the binary to be protected and not open for public download, so you can use the enrollment feature of the Appcircle Testing Distribution to protect the app distribution.
 
+:::caution Apple Enterprise Signing
+
+If you are **not** enrolled in the **Apple Enterprise Program**, you **cannot** create an **Enterprise** certificate. This limitation is **not** caused by **Appcircle**. Appcircle only provides signing and distribution features and **cannot** be used as an **enterprise signing service**.
+
+:::
+
 :::info
 
 For app builds, signing identities are not mandatory. For example, you can use unsigned apps to run on the simulator or on third-party platforms that resign your app, such as AWS Device Farm.
@@ -140,6 +146,62 @@ You can list and manage your provisioning profiles here. Newly uploaded files wi
 You can also see the matching application ID and expiration date of the profiles here.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-upload2.png' />
+
+:::info Apple Profile Expiration Notifications
+
+You will be notified when a provisioning profile is about to expire. You can see the expiration notification in the [in-app notification window](/account/my-account/in-app-notifications) and optionally enable expiration [notifications](/account/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
+
+**Standard Schedule**: Profiles already in the system 30+ days before expiration receive notifications at 30, 15, 7, 3, 1 days before expiration, plus expiring today.
+
+**Late Upload**: Profiles uploaded with less than 30 days remaining before expiration get notifications starting from upload day, then continuing with the next applicable intervals from the standard schedule.
+
+:::
+
+### Sharing Apple Profiles
+
+Root Organization users have the ability to share their Apple Provisioning Profiles with Sub-Organizations. 
+
+Shared provisioning profiles can be used in Sub-Organizations just like locally uploaded or fetched profiles.
+
+#### How to Share Apple Profiles
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-25.png' />
+
+1. Navigate to the Apple Profiles Section  
+   Go to the Signing Identity module and open the **Apple Profiles** section.
+
+2. Open Profile List  
+   Locate the provisioning profile you want to share.
+
+3. Select the Profile  
+   Click the **Share** icon under the Actions column.
+
+4. Configure Sharing Settings  
+   In the Share panel:
+
+- Enable **Share with all sub-organizations** to automatically share the profile with all existing and newly created sub-organizations.
+- Alternatively, manually select specific sub-organizations.
+
+5. Save Sharing Configuration  
+   Click **Share** to complete the process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-26.png' />
+
+#### Behavior in Sub-Organizations
+
+- Shared provisioning profiles will be visible and selectable in Sub-Organizations.
+- These profiles will be marked with a **Shared** tag on Root Organization and **Inherited** tag on Sub Organizations.
+- Sub-Organization users **cannot edit, rename, or delete** shared provisioning profiles.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-27.png' />
+
+:::tip
+- If **Share with all sub-organizations** is enabled, the profile will also be automatically available in newly created sub-organizations.
+:::
+
+:::caution
+- Any changes or deletions made in the Root Organization will affect all Sub-Organizations using the shared provisioning profile.
+:::
 
 ### Deleting Provisioning Profiles
 

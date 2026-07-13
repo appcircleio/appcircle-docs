@@ -1,8 +1,9 @@
 ---
 title: Google Play Console Information
 description: Learn how to update App Information in the Publish module of Appcircle for Google Play Console
+slug: /publish-to-stores-module/publish-information/google-play-information
 tags: [publish, publish module, app information, google play console, review]
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -11,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 For Android binaries, by using Appcircle's Google Play Console Information feature, you can update the required information for binary submission.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-236.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-20.png' />
 
 ### Contact Information
 
@@ -34,10 +35,10 @@ The default language for an app on Google Play Console is the primary language i
 Auto Send for Review is where you select whether your changes should automatically go for review on the Google Play Console. Please note that this setting is optional.
 
 :::info Understanding the `changesNotSentForReview` Parameter in Google Play Android Publisher API
-When making release requests via the Google Play Android Publisher API, the `changesNotSentForReview` parameter determines whether your changes are immediately sent for review or not. However, Google enforces certain constraints, requiring this parameter to be either `true` or `false` depending on the current status of the app and other factors. To handle this behavior efficiently.
+When making release requests via the Google Play Android Publisher API, the `changesNotSentForReview` parameter determines whether your changes are immediately sent for review or not. However, Google enforces certain constraints, requiring this parameter to be either `true` or `false` depending on the current status of the app and other factors.
 :::
 
-We provide four different options for managing releases:
+To handle this behavior efficiently, we provide four different options for managing releases:
 
 1. **Send for Review Automatically but Rescue Errors**: 
 - The system will attempt to send changes for review. 

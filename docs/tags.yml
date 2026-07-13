@@ -283,6 +283,21 @@ appcircle:
   description: "Description for appcircle app store"
   permalink: /appcircle-app-store
 
+appcircle ai:
+  label: "appcircle ai"
+  description: "Documentation related to Appcircle AI"
+  permalink: /appcircle-ai
+
+"appcircle assistant":
+  label: "appcircle assistant"
+  description: "Description for appcircle assistant"
+  permalink: /appcircle-assistant
+
+"appcircle mcp":
+  label: "appcircle mcp"
+  description: "Documentation related to the Appcircle MCP server"
+  permalink: /appcircle-mcp
+
 "appcircle bot":
   label: "appcircle bot"
   description: "Description for appcircle bot"
@@ -327,6 +342,11 @@ appdome:
   label: "appdome"
   description: "Description for appdome"
   permalink: /appdome
+
+kobil-appshield-scanner:
+  label: "kobil-appshield-scanner"
+  description: "Description for kobil-appshield-scanner"
+  permalink: /kobil-appshield-scanner
 
 appearance:
   label: "appearance"
@@ -542,6 +562,11 @@ browserstack:
   label: "browserstack"
   description: "Description for browserstack"
   permalink: /browserstack
+
+lambdatest:
+  label: "lambdatest"
+  description: "Description for LambdaTest"
+  permalink: /lambdatest
 
 "brute-force":
   label: "brute-force"
@@ -1028,6 +1053,11 @@ distribution:
   description: "Description for distribution"
   permalink: /distribution
 
+domain:
+  label: "domain"
+  description: "Description for domain"
+  permalink: /domain
+
 "distribution profile":
   label: "distribution profile"
   description: "Description for distribution profile"
@@ -1038,6 +1068,11 @@ distribution:
   description: "Description for distribution profiles"
   permalink: /distribution-profiles
 
+track:
+  label: "track"
+  description: "Description for track"
+  permalink: /track
+
 dmz:
   label: "dmz"
   description: "Description for dmz"
@@ -1047,6 +1082,16 @@ docker:
   label: "docker"
   description: "Description for docker"
   permalink: /docker
+
+network:
+  label: "network"
+  description: "Description for network"
+  permalink: /network
+
+subnet:
+  label: "subnet"
+  description: "Description for subnet"
+  permalink: /subnet
 
 documentation:
   label: "documentation"
@@ -1303,6 +1348,11 @@ gitlab:
   description: "Description for gitlab"
   permalink: /gitlab
 
+"git scripts":
+  label: "git scripts"
+  description: "Description for git scripts"
+  permalink: /git scripts
+
 "google play":
   label: "google play"
   description: "Description for google play"
@@ -1317,6 +1367,16 @@ gitlab:
   label: "google play service account"
   description: "Description for google play service account"
   permalink: /google-play-service-account
+
+ai:
+  label: "ai"
+  description: "Documentation related to AI features and capabilities"
+  permalink: /ai
+
+gpt:
+  label: "gpt"
+  description: "Description for gpt"
+  permalink: /gpt
 
 gradle:
   label: "gradle"
@@ -1362,6 +1422,11 @@ identifiers:
   label: "identifiers"
   description: "Description for identifiers"
   permalink: /identifiers
+
+"in-app notifications":
+  label: "in-app notifications"
+  description: "Description for in-app notifications"
+  permalink: /in-app-notifications
 
 "in-app updates":
   label: "in-app updates"
@@ -1681,7 +1746,7 @@ management:
 MAUI:
   label: "MAUI"
   description: "Description for MAUI"
-  permalink: /MAUI
+  permalink: /maui
 
 "MAUI build":
   label: "MAUI build"
@@ -1861,6 +1926,11 @@ permissions:
   label: "permissions"
   description: "Description for permissions"
   permalink: /permissions
+
+"personal access key":
+  label: "personal access key"
+  description: "Description for personal access key"
+  permalink: /personal-access-key
 
 "personal access token":
   label: "personal access token"
@@ -2123,6 +2193,11 @@ restart:
   description: "Description for restart"
   permalink: /restart
 
+reuse:
+  label: "reuse"
+  description: "Description for reuse"
+  permalink: /reuse
+
 review:
   label: "review"
   description: "Description for review"
@@ -2196,7 +2271,7 @@ schemes:
 "SDK versions":
   label: "SDK versions"
   description: "Description for SDK versions"
-  permalink: /SDK-versions
+  permalink: /sdk-versions
 
 "search":
   label: "search"
@@ -2373,6 +2448,11 @@ slack:
   description: "Description for snyk scan"
   permalink: /snyk-scan
 
+"scan":
+  label: "scan"
+  description: "Description for scan"
+  permalink: /scan
+  
 sonarqube:
   label: "sonarqube"
   description: "Description for sonarqube"
@@ -2558,6 +2638,21 @@ testinium:
   description: "Description for testinium"
   permalink: /testinium
 
+plan:
+  label: "plan"
+  description: "Description for plan"
+  permalink: /plan
+
+run:
+  label: "run"
+  description: "Description for run"
+  permalink: /run
+
+app upload:
+  label: "app upload"
+  description: "Description for app upload"
+  permalink: /app-upload
+
 "text-based variables":
   label: "text-based variables"
   description: "Description for text-based variables"
@@ -2697,6 +2792,11 @@ variables:
   label: "variables"
   description: "Description for variables"
   permalink: /variables
+
+verify:
+  label: "verify"
+  description: "Description for verify"
+  permalink: /verify
 
 version:
   label: "version"
@@ -2838,6 +2938,21 @@ xml:
   description: "Description for xml"
   permalink: /xml
 
+mcp:
+  label: "mcp"
+  description: "Documentation related to the Model Context Protocol (MCP)"
+  permalink: /mcp
+
+"model context protocol":
+  label: "model context protocol"
+  description: "Documentation related to the Model Context Protocol (MCP)"
+  permalink: /model-context-protocol
+
+"mcp server":
+  label: "mcp server"
+  description: "Documentation related to the MCP server"
+  permalink: /mcp-server
+
 "ci/cd":
   label: "ci/cd"
   description: "Description for ci/cd"
@@ -2873,6 +2988,36 @@ xml:
   description: "Helm related documentations"
   permalink: "/helm"
 
+"s3":
+  label: "s3"
+  description: "S3 related documentations"
+  permalink: "/s3"
+
+"gcp":
+  label: "gcp"
+  description: "GCP related documentations"
+  permalink: "/gcp"
+
+"cloud-storage":
+  label: "cloud-storage"
+  description: "Cloud storage related documentations"
+  permalink: "/cloud-storage"
+
+"object-storage":
+  label: "object-storage"
+  description: "Object storage related documentations"
+  permalink: "/object-storage"
+
+"help":
+  label: "help"
+  description: "Help related documentations"
+  permalink: "/help"
+
+"server-setup":
+  label: "server setup"
+  description: "Server setup related documentations"
+  permalink: "/server-setup"
+
 "kubernetes":
   label: "kubernetes"
   description: "Kubernetes related documentations"
@@ -2883,7 +3028,212 @@ xml:
   description: "OpenShift related documentations"
   permalink: "/openshift"
 
+quay:
+  label: "quay"
+  description: "Quay registry related documentations"
+  permalink: /quay
+
 "microsoft azure":
   label: "microsoft azure"
   description: "Microsoft Azure related documentations"
   permalink: "/microsoft-azure"
+
+"appcircle codepush cli":
+  label: "appcircle codepush cli"
+  description: "appcircle codepush cli related documentations"
+  permalink: "/appcircle-codepush-cli"
+
+"appcircle codepush":
+  label: "appcircle codepush"
+  description: "appcircle codepush related documentations"
+  permalink: "/appcircle-codepush"
+
+"codepush cli":
+  label: "codepush cli"
+  description: "codepush cli related documentations"
+  permalink: "/codepush-cli"
+
+"deployments":
+  label: "deployments"
+  description: "deployments related documentations"
+  permalink: "/deployments"
+
+"command line":
+  label: "command line"
+  description: "command line related documentations"
+  permalink: "/command-line"
+
+"codepush":
+  label: "codepush"
+  description: "codepush related documentations"
+  permalink: "/codepush"
+
+"ci":
+  label: "ci"
+  description: "ci related documentations"
+  permalink: "/ci"
+
+"send email":
+  label: "send email"
+  description: "send email related documentations"
+  permalink: "/send-email"
+
+"android app release":
+  label: "android app release"
+  description: "android app release related documentations"
+  permalink: "/android-app-release"
+
+"auto":
+  label: "auto"
+  description: "auto related documentations"
+  permalink: "/auto"
+
+"re-sign":
+  label: "re-sign"
+  description: "re-sign related documentations"
+  permalink: "/re-sign"
+
+"license":
+  label: "license"
+  description: "Self-hosted Appcircle server license configuration related documentations"
+  permalink: "/license"
+
+"device activity":
+  label: "device activity"
+  description: "device activity related documentations"
+  permalink: "/device-activity"
+  
+"machine plan":
+  label: "machine plan"
+  description: "machine plan related documentations"
+  permalink: "/machine-plan"
+
+"create":
+  label: "create"
+  description: "Documentation about creating new components, steps, or configurations"
+  permalink: "/create"
+
+"new step":
+  label: "new step"
+  description: "Documentation related to developing and implementing new workflow steps"
+  permalink: "/new-step"
+
+"cache":
+  label: "cache"
+  description: "Documentation related to cache"
+  permalink: "/cache"
+
+"build cache":
+  label: "build cache"
+  description: "Documentation related to build cache"
+  permalink: "/build-cache"
+
+"retention period":
+  label: "retention period"
+  description: "Documentation related to retention period"
+  permalink: "/retention-period"
+
+"retention":
+  label: "retention"
+  description: "Documentation related to retention"
+  permalink: "/retention"
+
+"artifacts report":
+  label: "artifacts report"
+  description: "Documentation related to artifacts report"
+  permalink: "/artifacts-report"
+
+"reusable scripts":
+  label: "reusable scripts"
+  description: "Documentation related to reusable scripts"
+  permalink: "/reusable-scripts"
+
+"artifactory":
+  label: "artifactory"
+  description: "Documentation related to artifactory"
+  permalink: "/artifactory"
+
+"branch based":
+  label: "branch based"
+  description: "Documentation related to branch based"
+  permalink: "/branch-based"
+
+"branch":
+  label: "branch"
+  description: "Documentation related to branch"
+  permalink: "/branch"
+
+"organization activity":
+  label: "organization activity"
+  description: "Documentation related to organization activity"
+  permalink: "/organization-activity"
+
+"release version":
+  label: "release version"
+  description: "Documentation related to release version"
+  permalink: "/release-version"
+
+"rollout":
+  label: "rollout"
+  description: "Documentation related to rollout"
+  permalink: "/rollout"
+
+"rollout information":
+  label: "rollout information"
+  description: "Documentation related to rollout information"
+  permalink: "/rollout-information"
+
+"beta":
+  label: "beta"
+  description: "Documentation related to beta"
+  permalink: "/beta"
+
+"submit":
+  label: "submit"
+  description: "Documentation related to submit"
+  permalink: "/submit"
+
+"information":
+  label: "information"
+  description: "Documentation related to information"
+  permalink: "/information"
+
+"supported browsers":
+  label: "supported browsers"
+  description: "Documentation related to supported browsers"
+  permalink: "/supported-browsers"
+
+"download reports":
+  label: "download reports"
+  description: "Documentation related to download reports"
+  permalink: "/download-reports"
+
+"claude":
+  label: "claude"
+  description: "Documentation related to Claude"
+  permalink: "/claude"
+
+"assistant":
+  label: "assistant"
+  description: "Documentation related to AI assistants"
+  permalink: "/assistant"
+
+"external webhooks":
+  label: "external webhooks"
+  description: "Documentation related to external webhooks"
+  permalink: "/external-webhooks"
+
+"macos":
+  label: "macos"
+  description: "Documentation related to macos"
+  permalink: "/macos"
+
+"host hardening":
+  label: "host hardening"
+  description: "Documentation related to host hardening"
+  permalink: "/host-hardening"
+
+"auth activity":
+  label: "auth activity"
+  description: "Documentation related to auth activity"
+  permalink: "/auth-activity"

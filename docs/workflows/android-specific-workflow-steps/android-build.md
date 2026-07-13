@@ -5,6 +5,7 @@ tags: [android, mobile, android build, build]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NexusHttpsProtocol from '@site/docs/\_nexus-https-protocol.mdx';
 
 # Android Build
 
@@ -152,3 +153,140 @@ If adding two **Android Build** steps makes the build process too lengthy, you c
     4. **Convert AAB to APK:** This step will convert the generated AAB into an APK.
 
 These steps will ensure that both an AAB and an APK are generated during your build process.
+
+
+### How do I manage Android dependencies with artifactory repository manager?
+
+Integrating an Artifactory repository manager into your Android build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using [**Nexus Repository Manager**](https://www.sonatype.com/products/sonatype-nexus-repository) as an example in conjunction with the Appcircle **Android Build** workflow step.
+
+For detailed instructions on integrating Nexus Repository Manager with Appcircle, see our [Sonatype Nexus Configuration guide](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry#sonatype-nexus-configuration).
+
+
+#### 1. Set up Nexus repository
+
+- Ensure your Nexus Repository Manager is properly installed and configured. For hosted installations, follow the [official Nexus documentation](https://help.sonatype.com/repomanager3) to set up your Maven or Gradle repositories.  
+- Create a hosted Maven repository (or any repository format compatible with your project). Name the repository, for example, `android-repo`.
+
+#### 2. Integrate Nexus into the Android project
+
+In your Android project’s build.gradle (or settings.gradle if using Gradle Version Catalog), configure Nexus as a repository.
+
+<NexusHttpsProtocol />
+
+To fetch dependencies from a Nexus repository, add the following configuration to your Gradle file.
+You can place this block in either the project-level or module-level `build.gradle` file, depending on your project structure.
+
+If all modules in your project will use the same artifacts, it is recommended to place it in the project-level file:
+
+```gradle
+repositories {
+    maven {
+        url 'https://your-nexus-url/repository/android-repo/'
+    }
+}
+```
+
+If the URL requires authentication for access, you can configure it as shown below:
+
+```gradle
+repositories {
+    maven {
+        url 'https://your-nexus-url/repository/android-repo/'
+        credentials {
+            username = "your-username"
+            password = "your-password"
+        }
+    }
+}
+```
+
+To update your Gradle distribution URL with a Nexus repository, modify your `gradle-wrapper.properties` file and replace the `distributionUrl` value with the Nexus repository URL. Below is an example:  
+
+```gradle
+distributionUrl=https://your-nexus-url/repository/gradle-distributions/gradle-8.8-bin.zip
+```
+
+#### 3. Run the build workflow
+
+Trigger your build through Appcircle. The workflow will fetch dependencies from the Nexus repository as configured and compile the project with them. Logs will show dependency resolution status to confirm successful integration with Nexus.
+
+### It works on my machine. Why does it fail on Appcircle?
+
+**Question**
+
+The build works successfully on my local machine, but it fails when running on Appcircle. Why does this happen?
+
+**Answer**
+
+This difference is usually caused by **environment cleanliness and caching behavior**.
+
+**Appcircle** provisions a **completely clean machine for every build**. Each run starts from a fresh environment with:
+
+* No cached Gradle files
+* No previously downloaded dependencies
+* No leftover build artifacts
+
+This is an even **cleaner approach than a local clean build**, which often still relies on cached data.
+
+As a result, issues that are hidden by local caches may surface on Appcircle.
+
+
+**Why IDE Cache Invalidation Is Not Enough**
+
+Many developers rely on **Invalidate Caches / Restart** in Android Studio.
+
+While this step can be helpful, it is important to understand its limitations:
+
+* It clears **Android Studio IDE caches only**
+* It does **not** delete Gradle caches
+* The `~/.gradle` directory remains untouched
+
+This means local builds may still succeed due to cached Gradle data, even though the environment is not truly clean.
+
+
+**Recommended Steps for a True Local Clean Build**
+
+To reproduce Appcircle’s clean environment locally, follow these steps.
+
+#### 1️⃣ Clean and Refresh Dependencies
+
+This removes old build outputs and forces Gradle to re-download dependencies:
+
+```bash
+./gradlew clean build --refresh-dependencies
+```
+
+#### 2️⃣ Clear Gradle Caches (for Major Gradle Updates)
+
+If you upgraded Gradle significantly (for example, **Gradle 7 → Gradle 8**), you should also remove cached Gradle files:
+
+```bash
+# Linux / macOS
+rm -rf ~/.gradle/caches/
+rm -rf ~/.gradle/wrapper/
+```
+
+This ensures no outdated Gradle artifacts remain.
+
+
+#### 3️⃣ (Optional) Invalidate IDE Caches
+
+You may still run **Invalidate Caches / Restart** in Android Studio as an additional step, but it should not replace the Gradle cleanup steps above.
+
+---
+
+#### 4️⃣ Run a Full Clean Build Locally
+
+From the terminal:
+
+```bash
+./gradlew clean
+./gradlew build
+```
+
+Or from Android Studio:
+
+* **Build > Clean Project**
+* **Build > Rebuild Project**
+
+Following the steps above will help you identify issues that only appear in clean CI environments and reduce discrepancies between local and Appcircle builds.

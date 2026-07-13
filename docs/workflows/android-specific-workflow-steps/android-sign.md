@@ -63,7 +63,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_ANDROID_KEYSTORE_PASSWORD` | Password for the selected *keystore* file. This value will be auto-generated based on your *keystore* file selection. | Required |
 | `$AC_ANDROID_ALIAS` | Alias name for the selected *keystore* file. This value will be auto-generated depending on your **Configuration** |
 | `$AC_ANDROID_ALIAS_PASSWORD` | Alias password for the selected *keystore* file. This value will be auto-generated depending on your **Configuration** |
-| `$AC_V2_SIGN` | Defaults to false. Set true if the signature should be done using apksigner instead of jarsigner. For more information, [Apps targeting Android 11 require APK Signature Scheme v2](https://developer.android.com/about/versions/11/behavior-changes-11#minimum-signature-scheme). | Optional |
+| `$AC_V2_SIGN` | Defaults to false. Set true if the signature should be done using apksigner instead of jarsigner. For more information, [Apps targeting Android 11 require APK Signature Scheme v2](https://developer.android.com/about/versions/11/behavior-changes-11#minimum-signature-scheme) or the [Appcircle V2 Sign](/build/platform-build-guides/building-android-applications/android-signing-for-google-play#enable-v2-sign-in-appcircle) documentation. | Optional |
 
 ### Output Variables
 
@@ -87,3 +87,87 @@ If both input value types (*AAB* and *APK*) are provided, the same type of signe
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-android-sign-component.git
+
+
+## FAQ
+
+The **Android Sign** step is often where most Android-related issues arise. The most frequently asked questions are listed below:
+
+### “Package invalid” Error After Installing an APK
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_3.png' />
+
+Users may encounter a **“App not installed as package appears to be invalid.”** error when attempting to launch an application after successfully installing an APK on an Android device. Although the installation appears to complete without errors, the app fails to open.
+
+This issue is typically related to APK integrity, signing configuration, or device compatibility.
+
+Possible causes and solutions:
+
+#### 1. APK Is Signed Incorrectly or Not Signed
+
+**Cause:**
+
+Android requires all APKs to be properly signed. An incorrect signing configuration or a missing signature can result in a “Package invalid” error at runtime.
+
+**How to Check:**
+
+* Use `apksigner verify` or `jarsigner -verify` to confirm the APK is signed.
+* Verify that the correct **keystore**, **key alias**, and **passwords** are used in Appcircle.
+
+**Solution:**
+
+* Ensure the **Android Sign** step is configured correctly in your Appcircle workflow.
+* Confirm that the signing key matches the one used for previous releases of the app.
+
+#### 2. APK Is Corrupted or Incomplete
+
+**Cause:**
+
+The APK file may be partially uploaded, corrupted during download, or incorrectly generated during the build process.
+
+**How to Check:**
+
+* Try installing the APK on another device or emulator.
+* Verify the APK file size and compare it with previous successful builds.
+
+**Solution:**
+
+* Rebuild the APK from Appcircle.
+* Re-download the APK and ensure the transfer process completes successfully.
+
+#### 3. Package Name Mismatch
+
+**Cause:**
+
+The APK’s `applicationId` (package name) does not match the already installed app on the device, or conflicts with an existing package signed with a different key.
+
+**How to Check:**
+
+* Inspect the `applicationId` in your Gradle configuration.
+* Check whether another version of the app with the same package name is already installed on the device.
+
+**Solution:**
+
+* Uninstall any existing version of the app before installing the new APK.
+* Ensure consistency between the package name and the signing key across builds.
+
+#### 4. Unsupported Architecture or Android Version
+
+**Cause:**
+The APK targets an ABI (CPU architecture) or Android SDK version that is not supported by the device.
+
+**How to Check:**
+
+* Verify the device’s Android version and CPU architecture (ARM, ARM64, x86).
+* Inspect the APK’s `minSdkVersion`, `targetSdkVersion`, and supported ABIs.
+
+**Solution:**
+
+* Build a universal APK or ensure the correct ABI splits are included.
+* Adjust `minSdkVersion` if the device runs an older Android version.
+
+#### Summary
+
+A **“Package invalid”** error is most commonly related to signing issues, corrupted APK files, package name conflicts, or device incompatibility. Carefully validating the signing configuration and build outputs in Appcircle usually resolves the issue quickly.
+
+If the problem persists after verifying the points above, rebuilding the application with a clean workflow and rechecking the **Android Sign** step is strongly recommended.

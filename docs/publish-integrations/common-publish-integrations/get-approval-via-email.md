@@ -6,6 +6,7 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Get Approval via Email
 
@@ -17,6 +18,8 @@ Based on your business requirements, you can designate certain email addresses t
 
 If some optional users reject the request but there is still a chance to achieve the minimum approval count, the step will remain in `Waiting` status, awaiting responses from other users. For instance, if you set the minimum approval count to 3, and out of 10 users, only one is required, the step can still succeed. Even if 7 optional users reject, approval can still be obtained from the remaining 3 users. However, if 8 optional users reject, the step will fail, as it will no longer be possible to meet the minimum requirement of 3 approvals.
 
+<NoRunnerUsage />
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email-1.png'/>
 
 :::info
@@ -24,6 +27,12 @@ If some optional users reject the request but there is still a chance to achieve
 Once a user makes a decision, it cannot be changed unless the step is restarted, even if the user sees the "Thank you" page. The step must be restarted to allow the user to make a new decision.
 
 Upon restarting or initiating the step, it resets all answers to `Waiting`. Users must then provide their answers again and will receive new approval emails.
+
+:::
+
+:::info Default Timeout Period
+
+Once the **Get Approval via Email** step begins, it waits for 10 days for the required condition to be met—whether positive or negative. At the end of the 10 days, the flow status is updated from `Waiting` to `Timeout`.
 
 :::
 
@@ -37,13 +46,21 @@ For example, imagine you need approval from at least two people to keep the flow
 
 ### Email Template
 
-With the Email Approval step provided by the Appcircle Publish module, release processes become more manageable and controlled. The email content delivered through this step provides users with all necessary information without needing to access the Appcircle interface. Through this email, users can easily access binary details, release notes, and any other essential information.
+With the Email Approval step provided by the Appcircle Publish module, release processes are managed in a structured and controlled way. The email includes all key information, such as binary details, release notes, and other relevant data, so users can review the release context without needing to search within the Appcircle interface.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-emailTemplate.png' />
+To proceed with the approval, users can click the link in the email, which opens the binary details window in Appcircle. From this view, they can examine version information, build details, and commit history before making a decision by selecting **Approve** or **Reject**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss2.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss1.png' />
+
+:::info Rejection
+Users who decide to reject the binary, must provide an explanation. This explanation message will be displayed on the Publish Flow window under the desicion of that user.
+:::
 
 ### Prerequisites
 
-There are no required steps that must precede the **Get Approval via Email** step. However, please note that any steps executed before the **Get Approval via Email** step in the [Publish flow](/publish-module/publish-flow) will not be impacted by the approval process. The approval logic will only affect the steps that follow the **Get Approval via Email** step.
+There are no required steps that must precede the **Get Approval via Email** step. However, please note that any steps executed before the **Get Approval via Email** step in the [Publish flow](/publish-to-stores-module/publish-flow) will not be impacted by the approval process. The approval logic will only affect the steps that follow the **Get Approval via Email** step.
 
 ### Input Variables
 
@@ -65,7 +82,7 @@ If the **Minimum Required Approval Count** cannot be achieved, the step will fai
 
 ### Output Variables
 
-**Get Approval via Email** step does not produce any output, but the success or failure of the step depends on the approvals or rejections received from the sent emails. This outcome affects the subsequent steps in the [Publish flow](/publish-module/publish-flow).
+**Get Approval via Email** step does not produce any output, but the success or failure of the step depends on the approvals or rejections received from the sent emails. This outcome affects the subsequent steps in the [Publish flow](/publish-to-stores-module/publish-flow).
 
 ---
 

@@ -13,7 +13,7 @@ tags:
     webhook editing,
     webhook deleting,
   ]
-sidebar_position: 6
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -37,28 +37,93 @@ Multiple webhooks can be created for different events and build profiles. To sta
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/webhook3.png' />
 
-**Webhook Scope:**
+## Available Notification Events by Module
 
-Type of events that you want to be notified. The following scopes are supported
+The following scopes are supported for Webhooks. 
 
-- Build
-- Signing Identity
-- Distribution
-- Store Submit
-- Enterprise App Store
+**Profile:** Most scopes support getting events for the selected profile (Build, Testing Distribution, Publish to Stores, Enterprise app Store). You can choose the profile from the list to get notified for that specific module profile.
 
-Each scope has different events. You can select the events you want to get notified about. For example for the Build scope, you may get the following events
+### Build Module
+
+The Build module can send notifications for key build lifecycle events, such as:
+
+#### Build Events
 
 - Build Started
-- Build Successful
+- Build Success
+- Build Complete with Warnings
 - Build Failed
 - Build Canceled
 - Build Timeout
 - Fetch Started
+- Test Report Created
 
-**Profile:**
+#### License Events
 
-Some scopes support getting events for the selected build profile. You can choose the build profile from the list to get notified for that specific build profile.
+- Retention Policy Updated
+
+### Signing Identity
+
+Notifications related to certificate, keystore, and provisioning profile operations, such as:
+
+- iOS Certificate Added
+- iOS Certificate Deleted
+- iOS Certificate Expiration Reminder
+- iOS Provisioning Profile Added
+- iOS Provisioning Profile Deleted
+- iOS Provisioning Profile Expiration Reminder
+- Android Keystore Created
+- Android Keystore Uploaded
+- Android Keystore Deleted
+- Android Keystore Expiration Reminder
+- Apple Device List Fetch Success
+- Apple Device Registered
+- Apple Device Updated
+- Apple Multiple Devices Updated
+- Apple Multiple Devices Registered
+- Apple Device Provisioned
+- Apple Device Unregistered
+- Apple Identifier Created
+- Apple Identifier Deleted
+- Apple Identifier Created in Apple Developer Portal
+- Apple Identifier Updated in Apple Developer Portal
+
+### Testing Distribution
+
+Notifications for Testing Distribution related events such as:
+
+- New Version Added for Distribution
+- New Version Uploaded for Distribution
+- App Shared for Testing Distribution
+
+### Publish to Stores
+
+Notifications for Publish to Stores related events such as:
+
+- Store Status Changed
+- New Version Deployed to Publish
+- New Version uploaded to Publish
+- A Version is Rejected on Publish
+- Publish Step is Starting
+- Publish Step is Restarting
+- Publish Step Started
+- Publish Step Succeeded
+- Publish Flow Updated
+- Publish Step Failed
+- Publish Step Canceled
+- Publish Step Timed Out
+- Publish Flow Failed
+- Publish Flow Canceled
+- Publish Flow Timed Out
+- Publish Flow Succeeded
+
+### Enterprise App Store
+
+Notifications for Enterprise App Store related events such as:
+
+- New Version Deployed to the Enterprise Store
+- New Version Uploaded to the Enterprise Store
+- App Shared on Enterprise Store
 
 **Payload URL:**
 
@@ -106,11 +171,11 @@ To enable this feature, ensure you include the [**Test Reports**](https://docs.a
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail.png' />
 
-### Editing Webhook
+## Editing Webhook
 
 You can edit your webhook by clicking the... button and then clicking the **Edit** section.
 
-### Deleting Webhook
+## Deleting Webhook
 
 You can edit your webhook by clicking the... button and then clicking the **Delete** section.
 

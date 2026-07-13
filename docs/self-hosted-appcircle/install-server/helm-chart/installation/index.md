@@ -1,0 +1,16 @@
+---
+title: Installation
+description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure by Kubernetes or OpenShift.
+tags: [self-hosted, helm, installation]
+sidebar_position: 2
+---
+
+Helm charts can be deployed on Kubernetes and OpenShift clusters using the Helm CLI. The installation process involves adding the Helm repository, configuring values, and deploying the chart using the helm install command.
+
+Current headlines are listed below:
+
+- [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes)
+- [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift)
+- [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes)
+
+In order to see the details, check the submenu of this documentation page.

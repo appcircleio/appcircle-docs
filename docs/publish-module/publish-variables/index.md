@@ -1,19 +1,22 @@
 ---
 title: Publish Variables
 description: Learn how to set up and manage key-value pairs that are essential for the app publishing process in Appcircle
+slug: /publish-to-stores-module/publish-variables
 tags: [publish variables, publish, variables]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-The **Publish Variables** section within the Publish module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
+The **Publish Variables** section within the Publish to Stores module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5631-Publish-Variables-annotated.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-28.png' />
 
-To use these defined variables, it will be necessary to select them from the [Publish Settings](/publish-module/publish-settings/).
+To use these defined variables, it will be necessary to select them from the [Publish Settings](/publish-to-stores-module/publish-settings/).
 
-Publish Variables are key-value pairs that can be used to store configuration settings, credentials, and other data required during the publish process. You can add new variables directly in the Publish Variables section without the need for an additional menu or button.
+Publish Variables are key-value pairs that can be used to store configuration settings, credentials, and other data required during the publish process. You can add new variables directly in the Publish Variables section without the need for an additional menu or button. You can also import or export publish variable groups in bulk from the three dots menu next to **Variable Groups**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-20.png' />
 
 ## How to Add a New Publish Variable
 
@@ -48,14 +51,149 @@ In the example provided:
 Remember to handle these variables with care, especially if they contain sensitive information such as passwords, tokens, or API keys.
 
 :::info
+Please note that Publish Variables can only be used within the Publish to Stores module.
+:::
 
-Please note that Publish Variables can only be used within the Publish module.
+:::tip Editing Encrypted Variables
+You can edit encrypted variables by clicking the Edit option, just like text variables. The original value will not be displayed for security reasons; however, the updated value will be saved.
+:::
 
+### Exporting publish variable groups
+
+You can export publish variable groups in bulk as a `.zip` file.
+
+To export variable groups, click on the three dots icon next to **Variable Groups** and select **Export Variable Group**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-21.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-26.png' />
+
+In the export modal:
+
+- You can select one or more publish variable groups.
+- All selected groups will be included in the exported file.
+- The export will be downloaded as a `.zip` file.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-27.png' />
+
+:::info
+- Secret variables and file contents are not exposed directly for security reasons.
+- Exporting multiple groups at once helps you back up or migrate configurations more easily.
+:::
+
+```json
+[
+  {"Id":"8260f439-d074-4f10-9361-66fe96480904",
+    "Name":"Prod",
+    "Variables":
+    [
+      {"Key":"API_URL",
+        "Value":"https://qa.example.com",
+        "IsSecret":false,"IsFile":false},
+      {"Key":"API_SECRET",
+        "Value":"",
+        "IsSecret":true,"IsFile":false},
+      {"Key":"API_KEY",
+        "Value":"",
+        "IsSecret":true,"IsFile":false},
+      {"Key":"TestFile",
+        "Value":"ac_post_process_output-2.json",
+        "IsSecret":false,"IsFile":true}]},
+  {"Id":"03bc80ee-972d-4214-9963-a4bfa8fd2d1c",
+    "Name":"Dev",
+    "Variables":
+    [{"Key":"test",
+      "Value":"",
+      "IsSecret":true,"IsFile":false}]},
+  {"Id":"f71c685c-5844-4099-9561-a12e76f667bd",
+    "Name":"Staging",
+    "Variables":
+    [{"Key":"test2",
+      "Value":"",
+      "IsSecret":true,"IsFile":false}]
+  }]
+```
+
+As seen in the example above;
+
+- if the **isSecret** value is `false`, it has visible value
+- if the **isSecret** value is `true` or **isFile** value is `true` , the key and the value will not be downloaded.
+
+### Importing publish variable groups
+
+You can import publish variable groups in bulk using a `.zip` file.
+
+To import variable groups, click on the three dots icon next to **Variable Groups** and select **Import Variable Group**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-22.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-23.png' />
+
+In the import flow:
+1. Upload a `.zip` file that contains publish variable groups.
+2. On the next screen, select the groups you want to import.
+3. Review the variables within each group before confirming.
+
+If a variable group or variable already exists, it will be marked with an `Exists` tag.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-24.png' />
+
+You can control how conflicts are handled using the following options:
+
+- **Overwrite if there is existing group**: Replaces the entire group and all its variables.
+- **Overwrite if there is existing variables**: Updates only the existing variables with new values.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-25.png' />
+
+:::info
+- Existing variables or groups will not be overwritten unless the corresponding overwrite option is enabled.
+- File-based variables are included in the import process via the `.zip` file.
+:::
+
+### Sharing environment variable groups
+
+You can share environment variable groups from the root organization to sub-organizations.
+
+To share a variable group, click on the three dots icon next to a group and select **Share**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-35.png' />
+
+In the share modal:
+
+- You can select specific sub-organizations to share the variable group with.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-36.png' />
+
+- Optionally, enable **Share with all sub-organizations** to automatically share the group with all existing and future sub-organizations.
+
+After sharing:
+
+- Shared variable groups will be marked with a **Shared** tag in the root organization.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-37.png' />
+
+- In sub-organizations, these groups will appear with an **Inherited** tag.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-38.png' />
+
+:::info
+- Users in sub-organizations cannot edit, rename, or delete inherited variable groups.
+- Any updates made in the root organization will be reflected in all shared sub-organizations.
 :::
 
 ## Reserved Variables
 
 There are some reserved variables that are automatically defined by Appcircle and can be used in the publish flow.
+
+:::tip Additional Environment Variables Reference
+
+This documentation also includes additional output environment variables from publish flow steps that may be useful to users.
+
+For any input or output variables not listed here, please refer to the "Input Variables" or "Output Variables" sections on each publish flow step’s [documentation](/publish-integrations).
+
+If there is an environment variable you believe should be included here, please [contact us here](https://appcircle.io/support/).
+
+:::
 
 ### Common Publish Reserved Variables
 
@@ -71,6 +209,7 @@ There are some reserved variables that are automatically defined by Appcircle an
 | AC_PUBLISH_APP_VERSION              | Version of the app being published (e.g., `1.0.1`).                                                                                                                                                          |
 | AC_PUBLISH_APP_VERSION_ID           | App version ID being published on Appcircle.                                                                                                                                                                 |
 | AC_PUBLISH_APP_VERSION_CODE         | Version code of the app being published.                                                                                                                                                                     |
+| AC_APP_EXPIRES_ON                   | Expiration date of the signed application. The date format is as follows: `2025-12-31T08:43:29Z`                                                                                                                                                                     |
 | AC_APP_VERSION_NAME                 | Name of the app version being published.                                                                                                                                                                     |
 | AC_STORE_CREDENTIAL_ID              | ID of the store credential where the app is being published.                                                                                                                                                 |
 | AC_PUBLISH_PROFILE_ID               | Specifies the profile ID who started the publish process on Appcircle.                                                                                                                                       |
@@ -83,10 +222,11 @@ There are some reserved variables that are automatically defined by Appcircle an
 | AC_MODULE_NAME                      | Name of the module in the process (e.g., `Publish`).                                                                                                                                                         |
 | AC_PUBLISH_PROFILE_NAME             | Specifies the Appcircle profile name who started the publish process.                                                                                                                                        |
 | AC_PUBLISH_STEP_NAME                | Name of the publish flow step being run.                                                                                                                                                                     |
-| AC_PUBLISH_WORKFLOW_NAME            | Name of the publish workflow being run.                                                                                                                                                                      |
+| AC_PUBLISH_FLOW_NAME                | Name of the publish workflow being run.                                                                                                                                                                      |
+| AC_PUBLISH_STEPS_STATUS             | Provides detailed information about the status of the publish steps executed so far. Steps that are disabled will not appear in this environment variable. The JSON output for executed steps includes the following fields: <br />- **StepName**: The name of the executed step. <br />- **StepId**: The unique ID of the executed step. <br />- **StepStatus**: The status of the step. Possible values: `Success`, `Warning`, `Failed`, `NotStarted`, or `Stopped`. <br />- **Duration**: The time taken to complete the step, represented in seconds (e.g., `0.0000000`). <br />- **StartDate**: The start time of the step, formatted as an ISO 8601 timestamp (e.g., `2024-12-13T15:45:59.6426984Z`). <br />- **FinishDate**: The completion time of the step, also formatted as an ISO 8601 timestamp (e.g., `2024-12-13T15:45:59.6426984Z`). <br /> For additional details and instructions on how to format this output for readability, refer to the [**How can I print the status of publish steps with detailed information?**](/publish-integrations/common-publish-integrations/custom-script#how-can-i-print-the-status-of-publish-steps-with-detailed-information) documentation. |
 | AC_APP_FILE_URL                     | URL of the app file being published.                                                                                                                                                                         |
 | AC_APP_FILE_NAME                    | Name of the app file being published (with file extension).                                                                                                                                                  |
-| AC_STACK_TYPE                       | The type of software stack used during the publishing process, such as Xcode, Gradle, etc.                                                                                                                   |
+| AC_STACK_TYPE                       | The type of software stack used during the publishing process, such as Xcode, Gradle, etc. Please follow the necessary mapping values below:  <br />- **App Store = 12** <br />- **TestFlight = 10** <br />- **Alpha = 0** <br />- **Beta = 1** <br />- **Production = 2** <br />- **Internal = 3**                                                                                           |
 | AC_AUTHORIZATION                    | (Removed, redundant)                                                                                                                                                                                         |
 | AC_PURPOSE                          | The intended purpose of the app, detailing its functionality or target audience.                                                                                                                             |
 | AC_PUBLISH_ENVIRONMENT_VARIABLE_IDS | A list of environment variable identifiers used during the app publishing process, ensuring that the correct configuration is applied.                                                                       |
@@ -182,11 +322,17 @@ User can use `AC_RELEASE_NOTES` environment variable, if the `apk`, `aab` or `ip
 
 ### How to change environment variable and exchange it between steps?
 
-In the Appcircle Publish module, the steps within a Publish flow operate independently. This means that each step is executed in a separate, clean runner environment. This feature allows steps to run independently and individually. Therefore, to exchange environment variables between steps, the modified ENV value needs to be saved as an output variable.
+In the Appcircle Publish to Stores module, the steps within a Publish flow operate independently. This means that each step is executed in a separate, clean runner environment. This feature allows steps to run independently and individually. Therefore, to exchange environment variables between steps, the modified ENV value needs to be saved as an output variable.
 
 Below is an example of how this can be done. Once an ENV variable is modified in a step and saved to the output direction, it will become accessible in another step.
 
 - For the first step. Suppose we create a release note using the [**Publish Release Note Component**](/workflows/common-workflow-steps/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
+
+:::caution
+
+Predefined Publish Variables can also be modified using this method; however, once the flow is completed, they will revert to their originally defined default values.
+
+:::
 
 ```bash
 

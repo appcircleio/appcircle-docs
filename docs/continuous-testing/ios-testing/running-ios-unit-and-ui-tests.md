@@ -8,6 +8,7 @@ sidebar_position: 1
 import ContentRef from '@site/src/components/ContentRef';
 import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
 
 # Running iOS Unit & UI Tests
 
@@ -69,18 +70,9 @@ You must add this component **after** the `Xcodebuild for Unit and UI Tests` so 
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. To show coverage results, you must enable **Code Coverage** in Xcode's scheme settings.
 
+<AlwaysRunToggleDanger />
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports4.png' />
-
-:::danger
-
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
-
-- Always run this step even if the previous steps fail to **ON**
-- Continue with the next step even if this step fails to **ON**
-
-:::
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
 
 ### Showing Test Reports
 
@@ -99,7 +91,7 @@ Appcircle currently supports the following mobile automation testing tools:
 - [Appium](/workflows/common-workflow-steps/#appium-server)
 - [BrowserStack App Automate (XCUI)](/workflows/ios-specific-workflow-steps/browserstack-app-automation)
 - [Maestro](/workflows/common-workflow-steps/maestro-cloud-upload)
-- [Testinium](/workflows/common-workflow-steps/testinium)
+- [Testinium](/workflows/common-workflow-steps/testinium-steps/testinium)
 
 Each service allows you to run your tests on real devices, and test scenarios can be started with the artifacts created on Appcircle. Rich reports can be managed by visiting the web site of each service.
 

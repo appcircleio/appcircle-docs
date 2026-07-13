@@ -6,16 +6,19 @@ sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Add for Review on App Store
 
 Appcircle Publish Module isolates the user to a great extent in the App Store Connect interface with its steps. This allows you to manage the publishing process from a single location.. With the Add for Review on App Store step, you can send your application version in TestFlight directly for review.
 
+<RunnerUsage />
+
 :::caution Add for Review on App Store
 
 When this step is executed, Appcircle will directly submit the relevant version for review.
 
-For this reason, if there is an error in your [**Metadata Information**](/publish-module/publish-information/meta-data-information) or [**App Information**](/publish-module/publish-information/app-information) details, the step will fail.
+For this reason, if there is an error in your [**Metadata Information**](/publish-to-stores-module/publish-information/meta-data-information) or [**App Information**](/publish-to-stores-module/publish-information/app-information) details, the step will fail.
 
 :::
 

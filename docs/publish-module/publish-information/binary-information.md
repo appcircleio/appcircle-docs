@@ -1,13 +1,16 @@
 ---
 title: Binary Information
 description: Learn how to view and manage binary information in Appcircle
+slug: /publish-to-stores-module/publish-information/binary-information
 tags: [publish module, binary information]
-sidebar_position: 4
+sidebar_position: 10
 ---
+
+import Screenshot from '@site/src/components/Screenshot';
 
 # Binary Information
 
-The "Binary Information" feature in the Publish module provides essential details about the app's binary file. This information is critical for understanding the specifics of each build.
+The "Binary Information" feature in the Publish to Stores module provides essential details about the app's binary file. This information is critical for understanding the specifics of each build.
 
 ## Viewing Binary Information
 
@@ -15,10 +18,12 @@ To access the binary details for a specific version of your app:
 
 1. **Navigate to the Appropriate Version:**
 
-   - Within the Publish module, locate and select the version you want to examine.
+   - Within the Publish to Stores module, locate and select the version you want to examine.
 
 2. **Open Binary Information:**
    - Click on the "Binary Information" option to display the binary details.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-pub.png' />
 
 ## Contents of Binary Information
 
@@ -61,11 +66,11 @@ Release Notes are an important part of the binary information, providing context
 
 ### Adding Release Notes
 
-Before publishing your binary to the app stores, you can add Release Notes in the Publish module:
+Before publishing your binary to the app stores, you can add Release Notes in the Publish to Stores module:
 
 1. **Access Binary Information:**
 
-   - Navigate to the 'Binary Information' section for the selected app version in the Publish module.
+   - Navigate to the 'Binary Information' section for the selected app version in the Publish to Stores module.
 
 2. **Input Release Notes:**
 
@@ -83,10 +88,59 @@ Before publishing your binary to the app stores, you can add Release Notes in th
 - **Highlight Important Changes:** Clearly state any major new features, bug fixes, or any changes that affect user interactions.
 - **Localization:** If your app supports multiple languages, consider localizing the release notes for each supported language.
 
+:::tip Release Notes Localization for Google Play
+
+Appcircle supports automatic parsing and submission of localized release notes to Google Play Console. When you provide release notes in multiple languages using the supported format, the system automatically separates and submits them as individual localized entries for each language.
+
+**Supported Format:**
+
+Use Google Play language codes with square brackets to define language-specific content:
+
+```html
+<en-US>
+- Added dark mode support
+- Fixed login issues
+- Performance improvements
+</en-US>
+<tr-TR>
+- Karanlık mod desteği eklendi
+- Giriş sorunları düzeltildi
+- Performans iyileştirmeleri
+</tr-TR>
+<de-DE>
+- Dark-Mode-Unterstützung hinzugefügt
+- Anmeldeprobleme behoben
+- Leistungsverbesserungen
+</de-DE>
+<es-ES>
+- Se agregó soporte para modo oscuro
+- Se corrigieron problemas de inicio de sesión
+- Mejoras de rendimiento
+</es-ES>
+
+```
+
+**How to Use:**
+1. Format your release notes using the language code pattern shown above
+2. Provide the formatted content via Build module or enter manually in the Binary Information
+3. The system will automatically parse and submit each language variant to Google Play Console
+
+**Supported Language Codes:** Use standard Google Play locale codes (e.g., `en-US`, `tr-TR`, `de-DE`, `fr-FR`, `ja-JP`, `zh-CN`). For a complete list of supported locale codes, refer to [Google Play Console documentation](https://support.google.com/googleplay/android-developer/table/4419860).
+
+:::
+
 Release Notes are an essential tool for communication with your users. They can significantly impact the user's perception and adoption of new updates. Always include them as part of your publishing process.
 
-:::caution Release Notes Character Limit on TestFlight
+:::caution Release Notes Character Limit 
+
+**For TestFlight**
+
 When submitting updates through TestFlight, the "What to Test" section has a 4,000-character limit. If your release notes exceed this limit, Apple will automatically trim the message to fit. Please ensure your notes are within this limit to avoid any important information being cut off.
+
+**For Google Play Console**
+
+When submitting updates to Google Play Console, each language has a [500-character limit](https://support.google.com/googleplay/android-developer/answer/9859348?hl=en) for release notes. Google Play supports up to [48 languages](https://play.google.com/console/about/translationservices/), allowing a total of 24,000 characters across all localized entries (500 characters × 48 languages).
+
 :::
 
 ## Entitlements Detail
@@ -101,3 +155,17 @@ Entitlements are key-value pairs that define various permissions and features yo
 Remember, the binary information reflects the build details at the time of its creation and is crucial for troubleshooting and validating app versions.
 
 Ensure to review the binary information for each build to confirm that the correct details are included before proceeding with the publish flow. This information is essential for ensuring that the app is correctly configured and ready for submission to the app stores.
+
+
+## Binary Comparison
+
+In the top-right corner of the Binary Information screen, you can click the **Compare** button to compare the current binary with another of your choice. The comparison highlights differences between the two binaries using color-coded indicators for easy identification.
+
+:::caution Build Details Comparison
+
+Binaries generated through the Appcircle Build Module include associated build details. **However**, if the compared binary was **manually** uploaded to Appcircle, those details **will not be available** for comparison.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-pub1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-pub2.png' />

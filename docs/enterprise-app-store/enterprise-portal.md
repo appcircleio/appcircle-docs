@@ -2,12 +2,36 @@
 title: Enterprise Portal 
 description: Learn how to use Enterprise Portal in Appcircle
 tags: [enterprise app store, enterprise portal setup, enterprise portal]
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 Appcircle features a separate distribution screen designed to facilitate easy downloading of shared applications.
 
 For iOS and Android, users can log in via the shared link and view all the versions shared with them. Downloading iOS and Android binaries is managed through the specific flows for each operating system.
+
+## Prerequisites
+
+In order for your users to download IPA or APK files, those files must be signed with proper certificates or Keystore files.
+
+Android apps can be signed with any Keystore if the user's device allows installing apps from other sources.
+
+Although iOS apps can be signed with Ad-Hoc provisioning profiles for in-house distribution, this type of distribution is limited to 100 devices per year. Once you hit that limit, you need to wait a year to reset your device limit. You also need to add the UUID of your users' device to Apple's Developer website. Therefore, Ad-Hoc distribution is intended for internal developer team members.
+
+If you have more than 100 users and don't want to deal with device enrollment, you need to use sign your apps with Enterprise Certificate. Please check the Apple's Enterprise program for more information.
+
+:::caution Signing Binary
+
+Appcircle's Enterprise App Store module allows you to distribute your application without the need for any external tools. However, the way your app is signed remains your responsibility and depends on your own workflows; therefore, if you are not enrolled in the Apple Enterprise Program, Appcircle will not provide an enterprise signing service.
+
+:::
+
+:::caution Supported Minimum iOS Versions
+
+Appcircle's Enterprise App Store Module works as **expected** on Apple devices running **iOS 15 and later versions**. However, **unexpected errors may occur** in the Enterprise App Store Portal on **iOS 15 and earlier versions**. For this reason, we **recommend** running the Enterprise App Store Portal on a device with **at least iOS 15** installed.
+
+:::
+
+https://developer.apple.com/programs/enterprise/
 
 ## Login
 
@@ -25,7 +49,7 @@ Authentication method can be configured from the [store settings](/enterprise-ap
 
 :::
 
-::: warning
+:::warning
 
 Please note that to login to the Enterprise Portal, you must enable cookies in your browser. Cookies help maintain your session and ensure secure access.
 

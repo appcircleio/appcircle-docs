@@ -1,6 +1,7 @@
 ---
 title: Publish Flow
 description: Learn how to customize the publish flow in Appcircle
+slug: /publish-to-stores-module/publish-flow
 tags: [publish, publish flow, distribution]
 sidebar_position: 1
 ---
@@ -10,9 +11,15 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Publish Flow
 
-Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
+Appcircle includes a predefined flow in the Publish to Stores module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-button.png' />
+:::caution Runner Usage
+
+Appcircle's Publish to Stores module requires a **runner** to operate. The runner dependency of each step in the **Publish Flows** is specified in the relevant step's documentation. For detailed information on runner dependencies, please refer to the documentation of the relevant steps.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17.png' />
 
 When you click on the **Publish Flow** button, the list of steps included in the publish flow will appear.
 
@@ -20,16 +27,16 @@ When you click on the **Publish Flow** button, the list of steps included in the
 
 We can access the list of steps that can be used in a publish workflow by clicking on the **Manage Flow** button. You can add or remove new steps and customize your publish workflow as you wish.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-workflows.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow1.png' />
 
 You can effortlessly obtain a **YAML** file of your current Publish Flow configurations on our platform with the **Download YAML** button at the bottom.
 By simply selecting the download option, you'll receive a YAML file containing all the details of your existing workflow setup.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-download-workflow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow3.png' />
 
 Customize your workflows effortlessly by uploading your YAML file with the **Replace Flow** button at the top.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-replace-flow-button.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow4.png' />
 
 Simply select the file containing your desired configurations and integrate them seamlessly into the platform.
 

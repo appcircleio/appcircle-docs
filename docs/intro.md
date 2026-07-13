@@ -14,12 +14,23 @@ import PublishIcon from "@site/src/components/ModuleIcons/PublishIcon";
 import SigningIdentitiesIcon from "@site/src/components/ModuleIcons/SigningIdentitiesIcon";
 import BuildIcon from "@site/src/components/ModuleIcons/BuildIcon";
 import DistributeIcon from "@site/src/components/ModuleIcons/DistributeIcon";
+import Head from '@docusaurus/Head';
+
+<Head>
+  <title>Appcircle Documentation</title>
+  <meta
+    name="description"
+    content="Explore Appcircle Documentation, a comprehensive guide for building, testing, and deploying your mobile applications."
+  />
+</Head>
 
 <div class="intro-visual">
 
-<div class="intro-text"><h5 class="intro-visual-header">
+<div class="intro-text">
+<h1>Mobile CI/CD Documentation</h1>
+<h2 class="intro-visual-header">
 Build.<br/>Test.<br/>Distribute.
-</h5>
+</h2>
 <p>Make better, safer mobile app releases with Appcircle.</p>
 </div>
 <div className="intro-image"><img src="https://cdn.appcircle.io/docs/assets/docs-intro-header.png" alt="Intro Header" /></div>
@@ -31,11 +42,11 @@ Build.<br/>Test.<br/>Distribute.
             <p><strong>New to Appcircle?</strong> Get started by adding your Obj-C/Swift, Java/Kotlin, React Native, Flutter app first.</p>
       </div>
       <div class="intro-card">
-            <h3><a href="/build/manage-the-connections/adding-a-build-profile">Building Your Apps</a></h3>
+            <h3><a href="/build/manage-the-connections/connection-guides">Building Your Apps</a></h3>
             <p>Learn about setting up your repository, creating workflows and how to automatically trigger a build.</p>
       </div>
       <div class="intro-card">
-            <h3><a href="/publish-module">Send to Testers & Stores</a></h3>
+            <h3><a href="/publish-to-stores-module">Send to Testers & Stores</a></h3>
             <p>Add testers, set up your builds to be auto distributed to them and Apple App Store, Testflight, Google Play, Huawei AppGallery and Firebase.</p>
       </div>
       <div class="intro-card">
@@ -105,7 +116,7 @@ Build.<br/>Test.<br/>Distribute.
 
         <p>Deploy to multiple platforms like App Store, TestFlight, Google Play, and more, with phased rollouts and version management support.</p>
     </div>
-            <a href="/publish-module" className="feature-card-learn-more publish">
+            <a href="/publish-to-stores-module" className="feature-card-learn-more publish">
              <span>Learn how</span>
         </a>
 

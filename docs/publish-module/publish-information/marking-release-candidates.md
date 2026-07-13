@@ -1,8 +1,9 @@
 ---
 title: Marking Release Candidates
 description: Learn how to mark a version as a release candidate in Appcircle
+slug: /publish-to-stores-module/publish-information/marking-release-candidates
 tags: [publish information, release candidate, mark as rc]
-sidebar_position: 3
+sidebar_position: 9
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -12,7 +13,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Appcircle allows you to mark your app version as RC and designate any version as a **Release Candidate** with ease by simply selecting the desired app version and clicking on the **Mark as RC** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-31.png' />
 
 :::caution
 In order to execute a flow, it must be marked as a Release Candidate (RC). If it is not marked as RC, it cannot be executed.
@@ -22,7 +23,7 @@ In order to execute a flow, it must be marked as a Release Candidate (RC). If it
 
 The chosen version will be visibly distinguished, allowing users to easily identify it as a `Release Candidate`.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-release-candidate.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-32.png' />
 
 :::tip
 
