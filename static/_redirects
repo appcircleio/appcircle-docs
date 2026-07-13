@@ -1,6 +1,11 @@
 # Redirects migrated from netlify.toml (301 URL migrations)
 # 294 rules (fragment-only rules dropped: never reach the server)
 
+# Normalize trailing slashes before any migration rule. Moved pages have no
+# asset for html_handling=drop-trailing-slash to fall back on, so /foo/ never
+# reaches its 301 unless we strip the trailing slash here first (first match wins).
+/*/  /:splat  301
+
 /account/adding-google-play-service-account /account/my-organization/integrations/credentials/adding-google-play-service-account 301
 /account/adding-huawei-api-key /account/my-organization/integrations/credentials/adding-huawei-api-key 301
 /account/artifacts /account/my-organization/artifacts 301
