@@ -15,7 +15,6 @@ tags:
 sidebar_position: 2
 ---
 
-import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 
 ### Discover Plugin
@@ -78,7 +77,7 @@ Additionally, remember to place the plugin after your build steps as you will ne
    }
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
+- `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Enterprise App Store Profile.
 - `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.
@@ -95,6 +94,6 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 
 ## References
 
-<PersonalApiTokenRef />
+- For details on generating an Appcircle Personal Access Key, visit [Generating/Managing Personal Access Keys](/account/my-organization/security/personal-access-key).
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).

@@ -14,14 +14,13 @@ tags:
   ]
 sidebar_position: 2
 ---
-import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 
 The Appcircle Enterprise App Store plugin allows users to publish their apps and start distribution to test groups or individuals.
 
 ### Discover Action
 
 You can discover more about this action and install it from:
-https://rubygems.org/gems/fastlane-plugin-appcircle_enterprise_store
+https://rubygems.org/gems/fastlane-plugin-appcircle_enterprise_app_store
 
 ## System Requirements
 
@@ -62,7 +61,7 @@ After adding the plugin to your project, configure your Fastfile as follows:
   end
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
+- `personalAPIToken`: The Appcircle Personal API Token (Personal Access Key) is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.
@@ -83,6 +82,6 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 
 ## References
 
-<PersonalApiTokenRef />
+- For details on generating an Appcircle Personal Access Key, visit [Generating/Managing Personal Access Keys](/account/my-organization/security/personal-access-key).
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).

@@ -14,7 +14,6 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 
 The Appcircle Testing Distribution plugin allows users to upload their apps and start distribution to test groups or individuals.
 
@@ -74,7 +73,7 @@ Additionally, remember to place the plugin after your build steps as you will ne
    }
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
@@ -91,6 +90,6 @@ If multiple workflows start simultaneously, the order in which versions are shar
 
 ## References
 
-<PersonalApiTokenRef />
+- For details on generating an Appcircle Personal Access Key, visit [Generating/Managing Personal Access Keys](/account/my-organization/security/personal-access-key).
 
-- For more detailed instructions and support, visit the [Testing Distribution documentation](/testing-distribution).
+- For more detailed instructions and support, visit the [Appcircle Testing Distribution documentation](/testing-distribution).

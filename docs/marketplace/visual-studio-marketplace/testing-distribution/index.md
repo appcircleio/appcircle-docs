@@ -13,7 +13,6 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 
 <!-- ATTENTION: Documentation at README of this extension's repository
 has table of contents that references to the titles in this document. -->
@@ -58,11 +57,11 @@ When visiting the installation guide, ensure you select the correct version of A
 
 ### How to Add the Appcircle Testing Distribution Task into Your Pipeline
 
-#### 1. Get a Personal API Token
+#### 1. Get a Personal Access Key
 
-For this extension to authenticate to your Appcircle, you need to create a Personal API Token, and use it in your task configuration.
+For this extension to authenticate to your Appcircle, you need to create a Personal Access Key, and use it in your task configuration.
 
-You can follow the [Generating and Managing Personal Access Keys](/account/my-organization/security/personal-access-key) page to create an Access Key for a PAT.
+You can follow the [Generating and Managing Personal Access Keys](/account/my-organization/security/personal-access-key) page to create a Personal Access Key.
 
 #### 2. Add Task to Your Pipeline
 
@@ -91,7 +90,7 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
     message: $(AC_MESSAGE)
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this extension.
+- `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) used to authenticate and authorize access to Appcircle services within this extension.
 - `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`auth.appcircle.io`).
 - `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`api.appcircle.io`).
 - `profileName`: Specifies the profile that will be used for uploading the app.
@@ -140,6 +139,6 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 ## References
 
-<PersonalApiTokenRef />
+- For details on generating an Appcircle Personal Access Key, visit [Generating/Managing Personal Access Keys](/account/my-organization/security/personal-access-key).
 
-- To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile)
+- To create or learn more about Appcircle testing and distribution profiles, please refer to [Appcircle Testing Distribution documentation](/testing-distribution/create-or-select-a-distribution-profile)
