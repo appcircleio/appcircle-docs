@@ -86,6 +86,7 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
     personalAPIToken: $(AC_PERSONAL_API_TOKEN)
     authEndpoint: $(AC_AUTH_ENDPOINT)
     apiEndpoint: $(AC_API_ENDPOINT)
+    subOrganizationName: $(AC_SUB_ORGANIZATION_NAME)
     appPath: $(AC_APP_PATH)
     summary: $(AC_SUMMARY)
     releaseNotes: $(AC_RELEASE_NOTES)
@@ -95,6 +96,7 @@ After filling out the required fields, the `AppcircleEnterpriseStore@0` task wil
 - `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) used to authenticate and authorize access to Appcircle services within this extension.
 - `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`auth.appcircle.io`).
 - `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`api.appcircle.io`).
+- `subOrganizationName` (optional): Sub-organization name for the enterprise store. Leave empty to use the root organization. Use this when your Personal API Token (Personal Access Key) belongs to the root organization but the target enterprise store lives in a sub-organization.
 - `appPath`: Indicates the file path to the application that will be uploaded to Appcircle Enterprise App Store. The path can be specified in two ways:
 
   **When Build and Enterprise App Store tasks are in the same pipeline:**

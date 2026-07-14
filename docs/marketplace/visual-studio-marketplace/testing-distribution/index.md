@@ -84,6 +84,7 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
     personalAPIToken: $(AC_PROFILE_API_TOKEN)
     authEndpoint: $(AC_AUTH_ENDPOINT)
     apiEndpoint: $(AC_API_ENDPOINT)
+    subOrganizationName: $(AC_SUB_ORGANIZATION_NAME)
     profileName: $(AC_PROFILE_NAME)
     createProfileIfNotExists: $(AC_CREATE_PROFILE_IF_NOT_EXISTS)
     appPath: $(AC_APP_PATH)
@@ -93,6 +94,7 @@ After filling out the required fields, the `AppcircleTestingDistribution@0` task
 - `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) used to authenticate and authorize access to Appcircle services within this extension.
 - `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`auth.appcircle.io`).
 - `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`api.appcircle.io`).
+- `subOrganizationName` (optional): Sub-organization name to distribute into. Leave empty to use the root organization. Use this when your Personal API Token (Personal Access Key) belongs to the root organization but the target distribution profile lives in a sub-organization.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile. The path can be specified in two ways:
