@@ -13,8 +13,6 @@ tags:
 sidebar_position: 1
 ---
 
-import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
-
 <!-- ATTENTION: Documentation at rubydoc (or README in the repository)
 has table of contents that references to the titles in this document. -->
 
@@ -77,7 +75,7 @@ fastlane add_plugin appcircle_testing_distribution
   )
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token used to authenticate and authorize access to Appcircle services within this plugin.
+- `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) used to authenticate and authorize access to Appcircle services within this plugin.
 - `subOrganizationName` (optional): Required when the Root Organization's `personalAPIToken` is used, and you want to create the profile under a sub-organization. In this case, provide the name of the sub-organization in this field. If you directly used the sub-organization's `personalAPIToken`, this parameter is not needed.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
@@ -143,6 +141,6 @@ Utilize environment variables seamlessly by substituting the parameters with `EN
 
 ## References
 
-<PersonalApiTokenRef />
+- For details on generating an Appcircle Personal Access Key, visit [Generating/Managing Personal Access Keys](/account/my-organization/security/personal-access-key).
 
-- To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile).
+- To create or learn more about Appcircle testing and distribution profiles, please refer to [Appcircle Testing Distribution documentation](/testing-distribution/create-or-select-a-distribution-profile).

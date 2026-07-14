@@ -12,7 +12,6 @@ tags:
 sidebar_position: 3
 ---
 
-import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 
 # Setting Up Appcircle Publish to Stores Plugin
@@ -55,7 +54,7 @@ Go to your configuration page of the project and add a build step for **Appcircl
 
 After adding the plugin to your build steps, ensure that you provide all required inputs.
 
-- **Personal API Token** — Appcircle Personal API Token used to authenticate Appcircle services.
+- **Personal Access Key** — Appcircle Personal Access Key used to authenticate Appcircle services.
 - **Platform** — `iOS` or `Android`.
 - **Publish Profile Name** — the name of the Publish profile to target. Create the profile in Appcircle first; profile names are unique per platform.
 - **Upload binary** — uploads the file at App Path as a new app version on the profile.
@@ -101,7 +100,7 @@ stage('Publish') {
 }
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
 - `platform`: Specifies the target platform, either `ios` or `android`.
 - `publishProfile`: Specifies the Publish profile that will be used for uploading and/or publishing the app. Profile names are unique per platform.
 - `upload`: Optional boolean. When `true`, uploads the binary at `appPath` as a new app version on the profile.
@@ -139,6 +138,6 @@ Ensure that this action is added after build steps have been completed, since yo
 
 ## References[​](#references "Direct link to References")
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal Access Keys](https://docs.appcircle.io/account/my-organization/security/personal-access-key).
+- For details on generating an Appcircle Personal Access Key, visit [Generating/Managing Personal Access Keys](https://docs.appcircle.io/account/my-organization/security/personal-access-key).
 
-- For more detailed instructions and support, visit the [Publish to Stores documentation](https://docs.appcircle.io/publish-to-stores-module).
+- For more detailed instructions and support, visit the [Appcircle Publish to Stores documentation](https://docs.appcircle.io/publish-to-stores-module).

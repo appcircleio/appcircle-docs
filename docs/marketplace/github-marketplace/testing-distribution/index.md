@@ -13,8 +13,6 @@ tags:
 sidebar_position: 1
 ---
 
-import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
-
 The Appcircle Testing Distribution action allows users to upload their apps and start distribution to test groups or individuals.
 
 ### Discover Action
@@ -49,7 +47,7 @@ To install the Appcircle Testing Distribution action, add the following step to 
     message: ${{ secrets.MESSAGE }}
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists`: Ensures that a user profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
@@ -69,6 +67,6 @@ If multiple workflows start simultaneously, the order in which versions are shar
 
 ## References
 
-<PersonalApiTokenRef />
+- For details on generating an Appcircle Personal Access Key, visit [Generating/Managing Personal Access Keys](/account/my-organization/security/personal-access-key).
 
-- To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile)
+- To create or learn more about Appcircle testing and distribution profiles, please refer to [Appcircle Testing Distribution documentation](/testing-distribution/create-or-select-a-distribution-profile)

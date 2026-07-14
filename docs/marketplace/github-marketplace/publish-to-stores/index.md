@@ -38,15 +38,15 @@ Both **Appcircle Cloud** and **self-hosted** Appcircle installations are support
 
 ![Appcircle Publish](https://github.com/appcircleio/appcircle-publish-githubaction/raw/main/images/publish.png)
 
-### Generating/Managing the Personal API Tokens[​](#generatingmanaging-the-personal-api-tokens "Direct link to Generating/Managing the Personal API Tokens")
+### Generating/Managing the Personal Access Key
 
-To generate a Personal API Token:
+To generate a Personal Access Key:
 
 1. Go to the My Organization screen (second option at the bottom left).
-2. Find the Personal API Token section in the top right corner.
-3. Press the "Generate Token" button to generate your first token.
+2. Find the Personal Access Key section in the top right corner.
+3. Press the "Generate Key" button to generate your first key.
 
-![Token Generation](https://github.com/appcircleio/appcircle-publish-githubaction/raw/main/images/PAT.png)
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-1.png' alt="Generate Personal Access Key"/>
 
 ## What the Action Does[​](#what-the-action-does "Direct link to What the Action Does")
 
@@ -161,6 +161,6 @@ Ensure that this action is added after build steps have been completed.
 
 ## References[​](#references "Direct link to References")
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal Access Keys](https://docs.appcircle.io/account/my-organization/security/personal-access-key).
+- For details on generating an Appcircle Personal Access Key, visit [Generating/Managing Personal Access Keys](https://docs.appcircle.io/account/my-organization/security/personal-access-key).
 
-- For more detailed instructions and support, visit the [Publish to Stores documentation](https://docs.appcircle.io/publish-to-stores-module).
+- For more detailed instructions and support, visit the [Appcircle Publish to Stores documentation](https://docs.appcircle.io/publish-to-stores-module).

@@ -3248,6 +3248,26 @@ quay:
   description: "Documentation related to host hardening"
   permalink: "/host-hardening"
 
+"publish to stores":
+  label: "publish to stores"
+  description: "Documentation related to publish to stores"
+  permalink: "/publish-to-stores"
+
+"ipa publish":
+  label: "ipa publish"
+  description: "Documentation related to ipa publish"
+  permalink: "/ipa-publish"
+
+"apk publish":
+  label: "apk publish"
+  description: "Documentation related to apk publish"
+  permalink: "/apk-publish"
+
+"binary publish":
+  label: "binary publish"
+  description: "Documentation related to binary publish"
+  permalink: "/binary-publish"
+
 "auth activity":
   label: "auth activity"
   description: "Documentation related to auth activity"
