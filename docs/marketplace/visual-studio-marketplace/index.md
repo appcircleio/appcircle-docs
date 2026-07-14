@@ -23,3 +23,7 @@ It is a process distributing test builds to designated test groups or individual
 ### [Enterprise App Store](/marketplace/visual-studio-marketplace/enterprise-app-store)
 
 Your own mobile app store to provide access to in-house apps with a customizable mobile storefront.
+
+### [Publish to Stores](/marketplace/visual-studio-marketplace/publish-to-stores)
+
+A powerful feature in Appcircle that allows you to distribute your mobile applications.

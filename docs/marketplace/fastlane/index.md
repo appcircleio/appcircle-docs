@@ -21,3 +21,7 @@ It is a process of distributing test builds to designated test groups or individ
 ### [Enterprise App Store](/marketplace/fastlane/enterprise-app-store)
 
 Your own mobile app store to provide access to in-house apps with a customizable mobile storefront.
+
+### [Publish to Stores](/marketplace/fastlane/publish-to-stores)
+
+A powerful feature in Appcircle that allows you to distribute your mobile applications.
