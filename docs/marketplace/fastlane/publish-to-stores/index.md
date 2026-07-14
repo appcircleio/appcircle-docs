@@ -39,7 +39,7 @@ Both **Appcircle Cloud** and **self-hosted** Appcircle installations are support
 
 :::
 
-### Generating/Managing the Personal Access Key[​](#generatingmanaging-the-personal-api-tokens "Direct link to Generating/Managing the Personal API Tokens")
+### Generating/Managing the Personal Access Key
 
 To generate a Personal Access Key:
 
@@ -49,7 +49,7 @@ To generate a Personal Access Key:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-1.png' alt="Generate Personal Access Key"/>
 
-## What the Action Does[​](#what-the-action-does "Direct link to What the Action Does")
+## What the Action Does
 
 The action has two independent switches, `upload` and `publish`, both default to `false`. **You must enable at least one.** Create the Publish profile in Appcircle first; the action targets it by name (profile names are unique per platform).
 

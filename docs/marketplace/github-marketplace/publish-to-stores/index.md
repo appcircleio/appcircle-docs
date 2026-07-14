@@ -38,7 +38,7 @@ Both **Appcircle Cloud** and **self-hosted** Appcircle installations are support
 
 ![Appcircle Publish](https://github.com/appcircleio/appcircle-publish-githubaction/raw/main/images/publish.png)
 
-### Generating/Managing the Personal Access Key[​](#generatingmanaging-the-personal-api-tokens "Direct link to Generating/Managing the Personal API Tokens")
+### Generating/Managing the Personal Access Key
 
 To generate a Personal Access Key:
 
