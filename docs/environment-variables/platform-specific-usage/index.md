@@ -1,6 +1,6 @@
 ---
 title: Platform-Specific Usage
-description: Master the use of platform-specific environment variables to customize your build environment. Manage iOS and Android builds, code signing, and provisioning profiles effectively.
+description: Master the use of platform-specific environment variables to customize your build environment.
 tags:
   [
     environment variables,

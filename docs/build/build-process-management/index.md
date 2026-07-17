@@ -1,6 +1,6 @@
 ---
 title: Build Profile
-description: Learn how to manage your build processes effectively with Appcircle. Optimize your build configurations, manage branches, and automate your build pipeline for efficient app development.
+description: Learn how to manage your build processes effectively with Appcircle.
 tags:
   [
     build profiles,

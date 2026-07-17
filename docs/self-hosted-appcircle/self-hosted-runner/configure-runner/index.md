@@ -1,6 +1,6 @@
 ---
 title: Configure Runner
-description: Configure runners within your self-hosted Appcircle setup to optimize your build and test environments. Learn how to manage pools, runners, services, Android emulators, and more.
+description: Configure runners within your self-hosted Appcircle setup to optimize your build and test environments.
 tags:
   [
     configure runner,

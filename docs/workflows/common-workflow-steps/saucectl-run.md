@@ -1,6 +1,6 @@
 ---
 title: Saucectl Run
-description: The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs.
+description: Learn how to use Saucectl Run with Appcircle.
 tags: [saucectl, saucectl run, sauce labs, test, android test, emulator, device test, automation, ios test, ui test, simulator]
 ---
 

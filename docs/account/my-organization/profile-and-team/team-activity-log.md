@@ -1,6 +1,6 @@
 ---
 title: Organization Activity
-description: Appcircle will notify external services via webhooks when a certain event occurs. When the events you specified happen, we'll send a POST request in JSON format to the URLs you provide. (Team Activity Log)
+description: Learn more about Organization Activity Log in Appcircle.
 slug: /account/my-organization/profile-and-team/organization-activity
 tags:
   [

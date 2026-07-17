@@ -1,6 +1,6 @@
 ---
 title: Microsoft Teams Notifications
-description: Appcircle supports sending notifications to Microsoft Teams for the major events in all modules. You can connect Appcircle to your Microsoft Team channel to set up module-based event notifications to be sent to the selected channel.
+description: Learn how to configure Microsoft Teams notifications in Appcircle.
 tags:
   [
     notifications,

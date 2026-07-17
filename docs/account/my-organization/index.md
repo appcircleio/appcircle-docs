@@ -1,6 +1,6 @@
 ---
 title: My Organization
-description: Manage your Appcircle organization effortlessly. Set up roles, control access, and oversee all projects and teams within your organization from a single dashboard.
+description: Learn to manage your Appcircle organization effortlessly.
 tags:
   [
     account,

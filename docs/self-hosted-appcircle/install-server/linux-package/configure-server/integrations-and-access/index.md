@@ -1,6 +1,6 @@
 ---
 title: Integrations and Access
-description: Configure integrations and access controls to enhance the functionality and security of your self-hosted Appcircle server. Learn how to connect with Git providers, set up SSL, manage network access, and more.
+description: Configure integrations and access controls to enhance the functionality and security of your self-hosted Appcircle server.
 tags:
   [
     integrations,

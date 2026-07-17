@@ -1,6 +1,6 @@
 ---
 title: JFrog Integration
-description: Learn how to integrate JFrog Artifactory with Appcircle to manage dependencies, store artifacts, and streamline iOS and Android CI/CD workflows with secure and centralized repository management.
+description: Learn how to integrate JFrog Artifactory with Appcircle.
 tags: [cache pull, efficiency, dependencies, cache structure]
 sidebar_position: 2
 ---

@@ -1,7 +1,7 @@
 ---
 title: Custom Script from Git Workflow Step
 sidebar_label: Custom Script from Git
-description: Use Custom Script from Git to run your own scripts during the build. Easily add custom steps by cloning scripts from any Git repository, with support for authentication.
+description: Use Custom Script from Git to run your own scripts during the build.
 tags: [custom script, custom scripts, data protection, build, git, git scripts, reuse]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: iOS Applications
-description: Building iOS applications may be complex and confusing. Appcircle will help you smooth the process and doesn't require any additional configuration files from you.
+description: Learn how to build iOS applications with Appcircle.
 tags: [build, platform build guides, ios, faq]
 sidebar_position: 1
 ---
