@@ -15,7 +15,7 @@ The plugin registers the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-serv
 
 | Skill | Purpose |
 |-------|---------|
-| `doc-assistant` | Answers Appcircle questions using official sources (`docs.appcircle.io` and `appcircle.io`) |
+| `appcircle-assistant` | Answers Appcircle questions using official sources (`docs.appcircle.io` and `appcircle.io`) |
 | `build-insights-report` | Renders a visual Build Insights Report (health & trends, root cause, workflow quality, artifact health, queue time, and CI maturity) from the `get_build_insights_report` MCP tool. See [Build Insights](/appcircle-ai/ai-insights/build-insights) for the full metric reference |
 
 ### In GitHub Copilot CLI
@@ -33,7 +33,7 @@ The plugin registers the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-serv
    ```shell
    copilot plugin install appcircle@appcircle-ai-plugins
    ```
-4. Ask Copilot an Appcircle question. For "how do I" or troubleshooting questions, for example "How do I set up automatic code signing for my iOS builds," Copilot uses the `doc-assistant` skill. For questions about your own organization, for example "List my build profiles," Copilot uses the Appcircle MCP tools, which requires step 1.
+4. Ask Copilot an Appcircle question. For "how do I" or troubleshooting questions, for example "How do I set up automatic code signing for my iOS builds," Copilot uses the `appcircle-assistant` skill. For questions about your own organization, for example "List my build profiles," Copilot uses the Appcircle MCP tools, which requires step 1.
 
 ### In VS Code
 

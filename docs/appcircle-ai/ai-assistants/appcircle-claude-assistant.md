@@ -15,10 +15,10 @@ The plugin registers the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-serv
 
 | Skill | Purpose |
 |-------|---------|
-| `appcircle:doc-assistant` | Answers Appcircle questions using official sources (`docs.appcircle.io` and `appcircle.io`) |
+| `appcircle:appcircle-assistant` | Answers Appcircle questions using official sources (`docs.appcircle.io` and `appcircle.io`) |
 | `appcircle:build-insights-report` | Renders a visual Build Insights Report (health & trends, root cause, workflow quality, artifact health, queue time, and CI maturity) from the `get_build_insights_report` MCP tool. See [Build Insights](/appcircle-ai/ai-insights/build-insights) for the full metric reference |
 
-Claude Code and claude.ai install the plugin differently, so follow the steps for the surface you use. MCP tools are only available in Claude Code for now; installing the plugin in claude.ai gets you the `doc-assistant` skill, not the MCP tools.
+Claude Code and claude.ai install the plugin differently, so follow the steps for the surface you use. MCP tools are only available in Claude Code for now; installing the plugin in claude.ai gets you the `appcircle-assistant` skill, not the MCP tools.
 
 ### In Claude Code
 
@@ -39,7 +39,7 @@ Claude Code and claude.ai install the plugin differently, so follow the steps fo
    ```shell
    /reload-plugins
    ```
-5. Ask Claude an Appcircle question. For "how do I" or troubleshooting questions, for example "How do I set up automatic code signing for my iOS builds," Claude uses the `doc-assistant` skill. For questions about your own organization, for example "List my build profiles," Claude uses the Appcircle MCP tools, which requires step 1.
+5. Ask Claude an Appcircle question. For "how do I" or troubleshooting questions, for example "How do I set up automatic code signing for my iOS builds," Claude uses the `appcircle-assistant` skill. For questions about your own organization, for example "List my build profiles," Claude uses the Appcircle MCP tools, which requires step 1.
 
 ### In claude.ai
 
@@ -61,7 +61,7 @@ You can install this plugin's skills in claude.ai too. MCP tools remain Claude C
 
    <img src="https://cdn.appcircle.io/docs/assets/AI-115-claude-plugin-3.png" alt="Click Sync" width="480" style={{display: 'block', margin: 0}} />
 
-5. Ask Claude an Appcircle question, for example *How do I set up automatic code signing for my iOS builds*, and Claude will use the `doc-assistant` skill to answer.
+5. Ask Claude an Appcircle question, for example *How do I set up automatic code signing for my iOS builds*, and Claude will use the `appcircle-assistant` skill to answer.
 
 To access the source code of this plugin, please use the following link:
 
