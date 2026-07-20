@@ -1,6 +1,6 @@
 ---
 title: In-app Updates
-description: Streamline app maintenance and enhance user experience by implementing in-app updates through your Enterprise App Store, ensuring seamless and automatic version upgrades.
+description: Streamline app maintenance by implementing in-app updates through your Enterprise App Store.
 tags:
   [
     enterprise app store,

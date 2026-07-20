@@ -1,6 +1,6 @@
 ---
 title: Data Theorem Mobile Secure
-description: Data Theorem Mobile Secure, enables users to automatically scan their mobile applications for security vulnerabilities and compliance issues directly from the Appcircle.
+description: Learn how to use Data Theorem Mobile Secure with Appcircle.
 tags: [data theorem, secure, mobile]
 ---
 

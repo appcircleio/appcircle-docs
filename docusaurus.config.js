@@ -46,6 +46,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: "img/social-card.png",
+      metadata: [
+         { property: "og:type", content: "website" },
+         { property: "og:site_name", content: "Appcircle Docs" },
+      ],
       docs: {
         sidebar: {
           autoCollapseCategories: true,

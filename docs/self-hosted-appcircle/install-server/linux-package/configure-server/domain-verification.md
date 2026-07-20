@@ -1,7 +1,7 @@
 ---
 title: Domain Verification for Linux Package Installation
 sidebar_label: Domain Verification
-description: Configure the Appcircle server to bypass domain verification when adding domains to an organization or verify them using DNS records on Docker/Podman architecture.
+description: Learn to configure Domain Verification for Linux package.
 tags: [security, domain, verify]
 sidebar_position: 30
 ---

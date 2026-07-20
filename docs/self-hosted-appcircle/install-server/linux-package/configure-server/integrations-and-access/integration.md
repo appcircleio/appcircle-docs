@@ -130,9 +130,9 @@ However, when you [share a binary](https://docs.appcircle.io/testing-distributio
 
 Appcircle supports both OpenID and SAML Identity providers. You can follow the below documents to connect your identity providers. If your Identity Provider is not on the list, you can follow any OpenID or SAML integration guide from the below list to find out the parameters.
 
-- [Auth0 OpenID](https://docs.appcircle.io/account/sso/auth-openid/)
-- [Auth0 SAML](https://docs.appcircle.io/account/sso/auth-saml/)
-- [Azure AD SAML](https://docs.appcircle.io/account/sso/azure-saml/)
-- [Okta OpenID](https://docs.appcircle.io/account/sso/okta-openid/)
-- [Okta SAML](https://docs.appcircle.io/account/sso/okta-saml/)
-- [OneLogin SAML](https://docs.appcircle.io/account/sso/onelogin-saml/)
+- [Auth0 OpenID](/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration)
+- [Auth0 SAML](/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration)
+- [Azure AD SAML](/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration)
+- [Okta OpenID](/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration)
+- [Okta SAML](/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration)
+- [OneLogin SAML](/account/my-organization/security/authentications/sso-authentication#4-specific-provider-configuration)

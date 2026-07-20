@@ -1,6 +1,6 @@
 ---
 title: Advanced Configuration
-description: Secure and optimize your self-hosted Appcircle instance with advanced configuration settings. Learn how to enable LDAP Brute Force Protection, configure cache size, and customize the Command-Line Interface (CLI).
+description: Secure and optimize your self-hosted Appcircle instance with advanced configuration settings.
 tags:
   [
     advanced configuration,

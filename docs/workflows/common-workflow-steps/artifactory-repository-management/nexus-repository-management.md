@@ -1,6 +1,6 @@
 ---
 title: Sonatype Nexus Integration
-description: Learn how to integrate Sonatype Nexus with Appcircle to manage dependencies, store artifacts, and streamline iOS and Android CI/CD workflows with secure and centralized repository management.
+description: Learn how to integrate Sonatype Nexus with Appcircle.
 tags: [cache pull, efficiency, dependencies, cache structure]
 sidebar_position: 1
 ---

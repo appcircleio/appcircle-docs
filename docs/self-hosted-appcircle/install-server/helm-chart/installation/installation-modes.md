@@ -1,6 +1,6 @@
 ---
 title: Installation Modes
-description: Learn about the different installation modes for the Appcircle Helm chart — Full, Internal Zone, and External Zone — and how to configure split-cluster deployments.
+description: Learn about the different installation modes for the Appcircle Helm chart.
 tags: [self-hosted, helm, installation, configuration, kubernetes, openshift]
 sidebar_position: 30
 ---

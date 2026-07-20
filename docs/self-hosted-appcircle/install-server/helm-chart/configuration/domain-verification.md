@@ -1,7 +1,7 @@
 ---
 title: Domain Verification for Helm Chart Configuration
 sidebar_label: Domain Verification
-description: Configure the Appcircle server to bypass domain verification when adding domains to an organization or verify them using DNS records on Kubernetes/OpenShift architecture.
+description: Learn to configure Domain Verification for Helm Chart.
 tags: [security, domain, verify]
 sidebar_position: 95
 ---

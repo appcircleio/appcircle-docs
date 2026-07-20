@@ -3,7 +3,7 @@ title: Publish Re-sign Report
 sidebar_position: 1
 slug: /publish-to-stores-module/publish-resign-report
 tags: [publish, report, re-sign]
-description: Understand the Report for Publish Re-sign in Appcircle, providing visibility on the usage of re-sign operations within the publish module over a given time period.
+description: Understand the Report for Publish Re-sign in Appcircle.
 
 ---
 

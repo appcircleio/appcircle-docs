@@ -1,6 +1,6 @@
 ---
 title: Build Insights
-description: Understand the Appcircle Build Insights Report - every section and metric returned by the get_build_insights_report MCP tool, and how to generate the visual report with the Appcircle Claude Assistant or Appcircle Copilot Assistant.
+description: Understand the Appcircle Build Insights Report.
 tags: [appcircle ai, ai insights, build insights]
 sidebar_position: 1
 ---

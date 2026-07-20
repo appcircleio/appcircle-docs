@@ -1,6 +1,6 @@
 ---
 title: S3-Compatible Object Storage Configuration
-description: Learn how to configure any S3-compatible object storage (MinIO, Wasabi, Backblaze B2, DigitalOcean Spaces, Cloudflare R2, etc.) for Appcircle server using the Helm chart
+description: Learn how to configure any S3-compatible object storage for Appcircle server.
 sidebar_position: 40
 tags:
   [self-hosted, object-storage, s3, minio]

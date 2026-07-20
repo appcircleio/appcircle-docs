@@ -1,6 +1,6 @@
 ---
 title: Server Configuration
-description: Explore essential settings and customizations for maintaining your self-hosted Appcircle servers. Learn how to configure integrations, access controls, and advanced settings to optimize server performance.
+description: Explore essential settings and customizations for maintaining your self-hosted Appcircle servers.
 tags:
   [
     server configuration,
