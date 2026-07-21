@@ -14,9 +14,9 @@ AI tool configurations (for example `CLAUDE.md`) point to this file instead of k
 
 ## How to Contribute
 
-1. Fork the repository and create a branch for your change.
+1. Fork the repository and create a branch off `develop` for your change. Use a descriptive, kebab-case name prefixed with `docs/`, for example `docs/build-profile-branch-operations`.
 2. Write or update documentation following the [Writing Standards](#writing-standards) below.
-3. Open a pull request with a clear description of what changed and why.
+3. Open a pull request against the `develop` branch with a clear description of what changed and why.
 
 Reviewers check every documentation pull request against the standards in this file, so reviewing your own work against them first speeds up the process.
 
@@ -99,17 +99,21 @@ Avoid personal names, usernames, and environment-specific paths in examples. Gen
 
 Always add a language tag to fenced code blocks. Untagged blocks lose syntax highlighting and degrade the copy-paste experience.
 
-Correct:
+Correct (opening fence carries a language tag):
 
+````markdown
 ```bash
 ./install.sh
 ```
+````
 
-Incorrect:
+Incorrect (bare opening fence, no language tag):
 
+````markdown
 ```
 ./install.sh
 ```
+````
 
 Common tags: `bash`, `yaml`, `json`, `swift`, `kotlin`, `xml`, `toml`, `text` (for plain output).
 
