@@ -168,7 +168,7 @@ Use absolute documentation paths starting from the documentation root. Do not in
 
 Write link text that makes sense out of context. Avoid "click here", "this page", and bare URLs in prose. Descriptive link text improves accessibility, SEO, and scannability.
 
-- Correct: See the [build profile configuration guide](/build/build-process-management/build-profile-branch-operations).
+- Correct: `[See the build profile configuration guide.](/build/build-process-management/build-profile-branch-operations).`
 - Incorrect: For details, `[click here](/build/build-process-management/build-profile-branch-operations)`.
 
 ### 17. Ensure Page Discoverability
