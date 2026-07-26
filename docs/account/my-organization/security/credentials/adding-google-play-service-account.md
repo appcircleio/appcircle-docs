@@ -39,6 +39,12 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service04.png' />
 
+    :::info
+
+    `Editor` is a Google Cloud IAM role and applies to the Google Cloud project only. It is not the same as a Google Play Console permission, and it does not give the service account any access to your apps in Google Play. You grant the Google Play Console permissions separately in step 13.
+
+    :::
+
 6. Click Done to save this account.
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service05.png' />
@@ -71,11 +77,32 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11-1.png' />
 
-Make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
+    The permissions you grant to this user determine which Appcircle features the service account can use, so make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11.png' />
 
-Then click **Invite User**. Your account key is ready. 🎉
+    | Appcircle feature | Admin (all permissions) | Releases + Store presence + read-only App access | Release apps to testing tracks only |
+    | --- | --- | --- | --- |
+    | Upload a binary to internal / closed / open testing | ✅ | ✅ | ✅ |
+    | Manage testing tracks and tester lists | ✅ | ✅ | ⛔ |
+    | Update store listing (store presence) | ✅ | ✅ | ⛔ |
+    | Release to production | ✅ | ✅ | ⛔ |
+
+    :::caution
+
+    Grant **Releases**, **Store presence**, and **App access** (read-only) to this user. This is the smallest permission set that supports the complete Appcircle publish flow, including production releases, and it is the recommended setup. An **Admin (all permissions)** account also works, but it grants far more access than Appcircle needs.
+
+    :::
+
+    :::info Using a lower-privilege permission set
+
+    An account limited to **Release apps to testing tracks only** can upload a binary to the internal, closed, and open testing tracks, which is enough if you distribute test builds through Appcircle and nothing else. Such an account **cannot** manage testing tracks and tester lists, update the store listing, or release to production, so those publish steps will fail with that account.
+
+    You can also grant permissions on a per-app basis instead of account-wide, but this requires additional configuration in Google Play Console under **Users and permissions**.
+
+    :::
+
+    Then click **Invite User**. Your account key is ready. 🎉
 
 14. To add the key on Appcircle, follow these steps:
 
