@@ -79,6 +79,8 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11.png' />
 
+    Then click **Invite User**. Your account key is ready. 🎉
+
     ### Choosing the Service Account Permissions
 
     The permissions you grant to this user determine which Appcircle features the service account can use, so make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
@@ -114,9 +116,8 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     At the app level, viewing app information is the base permission that Google Play Console grants when you add the app, and the other app-level permissions build on it.
 
-    Then click **Invite User**. Your account key is ready. 🎉
-
-14. To add the key on Appcircle, follow these steps:
+### Adding Google Play Credential to Appcircle
+To add the key on Appcircle, follow these steps:
 
     a. Navigate to [My Organization](/account/my-organization).
 
