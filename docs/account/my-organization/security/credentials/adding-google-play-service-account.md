@@ -81,12 +81,16 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11.png' />
 
+    ### Choosing the Service Account Permissions
+
     | Appcircle feature | Admin (all permissions) | Releases + Store presence + read-only App access | Release apps to testing tracks only |
     | --- | --- | --- | --- |
     | Upload a binary to internal / closed / open testing | ✅ | ✅ | ✅ |
     | Manage testing tracks and tester lists | ✅ | ✅ | ⛔ |
     | Update store listing (store presence) | ✅ | ✅ | ⛔ |
     | Release to production | ✅ | ✅ | ⛔ |
+
+    Grant these permissions for the whole developer account or for a single app, as described in [Account-Level and App-Level Permissions](#account-level-and-app-level-permissions).
 
     :::caution
 
@@ -98,9 +102,17 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     An account limited to **Release apps to testing tracks only** can upload a binary to the internal, closed, and open testing tracks, which is enough if you distribute test builds through Appcircle and nothing else. Such an account **cannot** manage testing tracks and tester lists, update the store listing, or release to production, so those publish steps will fail with that account.
 
-    You can also grant permissions on a per-app basis instead of account-wide, but this requires additional configuration in Google Play Console under **Users and permissions**.
-
     :::
+
+    ### Account-Level and App-Level Permissions
+
+    Google Play Console grants permissions at two scopes: **Account permissions** apply to every app in the developer account, and **App permissions** apply only to the apps you attach to the user with **Add app**.
+
+    App permissions alone are enough, so the account permissions section can stay empty. Grant the permissions listed above for the app you publish through Appcircle: scoping the service account to a single app keeps a leaked key from reaching every app in the developer account.
+
+    Permissions from both scopes combine and neither one narrows the other, so an account-level permission stays in effect for every app. **Admin (all permissions)** exists at the account level only and already covers every app, which leaves app-level settings without any additional effect.
+
+    At the app level, viewing app information is the base permission that Google Play Console grants when you add the app, and the other app-level permissions build on it.
 
     Then click **Invite User**. Your account key is ready. 🎉
 
