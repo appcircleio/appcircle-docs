@@ -116,16 +116,17 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     At the app level, viewing app information is the base permission that Google Play Console grants when you add the app, and the other app-level permissions build on it.
 
-### Adding Google Play Credential to Appcircle
+## Adding Google Play Credential to Appcircle
+
 To add the key on Appcircle, follow these steps:
 
-    a. Navigate to [My Organization](/account/my-organization).
+1. Navigate to [My Organization](/account/my-organization).
 
-    b. Locate the `Google Play Developer API Keys` under the `Credentials` section.
-  
-    c. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
+2. Locate the `Google Play Developer API Keys` under the `Credentials` section.
 
-    <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14.png' />
+3. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14.png' />
 
 ## Sharing Google Play Developer Credentials
 
