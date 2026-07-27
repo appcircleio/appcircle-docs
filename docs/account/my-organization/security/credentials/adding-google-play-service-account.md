@@ -77,17 +77,17 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11-1.png' />
 
-    The permissions you grant to this user determine which Appcircle features the service account can use, so make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
-
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11.png' />
 
     ### Choosing the Service Account Permissions
 
+    The permissions you grant to this user determine which Appcircle features the service account can use, so make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
+
     | Appcircle feature | Admin (all permissions) | Releases + Store presence + read-only App access | Release apps to testing tracks only |
     | --- | --- | --- | --- |
     | Upload a binary to internal / closed / open testing | ✅ | ✅ | ✅ |
-    | Manage testing tracks and tester lists | ✅ | ✅ | ⛔ |
-    | Update store listing (store presence) | ✅ | ✅ | ⛔ |
+    | Manage testing tracks | ✅ | ✅ | ⛔ |
+    | Update Google Play Console metadata | ✅ | ✅ | ⛔ |
     | Release to production | ✅ | ✅ | ⛔ |
 
     Grant these permissions for the whole developer account or for a single app, as described in [Account-Level and App-Level Permissions](#account-level-and-app-level-permissions).
@@ -100,7 +100,7 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     :::info Using a lower-privilege permission set
 
-    An account limited to **Release apps to testing tracks only** can upload a binary to the internal, closed, and open testing tracks, which is enough if you distribute test builds through Appcircle and nothing else. Such an account **cannot** manage testing tracks and tester lists, update the store listing, or release to production, so those publish steps will fail with that account.
+    An account limited to **Release apps to testing tracks only** can upload a binary to the internal, closed, and open testing tracks, which is enough if you distribute test builds through Appcircle and nothing else. Such an account **cannot** manage testing tracks, update Google Play Console metadata, or release to production, so those publish steps will fail with that account.
 
     :::
 
