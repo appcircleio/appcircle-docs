@@ -83,28 +83,26 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     ## Choosing the Service Account Permissions
 
-    The permissions you grant to this user determine which Appcircle features the service account can use, so make sure this account has **View app information (read-only)**, **Release to production, exclude devices, and use Play App Signing**, and **Manage store presence**.
+    The permissions you grant to this user determine which Appcircle features the service account can use, so make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
 
-    | Appcircle feature | Admin (all permissions) | View app information (read-only)<br />Release to production, exclude devices, and use Play App Signing<br />Manage store presence | View app information (read-only)<br />Release apps to testing tracks |
+    | Appcircle feature | Admin (all permissions) | Releases + Store presence + read-only App access | Release apps to testing tracks only |
     | --- | --- | --- | --- |
     | Upload a binary to internal / closed / open testing | ✅ | ✅ | ✅ |
     | Manage testing tracks | ✅ | ✅ | ⛔ |
     | Update Google Play Console metadata | ✅ | ✅ | ⛔ |
     | Release to production | ✅ | ✅ | ⛔ |
 
-    Grant these permissions on the **App permissions** tab, scoped to the app or apps you select. The **Account permissions** tab can stay empty, because account-level permissions are optional and apply to every app in the developer account. For the difference between the two scopes, see [Account-Level and App-Level Permissions](#account-level-and-app-level-permissions).
-
-    **View app information (read-only)** is available at the app level only. Its account-level equivalent is **View app information and download bulk reports (read-only)**.
+    Grant these permissions for the whole developer account or for a single app, as described in [Account-Level and App-Level Permissions](#account-level-and-app-level-permissions).
 
     :::caution
 
-    Grant **View app information (read-only)**, **Release to production, exclude devices, and use Play App Signing**, and **Manage store presence** to this user. This is the smallest permission set that supports the complete Appcircle publish flow, including production releases, and it is the recommended setup. An **Admin (all permissions)** account also works, but it grants far more access than Appcircle needs.
+    Grant **Releases**, **Store presence**, and **App access** (read-only) to this user. This is the smallest permission set that supports the complete Appcircle publish flow, including production releases, and it is the recommended setup. An **Admin (all permissions)** account also works, but it grants far more access than Appcircle needs.
 
     :::
 
     :::info Using a lower-privilege permission set
 
-    An account limited to **View app information (read-only)** and **Release apps to testing tracks** can upload a binary to the internal, closed, and open testing tracks, which is enough if you distribute test builds through Appcircle and nothing else. Such an account **cannot** manage testing tracks, update Google Play Console metadata, or release to production, so those publish steps will fail with that account.
+    An account limited to **Release apps to testing tracks only** can upload a binary to the internal, closed, and open testing tracks, which is enough if you distribute test builds through Appcircle and nothing else. Such an account **cannot** manage testing tracks, update Google Play Console metadata, or release to production, so those publish steps will fail with that account.
 
     :::
 
