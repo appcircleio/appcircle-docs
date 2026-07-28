@@ -39,6 +39,12 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service04.png' />
 
+    :::info
+
+    `Editor` is a Google Cloud IAM role and applies to the Google Cloud project only. It is not the same as a Google Play Console permission, and it does not give the service account any access to your apps in Google Play. You grant the Google Play Console permissions separately in step 13.
+
+    :::
+
 6. Click Done to save this account.
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service05.png' />
@@ -71,21 +77,56 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11-1.png' />
 
-Make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
-
     <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service11.png' />
 
-Then click **Invite User**. Your account key is ready. 🎉
+    Then click **Invite User**. Your account key is ready. 🎉
 
-14. To add the key on Appcircle, follow these steps:
+    ## Choosing the Service Account Permissions
 
-    a. Navigate to [My Organization](/account/my-organization).
+    The permissions you grant to this user determine which Appcircle features the service account can use, so make sure this account has access to **Releases**, **Store presence**, and **App access** (for read-only ones).
 
-    b. Locate the `Google Play Developer API Keys` under the `Credentials` section.
-  
-    c. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
+    | Appcircle feature | Admin (all permissions) | Releases + Store presence + read-only App access | Release apps to testing tracks only |
+    | --- | --- | --- | --- |
+    | Upload a binary to internal / closed / open testing | ✅ | ✅ | ✅ |
+    | Manage testing tracks | ✅ | ✅ | ⛔ |
+    | Update Google Play Console metadata | ✅ | ✅ | ⛔ |
+    | Release to production | ✅ | ✅ | ⛔ |
 
-    <Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14.png' />
+    Grant these permissions for the whole developer account or for a single app, as described in [Account-Level and App-Level Permissions](#account-level-and-app-level-permissions).
+
+    :::caution
+
+    Grant **Releases**, **Store presence**, and **App access** (read-only) to this user. This is the smallest permission set that supports the complete Appcircle publish flow, including production releases, and it is the recommended setup. An **Admin (all permissions)** account also works, but it grants far more access than Appcircle needs.
+
+    :::
+
+    :::info Using a lower-privilege permission set
+
+    An account limited to **Release apps to testing tracks only** can upload a binary to the internal, closed, and open testing tracks, which is enough if you distribute test builds through Appcircle and nothing else. Such an account **cannot** manage testing tracks, update Google Play Console metadata, or release to production, so those publish steps will fail with that account.
+
+    :::
+
+    ### Account-Level and App-Level Permissions
+
+    Google Play Console grants permissions at two scopes: **Account permissions** apply to every app in the developer account, and **App permissions** apply only to the apps you attach to the user with **Add app**.
+
+    App permissions alone are enough, so the account permissions section can stay empty. Grant the permissions listed above for the app you publish through Appcircle: scoping the service account to a single app keeps a leaked key from reaching every app in the developer account.
+
+    Permissions from both scopes combine and neither one narrows the other, so an account-level permission stays in effect for every app. **Admin (all permissions)** exists at the account level only and already covers every app, which leaves app-level settings without any additional effect.
+
+    At the app level, viewing app information is the base permission that Google Play Console grants when you add the app, and the other app-level permissions build on it.
+
+## Adding Google Play Credential to Appcircle
+
+To add the key on Appcircle, follow these steps:
+
+1. Navigate to [My Organization](/account/my-organization).
+
+2. Locate the `Google Play Developer API Keys` under the `Credentials` section.
+
+3. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14.png' />
 
 ## Sharing Google Play Developer Credentials
 

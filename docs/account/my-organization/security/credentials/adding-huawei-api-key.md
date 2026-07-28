@@ -15,9 +15,29 @@ Huawei AppGallery API Key is required to upload your binary to Huawei AppGallery
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/huaweiaccount-1addkey.png' />
 
-2. Create a [Team-Level Api Key](https://developer.huawei.com/consumer/en/doc/distribution/app/appgallerykit-createapiclient). Don't select a project in order to create Team-Level API Key.
+2. Create a [Team-Level API Key](https://developer.huawei.com/consumer/en/doc/distribution/app/appgallerykit-createapiclient). Don't select a project in order to create Team-Level API Key.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/huaweiaccount-2permissions.png' />
+    <Screenshot url='https://cdn.appcircle.io/docs/assets/huaweiaccount-2permissions.png' />
+
+    While you create the key, you also assign a role to it. The role you assign to the Team-Level API Key determines which Appcircle features the key can support, because the key is limited to the permissions of that role in Huawei AppGallery Connect.
+
+    | Appcircle feature | Administrator | Development + Operations | Development only |
+    | --- | --- | --- | --- |
+    | Obtain upload URL / upload binary | ✅ | ✅ | ✅ |
+    | Update app information | ✅ | ✅ | ⛔ |
+    | Submit app for release | ✅ | ✅ | ⛔ |
+
+    :::caution
+
+    Assign **Development** and **Operations** together to the key. This is the smallest role combination that supports the complete Appcircle publish flow, including updating app information and submitting the app for release, and it is the recommended setup. An **Administrator** key also works, but it grants account administration rights that Appcircle does not need.
+
+    :::
+
+    :::info Using a lower-privilege role
+
+    A key with the **Development** role only can obtain an upload URL and upload a binary, which is enough if you want the build to reach Huawei AppGallery Connect and nothing else. Such a key **cannot** update app information or submit the app for release, so the Appcircle publish step will fail at those stages.
+
+    :::
 
 3. Hit the `Download` button to download the API key.
 
