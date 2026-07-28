@@ -25,6 +25,20 @@ The Billing section allows you to monitor your usage summary, including builds, 
 - **[Code Push Updates](/code-push)** : The number of devices receiving CodePush updates within a single billing cycle.
 - **[Testing Distribution](/testing-distribution/testing-portal)** : Number of app downloads from the Testing Portal in a single billing cycle.
 - **[Publish to Stores](/publish-to-stores-module)** : Number of publishes initiated from the Publish module in a single billing cycle. For the operations that count against this number, see [Publish Usage Details](#publish-usage-details).
+- **[Enterprise App Store](/enterprise-app-store/enterprise-portal)** : Number of app downloads from the Enterprise App Store in a single billing cycle.
+- **[Team Members](/account/my-organization/profile-and-team/team-management)** : Number of team members allowed in a single organization.
+- **[Artifact Storage](/account/my-organization/artifacts)** : Total storage size for all the build and distribution artifacts across the platform.
+- **[Build Concurrency](/build/build-process-management/manual-builds)** : Number of builds that can run simultaneously.
+- **[Build Time Limit](/build/build-process-management/manual-builds)** : Number of minutes allowed per build and publish before it is automatically cancelled with a timeout status.
+- **[Machine Plan](/infrastructure/machine-plans)** : Indicates the Machine Plan assigned to the organization.
+
+:::info Usage Count
+Please note that the module usage counts displayed here, such as builds, testing distribution, and publishes, represent the combined totals for the organization and its sub-organizations.
+:::
+
+:::warning Limit Warnings
+When the usage limits exceed 85% of the allocated quota, notification emails will be sent to the organization’s Owner and the Billing Manager.
+:::
 
 ### Publish Usage Details
 
@@ -47,21 +61,6 @@ The Publish Report lists every publish attempt, so an entry in the report does n
 
 - Waiting publishes appear in the Publish Report without affecting usage. If a waiting publish is canceled or times out before it starts, only its status is updated in the report and usage does not increase.
 - Publishes started from an intermediate step update the status of the existing report item. No new item is added and usage does not increase.
-
-- **[Enterprise App Store](/enterprise-app-store/enterprise-portal)** : Number of app downloads from the Enterprise App Store in a single billing cycle.
-- **[Team Members](/account/my-organization/profile-and-team/team-management)** : Number of team members allowed in a single organization.
-- **[Artifact Storage](/account/my-organization/artifacts)** : Total storage size for all the build and distribution artifacts across the platform.
-- **[Build Concurrency](/build/build-process-management/manual-builds)** : Number of builds that can run simultaneously.
-- **[Build Time Limit](/build/build-process-management/manual-builds)** : Number of minutes allowed per build and publish before it is automatically cancelled with a timeout status.
-- **[Machine Plan](/infrastructure/machine-plans)** : Indicates the Machine Plan assigned to the organization.
-
-:::info Usage Count
-Please note that the module usage counts displayed here, such as builds, testing distribution, and publishes, represent the combined totals for the organization and its sub-organizations.
-:::
-
-:::warning Limit Warnings
-When the usage limits exceed 85% of the allocated quota, notification emails will be sent to the organization’s Owner and the Billing Manager.
-:::
 
 ### Sub-Organization Usage
 
