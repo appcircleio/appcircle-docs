@@ -90,25 +90,33 @@ To obtain a key that only works on designated apps, you need an **individual key
 #### Creating a Service Account User Limited to Specific Apps
 
 1. In App Store Connect, go to **Users and Access > Users** and click the **+** button to invite a new user. Use a mailbox your team controls (for example, `appcircle-ci@yourcompany.com`) so that the account is not tied to a single employee.
-2. Assign a role that supports per-app access. Only these roles can be restricted to selected apps: **App Manager**, **Developer**, **Marketing**, **Sales** and **Customer Support**.
+2. Assign a role that supports per-app access. Only these roles can be restricted to selected apps: **App Manager**, **Developer**, **Marketing**, **Customer Support** and **Sales**. **Sales** qualifies only while **Access to Reports** is left disabled, granting that permission gives the user access to all apps. The same applies to the **Certificates, Identifiers & Profiles** permission: a user who has it always has all-app access.
 3. In the same form, choose **Selected Apps** instead of **All Apps** and select only the apps that Appcircle should be able to access.
 4. Complete the invitation and sign in as that user to accept it.
 
 #### Generating the API Key as That User
 
-While signed in as the service account user, go to **Users and Access > Integrations > App Store Connect API**, open the **Individual Keys** section and generate a new key. The key inherits the user's role and app restrictions, so it can act on the selected apps only.
+While signed in as the service account user, click the **username** in the top right corner, select **Edit Profile**, and under **Individual API Key** press **Generate Key**. The key inherits the user's role and app restrictions, so it can act on the selected apps only.
+
+:::caution
+
+Individual keys are generated from the user's own profile, not from **Users and Access > Integrations > App Store Connect API**, which manages team keys. Each user can have only one active individual key at a time. If the **Generate Key** button is missing, an Account Holder or Admin must grant the user the **Generate Individual API Keys** permission.
+
+:::
 
 Download the `.p8` file and add it to Appcircle exactly as described in [Linking Appcircle with App Store Connect](#linking-appcircle-with-app-store-connect).
 
 :::caution
 
-**Account Holder**, **Admin** and **Finance** roles always have access to all apps and cannot be restricted per app. A key created by a user with one of these roles is not app scoped, even if it is an individual key.
+**Account Holder**, **Admin** and **Finance** roles always have access to all apps and cannot be restricted per app. A key created by a user with one of these roles is not app-scoped, even if it is an individual key.
 
 :::
 
 :::info
 
 Because an app-scoped key requires a role other than Admin, it cannot access **Certificates, Identifiers & Profiles**. Appcircle's automatic signing (creating and downloading certificates and provisioning profiles) will not work with such a key. Use it for the upload-focused flow (TestFlight uploads, build and tester management, metadata and App Store submission, as allowed by the selected role) and either manage signing files manually under **Signing Identities** or add a separate Admin key for signing.
+
+Individual keys also cannot reach the Sales and Finance report endpoints of the App Store Connect API. Those endpoints require a team key with the matching role.
 
 :::
 
