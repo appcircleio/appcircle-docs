@@ -90,7 +90,7 @@ To obtain a key that only works on designated apps, you need an **individual key
 #### Creating a Service Account User Limited to Specific Apps
 
 1. In App Store Connect, go to **Users and Access > Users** and click the **+** button to invite a new user. Use a mailbox your team controls (for example, `appcircle-ci@yourcompany.com`) so that the account is not tied to a single employee.
-2. Assign a role that supports per-app access. Only these roles can be restricted to selected apps: **App Manager**, **Developer**, **Marketing**, **Customer Support** and **Sales**. **Sales** qualifies only while **Access to Reports** is left disabled, granting that permission gives the user access to all apps. The same applies to the **Certificates, Identifiers & Profiles** permission: a user who has it always has all-app access.
+2. Assign a role that both supports per-app access and can generate an individual key: **App Manager**, **Developer**, **Marketing** or **Customer Support**. Do not grant the user **Access to Reports** or **Certificates, Identifiers & Profiles**, either permission gives the account access to all apps and removes the app restriction.
 3. In the same form, choose **Selected Apps** instead of **All Apps** and select only the apps that Appcircle should be able to access.
 4. Complete the invitation and sign in as that user to accept it.
 
