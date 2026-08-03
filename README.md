@@ -1,5 +1,7 @@
 # Appcircle Documentation
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/appcircleio/appcircle-docs)
+
 This is the public documentation site for Appcircle, built with [Docusaurus](https://docusaurus.io/).
 
 ## Contributing
