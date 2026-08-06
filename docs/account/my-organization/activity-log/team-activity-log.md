@@ -1,7 +1,7 @@
 ---
 title: Organization Activity
 description: Learn more about Organization Activity Log in Appcircle.
-slug: /account/my-organization/profile-and-team/organization-activity
+slug: /account/my-organization/activity-log/organization-activity
 tags:
   [
     organizations,
@@ -11,7 +11,7 @@ tags:
     role management,
     activity log,
   ]
-sidebar_position: 4
+sidebar_position: 1
 ---
 import Screenshot from '@site/src/components/Screenshot';
 

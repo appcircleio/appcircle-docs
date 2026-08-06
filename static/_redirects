@@ -591,3 +591,5 @@
 /appcircle-ai/appcircle-gpt-assistant/ /appcircle-ai/ai-assistants/appcircle-gpt-assistant 301
 /appcircle-ai/appcircle-claude-assistant /appcircle-ai/ai-assistants/appcircle-claude-assistant 301
 /appcircle-ai/appcircle-claude-assistant/ /appcircle-ai/ai-assistants/appcircle-claude-assistant 301
+/account/my-organization/profile-and-team/organization-activity/ /account/my-organization/activity-log/organization-activity/ 301
+/account/my-organization/profile-and-team/auth-activity-log/ /account/my-organization/activity-log/auth-activity-log/ 301
