@@ -71,7 +71,7 @@ You can access reports for your Enterprise App Store from this screen. The repor
 
 You can view Enterprise App Store module actions such as profile, app version, and custom domain operations, along with LDAP and SSO settings changes, within the Organizations or Sub-Organizations in the Activity Log section.
 
-<ContentRef url="/enterprise-app-store/enterprise-app-store-activity-log">Portal Reports</ContentRef>
+<ContentRef url="/enterprise-app-store/enterprise-app-store-activity-log">Activity Log</ContentRef>
 
 ## [In-app Updates](/enterprise-app-store/in-app-updates)
 

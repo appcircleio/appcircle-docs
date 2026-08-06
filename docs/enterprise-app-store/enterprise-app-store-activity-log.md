@@ -1,7 +1,7 @@
 ---
 title: Enterprise App Store Activity Log
 sidebar_label: Activity Log
-description: Learn more about Testing Distribution Activity Log in Appcircle.
+description: Learn more about Enterprise App Store Activity Log in Appcircle.
 tags:
  [
   enterprise app store,
