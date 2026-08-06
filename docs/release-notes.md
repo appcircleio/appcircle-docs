@@ -16,6 +16,44 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.33.0 - 2026-08-06 Custom Roles, Scheduled Builds, Activity Log Improvements, Bug Fixes and more
+
+### 🆕 New Features
+
+- Custom Roles (Granular scope-based role management) has been introduced, allowing permissions to be granted per action instead of per module. <AccountBadge/> <CloudBadge/>
+- Scheduled builds can now be defined, viewed and edited from the build profile Triggers tab. <BuildBadge/> <CloudBadge/>
+- An optional expiration date can now be entered for external Personal Access Tokens in the connection form. <BuildBadge/> <CloudBadge/>
+- Activity log have been added for the Testing Distribution and Enterprise App Store modules as well as for Store Credentials, including filtering and Excel export. <ReportsBadge/> <CloudBadge/>
+- A Fixed version option has been added to Re-sign, allowing a version to be entered manually instead of being fetched from a store. <SigningIdentitiesBadge/> <CloudBadge/>
+
+
+### :muscle: Improvements
+
+- A new notification event has been added for version deletion in the Publish to Stores, Testing Distribution and Enterprise App Store modules, so connected notification channels are triggered when a version is removed. <AccountBadge/> <CloudBadge/>
+- The LDAP attribute used for user email can now be configured instead of being fixed. <AccountBadge/> <CloudBadge/>
+- Google Play release names now include the version code alongside the version name for easier identification. <PublishBadge/> <CloudBadge/>
+- Downloaded CSR files now use descriptive file names instead of `download.csr`. <ReportsBadge/> <CloudBadge/>
+- The Device column in the Testing Distribution downloads report has been renamed to Platform to better reflect its content. <ReportsBadge/> <CloudBadge/>
+- The certificate renewal screen descriptions have been updated to correctly reflect both revoke enabled and revoke disabled cases. <SigningIdentitiesBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where the component version text displayed an incorrect value on Publish step logs. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where a Stop button was still displayed on a completed publish flow. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where the staged rollout percentage could not be set below 10% in Distribute to Track. <PublishIntegrationsBadge/> <CloudBadge/>
+- An issue has been fixed where build logs displayed "waiting for other build" until the page was refreshed even though the build had already started. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed in the SSH key auto-fill form layout. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where the commit status remained "pending / in progress" on the repository provider when a queued build was canceled. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where the "Build Success at" label was missing on some branches in the branch list despite successful builds. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where the GitLab commit status link pointed to the wrong branch for merge commits. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where the triggering user was reported incorrectly for some builds. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where adding more than one custom script step to a build workflow caused an invalid character error on save. <BuildIntegrationsBadge/> <CloudBadge/>
+- An issue has been fixed where refreshing the browser in the Enterprise App Store caused a package or bundle ID mismatch warning on all binaries and blocked beta and live publishing. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue has been fixed where existing testers could not be selected manually on a Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where the "Shared time" information on distribution profile cards was not updated after an automatic distribution from a build workflow. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where the Yesterday filter on report pages returned the same records as Today. <ReportsBadge/> <CloudBadge/>
+- An issue has been fixed where filtering by Profile Name in activity logs broke the general filter list. <ReportsBadge/> <CloudBadge/>
+
 ## 3.32.0 - 2026-06-30 Manual Certificate Renewal, External Webhooks, Auth Activity Log, Bug Fixes and more
 
 ### 🆕 New Features
