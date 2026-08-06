@@ -3277,3 +3277,8 @@ quay:
   label: "store credentials"
   description: "Documentation related to store credentials"
   permalink: "/store-credentials"
+
+"custom role":
+  label: "custom role"
+  description: "Documentation related to custom role"
+  permalink: "/custom-role"
