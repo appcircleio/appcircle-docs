@@ -39,7 +39,7 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.3.2`) stack has the Xcod
 
 | Version | Build |
 | ------- | ----- |
-| 26.6 | `17F109` |
+| 26.6 | `17F113` |
 | 26.5 | `17F42` |
 | 26.4.1 | `17E202` |
 | 26.3 | `17C529` |
