@@ -3272,3 +3272,8 @@ quay:
   label: "auth activity"
   description: "Documentation related to auth activity"
   permalink: "/auth-activity"
+
+"store credentials":
+  label: "store credentials"
+  description: "Documentation related to store credentials"
+  permalink: "/store-credentials"

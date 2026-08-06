@@ -59,3 +59,9 @@ Appcircle has a separate distribution screen designed to make it easy for test g
 Optimize your application management with detailed reports. Utilize the App Sharing Report and App Versions Report to gain insights and make informed decisions about your app's distribution and evolution.
 
 <ContentRef url="/testing-distribution/reports">Reporting</ContentRef>
+
+## [Activity Log](/testing-distribution/testing-distribution-activity-log)
+
+You can view Testing Distribution module actions such as profile, app version, and testing group operations, along with LDAP and SSO settings changes, within the Organizations or Sub-Organizations in the Activity Log section.
+
+<ContentRef url="/testing-distribution/testing-distribution-activity-log">Activity Log</ContentRef>

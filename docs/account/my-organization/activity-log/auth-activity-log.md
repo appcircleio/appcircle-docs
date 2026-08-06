@@ -9,7 +9,7 @@ tags:
     organization membership,
     activity log,
   ]
-sidebar_position: 5
+sidebar_position: 2
 ---
 import Screenshot from '@site/src/components/Screenshot';
 
