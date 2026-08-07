@@ -48,9 +48,13 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.5.1`) stack has the Xcod
 
 | Version | Build |
 | ------- | ----- |
-| 27.0 | `27A5209h` |
-| 26.6 | `17F113` |
-| 26.5 | `17F42` |
+| 27.0 | `27A5228h` |
+
+:::info
+
+The macOS Tahoe (`26.5.1`) stack carries the Xcode 27.0 beta only. If you need a stable Xcode release, select a `26.6.x` or earlier version, which runs on the macOS Tahoe (`26.3.2`) stack.
+
+:::
 
 The "Appcircle macOS Pool (arm64)" macOS **Sequoia** (`15.6.1`) stack has the Xcode versions below:
 
