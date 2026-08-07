@@ -1,13 +1,13 @@
 ---
 title: Triggers
-description: Learn how to build manually or automatically with webhooks and triggers in Appcircle
-tags: [build, build process management, manual build, automatic build, triggers, webhooks]
+description: Learn how to build manually or automatically with webhooks, event-based triggers, and scheduled triggers in Appcircle
+tags: [build, build process management, manual build, automatic build, triggers, webhooks, scheduled build, cron]
 sidebar_position: 5
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-There are multiple ways to trigger a build in Appcircle. You can run builds manually or automate the build process with various triggers.
+There are multiple ways to trigger a build in Appcircle. You can run builds manually, automate the build process with various event-based triggers, or schedule builds to run automatically at times you define.
 
 <iframe width="640" height="315" src="https://www.youtube.com/embed/zxxax79KD9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -23,13 +23,13 @@ To set up or manage the build triggers, click the Triggers button in the context
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-trigger.png' />
 
-The triggers are set up at the profile level, and you can specify individual branch names or [utilize wildcards](/build/build-process-management/build-manually-or-with-triggers#wildcard-reference) for branch names to trigger builds.
+The Triggers panel is organized into tabs: **On Every Push**, **On Merge/Pull Request**, **On Tag Push**, and **Scheduled** `(Beta)`. Event-based triggers (push, merge/pull request, and tag) are set up at the profile level, and you can specify individual branch names or [utilize wildcards](/build/build-process-management/build-manually-or-with-triggers#wildcard-reference) for branch names to trigger builds. Scheduled triggers, described in [Scheduled builds](#scheduled-builds-beta), instead run at fixed times regardless of repository activity.
 
 You also need to select a workflow for each trigger, and the build will be run with that trigger for the specified branch. You can build the same branch with different workflows (e.g., production or development), or you can use the same workflow for multiple branches (e.g., multiple feature branches built with the develop workflow).
 
 ## Automatic Build
 
-Builds can be triggered with various triggers such as every push to the repository, pull/merge requests, or tagged pushes. This requires the following:
+Builds can be triggered with various triggers such as every push to the repository, pull/merge requests, tagged pushes, or a defined schedule. Event-based triggers (push, pull/merge request, and tag) require the following:
 
 - Webhook connection to the repository
 - Setting up build triggers
@@ -38,6 +38,10 @@ There are two options to set up webhooks for automatic builds:
 
 - You can [authorize the Appcircle app](/build/manage-the-connections/connection-guides) for GitHub, Bitbucket, or GitLab repositories for direct integration. The triggers will be available for use immediately. (You can skip the next part about the webhook setup.)
 - For the repository connections through SSH, you can add the specific webhook for that build profile manually to the compatible git provider. This enables the Git provider to send a POST request to Appcircle for the selected events, which you can then use for triggers.
+
+:::info
+Scheduled builds do not rely on repository webhooks at all, since they are started by Appcircle itself at the times you configure. No webhook setup is required for scheduled triggers. See [Scheduled builds](#scheduled-builds-beta) below.
+:::
 
 ## Setting up Manual Webhooks Based on Repository Connection Type
 
@@ -80,7 +84,7 @@ https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATI
 **4.**	Paste the Webhook URL in your Git repository.
 
 :::info
-**The Selected Git Provider** option on the **Webhook Configuration** screen is only available for repositories connected via **SSH** or **Public URL**.  
+**The Selected Git Provider** option on the **Webhook Configuration** screen is only available for repositories connected via **SSH** or **Public URL**.
 
 If your repository is connected using GitHub, GitLab, Bitbucket or Azure Devops App integrations, this selection will not appear since webhooks are automatically managed.
 :::
@@ -98,7 +102,7 @@ To manually configure a webhook for an Azure DevOps repository:
 6. “Accept untrusted SSL certificates“ option can stay disabled.
 7. Enter `appcircle` as username.
 8. Paste `{YOUR_WEBHOOK_SECRET}` as password.
-:::
+   :::
 
 #### Binding Existing Manual Webhooks to Other Build Profiles
 
@@ -268,6 +272,41 @@ This allows building scenarios like building only specific pushes that have the 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/tag-last.png' />
 
+### Scheduled builds (Beta)
+
+In addition to event-based triggers, Appcircle can start a build automatically at times you define, independent of any push, pull/merge request, or tag activity in your repository. This is useful for nightly or periodic builds, regression runs, or any workflow that needs to run on a fixed cadence rather than in response to a Git event.
+
+To set up a scheduled trigger:
+
+**1.** Open the Triggers panel for the build profile and select the **Scheduled** tab.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA86-1.png' />
+
+**2.** Configure the schedule:
+
+- **Time Zone**: The time zone used to interpret the cron expression below. Appcircle offers the full list of UTC offsets (e.g., `UTC+03:00`, `UTC+03:30`) so you can schedule builds in your team's local time rather than converting to UTC manually.
+
+  <Screenshot url='https://cdn.appcircle.io/docs/assets/QA86-2.png' />
+
+- **Cron Expression**: A standard 5-field cron expression (`minute hour day-of-month month day-of-week`) that defines when the build should run. Appcircle shows a plain-language summary underneath the field to help confirm the schedule — for example, `0 11 * * 1` is described as "Schedule build will start 11:00 AM every Monday."
+- **Branch Name**: The branch the scheduled build will run against.
+- **Config**: The build configuration to use.
+- **Workflow**: The workflow to run.
+
+**3.** Click the **+** button to add additional schedules to the same build profile, or the **x** next to a field to remove a schedule. Click **Save** once you're done.
+
+:::warning
+Scheduled builds are currently in **Beta**. Design and behaviour could change in future stages.
+:::
+
+:::info
+Since scheduled builds aren't tied to a commit, pull/merge request, or comment, commit-message directives such as [`[skip ci]`](#skipping-a-workflow) and [`[retry]`](#retrying-a-workflow) have no effect on them.
+:::
+
+:::tip
+You can tell scheduled runs apart from other builds afterward: builds started by a schedule are labeled with their own **Schedule** trigger type in Build History and reporting, rather than being grouped with manually started builds.
+:::
+
 ### Skipping a workflow
 
 If your commit message includes `[skip ci]` or `[ci skip]`, your workflow will be skipped.
@@ -377,6 +416,16 @@ Once the webhook is created and confirmed to be properly set up and healthy in t
 When you create a tag, it is applied to a specific commit, not a branch. The system does not have explicit branch information linked to the tag. Therefore, when the tag trigger starts a build in Appcircle, it may select any branch that contains the tagged commit, leading to seemingly random behavior.
 
 To control this behavior, push an empty commit to the desired branch and then apply the tag to this new commit. This ensures that the tag trigger starts from the intended branch.
+
+### Why isn't my scheduled build running at the expected time?
+
+Scheduled builds don't depend on webhooks, so the troubleshooting steps above for event-based triggers don't apply. Instead, check the following:
+
+- **Cron expression**: Confirm the expression matches the schedule you intend. The plain-language summary shown under the Cron Expression field in the Scheduled tab is a quick way to verify this before saving.
+- **Time zone**: Double-check the selected time zone — a schedule saved against the wrong offset will run at the correct cron time, just in a different time zone than expected.
+- **Branch, config, and workflow**: Make sure the selected branch, build configuration, and workflow are still valid and haven't been renamed, moved, or removed since the schedule was created.
+
+If the schedule and time zone both look correct and the build still doesn't start, check Build History and filter by the **Schedule** trigger type to confirm whether the build ran at all.
 
 ### How to enable triggers for AWS CodeCommit repositories?
 

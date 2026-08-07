@@ -3282,3 +3282,13 @@ quay:
   label: "custom role"
   description: "Documentation related to custom role"
   permalink: "/custom-role"
+
+"cron":
+  label: "cron"
+  description: "Documentation related to cron"
+  permalink: "/cron"
+
+"scheduled build":
+  label: "scheduled build"
+  description: "Documentation related to scheduled build"
+  permalink: "/scheduled-build"
