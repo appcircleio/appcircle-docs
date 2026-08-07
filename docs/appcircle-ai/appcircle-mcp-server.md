@@ -158,12 +158,24 @@ You can see the available tools in your MCP client after the Appcircle MCP serve
 
 To use the Appcircle MCP Server, you need an **Appcircle Access Token**. This token authenticates requests to Appcircle's APIs and is required for all running modes (stdio, streamable-http, or when connecting to the remote host at `https://mcp.appcircle.io`).
 
-There are **two ways** to obtain an access token. For step-by-step instructions on creating and exchanging credentials for a token:
+There are **two ways** to obtain a credential:
 
 1. [Personal Access Key](/account/my-organization/security/personal-access-key): Best for individual use; inherits your user permissions in the organization.
 2. [API Keys](/account/my-organization/security/api-keys): Best for automation and CI; scoped by organization and roles.
 
-Both produce an access token that you use as `APPCIRCLE_ACCESS_TOKEN` in your environment or pass via your MCP client (for example, `Authorization: Bearer <token>`).
+Generating a Personal Access Key or API Key does not give you the access token itself; it gives you a credential that you **exchange** for a token by calling Appcircle's Auth API with it. The API responds with a JWT, and it's this JWT, not the raw key or secret, that is the **Appcircle Access Token** you set as `APPCIRCLE_ACCESS_TOKEN` in your environment or pass via your MCP client (for example, `Authorization: Bearer <token>`). This exchange step is required regardless of which running mode or MCP client you use, since the server itself never sees your Personal Access Key or API Key secret, only the resulting token.
+
+### How to obtain an Appcircle Access Token
+
+See the [Appcircle Access Token](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/appcircle_access_token.md) documentation for the full exchange steps.
+
+:::info Token lifetime and renewal
+The access token is valid for **24 hours** from the time it's issued. The MCP server does not refresh it automatically. When it expires, requests start failing with a `401` error; repeat the exchange above to get a new token, update it wherever your client stores it (as `APPCIRCLE_ACCESS_TOKEN` in your environment, or in your client's MCP server configuration), and restart your MCP client so it picks up the new value.
+:::
+
+:::info Sub-organization scope
+An access token only lists profiles, builds, and reports from the organization it was generated or exchanged in. If you work with a sub-organization, generate or exchange your Personal Access Key or API Key in that sub-organization's context (or pass the `subOrganization` parameter during the exchange) rather than reusing a token issued for the parent organization.
+:::
 
 :::warning Restrict write access when possible
 When creating the token (either method), **restrict write access** if you only need read-only MCP usage. For example, listing Build profiles, Distribution profiles, or Reports. Grant write permissions only when you want the AI or your client to trigger builds, notify testers, publish to stores, or change settings. For **API Keys**, use **Viewer** (or read-only) roles for the relevant modules. For **Personal Access Key**, your user role in the organization applies; use an account or role with read-only access if you do not need write operations.
@@ -172,6 +184,15 @@ If you run the server locally, you can also disable write tools at the server le
 :::
 
 ## FAQ
+
+### I'm getting a 401 error. What's wrong?
+
+Appcircle's API returns the same generic `401 Unauthorized` response for several distinct causes, so check each of the following:
+
+- **Wrong token type**: The value configured in your client is the raw Personal Access Key or API Key secret, not the access token you get back from [exchanging it](#how-to-obtain-an-appcircle-access-token).
+- **Expired token**: The access token is only valid for 24 hours. See [Authentication](#authentication) to get a new one.
+
+Since both return the identical error, don't assume it's expiry just because that's the most common cause. Check the token type too.
 
 ### Do I need write access to use the Appcircle MCP?
 

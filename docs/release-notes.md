@@ -38,6 +38,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Added a status reason field under Profile Details in Webhook Details to help troubleshoot failed webhook events. <BuildBadge/> <CloudBadge/>
 - A new macOS-based build stack (Tahoe `26.3.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26.6](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_6-release-notes) (`17F113`) installed along with Xcode 26.5 (`17F42`), Xcode 26.4.1 (`17E202`) and Xcode 26.3 (`17C529`), plus up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 26.6 and the latest Beta release of Xcode 27.0 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- The [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) toolset has been expanded with new tools to trigger and cancel builds, read build status/logs and variable groups, notify testers and update release notes in Testing Distribution, start and stop publish flows, and pull additional activity log and queue reports. <CloudBadge/>
 
 ### 🐞 Fixes
 
