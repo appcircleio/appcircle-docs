@@ -16,14 +16,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.33.0 - 2026-08-06 Custom Roles, Scheduled Builds, Activity Log Improvements, Bug Fixes and more
+## 3.33.0 - 2026-08-07 Custom Roles, Scheduled Builds, Activity Log Improvements, Bug Fixes and more
 
 ### 🆕 New Features
 
-- Custom Roles (Granular scope-based role management) has been introduced, allowing permissions to be granted per action instead of per module. <AccountBadge/> <CloudBadge/>
-- Scheduled builds can now be defined, viewed and edited from the build profile Triggers tab. <BuildBadge/> <CloudBadge/>
+- [Custom Roles](/account/my-organization/profile-and-team/custom-roles) (Granular scope-based role management) has been introduced, allowing permissions to be granted per action instead of per module. <AccountBadge/> <CloudBadge/>
+- [Scheduled builds](/build/build-process-management/build-manually-or-with-triggers#scheduled-builds-beta) can now be defined, viewed and edited from the build profile Triggers tab. <BuildBadge/> <CloudBadge/>
 - An optional expiration date can now be entered for external Personal Access Tokens in the connection form. <BuildBadge/> <CloudBadge/>
-- Activity log have been added for the Testing Distribution and Enterprise App Store modules as well as for Store Credentials, including filtering and Excel export. <ReportsBadge/> <CloudBadge/>
+- Activity log have been added for the [Testing Distribution](/testing-distribution/testing-distribution-activity-log) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-activity-log) modules as well as for [Store Credentials](/account/my-organization/activity-log/credential-activity-log), including filtering and Excel export. <ReportsBadge/> <CloudBadge/>
 - A Fixed version option has been added to Re-sign, allowing a version to be entered manually instead of being fetched from a store. <SigningIdentitiesBadge/> <CloudBadge/>
 
 
@@ -35,6 +35,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Downloaded CSR files now use descriptive file names instead of `download.csr`. <ReportsBadge/> <CloudBadge/>
 - The Device column in the Testing Distribution downloads report has been renamed to Platform to better reflect its content. <ReportsBadge/> <CloudBadge/>
 - The certificate renewal screen descriptions have been updated to correctly reflect both revoke enabled and revoke disabled cases. <SigningIdentitiesBadge/> <CloudBadge/>
+- Added a status reason field under Profile Details in Webhook Details to help troubleshoot failed webhook events. <BuildBadge/> <CloudBadge/>
+- A new macOS-based build stack (Tahoe `26.3.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26.6](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_6-release-notes) (`17F113`) installed along with Xcode 26.5 (`17F42`), Xcode 26.4.1 (`17E202`) and Xcode 26.3 (`17C529`), plus up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 26.6 and the latest Beta release of Xcode 27.0 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
