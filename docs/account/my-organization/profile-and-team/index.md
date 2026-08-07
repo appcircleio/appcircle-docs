@@ -23,5 +23,6 @@ Current headlines and the actions you can complete are listed below:
 - [**Organization Management**](/account/my-organization/profile-and-team/organization-management)
 - [**Team Management**](/account/my-organization/profile-and-team/team-management)
 - [**Role Management**](/account/my-organization/profile-and-team/role-management)
+- [**Custom Roles**](/account/my-organization/profile-and-team/custom-roles)
 
 In order to see the details, check the submenu of this documentation page.
