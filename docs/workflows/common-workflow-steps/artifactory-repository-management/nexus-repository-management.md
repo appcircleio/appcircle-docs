@@ -28,7 +28,7 @@ For more information about supported frameworks, please visit [**Sonatype Nexus 
 
 :::tip Artifactory Management for SPM on older Nexus versions
 
-If your Nexus instance is older than the versions listed in [Nexus Integration for SPM](#nexus-integration-for-spm), Swift repositories are not available and SPM packages cannot be managed by Nexus.
+The Swift repository types have different minimum Nexus versions. If your Nexus instance is older than the version required by the repository type you need (see [Nexus Integration for SPM](#nexus-integration-for-spm)), that repository type cannot be created and those SPM packages cannot be managed by Nexus.
 
 In that case, an alternative approach to centralize and fetch SPM packages is to collect all SPM packages in a private Git repository. This way, all SPM packages are pulled only from a repository accessible to the user and included in the build process.
 
@@ -181,6 +181,8 @@ The registry configuration and the credentials must be in place **before** the [
 3. **Authenticate with Netrc**: provide the Nexus credentials.
 4. **Xcodebuild for Devices**
 
+This order assumes that no step before **Xcodebuild for Devices** needs the Nexus credentials. If an earlier step also pulls from Nexus, move the **Authenticate with Netrc** step before it.
+
 In the [**Custom Script**](/workflows/common-workflow-steps/custom-script) step, you can generate the configuration file as shown below:
 
 ```bash
@@ -210,6 +212,8 @@ For authentication, use the [**Authenticate with Netrc**](/workflows/common-work
 - `$AC_NETRC_USER`: the Nexus User Token **Name Code**
 - `$AC_NETRC_PASS`: the Nexus User Token **Pass Code**
 
+`$NEXUS_HOST` in the script above and `$AC_NETRC_HOSTNAME` must be the same bare hostname, for example `nexus.example.com`, without the `https://` prefix and without a repository path. The script inserts `$NEXUS_HOST` after `https://`, and the `machine` entry written to `~/.netrc` must match that hostname for authentication to succeed.
+
 You can generate a User Token from **Account > User Token > Access User Token** in Nexus. If [anonymous access](https://help.sonatype.com/en/anonymous-access.html) is enabled on your Nexus instance, the authentication step can be skipped.
 
 :::caution Store Credentials as Secrets
@@ -226,7 +230,7 @@ Sonatype documents the `--replace-scm-with-registry` flag as required for transi
 swift package resolve --replace-scm-with-registry
 ```
 
-This is a SwiftPM CLI flag and there is currently no documented `xcodebuild` equivalent, so its behavior in an `xcodebuild` based workflow may differ.
+This is a SwiftPM CLI flag. The closest `xcodebuild` counterpart is the `-packageDependencySCMToRegistryTransformation useRegistryIdentityAndSources` option, but its behavior against a Nexus Swift proxy has not been verified on Appcircle runners yet, so an `xcodebuild`-based workflow may resolve transitive dependencies differently.
 
 For more information, please visit the [**Sonatype Nexus Swift CLI usage documentation**](https://help.sonatype.com/en/swift-cli-usage.html).
 
@@ -236,7 +240,7 @@ For more information, please visit the [**Sonatype Nexus Swift CLI usage documen
 
 If your Nexus instance uses a self-signed SSL certificate, the certificate must be trusted by the build machine. On self-hosted runners, install the root CA by following the [**custom certificates guide**](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates).
 
-The `~/.curlrc --insecure` workaround described for CocoaPods is not applicable here, since the SPM registry client requires a properly trusted certificate.
+The `--insecure` option in `~/.curlrc` described for CocoaPods is not applicable here, since the SPM registry client requires a properly trusted certificate.
 
 :::
 
