@@ -94,7 +94,7 @@ When an app version is signed using the Testing Distribution Profile or uploaded
 
 ## Auto Re-sign
 
-In addition to manual resigning, the **Testing Distribution** module supports **Auto Re-sign Configurations** for both iOS and Android binaries. 
+In addition to manual resigning, the **Testing Distribution** module supports **Auto Re-sign Configurations** for both iOS and Android binaries.
 
 The **Auto Re-sign** feature allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
@@ -140,16 +140,39 @@ Always ensure that a valid macOS pool is selected before saving the Auto Re-sign
 #### Update Display Name
 
 With the Display Name parameter, you can change the visible name of the binary that will be re-signed. The re-signing process starts with the specified display name, and once completed, the `CFBundleDisplayName` value inside the binary is updated accordingly.
-  
+
 :::info
 If `CFBundleDisplayName` is not present in the `info.plist`, changing the display name will not take effect.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-2.png' />
 
-- **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
+- **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process, including pinning either value to an exact number using the **Fixed** source.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-4.png' />
+
+#### Update Build Number
+
+With the **Update Build Number** feature, you can automatically increment the build number of the incoming binary during the re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new build number will be generated based on the given offset (or set to the fixed value you provide) before the re-signing begins, and the binary will be signed with this updated build number.
+
+- **Build Number Source**: The defined base build number will be used for versioning during the re-signing process. **Uploaded Binary** and **Fixed** are available options.
+    - **Uploaded Binary**: The build number will be calculated from the **most recent binary** uploaded to Appcircle.
+    - **Fixed**: The binary will be signed with the exact build number you enter, without referencing the uploaded binary.
+- **Build Number**: The offset value is a number to be added or subtracted from the **build number source**. This offset field only applies to the **Uploaded Binary** source.
+
+> ⚠️ Note: When **Build Number Source** is set to **Fixed**, the offset field above is replaced with a **Build Number** text input. Enter the exact build number the binary should be signed with. This value must be provided whenever **Update Build Number** is enabled and the source is **Fixed**; leaving it empty will cause the re-signing process to fail.
+
+#### Update Version Number
+
+With the **Update Version Number** feature, you can automatically increment the version number of the incoming binary during the re-sign process using the specified offset value and increment strategy, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version number will be generated before the re-signing begins, based on the selected increment strategy and offset (or set to the fixed value you provide), and the binary will be signed with this updated version number.
+
+- **Version Number Source**: The defined base version number will be used for versioning during the re-signing process. **Uploaded Binary** and **Fixed** are available options.
+    - **Uploaded Binary**: The version number will be calculated based on the most recently **uploaded binary** to Appcircle.
+    - **Fixed**: The binary will be signed with the exact version number you enter, without referencing the uploaded binary.
+- **Version Number**: The offset value is a number to be added or subtracted from the **version number source**.
+- **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version number.
+
+> ⚠️ Note: When **Version Number Source** is set to **Fixed**, both the **Offset** and **Increment Strategy** controls above are hidden and replaced with a **Version Number** text input. Enter the exact version number the binary should be signed with. This value must be provided whenever **Update Version Number** is enabled and the source is **Fixed**; leaving it empty will cause the re-signing process to fail.
 
 - **Signing**: Choose provisioning profiles and entitlements required for re-signing.
 
@@ -210,9 +233,32 @@ If no pool is defined:
 Always ensure that a valid macOS pool is selected before saving the Auto Re-sign configuration.
 :::
 
-- **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
+- **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process, including pinning either value to an exact number using the **Fixed** source.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss5.png' />
+
+#### Update Version Code
+
+With the **Update Version Code** feature, you can automatically increment the version code of the incoming binary during the re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version code will be generated based on the given offset (or set to the fixed value you provide) before the re-signing begins, and the binary will be signed with this updated version code.
+
+- **Version Code Source**: The defined base version code will be used for versioning during the re-signing process. **Uploaded Binary** and **Fixed** are available options.
+    - **Uploaded Binary**: The version code will be calculated from the **most recent binary** uploaded to Appcircle.
+    - **Fixed**: The binary will be signed with the exact version code you enter, without referencing the uploaded binary.
+- **Version Code Offset**: The offset value is a number to be added or subtracted from the **version code source**. This offset field only applies to the **Uploaded Binary** source.
+
+> ⚠️ Note: When **Version Code Source** is set to **Fixed**, the **Version Code Offset** field above is replaced with a **Version Code** text input. Enter the exact version code the binary should be signed with. This value must be provided whenever **Update Version Code** is enabled and the source is **Fixed**; leaving it empty will cause the re-signing process to fail.
+
+#### Update Version Name
+
+With the **Update Version Name** feature, you can automatically increment the version name of the incoming binary during the re-sign process using the specified offset value and increment strategy, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version name will be generated before the re-signing begins, based on the selected increment strategy and offset (or set to the fixed value you provide), and the binary will be signed with this updated version name.
+
+- **Version Name Source**: The defined base version name will be used for versioning during the re-signing process. **Uploaded Binary** and **Fixed** are available options.
+    - **Uploaded Binary**: The version name will be calculated based on the most recently **uploaded binary** to Appcircle.
+    - **Fixed**: The binary will be signed with the exact version name you enter, without referencing the uploaded binary.
+- **Version Name Offset**: The offset value is a number to be added or subtracted from the **version name source**.
+- **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version name.
+
+> ⚠️ Note: When **Version Name Source** is set to **Fixed**, both the **Version Name Offset** and **Increment Strategy** controls above are hidden and replaced with a **Version Name** text input. Enter the exact version name the binary should be signed with. This value must be provided whenever **Update Version Name** is enabled and the source is **Fixed**; leaving it empty will cause the re-signing process to fail.
 
 - **Signing**: Select the keystore for signing your `.APK` or `.AAB` files.
 
@@ -239,7 +285,8 @@ Testing Distribution profiles will not allow `.AAB` binaries to be shared with t
 :::info Auto Re-sign Behaviour
 - Once Auto Re-sign is configured, every new binary uploaded to the Testing Distribution profile will automatically be re-signed.
 - Signed binaries will be displayed with a **signed** badge, and hovering over it will show the certificate details used.
-:::
+- If **Fixed** is selected for a Version/Build source, every re-signed binary will carry that exact same value until the configuration is changed.
+  :::
 
 ## Re-sign History
 

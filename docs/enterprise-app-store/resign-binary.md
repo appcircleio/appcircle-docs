@@ -37,7 +37,7 @@ You can use manual re-sign to:
 
 Manual re-sign operations are performed per app version and the resulting output is stored as a new re-signed artifact.
 
-:::info iOS Re-sign Configurations 
+:::info iOS Re-sign Configurations
 For detailed information about Manual iOS Re-sign configurations, please refer to the [configuration](/enterprise-app-store/resign-binary#ios-auto-re-sign) section. The configuration structure for Manual and Auto Re-sign is the same. However, unlike Auto Re-sign, Manual Re-sign configurations must be reconfigured for each re-sign action.
 :::
 
@@ -122,41 +122,34 @@ With the **Display Name** parameter, you can change the visible name of the bina
 
 #### Versioning
 
-By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
+By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process, including pinning either value to an exact number using the **Fixed** source.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-i3.png' />
 
 _**Update Build Number**_
 
-With the **Update Build Number** feature, you can automatically increment the build number of the uploaded binary during the auto re-sign process using the specified offset value. When this feature is enabled, a new build number will be generated based on the given offset before the re-signing begins, and the binary will be signed with this updated build number.
+With the **Update Build Number** feature, you can automatically increment the build number of the uploaded binary during the auto re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new build number will be generated based on the given offset (or set to the fixed value you provide) before the re-signing begins, and the binary will be signed with this updated build number.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-i9.png' />
 
-- **Build Number Source**: The defined base build number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, and **Uploaded Binary** are available options.
-    - **App Store**: The build number will be calculated based on the latest live version available on the **Apple App Store**.
-    - **TestFlight**: The build number will be determined by referencing the latest version available on **TestFlight**.
-    - **Uploaded Binary**: The build number or version code will be calculated from the **most recent binary** uploaded to Appcircle.
-- **Build Number**: The offset value is a number to be added or subtracted from the **build number source**.
+- **Build Number Source**: The defined base build number will be used for versioning during the re-signing process. **Uploaded Binary** and **Fixed** are available options.
+  - **Uploaded Binary**: The build number will be calculated from the **most recent binary** uploaded to Appcircle.
+  - **Fixed**: The binary will be signed with the exact build number you enter, without referencing the uploaded binary.
+- **Build Number**: The offset value is a number to be added or subtracted from the **build number source**. This offset field only applies to the **Uploaded Binary** source.
 
+> ⚠️ Note: When **Build Number Source** is set to **Fixed**, the offset field above is replaced with a **Build Number** text input. Enter the exact build number the binary should be signed with. This value must be provided whenever **Update Build Number** is enabled and the source is **Fixed**; leaving it empty will cause the re-signing process to fail.
 
 _**Update Version Number**_
 
-With the **Update Version Number** feature, you can automatically increment the version number  of the uploaded binary during the auto re-sign process using the specified offset value. When this feature is enabled, a new version number will be generated before the re-signing begins, based on the selected increment strategy and offset, and the binary will be signed with this updated version number.
+With the **Update Version Number** feature, you can automatically increment the version number  of the uploaded binary during the auto re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version number will be generated before the re-signing begins, based on the selected increment strategy and offset (or set to the fixed value you provide), and the binary will be signed with this updated version number.
 
-- **Version Number**: The defined base version number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, and **Uploaded Binary** are available options
-    - **App Store**: The version number will be calculated by referencing the latest live version available on the **Apple App Store**.
-    - **TestFlight**: The version number will be determined based on the latest version available on **TestFlight**.
-    - **Uploaded Binary**: The version number or version name will be calculated based on the most recently **uploaded binary** to Appcircle.
+- **Version Number**: The defined base version number will be used for versioning during the re-signing process. **Uploaded Binary** and **Fixed** are available options.
+  - **Uploaded Binary**: The version number will be calculated based on the most recently **uploaded binary** to Appcircle.
+  - **Fixed**: The binary will be signed with the exact version number you enter, without referencing the uploaded binary.
 - **Version Number**: The offset value is a number to be added or subtracted from the **version number source**.
 - **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version number.
 
-:::caution Update Versioning
-
-Within the Auto Re-sign feature configuration, if any store-based option is selected for versioning, it is mandatory to select an appropriate API key to retrieve the version information. If you do not want to perform versioning using the store, please select the **Uploaded Binary** option instead.
-
-For more information, please visit the **Credentials** [documentation.](/account/my-organization/security/credentials)
-
-:::
+> ⚠️ Note: When the **Version Number** source is set to **Fixed**, both the **Offset** and **Increment Strategy** controls above are hidden and replaced with a **Version Number** text input. Enter the exact version number the binary should be signed with. This value must be provided whenever **Update Version Number** is enabled and the source is **Fixed**; leaving it empty will cause the re-signing process to fail.
 
 #### Signing
 
@@ -167,7 +160,7 @@ Appcircle requires valid certificate and provisioning profile to successfully pe
 
 _**App Store Credential**_
 
-Appcircle’s Auto Re-sign feature requires an **App Store Connect** credential. Therefore, selecting a credential is mandatory for both versioning and signing processes. This credential is used to download the necessary signing assets and retrieve version-related information when versioning is configured to use App Store data.
+Appcircle’s Auto Re-sign feature requires an **App Store Connect** credential for the signing process — it is used to download the necessary signing assets and manage provisioning profiles when re-signing the binary. Since Enterprise App Store's Build Number and Version Number sources (**Uploaded Binary** and **Fixed**) don't call out to the App Store, this credential is not used for versioning here; it's still required to complete the signing step below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-i11.png' />
 
@@ -272,51 +265,40 @@ Always ensure that a valid macOS pool is selected before saving the Auto Re-sign
 
 #### Versioning
 
-By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version code and version name of the incoming binary according to the defined strategy during the re-signing process.
+By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version code and version name of the incoming binary according to the defined strategy during the re-signing process, including pinning either value to an exact number using the **Fixed** source.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a9.png' />
 
 _**Update Version Code**_
 
-With the **Update Version Code** feature, you can automatically increment the version code of the uploaded binary during the auto re-sign process using the specified offset value. When this feature is enabled, a new version code will be generated based on the given offset before the re-signing begins, and the binary will be signed with this updated version code.
+With the **Update Version Code** feature, you can automatically increment the version code of the uploaded binary during the auto re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version code will be generated based on the given offset (or set to the fixed value you provide) before the re-signing begins, and the binary will be signed with this updated version code.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a8.png' />
 
-- **Version Code Source**: The defined base version code will be used for versioning during the re-signing process. **Google Play**, and **Uploaded Binary** are available options.
-    - **Google Play**: The version code will be set by referencing the latest live version on **Google Play Console**.
-    - **Uploaded Binary**: The version code will be calculated from the **most recent binary** uploaded to Appcircle.
-- **Version Code Offset**: The offset value is a number to be added or subtracted from the **version code source**.
+- **Version Code Source**: The defined base version code will be used for versioning during the re-signing process. **Uploaded Binary** and **Fixed** are available options.
+  - **Uploaded Binary**: The version code will be calculated from the **most recent binary** uploaded to Appcircle.
+  - **Fixed**: The binary will be signed with the exact version code you enter, without referencing the uploaded binary.
+- **Version Code Offset**: The offset value is a number to be added or subtracted from the **version code source**. This offset field only applies to the **Uploaded Binary** source.
+
+> ⚠️ Note: When **Version Code Source** is set to **Fixed**, the **Version Code Offset** field above is replaced with a **Version Code** text input. Enter the exact version code the binary should be signed with. This value must be provided whenever **Update Version Code** is enabled and the source is **Fixed**; leaving it empty will cause the re-signing process to fail.
 
 _**Update Version Name**_
 
-With the **Update Version Name** features, you can automatically increment the version name of the uploaded binary during the auto re-sign process using the specified offset value. When this feature is enabled, a new version name will be generated before the re-signing begins, based on the selected increment strategy and offset, and the binary will be signed with this updated version name.
+With the **Update Version Name** features, you can automatically increment the version name of the uploaded binary during the auto re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version name will be generated before the re-signing begins, based on the selected increment strategy and offset (or set to the fixed value you provide), and the binary will be signed with this updated version name.
 
-- **Version Number/Version Name Source**: The defined base version name will be used for versioning during the re-signing process. **Google Play** and **Uploaded Binary** are available options
-    - **Google Play(Android)**: The version name will be set by referencing the latest live version on **Google Play Console**.
-    - **Uploaded Binary**: The version name will be calculated based on the most recently **uploaded binary** to Appcircle.
+- **Version Number/Version Name Source**: The defined base version name will be used for versioning during the re-signing process. **Uploaded Binary** and **Fixed** are available options.
+  - **Uploaded Binary**: The version name will be calculated based on the most recently **uploaded binary** to Appcircle.
+  - **Fixed**: The binary will be signed with the exact version name you enter, without referencing the uploaded binary.
 - **Version Name Offset**: The offset value is a number to be added or subtracted from the **version name source**.
 - **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version name.
 
-
-:::caution Update Versioning
-
-Within the Auto Re-sign feature configuration, if any store-based option is selected for versioning, it is mandatory to select an appropriate API key to retrieve the version information. If you do not want to perform versioning using the store, please select the **Uploaded Binary** option instead.
-
-For more information, please visit the **Credentials** [documentation.](/account/my-organization/security/credentials)
-
-:::
+> ⚠️ Note: When the **Version Number/Version Name** source is set to **Fixed**, both the **Version Name Offset** and **Increment Strategy** controls above are hidden and replaced with a **Version Name** text input. Enter the exact version name the binary should be signed with. This value must be provided whenever **Update Version Name** is enabled and the source is **Fixed**; leaving it empty will cause the re-signing process to fail.
 
 #### Signing
 
 Appcircle requires a necessary Keystore to successfully perform the auto re-sign process. The re-signing begins using the associated keystore.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a10.png' />
-
-_**Google Play Console Credential**_
-
-A **Google Play Console** credential is only required if versioning is configured to use store-based data. When versioning is set to retrieve version information from the Google Play Console, an API key must be provided to access live version details during the re-signing process.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a11.png' />
 
 _**Keystores**_
 

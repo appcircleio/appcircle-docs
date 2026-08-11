@@ -288,7 +288,22 @@ To set up a scheduled trigger:
 
   <Screenshot url='https://cdn.appcircle.io/docs/assets/QA86-2.png' />
 
-- **Cron Expression**: A standard 5-field cron expression (`minute hour day-of-month month day-of-week`) that defines when the build should run. Appcircle shows a plain-language summary underneath the field to help confirm the schedule — for example, `0 11 * * 1` is described as "Schedule build will start 11:00 AM every Monday."
+- **Cron Expression**: A standard 5-field cron expression that defines when the build should run, in the format `minute hour day-of-month month day-of-week`:
+
+  | Field | Allowed values | Notes |
+    |---|---|---|
+  | Minute | `0–59` | |
+  | Hour | `0–23` | |
+  | Day of month | `1–31` | |
+  | Month | `1–12` | |
+  | Day of week | `0–6` | `0` is Sunday |
+
+  Each field accepts `*` (any value), a specific number, a comma-separated list (e.g. `1,15`), a range (e.g. `1-5`), or a step value (e.g. `*/30` for every 30 units). Appcircle shows a plain-language summary underneath the field to help confirm the schedule before saving — for example:
+
+    - `0 11 * * 1` → "Schedule build will start 11:00 AM every Monday"
+    - `*/30 * * * *` → runs every 30 minutes
+    - `0 0 1 * *` → runs at midnight on the first day of every month
+
 - **Branch Name**: The branch the scheduled build will run against.
 - **Config**: The build configuration to use.
 - **Workflow**: The workflow to run.

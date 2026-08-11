@@ -20,12 +20,11 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- [Custom Roles](/account/my-organization/profile-and-team/custom-roles) (Granular scope-based role management) has been introduced, allowing permissions to be granted per action instead of per module. <AccountBadge/> <CloudBadge/>
-- [Scheduled builds](/build/build-process-management/build-manually-or-with-triggers#scheduled-builds-beta) can now be defined, viewed and edited from the build profile Triggers tab. <BuildBadge/> <CloudBadge/>
+- [Custom Roles (Beta)](/account/my-organization/profile-and-team/custom-roles) (Granular scope-based role management) has been introduced, allowing permissions to be granted per action instead of per module. <AccountBadge/> <CloudBadge/>
+- [Scheduled builds (Beta)](/build/build-process-management/build-manually-or-with-triggers#scheduled-builds-beta) can now be defined, viewed and edited from the build profile Triggers tab. <BuildBadge/> <CloudBadge/>
 - An optional expiration date can now be entered for external Personal Access Tokens in the connection form. <BuildBadge/> <CloudBadge/>
 - Activity logs have been added for the [Testing Distribution](/testing-distribution/testing-distribution-activity-log) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-activity-log) modules as well as for [Store Credentials](/account/my-organization/activity-log/credential-activity-log), including filtering and Excel export. <ReportsBadge/> <CloudBadge/>
 - A Fixed version option has been added to Re-sign, allowing a version to be entered manually instead of being fetched from a store. <SigningIdentitiesBadge/> <CloudBadge/>
-
 
 ### :muscle: Improvements
 
