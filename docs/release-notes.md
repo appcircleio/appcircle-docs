@@ -39,6 +39,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 26.6 and the latest Beta release of Xcode 27.0 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 - The [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) toolset has been expanded with new tools to trigger and cancel builds, read build status/logs and variable groups, notify testers and update release notes in Testing Distribution, start and stop publish flows, and pull additional activity log and queue reports. <CloudBadge/>
 
+:::warning
+Appcircle supports Xcode 27.0.x beta versions on all current runners. Since this is a beta version, the "Xcodebuild for Unit/UI Tests" step may take longer than expected or result in a timeout error. If you encounter any issues, please contact our support team.
+:::
+
 ### 🐞 Fixes
 
 - An issue has been fixed where the component version text displayed an incorrect value on Publish step logs. <PublishBadge/> <CloudBadge/>
