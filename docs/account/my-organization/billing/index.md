@@ -51,7 +51,7 @@ In both cases, usage is counted only when the publish start event is received, w
 
 The following operations do not increase publish usage:
 
-- Publish jobs that are not picked up by a runner and remain in the queue. They appear in the [Publish Report](/publish-module/publish-report) as a single item with the **Waiting** status.
+- Publish jobs that are not picked up by a runner and remain in the queue. They appear in the [Publish Report](/publish-to-stores-module/publish-report) as a single item with the **Waiting** status.
 - Publishes started from an intermediate step, because they continue from where they left off.
 - Queued jobs that move to the **Canceled**, **Timed Out**, or **Stopped** status without ever being picked up.
 
