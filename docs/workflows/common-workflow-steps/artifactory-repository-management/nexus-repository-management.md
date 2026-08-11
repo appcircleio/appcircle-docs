@@ -18,16 +18,19 @@ Integrating an Artifactory repository manager into your iOS build process is a r
 
 :::info Supported Frameworks
 
-Sonatype Sonatype Nexus only supports **CocoaPods** for iOS. There is no support for [**Carthage**](https://github.com/Carthage/Carthage) and [**SPM (Swfit Package Manager)**](https://www.swift.org/documentation/package-manager/).
+Sonatype Nexus supports **CocoaPods** and [**SPM (Swift Package Manager)**](https://www.swift.org/documentation/package-manager/) for iOS. There is no support for [**Carthage**](https://github.com/Carthage/Carthage).
 
-For more information about supported frameworks, please visit [**Sonatype Sonatype Nexus Repository documentation**](https://help.sonatype.com/en/formats.html).
+SPM support is provided through the Swift Package Registry API and requires a recent Nexus version. See [Nexus Integration for SPM](#nexus-integration-for-spm) below for the version requirements and configuration.
+
+For more information about supported frameworks, please visit [**Sonatype Nexus Repository documentation**](https://help.sonatype.com/en/formats.html).
 
 :::
 
-:::tip Artifactory Management for SPM
+:::tip Artifactory Management for SPM on older Nexus versions
 
-Since Sonatype Nexus does not yet support **SPM**, it is **not** possible to manage SPM packages using Nexus.
-For users with a Nexus infrastructure, an alternative approach to centralize and fetch SPM packages is to collect all SPM packages in a private Git repository. This way, all SPM packages are pulled only from a repository accessible to the user and included in the build process.
+If your Nexus instance is older than the versions listed in [Nexus Integration for SPM](#nexus-integration-for-spm), Swift repositories are not available and SPM packages cannot be managed by Nexus.
+
+In that case, an alternative approach to centralize and fetch SPM packages is to collect all SPM packages in a private Git repository. This way, all SPM packages are pulled only from a repository accessible to the user and included in the build process.
 
 **Note**: With this method, the **SPM** packages collected in a single repository must be regularly checked and updated to ensure they remain up to date.
 
@@ -90,6 +93,152 @@ end
 . #Other Pod file codes
 
 ```
+
+### Nexus Integration for SPM
+
+In addition to CocoaPods, Sonatype Nexus can also act as a **Swift Package Registry** for your iOS projects, so SPM dependencies are resolved through your own Nexus instance instead of being fetched directly from public sources.
+
+:::info Version Requirements
+
+Swift repository support was not introduced in a single Nexus release. The minimum version depends on the repository type:
+
+- `swift (proxy)`: Nexus **3.89.0** or later
+- `swift (hosted)`: Nexus **3.90.0** or later
+- `swift (group)`: Nexus **3.91.0** or later
+
+Swift repositories are available in both the **Community** and **Pro** editions. On the client side, **SPM 5.7 or later** is required, and Sonatype recommends **5.9 or later**.
+
+For more information, please visit the [**Sonatype Nexus Swift repository documentation**](https://help.sonatype.com/en/swift-repositories.html).
+
+:::
+
+:::caution Proxy Repository Limitation
+
+A `swift (proxy)` repository can only use `https://github.com/` as its **Remote storage URL**. Swift proxy repositories only support registries that implement the Swift Package Registry protocol, and there is currently no official public Swift registry, so an arbitrary third-party registry cannot be proxied.
+
+:::
+
+#### 1. Set up the Swift repositories in Nexus
+
+Create the repositories from **Settings > Repository > Repositories > Create repository**:
+
+- `swift (proxy)`: for example `swift-proxy`, with `https://github.com/` as the Remote storage URL.
+- `swift (hosted)`: for example `swift-hosted`, for your own internal packages.
+- `swift (group)`: for example `swift-group`, containing the hosted and proxy repositories as members, in the order you want them to be resolved.
+
+Clients should target the group repository URL, for example `https://your-nexus-url/repository/swift-group/`.
+
+For the detailed repository creation steps, please visit the [**Sonatype Nexus create a Swift repository documentation**](https://help.sonatype.com/en/create-a-swift-repository.html).
+
+#### 2. Declare the dependencies in Package.swift
+
+Nexus supports both registry identity and Git URL declarations, and they can be mixed in the same manifest:
+
+```swift
+dependencies: [
+    .package(id: "apple.swift-nio", from: "2.65.0"),
+    .package(url: "https://github.com/baekteun/EventLimiter.git", from: "1.0.0")
+]
+```
+
+In Xcode, packages coming from the registry are referenced as `SCOPE.PACKAGENAME`, for example `apple.swift-log`.
+
+#### 3. Configure the registry with registries.json
+
+SwiftPM reads the registry configuration from a `registries.json` file. For CI builds, the project-scoped path is recommended, since it is resolved from the cloned repository directory:
+
+- Project-scoped: `<repo-root>/.swiftpm/configuration/registries.json`
+- Global (macOS): `~/Library/org.swift.swiftpm/configuration/registries.json`
+
+The Xcode variant of the file keeps no credentials, authentication is handled through `~/.netrc`:
+
+```json
+{
+  "authentication": {
+    "your-nexus-url": {
+      "loginAPIPath": "/repository/swift-group/login",
+      "type": "basic"
+    }
+  },
+  "registries": {
+    "[default]": {
+      "supportsAvailability": false,
+      "url": "https://your-nexus-url/repository/swift-group/"
+    }
+  },
+  "version": 1
+}
+```
+
+For more information, please visit the [**Sonatype Nexus SPM registry configuration documentation**](https://help.sonatype.com/en/configure-spm-registry.html).
+
+#### 4. Configure the Appcircle workflow
+
+The registry configuration and the credentials must be in place **before** the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) step runs. A typical workflow order is:
+
+1. **Git Clone**
+2. **Custom Script**: write the `registries.json` file into the cloned repository.
+3. **Authenticate with Netrc**: provide the Nexus credentials.
+4. **Xcodebuild for Devices**
+
+In the [**Custom Script**](/workflows/common-workflow-steps/custom-script) step, you can generate the configuration file as shown below:
+
+```bash
+mkdir -p "$AC_REPOSITORY_DIR/.swiftpm/configuration"
+cat > "$AC_REPOSITORY_DIR/.swiftpm/configuration/registries.json" <<EOF
+{
+  "authentication": {
+    "$NEXUS_HOST": {
+      "loginAPIPath": "/repository/swift-group/login",
+      "type": "basic"
+    }
+  },
+  "registries": {
+    "[default]": {
+      "supportsAvailability": false,
+      "url": "https://$NEXUS_HOST/repository/swift-group/"
+    }
+  },
+  "version": 1
+}
+EOF
+```
+
+For authentication, use the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step with the following values:
+
+- `$AC_NETRC_HOSTNAME`: your Nexus host
+- `$AC_NETRC_USER`: the Nexus User Token **Name Code**
+- `$AC_NETRC_PASS`: the Nexus User Token **Pass Code**
+
+You can generate a User Token from **Account > User Token > Access User Token** in Nexus. If [anonymous access](https://help.sonatype.com/en/anonymous-access.html) is enabled on your Nexus instance, the authentication step can be skipped.
+
+:::caution Store Credentials as Secrets
+
+The Nexus user token name and pass codes should be stored as **secret** environment variables in Appcircle, so they are masked in build logs.
+
+:::
+
+:::info Transitive Dependencies
+
+Sonatype documents the `--replace-scm-with-registry` flag as required for transitive dependencies to be resolved through the proxy repository:
+
+```bash
+swift package resolve --replace-scm-with-registry
+```
+
+This is a SwiftPM CLI flag and there is currently no documented `xcodebuild` equivalent, so its behavior in an `xcodebuild` based workflow may differ.
+
+For more information, please visit the [**Sonatype Nexus Swift CLI usage documentation**](https://help.sonatype.com/en/swift-cli-usage.html).
+
+:::
+
+:::info SSL Configuration
+
+If your Nexus instance uses a self-signed SSL certificate, the certificate must be trusted by the build machine. On self-hosted runners, install the root CA by following the [**custom certificates guide**](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates).
+
+The `~/.curlrc --insecure` workaround described for CocoaPods is not applicable here, since the SPM registry client requires a properly trusted certificate.
+
+:::
 
 ### Nexus Integration for Android
 
