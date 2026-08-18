@@ -12,7 +12,7 @@ import NexusHttpsProtocol from '@site/docs/\_nexus-https-protocol.mdx';
 
 Integrating Sonatype Nexus into your CI/CD pipeline enables secure, efficient, and automated management of dependencies, artifacts, and container images. By connecting Appcircle with Nexus Repository Manager, teams can centralize artifact storage, enforce security policies, and ensure consistent version control across builds. This integration not only streamlines dependency resolution but also enhances supply chain security through vulnerability scanning and license compliance checks. Ultimately improving build reliability and traceability throughout the release process.
 
-### Nexus Integration for iOS
+### Nexus Integration for Cocoapods
 
 Integrating an Artifactory repository manager into your iOS build process is a robust approach to centralizing dependency management, improving build reliability, and ensuring reproducibility. Below, we’ll demonstrate this process using **Sonatype Nexus Repository Manager** as an example in conjunction with the Appcircle **CocoaPods Install** workflow step. Please ensure your Sonatype Nexus Repository Manager is properly installed and configured. For more information, please visit the [official Sonatype Nexus documentation](https://help.sonatype.com/repomanager3).
 
@@ -172,49 +172,19 @@ The Xcode variant of the file keeps no credentials, authentication is handled th
 
 For more information, please visit the [**Sonatype Nexus SPM registry configuration documentation**](https://help.sonatype.com/en/configure-spm-registry.html).
 
-#### 4. Configure the Appcircle workflow
+:::info Authentication for SPM Repositories
 
-The registry configuration and the credentials must be in place **before** the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) step runs. A typical workflow order is:
+If you have authenticated repository in Nexus environment, first you should authenticate it on Appcircle runners. For authentication, use the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step with the following values:
 
-1. **Git Clone**
-2. **Custom Script**: write the `registries.json` file into the cloned repository.
-3. **Authenticate with Netrc**: provide the Nexus credentials.
-4. **Xcodebuild for Devices**
-
-This order assumes that no step before **Xcodebuild for Devices** needs the Nexus credentials. If an earlier step also pulls from Nexus, move the **Authenticate with Netrc** step before it.
-
-In the [**Custom Script**](/workflows/common-workflow-steps/custom-script) step, you can generate the configuration file as shown below:
-
-```bash
-mkdir -p "$AC_REPOSITORY_DIR/.swiftpm/configuration"
-cat > "$AC_REPOSITORY_DIR/.swiftpm/configuration/registries.json" <<EOF
-{
-  "authentication": {
-    "$NEXUS_HOST": {
-      "loginAPIPath": "/repository/swift-group/login",
-      "type": "basic"
-    }
-  },
-  "registries": {
-    "[default]": {
-      "supportsAvailability": false,
-      "url": "https://$NEXUS_HOST/repository/swift-group/"
-    }
-  },
-  "version": 1
-}
-EOF
-```
-
-For authentication, use the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step with the following values:
-
-- `$AC_NETRC_HOSTNAME`: your Nexus host
-- `$AC_NETRC_USER`: the Nexus User Token **Name Code**
-- `$AC_NETRC_PASS`: the Nexus User Token **Pass Code**
+- `$AC_NETRC_HOSTNAME`: Your Nexus host
+- `$AC_NETRC_USER`: The Nexus User Token **Name Code**
+- `$AC_NETRC_PASS`: The Nexus User Token **Pass Code**
 
 `$NEXUS_HOST` in the script above and `$AC_NETRC_HOSTNAME` must be the same bare hostname, for example `nexus.example.com`, without the `https://` prefix and without a repository path. The script inserts `$NEXUS_HOST` after `https://`, and the `machine` entry written to `~/.netrc` must match that hostname for authentication to succeed.
 
 You can generate a User Token from **Account > User Token > Access User Token** in Nexus. If [anonymous access](https://help.sonatype.com/en/anonymous-access.html) is enabled on your Nexus instance, the authentication step can be skipped.
+
+:::
 
 :::caution Store Credentials as Secrets
 
