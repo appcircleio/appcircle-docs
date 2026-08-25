@@ -28,3 +28,9 @@ Appcircle supports a wide variety of AI assistants across multiple vendors for q
 Understand the Build Insights Report: health and trends, root cause, workflow quality, artifact health, queue time, and CI maturity scoring from the `get_build_insights_report` MCP tool.
 
 <ContentRef url="/appcircle-ai/ai-insights">AI Insights</ContentRef>
+
+## [AI FAQ and Disclaimer](/appcircle-ai/ai-faq)
+
+How Appcircle uses AI technologies: which data is processed and which is not, which models are involved, whether anything is retained or used for training, the limits of log anonymization, and how to turn AI features off.
+
+<ContentRef url="/appcircle-ai/ai-faq">AI FAQ and Disclaimer</ContentRef>
