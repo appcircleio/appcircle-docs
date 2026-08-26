@@ -115,11 +115,27 @@ Keep the MobSF installation as its own image generation rather than installing i
 
 ## Air-gapped installation
 
-A runner without outbound internet access cannot download MobSF from upstream. Stage the artifacts on a machine that does have access, copy them to the runner, and point the installer at them:
+A runner without outbound internet access cannot download MobSF from upstream. Stage the artifacts on a machine that does have access, copy them to the runner, and point the installer at them.
+
+The staging directory is flat: every file sits directly in it, with no subdirectories. It must contain two kinds of artifact.
+
+**1. MobSF and its Python dependencies.** The installer runs `pip` against the directory with `--no-index`, so every wheel MobSF needs must already be there. Download them on the staging machine with the same Python version and the same platform as the runner:
+
+```bash
+pip download "mobsf==<version>" --dest /path/to/staged-artifacts
+```
+
+Use the version you will pass to `--version`. Omitting `--version` installs the version pinned in the runner package, so read that pin first with `./setup-mobsf.sh --action pin` and download exactly that version, otherwise the install fails with an unresolved requirement.
+
+**2. The analysis tools.** Each pinned tool is copied from the directory under the exact file name of its upstream download, so keep the downloaded file names unchanged. The pinned versions and their download URLs are listed in `lib/mobsf.versions` inside the runner package; fetch each URL on the staging machine and place the resulting file in the same directory. When a file is missing, the installer stops and names the file it expected.
+
+With both in place, run the installer:
 
 ```bash
 ./setup-mobsf.sh --action install --offline-dir /path/to/staged-artifacts
 ```
+
+Add `--version <version>` when you staged a version other than the pinned one.
 
 ## Uninstalling
 
