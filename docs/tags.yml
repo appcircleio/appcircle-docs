@@ -3292,3 +3292,18 @@ quay:
   label: "scheduled build"
   description: "Documentation related to scheduled build"
   permalink: "/scheduled-build"
+
+"mobsf":
+  label: "mobsf"
+  description: "Documentation related to mobsf"
+  permalink: "/mobsf"
+
+"static analysis":
+  label: "static analysis"
+  description: "Documentation related to static analysis"
+  permalink: "/static-analysis"
+
+"binary scan":
+  label: "binary scan"
+  description: "Documentation related to binary scan"
+  permalink: "/binary-scan"
