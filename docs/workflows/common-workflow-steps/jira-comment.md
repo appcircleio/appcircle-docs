@@ -19,7 +19,7 @@ By adding Appcircle's [**Jira Comment**](https://github.com/appcircleio/appcircl
 Before using the **Jira Comment** step, make sure you have the following:
 
 - Credentials for your Jira instance: an API token and the associated account email for Jira Cloud, or a Personal Access Token (PAT) for Jira On-Prem.
-- An [**Environment Variables**](/build/build-environment-variables) group that holds those credentials, connected to your build profile. Never type them into the step inputs directly.
+- An [**Environment Variables**](/build/build-environment-variables) group that holds those credentials, connected to your build profile. For security reasons, we recommend adding the token and the PAT as secret variables using the lock icon rather than entering them into the step inputs directly.
 - The key of the Jira issue to comment on, available to the step as an environment variable. See [Getting the Issue Key Dynamically](#getting-the-issue-key-dynamically) to extract it from the branch name.
 
 :::caution
@@ -59,27 +59,28 @@ The script writes an environment variable named `AC_JIRA_ISSUE`, and that is exa
 
 Adjust the parsing logic to match your own branch naming convention. The example above takes the last segment of the branch name, so it also works for a nested branch such as `feature/ios/JIRAISSUE-1` and for a branch name that contains no `/` at all.
 
-## Finding the Transition ID or Name
+## Finding the Transition Name
 
-`$AC_JIRA_SUCCESS_TRANSITION` and `$AC_JIRA_FAIL_TRANSITION` accept either the name of a transition or its numeric ID. Both inputs are optional, and the issue status stays untouched when you leave them empty.
+`$AC_JIRA_SUCCESS_TRANSITION` and `$AC_JIRA_FAIL_TRANSITION` are optional. If you leave both empty, the step only posts a comment and the issue status is never touched.
 
-Note that a transition is not the same thing as a status. You do not enter the target status (for example `Done`), you enter the transition that moves the issue into it (for example `Close Issue`). The available transitions depend on the current status of the issue and on the workflow scheme of your Jira project.
+You do not need to look up a numeric ID. The step accepts the transition name as it is and resolves the matching ID itself, ignoring letter case.
 
-To list the transitions that are currently available for an issue, call the Jira REST API with the same credentials you use in the step:
+A transition is the move between two statuses, not the status itself. In most projects the transition carries the same name as the status it leads to, so the quickest way to find the value is the Jira UI:
 
-```bash
-# Jira Cloud
-curl -u "your-email@example.com:$AC_JIRA_TOKEN" \
-  -H "Accept: application/json" \
-  "https://mysubdomain.atlassian.net/rest/api/3/issue/JIRAISSUE-1/transitions"
+1. Open the issue in Jira.
+2. Click the status button on the issue.
+3. The entries in the dropdown are the transitions available from the current status.
+4. Type one of those entries into the step input exactly as it is written, for example `In Progress` or `Done`.
 
-# Jira On-Prem
-curl -H "Authorization: Bearer $AC_JIRA_PAT" \
-  -H "Accept: application/json" \
-  "https://jira.mycompany.com/rest/api/2/issue/JIRAISSUE-1/transitions"
+### If the name does not match
+
+Some workflows name a transition differently from the status it leads to, for example `Start Progress` for the `In Progress` status. In that case the dropdown label is not the value the step needs, and you can read the real names straight from the Jira REST API. Since you are already signed in to Jira in your browser, open this address in a new tab and replace the site and the issue key with your own:
+
+```text
+https://mysubdomain.atlassian.net/rest/api/3/issue/JIRAISSUE-1/transitions
 ```
 
-The response lists every available transition with its `id` and `name`. Use either value in the step input:
+The response lists every transition available for that issue. The `name` value is what you enter in the step input:
 
 ```json
 {
@@ -90,11 +91,15 @@ The response lists every available transition with its `id` and `name`. Use eith
 }
 ```
 
-If you prefer the Jira UI, a project administrator can find the same IDs under **Project settings > Workflows**, by opening the workflow in text mode.
+For Jira On-Prem, use `/rest/api/2/` in place of `/rest/api/3/`. A project administrator can also see the same names under **Project settings > Workflows**.
 
 :::caution
 
-Transition names and IDs are specific to the workflow of a Jira project. A value that works for one project may not exist in another, and the API call above returns only the transitions that are valid for the issue's current status.
+The step fails if the value you enter does not match any available transition, so check the following when a transition does not work:
+
+- Transitions are specific to a project's workflow. A name that works in one project may not exist in another.
+- Only the transitions valid for the issue's **current** status are available. If an issue is already in the `Done` status, a `Done` transition may not be offered.
+- Make sure no trailing space is left in the input. Letter case is ignored, but a stray space is not.
 
 :::
 
@@ -154,8 +159,8 @@ The required inputs for authorization vary based on the type of Jira instance (O
 | `$AC_JIRA_TOKEN`              | User's API Token. If this value is filled, the Jira e-mail field must be filled as well. Only Jira Cloud users can use API Token. You can create a token [here](https://id.atlassian.com/manage-profile/security/api-tokens) | Conditional - required for Jira Cloud |
 | `$AC_JIRA_PAT`              | Specify the Personal Access Token for Jira authentication. Only Jira On-Prem users can use PAT.  | Conditional - required for Jira On-Prem |
 | `$AC_JIRA_ISSUE`              | The ID or key of the issue. Refer to the [Getting the Issue Key Dynamically](#getting-the-issue-key-dynamically) section for instructions on extracting this information from branch names or commit messages. | Required |
-| `$AC_JIRA_FAIL_TRANSITION`    | Transition ID or name for the failed step. Optionally change the status of your issue if the previous step fails. Ensure that the `Always run this step even if the previous steps fail` switch is enabled for this feature to work. Refer to the [Finding the Transition ID or Name](#finding-the-transition-id-or-name) section to look up this value.  | Optional |
-| `$AC_JIRA_SUCCESS_TRANSITION` | Transition ID or name for the successful step. Optionally change the status of your issue if the previous step succeeds. Refer to the [Finding the Transition ID or Name](#finding-the-transition-id-or-name) section to look up this value.                                                    | Optional |
+| `$AC_JIRA_FAIL_TRANSITION`    | Transition ID or name for the failed step. Optionally change the status of your issue if the previous step fails. Ensure that the `Always run this step even if the previous steps fail` switch is enabled for this feature to work. Refer to the [Finding the Transition Name](#finding-the-transition-name) section to look up this value.  | Optional |
+| `$AC_JIRA_SUCCESS_TRANSITION` | Transition ID or name for the successful step. Optionally change the status of your issue if the previous step succeeds. Refer to the [Finding the Transition Name](#finding-the-transition-name) section to look up this value.                                                    | Optional |
 | `$AC_JIRA_TEMPLATE_V2`           | The comment template used to post a comment if [Jira REST API Version 2](#jira-rest-api-version-reference) is selected. Variables prefixed with `$` will be replaced during the build process. A default template is provided. Refer to the [Changing Template](#changing-template) section to modify it. | Optional |
 | `$AC_JIRA_TEMPLATE_V3`           | The comment template used to post a comment if [Jira REST API Version 3](#jira-rest-api-version-reference) is selected. Variables prefixed with `$` will be replaced during the build process. A default template is provided. Refer to the [Changing Template](#changing-template) section to modify it. | Optional |
 
