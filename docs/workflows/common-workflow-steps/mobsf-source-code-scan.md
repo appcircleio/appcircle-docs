@@ -12,23 +12,6 @@ Static analysis reads the code without running the app, so it reports issues suc
 
 To scan the compiled app instead of the code, use the [**MobSF Binary Scan**](/workflows/common-workflow-steps/mobsf-binary-scan) step. The two steps complement each other, and a workflow can run both.
 
-### Scan Modes
-
-The step offers two scan modes, selected with the **Scan Mode** input variable.
-
-| Scan Mode | Scanner | What It Adds |
-| --------- | ------- | ------------ |
-| `light` | The [mobsfscan](https://github.com/MobSF/mobsfscan) command line tool, installed at build time into a temporary Python virtual environment. | Source code rules only. The single runner requirement is `python3`, and no MobSF installation is needed. |
-| `advance` | The MobSF installation provisioned on the runner, which the step sends a compressed copy of the source code to. | Manifest, certificate, and scored AppSec analysis in addition to the source code rules. |
-
-:::info
-
-The `advance` mode needs a MobSF installation on the runner. Appcircle cannot ship MobSF with the runner because of its GPL-3.0 license, so it is provisioned during runner setup instead. When the runner has no usable MobSF installation, the step explains why in the build log and runs the `light` scan, rather than failing the build. For self-hosted runners, see the [self-hosted runner documentation](/self-hosted-appcircle/self-hosted-runner).
-
-:::
-
-MobSF reports JSON only for a source code scan, so the **Output Format** input variable applies to the `light` scan alone.
-
 ### Prerequisites
 
 Before running the **MobSF Source Code Scan** step, you must complete the prerequisite detailed in the table below:
@@ -37,6 +20,8 @@ Before running the **MobSF Source Code Scan** step, you must complete the prereq
 | -------------------------- | ----------- |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | Clones the repository to the build agent, so that the scanner has source code to read. |
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-scan.png' />
+
 Place the step after **Git Clone** and before the build steps. The scan reads the source code only, so it does not need a built app.
 
 To keep the reports after the build, add the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step after this step.
@@ -44,6 +29,8 @@ To keep the reports after the build, add the [**Export Build Artifacts**](/workf
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-scan-inputs.png' />
 
 | Variable Name | Description | Status |
 | ------------- | ----------- | ------ |
@@ -91,54 +78,13 @@ An `advance` scan publishes `mobsf-source-code-analyze.json`, because JSON is th
 
 Reports are published before the build is graded, so the findings stay downloadable even when the step breaks the pipeline.
 
-### Build Grading
-
-Two independent gates decide whether the step breaks the pipeline, and both are evaluated on every scan:
-
-| Gate | Input Variable | Reads |
-| ---- | -------------- | ----- |
-| Level gate | **Fail Build On** (`$AC_MOBSFSCAN_SEVERITY_THRESHOLD`) | The findings. |
-| Score gate | **Minimum Security Score** (`$AC_MOBSFSCAN_MIN_SCORE`) | The MobSF security score out of 100. |
-
-The level gate breaks the pipeline on a finding at the selected level or worse, which makes `low` the strictest setting and `critical` the loosest. Setting it to `none` reports the findings without breaking the pipeline. The levels map onto what the scanners report: `critical` is `mobsfscan` `ERROR` and MobSF `high`, `normal` is `WARNING` or `warning`, and `low` is `INFO` or `info`. MobSF `secure` entries are passed checks and `hotspot` entries need a human decision, so neither breaks the pipeline.
-
-Either gate breaks the pipeline on its own, and the gates are not chained. Setting **Fail Build On** to `none` disables the level gate only, so a score below the minimum still breaks the build. The score gate is skipped when the report carries no score, which is every `light` scan, and the summary in the build log says so.
-
-:::warning
-
-When a gate is breached, this step fails and breaks the pipeline. To let the workflow continue, enable the "[Continue with the next step even if this step fails](/build/build-process-management/build-workflows#editing-workflow-steps)" toggle on the step.
-
-:::
-
-The build log closes with a summary that ends in the verdict:
-
-```text
-------------------------------------------------------
-MobSF Source Code Scan Summary - light scan
-  Critical              6 finding(s)
-  Normal                3 finding(s)
-  Low                   1 finding(s)
-  Total                 10 finding(s)
-  Worst level found     Critical
-  Fail build on         critical
-  Minimum score         not set
-  Verdict               pipeline breaks
-------------------------------------------------------
-```
-
-### Air-Gapped Runners
-
-The `light` scan installs `mobsfscan` with `pip` at build time, so a runner without access to the public Python package index needs to be pointed at an internal one. The step has no package index input variables, because `pip` reads its own configuration: set `PIP_INDEX_URL` for an internal index, or `PIP_NO_INDEX` together with `PIP_FIND_LINKS` for a mirrored wheel directory.
-
-Define these variables in an [**Environment Variables**](/build/build-environment-variables) group or in the runner's `pip.conf`. An index URL that carries credentials belongs there rather than in a step field. The step removes the values of these variables from the build log.
-
-The `advance` scan installs nothing, so it needs no package index at all.
-
 ---
 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-mobsfscan-component
+
+---
 
 ## FAQ
 

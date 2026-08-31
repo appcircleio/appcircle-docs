@@ -12,15 +12,10 @@ Because it reads the compiled app rather than the code, this scan reports what a
 
 To analyze the code instead of the built app, use the [**MobSF Source Code Scan**](/workflows/common-workflow-steps/mobsf-source-code-scan) step. The two steps complement each other, and a workflow can run both.
 
-:::warning
-
-This step needs a MobSF installation on the runner. Appcircle cannot ship MobSF with the runner because of its GPL-3.0 license, so it is provisioned during runner setup with the `setup-mobsf.sh` script instead, and the step locates that installation on its own. Binary analysis has no command line equivalent to fall back to, so the step fails on a runner without MobSF and names the provisioning script in the build log. For self-hosted runners, see the [self-hosted runner documentation](/self-hosted-appcircle/self-hosted-runner).
-
-:::
 
 ### Prerequisites
 
-The step scans a built app, so a build step has to run before it. Signing is not required for the scan, but scanning the signed app is what tells you whether the certificate and the protections of the distributed file are in order.
+Before running the **MobSF Binary Scan** step, you must complete certain prerequisites, as detailed in the table below:
 
 To keep the report after the build, add the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step after this step.
 
@@ -31,6 +26,8 @@ To keep the report after the build, add the [**Export Build Artifacts**](/workfl
 | [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app (APK or AAB) required for the **MobSF Binary Scan** step. |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign) | Signs the app (APK or AAB). If the app is already signed, this step can be skipped. |
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-android.png' />
+
 #### For Android Flutter
 
 | Prerequisite Workflow Step | Description |
@@ -38,11 +35,15 @@ To keep the report after the build, add the [**Export Build Artifacts**](/workfl
 | [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app (APK or AAB) required for the **MobSF Binary Scan** step. |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign) | Signs the app (APK or AAB). If the app is already signed, this step can be skipped. |
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-flutter-android.png' />
+
 #### For iOS (Objective-C / Swift and React Native)
 
 | Prerequisite Workflow Step | Description |
 | -------------------------- | ----------- |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary.png' />
 
 #### For iOS Flutter
 
@@ -51,15 +52,18 @@ To keep the report after the build, add the [**Export Build Artifacts**](/workfl
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-flutter.png' />
+
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-All input variables are optional. On a workflow that builds the app first, the step finds the artifact without configuration.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-input.png' />
+
 
 | Variable Name | Description | Status |
 | ------------- | ----------- | ------ |
-| `$AC_MOBSF_ARTIFACT_PATH` | Path of the APK, AAB, or IPA to scan, or of the folder holding it. When empty, the step looks at `$AC_APK_PATH`, then `$AC_AAB_PATH`, then the `.ipa` file under `$AC_EXPORT_DIR` and `$AC_OUTPUT_DIR`. A folder is accepted because iOS builds do not expose the IPA path as a variable. | Optional |
+| `$AC_MOBSF_ARTIFACT_PATH` | Path of the APK, AAB, or IPA to scan, or of the folder holding it. When empty, the step looks at `$AC_APK_PATH`, then `$AC_AAB_PATH`, then the `.ipa` file under `$AC_OUTPUT_DIR/MyApp.ipa`. A folder is accepted because iOS builds do not expose the IPA path as a variable. | Optional |
 | `$AC_MOBSF_FAIL_ON` | Breaks the pipeline on a finding at the selected level or worse. Options: `critical`, `normal`, `low`, `none`. Default: `critical`. See [Build Grading](#build-grading). | Optional |
 | `$AC_MOBSF_MIN_SCORE` | Breaks the pipeline when the MobSF security score out of 100 falls below this value. Empty, the default, disables the check. | Optional |
 | `$AC_MOBSF_SCAN_TIMEOUT` | Timeout in seconds for the MobSF scan. Default: `1800`. MobSF applies its own decompile and SAST timeouts of 1000 seconds each, so keep this value above their sum for large apps. | Optional |
@@ -87,50 +91,14 @@ JSON is the only format this step reports. MobSF's other export is a PDF, which 
 
 The report is published before the build is graded, so the findings stay downloadable even when the step breaks the pipeline.
 
-### Build Grading
-
-Two independent gates decide whether the step breaks the pipeline, and both are evaluated on every scan:
-
-| Gate | Input Variable | Reads |
-| ---- | -------------- | ----- |
-| Level gate | **Fail Build On** (`$AC_MOBSF_FAIL_ON`) | The findings. |
-| Score gate | **Minimum Security Score** (`$AC_MOBSF_MIN_SCORE`) | The MobSF security score out of 100. |
-
-The level gate breaks the pipeline on a finding at the selected level or worse, which makes `low` the strictest setting and `critical` the loosest. Setting it to `none` reports the findings without breaking the pipeline. The levels map onto MobSF's own grades: `critical` is `high`, `normal` is `warning`, and `low` is `info`. A `secure` entry is a passed check and a `hotspot` entry needs a human decision, so neither breaks the pipeline.
-
-Either gate breaks the pipeline on its own, and the gates are not chained. Setting **Fail Build On** to `none` disables the level gate only, so a score below the minimum still breaks the build. Leaving **Minimum Security Score** empty disables the score gate, and the level gate decides alone.
-
-:::warning
-
-When a gate is breached, this step fails and breaks the pipeline. To let the workflow continue, enable the "[Continue with the next step even if this step fails](/build/build-process-management/build-workflows#editing-workflow-steps)" toggle on the step.
-
-:::
-
-The build log closes with a summary that ends in the verdict:
-
-```text
-------------------------------------------------------
-MobSF Binary Scan Summary
-  Artifact              spacetech-release.apk
-  Security score        35 / 100
-  Critical              6 finding(s)
-  Normal                3 finding(s)
-  Low                   1 finding(s)
-  Passed checks         2
-  Needs review          0
-  Total                 10 finding(s)
-  Worst level found     Critical
-  Fail build on         critical
-  Minimum score         not set
-  Verdict               pipeline breaks
-------------------------------------------------------
-```
 
 ---
 
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-mobsf-binary-scan
+
+---
 
 ## FAQ
 
