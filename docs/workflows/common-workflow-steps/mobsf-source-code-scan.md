@@ -36,11 +36,11 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | ------------- | ----------- | ------ |
 | `$AC_REPOSITORY_DIR` | Specifies the directory where the repository is cloned. | Required |
 | `$AC_MOBSFSCAN_VERSION` | The `mobsfscan` version to install for the `light` scan. It is pinned, `1.0.0` by default, so that a build is reproducible. | Required |
-| `$AC_MOBSFSCAN_SCAN_MODE` | Selects the scanner. Options: `light`, `advance`. Default: `light`. See [Scan Modes](#scan-modes). | Optional |
+| `$AC_MOBSFSCAN_SCAN_MODE` | Selects the scanner. Options: `light`, `advance`. Default: `light`. See [Which scan mode should I choose?](#which-scan-mode-should-i-choose). | Optional |
 | `$AC_MOBSFSCAN_SOURCE_PATH` | Path of the source code to scan. A relative value is resolved against the cloned repository directory. Default: the repository root. | Optional |
 | `$AC_MOBSFSCAN_SCAN_TYPE` | Rule set to use. Options: `auto`, `android`, `ios`. With `auto`, the default, the step detects the platform from the source code. | Optional |
 | `$AC_MOBSFSCAN_OUTPUT_FORMATS` | Report format for the `light` scan. Options: `sarif`, `json`, `html`, `sonarqube`, `gitlab-sast`. Default: `sarif`. See [Reports](#reports). | Optional |
-| `$AC_MOBSFSCAN_SEVERITY_THRESHOLD` | Breaks the pipeline on a finding at the selected level or worse. Options: `critical`, `normal`, `low`, `none`. Default: `critical`. See [Build Grading](#build-grading). | Optional |
+| `$AC_MOBSFSCAN_SEVERITY_THRESHOLD` | Breaks the pipeline on a finding at the selected level or worse. Options: `critical`, `normal`, `low`, `none`. Default: `critical`. | Optional |
 | `$AC_MOBSFSCAN_MIN_SCORE` | Breaks the pipeline when the MobSF security score out of 100 falls below this value. Empty, the default, disables the check. Only the `advance` scan reports a score. | Optional |
 | `$AC_MOBSFSCAN_CONFIG_PATH` | Path of the `.mobsf` configuration file used to tune the rules, for example to suppress a rule or a path. When empty, a `.mobsf` file at the scan root is used if there is one. | Optional |
 | `$AC_MOBSFSCAN_SAVE_REPORT` | Copies the report into the artifacts folder. Options: `true`, `false`. Default: `true`. | Optional |

@@ -64,7 +64,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name | Description | Status |
 | ------------- | ----------- | ------ |
 | `$AC_MOBSF_ARTIFACT_PATH` | Path of the APK, AAB, or IPA to scan, or of the folder holding it. When empty, the step looks at `$AC_APK_PATH`, then `$AC_AAB_PATH`, then the `.ipa` file under `$AC_OUTPUT_DIR/MyApp.ipa`. A folder is accepted because iOS builds do not expose the IPA path as a variable. | Optional |
-| `$AC_MOBSF_FAIL_ON` | Breaks the pipeline on a finding at the selected level or worse. Options: `critical`, `normal`, `low`, `none`. Default: `critical`. See [Build Grading](#build-grading). | Optional |
+| `$AC_MOBSF_FAIL_ON` | Breaks the pipeline on a finding at the selected level or worse. Options: `critical`, `normal`, `low`, `none`. Default: `critical`. | Optional |
 | `$AC_MOBSF_MIN_SCORE` | Breaks the pipeline when the MobSF security score out of 100 falls below this value. Empty, the default, disables the check. | Optional |
 | `$AC_MOBSF_SCAN_TIMEOUT` | Timeout in seconds for the MobSF scan. Default: `1800`. MobSF applies its own decompile and SAST timeouts of 1000 seconds each, so keep this value above their sum for large apps. | Optional |
 | `$AC_MOBSF_SAVE_REPORT` | Copies the JSON report into the artifacts folder. Options: `true`, `false`. Default: `true`. | Optional |
