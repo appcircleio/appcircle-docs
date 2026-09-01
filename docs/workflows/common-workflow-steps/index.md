@@ -102,6 +102,14 @@ KOBIL Appshield Scanner performs dynamic runtime scans/analysis and AI supported
 
 This component uploads both your app binary and flows to Maestro Cloud.
 
+## [MobSF Binary Scan](/workflows/common-workflow-steps/mobsf-binary-scan)
+
+This component runs a full MobSF static analysis on the built APK, AAB, or IPA, covering the manifest, the signing certificate, binary protections, and the scored AppSec report.
+
+## [MobSF Source Code Scan](/workflows/common-workflow-steps/mobsf-source-code-scan)
+
+This component runs MobSF static analysis on Android and iOS source code, reporting the file, line, severity, and CWE or OWASP MASVS references of each finding.
+
 ## [Repeato Mobile Test Automation](/workflows/common-workflow-steps/repeato-test-runner)
 
 This component creates and automates UI tests for iOS and Android.
