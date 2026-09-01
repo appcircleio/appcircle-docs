@@ -25,6 +25,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An optional expiration date can now be entered for external Personal Access Tokens in the connection form. <BuildBadge/> <CloudBadge/>
 - Activity logs have been added for the [Testing Distribution](/testing-distribution/testing-distribution-activity-log) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-activity-log) modules as well as for [Store Credentials](/account/my-organization/activity-log/credential-activity-log), including filtering and Excel export. <ReportsBadge/> <CloudBadge/>
 - A Fixed version option has been added to Re-sign, allowing a version to be entered manually instead of being fetched from a store. <SigningIdentitiesBadge/> <CloudBadge/>
+- [MobSF Source Code Scan](/workflows/common-workflow-steps/mobsf-source-code-scan) component has been added, running MobSF static analysis on Android and iOS source code and reporting the file, line, severity and CWE or OWASP MASVS reference of every finding, with the option to break the build on a severity level or a minimum security score. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [MobSF Binary Scan](/workflows/common-workflow-steps/mobsf-binary-scan) component has been added, running a full MobSF static analysis on the built APK, AAB or IPA, which covers the manifest and permissions, the signing certificate, hardcoded secrets, binary protections and the scored AppSec report. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
