@@ -12,7 +12,10 @@ Jira is a software development tool used for issue tracking, project management,
 
 By adding Appcircle's [**Jira Comment**](https://github.com/appcircleio/appcircle-jira-component/) component to your workflow, you can add comments or change their status according to your workflow.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/jira-component1.png' />
+<Screenshot
+  url='https://cdn.appcircle.io/docs/assets/csm-405-jira-comment.png'
+  alt='Jira Comment step in an Appcircle workflow'
+/>
 
 ## Prerequisites
 
