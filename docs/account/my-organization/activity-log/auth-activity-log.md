@@ -54,10 +54,3 @@ Available filters include:
 Multiple filters can be applied simultaneously to narrow down the results.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/qa53-1.png' />
-
-:::info SSO Authentication Behavior
-
-The Auth Activity Log tracks authentication events generated through Appcircle's standard login mechanism.
-
-Users who authenticate through **Single Sign-On (SSO)** are not listed as login events in the Auth Activity Log. However, authorized SSO users can still access the Auth Activity Log and monitor authentication activities performed by other organization members, as well as other available organization-level records.
-:::
