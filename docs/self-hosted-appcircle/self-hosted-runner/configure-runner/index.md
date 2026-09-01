@@ -50,3 +50,7 @@ Keep your runners up-to-date with the latest features and improvements. Find out
 ## [Cloud Providers](/self-hosted-appcircle/self-hosted-runner/cloud-providers)
 
 Connect your self-hosted runners with cloud providers for additional resources and scalability. This section guides you through integrating popular cloud services into your runner setup.
+
+## [MobSF Setup on the Runner](/self-hosted-appcircle/self-hosted-runner/configure-runner/mobsf-setup)
+
+The Appcircle MobSF binary scan step analyzes an APK or IPA with MobSF running on the runner itself. Before the step can be used on a self-hosted runner, MobSF and its analysis toolchain must be installed on that runner once.
