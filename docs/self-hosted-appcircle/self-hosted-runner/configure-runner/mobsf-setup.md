@@ -19,7 +19,7 @@ MobSF is licensed under GPL-3.0-only. Appcircle does not distribute MobSF: the i
 
 ## Prerequisites
 
-- A self-hosted runner on version **1.8.9 or newer**. Older packages do not contain the MobSF installer. See [Upgrading Runner](/self-hosted-appcircle/self-hosted-runner/update) and verify with `./ac-runner --version`.
+- A self-hosted runner on version **1.9.0 or newer**. Older packages do not contain the MobSF installer. See [Upgrading Runner](/self-hosted-appcircle/self-hosted-runner/update) and verify with `./ac-runner --version`.
 - Around **6 GB of free disk space** for MobSF, its virtual environment and the analysis tools, plus room for the scan working set.
 - Outbound internet access from the runner during installation. For a disconnected runner, see [Air-gapped installation](#air-gapped-installation).
 - Administrative rights on the runner host. The installer writes to `/usr/local` on macOS and `/opt` on Linux.
@@ -83,7 +83,19 @@ MobSF does not run as a background service. The runner starts it when a scan ste
 ./mobsf-control.sh --action stop
 ```
 
+To confirm end to end that a scan works on this host, run one against a local application file:
+
+```bash
+./mobsf-control.sh --action scan --file /absolute/path/to/app.apk
+```
+
 The API key is generated during installation and stored in `<prefix>/api.key`, readable only by the runner user. It is never printed to the console, and the scan step reads it from that file.
+
+:::info
+
+PDF export is optional and depends on `wkhtmltopdf` being installed on the host. The installer does not install it: when it is missing, the manifest records `"pdfReporting": false`, and scans still produce their JSON report while the PDF export is unavailable. Install `wkhtmltopdf` before running the installer if you need PDF reports.
+
+:::
 
 ## Step 4: Keep MobSF in your virtual machine image
 
