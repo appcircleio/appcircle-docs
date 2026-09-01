@@ -13,7 +13,7 @@ Azure Boards is a standalone service within the Azure DevOps suite that helps te
 By adding Appcircle's [**Azure Boards**](https://github.com/appcircleio/appcircle-azure-boards-component/) component to your workflow, you can post a comment on a work item and optionally change its state according to the result of your workflow.
 
 <Screenshot
-  url='https://cdn.appcircle.io/docs/assets/azure-component1.png'
+  url='https://cdn.appcircle.io/docs/assets/csm-405-azure-comment.png'
   alt='Azure Boards step in an Appcircle workflow'
 />
 
