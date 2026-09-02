@@ -81,6 +81,7 @@ Appcircle supports Xcode 27.0.x beta versions on all current runners. Since this
 - Sorting and filter options have been improved across modules that use profile lists, including Build, Publish, Testing Distribution, and Enterprise App Store profiles. <BuildBadge/> <PublishBadge/> <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Build History filter now includes Warning as a status option, making builds with warnings easier to find. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new version of CodePush SDK is now available and is recommended for apps on React Native `0.81` and above. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- CodePush performance has been improved for high-scale usage scenarios. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Added the [Downloads Report](/testing-distribution/reports) to Testing Distribution module, providing visibility into application download activity. The report helps organizations track which app versions have been downloaded, when downloads occurred, and the devices and operating system versions used for each download. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Report export columns and values have been improved for Testing Distribution app download reports to provide clearer and more consistent exported data. <DistributionBadge/> <ReportsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Store status check actions are now displayed in the Publish Activity Log for both Android and iOS publish profiles. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
