@@ -16,6 +16,29 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.34.0 - 2026-09-04 Custom Role Mapping for SSO/LDAP, Certificate Auto Renewal, Bug Fixes and more
+
+### 🆕 New Features
+
+- Custom roles can now be assigned automatically through SSO/LDAP group mapping and granted to API keys, so permissions no longer have to be managed per user. <AccountBadge/> <CloudBadge/>
+- Signing certificates and their passwords can now be renewed automatically before expiry in the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/>
+- A "Test Connection" button has been added to the Personal Access Token connection creation screens, so credentials can be validated before the connection is saved. <BuildBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Testers who opted out of distribution emails are now shown with a dedicated `Unsubscribed` status instead of being marked as `Failed`. <DistributionBadge/> <CloudBadge/>
+- The branch list is now sorted by last commit date, with the most recently updated branch first. <BuildBadge/> <CloudBadge/>
+- Release notes for the "Distribute to Track" step are now resolved from publish variables, and language tags are parsed so localized notes are submitted to the correct store locale. <PublishBadge/> <CloudBadge/>
+- Provisioning profiles are now fetched from App Store Connect in larger pages, significantly reducing the time taken by device and provisioning profile updates. <SigningIdentitiesBadge/> <CloudBadge/>
+- A descriptive error message is now returned when domain verification fails. <AccountBadge/> <CloudBadge/>
+- Character validation for name field of Sub-Organization Creation has been improved. <AccountBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where deleting a branch could fail when the build event payload exceeded the message size limit. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where the last commit endpoint returned an error when git connection metadata was missing. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where an error occurred while adding a device to provisioning profiles when no profile matched the given name. <SigningIdentitiesBadge/> <CloudBadge/>
+
 ## 3.33.0 - 2026-08-07 Custom Roles, Scheduled Builds, Activity Log Improvements, Bug Fixes and more
 
 ### 🆕 New Features
