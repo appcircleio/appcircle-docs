@@ -22,7 +22,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - Custom roles can now be assigned automatically through SSO/LDAP group mapping and granted to API keys, so permissions no longer have to be managed per user. <AccountBadge/> <CloudBadge/>
 - Signing certificates and their passwords can now be renewed automatically before expiry in the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/>
-- A "Test Connection" button has been added to the Personal Access Token connection creation screens, so credentials can be validated before the connection is saved. <BuildBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
