@@ -36,10 +36,6 @@ This step signs your APK or App Bundle with the given Android keystore and expor
 
 This step runs the unit tests of the project.
 
-## [App Center Android Distribution](/workflows/android-specific-workflow-steps/app-center-android-distribution)
-
-Distribute APK, AAB, and mapping files to [App Center](https://appcenter.ms/). You need to enter your token, owner, app, and group names to distribute your binaries.
-
 ## [Android App Post-Processor](/workflows/android-specific-workflow-steps/app-post-processor)
 
 This step performs necessary system operations to identify and process the Android output binary files.

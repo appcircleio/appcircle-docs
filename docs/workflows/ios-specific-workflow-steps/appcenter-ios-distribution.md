@@ -2,11 +2,21 @@
 title: App Center iOS Distribution
 description: Distribute your iOS app to App Center for testing and distribution.
 tags: [distribute, app center, ios, workflow, step]
+unlisted: true
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # App Center iOS Distrubiton
+
+:::danger
+
+As [Microsoft announced](https://learn.microsoft.com/en-gb/appcenter/retirement),
+> "Visual Studio App Center is scheduled for retirement on March 31, 2025. After that date, it will not be possible to sign in with your user account nor make API calls."
+
+Therefore, the App Center iOS Distribution step in Appcircle is deprecated. Use Appcircle's own distribution modules instead: [Testing Distribution](/testing-distribution), [Enterprise App Store](/enterprise-app-store) or [Publish](/publish-to-stores-module).
+
+:::
 
 With this step, you can send your `IPA` and `dSYM` files to the [App Center](https://appcenter.ms/). For this, the step needs to be configured according to your App Center account.
 

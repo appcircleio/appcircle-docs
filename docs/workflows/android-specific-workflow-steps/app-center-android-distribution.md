@@ -2,11 +2,21 @@
 title: App Center Android Distribute
 description: App Center Android Distribute enables developers to distribute their Android applications to testers and stakeholders for testing purposes.
 tags: [android, mobile, distribution, app center]
+unlisted: true
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # App Center Android Distribute
+
+:::danger
+
+As [Microsoft announced](https://learn.microsoft.com/en-gb/appcenter/retirement),
+> "Visual Studio App Center is scheduled for retirement on March 31, 2025. After that date, it will not be possible to sign in with your user account nor make API calls."
+
+Therefore, the App Center Android Distribute step in Appcircle is deprecated. Use Appcircle's own distribution modules instead: [Testing Distribution](/testing-distribution), [Enterprise App Store](/enterprise-app-store) or [Publish](/publish-to-stores-module).
+
+:::
 
 [App Center Distribute for Android](https://learn.microsoft.com/en-us/appcenter/sdk/distribute/android) enables developers to distribute their Android applications to testers and stakeholders for testing purposes. It provides a centralised dashboard where developers can upload their app packages, manage distribution to specific groups of testers, collect feedback, and monitor installation and usage metrics. With App Center Distribute, developers can streamline the testing process, gather valuable insights, and iterate on their apps before releasing them to the public.
 
