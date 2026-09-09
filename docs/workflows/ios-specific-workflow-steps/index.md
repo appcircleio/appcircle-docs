@@ -10,10 +10,6 @@ The steps listed below are specific to the iOS build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [App Center iOS Distribution](/workflows/ios-specific-workflow-steps/appcenter-ios-distribution)
-
-Distribute IPA and dSYM files to [App Center](https://appcenter.ms/). You need enter your token, owner, app and group names to distribute your binaries.
-
 ## [Appdome Build-2Secure for iOS](/workflows/ios-specific-workflow-steps/appdome-build-to-secure-for-ios)
 
 Appdome Build-2Secure is a comprehensive automated solution that seamlessly integrates advanced security features, adaptive protections, code-signing, and certification processes into mobile applications, enhancing security without the need for manual coding or code analysis.

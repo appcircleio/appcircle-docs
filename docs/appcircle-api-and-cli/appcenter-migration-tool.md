@@ -3,9 +3,21 @@ title: App Center Migration Tool
 description: Migrate App Center organizations, collaborators,  apps to testing distribution profiles and test groups
 tags: [app center, migration, cli]
 sidebar_position: 3
+unlisted: true
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+
+# App Center Migration Tool
+
+:::danger
+
+As [Microsoft announced](https://learn.microsoft.com/en-gb/appcenter/retirement),
+> "Visual Studio App Center is scheduled for retirement on March 31, 2025. After that date, it will not be possible to sign in with your user account nor make API calls."
+
+Therefore, the App Center Migration Tool is deprecated. It can no longer read data from App Center, so a migration is not possible after this date.
+
+:::
 
 The appcenter-migration-tool is designed to assist organizations and individuals to migrate their Visual Studio App Center projects with organizations, collaborators, app profiles as testing distribution profile and test groups to Appcircle effortlessly.
 
