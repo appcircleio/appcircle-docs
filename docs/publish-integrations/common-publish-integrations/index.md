@@ -57,3 +57,11 @@ The Metadata Approval via Email step is used to get email-based approval before 
 
 ## [Send Email](/publish-integrations/common-publish-integrations/send-email)
 The **Send Email** step allows you to send customized email notifications during your Appcircle Publish Flow for both iOS and Android builds. This can be used to alert stakeholders, notify of publish statuses, or provide deployment-related information.
+
+## [MobSF Binary Scan](/publish-integrations/common-publish-integrations/mobsf-binary-scan)
+
+The **MobSF Binary Scan** step runs a full [MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) static analysis on the app version being published, an APK, an AAB or an IPA.
+
+- Reports what actually ships: the manifest and permissions, the signing certificate, hardcoded secrets, binary protections, the network security configuration and the trackers in the app.
+- Breaks the Publish flow on a finding at the level you choose, or on a security score below the minimum you set, so the binary is never submitted.
+- Needs no configuration to find the app file, and writes a JSON report into the publish artifacts.
