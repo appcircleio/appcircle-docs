@@ -112,9 +112,11 @@ sudo pmset -a displaysleep 0
 Power failure settings allow a Mac to restart automatically after a power outage or failure. Activating this on a Mac ensures the host comes back online automatically if power is lost, avoiding downtime.
 
 :::info
-For now, Appcircle runners don't support auto-start when the macOS host restarts.
+Restarting the host is only half of the recovery. Something also has to start the runner VMs afterwards.
 
-You should connect to host with SSH and [start the VMs](#start-vm) manually.
+Install the runners as a launchd service and they start on their own at boot, with no SSH session and no desktop login. See [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service).
+
+Without that service you have to connect to the host with SSH and [start the VMs](#start-vm) manually after every restart.
 :::
 
 To configure power failure settings, you can run the command below.
@@ -2609,6 +2611,12 @@ The above commands should be executed on every macOS VM image upgrade in order t
 
 ### Start VM
 
+:::tip
+The commands in this section start a runner inside your current SSH session. The runner stops when that session is closed, and it does not come back after a host reboot.
+
+For a host that should run unattended, install the runner as a launchd service instead of using `screen`. See [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service).
+:::
+
 In order to start "runner1", use below command.
 
 ```bash
@@ -2643,6 +2651,10 @@ As you can see in list, we have new VMs with long unique name. Those are actuall
 `vm01` and `vm02` are immutable VM images. On the other hand, others are instances created from VM images.
 
 ### Stop VM
+
+:::tip
+If the runner is installed as a launchd service, stop it with `sudo ./runner-service.sh stop` instead of the steps below. Creating a `.stop` file on its own is not enough under the service, because `run.sh` clears that file when the service starts it again. See [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service#stop-and-start).
+:::
 
 In order to stop VM, we need to mark runner as stopped and shutdown online runner over SSH.
 
@@ -3149,7 +3161,11 @@ For configuring NTP settings, see [Configure Base Runner's NTP Settings](#2-conf
 
 ### Runners are offline and I noticed that macOS host has been reboot
 
-If there is no system crash, one reason for an unintentional reboot may be caused by automatic updates.
+Runners started with `screen` do not survive a reboot. If you expect them to come back on their own, install them as a launchd service. See [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service).
+
+If the service is already installed and the runners still did not come back, the login keychain is the usual cause on macOS 15 and newer. See [the troubleshooting section](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service#vzerrordomain-code-9-in-the-logs) on that page.
+
+As for the reboot itself, if there is no system crash, one reason for an unintentional reboot may be caused by automatic updates.
 
 We suggest disabling automatic updates on macOS host, and get them manually when required.
 

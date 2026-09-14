@@ -43,6 +43,10 @@ Learn how to use self-signed certificates with your runners. This section provid
 
 Apply a safe security baseline to the physical macOS machine that runs your build VMs. Learn what the `harden-host.sh` script changes, why Remote Login stays enabled, and how to run it.
 
+## [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service)
+
+Install your Tart macOS VM runners as a launchd service so they survive an SSH logout and start automatically after a host reboot. Covers the login keychain unlock and automatic login, and why FileVault must stay off.
+
 ## [Upgrading Runner](/self-hosted-appcircle/self-hosted-runner/update)
 
 Keep your runners up-to-date with the latest features and improvements. Find out how to upgrade your runners to the latest version with minimal downtime.
