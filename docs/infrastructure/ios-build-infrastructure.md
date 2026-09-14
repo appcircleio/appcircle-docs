@@ -15,7 +15,7 @@ If your selected pool from config is "Appcircle macOS Pool (arm64)", there are s
 
 | Xcode Selection | macOS Version |
 | ------- | ----- |
-| 27.0.x | Tahoe `26.5.1` |
+| 27.0.x | Tahoe `26.6.2` |
 | 26.3.x - 26.6.x | Tahoe `26.3.2` |
 | 16.3.x - 26.3.x | Sequoia `15.6.1` / Sequoia `15.4.1` |
 | 16.0.x - 16.2.x | Sequoia `15.6.1` / Sequoia `15.4.1` / Sonoma `14.5` |
@@ -44,15 +44,18 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.3.2`) stack has the Xcod
 | 26.4.1 | `17E202` |
 | 26.3 | `17C529` |
 
-The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.5.1`) stack has the Xcode versions below:
+The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.6.2`) stack has the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
-| 27.0 | `27A5228h` |
+| 27.0 | `27A266a` |
+| 26.6 | `17F113` |
 
 :::info
 
-The macOS Tahoe (`26.5.1`) stack carries the Xcode 27.0 beta only. If you need a stable Xcode release, select a `26.6.x` or earlier version, which runs on the macOS Tahoe (`26.3.2`) stack.
+The macOS Tahoe (`26.6.2`) stack carries the Xcode 27.0 release candidate together with the stable Xcode 26.6. Xcode 26.6 is available on the macOS Tahoe (`26.3.2`) stack as well, so you can move between the two stacks without changing the Xcode version you select.
+
+Xcode 27.0 is a pre-release. We strongly recommend testing your workflows on it before relying on it for production builds.
 
 :::
 
@@ -100,36 +103,36 @@ There are many pre-installed packages on virtual machines. You can get a full li
 
 Here are some of the most important packages installed in our iOS build runners used for iOS builds:
 
-| Package            | macOS Sonoma | macOS Sequoia `15.4.1` | macOS Sequoia `15.6.1` | macOS Tahoe `26.3.2` | macOS Tahoe `26.5.1` |
+| Package            | macOS Sonoma | macOS Sequoia `15.4.1` | macOS Sequoia `15.6.1` | macOS Tahoe `26.3.2` | macOS Tahoe `26.6.2` |
 | ------------------ | -------------- | -------------- | -------------- | -------------- | -------------- |
-| Bash               | 3.2.57         | 3.2.57 | 3.2.57 | 5.3.9 | 5.3.15 |
+| Bash               | 3.2.57         | 3.2.57 | 3.2.57 | 5.3.9 | TBD |
 | Bundle             | 2.4.19         | 2.4.19 | 2.7.2 | 2.4.19 | 2.6.9 |
 | Carthage           | 0.39.1         | 0.40.0 | 0.40.0 | 0.40.0 | 0.40.0 |
-| Curl               | 8.6.0          | 8.7.1 | 8.7.1 | 8.7.1 | 8.7.1 |
-| Homebrew           | 4.3.5          | 4.5.1 | 4.6.16 | 5.1.0 | 6.0.2 |
+| Curl               | 8.6.0          | 8.7.1 | 8.7.1 | 8.7.1 | TBD |
+| Homebrew           | 4.3.5          | 4.5.1 | 4.6.16 | 5.1.0 | TBD |
 | Java (OpenJDK)     | 17.0.9         | 17.0.9 | 17.0.9 | 17.0.12 | 17.0.19 |
 | Gem                | 3.4.19         | 3.4.19 | 3.4.19 | 3.4.19 | 3.6.9 |
-| Fastlane           | 2.220.0        | 2.227.2 | 2.228.0 | 2.232.2 | 2.236.1 |
-| Git                | 2.45.2         | 2.49.0 | 2.51.0 | 2.53.0 | 2.54.0 |
-| Git LFS            | 3.5.1          | 3.6.1 | 3.7.0 | 3.7.1 | 3.7.1 |
-| Gzip (Apple)       | 430.100.5      | 457.100.3 | 457.140.3 | 475 | 479 |
+| Fastlane           | 2.220.0        | 2.227.2 | 2.228.0 | 2.232.2 | 2.239.0 |
+| Git                | 2.45.2         | 2.49.0 | 2.51.0 | 2.53.0 | 2.55.0 |
+| Git LFS            | 3.5.1          | 3.6.1 | 3.7.0 | 3.7.1 | 3.8.0 |
+| Gzip (Apple)       | 430.100.5      | 457.100.3 | 457.140.3 | 475 | TBD |
 | LibreSSL (OpenSSL) | 3.3.6          | 3.3.6 | 3.3.6 | 3.3.6 | 3.3.6 |
-| ImageMagick        | 7.1.1-33       | 7.1.1-47 | 7.1.2-5 | 7.1.2-17 | 7.1.2-26 |
+| ImageMagick        | 7.1.1-33       | 7.1.1-47 | 7.1.2-5 | 7.1.2-17 | 7.1.2-31 |
 | Maven              | 3.9.7          | 3.9.9 | 3.9.11 | 3.9.14 | 3.9.16 |
 | N                  | 9.2.3          | 10.1.0 | 10.2.0 | 10.2.0 | 10.2.0 |
-| Node               | 18.20.3        | 18.20.8 | 18.20.8 | 22.22.1 | 22.23.1 |
+| Node               | 18.20.3        | 18.20.8 | 18.20.8 | 22.22.1 | 22.23.2 |
 | Npm                | 10.7.0         | 10.8.2 | 10.8.2 | 10.9.4 | 10.9.8 |
-| Perl               | 5.34.1         | 5.34.1 | 5.34.1 | 5.34.1 | 5.34.1 |
-| Pod                | 1.15.2         | 1.16.2 | 1.16.2 | 1.16.2 | 1.16.2 |
-| Pip                | 24.0           | 25.0.1 | 25.2 | 26.0 | 26.1.2 |
-| Python             | 3.12.3         | 3.13.3 | 3.14.0 | 3.14.3 | 3.14.6 |
-| Rake               | 13.0.6         | 13.0.6 | 13.3.0 | 13.0.6 | 13.2.1 |
-| Ruby               | 3.2.3          | 3.2.3 | 3.2.3 | 3.2.3 | 3.4.9 |
+| Perl               | 5.34.1         | 5.34.1 | 5.34.1 | 5.34.1 | TBD |
+| Pod                | 1.15.2         | 1.16.2 | 1.16.2 | 1.16.2 | 1.17.0 |
+| Pip                | 24.0           | 25.0.1 | 25.2 | 26.0 | 26.2.1 |
+| Python             | 3.12.3         | 3.13.3 | 3.14.0 | 3.14.3 | 3.14.7 |
+| Rake               | 13.0.6         | 13.0.6 | 13.3.0 | 13.0.6 | TBD |
+| Ruby               | 3.2.3          | 3.2.3 | 3.2.3 | 3.2.3 | 3.4.10 |
 | Rbenv              | 1.2.0          | 1.3.2 | 1.3.2 | 1.3.2 | 1.3.2 |
 | Sdkman             | 5.18.2         | 5.19.0 | 5.20.0 | 5.21.0 | 5.23.0 |
 | Slather            | 2.8.0          | 2.8.5 | 2.8.5 | 2.8.5 | 2.8.5 |
 | Unzip              | 6.00           | 6.00 | 6.00 | 6.00 | 6.00 |
-| Xcodeproj          | 1.27.0         | 1.27.0 | 1.27.0 | 1.27.0 | 1.27.0 |
+| Xcodeproj          | 1.27.0         | 1.27.0 | 1.27.0 | 1.27.0 | 1.28.1 |
 | Yarn               | 1.22.22        | 1.22.22 | 1.22.22 | 1.22.22 | 1.22.22 |
 | Zip                | 3.0            | 3.0 | 3.0 | 3.0 | 3.0 |
 
