@@ -380,7 +380,7 @@ After a couple of minutes later you should see the output below.
   <TabItem value="260914" label="260914" default>
 
 ```bash
-MD5 (macOS_260914.tar.gz) = TBD_AFTER_UPLOAD
+MD5 (macOS_260914.tar.gz) = 650f11824bd9888b4ded41fcfb85c0e5
 ```
 
   </TabItem>
@@ -1030,7 +1030,7 @@ After a couple of minutes later you should see the output below.
   <TabItem value="260914" label="260914" default>
 
 ```bash
-MD5 (xcodes_260914.tar.gz) = TBD_AFTER_UPLOAD
+MD5 (xcodes_260914.tar.gz) = 5a86aad75bd5ecac87c4e1bc2ac124b5
 ```
 
   </TabItem>
