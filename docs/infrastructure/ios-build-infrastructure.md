@@ -54,9 +54,9 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.6.2`) stack has the Xcod
 
 :::info
 
-The macOS Tahoe (`26.6.2`) stack carries the Xcode 27.0 release candidate together with the stable Xcode 26.6. Xcode 26.6 is available on the macOS Tahoe (`26.3.2`) stack as well, so you can move between the two stacks without changing the Xcode version you select.
+The macOS Tahoe (`26.6.2`) stack carries the stable Xcode 27.0 together with Xcode 26.6. Xcode 26.6 is available on the macOS Tahoe (`26.3.2`) stack as well, so you can move between the two stacks without changing the Xcode version you select.
 
-Xcode 27.0 is a pre-release. We strongly recommend testing your workflows on it before relying on it for production builds.
+Xcode 27.0 requires macOS 26.6 or later, so it is available on this stack only. We strongly recommend testing your workflows on it before relying on it for production builds.
 
 :::
 
