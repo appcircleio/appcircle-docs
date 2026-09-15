@@ -15,9 +15,8 @@ If your selected pool from config is "Appcircle macOS Pool (arm64)", there are s
 
 | Xcode Selection | macOS Version |
 | ------- | ----- |
-| 27.0.x | Tahoe `26.6.2` |
-| 26.6.x | Tahoe `26.6.2` / Tahoe `26.3.2` |
-| 26.3.x - 26.5.x | Tahoe `26.3.2` |
+| 26.6.x - 27.0.x | Tahoe `26.6.2` |
+| 26.3.x - 26.6.x | Tahoe `26.3.2` |
 | 16.3.x - 26.3.x | Sequoia `15.6.1` / Sequoia `15.4.1` |
 | 16.0.x - 16.2.x | Sequoia `15.6.1` / Sequoia `15.4.1` / Sonoma `14.5` |
 | 14.3.x - 15.4.x | Sonoma `14.5` |
@@ -136,6 +135,19 @@ Here are some of the most important packages installed in our iOS build runners 
 | Xcodeproj          | 1.27.0         | 1.27.0 | 1.27.0 | 1.27.0 | 1.28.1 |
 | Yarn               | 1.22.22        | 1.22.22 | 1.22.22 | 1.22.22 | 1.22.22 |
 | Zip                | 3.0            | 3.0 | 3.0 | 3.0 | 3.0 |
+
+:::caution Homebrew 6 on the macOS Tahoe `26.6` stack
+
+The macOS **Tahoe `26.6.2`** stack ships **Homebrew `6.0.22`** (up from `5.1.0` on the Tahoe `26.3.2` stack). Starting with Homebrew `6.0`, `brew` no longer installs formulae from **untrusted third-party taps** until the tap is explicitly trusted. If a [custom script](/workflows/common-workflow-steps/custom-script) step installs from a third-party tap, add a trust step first:
+
+```bash
+brew trust <user>/<tap>
+brew install <user>/<tap>/<formula>
+```
+
+Formulae from the default Homebrew taps are not affected. The default Node version stays **Node 22**, with **Node 24** available via the [Install Node](/workflows/react-native-specific-workflow-steps/node-install) step.
+
+:::
 
 ### Using your own computer for build
 
