@@ -2500,7 +2500,7 @@ For "runner1" use below commands.
   <TabItem value="260914" label="260914" default>
 
 ```bash
-curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.10.0.sh && \
+curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.7.0.sh && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -2621,7 +2621,7 @@ For "runner2" use below commands.
   <TabItem value="260914" label="260914" default>
 
 ```bash
-curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.10.0.sh && \
+curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.7.0.sh && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
