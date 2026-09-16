@@ -283,7 +283,6 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `auth.auth-keycloak.database.port`                            | Port number for the Keycloak database.                                                               | -                             |
 | `auth.auth-keycloak.database.username`                        | Username for the Keycloak database.                                                                  | -                             |
 | `auth.auth-keycloak.database.vendor`                          | Database vendor for Keycloak (e.g., postgres, mysql).                                                | 'postgres'                    |
-| `auth.auth-keycloak.defaultUserGroupRoles`                    | Default roles assigned to new users in Keycloak.                                                     | -                             |
 | `auth.auth-keycloak.dmzCustomDomain.domain`                   | Domain name for the DMZ custom configuration.                                                        | -                             |
 | `auth.auth-keycloak.dmzCustomDomain.enabled`                  | Enables custom domain for DMZ.                                                                       | false                         |
 | `auth.auth-keycloak.enabledOrganization`                      | Enables the organization feature in Keycloak.                                                        | -                             |
