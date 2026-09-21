@@ -175,7 +175,7 @@ There are limits on the number of certificates that can be generated on Apple. T
 
 - Appcircle requires certain inputs for the certificate you wish to renew. The purposes of these inputs are explained below.
 
-   - **Revoke This Certificate Before Renew**: If you want to revoke the certificate you wish to renew on the Apple Developer Portal first, and then create a new certificate, you will need to enable this toggle.
+   - **Revoke This Certificate Before Renew**: If you want to revoke the certificate you wish to renew on the Apple Developer Portal first, and then create a new certificate, you will need to enable this toggle. If you keep this toggle **disabled**, Appcircle creates the new certificate and leaves the old one valid on the Apple Developer Portal. In that case the new certificate counts against the Apple certificate creation limit described above, so the renewal fails with an error if you have already reached the limit for that certificate type.
    - **CSR File**: Apple will not allow a certificate to be generated without a CSR file. Therefore, a CSR file must be selected.
    - **Automatically Generate Password**: Appcircle will automatically generate a random password if this toggle is enabled.
    - **Password(Optional)**: When generating a certificate, you are prompted to set a password. This password is entirely optional, and the certificate will be generated without any issues even if you do not set one.
@@ -186,8 +186,8 @@ There are limits on the number of certificates that can be generated on Apple. T
 
 Before performing the Appcircle renewal process, this panel provides the user with a preview and displays all the necessary information.
 
- - **Existing Certificate**: This is the certificate currently in use. Once the renewal is confirmed, it will be permanently revoked and replaced by the new certificate. All associated provisioning profiles will be affected.
- - **Replacement Certificate**: This certificate will replace the existing one once the renewal is confirmed. The current certificate will be revoked and all associated provisioning profiles will be regenerated automatically.
+ - **Existing Certificate**: This is the certificate currently in use. Once the renewal is confirmed, it is replaced by the new certificate and all associated provisioning profiles are affected. It is also permanently revoked on the Apple Developer Portal if the **Revoke This Certificate Before Renew** toggle is enabled.
+ - **Replacement Certificate**: This certificate will replace the existing one once the renewal is confirmed. All associated provisioning profiles are regenerated automatically.
  - **Affected Profiles Details**: The profiles listed below will be affected after the renew operation. This may cause build failures and errors in automatic re-sign processes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/certPreview.png' />
@@ -195,6 +195,25 @@ Before performing the Appcircle renewal process, this panel provides the user wi
 :::warning Affected Provision, Build and Re-sign Profiles
 
 During the Appcircle certificate renewal process, it recreates all provisioning profiles associated with the certificates. Additionally, it directly replaces the old certificates used in the re-sign and build profiles with the new ones.
+
+You do not need to regenerate these provisioning profiles manually. However, applications that were already built and distributed keep the profile they were signed with, so they must be rebuilt with the new certificate and profile and redistributed to be updated.
+
+:::
+
+#### Renewing an Enterprise or Ad Hoc Distribution Certificate
+
+Applications signed with an **Enterprise (in-house)** or **Ad Hoc** distribution certificate stop working on end-user devices as soon as that certificate is revoked on the Apple Developer Portal. Apple invalidates every app still signed with it, including versions that are already installed. Simply creating a new certificate does not affect them, but revoking the old one does.
+
+For this reason, renew an Enterprise or Ad Hoc distribution certificate in the following order:
+
+1. Renew the certificate with the **Revoke This Certificate Before Renew** toggle **disabled**, so the new certificate is created while the old one remains valid.
+2. Build a new version of your applications with the new certificate and its regenerated provisioning profiles.
+3. Distribute that new version and wait until your users have updated to it.
+4. Only after every distributed application has been updated, revoke the old certificate from the [**Revoke Certificate**](/signing-identities/apple-certificates#revoke-certificate) action.
+
+:::danger Do Not Revoke Before Redistributing
+
+Revoking an Enterprise or Ad Hoc distribution certificate immediately renders all applications signed with it unusable, including the ones already installed on your users' devices. Never revoke the old certificate until the new build has been distributed and adopted.
 
 :::
 
