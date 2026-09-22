@@ -69,15 +69,6 @@ For known issues on these toolchains, see Apple's [Xcode 27.1](https://developer
 
 :::
 
-**Xcode 27.1 vs 27.2.** Despite the version numbers, 27.2 does **not** supersede 27.1. They are parallel branches, and each carries a different set of platform SDKs:
-
-- **Xcode 27.1** ships the **iOS 27.1** SDK and the iPhone Duo simulator. Every other platform (iPadOS, tvOS, watchOS, macOS, visionOS) stays on its 27.0 SDK. This is the only toolchain that can build against the iPhone Duo APIs.
-- **Xcode 27.2** moves **every** platform SDK to 27.2, and is the mainstream successor to 27.0. It does not contain the iOS 27.1 iPhone Duo SDK.
-
-Pick 27.1 if you are adapting your app for iPhone Duo, and 27.2 if you are testing against the next mainstream release. Selecting the higher number is not automatically the newer toolchain for your use case.
-
-Simulator-based test steps can take noticeably longer to start on Xcode 27.1. Appcircle runs every build on a fresh virtual machine, so the first Simulator launch is a cold start on each build. Raise the timeout on those steps rather than treating the delay as a hang.
-
 The "Appcircle macOS Pool (arm64)" macOS **Sequoia** (`15.6.1`) stack has the Xcode versions below:
 
 | Version | Build |
