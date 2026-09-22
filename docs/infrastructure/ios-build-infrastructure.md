@@ -65,26 +65,18 @@ Xcode 27.0, 27.1 and 27.2 all require macOS 26.6 or later, so they are available
 
 App Store Connect rejects binaries produced by a beta toolchain with `Unsupported SDK or Xcode version`. Keep **Xcode 27.0** selected for any workflow that publishes to the App Store or TestFlight, and use 27.1 / 27.2 for compatibility testing only.
 
+For known issues on these toolchains, see Apple's [Xcode 27.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes) and [Xcode 27.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) release notes.
+
 :::
 
 **Xcode 27.1 vs 27.2.** Despite the version numbers, 27.2 does **not** supersede 27.1. They are parallel branches, and each carries a different set of platform SDKs:
 
-- **Xcode 27.1** ships the **iOS 27.1** SDK and the iPhone Duo simulator. Every other platform (iPadOS, tvOS, watchOS, macOS, visionOS) stays on its 27.0 SDK. This is the only toolchain that can build against the iPhone Duo APIs such as `ArrangementView`, `reservedRegion` and the hinge APIs.
+- **Xcode 27.1** ships the **iOS 27.1** SDK and the iPhone Duo simulator. Every other platform (iPadOS, tvOS, watchOS, macOS, visionOS) stays on its 27.0 SDK. This is the only toolchain that can build against the iPhone Duo APIs.
 - **Xcode 27.2** moves **every** platform SDK to 27.2, and is the mainstream successor to 27.0. It does not contain the iOS 27.1 iPhone Duo SDK.
 
 Pick 27.1 if you are adapting your app for iPhone Duo, and 27.2 if you are testing against the next mainstream release. Selecting the higher number is not automatically the newer toolchain for your use case.
 
-:::caution Do not set a 27.1 deployment target when building with Xcode 27.2
-
-The macOS, watchOS, tvOS and visionOS SDKs in Xcode 27.2 incorrectly report `27.1` as a valid deployment target (Apple issue 187160501). Builds that use it may behave unexpectedly instead of failing, and Mac Catalyst builds with a 27.1 or 27.2 deployment target may be unable to use newly introduced API. Keep your deployment target at 27.0 or lower on this toolchain.
-
-:::
-
-**Known Apple issues on these betas.** These are documented by Apple in the Xcode 27.1 and 27.2 release notes and are not specific to Appcircle:
-
-- **Mac Catalyst on Xcode 27.1.** Projects using iOS 27.1 APIs fail to compile for Mac Catalyst with errors such as `undeclared identifier` or `has no member` (185924957), and targets on iOS 27.1 get no Mac Catalyst run destination (187046347). Guard the affected code with `#if !targetEnvironment(macCatalyst)` (or `#if !TARGET_OS_MACCATALYST` in Objective-C), and add a Mac Catalyst 27.0 minimum deployment to restore the run destination.
-- **iPhone Duo simulator gaps on Xcode 27.1.** App extensions cannot be run or debugged in the iPhone Duo simulator runtime (187708767), and StandBy is unavailable there (187708663).
-- **Slow first simulator launch on Xcode 27.1.** The initial Simulator launch can take several minutes (187708500). Because every Appcircle build runs on a fresh virtual machine, simulator-based test steps start cold on each build. Raise the timeout on those steps rather than treating the delay as a hang.
+Simulator-based test steps can take noticeably longer to start on Xcode 27.1. Appcircle runs every build on a fresh virtual machine, so the first Simulator launch is a cold start on each build. Raise the timeout on those steps rather than treating the delay as a hang.
 
 The "Appcircle macOS Pool (arm64)" macOS **Sequoia** (`15.6.1`) stack has the Xcode versions below:
 
