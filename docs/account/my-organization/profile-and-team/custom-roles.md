@@ -48,6 +48,9 @@ This opens the Custom Roles management screen, where all roles for the organizat
     - Enterprise App Store
     - Organization
     - Identity & Access Management
+    - Store Credentials
+    - Connection & Notifications
+    - Reporting
 4. Expand a module to see its individual scopes. Each scope shows a short name, a description, and an action-type badge (**View**, **Write**, **Modify**, or **Delete**) indicating the kind of access it grants.
 5. Check the scopes you want to include. Selected scopes appear in the **Selected Scopes** panel on the right, grouped by module, and can be removed individually from there.
 6. Use **Select all** to grant every scope within a single module, or **Select everything** to grant all available scopes across all modules.

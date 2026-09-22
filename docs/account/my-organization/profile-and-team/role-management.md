@@ -126,11 +126,9 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 | Signing Identity Sub-modules    | Scopes                                 | Owner | Manager | Viewer |
 |---------------------------------|----------------------------------------|-------|---------|--------|
-| Apple Cerficate                 | Add/Delete/Download Apple Certificates | ✅     | ✅       | ⛔      |
-| Apple Cerficate                 | List Apple Certificates                | ✅     | ✅       | ✅      |
-| Apple Cerficate Signing Request | Add/Delete/Download CSR                | ✅     | ✅       | ⛔      |
-| Apple Cerficate Signing Request | Convert CSR to .p12                    | ✅     | ✅       | ⛔      |
-| Apple Cerficate Signing Request | List CSR                               | ✅     | ✅       | ✅      |
+| Apple Certificate               | Add/Delete/Download Apple Certificates and CSRs | ✅     | ✅       | ⛔      |
+| Apple Certificate               | Convert a CSR to .p12                  | ✅     | ✅       | ⛔      |
+| Apple Certificate               | List Apple Certificates and CSRs       | ✅     | ✅       | ✅      |
 | Apple Identifiers               | Add/Delete/Update Apple Identifiers    | ✅     | ✅       | ⛔      |
 | Apple Identifiers               | List Apple Identifiers                 | ✅     | ✅       | ✅      |
 | Apple Device                    | Add Device Manuel                      | ✅     | ✅       | ⛔      |
@@ -145,6 +143,7 @@ The following table details the roles and restrictions for the [**Signing and Id
 | Keystore                        | Add/Delete/Update Keystores            | ✅     | ✅       | ⛔      |
 | Keystore                        | List Keystores                         | ✅     | ✅       | ✅      |
 | Report                          | List Signing Reports                   | ✅     | ✅       | ✅      |
+| Activity Logs                   | List Activity Log Details              | ✅     | ✅       | ✅      |
 
 :::info Signing and Identities
 
@@ -178,6 +177,7 @@ The following table details the roles and restrictions for the [**Testing Distri
 | Auto Re-sign Configuration | List/Update Auto Re-sign Configuration | ✅     | ✅       | ⛔        | ⛔           | ⛔      |
 | Report                     | List Reports App Version               | ✅     | ✅       | ✅        | ⛔           | ✅      |
 | Report                     | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔           | ✅      |
+| Activity Logs              | List Activity Log Details              | ✅     | ✅       | ✅        | ⛔           | ✅      |
 
 :::caution Authentication Settings
 
@@ -350,6 +350,7 @@ Manage and Upload Apps to Enterprise App Store.
 | Re-sign Binary       | Edit Auto Re-sign Settings             | ✅     | ✅       | ⛔         | ⛔             | ⛔       |
 | Session Management   | Single Active Session                  | ✅     |  ⛔      | ⛔       | ⛔           | ⛔      |
 | Report               | List Reports                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Activity Logs        | List Activity Log Details              | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::caution Authentication Settings
 
@@ -379,7 +380,8 @@ Also, the user can view self-hosted runners and change configuration.
 | Appcircle Login                                      | List LDAP                               | ✅     | ✅       | ✅      |
 | Runner Access Token                                  | List Runner Access Token                | ✅     | ⛔       | ⛔      |
 | Runner Access Token                                  | Create/Delete Runner Access Token       | ✅     | ⛔       | ⛔      |
-| Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
+| Report                                               | View Organization Activity Log          | ✅     | ✅       | ✅      |
+| Report                                               | View Authentication Activity Log        | ✅     | ✅       | ✅      |
 | Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
 | Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
 | Artifacts                                            | View Artifacts Report                   | ✅     | ✅       | ✅      |
@@ -444,7 +446,9 @@ Connect or disconnect from third-party service providers such as notification to
 
 | Integrations and Connections | Scopes                        | Owner | Manager | Viewer |
 |------------------------------|-------------------------------|-------|---------|--------|
-| Credentials                  | Add/Delete/Update Credentials | ✅     | ✅       | ⛔      |
-| Credentials                  | View Credentials              | ✅     | ✅       | ✅      |
-| Notifications                | Update Notifications          | ✅     | ✅       | ⛔      |
+| Store Credentials            | Add/Delete/Update Credentials | ✅     | ✅       | ⛔      |
+| Store Credentials            | Share Credentials             | ✅     | ✅       | ⛔      |
+| Store Credentials            | View Credentials              | ✅     | ✅       | ✅      |
+| Notifications                | Update/Delete Notifications   | ✅     | ✅       | ⛔      |
 | Notifications                | View Notifications            | ✅     | ✅       | ✅      |
+| Activity Logs                | List Activity Log Details     | ✅     | ✅       | ✅      |
