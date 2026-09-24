@@ -3307,3 +3307,28 @@ quay:
   label: "binary scan"
   description: "Documentation related to binary scan"
   permalink: "/binary-scan"
+
+"tart":
+  label: "tart"
+  description: "Documentation related to tart"
+  permalink: "/tart"
+
+"launchd":
+  label: "launchd"
+  description: "Documentation related to launchd"
+  permalink: "/launchd"
+
+"auto-start":
+  label: "auto-start"
+  description: "Documentation related to auto-start"
+  permalink: "/auto-start"
+
+"keychain":
+  label: "keychain"
+  description: "Documentation related to keychain"
+  permalink: "/keychain"
+
+"auto-login":
+  label: "auto-login"
+  description: "Documentation related to auto-login"
+  permalink: "/auto-login"
