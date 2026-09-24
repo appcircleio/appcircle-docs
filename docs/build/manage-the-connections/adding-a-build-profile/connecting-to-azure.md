@@ -1,7 +1,7 @@
 ---
 title: Connecting to Azure DevOps
-description: Learn how to connect to Azure DevOps in Appcircle
-tags: [build profile, connection]
+description: Connect Azure DevOps Services and Azure DevOps Server repositories to Appcircle with Microsoft Entra ID OAuth2 or a Personal Access Token.
+tags: [build profile, connection, azure, oauth, entraid]
 sidebar_position: 4
 slug: /build/manage-the-connections/connection-guides/connecting-to-azure
 ---
@@ -11,59 +11,133 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Connecting to Azure DevOps
 
-### Requirements
+Appcircle can connect your build profiles to repositories on two Azure DevOps platforms:
 
-You must enable third-party application access via OAuth. To do that, you can follow the steps:
+- **Azure DevOps Services**: Microsoft's cloud-hosted service at `https://dev.azure.com`.
+- **Azure DevOps Server**: the self-hosted version that your organization runs on its own infrastructure.
 
-- Go to https://dev.azure.com
-- Click on the Organization setting from the left sidebar.
-- Go to your policy settings below security.
-- Enable third-party application access via OAuth.
+Each platform offers different connection types, so check which one hosts your repositories before you begin.
 
-:::important Third-party application access via OAuth
-To successfully connect your Azure DevOps Cloud Repository with an Appcircle Build Profile, the “**Third-party application access via OAuth**” policy must be enabled in your Azure DevOps organization settings.
+## Selecting an Azure DevOps Connection
 
-This setting allows Appcircle to authenticate and interact with your repositories securely. If this policy is turned off, Appcircle will be unable to establish a connection, and repository integration will fail.
+To connect a build profile to Azure DevOps, select **Azure** from the list of Git providers.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options5.png' alt='Connect to Azure DevOps panel with different options' />
+
+The **Connect to Azure DevOps** panel opens with three sections:
+
+- **Create a New Azure DevOps Services Connection**: Connect to Azure DevOps Services with OAuth2 or a Personal Access Token. For details, see [Connecting to Azure DevOps Cloud Repository](#connecting-to-azure-devops-cloud-repository).
+- **Create a New Azure DevOps Server Connection**: Connect to a self-hosted Azure DevOps Server with a Personal Access Token. For details, see [Connecting to Azure DevOps Server Repository](#connecting-to-azure-devops-server-repository).
+- **Select an Available Connection**: Reuse a connection that you created earlier. Each connection shows its URL, its authentication type, and whether it targets Azure DevOps Services (**Cloud**) or Azure DevOps Server.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options.png' alt='Connect to Azure DevOps panel with Azure DevOps Entra ID, Azure DevOps Cloud, and Personal Access Token options' />
+
+:::info
+The labels next to each option describe its state:
+
+- **Connected**: You have already authorized Appcircle with this OAuth2 connection type.
+- **Deprecated**: The connection type is being retired. Use a supported connection type for new connections.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6017-azure.png' />
+When you successfully authorize your account, the following screen appears so that you can select a repository to connect:
 
-### Configuration Azure DevOps Services Setting on Appcircle
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-bitbucket-gitlab.png' alt='Repository selection screen after a successful authorization' />
 
-If you authorize Appcircle to access your repositories on Azure DevOps, you can select the repository that you want to connect in the next screen.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
-
-After you click on **Azure**, the following screen will appear. This will let you choose between selecting a repository, which you have already authorized Appcircle to do, or asking your consent about authorizing more repositories.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-githubimage.png' />
-
-When you successfully authorize your account, the following screen will appear to let you select one for connection:
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-bitbucket-gitlab.png' />
-
-After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
+After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building.
 
 ## Connecting to Azure DevOps Cloud Repository
 
-To connect to a Azure DevOps Cloud repository using either OAuth or Personal Access Token,
+To connect to an Azure DevOps Services repository, choose one of the following connection types under **Create a New Azure DevOps Services Connection**:
 
-- **OAuth2 Connection**  
-  Click **Get Repositories from Azure DevOps (OAuth2)** to authenticate Appcircle using your Azure DevOps account credentials. This will grant Appcircle access to your repositories through the authorized scope.
+| Connection type                     | Authentication                    | When to use                                                                                            |
+|-------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------|
+| **Azure DevOps Entra ID**           | OAuth2 through Microsoft Entra ID | Recommended for all new OAuth2 connections.                                                            |
+| **Azure DevOps Cloud** (Deprecated) | OAuth2 through Azure DevOps OAuth | Existing connections only. Move these build profiles to **Azure DevOps Entra ID**.                     |
+| **Personal Access Token** (User)    | Personal Access Token             | You sign in with a personal Microsoft account, or your organization doesn't allow OAuth2 applications. |
 
-- **Personal Access Token (User)**  
-  Use your Azure DevOps username and [Personal Access Token (PAT)](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops) to connect manually. Required fields:
+Azure DevOps Entra ID is available only for Azure DevOps Services. To connect to Azure DevOps Server, use a [Personal Access Token](#connecting-to-azure-devops-server-repository).
 
-  - Connection Name
-  - Azure DevOps Server URL (e.g., `https://dev.azure.com`)
-  - Collection Name (e.g., `DefaultCollection`)
-  - Personal Access Token
+### Connecting with Azure DevOps Entra ID
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure4.png' />
+The **Azure DevOps Entra ID** connection signs you in through [Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/fundamentals/whatis) (formerly Azure Active Directory), Microsoft's identity service for work and school accounts. Microsoft recommends Microsoft Entra ID OAuth for all new Azure DevOps integrations. Because authentication goes through Microsoft Entra ID, your organization's security controls, such as multifactor authentication and Conditional Access policies, apply when you connect.
+
+Before you begin, make sure that:
+
+- You sign in with a Microsoft Entra ID work or school account that has access to your Azure DevOps organization. Microsoft Entra ID OAuth doesn't support personal Microsoft accounts, such as Outlook.com accounts, for Azure DevOps. If you use a personal Microsoft account, connect with a [Personal Access Token](#connecting-with-a-personal-access-token) instead.
+- Your Microsoft Entra ID tenant allows you to consent to Appcircle, or an administrator grants consent on behalf of your organization.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options4.png' alt='Connect to Azure DevOps panel with the Azure DevOps Entra ID option' />
+
+To connect with Azure DevOps Entra ID:
+
+1. Select **Azure DevOps Entra ID** under **Create a New Azure DevOps Services Connection**.
+2. Sign in with your Microsoft Entra ID account on the Microsoft sign-in page.
+3. Review the permissions that Appcircle requests, and then select **Accept**. For the full list, see [OAuth2 Permissions for Azure DevOps Integration](#oauth2-permissions-for-azure-devops-integration).
+4. After Microsoft redirects you back to Appcircle, select the repository that you want to connect.
+
+:::info Third-party application access via OAuth
+The Azure DevOps **Third-party application access via OAuth** policy applies only to the deprecated Azure DevOps Cloud connection. You don't need to enable it for Azure DevOps Entra ID. For more information, see [Microsoft's application connection policy documentation](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/change-application-access-policies).
+:::
+
+:::info Need admin approval
+If the Microsoft sign-in page shows **Need admin approval**, your Microsoft Entra ID tenant doesn't allow users to consent to applications themselves. Ask a Microsoft Entra ID administrator to [grant tenant-wide admin consent](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent) to Appcircle, and then connect again.
+:::
+
+### Connecting with Azure DevOps Cloud (Deprecated)
+
+:::warning Azure DevOps Cloud connection is deprecated
+The **Azure DevOps Cloud** connection uses Azure DevOps OAuth, which Microsoft has deprecated. Microsoft stopped accepting new Azure DevOps OAuth application registrations in April 2025 and plans to remove Azure DevOps OAuth in 2026. For more information, see [Microsoft's Azure DevOps OAuth deprecation notice](https://learn.microsoft.com/en-us/azure/devops/integrate/get-started/authentication/azure-devops-oauth).
+
+Use **Azure DevOps Entra ID** for new connections, and [move your existing build profiles to Azure DevOps Entra ID](#moving-build-profiles-to-azure-devops-entra-id) so that they keep access to their repositories.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options3.png' alt='Connect to Azure DevOps panel with the Azure DevOps Cloud (Deprecated) option' />
+
+The **Azure DevOps Cloud** connection requires the **Third-party application access via OAuth** policy in your Azure DevOps organization. If this policy is turned off, Appcircle can't connect, and the repository integration fails.
+
+To enable the policy:
+
+1. Go to `https://dev.azure.com`.
+2. Select **Organization settings** from the left sidebar.
+3. Select **Policies** under **Security**.
+4. Turn on **Third-party application access via OAuth**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6017-azure.png' alt='Third-party application access via OAuth policy in Azure DevOps organization settings' />
+
+### Moving Build Profiles to Azure DevOps Entra ID
+
+Build profiles that use the deprecated **Azure DevOps Cloud** connection lose access to their repositories when Microsoft removes Azure DevOps OAuth. Reconnect each of these build profiles with **Azure DevOps Entra ID** to avoid build interruptions.
+
+1. Open the build profile, and then select **Connection Settings**.
+2. Select **Disconnect**, and then confirm.
+3. Select **Reconnect** next to **Connection Settings**.
+4. Select **Azure**, and then select **Azure DevOps Entra ID** under **Create a New Azure DevOps Services Connection**.
+5. Sign in with your Microsoft Entra ID account, select the same repository, and then select **Save**.
+
+Disconnecting and reconnecting a build profile keeps its previous builds, configurations, workflows, and triggers. For details, see [Change Git Provider and Reconnect](/build/manage-the-connections/reconnect-change-provider#change-git-provider-and-reconnect).
+
+After you move all build profiles, you can [revoke the Azure DevOps Cloud connection](/build/manage-the-connections/reconnect-change-provider#revoke-oauth-connections).
+
+:::warning
+Revoking an OAuth2 connection disconnects every build profile that still uses it. Revoke the Azure DevOps Cloud connection only after you move all of its build profiles.
+:::
+
+### Connecting with a Personal Access Token
+
+Select **Personal Access Token** under **Create a New Azure DevOps Services Connection** to connect with your Azure DevOps [Personal Access Token (PAT)](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops). A PAT is a token that you generate in Azure DevOps and that grants access to the repositories your user can access. Fill in the following fields:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options2.png' alt='Connect to Azure DevOps panel with the Azure DevOps Cloud Personal Access Token option' />
+
+- Connection Name
+- Azure DevOps Server URL (for example, `https://dev.azure.com`)
+- Collection Name (for example, `DefaultCollection`)
+- Personal Access Token
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure4.png' alt='Personal Access Token form for an Azure DevOps Services connection' />
 
 ### OAuth2 Permissions for Azure DevOps Integration
 
-The following table details the OAuth permissions required for Appcircle to connect with Azure DevOps. These permissions grant read access to projects, repositories, pull requests, and webhooks, ensuring proper functionality when integrating with Azure DevOps via OAuth. 
+The following table lists the Azure DevOps permissions that Appcircle requests for the **Azure DevOps Entra ID** and **Azure DevOps Cloud** OAuth2 connections. These permissions grant read access to projects, repositories, pull requests, and webhooks, so that Appcircle can fetch your code and trigger builds.
 
 | Scope            | Permission        | Description                                                                                                                                                                            |
 |------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,13 +159,13 @@ TFS is not compatible with Azure DevOps Server on Appcircle.
 Azure DevOps Server version must be **Azure DevOps Server 2020** or higher.
 :::
 
-First, select **Azure** and then **Personal Access Token (User)** under **Create a new Azure Devops Connection** through the menu:
+Select **Azure**, and then select **Personal Access Token** under **Create a New Azure DevOps Server Connection**:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-githubimage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options.png' alt='Connect to Azure DevOps panel with the Azure DevOps Server Personal Access Token option' />
 
 Fill in the relevant information about your Azure DevOps Server. If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure5.png' alt='Personal Access Token form for an Azure DevOps Server connection' />
 
 - **Connection Name**: Give a name to this connection for easier identification in your list of integrations.
 - **Azure DevOps Server URL**: Provide the base URL of your Azure DevOps Server (e.g., `https://azuredevops.mycompany.com`).
