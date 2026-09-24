@@ -33,6 +33,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Character validation for name field of Sub-Organization Creation has been improved. <AccountBadge/> <CloudBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 27.0 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 - A new macOS-based build stack (Tahoe `26.6.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 27.0](https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes) (`27A266a`) installed along with Xcode 26.6 (`17F113`), plus up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Follow [the setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has Xcode 27.1 beta and Xcode 27.2 beta installed on runners. Xcode 27.1 adds the iOS 27.1 SDK and the iPhone Duo Simulator; Xcode 27.2 adds the 27.2 SDKs for all Apple platforms. Beta releases are intended for compatibility testing only and cannot be used for App Store submission - continue using Xcode 27.0 for your release workflows. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
