@@ -15,7 +15,7 @@ If your selected pool from config is "Appcircle macOS Pool (arm64)", there are s
 
 | Xcode Selection | macOS Version |
 | ------- | ----- |
-| 26.6.x - 27.0.x | Tahoe `26.6.2` |
+| 26.6.x - 27.2.x | Tahoe `26.6.2` |
 | 26.3.x - 26.6.x | Tahoe `26.3.2` |
 | 16.3.x - 26.3.x | Sequoia `15.6.1` / Sequoia `15.4.1` |
 | 16.0.x - 16.2.x | Sequoia `15.6.1` / Sequoia `15.4.1` / Sonoma `14.5` |
@@ -33,7 +33,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS runners have Xcode versions 27.0.x, 26.6.x, 26.5.x, 26.4.x, 26.3.x, 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
+Our macOS runners have Xcode versions 27.2.x (beta), 27.1.x (beta), 27.0.x, 26.6.x, 26.5.x, 26.4.x, 26.3.x, 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
 
 The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.3.2`) stack has the Xcode versions below:
 
@@ -48,6 +48,8 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.6.2`) stack has the Xcod
 
 | Version | Build |
 | ------- | ----- |
+| 27.2 beta 1 | `27B5019j` |
+| 27.1 beta 1 | `27A9269` |
 | 27.0 | `27A266a` |
 | 26.6 | `17F113` |
 
@@ -55,7 +57,15 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.6.2`) stack has the Xcod
 
 The macOS Tahoe (`26.6.2`) stack carries the stable Xcode 27.0 together with Xcode 26.6. Xcode 26.6 is available on the macOS Tahoe (`26.3.2`) stack as well, so you can move between the two stacks without changing the Xcode version you select.
 
-Xcode 27.0 requires macOS 26.6 or later, so it is available on this stack only. We strongly recommend testing your workflows on it before relying on it for production builds.
+Xcode 27.0, 27.1 and 27.2 all require macOS 26.6 or later, so they are available on this stack only. We strongly recommend testing your workflows on them before relying on them for production builds.
+
+:::
+
+:::caution Xcode 27.1 and 27.2 are beta releases
+
+App Store Connect rejects binaries produced by a beta toolchain with `Unsupported SDK or Xcode version`. Keep **Xcode 27.0** selected for any workflow that publishes to the App Store or TestFlight, and use 27.1 / 27.2 for compatibility testing only.
+
+For known issues on these toolchains, see Apple's [Xcode 27.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes) and [Xcode 27.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) release notes.
 
 :::
 
