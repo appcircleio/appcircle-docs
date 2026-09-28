@@ -50,8 +50,18 @@ brew --version
 
 Tap Appcircle repository and install `tart` (Tart is a registered trademark of Cirrus Labs, Inc.).
 
+:::caution
+Use `appcircleio/cli`, not `cirruslabs/cli`. The upstream tap ships a different Tart version under a different license, is not tested with the Appcircle runner, and currently fails to install on Homebrew 7.x.
+:::
+
 ```bash
 brew tap appcircleio/cli
+```
+
+Homebrew 7.x requires tap trust before it will load a dependency's formula. `appcircleio/cli/tart` is trusted automatically because it's installed by its full name, but its dependency `appcircleio/cli/softnet` is not, so trust it explicitly first:
+
+```bash
+brew trust --formula appcircleio/cli/softnet
 ```
 
 ```bash
