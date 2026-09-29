@@ -80,12 +80,23 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Build Cache         | Delete Build Cache                         | ✅     | ✅       | ⛔        | ⛔      |
 | Build History       | View Build History                         | ✅     | ✅       | ✅        | ✅      |
 | Build Activity Log  | View Build Activity Log                    | ✅     | ✅       | ✅        | ✅      |
+| AI Build Analysis   | View Build Analysis                        | ✅     | ✅       | ✅        | ✅      |
+| AI Build Analysis   | Start Build Analysis                       | ✅     | ✅       | ✅        | ⛔      |
 
 :::caution Distribution Binary and Runner Details
 
 - **Manager** or **Operator** Build Profile permission can distribute binary if user has **Manager** or **Operator** distribution permission.
 - **Manager** or **Operator** Build Profile permission can publish if user has **Manager** or **Operator** Publish Android/iOS permission.
 - **Manager**, **Operator** and **Viewer** Build Profile permissions can view self-hosted runners but **cannot** modify the configuration.
+
+:::
+
+:::info AI Build Analysis
+
+- **View Build Analysis** (`build#get_build_analysis`) and **Start Build Analysis** (`build#start_build_analysis`) follow the same role mapping as viewing builds and starting builds.
+- Starting a build analysis consumes AI credits (`license#use_ai_credit`) from the organization's shared monthly AI credit pool. All AI features draw from this single pool.
+- A user without the required role receives a **403 Forbidden** response. When the organization has no AI credits left, the request is rejected with a **402 Payment Required** response.
+- AI features can only be used after the organization has accepted the AI consent. See [Organization Management Permissions](#organization-management-permissions).
 
 :::
 
@@ -393,6 +404,13 @@ Also, the user can view self-hosted runners and change configuration.
 | Export Users                                         | Export User List                        | ✅     | ✅       | ⛔      |
 | API Keys                                             | View API Keys List                      | ✅     | ✅       | ✅       |
 | API Keys                                             | Manage/Delete API Keys                  | ✅     | ✅       | ⛔      |
+| AI Features                                          | Accept AI Consent                       | ✅     | ✅       | ⛔      |
+
+:::info AI Consent
+
+Accepting the AI consent (`organization#accept_ai_consent`) enables AI features for the organization. Only users with the **Owner** or **Manager** Organization Management role can accept it; other users receive a **403 Forbidden** response.
+
+:::
 
 :::info Organization Management
 

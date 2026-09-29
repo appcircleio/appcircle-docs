@@ -101,3 +101,15 @@ Custom Roles feature is only available on an Enterprise plan.
 :::warning
 If Appcircle introduces new scopes for a module after a custom role is created, existing custom roles are **not** updated automatically. Review your custom roles periodically and add newly available scopes as needed.
 :::
+
+## AI feature scopes
+
+The following scopes control access to AI features. Custom roles created before these scopes were introduced do not include them, so add them manually if members with a custom role need to use AI features:
+
+- **Build** module
+  - `build#get_build_analysis`: view the AI analysis of a build.
+  - `build#start_build_analysis`: start an AI analysis for a build. This consumes credits from the organization's shared monthly AI credit pool.
+- **Organization** module
+  - `organization#accept_ai_consent`: accept the AI consent for the organization.
+
+A member whose roles do not grant the required scope receives a **403 Forbidden** response. For the predefined role mapping of these scopes, see [Role Management](/account/my-organization/profile-and-team/role-management#build-permissions).
