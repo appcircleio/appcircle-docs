@@ -16,12 +16,19 @@ AI Analysis helps you find out why a build failed without reading through the fu
 
 Build failure analysis starts from the **Build Logs** window, the same window you use to review each workflow step of a build. For details on opening and working with build logs, see [viewing build logs](/build/build-process-management/binary-actions#view-build-logs).
 
+### Before You Start
+
+- **Organization consent:** The first time anyone in your organization uses AI Analysis, Appcircle asks for acceptance of the AI disclaimer on behalf of the organization. Only an [Organization Manager](/account/my-organization/profile-and-team/role-management) or the [Organization Owner](/account/my-organization/profile-and-team/role-management) can accept it, and other members get an access denied message until one of them does. After acceptance, every member of the organization can use AI Analysis.
+- **AI credits:** Each successful analysis uses 1 AI credit from your organization's shared monthly pool. A failed analysis doesn't use a credit. If your organization has no credits available, Appcircle shows a payment required message instead of running the analysis. To set or increase your credit allowance, contact [Appcircle](https://appcircle.io/contact).
+
 ### How It Works
 
 When you select **Troubleshoot with AI**, Appcircle analyzes the failed step and opens the **AI summary** panel on the right side of the **Build Logs** window. The summary has two sections:
 
 - **Root cause:** Explains why the build failed in plain language. It quotes the relevant lines from the build log, such as the error message and related configuration output, so you can see the evidence behind the explanation.
-- **Suggested fix:** Lists numbered steps to resolve the error. The steps point to the places in the Appcircle dashboard where you make the change.
+- **Suggested fix:** Lists numbered steps to resolve the error, in Appcircle or in your project.
+
+Appcircle saves each successful analysis for that build step. When you select **Troubleshoot with AI** again, the panel shows the saved result with the time it was analyzed, without using another AI credit. If an analysis fails, you can retry it from the panel.
 
 To learn which build data is sent to the model and how it is anonymized, see the [AI FAQ and Disclaimer](https://appcircle.io/ai-faq).
 
