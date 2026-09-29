@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Build Insights Report
 
-The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) or [Appcircle Copilot Assistant](/appcircle-ai/ai-assistants/appcircle-copilot-assistant) to get a visual report, or use the [Appcircle MCP client](/appcircle-ai/appcircle-mcp-server) directly.
+The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) or [Appcircle Copilot Assistant](/appcircle-ai/ai-assistants/appcircle-copilot-assistant) to get a visual report, or use the [Appcircle MCP client](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp) directly.
 
 ## How to Generate a Report
 
@@ -124,7 +124,7 @@ Yes, for the underlying data. Any MCP client can call `get_build_insights_report
 
 ### Why Is a Section Missing From My Report?
 
-A section can be absent because there was not enough build activity to compute it for the requested period (for example, no builds, no queued builds, or no profiles with a comparable previous period), which is not an error and not a zero value. It can also be absent because your [access token](/appcircle-ai/appcircle-mcp-server#authentication) lacks the required permission for the data that section depends on. Generating the full report requires a token with at least the **Manager** role. Check your token's role permissions if a section you expect to see is consistently absent.
+A section can be absent because there was not enough build activity to compute it for the requested period (for example, no builds, no queued builds, or no profiles with a comparable previous period), which is not an error and not a zero value. It can also be absent because your [access token](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp#authentication) lacks the required permission for the data that section depends on. Generating the full report requires a token with at least the **Manager** role. Check your token's role permissions if a section you expect to see is consistently absent.
 
 ### Does the Report Include Builds From Sub-Organizations?
 

@@ -1,5 +1,5 @@
 ---
-title: Appcircle MCP Server
+title: Appcircle MCP
 description: Learn how to use the Appcircle MCP (Model Context Protocol) server to integrate Appcircle with AI-powered development tools.
 tags: [appcircle mcp, mcp server, model context protocol, ai, integration]
 sidebar_position: 2
@@ -8,7 +8,7 @@ sidebar_position: 2
 import ContentRef from '@site/src/components/ContentRef';
 import Screenshot from '@site/src/components/Screenshot';
 
-# Appcircle MCP Server
+# Appcircle MCP
 
 The Appcircle MCP Server exposes Appcircle platform capabilities through the Model Context Protocol (MCP), enabling AI assistants and development tools to interact with your Appcircle organization, builds, and workflows directly from your IDE or CLI.
 

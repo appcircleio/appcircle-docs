@@ -11,17 +11,11 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Explore AI-powered Appcircle and all AI-related features. This section covers integrating with AI assistants and development tools and leveraging the platform for smarter builds and workflows.
 
-## [AI Analysis](/appcircle-ai/ai-analysis)
+## [AI Features on Appcircle](/appcircle-ai/ai-features-on-appcircle)
 
-AI Analysis reviews a failed build from the build logs and shows the root cause of the error with a suggested fix, so you can resolve the failure without reading through the full log.
+Explore the AI features built into Appcircle: [Build Failure Analysis](/appcircle-ai/ai-features-on-appcircle/build-failure-analysis) reviews a failed build and shows the root cause with a suggested fix, and [Appcircle MCP](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp) lets AI assistants and development tools interact with your Appcircle organization, builds, and workflows through the Model Context Protocol (MCP).
 
-<ContentRef url="/appcircle-ai/ai-analysis">AI Analysis</ContentRef>
-
-## [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server)
-
-The Appcircle MCP Server exposes Appcircle platform capabilities through the Model Context Protocol (MCP), enabling AI assistants and development tools to interact with your Appcircle organization, builds, and workflows directly from your IDE or CLI.
-
-<ContentRef url="/appcircle-ai/appcircle-mcp-server">Appcircle MCP Server</ContentRef>
+<ContentRef url="/appcircle-ai/ai-features-on-appcircle">AI Features on Appcircle</ContentRef>
 
 ## [AI Assistants](/appcircle-ai/ai-assistants)
 

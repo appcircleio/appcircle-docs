@@ -3332,3 +3332,12 @@ quay:
   label: "auto-login"
   description: "Documentation related to auto-login"
   permalink: "/auto-login"
+"build failure analysis":
+  label: "build failure analysis"
+  description: "Documentation related to build failure analysis"
+  permalink: "/build-failure-analysis"
+
+"ai features":
+  label: "ai features"
+  description: "Documentation related to AI features on Appcircle"
+  permalink: "/ai-features"
