@@ -1,27 +1,24 @@
 ---
-title: AI Analysis
+title: Build Failure Analysis
 description: Use Troubleshoot with AI in the Appcircle build logs to analyze a failed build and understand what caused the error.
-tags: [appcircle ai, ai, build logs, troubleshooting]
+tags: [appcircle ai, ai, build failure analysis, build logs, troubleshooting]
 sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
-import NeedHelp from '@site/docs/\_need-help.mdx';
 
-# AI Analysis
+# Build Failure Analysis
 
-AI Analysis helps you find out why a build failed without reading through the full build log line by line. When a build fails, the build log can contain hundreds of lines of output from tools such as Xcode or Gradle, and the actual cause of the failure is often buried among them. AI Analysis reviews the failed build for you and explains the error.
+Build Failure Analysis helps you find out why a build failed without reading through the full build log line by line. When a build fails, the build log can contain hundreds of lines of output from tools such as Xcode or Gradle, and the actual cause of the failure is often buried among them. Build Failure Analysis reviews the failed build for you and explains the error.
 
-## Build Failure Analysis
+Build Failure Analysis starts from the **Build Logs** window, the same window you use to review each workflow step of a build. For details on opening and working with build logs, see [viewing build logs](/build/build-process-management/binary-actions#view-build-logs).
 
-Build failure analysis starts from the **Build Logs** window, the same window you use to review each workflow step of a build. For details on opening and working with build logs, see [viewing build logs](/build/build-process-management/binary-actions#view-build-logs).
+## Before You Start
 
-### Before You Start
-
-- **Organization consent:** The first time anyone in your organization uses AI Analysis, Appcircle asks for acceptance of the AI disclaimer on behalf of the organization. Only an [Organization Manager](/account/my-organization/profile-and-team/role-management) or the [Organization Owner](/account/my-organization/profile-and-team/role-management) can accept it, and other members get an access denied message until one of them does. After acceptance, every member of the organization can use AI Analysis.
+- **Organization consent:** The first time anyone in your organization uses Build Failure Analysis, Appcircle asks for acceptance of the AI disclaimer on behalf of the organization. Only an [Organization Manager](/account/my-organization/profile-and-team/role-management) or the [Organization Owner](/account/my-organization/profile-and-team/role-management) can accept it, and other members get an access denied message until one of them does. After acceptance, every member of the organization can use Build Failure Analysis.
 - **AI credits:** Each successful analysis uses 1 AI credit from your organization's shared monthly pool. A failed analysis doesn't use a credit. If your organization has no credits available, Appcircle shows a payment required message instead of running the analysis. To set or increase your credit allowance, contact [Appcircle](https://appcircle.io/contact).
 
-### How It Works
+## How It Works
 
 When you select **Troubleshoot with AI**, Appcircle analyzes the failed step and opens the **AI summary** panel on the right side of the **Build Logs** window. The summary has two sections:
 
@@ -32,7 +29,7 @@ Appcircle saves each successful analysis for that build step. When you select **
 
 To learn which build data is sent to the model and how it is anonymized, see the [AI FAQ and Disclaimer](https://appcircle.io/ai-faq).
 
-### Analyze a Failed Build
+## Analyze a Failed Build
 
 1. Open the build profile that contains the failed build.
 2. Open the **Build Logs** window for the failed build.
@@ -45,10 +42,10 @@ To learn which build data is sent to the model and how it is anonymized, see the
    <Screenshot url="https://cdn.appcircle.io/docs/assets/AI-152-ai-analysis-panel.png" alt="AI summary panel with root cause and suggested fix" />
 
 :::info
-If more than one step failed, AI Analysis analyzes the step you select in the **Build Logs** window. If you haven't selected a failed step, it analyzes the first failed step.
+If more than one step failed, Build Failure Analysis analyzes the step you select in the **Build Logs** window. If you haven't selected a failed step, it analyzes the first failed step.
 :::
 
-### Give Feedback
+## Give Feedback
 
 Each summary ends with a **Was this helpful?** prompt. Select **Yes** or **No** to rate the summary. Your feedback helps Appcircle improve the accuracy of future analyses.
 
@@ -57,5 +54,3 @@ To learn how Appcircle uses your feedback, see [AI FAQ and Disclaimer](https://a
 :::
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/AI-152-ai-analysis-feedback.png" alt="Was this helpful feedback prompt in the AI summary panel" />
-
-<NeedHelp />

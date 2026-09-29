@@ -7,11 +7,11 @@ sidebar_position: 4
 
 # Appcircle Copilot Assistant
 
-The **Appcircle Copilot Plugin** connects GitHub Copilot to the Appcircle platform, bundling the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) with Appcircle-aware skills so you can ask Copilot about your Appcircle organization or how to use Appcircle.
+The **Appcircle Copilot Plugin** connects GitHub Copilot to the Appcircle platform, bundling the [Appcircle MCP Server](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp) with Appcircle-aware skills so you can ask Copilot about your Appcircle organization or how to use Appcircle.
 
 ## How to Use Appcircle Copilot Assistant
 
-The plugin registers the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) and the following Appcircle-aware skills:
+The plugin registers the [Appcircle MCP Server](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp) and the following Appcircle-aware skills:
 
 | Skill | Purpose |
 |-------|---------|

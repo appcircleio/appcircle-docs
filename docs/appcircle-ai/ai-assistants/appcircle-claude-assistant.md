@@ -7,11 +7,11 @@ sidebar_position: 3
 
 # Appcircle Claude Assistant
 
-The **Appcircle Claude Plugin** connects Claude to the Appcircle platform, bundling the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) with Appcircle-aware skills so you can ask Claude about your Appcircle organization or how to use Appcircle.
+The **Appcircle Claude Plugin** connects Claude to the Appcircle platform, bundling the [Appcircle MCP Server](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp) with Appcircle-aware skills so you can ask Claude about your Appcircle organization or how to use Appcircle.
 
 ## How to Use Appcircle Claude Assistant
 
-The plugin registers the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) and the following Appcircle-aware skills, automatically namespaced under `appcircle`:
+The plugin registers the [Appcircle MCP Server](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp) and the following Appcircle-aware skills, automatically namespaced under `appcircle`:
 
 | Skill | Purpose |
 |-------|---------|
