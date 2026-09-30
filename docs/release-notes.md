@@ -22,6 +22,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - Custom roles can now be assigned automatically through SSO/LDAP group mapping and granted to API keys, so permissions no longer have to be managed per user. <AccountBadge/> <CloudBadge/>
 - Signing certificates and their passwords can now be renewed automatically before expiry in the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/>
+- [AI Analysis](/appcircle-ai/ai-analysis) (Beta) has been introduced for builds, analyzing a single build to identify the root cause of a failure and suggest how to fix it. <CloudBadge/>
+- Appcircle now comes with a redesigned user interface, offering a cleaner, more modern and consistent experience across all modules, along with performance improvements for faster page loads and smoother navigation. <CloudBadge/> 
 
 ### :muscle: Improvements
 
