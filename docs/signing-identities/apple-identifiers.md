@@ -13,13 +13,13 @@ The first requirement for publishing an application on the Apple App Store is to
 
 With the **Apple Identifiers** option in Appcircle's Signing Identities module, you can easily register a BundleID on the Apple Developer Portal or list your existing BundleIDs on Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-appleIdentifer.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-appleIdentifer_v2.png' />
 
 ## Register Bundle Identifier
 
 With the **Register Bundle Identifier** option, you can register a new BundleID on the Apple Developer portal using Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerBundle1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerBundle1_v2.png' />
 
 You can specify the BundleID you wish to save, provide a description to identify this identifier, and select the capabilities you want it to have. Once you click the Save button, Appcircle will store this BundleID in your Apple Developer account.
 
@@ -29,7 +29,7 @@ When you register a BundleID, it will be created simultaneously in your Apple De
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerDetails_v2.png' />
 
 - **Description**: A brief explanation to distinguish BundleID.
 - **BundleID**: BundleID value to be saved.
@@ -39,11 +39,11 @@ When you register a BundleID, it will be created simultaneously in your Apple De
 
 In this option, all currently registered BundleIDs are listed. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getBundle1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getBundle1_v2.png' />
 
 You can list your registered BundleIDs on Appcircle by making selections from this list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getBundleList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getBundleList_v2.png' />
 
 After the registration process is completed, the selected or registered BundleIDs will be listed as follows.
 

@@ -21,7 +21,7 @@ Before running the **Fastlane** step, you must complete certain prerequisites, a
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the Fastlane process. After the clone, Fastlane will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneOrder_v2.png' />
 
 :::caution
 
@@ -33,7 +33,7 @@ Fastlane needs project files to work. If there is no **Git Clone** step in your 
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneInput_v2.png' />
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|

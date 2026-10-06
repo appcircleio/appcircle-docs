@@ -33,13 +33,13 @@ This step is one of the dependent steps. Below is a table of the dependent steps
 | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Send to TestFlight**](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/send-to-app-store#send-apps-to-testflight) | This step sends the relevant application version to TestFlight. Ensure the [**App Store Connect API Key**](https://docs.appcircle.io/account/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is added to Appcircle and selected. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2919-approvelTestFlight.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2919-approvelTestFlight_v2.png' />
 
 ### Input Variables
 
 The parameters required for this step to work as expected are listed below.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2919-approvalTestInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2919-approvalTestInput_v2.png' />
 
 | Variable Name              | Description                                                                                                                                                                                     | Status   |
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

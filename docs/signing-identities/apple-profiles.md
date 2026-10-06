@@ -85,7 +85,7 @@ The provision profile you register via Appcircle is simultaneously registered on
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerProfile.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerProfile_v2.png' />
 
 In order to register a profile, some parameters are needed. 
 
@@ -97,13 +97,13 @@ The certificates that need to be selected when registering a profile are listed 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerProfileDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerProfileDetails_v2.png' />
 
 #### Device Registration
 
 If you have selected Ad-hoc or Development as distribution method, you need to select a device to be added to the provision profile in the next screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-deviceSelection.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-deviceSelection_v2.png' />
 
 ### Get Provisioning Profiles from Apple Developer
 
@@ -113,11 +113,11 @@ If you have selected Ad-hoc or Development as distribution method, you need to s
 
 When you go to add a new Provisioning Profile, you'll see the option **Get Provisioning Profiles from App Store Connect**. Select it to see the list of identities fetched from Apple.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getProfiles.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getProfiles_v2.png' />
 
 You can select to download the provisioning profile from the list. **If you don't want Appcircle to keep the provisioning profile**, you can make our build agents to keep a reference. This way, our agents will fetch the profiles **before every build and dismiss them** when the build is finalized.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-provision-profile-allow-download.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-provision-profile-allow-download_v2.png" />
 
 You can select the profiles you want to download from the list and fetch them to your Appcircle environment with the download button.
 
@@ -125,7 +125,7 @@ You can select the profiles you want to download from the list and fetch them to
 
 Simply upload your provisioning profiles obtained from the Apple Developer portal.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-uploadProfiles.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-uploadProfiles_v2.png' />
 
 :::info
 
@@ -165,7 +165,7 @@ Shared provisioning profiles can be used in Sub-Organizations just like locally 
 
 #### How to Share Apple Profiles
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-25.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-25_v2.png' />
 
 1. Navigate to the Apple Profiles Section  
    Go to the Signing Identity module and open the **Apple Profiles** section.
@@ -185,7 +185,7 @@ Shared provisioning profiles can be used in Sub-Organizations just like locally 
 5. Save Sharing Configuration  
    Click **Share** to complete the process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-26.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-26_v2.png' />
 
 #### Behavior in Sub-Organizations
 
@@ -193,7 +193,7 @@ Shared provisioning profiles can be used in Sub-Organizations just like locally 
 - These profiles will be marked with a **Shared** tag on Root Organization and **Inherited** tag on Sub Organizations.
 - Sub-Organization users **cannot edit, rename, or delete** shared provisioning profiles.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-27.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-27_v2.png' />
 
 :::tip
 - If **Share with all sub-organizations** is enabled, the profile will also be automatically available in newly created sub-organizations.
@@ -207,7 +207,7 @@ Shared provisioning profiles can be used in Sub-Organizations just like locally 
 
 You can delete a single Provisioning Profile or multiple ones by selecting the checkboxes next to the provisioning profiles. You can also select the checkbox at the top of the list to select all available ones. Once you select the checkboxes for the files you need, a delete button will appear at the top right corner.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete1_v2.png' />
 
 If you attempt to delete a Provisioning Profile that is saved in a build configuration of an active Build Profile, a warning message will appear. This message will allow you to view the affected build profiles and navigate to their configuration screens to make necessary changes.
 
@@ -307,7 +307,7 @@ Automatic signing allows you to sign your application without uploading any prov
 - Both Developer and Distribution certificates must be added to Appcircle.
 - App Store Connect Key must be added to Appcircle.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-configuration-auto-code-sign.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/signing-ios-configuration-auto-code-sign_v2.png" />
 
 You must also select distribution type from the dropdown menu. If you're uploading your app to App Store or TestFlight, you should select **App Store**. If you're uploading your app to Adhoc or Appcircle's distribution module, you should select **Adhoc**. Please check [Apple's documentation](https://developer.apple.com/documentation/technotes/tn3125-inside-code-signing-provisioning-profiles) for more details.
 
@@ -321,7 +321,7 @@ If you don't upload developer and distribution certificates, Xcode will create n
 
 You can also select bundle identifier and provisioning profile to sign your application.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/03-02-iOS-Build-Signing.jpg' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/03-02-iOS-Build-Signing_v2.png' />
 
 :::danger
 

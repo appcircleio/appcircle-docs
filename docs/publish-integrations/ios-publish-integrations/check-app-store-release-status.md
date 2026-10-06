@@ -31,13 +31,13 @@ This is a standalone step. The steps listed below should precede this step if th
 | [**Get Approval from TestFlight**](/publish-integrations/ios-publish-integrations/approval-test-flight)              | This step checks the TestFlight status of your application and advances the Publish Flow according to the specified acceptance condition. |
 | [**Add for Review on App Store Connect**](/publish-integrations/ios-publish-integrations/add-for-review-on-app-store) | This step checks the Release status of your application and advances the Publish Flow according to the specified acceptance condition.    |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2915-checkReleaseStatus.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2915-checkReleaseStatus_v2.png' />
 
 ### Input Variables
 
 Below are the parameters necessary for this step's operation, along with their descriptions.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2915-checkReleaseDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2915-checkReleaseDetails_v2.png' />
 
 :::caution Success Statuses
 

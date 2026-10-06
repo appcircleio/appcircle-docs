@@ -14,7 +14,7 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 The Publish Report provides a detailed overview of all actions performed within the Publish to Stores Module. It allows users to monitor, filter, and export publish-related activities across different platforms, trigger types, and stores.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-7.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-7_v2.png" />
 
 These are the displayed fields within the Publish Report:
 
@@ -43,7 +43,7 @@ Users can refine the report data using multiple filters:
 - **App Name:** Filter by the application name that was used in the Publish action.
 - **Status:** Filter by Status of the Publish such as Success, Failed or Canceled.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-5_v2.png" />
 
 :::info
 In the filter options, you can only view and select the organization and sub-organization you belong to.

@@ -19,25 +19,25 @@ Appcircle's Publish to Stores module requires a **runner** to operate. The runne
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17_v2.png' />
 
 When you click on the **Publish Flow** button, the list of steps included in the publish flow will appear.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-w.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-w_v2.png' />
 
 We can access the list of steps that can be used in a publish workflow by clicking on the **Manage Flow** button. You can add or remove new steps and customize your publish workflow as you wish.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow1_v2.png' />
 
 You can effortlessly obtain a **YAML** file of your current Publish Flow configurations on our platform with the **Download YAML** button at the bottom.
 By simply selecting the download option, you'll receive a YAML file containing all the details of your existing workflow setup.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow3_v2.png' />
 
 Customize your workflows effortlessly by uploading your YAML file with the **Replace Flow** button at the top.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5764-flow4_v2.png' />
 
 Simply select the file containing your desired configurations and integrate them seamlessly into the platform.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload-workflow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload-workflow_v2.png' />

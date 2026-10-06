@@ -46,13 +46,13 @@ In Tuist integrated projects, there will be cases where `.xcworkspace` and `.xco
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/tuistInstallStepOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/tuistInstallStepOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/tuistIntallStepInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/tuistIntallStepInput_v2.png' />
 
 :::tip Tuist Version
 

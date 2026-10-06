@@ -13,8 +13,8 @@ Environment variables let you extend your build configuration. There are several
 
 Environment variables have a key and a secret value that can be defined manually to be used in your project builds globally.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var1_v2.png' />
 
 You can create groups of environment variables and import these groups to your builds to customize your builds with additional parameters.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables_v2.png' />

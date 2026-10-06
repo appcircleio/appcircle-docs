@@ -103,11 +103,11 @@ For more information, please visit the **React Native UI Test** workflow step [d
 
 If you add [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports_v2.png' />
 
 You must add this step **after** the `React Native UI Test` so that it can parse test results. Your workflow should look like the below.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-testReport.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-testReport_v2.png' />
 
 <AlwaysRunToggleDanger />
 
@@ -115,7 +115,7 @@ You must add this step **after** the `React Native UI Test` so that it can parse
 
 Appcircle can show passing and failing tests in compact UI.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-detail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-detail_v2.png' />
 
 :::caution Test Suites
 
@@ -123,4 +123,4 @@ The name for Test Suites appears as undefined because the tests are not wrapped 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-suite-detail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports-suite-detail_v2.png' />

@@ -19,7 +19,7 @@ Before running the **​Flutter Build for Web** step, you must complete certain 
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step clones your project from the connected Git provider and creates the `$AC_REPOSITORY_DIR` variable, which defaults to `$AC_FLUTTER_PROJECT_DIR`. |
 | [**Flutter Install**](/workflows/flutter-specific-workflow-steps/flutter-install) | This step installs the [Flutter SDK](https://flutter-ko.dev/development/tools/sdk/releases). If no version is specified, it installs the latest **stable** version. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2855-flutterWebOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2855-flutterWebOrder_v2.png' />
 
 :::danger
 
@@ -31,7 +31,7 @@ This step relies heavily on the **Flutter Install** step. If the Flutter SDK is 
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2855-flutterWebInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2855-flutterWebInput_v2.png' />
 
 | Variable Name                 | Description                         | Status 			|
 |-------------------------------|-------------------------------------|-----------------|

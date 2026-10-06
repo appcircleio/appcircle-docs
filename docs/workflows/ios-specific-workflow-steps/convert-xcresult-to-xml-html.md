@@ -25,13 +25,13 @@ Please note that if you do not run **Xcodebuild for Unit and UI Tests** before t
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertInput_v2.png' />
 
 | Variable Name                 | Description                         | Status           |
 |-------------------------------|-------------------------------------|------------------|

@@ -85,11 +85,11 @@ This simple Bash script will trigger your unit test and output the test results 
 
 Appcircle has [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) which can show the result of your tests and code coverage in a beautiful UI.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-overview.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-overview_v2.png" />
 
 You must add this component **after** running your tests so that it can parse test results. Your workflow should look like the below.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-workflow.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-workflow_v2.png" />
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. This component supports the following test and coverage formats:
 
@@ -107,7 +107,7 @@ You must configure the **Test Report Component** and enter the path of code cove
 
 You must configure the component to parse those folders.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-workflow.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-workflow_v2.png" />
 
 :::caution
 
@@ -119,7 +119,7 @@ If you're using UI tests with emulators, you must select an Intel device (**Appc
 
 If you use the Jacoco tool for test coverage in your project, you can obtain coverage percentages from the test reports Jacoco generates. Jacoco calculates coverage percentages using six different methods, and the coverage percentage will be calculated based on the selected method.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/be2556-jacocoCoverage2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/be2556-jacocoCoverage2_v2.png" />
 
 :::info
 These methods range from the most detailed coverage percentage to the most general:
@@ -140,11 +140,11 @@ Each calculation type has different coverage percentages. This is because each t
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-result-overview.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-result-overview_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-ui-detail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-ui-detail_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-coverage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-coverage_v2.png' />
 
 ## Automated Tests
 

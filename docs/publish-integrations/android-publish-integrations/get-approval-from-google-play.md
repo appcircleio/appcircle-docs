@@ -23,7 +23,7 @@ The Publish flow steps that need to be executed before running the **Get Approva
 |------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-approve-from-google-play-0.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-approve-from-google-play-0_v2.png'/>
 
 :::warning
 
@@ -49,7 +49,7 @@ If you are using [Publish Variables](/publish-to-stores-module/publish-settings#
 
 The parameters required for this step to work as expected are listed below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-approve-from-google-play-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-approve-from-google-play-1_v2.png'/>
 
 | Variable Name          | Description                                                                                                                     | Status    |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------- |

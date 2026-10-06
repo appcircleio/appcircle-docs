@@ -26,17 +26,17 @@ Please **don't forget** to select the **Xcode version** from [Configuration](/bu
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcodeOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcodeOrder_v2.png' />
 
 ### Version Change
 
 - To select an Xcode version, open [Configuration](/build/build-process-management/configurations) in the build profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_config.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_config_v2.png' />
 
 - After opening the configuration, you will see the **Xcode Version** section. Now you can select a version for Xcode.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_list.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2585-xcode_select_list_v2.png' />
 
 :::info
 
@@ -58,7 +58,7 @@ For more information, please visit our [**iOS Build Stacks**](/infrastructure/io
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5421-xcodeSelectInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5421-xcodeSelectInput_v2.png' />
 
 | Variable Name        | Description                                                                                                                                           | Status   |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

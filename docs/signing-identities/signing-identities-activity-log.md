@@ -12,7 +12,7 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 You can view Signing Identity module actions such as creating, deleting, and adding Apple Certificates or Android Keystores to Organizations or Sub Organizations in the Activity Log section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-1_v2.png' />
 
 Here is the full list of actions that can be monitored:
 
@@ -72,7 +72,7 @@ You can edit the required date range by clicking the time filter in the top filt
 
 Team activity logs also include filters to help users perform more precise searches. By clicking the 'All' option next to Organizations, you can select a specific organization or sub-organization from the list, provided you have access to monitor their signing identities activity.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-1_v2.png'/>
 
 Another method to search is by **Actions**. Simply click the filter option and select **Actions**. Then you can choose a specific action to refine your search.
 

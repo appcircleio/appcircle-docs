@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Artifacts section also allows you to manually clear cached files created during the build process. This helps resolve unexpected caching issues or reduce storage usage.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-10_v2.png' />
 
 :::danger Cache Deletion Scope
 
@@ -58,7 +58,7 @@ To view the full cache usage and identify which part of the organization is cons
 #### Example:
 
 - Your sub-organization may show low usage:
-  <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-12.png' />
+  <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-12_v2.png' />
 
 - But the main organization may show that the overall limit has been reached:
   <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-11.png' />

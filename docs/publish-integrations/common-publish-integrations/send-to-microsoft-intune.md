@@ -28,7 +28,7 @@ To send an app from Appcircle to Microsoft Intune, you need to register an appli
 
 After completing the integration with Microsoft Intune, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list. Then, click on the **Save** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5766-Publish-intune-settings2.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5766-Publish-intune-settings2_v2.png' />  
 
 ### Input Variables
 
@@ -36,7 +36,7 @@ After completing the integration with Microsoft Intune, go to [Publishing Settin
 
 Below are the parameters necessary for this step's operation for iOS, along with their descriptions.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-microsoft-intune-inputs-ios-light.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-microsoft-intune-inputs-ios-light_v2.png' />
 
 | Variable Name        | Description                                                                                                                                                                                                                       | Status   |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -55,7 +55,7 @@ If you choose to create a new application in Microsoft Intune while marking the 
 
 Below are the parameters necessary for this step's operation for Android, along with their descriptions.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-microsoft-intune-inputs-android-light.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-microsoft-intune-inputs-android-light_v2.png' />
 
 | Variable Name        | Description                                                                                                                                                                                                                       | Status   |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

@@ -33,7 +33,7 @@ If you are using [Publish Variables](/publish-to-stores-module/publish-settings#
 
 The parameters required for this step to work as expected are listed below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-publish-huawei-appgallery-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-publish-huawei-appgallery-1_v2.png'/>
 
 | Variable Name       | Description                                                                                                                                                                                                                                  | Status    |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |

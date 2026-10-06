@@ -20,7 +20,7 @@ Before running the **Slather** step, you must complete certain prerequisites, as
 | [**Xcodebuild for Unit and UI Tests**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | This step executes your unit and UI tests, generating a `.xcresult` file. This file serves as the mandatory test result input for **Slather**.                               |
 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2830-slatherOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2830-slatherOrder_v2.png' />
 
 :::danger
 
@@ -32,7 +32,7 @@ Before running the **Slather** step, you must complete certain prerequisites, as
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2830-slatherInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2830-slatherInput_v2.png' />
 
 | Variable Name           | Description                          | Status                           |
 |-------------------------|--------------------------------------|----------------------------------|

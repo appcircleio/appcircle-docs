@@ -22,13 +22,13 @@ Before running the **Appcircle CodePush** step, you must complete certain prereq
 | **Node Install**           | This step will install Node modules for your application. Please note that the **Appcircle CodePush** step should be used after this step.                                                                                                                               |
 | **NPM/Yarn Commands**      | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. Please note that the **Appcircle CodePush** step should be used after this step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-stepOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-stepOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-stepInputs.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-stepInputs_v2.png' />
 
 :::danger Sensitive Variables
 
@@ -64,7 +64,7 @@ With the **Appcircle CodePush** step, you can also publish a **signed CodePush r
 
 - First, create a group in the **Environment Variables** sub‑section under the **Build** module, and upload your `.pem` file into that group. For more information, please visit the Environment Variable [documentation](/environment-variables).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6352-envPem.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6352-envPem_v2.png' />
 
 :::caution Environment Variables
 
@@ -74,7 +74,7 @@ In order to use the **Environment Variable** group you created in the relevant p
 
 - Next, in the **Appcircle CodePush** step, use the **Extra Arguments** input to pass the `--privateKeyPath <YOUR_ENV_KEY>` parameter and reference the environment variable you created.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-codeSignStep.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-codeSignStep_v2.png' />
 
 Once these steps are completed, running the **Appcircle CodePush** step will automatically sign the generated CodePush release with your provided `.pem` file and publish it.
 
@@ -84,4 +84,4 @@ With the **Package Diff** feature, users download only the changed files instead
 
  - In the **Appcircle CodePush** step, use the **Extra Arguments** input to pass the `--diffEnabled` parameter.
 
- <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-packageDiffNew.png' />
+ <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-packageDiffNew_v2.png' />

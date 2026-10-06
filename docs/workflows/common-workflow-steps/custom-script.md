@@ -23,13 +23,13 @@ Note that you can put the **Custom Script** component anywhere you want in the w
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customScript.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customScript_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2793-customInput_v2.png' />
 
 :::danger Sensitive Variables
 
@@ -443,7 +443,7 @@ The script above is written in Ruby. To execute it, select `Ruby` as the `Execut
 
 To ensure your script works even if one of the steps in the workflow fails (and you want to capture the failed status as well), enable the **"Always run this step even if the previous steps fail"** option.  
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-custom-script-faq-2.png" />  
+<Screenshot url="https://cdn.appcircle.io/docs/assets/workflow-custom-script-faq-2_v2.png" />  
 
 :::
 

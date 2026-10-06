@@ -46,7 +46,7 @@ To generate a Personal Access Key:
 2. Find the Personal Access Key section in the top right corner.
 3. Press the "Generate Key" button to generate your first key.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-1.png' alt="Generate Personal Access Key"/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-1_v2.png' alt="Generate Personal Access Key"/>
 
 ## What the Action Does[​](#what-the-action-does "Direct link to What the Action Does")
 

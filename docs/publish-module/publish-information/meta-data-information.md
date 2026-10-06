@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Metadata Details
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8751-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8751-3_v2.png' />
 
 ## Overview
 
@@ -28,19 +28,19 @@ The localization dropdown allows you to select the language in which you want to
 
 When you select a language, you will provide localized versions of your app's metadata, including promotional texts, descriptions, and what’s new in this version. Localization helps in reaching a wider audience by providing information in the users' native language.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-localization.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-localization_v2.png' />
 
 ### Metadata Auto-Population
 
 If there is existing metadata associated with your app on the App Store, the **Metadata Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions and localizations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-localization-get.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3667-meta-data-information-localization-get_v2.png' />
 
 ### Metadata from Last Updated
 
 With Appcircle's **Retrive from Last Updated** feature, you can automatically update your metadata. When a new version is added, you can directly retrieve the metadata information updated in the previous version with the **Retrive From Last Updated** function on the metadata screen. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4007-metadataUpdate1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4007-metadataUpdate1_v2.png' />
 
 :::caution Metadata from Last Update
 
@@ -93,13 +93,13 @@ The localization dropdown allows you to select the language in which you want to
 
 When you select a language, you will provide localized versions of your app's metadata, including video, descriptions, and app name. Localization helps in reaching a wider audience by providing information in the users' native language.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235_v2.png' />
 
 ### Metadata Auto-Population
 
 If there is existing metadata associated with your app on the Google Play Console, the **Metadata Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions and localizations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-2_v2.png' />
 
 :::info
 
@@ -111,11 +111,11 @@ If there is existing metadata associated with your app on the Google Play Consol
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-3_v2.png' />
 
 This step can be configured further by selecting the step options.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-235-4_v2.png' />
 
 :::caution
 

@@ -12,13 +12,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 For Android binaries, by using Appcircle's Google Play Console Information feature, you can update the required information for binary submission.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-20.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-20_v2.png' />
 
 ### Contact Information
 
 You can fill in your contact information to be displayed on Google Play, including your email address, phone number, and website.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-236-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-236-2_v2.png' />
 
 ### General Information
 
@@ -28,7 +28,7 @@ The general information area allows you to see and update the default language a
 
 The default language for an app on Google Play Console is the primary language in which the app’s store listing (title, description, and other metadata) is displayed when a user visits the app’s page. If a user’s device language is not supported by the app’s store listing, they will see the information in the default language.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5649-info.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5649-info_v2.png' />
 
 #### Auto Send for Review
 
@@ -58,13 +58,13 @@ To handle this behavior efficiently, we provide four different options for manag
 
 By selecting the appropriate option, you can ensure that your release process aligns with Google's requirements while maintaining flexibility in handling potential API constraints.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5649-info2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5649-info2_v2.png' />
 
 ### Update and Save
 
 You can instantly view your current App Information details and, if desired, simultaneously update these values on your Google Play Console account. Each time this screen is opened, the current information will be retrieved.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-236-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-236-3_v2.png' />
 
 :::danger App Information Save
 

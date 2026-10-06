@@ -18,7 +18,7 @@ This feature streamlines the process of updating app distribution and security s
 
 <BillingInfoForResign />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-24.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-24_v2.png' />
 
 ## Re-sign iOS Binary
 
@@ -32,13 +32,13 @@ The functionality and configuration steps of **Appcircle’s Re-sign** feature f
 
 From the **Information** tab under Re-sign configuration, you can manage the application's bundle identifier and display name values.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-13.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-13_v2.png' />
 
 #### Bundle Identifier
 
 Appcircle Publish profiles can accept binaries with different bundle identifiers. The binary defined for the profile serves as the reference for Re-sign. When a binary with a different bundle identifier is uploaded, it is re-signed according to the bundle identifier of the profile. The bundle identifier of the resulting re-signed binary is updated to match the one associated with the profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-14.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-14_v2.png' />
 
 > ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-to-stores-module/binary-management).
 
@@ -52,7 +52,7 @@ If the binary to be re-signed has multiple targets, each target bundle identifie
 
 The Pool Selection field defines which organization pool will be used to execute the Re-sign process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-15.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-15_v2.png' />
 
 :::caution Pool Selection Is Mandatory
 Re-sign will not work if a pool is not selected.
@@ -69,19 +69,19 @@ Always ensure that a valid macOS pool is selected before saving the Re-sign conf
 
 With the **Display Name** parameter, you can change the visible name of the binary that will be re-signed. The re-signing process starts with the specified display name, and once completed, the `CFBundleDisplayName` value inside the binary is updated accordingly.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-16.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-16_v2.png' />
 
 ### Versioning
 
 By utilizing the versioning capability of the Re-sign feature, you can modify the version and build number of the selected binary according to the defined strategy during the re-signing process. In addition to calculating a value from the App Store, TestFlight, or a previously uploaded binary, you can also pin the version or build number to an exact value using the **Fixed** source.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-17.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-17_v2.png' />
 
 #### Update Build Number
 
 With the **Update Build Number** feature, you can automatically increment the build number of the selected binary during the re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new build number will be generated based on the given offset (or set to the fixed value you provide) before the re-signing begins, and the binary will be signed with this updated build number.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-18.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-18_v2.png' />
 
 
 - **Build Number Source**: The defined base build number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, **Uploaded Binary**, and **Fixed** are available options.
@@ -97,7 +97,7 @@ With the **Update Build Number** feature, you can automatically increment the bu
 
 With the **Update Version Number** feature, you can automatically increment the version number of the selected binary during the re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version number will be generated before the re-signing begins, based on the selected increment strategy and offset (or set to the fixed value you provide), and the binary will be signed with this updated version number.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-19.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-19_v2.png' />
 
 - **Version Number**: The defined base version number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, **Uploaded Binary**, and **Fixed** are available options
   - **App Store**: The version number will be calculated by referencing the latest live version available on the **Apple App Store**.
@@ -121,7 +121,7 @@ For more information, please visit the **Credentials** [documentation.](/account
 
 Appcircle requires valid certificate and provisioning profile to successfully perform the re-sign process. The re-signing begins using the associated certificates and provisioning profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-20.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-20_v2.png' />
 
 #### App Store Credential
 
@@ -129,7 +129,7 @@ Appcircle’s Re-sign feature requires an **App Store Connect** credential. Ther
 
 For more information, please visit the **App Store Connect API Key** [documentation](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-21.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-21_v2.png' />
 
 #### Signing Method
 
@@ -143,7 +143,7 @@ The Re-sign feature also supports **In-house** signing. You can perform this by 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-22.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-22_v2.png' />
 
 #### Create a New Provision Profile
 
@@ -155,7 +155,7 @@ If you **do not** want to create the provisioning profile for signing, Appcircle
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-23.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-23_v2.png' />
 
 #### Using Existing Provisioning Profile
 
@@ -163,13 +163,13 @@ When using the Re-sign feature, Appcircle also provides the option to select an 
 
 For more information, please visit the [Signing Identity Module](/signing-identities) and [Apple Profiles](/signing-identities/apple-profiles) documentations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-24.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-24_v2.png' />
 
 :::info Multiple Target
 
 Appcircle’s manual re-sign binary feature allows you to sign binaries for multiple targets. If you wish to use an existing provision for this, Appcircle requires two inputs. One of these inputs contains the bundle identifier of the target to be signed, while the other is used to select which provision will be used to sign that target. Appcircle processes the selected bundle identifiers for signing based on the provided inputs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-newss.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-newss_v2.png' />
 
 :::
 
@@ -196,7 +196,7 @@ If you want to perform **In-house** signing using an **Enterprise API** Key, mak
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-25.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-25_v2.png' />
 
 ### Resigning Process
 
@@ -226,7 +226,7 @@ The functionality and configuration steps of **Appcircle’s Re-sign** feature f
 
 From the Information tab under Re-sign configuration, you can manage the application's package identifier value.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-26.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-26_v2.png' />
 
 #### Package Identifier
 
@@ -234,13 +234,13 @@ Appcircle Publish profiles can accept binaries with different package name. The 
 
 > ⚠️ Note: Release flows cannot be initiated with a binary whose package name differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-to-stores-module/binary-management).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-27.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-27_v2.png' />
 
 #### Select a Pool
 
 The Pool Selection field defines which organization pool will be used to execute the Re-sign process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-28.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-28_v2.png' />
 
 :::caution Pool Selection Is Mandatory
 Re-sign will not work if a pool is not selected.
@@ -257,13 +257,13 @@ Always ensure that a valid macOS pool is selected before saving the Re-sign conf
 
 By utilizing the versioning capability of the Re-sign feature, you can modify the version code and version name of the selected binary according to the defined strategy during the re-signing process. In addition to calculating a value from Google Play or a previously uploaded binary, you can also pin the version code or version name to an exact value using the **Fixed** source.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-29.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-29_v2.png' />
 
 #### Update Version Code
 
 With the **Update Version Code** feature, you can automatically increment the version code of the selected binary during the re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version code will be generated based on the given offset (or set to the fixed value you provide) before the re-signing begins, and the binary will be signed with this updated version code.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-30.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-30_v2.png' />
 
 - **Version Code Source**: The defined base version code will be used for versioning during the re-signing process. **Google Play**, **Uploaded Binary**, and **Fixed** are available options.
   - **Google Play**: The version code will be set by referencing the latest live version on **Google Play Console**.
@@ -277,7 +277,7 @@ With the **Update Version Code** feature, you can automatically increment the ve
 
 With the **Update Version Name** features, you can automatically increment the version name of the selected binary during the re-sign process using the specified offset value, or pin it to an exact value using the **Fixed** source. When this feature is enabled, a new version name will be generated before the re-signing begins, based on the selected increment strategy and offset (or set to the fixed value you provide), and the binary will be signed with this updated version name.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-31.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-31_v2.png' />
 
 - **Version Number/Version Name Source**: The defined base version name will be used for versioning during the re-signing process. **Google Play**, **Uploaded Binary**, and **Fixed** are available options
   - **Google Play(Android)**: The version name will be set by referencing the latest live version on **Google Play Console**.
@@ -300,13 +300,13 @@ For more information, please visit the **Credentials** [documentation.](/account
 
 Appcircle requires a necessary Keystore to successfully perform the re-sign process. The re-signing begins using the associated keystore.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-32.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-32_v2.png' />
 
 #### Google Play Console Credential
 
 A **Google Play Console** credential is only required if versioning is configured to use store-based data. When versioning is set to retrieve version information from the Google Play Console, an API key must be provided to access live version details during the re-signing process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-33.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-33_v2.png' />
 
 #### Keystores
 
@@ -314,13 +314,13 @@ The **Keystores** section is where you manage the signing credentials required f
 
 For more information, please visit the [Signing Identity Module](/signing-identities) and [Android Keystores](/signing-identities/android-keystores) documentations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-34.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-34_v2.png' />
 
 #### Convert AAB To APK
 
 The **Convert AAB to APK** option allows you to automatically convert an Android App Bundle (AAB) file into an APK during the re-signing process. This is especially useful when your distribution channel requires an `APK` instead of an `AAB`. When enabled, Appcircle will handle the conversion and signing of the resulting APK seamlessly.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-36.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-36_v2.png' />
 
 ### Re-signing Process
 

@@ -55,7 +55,7 @@ If you want to run **robo** tests, it is highly recommended not to add the **And
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-workflow-select.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-workflow-select_v2.png' />
 
 If you want to use the UI Test Build output or the Signed Build output in the Firebase Test Lab, add any of these steps before the **Firebase Test Lab for Android** step and take note of the output path of these steps. You will need this environment variable for testing configuration.
 
@@ -63,7 +63,7 @@ If you want to use the UI Test Build output or the Signed Build output in the Fi
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-android-firebase-workflow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/firebasetestlab-android-firebase-workflow_v2.png' />
 
 :::danger Sensitive Variables
 

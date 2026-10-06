@@ -26,7 +26,7 @@ https://appcircle.io/publish-to-stores
 
 The Publish to Stores module in Appcircle is a versatile tool that simplifies the app release process. To make the most of this module, it's important to ensure that you meet all prerequisites and properly configure the necessary settings. The following sections outline the initial steps to start a release process using the Publish to Stores module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishstart2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishstart2_v2.png' />
 
 ## Prerequisites for Using the Publish to Stores module
 
@@ -63,7 +63,7 @@ The binary file can be uploaded to the Publish to Stores module either manually 
 
 - Your Publish profile should be correctly set up within the Appcircle platform. The package name defined in the Publish profile must exactly match the package name registered in your Google Play Console. To create a profile, click the **Add New** button on the top right.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishStartCreate2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishStartCreate2_v2.png' />
 
 :::tip Creating a Publish Profile
 
@@ -73,7 +73,7 @@ If you haven't create a Publish profile in Appcircle before, follow the detailed
 
 - There are two different ways to create a Publish profile. One option is to create the profile manually, and the other is to retrieve an existing profile from Google Play Console. For detailed information, please visit the [**Creating Publish Profile**](/publish-to-stores-module/creating-publish-profiles) documentation.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-profileCreateModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-profileCreateModal_v2.png' />
 
 :::info Create from Google Play Console
 
@@ -85,29 +85,29 @@ To use this profile creation method, you must have a Google Play API key integra
 
 If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish to Stores module after the profile is created. To initiate the release process, select the credentials for the relevant store from the `Settings` screen under the selected Publish profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSetting.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSetting_v2.png' />
 
 - All available integrations will be shown in the `Settings` screen. Here, you should select the Google Play Developer API key that you want to link to release your app.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSettingDetail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSettingDetail_v2.png' />
 
 ### Updating Google Play Console App Information
 
 - Within the Publish to Stores module, you can update and review your app's information directly. This includes updating email address, phone number, website URL, primary languages, and auto-send for review options. Please visit the [**Google Play Console Information**](/publish-to-stores-module/publish-information/google-play-information) documentation for detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-appInfoButton.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-appInfoButton_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-appInfoDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-appInfoDetails_v2.png' />
 
 ### Customizing the Publish Flow
 
 Publish flow is used to automate multiple tasks and introduce automation checkpoints for application deployments to stores. You can manage flow within the Publish to Stores module as outlined below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows_v2.png' />
 
 - **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails_v2.png' />
 
 :::info 
 
@@ -120,11 +120,11 @@ You can back up your current Publish flow by clicking the `Download YAML` button
 You can drag and drop steps into your Publish flow. Any unwanted Publish flow steps can be removed or deactivated.
 You can also reorder steps so that they will be executed in the order you specify.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-dragDropFlow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-dragDropFlow_v2.png' />
 
 - **Configure Flow Steps**: Fill in all required inputs for each step in the flow with the necessary information according to your requirements.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-configureStep.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-configureStep_v2.png' />
 
 - **Save**: Once the flow is configured, you can save it for use in the deployment process.
 
@@ -145,15 +145,15 @@ You can select one of the following options:
 - [**The Distribute to Track**](/publish-integrations/android-publish-integrations/distribute-to-track): This step enables automated deployment of Android applications to specific tracks within the Google Play Console. This functionality allows developers to manage releases efficiently, targeting different user groups such as internal testers, beta users, or the general public.
 - [**App Information from Google Play**](/publish-integrations/android-publish-integrations/app-information-from-google-play): The App Information from Google Play step checks the status of the app releases in the Google Play Console. This allows you to monitor the progress of your app.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-betaReleaseFlow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-betaReleaseFlow_v2.png' />
 
 ### Setting Up Notifications
 
 - Keeping your team informed about the release progress is essential for a coordinated effort. The Publish to Stores module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-notificationInteg.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-notificationInteg_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-notiIntegDetail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-notiIntegDetail_v2.png' />
 
 ## Managing Releases
 
@@ -167,7 +167,7 @@ Easily upload your binary file to the Publish to Stores module **manually**, via
 
 You can upload your binary file directly to the Publish to Stores module using the manual upload option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manuelUpload.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manuelUpload_v2.png' />
 
 #### Upload via Build Module 
 
@@ -183,7 +183,7 @@ To upload a binary from the Build module, please refer to the [**Distribution Co
 
 You can send your application from a testing distribution profile to a designated Publish profile. For detailed steps, see the [**Upload via Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#send-your-application-to-publish) documentation.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main12.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main12_v2.png" />
 
 #### Upload via Appcircle CLI & API 
 
@@ -197,27 +197,27 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 - Designate the current build as the Release Candidate, signaling that it is ready for potential release. You can refer to the [**Marking as Release Candidate**](/publish-to-stores-module/publish-information/marking-release-candidates) document for detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-markRc.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-markRc_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rcTag.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rcTag_v2.png' />
 
 ### Updating Metadata
 
 - Within the Publish to Stores module, you can directly manage your app’s metadata. This includes editing the screenshots, video, app name, and descriptions. Please visit the [**Metadata Details**](/publish-to-stores-module/publish-information/meta-data-information#android-metadata-information) documentation for more information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata_v2.png' />
 
 - Regularly review and update your app's metadata to ensure it is current and relevant, as outdated information can negatively impact your app's visibility and user experience.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadataDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadataDetails_v2.png' />
 
 ### Starting the Flow
 
 - You can start the Publish flow manually by clicking on the `Publish Details` or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the Google Play Console.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-startPublish.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-startPublish_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishLog2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishLog2_v2.png' />
 
 ### Managing Release Status 
 
@@ -227,15 +227,15 @@ After initiating a release, the Publish to Stores module provides tools to monit
 
 View the real time status of your release.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-monitorRelease.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-monitorRelease_v2.png' />
 
 #### Rejecting a Binary 
 
 - The binary can be rejected to be excluded from the publish process, and the rejection reason is displayed as a tag on the binary.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejection.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejection_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejectionMessage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejectionMessage_v2.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejectionTag.png' />
 
@@ -245,7 +245,7 @@ The Publish to Stores module provides comprehensive auditing and reporting featu
 
 - **Activity Log**: The activity log keeps a detailed record of every action taken during the release process, including who performed each action and when it occurred. This log is invaluable for tracking changes, identifying issues, and ensuring accountability within your team.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-logActivity3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-logActivity3_v2.png' />
 
 ## Publish to Stores module Troubleshooting
 
@@ -301,8 +301,8 @@ For more details, refer to the [**Update Metadata on Google Play Console**](/pub
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata.png' />
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadataDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadataDetails_v2.png' />
 
 #### Is it possible to automate notifications for team members during the release process?
 
@@ -330,7 +330,7 @@ Yes, the Publish to Stores module allows you to manage multiple Play Store accou
 
 To customize a flow (available only with an **enterprise plan**), navigate to the Publish to Stores module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allows you to tailor the release process to fit your specific needs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows_v2.png' />
 
 #### Why can't I edit the Publish Flow?
 

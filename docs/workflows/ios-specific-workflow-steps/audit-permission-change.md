@@ -20,13 +20,13 @@ Before running the **Audit Permission Changes** step, you must complete certain 
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the **Audit Permission Changes** step. After cloning, the system installs CocoaPods. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionOrder_v2.png' />
 
 :::caution
 
 The **Audit Permission Changes** component will automatically break the pipeline and halt operations if it detects a permission change. If you do not want this to occur, activate the **`'Continue with the next step even if this step fails'`** toggle within the step. This command will allow the pipeline to continue even if the step fails.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-steps-permissionWarning.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-steps-permissionWarning_v2.png' />
 
 :::
 
@@ -34,7 +34,7 @@ The **Audit Permission Changes** component will automatically break the pipeline
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3179-permissionInput_v2.png' />
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|

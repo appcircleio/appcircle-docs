@@ -72,7 +72,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-signing.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-signing_v2.png' />
 
 ### Distribution
 
@@ -82,7 +82,7 @@ The next step on build configuration is Distribution. You can create a new distr
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-distribution.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-distribution_v2.png' />
 
 :::info
 
@@ -104,7 +104,7 @@ Please see the following page for more information about environment variables:
   Why Use Environment Variables and Secrets?
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-env-variables.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-env-variables_v2.png' />
 
 Please click on the Save button and close this modal.
 
@@ -126,11 +126,11 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidbuild1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidbuild1_v2.png' />
 
 Select a configuration, workflow, commit ID and click on **Start Build button**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-build-modal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-build-modal_v2.png' />
 
 Appcircle will start building your application. The build log window will open, and you can follow the build process in real time.
 
@@ -140,7 +140,7 @@ You can safely close the build log window; it won't affect the status of your bu
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-workflow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-workflow_v2.png' />
 
 **Distribute Your Build**
 

@@ -126,7 +126,7 @@ To add the key on Appcircle, follow these steps:
 
 3. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14_v2.png' />
 
 ## Sharing Google Play Developer Credentials
 
@@ -134,7 +134,7 @@ Root Organization users have the ability to share their saved credentials with S
 
 #### How to Share Credentials
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-1_v2.png' />
 
 **1.**	Navigate to the Credentials Section
 Go to My Organization > Security > Credentials.
@@ -154,7 +154,7 @@ In the Share Credentials panel:
 **5.** Save Sharing Configuration
 Once your selections are made, click Share to apply.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss9_v2.png' />
 
 Shared credentials will be visible and usable in the selected Sub-Organizations as if they were their own.
 
@@ -170,7 +170,7 @@ When the “Share with all sub-organizations” toggle is enabled, the credentia
 
 :::info Editing Credential Name
 You can also edit the name of the credential setting by clicking the edit button
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-1_v2.png' />
 :::
 
 ## FAQ

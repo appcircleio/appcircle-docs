@@ -19,13 +19,13 @@ Before running the **Android Build** step, you must complete certain prerequisit
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_3.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_3_v2.png' alt="image2" />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_2.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_2_v2.png' alt="image2" />
 
 | Variable Name                 | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | ----------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
@@ -40,7 +40,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 If you have filled in the necessary variables in the **Configuration** section, you will not need to redefine these variables again in the Workflow. For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/configurations) document. The information you fill in the configuration will be used as input in the Android Build step. Please replace the example information with your own details:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_1.png' alt="Configuration Image" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_1_v2.png' alt="Configuration Image" />
 
 1. The input corresponding to the 1st field: `$AC_MODULE`
 2. The input corresponding to the 2nd field: `$AC_VARIANTS`
@@ -151,9 +151,9 @@ To generate an APK alongside an AAB, you can use one of these two methods:
 1. **Adding Another Android Build Step:**
     1. **Configure for AAB:** Set up the build [configuration](/build/build-process-management/configurations) to generate an AAB.
     2. **Add another Android Build Step:** Add an additional **Android Build** step, after the first **Android Build** step. To avoid confusion, you can add the generates file type to the step name.
-        <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_4.png'/>
+        <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_4_v2.png'/>
     3. **Modify Output Type:** Change the `$AC_OUTPUT_TYPE` [input variables](#input-variables) of the second **Android Build** step to APK. Now your build will generate an AAB and APK file.
-        <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_5.png'/>
+        <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_5_v2.png'/>
 
 If adding two **Android Build** steps makes the build process too lengthy, you can use the following alternative method:
 

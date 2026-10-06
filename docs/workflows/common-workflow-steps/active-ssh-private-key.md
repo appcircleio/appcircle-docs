@@ -18,7 +18,7 @@ There are no prerequisites required before using the **Active SSH Private Key** 
 
 If you connect to your repository via SSH, use this step before the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. To securely clone repositories connected via SSH, you must define the SSH key for the relevant build agent.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshOrder_v2.png' />
 
 :::
 
@@ -26,7 +26,7 @@ If you connect to your repository via SSH, use this step before the [**Git Clone
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshInput_v2.png' />
 
 | Variable Name                 | Description                                    | Status           |
 |-------------------------------|------------------------------------------------|------------------|

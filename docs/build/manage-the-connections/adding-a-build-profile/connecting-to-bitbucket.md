@@ -14,11 +14,11 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 If you authorize Appcircle to access your repositories on Bitbucket, you can select the repository you want to connect on the next screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1_v2.png' />
 
 After you click **Bitbucket**, the following screen appears. From there, you can either select from the repositories already authorized for Appcircle or authorize additional repositories.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7873-bitbucket1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7873-bitbucket1_v2.png' />
 
 When you successfully authorize your account, the following screen will appear to let you select one for connection:
 
@@ -55,12 +55,12 @@ Bitbucket has replaced **App Passwords** with **API Tokens**. However, existing 
     - Email Address
     - API Token
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8621-apitoken.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8621-apitoken_v2.png' />
 
 - **Access Tokens - Repo**  
   Use a repository-specific token for limited-scope access to individual repositories. This option also requires the repository workspace.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8621-accesstokenrepo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8621-accesstokenrepo_v2.png' />
 
 ### OAuth2, App Password (Deprecated) and Access Token Permissions for Bitbucket Cloud Integration
 
@@ -110,7 +110,7 @@ Your Bitbucket version must be **7.14** or higher.
 
 1. Select **Bitbucket** > **HTTP Access Token - User** or **HTTP Access Token - Repo** based on your token type.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7873-bitbucket1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7873-bitbucket1_v2.png' />
 
 2. Fill in the connection form with:
   - Connection Name
@@ -120,9 +120,9 @@ Your Bitbucket version must be **7.14** or higher.
 
 If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket4_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-bucket5_v2.png' />
 
 :::info
 
@@ -188,7 +188,7 @@ Please also make sure that the output doesn't show any reference to `localhost`.
 
 If your existing connection is affected, you may need to complete a one-time update based on your connection type:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8621-disconnect.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8621-disconnect_v2.png' />
 
 In your build profile, click the **Connection** icon, then disconnect and reconnect the relevant Bitbucket Cloud repository using one of the following methods. For more information, see [Reconnect or Change Git Provider](/build/manage-the-connections/reconnect-change-provider).
 

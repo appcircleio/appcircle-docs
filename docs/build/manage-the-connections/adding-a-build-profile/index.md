@@ -16,7 +16,7 @@ You can also connect to your self-hosted Bitbucket and GitLab account directly w
 
 If you authorize Appcircle to connect to your Github, BitBucket, or GitLab account, you can auto-build your project with hooks, get build statuses, and the full list of commits. If you connect to a repository through SSH or through a public URL, you need to [set up webhooks manually](/build/build-process-management/build-manually-or-with-triggers#setting-up-manual-webhooks-for-ssh-and-public-repositories).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1_v2.png' />
 
 When the "Autofill" toggle is activated on the **Select Repository** popup, Appcircle will try to create a default configuration using the selected repository and fill in the necessary fields.
 

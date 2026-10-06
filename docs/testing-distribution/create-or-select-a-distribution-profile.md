@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-start.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-start_v2.png' />
 
 > Note that an empty Testing Distribution profile named **Send to Myself** will be created automatically for you.
 
@@ -38,15 +38,15 @@ As a best practice, we recommend using one single distribution profile for both 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main1_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update_v2.png' />
 
 ### Profile Listing
 
 You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same testing distribution profiles, allowing you to choose the layout that best fits their workflow.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td1_v2.png' />
 
 <Tabs
 defaultValue="board"
@@ -56,7 +56,7 @@ values={[
 ]}
 >
   <TabItem value="board">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td2_v2.png' />
   </TabItem>
   <TabItem value="list">
 <Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td3.png' />  </TabItem>
@@ -68,7 +68,7 @@ In addition to view options, the profile list provides search, filtering, and or
 
 Click the **Search** icon in the top right corner to open the profile search dialog. You can search for testing distribution profiles by name and quickly navigate to the desired profile from the search results. It will also bring your recent search results.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td4_v2.png' />
 
 #### Filter Profiles
 
@@ -80,17 +80,17 @@ Use the **Filter** button to narrow down the profile list based on available cri
 
 Applied filters are displayed at the top of the page and can be removed individually when no longer needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td5_v2.png' />
 
 #### Sort and Order Profiles
 
 The profile list can also be organized using the available ordering options. Users can change the sorting direction and select different ordering criteria, such as **Profile Name**, to customize how profiles are displayed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td2_v2.png' />
 
 ### Profile Actions
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-profilenew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-profilenew_v2.png' />
 
 #### Rename a Distribution Profile
 
@@ -109,7 +109,7 @@ The Distribution Profile can be pinned by following these steps:
 
 Pinned profiles will stand out by appearing first in the list, making them easily accessible and distinguishable from the rest of the profiles. A pin icon will also be displayed on their profile card.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main22.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main22_v2.png' />
 
 #### Delete a Distribution Profile
 
@@ -131,7 +131,7 @@ To free up space, other references pointing to the artifact should also be remov
 
 Pre-built iOS or Android applications can be uploaded for distribution by clicking the "**Upload Binary**" button at the top right corner.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
 
 After the file is uploaded, it is checked for errors and parsed for metadata. Any errors that occur will be displayed in the upload area.
 
@@ -143,7 +143,7 @@ Please note that iOS and Android binaries are displayed in separate tabs. The re
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update2_v2.png' />
 
 ### Upload via Build Module
 
@@ -161,7 +161,7 @@ This conversion capability also applies when app versions are sent from a Testin
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3167-buildoutput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3167-buildoutput_v2.png' />
 
 :::caution
 
@@ -179,7 +179,7 @@ If multiple product flavors are present in your Android application, a build wil
 
 When an application with multiple flavors is built and distributed, an `.apk` file will be created for each flavor. Once distributed, all of the binaries will be visible on the distribution profile
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-2_v2.png" />
 
 #### How to see the multiple flavor results
 
@@ -188,9 +188,9 @@ If you also want to download or see the output, you can check through the follow
 - Click the three dot under the actions tab
 - Click **Download Artifacts** to see all the build outputs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main10_v2.png' />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main11.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main11_v2.png" />
 
 :::info
 
@@ -208,19 +208,19 @@ To get more information, please refer to our [API & CLI](/appcircle-api-and-cli)
 
 The settings of your distribution profile can be customized. Click on the three dot (...) option on the top right corner, then click the settings button within the profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-3_v2.png' />
 
 ### Config
 
 The Config tab allows you to modify binary related settings for your distributed applications.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-4_v2.png' />
 
 #### Bundle/Package Identifier Validation
 
 You can enforce identifier validation to ensure consistency and prevent mismatches between uploaded binaries and profile settings:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-6_v2.png' />
 
 - **Bundle Validation for iOS**: When enabled, this option restricts uploads to only those iOS binaries that exactly match the bundle identifier specified in the profile. This ensures that only binaries from the intended iOS application are accepted.
 
@@ -239,7 +239,7 @@ When either validation is active, binaries with mismatching identifiers will be 
 :::info Locked Identifier Behavior
 When **Bundle/Package Identifier Validation** is enabled, the profile header will display a **Locked** tag next to the configured bundle or package identifier. This indicates that the profile is now restricted and will only accept binaries that match the identifier defined in the profile settings.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-7_v2.png' />
 
 This validation does **not** apply retroactively to existing binaries already uploaded to the profile. Previously uploaded binaries with a different bundle or package identifier will remain accessible and can still be shared with testers. However, all **new uploads must match the locked identifier**, otherwise they will be rejected during upload.
 :::
@@ -256,7 +256,7 @@ Under the Auto Send tab in the settings, you can see the testing groups you have
 
 The first section allows you to share the deployed binaries automatically with the selected groups. They will receive a link to download the specific version on their mobile devices.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-29.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-29_v2.png' />
 
 Your application will be sent to the related testing groups as soon as your build is complete, or when a package is manually uploaded or deployed via CLI.
 
@@ -268,7 +268,7 @@ The auto-send mechanism does not distribute expired binaries. If a binary is exp
 
 When the “Show Only the Shared Version to Tester” toggle is enabled, receiving-end testers will only be able to access the most recently uploaded binary version within the Testing Portal, provided that the Auto-Send feature is enabled.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-30.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-30_v2.png' />
 
 :::info
 When this option is enabled, testers will not have access to the search bar or shared testing distribution profiles within the Testing Portal, as they will only receive the latest shared version.
@@ -280,7 +280,7 @@ Testing Portal tab allows you to modify the settings related to the Portal visua
 
 You can submit your **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-32.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-32_v2.png' />
 
 Once you click the save button, the information you have provided will be displayed on the Tester Portal.
 
@@ -298,7 +298,7 @@ In the example image, the profile has static authentication method, so it is dis
 
 The Exclude from Shared Application List toggle allows you to exclude a Testing Distribution Profile and its associated binaries from appearing in the shared profile list on the Testing Portal. This is useful for limiting visibility of internal or early-stage builds while still enabling targeted distribution.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-5_v2.png' />
 
 - When enabled, the profile will not be displayed in the shared list visible to testers browsing the portal.
 - However, testers who received a direct email invitation to the profile will still be able to access and download the binary.
@@ -307,7 +307,7 @@ The Exclude from Shared Application List toggle allows you to exclude a Testing 
 
 You can restrict access to the shared application list within the Testing Portal by enabling the **Hide Shared Application List** toggle from your Testing Distribution profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-12.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-12_v2.png' />
 
 **When enabled:**
 
@@ -321,7 +321,7 @@ When the **Single Active Session** toggle is enabled, each user can have only on
 
 - If the same user signs in from another browser or device, the previous active session is automatically terminated.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-89.png" alt="Session Management Warning for Testing Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-89_v2.png" alt="Session Management Warning for Testing Portal" />
 
 - This helps prevent simultaneous logins with the same account and improves overall account security.
 
@@ -359,7 +359,7 @@ Uploaded binaries without metadata from a build module won’t show the selected
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-8_v2.png' />
 
 Binary tags can be managed through the Testing Distribution Profile Settings under the Info tab:
 1. Navigate to **Testing Distribution** module.
@@ -369,7 +369,7 @@ Binary tags can be managed through the Testing Distribution Profile Settings und
 5. Use the “Add a new tag” field to enter or select tags.
 6. Click **Save** to apply changes.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-9_v2.png' />
 
 Once tags are saved in the profile settings:
 - Tags will automatically appear next to the app version on the Testing Portal after being distributed.
@@ -387,7 +387,7 @@ Under the Authentication tab in the settings, you can select a preferred authent
 - **SSO Login**: SSO login for all testers (Enterprise accounts only)
 - **LDAP Login**: LDAP login for all testers (Enterprise accounts only)
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-10_v2.png' />
 
 To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
 
@@ -405,7 +405,7 @@ If SSO and LDAP details are not configured for your organization, these authenti
 
 You may enable a link for your distribution. This allows anyone who has the link to access all artifacts of the distribution profile. Additionally, users can now conveniently scan a QR code to retrieve the distribution link directly. This simplifies the process of accessing and sharing the distribution link, making it more accessible for users on mobile devices or others who prefer quick scanning.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-13.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-13_v2.png' />
 
 :::info
 
@@ -423,7 +423,7 @@ Click on the 'Share with Testers' button, and the [testing groups](/testing-dist
 
 You can also add a message to testers including testing instructions and release notes.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist9_v2.png' />
 
 You can automate this message using [Release Notes Component](https://github.com/appcircleio/appcircle-release-notes-component/). You can enrich the contents of your release notes with environment variables or Ruby snippets. The following default template will print the branch name, commit hash and commit message.
 
@@ -453,7 +453,7 @@ After sharing your app versions with testers, the most recent sharing time will 
 If a binary is expired, it cannot be shared with testers. The **Share** action is disabled for expired binaries.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-share.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-share_v2.png' />
 
 ### Tracking your distribution
 
@@ -464,7 +464,7 @@ After sending your application to testing groups, you can track the actions of t
 - **Login, No Download** - Means your tester has logged in (for authenticated distributions) and at the download screen but has not downloaded the binary file yet.
 - **Downloaded** - Means your tester clicked and downloaded the binary file.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-2_v2.png" />
 
 ## Binary Actions
 
@@ -476,7 +476,7 @@ You can send your application from your Testing Distribution profile to an Enter
 - Click **Send to Enterprise App Store**.
 - Click **Send**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-15.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-15_v2.png' />
 
 :::info
 
@@ -493,9 +493,9 @@ You can send your application from your Testing Distribution profile to a design
 - Choose your Publish profile from the list.
 - Click **Send**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-16.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-16_v2.png' />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-dist15.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6154-dist15_v2.png" />
 
 :::caution
 
@@ -517,7 +517,7 @@ Re-sign History allows you to view the re-sign process logs for your app version
 
 The binary file in the Testing Distribution profile can be downloaded by selecting the Download button from the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-17.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-17_v2.png' />
 
 ### Delete Multiple Testing Distribution App Versions
 
@@ -525,17 +525,17 @@ If you don't want to delete an entire distribution profile but free up the past 
 
 Click on the `Edit` Text to toggle edit mode:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-18.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-18_v2.png' />
 
 On edit mode, you will be able to select multiple entries. Select the versions you wish to delete, and click on the `Delete` Text on the top right of the versions:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-19.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-19_v2.png' />
 
 ### Delete a Single Distribution App Version
 
 As an alternative method to bulk deleting versions, you can delete a single version by selecting the three-dot menu next to the app version and then clicking **delete** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-20.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-20_v2.png' />
 
 After clicking `Delete` , type in the version name in the prompt.
 

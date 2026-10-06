@@ -99,7 +99,7 @@ Send a binary to Huawei AppGallery.
 
 The Appcircle Dashboard provides a centralized view of your organization’s activity, usage, and resources. It is designed to give you a quick snapshot of your builds, distribution progress, store publishing status, and Enterprise App Store assets, along with fast access to your most frequently used modules.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7498-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7498-1_v2.png' />
 
 :::info Organization Display
 Please note that the displayed data belongs to the currently logged-in root organization. It does not include usage information or binary names from sub-organizations.
@@ -137,7 +137,7 @@ All distributions created for internal testing are listed here. Each item displa
 - The associated build artifact (IPA/APK file)
 - A quick navigation link to open distribution details, testers, and installation access
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7498-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7498-2_v2.png' />
 
 #### Publish to Stores
 

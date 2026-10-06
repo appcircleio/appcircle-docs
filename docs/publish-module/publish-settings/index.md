@@ -16,9 +16,9 @@ Your configured publish flow will be executed automatically when you enable **Au
 
 You can also select a runner pool from the **SELECT A POOL** dropdown list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30_v2.png'/>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-33.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-33_v2.png'/>
 
 "Appcircle Linux Pool (x86_64)" and "Appcircle Standard macOS Pool (arm64)" are Appcircle cloud-hosted pools and only available for the cloud services.
 
@@ -106,9 +106,9 @@ For instance, if a high-priority publish is added to the queue after a low-prior
 
 This functionality allows for better management of publish processes, enabling teams to prioritize critical updates and enhancements efficiently.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority1.png' alt="Publish Priority" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority1_v2.png' alt="Publish Priority" />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority2.png' alt="Publish Priority Selection" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority2_v2.png' alt="Publish Priority Selection" />
 
 :::info
 This feature is only available for organizations with Enterprise license.

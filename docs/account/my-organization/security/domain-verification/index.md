@@ -46,19 +46,19 @@ For detailed configuration options, refer to the following pages:
 
 **1.** Navigate to the My Organization > Security > Domain Verification section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify8_v2.png' />
 
 **2.** Enter the domain name to be verified. The domain name must be in a valid format (e.g., example.com).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify2_v2.png' />
 
 **3.** Copy the provided DNS record and add it to your DNS provider as a TXT record, using the specified name (host) and value (data).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5962-ss2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5962-ss2_v2.png' />
 
 **4.** Click Verify to check if the record has been propagated.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify4_v2.png' />
 
 **5.** If the verification fails, retry after some time as DNS propagation may take time.
 
@@ -101,7 +101,7 @@ After configuring domain verification, you can enable the Auto Verify feature in
 
 Go to your SSO configuration and enable the **Auto Verify User Email for Verified Domains** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify6_v2.png' />
 
 ### Troubleshooting
 

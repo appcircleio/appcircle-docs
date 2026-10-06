@@ -31,7 +31,7 @@ You can also access the Resign History for an app version by navigating to it's 
 
 To view the Publish History, navigate to the History section in the Publish to Stores module. Once History is selected, The Publish History tab will be displayed by default. This section lists all versions of the app along with the dates and times their publishing actions started along with their publish status.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7115-1.png' alt="Publish History" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7115-1_v2.png' alt="Publish History" />
 
 ### Viewing Logs
 
@@ -54,7 +54,7 @@ Upon selecting a specific version, you will be presented with a detailed log. Th
 - Any warnings or errors that were logged.
 - The completion status of the publish action.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log_v2.png' />
 
 ### Best Practices
 

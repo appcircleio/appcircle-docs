@@ -19,17 +19,17 @@ You may create a configuration profile that allows you to set different certific
 
 - Click on **Configurations** to create configurations for different scenarios.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config1.png' alt="Build Config Creation"/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config1_v2.png' alt="Build Config Creation"/>
 
 - Click on the **New** button to create your first configuration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config2.png' alt="Build Config New" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config2_v2.png' alt="Build Config New" />
 
 You can also create a configuration profile by uploading a saved YAML file.
 
 - You may change the name of the configuration or delete the ones you don't need. To do that, click on the edit button shown and the three dots on the configuration you want to edit/delete.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config5.png' alt="Build config edit" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config5_v2.png' alt="Build config edit" />
 
 If you have a configuration that you use constantly or want to quickly copy a configuration, you can use the "Configuration Clone" feature.
 
@@ -37,15 +37,15 @@ The configuration clone feature will speed up your projects where you use many c
 
 First, open the configuration process by clicking the edit button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config5.png' alt="Build config edit" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config5_v2.png' alt="Build config edit" />
 
 Then click on the three dots next to the configuration you want to copy and click the "Clone" button in the mini window that opens.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config3.png' alt="build config clone" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config3_v2.png' alt="build config clone" />
 
 Another one is created identical to the configuration you want to clone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config4.png' alt="created build config clone" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-config4_v2.png' alt="created build config clone" />
 
 :::info
 The name here is created by adding "\_copy_1" to the end of the main configuration name. For each configuration copied from now on, the name will be incremented to remain unique.
@@ -60,7 +60,7 @@ You can download your **Configuration** in YAML format to perform actions like s
 - Open the **Configuration** you've created.
 - Locate the download button positioned at the bottom left of the Configuration interface. Click on the download button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-5.png' alt="Download Configuration" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-5_v2.png' alt="Download Configuration" />
 
 Your _configuration.yaml_ file will be downloaded to your local system.
 
@@ -96,10 +96,10 @@ values={[
 ]}
 >
   <TabItem value="ios">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-2.png' alt="Pool Selection" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-2_v2.png' alt="Pool Selection" />
   </TabItem>
   <TabItem value="android">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidconfig.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidconfig_v2.png' />
   </TabItem>
 </Tabs>
 
@@ -113,7 +113,7 @@ For example, if a high-priority build is added to the queue after a low-priority
 
 This feature allows for better management of build processes, enabling teams to prioritize critical updates and improvements efficiently.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-6.png' alt="Build Priority" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-6_v2.png' alt="Build Priority" />
 
 :::info
 This feature is only available for organizations with Enterprise license.
@@ -140,10 +140,10 @@ values={[
 ]}
 >
   <TabItem value="ios">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration_v2.png' />
   </TabItem>
   <TabItem value="android">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidsign.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidsign_v2.png' />
   </TabItem>
 </Tabs>
 
@@ -175,13 +175,13 @@ For more detailed information about identifier validation, please visit the **Bu
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1_v2.png' />
 
 #### Send to Publish
 
 Enabling "Automatically Distribute to Publish" will display the available [Publish](/publish-to-stores-module) profiles for distribution.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-publish.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-publish_v2.png' />
 
 Simply select your relevant publish profiles, and Appcircle will automatically send your builds to the selected publish profiles.
 
@@ -191,7 +191,7 @@ Please note that the publish profiles should be created within the publish modul
 
 - Navigate to the configuration, then go to the Distribution tab, and ensure that **Automatically Distribute to Enterprise App Store** is enabled.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-build.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-build_v2.png' />
 
 - Whenever a new **signed** build is created, it will be sent to the [Enterprise App Store](/enterprise-app-store).
 
@@ -203,7 +203,7 @@ If you are building a binary for the first time or distributing it to the Enterp
 
 You can set custom rules to manage the versioning of your app. You can increase both the build number and version number according to the rules you set.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-versioning.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-versioning_v2.png' />
 
 For more information please refer to the [Versioning](/versioning) documentation.
 
@@ -211,6 +211,6 @@ For more information please refer to the [Versioning](/versioning) documentation
 
 You can define variables and secrets to be incorporated during the build in the Environment Variables submodule so that you don't need to store certain keys and configurations within the repository.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables_v2.png' />
 
 For more information regarding creating environment variables for build profiles, please refer to the related [Environment Variables](/build/build-environment-variables) documentation.

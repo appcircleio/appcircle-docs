@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 This step allows you to analyse your code quality with the [SonarQube CLI](https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/scanners/sonarscanner). Whichever workflow you are doing your code analysis after, please run the **SonarQube** step after that step is completed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarOrder_v2.png' />
 
 ### Prerequisites
 
@@ -24,7 +24,7 @@ Before running the **SonarQube** step, you must complete certain prerequisites, 
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarInput_v2.png' />
 
 :::caution
 
@@ -50,7 +50,7 @@ If you want to include your test results in the **SonarQube** analysis, always r
 
 #### iOS Tests
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarTestOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarTestOrder_v2.png' />
 
 :::danger
 
@@ -62,7 +62,7 @@ SonarQube accepts `XML` format files to analyse test results. In order to analys
 
 If you intend to send the test result file obtained from the Android unit test output to **SonarQube**, it is necessary to execute the **Android Unit Tests** step before the **SonarQube** step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarTestAndroidOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2583-sonarTestAndroidOrder_v2.png' />
 
 :::caution
 

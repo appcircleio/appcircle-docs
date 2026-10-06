@@ -52,7 +52,7 @@ If a step other than the **Android Build** step is used to build an app, then th
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_0.png' alt="image1" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_0_v2.png' alt="image1" />
 
 :::danger
 
@@ -64,7 +64,7 @@ To share the signed apps created as an output of this step or to view them on th
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_1.png' alt="image1" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_1_v2.png' alt="image1" />
 
 | Variable Name               | Description                                  | Status |
 |-----------------------------|----------------------------------------------|--------|
@@ -80,7 +80,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_2.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_2_v2.png' alt="image2" />
 
 | Variable Name          | Description                                 |
 |------------------------|---------------------------------------------|

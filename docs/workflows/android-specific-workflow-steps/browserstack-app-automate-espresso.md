@@ -20,13 +20,13 @@ Before running the **BrowserStack App Automate - Espresso** step, you must compl
 |-------------------------------------------------|-------------------------------------------------|
 | [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android app outputs for processing. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_2_v2.png'/>
 
 :::danger Sensitive Variables
 

@@ -20,7 +20,7 @@ Before running the **Carthage** step, you must complete certain prerequisites, a
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step clones your git repo on the runner where the build process will take place so that the necessary workflow operations can be performed. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2828-cartOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2828-cartOrder_v2.png' />
 
 :::caution
 
@@ -32,7 +32,7 @@ Appcircle will look for a [`Cartfile`](https://github.com/Carthage/Carthage/blob
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2828-cartInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2828-cartInput_v2.png' />
 
 | Variable Name                 | Description                                    | Status 			|
 |-------------------------------|------------------------------------------------|------------------|

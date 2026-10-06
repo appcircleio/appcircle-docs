@@ -10,15 +10,15 @@ Appcircle's Android Integrations facilitate the distribution of your Android app
 
 To use the Android Integration, click on the **Android Publish** button on the left in the Publish module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-leftbar-android.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-leftbar-android_v2.png' />
 
 Click on **Add New** to create a new publish profile, **Open** details, and click on **Publish Flow**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-flow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-flow_v2.png' />
 
 In **Publish Flow**, the default steps will appear. You can add or delete steps from your flow using the **Manage Flow** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-android-in.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-android-in_v2.png' />
 
 Click on the **Save** button if you make any changes to your flow steps, or use the **Back** button without any change.
 

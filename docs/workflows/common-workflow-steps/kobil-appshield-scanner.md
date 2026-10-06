@@ -21,7 +21,7 @@ At the end of the dynamic test session, Appshield indicates which security measu
 For Android, APK or AAB format (signed) and for iOS, IPA format (signed) is required for **KOBIL Appshield Scanner**.  
 Before running the **KOBIL Appshield Scanner** step, here are some example steps/flows to obtain a signed AAB/APK/IPA file, illustrated below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/kobil-appshield-scanner-0.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/kobil-appshield-scanner-0_v2.png' />
 
 #### For Android (Java / Kotlin and React Native) 
 
@@ -54,7 +54,7 @@ Before running the **KOBIL Appshield Scanner** step, here are some example steps
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/kobil-appshield-scanner-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/kobil-appshield-scanner-1_v2.png' />
 
 <SensitiveVariablesDanger />
 

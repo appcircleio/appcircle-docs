@@ -22,23 +22,23 @@ Each organization must have at least one Owner and each user must be an Owner of
 
 As an Owner, you can invite new members simply by entering their email address under the related field in Team Management and pressing the **Add a New User** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-inviteMember.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-inviteMember_v2.png' />
 
 The user will be then shown in a **Pending** state until the invitation is accepted. At the same time, you can resend the invitation with the **Resend** option. You can also revoke a pending invite by pressing the delete button at the end of the row.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-pending.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-pending_v2.png' />
 
 Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, with the **Manage Roles** button next to the user ID. You can also delete a user by pressing the delete button.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org4.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org4_v2.png" />
 
 Within the opened modal, you can specifically adjust the user's roles across all modules on the right side. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manageRole.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manageRole_v2.png' />
 
 Additionally, the user's assigned organization and sub-organizations will be visible on the left side. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-orgList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-orgList_v2.png' />
 
 If a sub-organization is created within an organization, everyone in the root organization will be able to see this sub-organization. The roles for these users in the sub-organization will be inherited from the root organization, which is why their permissions will be listed as inherited.
 
@@ -55,7 +55,7 @@ The search bar within the Team Management area allows you to efficiently manage 
 
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-search.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-search_v2.png" />
 
 ## Advanced Role Management
 
@@ -65,11 +65,11 @@ Team management with fine-grained roles and integration with enterprise identity
 
 Once you click the "Manage Roles" button, you will be presented with a detailed selection of roles for each module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-all-v3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-all-v3_v2.png' />
 
 Here, you can assign the Owner role to a user for full access or you can select specific read or write roles for use cases like developers or testers or billing administrators.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/permission-owner-v2_v2.png' />
 
 :::info
 

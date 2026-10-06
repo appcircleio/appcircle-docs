@@ -2728,7 +2728,7 @@ Within this release as prior to the previous release, Appcircle also supports [X
 - Added metadata (Organization ID, OS version etc.) at the beginning of the Build Logs
 - While manually building the workflow, Appcircle now lets you choose which workflow to trigger:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (215).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (215)_v2.png' />
 
 ### :muscle:Improvement
 

@@ -20,7 +20,7 @@ Appcircle allows previously created Publish profiles to be renamed.
 
 To do this, click on the three dots at the top right of the relevant publish profile in the profiles list and select **Rename**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-10_v2.png' />
 
 :::caution
 Publish profile names must be unique for both **`iOS`** and **`Android`**.
@@ -34,7 +34,7 @@ Also, you cannot rename a Publish profile to an existing name on the same platfo
 
 To delete the Publish profile, click on the three dots at the top right of the relevant Publish profile in the profiles list and select **Delete**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-10_v2.png' />
 
 :::caution
 Appcircle **does not delete** the application that has been submitted to the stores.
@@ -48,7 +48,7 @@ By deleting the Publish profile, all the application versions and Publish action
 
 You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same publish profiles, allowing you to choose the layout that best fits their workflow.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub1_v2.png' />
 
 <Tabs
 defaultValue="board"
@@ -58,7 +58,7 @@ values={[
 ]}
 >
   <TabItem value="board">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub2_v2.png' />
   </TabItem>
   <TabItem value="list">
 <Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub3.png' />  </TabItem>
@@ -70,7 +70,7 @@ In addition to view options, the profile list provides search, filtering, and or
 
 Click the **Search** icon in the top right corner to open the profile search dialog. You can search for publish profiles by name and quickly navigate to the desired profile from the search results. It will also bring your recent search results.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub4_v2.png' />
 
 #### Filter Profiles
 
@@ -82,12 +82,12 @@ Use the **Filter** button to narrow down the profile list based on available cri
 
 Applied filters are displayed at the top of the page and can be removed individually when no longer needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub5_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub6_v2.png' />
 
 #### Sort and Order Profiles
 
 The profile list can also be organized using the available ordering options. Users can change the sorting direction and select different ordering criteria, such as **Profile Name**, to customize how profiles are displayed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub2_v2.png' />

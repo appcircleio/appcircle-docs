@@ -29,13 +29,13 @@ After using the [**Testinium Upload App**](/workflows/common-workflow-steps/test
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_run_test_plan-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_run_test_plan-1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_run_test_plan_2-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_run_test_plan_2-1_v2.png'/>
 
 <SensitiveVariablesDanger />
 
@@ -56,7 +56,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_run_test_plan_3-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_run_test_plan_3-1_v2.png'/>
 
 | Variable Name                          | Description                                                                     |
 | -------------------------------------- | ------------------------------------------------------------------------------- | 

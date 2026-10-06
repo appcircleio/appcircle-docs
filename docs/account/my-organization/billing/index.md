@@ -15,9 +15,9 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Billing section allows you to monitor your usage summary, including builds, publishes, team members, and other module usages. You can also view your license plan and renewal date of your account.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7074-2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7074-2_v2.png'/>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7074-3.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7074-3_v2.png'/>
 
 ## Usage Summary
 
@@ -73,4 +73,4 @@ The Billing page for a Sub-Organization displays the same summary metrics as the
 The usage counts shown on this page reflect only the usage of the Sub-Organization. To view overall usage against limits, please refer to the Billing page of the root organization.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7074-4.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7074-4_v2.png'/>

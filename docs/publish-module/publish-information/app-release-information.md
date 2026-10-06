@@ -13,9 +13,9 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The App Release Information section allows you to configure how your application update will be released on the App Store after approval. You can define the release strategy, schedule automatic or manual publishing, and optionally enable phased rollout to gradually distribute updates to users over a 7-day period. These settings help teams manage release timing, reduce deployment risks, and control update availability for App Store users.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8751-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8751-1_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8751-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8751-2_v2.png' />
 
 - **App Store Version Release**: Choose how you want to release your app on the App Store. To make your app available on the App Store, you can automatically release it after it’s been approved by App Review. You can also manually release it on the App Store at a later date.
     - Manually release this version

@@ -18,13 +18,13 @@ When a binary file is **rejected**, it can no longer be [**Marked as Release Can
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-26.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-26_v2.png' />
 
 ### Rejection Reason
 
 To use the Reject Binary feature, you must provide a rejection message. This message will inform other team members of the reason for the rejection.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4123-rejectModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4123-rejectModal_v2.png' />
 
 
 This message is presented to the user with a tool type on the Rejected tag on the binary.

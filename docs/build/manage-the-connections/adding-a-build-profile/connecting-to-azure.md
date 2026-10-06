@@ -22,7 +22,7 @@ Each platform offers different connection types, so check which one hosts your r
 
 To connect a build profile to Azure DevOps, select **Azure** from the list of Git providers.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options5.png' alt='Connect to Azure DevOps panel with different options' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options5_v2.png' alt='Connect to Azure DevOps panel with different options' />
 
 The **Connect to Azure DevOps** panel opens with three sections:
 
@@ -30,7 +30,7 @@ The **Connect to Azure DevOps** panel opens with three sections:
 - **Create a New Azure DevOps Server Connection**: Connect to a self-hosted Azure DevOps Server with a Personal Access Token. For details, see [Connecting to Azure DevOps Server Repository](#connecting-to-azure-devops-server-repository).
 - **Select an Available Connection**: Reuse a connection that you created earlier. Each connection shows its URL, its authentication type, and whether it targets Azure DevOps Services (**Cloud**) or Azure DevOps Server.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options.png' alt='Connect to Azure DevOps panel with Azure DevOps Entra ID, Azure DevOps Cloud, and Personal Access Token options' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options_v2.png' alt='Connect to Azure DevOps panel with Azure DevOps Entra ID, Azure DevOps Cloud, and Personal Access Token options' />
 
 :::info
 The labels next to each option describe its state:
@@ -66,7 +66,7 @@ Before you begin, make sure that:
 - You sign in with a Microsoft Entra ID work or school account that has access to your Azure DevOps organization. Microsoft Entra ID OAuth doesn't support personal Microsoft accounts, such as Outlook.com accounts, for Azure DevOps. If you use a personal Microsoft account, connect with a [Personal Access Token](#connecting-with-a-personal-access-token) instead.
 - Your Microsoft Entra ID tenant allows you to consent to Appcircle, or an administrator grants consent on behalf of your organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options4.png' alt='Connect to Azure DevOps panel with the Azure DevOps Entra ID option' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options4_v2.png' alt='Connect to Azure DevOps panel with the Azure DevOps Entra ID option' />
 
 To connect with Azure DevOps Entra ID:
 
@@ -91,7 +91,7 @@ The **Azure DevOps Cloud** connection uses Azure DevOps OAuth, which Microsoft h
 Use **Azure DevOps Entra ID** for new connections, and [move your existing build profiles to Azure DevOps Entra ID](#moving-build-profiles-to-azure-devops-entra-id) so that they keep access to their repositories.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options3.png' alt='Connect to Azure DevOps panel with the Azure DevOps Cloud (Deprecated) option' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options3_v2.png' alt='Connect to Azure DevOps panel with the Azure DevOps Cloud (Deprecated) option' />
 
 The **Azure DevOps Cloud** connection requires the **Third-party application access via OAuth** policy in your Azure DevOps organization. If this policy is turned off, Appcircle can't connect, and the repository integration fails.
 
@@ -126,14 +126,14 @@ Revoking an OAuth2 connection disconnects every build profile that still uses it
 
 Select **Personal Access Token** under **Create a New Azure DevOps Services Connection** to connect with your Azure DevOps [Personal Access Token (PAT)](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops). A PAT is a token that you generate in Azure DevOps and that grants access to the repositories your user can access. Fill in the following fields:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options2.png' alt='Connect to Azure DevOps panel with the Azure DevOps Cloud Personal Access Token option' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options2_v2.png' alt='Connect to Azure DevOps panel with the Azure DevOps Cloud Personal Access Token option' />
 
 - Connection Name
 - Azure DevOps Server URL (for example, `https://dev.azure.com`)
 - Collection Name (for example, `DefaultCollection`)
 - Personal Access Token
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure4.png' alt='Personal Access Token form for an Azure DevOps Services connection' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure4_v2.png' alt='Personal Access Token form for an Azure DevOps Services connection' />
 
 ### OAuth2 Permissions for Azure DevOps Integration
 
@@ -161,11 +161,11 @@ Azure DevOps Server version must be **Azure DevOps Server 2020** or higher.
 
 Select **Azure**, and then select **Personal Access Token** under **Create a New Azure DevOps Server Connection**:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options.png' alt='Connect to Azure DevOps panel with the Azure DevOps Server Personal Access Token option' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-9377-azure-connection-options_v2.png' alt='Connect to Azure DevOps panel with the Azure DevOps Server Personal Access Token option' />
 
 Fill in the relevant information about your Azure DevOps Server. If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure5.png' alt='Personal Access Token form for an Azure DevOps Server connection' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6369-azure5_v2.png' alt='Personal Access Token form for an Azure DevOps Server connection' />
 
 - **Connection Name**: Give a name to this connection for easier identification in your list of integrations.
 - **Azure DevOps Server URL**: Provide the base URL of your Azure DevOps Server (e.g., `https://azuredevops.mycompany.com`).

@@ -33,7 +33,7 @@ Custom Roles is currently in **Beta**. Behavior, available permissions, and the 
 
 This opens the Custom Roles management screen, where all roles for the organization are listed on the left.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-81.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-81_v2.png' />
 
 ## Creating a custom role
 
@@ -56,7 +56,7 @@ This opens the Custom Roles management screen, where all roles for the organizat
 6. Use **Select all** to grant every scope within a single module, or **Select everything** to grant all available scopes across all modules.
 7. Click **Save changes** to create the role.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-91-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-91-2_v2.png' />
 
 The footer of the screen keeps a running summary, such as *"grants 5 scopes across 1 module,"* so you can confirm the scope of the role before saving.
 
@@ -67,7 +67,7 @@ The footer of the screen keeps a running summary, such as *"grants 5 scopes acro
 3. Under **Custom Roles**, check the role(s) you want to assign to that member. This can be combined with predefined, per-module roles (e.g. Manager, Operator, Viewer) lower down in the same dialog.
 4. Click **Save**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-81-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-81-3_v2.png' />
 
 A member can hold multiple custom roles at once; their effective permissions are the union of all scopes granted by every role assigned to them.
 
@@ -76,7 +76,7 @@ A member can hold multiple custom roles at once; their effective permissions are
 - Open the role from the Custom Roles list to edit its name, color, or scopes, then **Save changes**.
 - Use the copy and delete icons at the top of a role's detail panel to duplicate or remove it.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-91.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-91_v2.png' />
 
 Because a role can be assigned to multiple members, updating or deleting it affects everyone currently holding that role. Review who is assigned before making changes that remove access.
 

@@ -67,9 +67,9 @@ Please check the below document to learn more about SSO integration.
 
 In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. Appcircle supports multiple LDAP providers. You can add multiple LDAP servers with different settings.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-93.png" alt="LDAP Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-93_v2.png" alt="LDAP Authentication Type for Enterprise Portal" />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-6_v2.png' />
 
 **Configuration**
 
@@ -134,7 +134,7 @@ After you have configured the main LDAP settings, you need to configure the **Us
 
 After you have configured LDAP, you can use **Test Connection** and **Test Authentication** to check the connection and credentials.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-7_v2.png' />
 
 ### Two-factor Authentication
 
@@ -150,7 +150,7 @@ Similar to the cloud, the self-hosted Appcircle installation using the **Helm ch
 The SMS 2FA method on Docker/Podman-based self-hosted Appcircle requires a custom integration with your SMS service. Please [contact us](https://appcircle.io/contact) for further details.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-8_v2.png' />
 
 ## Store Domain
 
@@ -158,7 +158,7 @@ You can customize your store prefix which will be reflected in your Enterprise P
 
 The URL can be copied by clicking the copy icon next to it.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-94.png" alt="Store Prefix Settings for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-94_v2.png" alt="Store Prefix Settings for Enterprise Portal" />
 
 ### Custom Domain
 
@@ -212,13 +212,13 @@ Only the main organization has the privilege to Set up, Configure and Customize 
 
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4082-enterprisesub.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4082-enterprisesub_v2.png" />
 
 ## Enable Captcha
 
 The captcha configuration in the Enterprise App Store module is designed to enhance login security for the Enterprise Portal. It provides flexibility for administrators to control how and when captcha is enforced, as well as to set restrictions on failed login attempts.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-70.png" alt="Captcha Settings for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-70_v2.png" alt="Captcha Settings for Enterprise Portal" />
 
 #### Captcha Enable/Disable Toggle
 
@@ -251,7 +251,7 @@ Please note that Enable Captcha feature is only available for organizations with
 
 The Session Management feature allows administrators to control how user sessions behave in the Enterprise Portal across devices and browsers.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-80.png" alt="Session Management Settings for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-80_v2.png" alt="Session Management Settings for Enterprise Portal" />
 
 #### Single Active Session
 

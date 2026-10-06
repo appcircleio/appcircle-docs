@@ -13,7 +13,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Publish to Stores module provides users with several key actions to manage their application versions effectively. Below is an overview of each menu item and its function within the system:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-18.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-18_v2.png' />
 
 ## [App Store Connect Information](/publish-to-stores-module/publish-information/app-information)
 

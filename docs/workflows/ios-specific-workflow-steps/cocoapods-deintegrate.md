@@ -26,13 +26,13 @@ Please remember to use the [**CocoaPods Install**](/workflows/ios-specific-workf
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3178-deintegrateOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3178-deintegrateOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3178-deintegrateInput1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3178-deintegrateInput1_v2.png' />
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|

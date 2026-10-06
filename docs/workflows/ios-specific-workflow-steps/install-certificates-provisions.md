@@ -31,14 +31,14 @@ Please remember. If you are using **manual sign**, you should definitely use thi
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_order_v2.png' />
 
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_input.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_input_v2.png' />
 
 
 | Variable Name                 | Description                                    | Status      |
@@ -51,7 +51,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_output.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2786-cert_output_v2.png' />
 
 | Variable Name                 | Description                                    | 
 |-------------------------------|------------------------------------------------|

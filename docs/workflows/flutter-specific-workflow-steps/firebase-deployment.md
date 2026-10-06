@@ -21,13 +21,13 @@ Before running the **Firebase Deployment** step, you must complete certain prere
 | [**Flutter Build for Web**](/workflows/flutter-specific-workflow-steps/flutter-build-for-web) | The Flutter Build for Web step builds your web application using the [Flutter SDK](https://docs.flutter.dev/deployment/web#building-the-app-for-release) |
 | [**Flutter Install**](/workflows/flutter-specific-workflow-steps/flutter-install) | This step installs the [Flutter SDK](https://docs.flutter.dev/deployment/web#building-the-app-for-release). If no version is specified, it installs the latest stable version. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3150-deployOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3150-deployOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3150-deployInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3150-deployInput_v2.png' />
 
 :::danger Sensitive Variables
 

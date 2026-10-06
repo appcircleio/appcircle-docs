@@ -20,10 +20,10 @@ Testing Distribution module allows you to distribute your application without th
 
 There is no prerequisite required for this step to work. You can use this step anywhere you want in the Flow.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6418-send1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6418-send1_v2.png' />
 
 :::caution Selecting the Testing Distribution Profile
 Make sure to select the required Testing Distribution Profile that the Publish Step will use. Otherwise, you’ll encounter an error when starting the Publish Flow.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6418-send2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6418-send2_v2.png' />

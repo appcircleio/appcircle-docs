@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 This feature allows users with specified email addresses to be notified by email of the actions specified in Appcircle (starting a build, adding an IOS certificate, the store submission process, etc.).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/email-notify-build-events.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/email-notify-build-events_v2.png' />
 
 :::info
 
@@ -21,7 +21,7 @@ You can also define more than one email address for a module and send notificati
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/email-notify-signing-identity.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/email-notify-signing-identity_v2.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via email.
@@ -30,14 +30,14 @@ To enable this feature, ensure you include the [**Publish Release Notes**](https
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail_v2.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share the test results via email.
 To enable this feature, ensure you include the [**Test Reports**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report) step in your workflow.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail_v2.png' />
 
 ## Available Notification Events by Module
 
@@ -156,7 +156,7 @@ To cancel email notifications, you can click the unsubscribe button in the notif
 
 **My Organization -> Notifications -> Email -> Manage**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/email-manage_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/email-manage_v3.png' />
 
 :::info
 If the user unsubscribes via email, the relevant email will be deleted directly from the module. If you want to send notifications, you will need to add the email address again.

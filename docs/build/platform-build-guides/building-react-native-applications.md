@@ -24,7 +24,7 @@ Appcircle will use your `package.json` file to determine and use the dependencie
 
 Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **React Native** for **Target Platform**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-profile.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-profile_v2.png' />
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
@@ -64,13 +64,13 @@ Please don't forget to add additional scheme files to your version control.
 
 Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window. You can also set the preferred NodeJS version on this screen. If you don't set any version, `lts` version will be used.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-ios.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-ios_v2.png' />
 
 ### Build Configuration for React Native Android applications
 
 First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-android.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-android_v2.png' />
 
 ### Sending the Build Status to the Repository Providers
 

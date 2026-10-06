@@ -51,13 +51,13 @@ Please note that the **Metadata Approval via Email** step **must** be used befor
 Running **Metadata Approval via Email** step after your updated metadata has been applied in your developer accounts may **cause unexpected errors** in your publish flows.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-metadataApprovalNew1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-metadataApprovalNew1_v2.png'/>
 
 ### Input Variables
 
 The parameters required for this step to work as expected are listed below.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish3.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish3_v2.png'/>
 
 | Field                        | Description                                                                                                                                      |
 |-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|

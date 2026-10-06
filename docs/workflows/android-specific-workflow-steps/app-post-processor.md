@@ -36,7 +36,7 @@ The workflow steps that need to be executed before running the **Android App Pos
 | [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | To process Android output, these outputs must be obtained from the build step. |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign) | If a signed app is created, this step needs to be run beforehand to process this output. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_1.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_1_v2.png' alt="image2" />
 
 :::caution
 
@@ -52,7 +52,7 @@ There is no need to enter an input for this component. It will process Android f
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_2.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_2_v2.png' alt="image2" />
 
 | Variable Name                          | Description                                       |
 |----------------------------------------|---------------------------------------------------|

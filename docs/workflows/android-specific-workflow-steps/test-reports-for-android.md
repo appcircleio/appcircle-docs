@@ -29,7 +29,7 @@ Before running the **Test Reports for Android** step, you must complete certain 
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
 | [**Android Unit Tests**](/workflows/android-specific-workflow-steps/android-unit-tests) | This step must be executed to obtain the test report output. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_1_v2.png'/>
 
 <AlwaysRunToggleDanger />
 
@@ -37,7 +37,7 @@ Before running the **Test Reports for Android** step, you must complete certain 
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_2_v2.png'/>
 
 | Variable Name            | Description                                                      | Status    |
 | ------------------------ | ---------------------------------------------------------------- | --------- |

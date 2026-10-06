@@ -21,15 +21,15 @@ Users can view their current machine plan from:
 
 - **Build Logs**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-3.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-3_v2.png'/>
 
 - **Build History**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-7.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-7_v2.png'/>
 
 - **Billing Page**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-4.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-4_v2.png'/>
 
 :::tip Upgrade Your Machine Plan
 To upgrade your machine plan, please [contact our team](https://appcircle.io/contact).

@@ -26,12 +26,12 @@ In the filter options, you can only view and select the organization and sub-org
 :::
 
 You can download the report as a .csv file by clicking the **Export** button.
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep1_v2.png' />
 
 :::caution
 If you are working for a sub-organization, you can only see the reports of the applications belonging to that organization in the reports section.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep2_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep3_v2.png' />

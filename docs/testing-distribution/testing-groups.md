@@ -15,21 +15,21 @@ The testing groups feature allows for the definition of various groups for diffe
 
 You can list, add, edit and manage your groups and testers from this module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing1_v2.png' />
 
 Click on the orange + button to create a new testing group. You can name groups according to your needs, such as "Alpha," "Beta," and so on. After typing the name of the new testing group, press enter to create it.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing2_v2.png' />
 
 After a new testing group is created, tester email addresses can be added to the group. The input box at the top of the page should be used to enter the email address, and pressing enter will add it.
 
 A list of your testers will now be displayed. Testers can be selected and deleted as needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing3_v2.png' />
 
 Also by clicking on the edit button next to your testing group name from the list, you can rename, duplicate or delete your testing group if you need to.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing4_v2.png' />
 
 ### Managing Unsubscribed Users
 
@@ -62,13 +62,13 @@ For LDAP configuration and mapping, please refer to the [LDAP](/account/my-organ
 
    **Note**: The Testing Group must not contain any members. If it does, attempting to import from LDAP will result in an error.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing5_v2.png' />
 
 3. **Select LDAP Configuration**:
     - Choose the LDAP configuration from the dropdown menu.
     - Select the LDAP Group from which you want to import members.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-menu.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3990-menu_v2.png' />
 
 4. **Preview LDAP Group Members**:  
    The members of the LDAP Group will be displayed in the UI as a preview. This allows you to review the members before importing. At this stage, the members are not yet imported into the Testing Group.
@@ -118,7 +118,7 @@ After disabling the settings, existing members will remain, and users can manual
 
 You can export the list of testers in a Testing Group as a CSV file for record-keeping, reporting, or bulk operations outside the Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/fe1694-export.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/fe1694-export_v2.png' />
 
 Steps to Export Testers as CSV:
 
@@ -138,7 +138,7 @@ You can add your testers quickly and efficiently by using Import from CSV option
 
 Also, after adding the users by CSV, you can still add or remove the tester emails as you see fit. The duplicated email addresses will be handled by Appcircle automatically.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing6_v2.png' />
 
 - Click on the three-dot menu (•••) of the desired testing group.
 
@@ -150,13 +150,13 @@ Also, after adding the users by CSV, you can still add or remove the tester emai
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5939-ss5.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing7_v2.png' />
 
 - Upload the CSV file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing8_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing9_v2.png' />
 
 :::info
 Importing a CSV file does not delete existing testers unless manually removed from the profile.

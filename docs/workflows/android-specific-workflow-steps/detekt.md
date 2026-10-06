@@ -20,13 +20,13 @@ Before running the **Detekt** step, you must complete certain prerequisites, as 
 |-------------------------------------------------|-------------------------------------------------|
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The **Git Clone** step is necessary to fetch the repository before conducting code checks and must precede the **Detekt** step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-detekt_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-detekt_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-detekt_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-detekt_2_v2.png'/>
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|

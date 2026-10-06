@@ -29,7 +29,7 @@ Before running the **Testinium** step, you must complete certain prerequisites, 
 | [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Testinium** step.                                                                           |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_1.1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_1.1_v2.png'/>
 
 #### For iOS (Objective-C / Swift and React Native) 
 
@@ -37,7 +37,7 @@ Before running the **Testinium** step, you must complete certain prerequisites, 
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_2.1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_2.1_v2.png'/>
 
 #### For Android Flutter 
 
@@ -46,7 +46,7 @@ Before running the **Testinium** step, you must complete certain prerequisites, 
 | [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Testinium** step.                                                                           |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_3.1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_3.1_v2.png'/>
 
 #### For iOS Flutter
 
@@ -55,13 +55,13 @@ Before running the **Testinium** step, you must complete certain prerequisites, 
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_4.1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_4.1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_5.1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_5.1_v2.png'/>
 
 <SensitiveVariablesDanger />
 
@@ -81,7 +81,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_6.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_6_v2.png'/>
 
 | Variable Name                          | Description                                             |
 | -------------------------------------- | ------------------------------------------------------- | 

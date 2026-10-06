@@ -25,11 +25,11 @@ For connection to GitHub, Appcircle uses GitHub App instead of GitHub OAuth. Git
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1_v2.png' />
 
 After you click on **GitHub**, the following screen will appear. This will let you choose between selecting a repository that you are already authorized to do with Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-github1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-github1_v2.png' />
 
 When you successfully authorize your repository or repositories, the following screen will appear to let you select one for connection:
 
@@ -70,7 +70,7 @@ The overall process is similar to a private repository connection through cloud 
 
 First, select **GitHub** and then **GitHub Enterprise** under **Create a New GitHub Enterprise Connection** through the menu:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-githubenterprise1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-githubenterprise1_v2.png' />
 
 To connect to a self-hosted GitHub Enterprise instance, use the following fields when selecting the **GitHub Enterprise** option:
 
@@ -81,7 +81,7 @@ To connect to a self-hosted GitHub Enterprise instance, use the following fields
 
 If you are not sure what those are, contact your system administrator.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-githubenterprise2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-githubenterprise2_v2.png' />
 
 ## FAQ
 

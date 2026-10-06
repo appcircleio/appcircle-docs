@@ -29,7 +29,7 @@ Before running the **Xcodebuild for Devices** step, you must complete certain pr
 :::danger
 
 This step should always follow steps that may affect Archive and Export, such as **Xcode Select** and **Cocoapods Install**.
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildOrder_v2.png' />
 
 :::
 
@@ -37,7 +37,7 @@ This step should always follow steps that may affect Archive and Export, such as
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-8307-newxcodeinput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-8307-newxcodeinput_v2.png' />
 
 | Variable Name                                 | Description                                                                                                                                                                                                                                              | Status   |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

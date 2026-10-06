@@ -21,13 +21,13 @@ Before running the **LambdaTest App Automate - Espresso** step, ensure you have 
 | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the required app and test APK outputs. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lambdatest-app-automate-espresso_0.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lambdatest-app-automate-espresso_0_v2.png'/>
 
 ### Input Variables
 
 This step includes several input variable(s) required for proper execution. See the table below for a detailed description:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lambdatest-app-automate-espresso_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lambdatest-app-automate-espresso_1_v2.png'/>
 
 <SensitiveVariablesDanger />
 

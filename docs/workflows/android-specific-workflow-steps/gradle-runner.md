@@ -18,13 +18,13 @@ Before running the **Gradle Runner** step, you must complete certain prerequisit
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Gradle Runner** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Gradle Runner** step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_2_v2.png' />
 
 | Variable Name                      | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | ---------------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |

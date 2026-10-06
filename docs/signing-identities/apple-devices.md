@@ -14,7 +14,7 @@ When it comes to developing and testing iOS apps, one of the most important task
 
 Ad-hoc distribution is a method of distributing iOS apps outside the App Store. To use Ad-hoc distribution, devices must be registered with the Apple Developer portal and included in your app's provisioning profile. Appcircle streamlines and simplifies this process, making it more efficient.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404-AppleDevices.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404-AppleDevices_v2.png' />
 
 :::caution Apple Devices
 
@@ -40,7 +40,7 @@ In Appcircle's Apple Devices feature, when an invited user successfully complete
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-sections.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-sections_v2.png' />
 
 Follow this document for detailed usage and purpose of all sections.
 
@@ -59,29 +59,29 @@ In order to list your registered devices, the App Store Connect API key must be 
 
 In order to be able to list the registered devices, you must first fetch these devices using the API key. For this, you can use the ‘Get Devices from Apple Developer Portal’ button to fetch the devices with the relevant API key.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-fetch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-fetch_v2.png' />
 
 Once the fetch process is completed successfully, the entire list of registered devices will be displayed below.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-fetchedList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-fetchedList_v2.png' />
 
 ### Filtering Devices by Apple Developer Accounts
 
 Since Appcircle's credential structure allows multiple API key connections at the same time, you can list your devices in different accounts with the account filtering feature on the registerd devices page.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-filterStore.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-filterStore_v2.png' />
 
 ### Filtering Devices by Device Status
 
 Apple offers **Disable** and **Enable** options for registered devices. Disabling a device removes it from provisioning profiles and excludes it from the development process. Appcircle provides filtering options that allow you to filter devices based on their status, making it easier to manage enabled and disabled devices.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-filterStatus.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-filterStatus_v2.png' />
 
 ### Disable Device
 
 Apple provides a disable option to exclude registered devices from development processes. To disable a registered device on Apple, select the relevant device, and use the **Disable** button at the bottom. This process will simultaneously change the status for the relevant device registered in your Apple Developer account.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-disableDevice.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-disableDevice_v2.png' />
 
 :::caution Disable Device
 
@@ -93,17 +93,17 @@ Disabling this device will invalidate all associated provisioning profiles. You 
 
 Apple provides an enable option to include registered devices from development processes. To enable a registered device on Apple, select the relevant device, and use the **Enable** button at the bottom. This process will simultaneously change the status for the relevant device registered in your Apple Developer account.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-enableDevice.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-enableDevice_v2.png' />
 
 ### Registering Device to different Apple Developer Portal
 
 A device that is already registered to any Apple Developer Account can be added to different Apple accounts if desired. To do this, select the device and then register it by choosing a different API key using the Register Device to Apple Developer button in the menu that appears at the bottom.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-registerDevice.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-registerDevice_v2.png' />
 
 When you select different API key in the list, Appcircle will automatically register your device to selected Apple Developer Account.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-registerAPI.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-registerAPI_v2.png' />
 
 ### Device Information
 
@@ -114,24 +114,24 @@ When you click on any device UDID in the Registered Device list, you can find de
 - The device type
 - The date the device was recorded
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-udidClick.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-udidClick_v2.png' />
 
 You can see it in detail.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-deviceInfoNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-deviceInfoNew_v2.png' />
 
 
 ## Not Registered Devices
 
 With Appcircle's advanced Apple Devices feature, you can also add user devices manually.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-nonRegistered.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-nonRegistered_v2.png' />
 
 ### Adding Device Manually
 
 With this feature, you can manually enter the UDID of the device you want to register and register it to your Appcircle Account. To do this, navigate to the Non-Registered tab and click the **Add Manually** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-addManuel12.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-addManuel12_v2.png' />
 
 :::caution Manuel Added Devices
 
@@ -139,19 +139,19 @@ Please remember that manually added devices are not automatically registered to 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-addManuelModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-addManuelModal_v2.png' />
 
 ### Registering Device to Apple Developer Portal
 
 After selecting a Non-Registered device, you can register it to your Apple account with the Register to Apple Developer Portal button at the bottom.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-registerNonDevice.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-registerNonDevice_v2.png' />
 
 ## Invited Users
 
 In addition to manually adding devices to your Appcircle account, you can also invite users via email to share their device information. If a device is registered through the invitation sent, its UDID will appear in the **Non-Registered Devices** tab during the registration process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-invitedUser.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-invitedUser_v2.png' />
 
 :::info
 
@@ -161,9 +161,9 @@ Multiple devices can be registered using the link provided in the email invitati
 
 To invite a user by e-mail, click **Invite User by Email** button, and specify the email address and invitation message.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-inviteButton.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-inviteButton_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-inviteForm.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-inviteForm_v2.png' />
 
 
 The mail containing the e-mail invitation will look like this.
@@ -221,14 +221,14 @@ For more information regarding the feature, please visit the [**Apple documentat
 
 - After this step, the device UDID has been successfully registered in Appcircle. You can go to the Appcircle interface and see the relevant device in the Non-Registered Devices tab.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-afterEmailInvite.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-afterEmailInvite_v2.png' />
 
 
 ### Cancel Invitation
 
 When an invitation is selected, you can delete this invitation by clicking the Delete button from the menu below. When the invitation is deleted, the link in the e-mail will become inactive and cannot be used again.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-inviteCancel.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-inviteCancel_v2.png' />
 
 
 

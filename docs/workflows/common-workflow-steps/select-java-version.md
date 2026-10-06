@@ -41,7 +41,7 @@ If you have a step that necessitates changing the Java version (e.g., the [**And
 
 For reference, you can see the workflow sequence in the image below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-select-java-version-1.0.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-select-java-version-1.0_v2.png' />
 
 :::caution
 
@@ -54,7 +54,7 @@ If your runner is self-hosted, ensure that the selected Java version is availabl
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-select-java-version-2.0.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-select-java-version-2.0_v2.png' />
 
 
 | Variable Name               | Description                                                                                                 | Status   |

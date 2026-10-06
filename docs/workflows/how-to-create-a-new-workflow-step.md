@@ -66,7 +66,7 @@ All steps must use the following exit conventions:
 - `exit 0`: The step completes successfully, and execution continues to the next step.
 - `exit 1`: The step fails and breaks the workflow execution.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_14.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_14_v2.png'/>
 
 **Error Logging**
 
@@ -82,7 +82,7 @@ Any log printed in this format will be shown as an error message in the Appcircl
 
 All terminal commands must be executed through a function named `run_command`. This ensures consistent logging and error handling across all steps. The command must be printed with the `@@[command]` tag before execution.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_15.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_15_v2.png'/>
 
 Example `run_command` implementation in Ruby:
 
@@ -161,7 +161,7 @@ This file ensures the step integrates properly into the Appcircle platform.
 For example, you can review how the `component.yaml` of the following repository is structured as follows:
 - [Appcircle Firebase App Distribution component](https://github.com/appcircleio/appcircle-firebase-distribution-component)
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_5.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_5_v2.png'/>
 
 :::
 
@@ -296,23 +296,23 @@ Once unit tests are configured and passing, the workflow step is considered comp
 After completing your source code, you need to follow these steps to test your custom step:
 
 1. **Create your workflow** and add a [Custom Script](/workflows/common-workflow-steps/custom-script) to the designated location where your step should be placed.
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_6.png'/>
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_6_v2.png'/>
 2. **Rename the Custom Script** to reflect its purpose and functionality.
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_7.png'/>
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_7_v2.png'/>
 3. **Select the appropriate language** for the **Custom Script** to match your main code's programming language.
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_8.png'/>
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_8_v2.png'/>
 4. **Paste your main code** into the **Custom Script** editor.
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_9.png'/>
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_9_v2.png'/>
 5. **Click the Save** button.
 6. **Configure input variables** (if required by component.yaml):
    1. **Navigate** to the [Environment Variables](/environment-variables) page
    2. **Create a new environment variable group** for the required inputs
    3. **Define key-value pairs** for each required input parameter. 
-      <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_10.png'/>
+      <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_10_v2.png'/>
    4. **Select the environment variable group** from the [Configuration](/build/build-process-management/configurations#environment-variables-configuration) that will be used to start the build.
-      <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_11.png'/>
+      <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_11_v2.png'/>
 7. **Start the build** and monitor the execution.
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_12.png'/>
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_12_v2.png'/>
 
 ### 3.1 Post-Testing Requirements
 
@@ -323,7 +323,7 @@ Once your tests are complete successfully, you must finalize the documentation e
 In certain scenarios, you may need to test the following additional cases:
 - **Cross-platform testing**: If necessary, test across different pools such as React Native, Flutter, Java/Kotlin, or Swift.
 - **Different Operating System Testing**: If necessary, test across different pools such as Linux or macOS.
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_13.png'/>
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_13_v2.png'/>
 - **Integration testing**: Test with other integrations that are likely to be used together.
 
 :::

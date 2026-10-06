@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The "My Organization" screen is accessible from the button with the organization name initials at the bottom left and it contains all operations to manage an organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-organization.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-organization_v2.png' />
 
 ### Organization Name and ID Management
 
@@ -34,7 +34,7 @@ When your Appcircle organization is first created, your email address is used as
 
 To update these details, simply enter the new values and press _Update_.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org1_v2.png" />
 
 ## Working with Multiple Organizations
 
@@ -46,9 +46,9 @@ To add a new organization, press the "Create New Organization" button on the top
 If you are on the Starter Plan, you cannot add a new organization. To create more organizations, you need to upgrade to a higher plan.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-addOrg.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-addOrg_v2.png' />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org2_v2.png" />
 
 ### Adding a Sub Organization
 
@@ -78,7 +78,7 @@ Please note that an **Enterprise License** is required to use this feature.
 
 If you have an enterprise license, you can create sub-organizations from the organization by navigating to the "My Organization" page, clicking on the **`Create Sub Organization`** button, and entering the necessary details for the sub-organization.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org3_v2.png" />
 
 Multiple sub-organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub-Organization feature, businesses can create and manage multiple sub-organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
 
@@ -98,7 +98,7 @@ Once you select your organization, you will only see the profiles, artifacts, an
 You can switch between organizations at any time without any data loss.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4073-switch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4073-switch_v2.png' />
 
 To switch between organizations or sub organizations, follow these steps:
 
@@ -141,4 +141,4 @@ Both leaving and deleting are irreversible operations and it is advised to use t
 - If you delete an organization, you will lose ALL platform data including apps, profiles, and artifacts.
   :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org5_v2.png" />

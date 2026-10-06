@@ -26,10 +26,10 @@ If you use a different build step than the ones mentioned above to generate the 
 :::
 
 #### For iOS
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_order_v2.png' />
 
 #### For Android
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_order_android.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_order_android_v2.png' />
 
 ### Input Variables
 
@@ -39,7 +39,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 When you enter this component detail, you need to specify the **File Size** and **Check Action**. The file size parameter here represents the **maximum allowable** size of the **IPA**, **APK** or **AAB** file. If the archived application size exceeds this size, the pipeline will be **broken** or **warned** according to the **fail** or **warn** option you specify in the check action parameter.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_action.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_action_v2.png' />
 
 If you select **warn**, this is how it will appear in your build list:
 

@@ -22,13 +22,13 @@ Before running the **React Native Unit Test** step, you must complete certain pr
 | [**Install Node**](/workflows/react-native-specific-workflow-steps#install-node)           | This step will install Node modules for your application.                                                                                                                              |
 | [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands) | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/unitOrderNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/unitOrderNew_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/newUnitInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/newUnitInput_v2.png' />
 
 | Variable Name              | Description                                                                                                                                                                                                                                                                                                                                                                                                       | Status   |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|

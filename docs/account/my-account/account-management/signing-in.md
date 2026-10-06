@@ -19,13 +19,13 @@ Your account is protected by a password, which you can update at any time.
 - **Created**: Displays the date and time when the password was last set or updated.
 - **Update**: Use the **Update** button to change your password.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6855-account3.png"/>
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6855-account3_v2.png"/>
 
 ## Two-Factor Authentication (2FA)
 
 For improved security, you can set up **Two-Factor Authentication** using an authenticator application.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6855-account6.png"/>
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6855-account6_v2.png"/>
 
 - **Authenticator application**: When enabled, you will be asked to provide a verification code from your authenticator app (such as Google Authenticator, Microsoft Authenticator and FreeOTP) each time you sign in.
 - **Set up Authenticator application**: Click this link to configure 2FA for your account.

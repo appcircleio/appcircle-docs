@@ -136,15 +136,15 @@ After generating the key, download the key file by pressing Download API Key nex
 
 Adding a key to Appcircle is pretty easy. **Go to your organization** by selecting the bottom left button from the toolbar:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss1_v2.png' />
 
 On the Organization screen, select **Add New** on **App Store Connect API Keys **list item**:**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api1_v2.png' />
 
 On the form, upload the **.p8** key file downloaded from App Store Connect:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api2_v2.png' />
 
 Fill in the rest of the form. You can find the **Key ID** and **Issuer ID** from App Store Connect Panel here:
 
@@ -169,7 +169,7 @@ Before using the App Store Connect Enterprise API Key, ensure that:
 - You have Admin or Account Holder privileges in App Store Connect.
 - Your App Store Connect account supports API access.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api3_v2.png' />
 
 ### Adding the API Key to Appcircle
 
@@ -192,7 +192,7 @@ Root Organization users have the ability to share their saved credentials with S
 
 #### How to Share Credentials
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-4_v2.png' />
 
 **1.**	Navigate to the Credentials Section
 
@@ -216,7 +216,7 @@ In the Share Credentials panel:
 **5.** Save Sharing Configuration
 Once your selections are made, click Share to apply.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss3_v2.png' />
 
 Shared credentials will be visible and usable in the selected Sub-Organizations as if they were their own.
 
@@ -232,5 +232,5 @@ When the “Share with all sub-organizations” toggle is enabled, the credentia
 
 :::info Editing Credential Name
 You can also edit the name of the credential setting by clicking the edit button
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-4_v2.png' />
 :::

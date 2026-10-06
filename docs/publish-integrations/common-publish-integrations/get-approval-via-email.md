@@ -10,7 +10,7 @@ import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Get Approval via Email
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publish-worflow-email-approval-overview.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publish-worflow-email-approval-overview_v2.png'/>
 
 The **Get Approval via Email** step allows you to get approval from the email addresses entered as input in the step before moving on to the next steps in Publish.
 
@@ -66,7 +66,7 @@ There are no required steps that must precede the **Get Approval via Email** ste
 
 The parameters required for this step to work as expected are listed below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email_v2.png'/>
 
 | Variable Name                  | Description                                                                                                                                                                                                                                                                                                                                                                              | Status   |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

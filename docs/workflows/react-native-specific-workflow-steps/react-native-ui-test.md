@@ -39,7 +39,7 @@ If your **CocoaPods** dependencies are **embedded** in the project, you do not n
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/uiOrderNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/uiOrderNew_v2.png' />
 
 #### For Android
 
@@ -56,7 +56,7 @@ For Appcircle **Cloud**, you need to use **Appcircle Linux Pool (x86_64)** to ru
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-androidFlow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-androidFlow_v2.png' />
 
 :::caution Android Emulator
 
@@ -68,7 +68,7 @@ React Native UI Test component works according to the device given in the projec
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/uiInputNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/uiInputNew_v2.png' />
 
 | Variable Name                | Description                                                                                                                                                                                                                                                                                                                                 | Status   |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|

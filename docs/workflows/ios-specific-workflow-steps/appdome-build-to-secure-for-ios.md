@@ -28,13 +28,13 @@ If a step other than the **Xcodebuild for Devices** step is used to build or sig
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeOrder1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeOrder1_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeInput_v2.png' />
 
 :::danger Sensitive Variables
 

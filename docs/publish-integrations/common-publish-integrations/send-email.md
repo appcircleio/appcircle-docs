@@ -14,15 +14,15 @@ The **Send Email** step allows you to send customized email notifications during
 
 <RunnerUsage />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email1_v2.png' />
 
 ## Configuration Options
 
 To be able to send email in your publish flow, you need to configure the fields listed below. These settings define how the email is sent, including the SMTP server, sender details, recipients, and the email content. Make sure the credentials and connection details match your email service provider’s requirements.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email2_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email3_v2.png' />
 
 | Field                      | Description                                                                                                                                                   |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -68,7 +68,7 @@ You can dynamically populate subject and content using environment variables. Th
 
 First, you need to define the environment variables. To do this, go to the Publish module and select Publish Variables. From there, you can start creating the variables for your email settings.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email6_v2.png' />
 
 For more information, please refer to the [Publish Variables](/publish-to-stores-module/publish-variables) documentation.
 
@@ -76,9 +76,9 @@ For more information, please refer to the [Publish Variables](/publish-to-stores
 
 After creating the environment variables, you will need to select this variable group from your profile settings.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email5_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email4_v2.png' />
 
 You can now use the defined environment variables in your email settings, including the subject and content. For example:
 

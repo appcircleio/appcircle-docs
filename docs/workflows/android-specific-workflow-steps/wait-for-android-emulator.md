@@ -33,13 +33,13 @@ If a step other than the **Android Build** or **Android Sign** step is used to b
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_2_v2.png'/>
 
 | Variable Name               | Description                                                                                                                                                                                                                                                                                                                                                                  | Status   |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

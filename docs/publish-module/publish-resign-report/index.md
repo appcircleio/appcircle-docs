@@ -14,7 +14,7 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 The Publish Re-sign Report provides detailed visibility into the manual and automatic re-sign operations performed within the Publish to Stores module. This report helps you monitor and analyze re-sign activities across your organization over a selected time period.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-9.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-9_v2.png" />
 
 These are the displayed fields within the Publish Report:
 
@@ -41,7 +41,7 @@ Users can refine the report data using multiple filters:
 - **App Name:** Filter by the application name that was used in the Publish action.
 - **Status:** Filter by Status of the Publish such as Success, Failed or Canceled.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-8.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-8_v2.png" />
 
 :::info
 In the filter options, you can only view and select the organization and sub-organization you belong to.

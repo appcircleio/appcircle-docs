@@ -26,13 +26,13 @@ Please ensure that you insert the **Android Lint** step before using the **Andro
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_1.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_1_v2.png' alt="image2" />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_2.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_2_v2.png' alt="image2" />
 
 | Variable Name        | Description                                                                                                                                                                                                                                                                                                                                                                                        | Status   |
 | -------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
@@ -45,7 +45,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 If you have filled in the required variables in the **Configuration** section, you will not need to redefine these variables again on the [**Workflows**](/workflows/). For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/configurations) document.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_3.png' alt="Configuration Image" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_3_v2.png' alt="Configuration Image" />
 
 1. The input corresponds to the 1st field: `$AC_MODULE`
 2. The input corresponds to the 2nd field: `$AC_VARIANTS`
@@ -56,7 +56,7 @@ If you have filled in the required variables in the **Configuration** section, y
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_4.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_4_v2.png' alt="image2" />
 
 | Variable Name | Description                                                                                                                                                                                                              |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

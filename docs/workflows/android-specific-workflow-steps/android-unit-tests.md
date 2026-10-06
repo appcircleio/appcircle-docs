@@ -20,13 +20,13 @@ Before running the **Android Unit Tests** step, you must complete certain prereq
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Android Unit Tests** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Unit Tests** step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_1_v2.png'/>
 
 :::danger
 
 If you wish to view the test results on Appcircle's Test Reports page, it is essential to use the [Test Reports for Android](/workflows/android-specific-workflow-steps/test-reports-for-android) step after the **Android Unit Tests**. Please check out this document for more information: [Generating Test Report](/continuous-testing/android-testing/running-android-unit-tests#generating-test-report).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_2_v2.png'/>
 
 :::
 
@@ -34,7 +34,7 @@ If you wish to view the test results on Appcircle's Test Reports page, it is ess
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_3.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-unit-tests_3_v2.png' alt="image2" />
 
 | Variable Name        | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | -------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |

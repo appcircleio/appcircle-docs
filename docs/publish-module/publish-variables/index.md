@@ -10,13 +10,13 @@ import ContentRef from '@site/src/components/ContentRef';
 
 The **Publish Variables** section within the Publish to Stores module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-28.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-28_v2.png' />
 
 To use these defined variables, it will be necessary to select them from the [Publish Settings](/publish-to-stores-module/publish-settings/).
 
 Publish Variables are key-value pairs that can be used to store configuration settings, credentials, and other data required during the publish process. You can add new variables directly in the Publish Variables section without the need for an additional menu or button. You can also import or export publish variable groups in bulk from the three dots menu next to **Variable Groups**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-20.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-20_v2.png' />
 
 ## How to Add a New Publish Variable
 
@@ -64,9 +64,9 @@ You can export publish variable groups in bulk as a `.zip` file.
 
 To export variable groups, click on the three dots icon next to **Variable Groups** and select **Export Variable Group**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-21.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-21_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-26.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-26_v2.png' />
 
 In the export modal:
 
@@ -74,7 +74,7 @@ In the export modal:
 - All selected groups will be included in the exported file.
 - The export will be downloaded as a `.zip` file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-27.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-27_v2.png' />
 
 :::info
 - Secret variables and file contents are not exposed directly for security reasons.
@@ -125,9 +125,9 @@ You can import publish variable groups in bulk using a `.zip` file.
 
 To import variable groups, click on the three dots icon next to **Variable Groups** and select **Import Variable Group**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-22.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-22_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-23.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-23_v2.png' />
 
 In the import flow:
 1. Upload a `.zip` file that contains publish variable groups.
@@ -136,14 +136,14 @@ In the import flow:
 
 If a variable group or variable already exists, it will be marked with an `Exists` tag.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-24.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-24_v2.png' />
 
 You can control how conflicts are handled using the following options:
 
 - **Overwrite if there is existing group**: Replaces the entire group and all its variables.
 - **Overwrite if there is existing variables**: Updates only the existing variables with new values.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-25.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-25_v2.png' />
 
 :::info
 - Existing variables or groups will not be overwritten unless the corresponding overwrite option is enabled.
@@ -156,13 +156,13 @@ You can share environment variable groups from the root organization to sub-orga
 
 To share a variable group, click on the three dots icon next to a group and select **Share**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-35.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-35_v2.png' />
 
 In the share modal:
 
 - You can select specific sub-organizations to share the variable group with.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-36.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-36_v2.png' />
 
 - Optionally, enable **Share with all sub-organizations** to automatically share the group with all existing and future sub-organizations.
 
@@ -170,11 +170,11 @@ After sharing:
 
 - Shared variable groups will be marked with a **Shared** tag in the root organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-37.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-37_v2.png' />
 
 - In sub-organizations, these groups will appear with an **Inherited** tag.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-38.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-38_v2.png' />
 
 :::info
 - Users in sub-organizations cannot edit, rename, or delete inherited variable groups.

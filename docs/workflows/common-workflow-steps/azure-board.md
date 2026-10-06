@@ -84,7 +84,7 @@ You can add further operations to the array to update other fields of the work i
 This step needs the input variables below in order to work. The table below explains these variables.
 
 <Screenshot
-  url='https://cdn.appcircle.io/docs/assets/BE3049-azureInput.png'
+  url='https://cdn.appcircle.io/docs/assets/BE3049-azureInput_v2.png'
   alt='Azure Boards step input variables'
 />
 

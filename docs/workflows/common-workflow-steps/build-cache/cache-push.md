@@ -18,7 +18,7 @@ Please ensure you are using version **`1.0.4` or later** of the Cache Push compo
 
 To make sure you always get the latest updates, it is recommended to use the latest wildcard version (e.g., `1.0.*`):
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6067-cachelimitversion.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6067-cachelimitversion_v2.png' />
 
 :::
 
@@ -80,7 +80,7 @@ Keep in mind that included paths and the **Cache Push** step's workflow order ar
 
 The other important prerequisite for this component to work is that it must be used after the step in which the generated artifact of the step is to be cached. For example, in the screen shot, to cache dependencies, the **Cache Push** step is used after the [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushOrder_v2.png' />
 
 :::
 
@@ -89,7 +89,7 @@ The other important prerequisite for this component to work is that it must be u
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushInput_v2.png' />
 
 | Variable Name              | Description                                    | Status |
 |----------------------------|------------------------------------------------|--------|
