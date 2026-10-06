@@ -45,7 +45,7 @@ With Appcircle’s advanced Signing Identity module, you can easily generate cer
 
 - To do this, navigate to the Apple Certificates section within the Signing Identity module. Then, using the Add New button, you can create a certificate.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-appCertMainPage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-appCertMainPagev2.png' />
 
 - In the opened window, continue by selecting the “Create an Apple Certificate” step.
 

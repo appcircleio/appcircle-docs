@@ -69,25 +69,9 @@ You can also upload binaries from other CI tools using ready-to-use plugins.
 
 ## Profile Listing
 
-You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same enterprise app store profiles, allowing you to choose the layout that best fits their workflow.
+The profile list provides search, filtering, and ordering capabilities to help users quickly locate specific enterprise app store profiles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas1_v2.png' />
-
-<Tabs
-defaultValue="board"
-values={[
-{ label: 'Profile Board View', value: 'board' },
-{ label: 'Profile List View', value: 'list' },
-]}
->
-  <TabItem value="board">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas2_v2.png' />
-  </TabItem>
-  <TabItem value="list">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas3.png' />  </TabItem>
-</Tabs>
-
-In addition to view options, the profile list provides search, filtering, and ordering capabilities to help users quickly locate specific enterprise app store profiles.
 
 #### Search Profiles
 

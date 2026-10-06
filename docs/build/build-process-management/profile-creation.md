@@ -63,25 +63,9 @@ Once the repository connection is established, the build profile will be created
 
 ### Profile Listing
 
-You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same build profiles, allowing you to choose the layout that best fits their workflow.
+The profile list provides search, filtering, and ordering capabilities to help users quickly locate specific build profiles.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build2_v2.png' />
-
-<Tabs
-defaultValue="board"
-values={[
-{ label: 'Profile Board View', value: 'board' },
-{ label: 'Profile List View', value: 'list' },
-]}
->
-  <TabItem value="board">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build6_v2.png' />
-  </TabItem>
-  <TabItem value="list">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build5_v2.png' />  </TabItem>
-</Tabs>
-
-In addition to view options, the profile list provides search, filtering, and ordering capabilities to help users quickly locate specific build profiles.
 
 #### Search Profiles
 
