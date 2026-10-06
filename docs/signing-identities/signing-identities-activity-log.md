@@ -68,7 +68,7 @@ Organization Owners can also observe the actions of their Sub-Organizations.
 
 :::
 
-You can edit the required date range by clicking the time filter in the top filter header as the default search time option is the last 30 days. Alternatively, you can choose custom dates from the calendar by selecting 'In Between' option.
+The list shows the last 7 days by default. To change the date range, click the date chip next to **Filter** at the top of the page. To choose your own dates from the calendar, select **Custom range**.
 
 Team activity logs also include filters to help users perform more precise searches. By clicking the 'All' option next to Organizations, you can select a specific organization or sub-organization from the list, provided you have access to monitor their signing identities activity.
 

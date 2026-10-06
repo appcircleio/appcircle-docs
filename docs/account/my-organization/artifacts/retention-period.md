@@ -126,7 +126,7 @@ Each row in the report represents a deleted artifact and includes key details su
 
 | Column | Description                                                                                                                                  |
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| **Org Name** | Displays the organization name that owned the deleted artifact.                                                                              |
+| **Organization name** | Displays the organization name that owned the deleted artifact.                                                                              |
 | **Module** | Indicates which Appcircle module the artifact belonged to — *Build*, *Testing Distribution*, *Publish to Stores*, or *Enterprise App Store*. |
 | **File Type** | Shows the type of file deleted (e.g., `.ipa`, `.apk`, `.png`).                                                                               |
 | **Size** | Displays the original size of the deleted artifact.                                                                                          |
@@ -136,7 +136,7 @@ Each row in the report represents a deleted artifact and includes key details su
 | **Physically Delete** | Shows whether the artifact was permanently deleted from storage.                                                                             |
 | **Triggered By** | Shows the user email address that deleted the artifact. If it was an automatic process, it would display 'System' .                          |
 | **Job Triggered By** | Specifies the retention job type —                                                                                                           |
-| **Delete At** | Displays the exact timestamp when the deletion occurred.                                                                                     |
+| **Deleted at** | Displays the exact timestamp when the deletion occurred.                                                                                     |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7512-2_v2.png' />
 

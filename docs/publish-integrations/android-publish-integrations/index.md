@@ -8,15 +8,15 @@ tags: [android, android integrations, android publish integrations]
 
 Appcircle's Android Integrations facilitate the distribution of your Android applications to major app stores with minimal effort.
 
-To use the Android Integration, click on the **Android Publish** button on the left in the Publish module.
+To use the Android Integration, select **Android publish** on the left in the Publish module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-leftbar-android_v2.png' />
 
-Click on **Add New** to create a new publish profile, **Open** details, and click on **Publish Flow**.
+Click **Add new profile** to create a new publish profile, open it, and select **Manage publish flow** from the **...** menu next to the profile name.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-android-flow_v2.png' />
 
-In **Publish Flow**, the default steps will appear. You can add or delete steps from your flow using the **Manage Flow** button.
+In **Publish flow**, the default steps will appear. You can add or delete steps from your flow using the **Manage flow** button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-android-in_v2.png' />
 

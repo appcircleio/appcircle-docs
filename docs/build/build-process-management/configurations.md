@@ -76,13 +76,13 @@ The downloaded YAML file is specific to the project type and can only be used fo
 
 Every build profile needs to know project details regardless of whether the project is an iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle if you click on **Autofill** button.
 
-Config details will show you your current Machine Plan. It's Standard by default but can be upgraded depending on your build requirements.
+Your current machine plan is shown in **Organization** > **Billing**, not in the configuration. It's Standard by default but can be upgraded depending on your build requirements.
 
 <ContentRef url="/infrastructure/machine-plans">
   Machine Plans
 </ContentRef>
 
-You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
+You can also select your self-hosted runner pool in the **Organization pool** field.
 
 <ContentRef url="/self-hosted-appcircle/self-hosted-runner">
   Self-hosted Runners

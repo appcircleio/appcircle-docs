@@ -154,7 +154,7 @@ Notifications for binary re-sign actions throughout each supporting module.
 
 To cancel email notifications, you can click the unsubscribe button in the notification email, or you can delete the email address for the relevant module by following the steps below:
 
-**My Organization -> Notifications -> Email -> Manage**
+Go to **Organization** > **Notifications**. Under **Email and webhooks**, select **Email** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/email-manage_v3.png' />
 

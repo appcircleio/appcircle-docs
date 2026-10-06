@@ -62,7 +62,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+To view the output artifacts in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 

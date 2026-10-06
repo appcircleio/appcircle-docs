@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Export Build Artifact
 
-Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download in the artifacts section of the completed build.
+Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download in the **Download artifacts** side panel of the completed build.
 
 :::danger
 
@@ -37,7 +37,7 @@ Remember, if you set a step to run after this step, artifacts generated after th
 
 ### Download Exported Artifacts
 
-You can access and download the exported artifacts by clicking on the three dots (**⋮**) in the Build list and selecting download artifact. 
+To download the exported artifacts, open the build's **...** menu in the build list and select **Download artifacts**. A side panel lists the artifacts of the build.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportDownload_v2.png' />
 

@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 ## Connection Settings
 
-You can see the connection details by clicking the **"Connection Settings"** button in the build profile.
+You can see the connection details by opening the **...** menu next to the build profile name and selecting **Source code**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management1_v2.png' />
 
@@ -47,7 +47,7 @@ When we open a disconnected build profile, Appcircle will bring us a popup to qu
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/disconnect-3_v2.png' />
 
-If you do not want to connect again at that moment, you can do it later by clicking the "Reconnect" button next to the "Connection Settings".
+If you do not want to connect again at that moment, you can do it later by clicking the **Reconnect** button at the top of the build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management5_v2.png' />
 
@@ -65,7 +65,7 @@ On the other hand, connection operations done from the **[Connections](/build/ma
 
 Appcircle allows changing the Git provider while reconnecting a profile that has been disconnected.
 
-For example, assume that a build profile was previously connected to GitLab and then its Git repository had been moved to GitHub. In this case, you can select the new Git provider for that build profile by clicking the "Reconnect" button next to "Connection Settings".
+For example, assume that a build profile was previously connected to GitLab and then its Git repository had been moved to GitHub. In this case, you can select the new Git provider for that build profile by clicking the **Reconnect** button at the top of the build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management5_v2.png' />
 
@@ -113,7 +113,7 @@ The build profile owners will not see the **Change Owner** button in the **Conne
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/owner-main_v2.png' />
 
-When you browse the same build profile with a different member within the same organization, the **Change Owner** button will be visible in the window that's opened when we click on the **Connection Settings** button.
+When you browse the same build profile with a different member within the same organization, the **Change Owner** button will be visible in the panel that opens when you select **Source code** from the **...** menu next to the build profile name.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/owner-modal.png' />
 
@@ -127,7 +127,7 @@ The connection ownership change will be permitted for users who are in the same 
 In addition, the user who wants to take ownership of the connection must also have access to the repository on the relevant Git provider.
 :::
 
-When the process is completed successfully, you can click on the **Connection Settings** button again to see the changed ownership of the build profile connection. In the window that's opened, there won't be a **Change Owner** button because you are now the profile owner.
+When the process is completed successfully, you can select **Source code** from the **...** menu again to see the changed ownership of the build profile connection. In the panel that opens, there won't be a **Change Owner** button because you are now the profile owner.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-management6_v2.png' />
 
@@ -181,11 +181,11 @@ The list first shows the logo of the Git provider we're connecting to, then the 
 
 ### Adding PAT Connection
 
-The "Add New" button at the top of the PAT connection list on the right side allows us to add PAT (Personal Access Token) without creating a new build profile. Then you can use that PAT connection on existing build profiles or while adding a new build profile.
+The **New PAT connection** button at the top of the PAT connection list on the right side allows us to add PAT (Personal Access Token) without creating a new build profile. Then you can use that PAT connection on existing build profiles or while adding a new build profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/add-new-main_v2.png' />
 
-After clicking on the "Add New" button, Appcircle will ask us to select a Git provider and fill in the necessary information according to the Git provider, just like in the build profile PAT connection.
+After clicking **New PAT connection**, Appcircle will ask us to select a Git provider and fill in the necessary information according to the Git provider, just like in the build profile PAT connection.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-select-provider_v2.png' />
 
@@ -209,18 +209,18 @@ Now you're ready to use the added PAT connection in your build profiles. While m
 
 ### Editing PAT Connections
 
-We can see the details of the PAT connection with the **Edit** button on the right side. These are **Provider**, **Instance URL**, **Token Owner**, **Token**, and **PAT**.
+We can see the details of the PAT connection by opening the connection's **...** menu and selecting **Edit**. These are **Provider**, **Instance URL**, **Token Owner**, **Token**, and **PAT**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-pat-detail_v2.png' />
 
-In the **Connection Edit**, we can change the PAT (Personal Access Token) value.
+In the **Edit** side panel, we can change the PAT (Personal Access Token) value.
 
 However, we must make sure that the value we change here is correct and that it was created on the Git provider correctly. Otherwise, the affected build profile or profiles will not be connected.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-pat-edit.png' />
 
 :::caution
-In the **Connection Edit**, you can see the build profiles where PAT is used under "Affected Build Profiles".
+In the **Edit** side panel, you can see the build profiles where PAT is used under "Affected Build Profiles".
 
 Changing a PAT value will affect all the build profiles shown here.
 :::
@@ -233,7 +233,7 @@ You can review [Using Environment Variables For SSH And PAT (Personal Access Tok
 
 ### Deleting PAT Connections
 
-You can delete a Personal Access Token (PAT) connection by clicking on the **Delete** next to the respective entry in your list of PAT connections.
+You can delete a Personal Access Token (PAT) connection by opening the **...** menu of the respective entry in your list of PAT connections and selecting **Delete**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat_v2.png' />
 
@@ -253,7 +253,7 @@ For more information about disconnecting a build profile please refer to the rel
 
 ## External Webhooks
 
-External Webhooks can be accessed from the **Connections** page by clicking the three-dot menu in the top-right corner and selecting **External Webhooks**.
+External Webhooks can be accessed from the **Connections** page by clicking the **External webhooks** button at the top right.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/qa44-1_v2.png' />
 

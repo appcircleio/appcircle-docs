@@ -24,7 +24,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # My Organization
 
-The "My Organization" section is your central hub for managing everything related to your organization within Appcircle. Here, you can oversee all projects, manage user roles, and control access levels to ensure that each team member has the right permissions. This area also allows you to monitor activity, configure organization-wide settings, and streamline collaboration across your teams. Whether you're adding new members or adjusting permissions, the "My Organization" section gives you complete control over your organization’s structure and workflow.
+The **Organization** section in the left sidebar is your central hub for managing everything related to your organization within Appcircle. Here, you can oversee all projects, manage user roles, and control access levels to ensure that each team member has the right permissions. This area also allows you to monitor activity, configure organization-wide settings, and streamline collaboration across your teams. Whether you're adding new members or adjusting permissions, the **Organization** section gives you complete control over your organization’s structure and workflow.
 
 Current headlines and the actions you can complete are listed below:
 

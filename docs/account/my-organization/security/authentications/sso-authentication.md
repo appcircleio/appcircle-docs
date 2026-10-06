@@ -74,12 +74,12 @@ The following steps outline the general process for configuring Single Sign-On (
 Begin by enabling SSO within your Appcircle organization settings. Follow these steps:
 
 1. In the Appcircle dashboard, navigate to the **Organization** section located on the far left sidebar.
-2. On the **My Organization** screen, select **Security** from the left-hand menu.
-3. On the **Security** screen, locate the **Authentications** section on the far right, find **Appcircle SSO Login**, and click **Add New**.
+2. Under **Organization** in the sidebar, select **Security**.
+3. On the **Security** screen, locate the **Authentication** section and select **Appcircle SSO login** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/enable-sso_v5.png' />
 
-4. The **Manage Appcircle SSO Login** window will open, presenting two options:
+4. The **Manage Appcircle SSO Login** side panel opens, presenting two options:
     - **Create New Authentication**
     - **Create From Existing Authentication**
 You can create new configuration or create from existing configuration. Click on the **Create New Authentication** section to create new configuration.
@@ -130,8 +130,8 @@ Only one SSO provider can be configured at a time.
 **Important:** The 'Create From Existing' SSO feature cannot be used for SAML configurations because some identity providers restrict the use of a single SAML Entity ID or a single Logout Redirect URL.
 :::
  
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Add New** on the **Appcircle SSO Login**.
+1. Go to **Organization** > **Security** and find the **Authentication** section.
+2. Select **Appcircle SSO login** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/security-authentications_v2.png' /> 
 

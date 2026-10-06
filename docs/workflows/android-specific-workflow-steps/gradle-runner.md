@@ -42,7 +42,7 @@ As the output may vary depending on the task you execute, there is no specific o
 
 :::caution
 
-If there is an output generated, ensure to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step afterward to ensure it is included in the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page.
+If there is an output generated, ensure to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step afterward to ensure it is included in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list).
 
 :::
 

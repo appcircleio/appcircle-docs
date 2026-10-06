@@ -44,7 +44,7 @@ For detailed configuration options, refer to the following pages:
 
 ### Steps to Verify a Domain
 
-**1.** Navigate to the My Organization > Security > Domain Verification section.
+**1.** Go to **Organization** > **Security**. In the **Domain verification** section, select **New domain**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5770-verify8_v2.png' />
 

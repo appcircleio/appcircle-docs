@@ -111,7 +111,7 @@ You must configure the component to parse those folders.
 
 :::caution
 
-If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization. Unit tests can work for both pools.
+If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux pool (x86_64)**) since M-series virtual machines (**Appcircle macOS pool (arm64)**) don't support nested virtualization. Unit tests can work for both pools.
 
 :::
 

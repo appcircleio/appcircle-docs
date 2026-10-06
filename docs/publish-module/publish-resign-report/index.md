@@ -18,12 +18,12 @@ The Publish Re-sign Report provides detailed visibility into the manual and auto
 
 These are the displayed fields within the Publish Report:
 
-- Org Name
+- Organization
 - Profile Name
 - Platform
 - Source Binary
 - Target Binary
-- Status
+- Re-sign Status
 - Initiated By
 - Trigger Type
 - Start Date

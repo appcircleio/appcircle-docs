@@ -42,7 +42,7 @@ Steps to Generate a Profile-Specific Secret:
 
 1- Navigate to your enterprise app store profile.
 
-2- In the top-right corner, click on the Settings icon.
+2- Open the **...** menu next to the profile name and select **Settings**.
 
 3- Select Generate Secret to create a profile-specific secret.
 
@@ -68,11 +68,11 @@ You can obtain your Enterprise Store Profile ID from the Profile Settings, the U
 
 1. Navigate to your Enterprise App Store Profile.
 
-2. Select the Settings from the top right corner.
+2. Open the **...** menu next to the profile name and select **Settings**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-40_v2.png' />
 
-3. Find and copy your Profile ID under the Info tab by clicking the copy button, next to your Profile ID.
+3. Find your profile ID under **Enterprise App Store profile ID** in the **Config** tab and copy it.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-57_v2.png' alt='Copy the Profile ID' />
 

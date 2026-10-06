@@ -43,9 +43,9 @@ Both **Appcircle Cloud** and **self-hosted** Appcircle installations are support
 
 To generate a Personal Access Key:
 
-1. Go to the My Organization screen (second option at the bottom left).
-2. Find the Personal Access Key section in the top right corner.
-3. Press the "Generate Key" button to generate your first key.
+1. In the left sidebar, go to **Organization** > **Security**.
+2. Find the **Personal access key** section.
+3. Select **Generate key** to generate your first key.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-1_v2.png' alt="Generate Personal Access Key"/>
 

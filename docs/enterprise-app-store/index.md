@@ -63,7 +63,7 @@ Enterprise Portal allows you to share your applications via Beta and Live channe
 
 ## [Portal Reports](/enterprise-app-store/enterprise-reports)
 
-You can access reports for your Enterprise App Store from this screen. The reports screen provides the following data through a clear and concise user interface.
+You can access download reports for your Enterprise App Store from the **Download report** page. The page shows who downloaded which app versions, and on which devices, through a clear and concise user interface.
 
 <ContentRef url="/enterprise-app-store/enterprise-reports">Portal Reports</ContentRef>
 

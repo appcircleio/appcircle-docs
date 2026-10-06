@@ -75,7 +75,7 @@ The output post-processing JSON file should adhere to the following structure:
 
 :::caution
 
-To share the signed apps created as a result of this step or to view them on the **Download Artifacts** page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+To share the signed apps created as a result of this step or to view them in the **Download artifacts** side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
 
 :::
 

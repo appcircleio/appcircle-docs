@@ -61,7 +61,7 @@ The binary file can be uploaded to the Publish to Stores module either manually 
 
 ### Creating a Publish Profile 
 
-- Your Publish profile should be correctly set up within the Appcircle platform. The package name defined in the Publish profile must exactly match the package name registered in your Google Play Console. To create a profile, click the **Add New** button on the top right.
+- Your Publish profile should be correctly set up within the Appcircle platform. The package name defined in the Publish profile must exactly match the package name registered in your Google Play Console. To create a profile, click **Add new profile** at the top right.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishStartCreate2_v2.png' />
 
@@ -83,7 +83,7 @@ To use this profile creation method, you must have a Google Play API key integra
 
 ### Selecting a Google Play Developer API Key
 
-If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish to Stores module after the profile is created. To initiate the release process, select the credentials for the relevant store from the `Settings` screen under the selected Publish profile.
+If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish to Stores module after the profile is created. To initiate the release process, select the credentials for the relevant store in `Settings`. To open it, select `Settings` from the `...` menu next to the name of the selected Publish profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSetting_v2.png' />
 
@@ -105,13 +105,13 @@ Publish flow is used to automate multiple tasks and introduce automation checkpo
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows_v2.png' />
 
-- **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section.
+- **Update the Publish Flow**: Select `Manage publish flow` from the `...` menu next to the profile name and update the flow based on your needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manageFlowDetails_v2.png' />
 
 :::info 
 
-You can back up your current Publish flow by clicking the `Download YAML` button at the bottom. You can also upload your Publish flow as a YAML file using the `Replace Flow` button at the top right.
+You can back up your current Publish flow by clicking the `Download YAML` button at the bottom. You can also upload your Publish flow as a YAML file using the `Replace flow` button at the top right.
 
 :::
 
@@ -149,7 +149,7 @@ You can select one of the following options:
 
 ### Setting Up Notifications
 
-- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish to Stores module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
+- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish to Stores module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications**](/account/my-organization/notifications) documentation for more detailed information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-notificationInteg_v2.png' />
 
@@ -308,7 +308,7 @@ For more details, refer to the [**Update Metadata on Google Play Console**](/pub
 
 Yes, it is possible. The Publish to Stores module allows you to set up automated notifications for your team members at various stages of the release process. You can configure notifications to be sent via email or integrate with collaboration tools like `Slack` or `Microsoft Teams`, ensuring that everyone involved is kept up to date on the release status.
 
-For more information, please refer to the [**Notification Integrations**](/account/my-organization/notifications) document.
+For more information, please refer to the [**Notifications**](/account/my-organization/notifications) document.
 
 #### Can I use the Publish to Stores module with other CI tools?
 
@@ -328,7 +328,7 @@ Yes, the Publish to Stores module allows you to manage multiple Play Store accou
 
 #### How do I customize my Publish flow in the Publish to Stores module?
 
-To customize a flow (available only with an **enterprise plan**), navigate to the Publish to Stores module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allows you to tailor the release process to fit your specific needs.
+To customize a flow (available only with an **enterprise plan**), open your Android publish profile in the Publish to Stores module and select **Manage publish flow** from the **...** menu next to the profile name. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allows you to tailor the release process to fit your specific needs.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows_v2.png' />
 

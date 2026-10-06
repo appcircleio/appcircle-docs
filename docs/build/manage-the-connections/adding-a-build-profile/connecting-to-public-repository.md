@@ -36,7 +36,7 @@ When you enter the profile after the build, the following screen will appear. Cl
 
 :::tip
 
-Clicking **Quick start using the sample repository** will also connect the relevant sample project with a public connection.
+Clicking **Start with a sample repository** will also connect the relevant sample project with a public connection.
 
 :::
 

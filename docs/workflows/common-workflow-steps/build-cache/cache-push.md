@@ -106,11 +106,11 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 ### Output Variables
 
-You cannot reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of the build pipeline from '[Download Artifacts](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) > `ac_cache.zip`'. Also, build logs have some useful information about the cache mechanism and how included and excluded paths are processed. You can see the produced cache file size from the build logs. (The size of the cache file affects upload and download durations.)
+You cannot reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of the build pipeline from the `ac_cache.zip` file in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list). Also, build logs have some useful information about the cache mechanism and how included and excluded paths are processed. You can see the produced cache file size from the build logs. (The size of the cache file affects upload and download durations.)
 
 :::caution
 
-To view the generated artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in the [workflow](/workflows) after this step.
+To view the generated artifacts in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in the [workflow](/workflows) after this step.
 
 :::
 

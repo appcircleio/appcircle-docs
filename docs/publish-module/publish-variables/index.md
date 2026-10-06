@@ -14,7 +14,7 @@ The **Publish Variables** section within the Publish to Stores module is a featu
 
 To use these defined variables, it will be necessary to select them from the [Publish Settings](/publish-to-stores-module/publish-settings/).
 
-Publish Variables are key-value pairs that can be used to store configuration settings, credentials, and other data required during the publish process. You can add new variables directly in the Publish Variables section without the need for an additional menu or button. You can also import or export publish variable groups in bulk from the three dots menu next to **Variable Groups**.
+Publish Variables are key-value pairs that can be used to store configuration settings, credentials, and other data required during the publish process. Create a group with the **Add variable group** button, select the group, and add variables to it with the **Key** and **Value** fields. You can also import or export publish variable groups in bulk from the three dots menu next to **Variable groups**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-20_v2.png' />
 
@@ -30,6 +30,7 @@ Publish Variables are key-value pairs that can be used to store configuration se
 
    - Choose the type of variable you're adding. Options typically include:
      - **Text**: for string or numeric values.
+     - **Secret**: for values that must stay hidden, such as passwords and tokens.
      - **File**: if you're assigning a file as the variable's value.
 
 3. **Add the Variable:**
@@ -62,7 +63,7 @@ You can edit encrypted variables by clicking the Edit option, just like text var
 
 You can export publish variable groups in bulk as a `.zip` file.
 
-To export variable groups, click on the three dots icon next to **Variable Groups** and select **Export Variable Group**.
+To export variable groups, click on the three dots icon next to **Variable groups** and select **Export variable group**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-21_v2.png' />
 
@@ -123,7 +124,7 @@ As seen in the example above;
 
 You can import publish variable groups in bulk using a `.zip` file.
 
-To import variable groups, click on the three dots icon next to **Variable Groups** and select **Import Variable Group**.
+To import variable groups, click on the three dots icon next to **Variable groups** and select **Import variable group**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-22_v2.png' />
 

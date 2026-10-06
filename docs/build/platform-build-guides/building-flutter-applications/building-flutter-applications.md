@@ -44,7 +44,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 ### Build Configuration for Flutter iOS applications
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
@@ -54,7 +54,7 @@ You can also select a specific Xcode version if you have certain dependencies or
 
 ### Build Configuration for Flutter Android applications
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-flutter-config-android_v2.png' />
 

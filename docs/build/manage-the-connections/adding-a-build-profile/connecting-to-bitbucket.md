@@ -190,7 +190,7 @@ If your existing connection is affected, you may need to complete a one-time upd
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8621-disconnect_v2.png' />
 
-In your build profile, click the **Connection** icon, then disconnect and reconnect the relevant Bitbucket Cloud repository using one of the following methods. For more information, see [Reconnect or Change Git Provider](/build/manage-the-connections/reconnect-change-provider).
+In your build profile, open the **...** menu next to the profile name and select **Source code**. Disconnect, then select **Reconnect** at the top of the build profile and reconnect the relevant Bitbucket Cloud repository using one of the following methods. For more information, see [Reconnect or Change Git Provider](/build/manage-the-connections/reconnect-change-provider).
 
 - **OAuth2 Connection:** Reconnect your Bitbucket connection in Appcircle to grant the required workspace access.
 - **API Token - User:** Regenerate your token and make sure it includes the permission required to list workspaces.

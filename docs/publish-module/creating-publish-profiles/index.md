@@ -14,10 +14,10 @@ After building the application, we can start the publishing process by sending i
 
 For this, it is necessary to first create a publish profile within the Publish to Stores module. Afterwards, the relevant publish profile must be selected from the **Distribution** tab in the configuration of the relevant profile in the Build module.
 
-In order to create a publish profile, click on the "Add New" button in the Publish to Stores module.
+To create a publish profile, click **Add new profile** on the **iOS publish** or **Android publish** page of the Publish to Stores module.
 
 :::info 
-If it's your first time, set up connections to the app stores under [API Integrations](/account/my-organization).
+If it's your first time, add your app store credentials in [Organization](/account/my-organization) > **Security** > **Store credentials**.
 :::
 
 ### Adding a New Publish Profile

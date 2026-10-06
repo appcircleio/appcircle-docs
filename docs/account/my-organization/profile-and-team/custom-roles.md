@@ -27,7 +27,7 @@ Custom Roles is currently in **Beta**. Behavior, available permissions, and the 
 
 ## Accessing Custom Roles
 
-1. Go to **My Organization > Profile and Team**.
+1. Go to **Organization** > **Profile and team**.
 2. Click the **⋮** menu in the top-right corner.
 3. Select **Custom Roles**.
 
@@ -62,8 +62,8 @@ The footer of the screen keeps a running summary, such as *"grants 5 scopes acro
 
 ## Assigning a custom role to a member
 
-1. Go to **My Organization > Profile and Team**.
-2. Find the member in **Team Management** and open their user management dialog.
+1. Go to **Organization** > **Profile and team**.
+2. Find the member in the members list, open the member's **...** menu, and select **Manage roles**.
 3. Under **Custom Roles**, check the role(s) you want to assign to that member. This can be combined with predefined, per-module roles (e.g. Manager, Operator, Viewer) lower down in the same dialog.
 4. Click **Save**.
 

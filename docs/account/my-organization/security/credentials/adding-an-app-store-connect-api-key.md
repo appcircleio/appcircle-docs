@@ -134,11 +134,11 @@ After generating the key, download the key file by pressing Download API Key nex
 
 ## Linking Appcircle with App Store Connect
 
-Adding a key to Appcircle is pretty easy. **Go to your organization** by selecting the bottom left button from the toolbar:
+To add a key to Appcircle, go to **Organization** > **Security** in the left sidebar:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss1_v2.png' />
 
-On the Organization screen, select **Add New** on **App Store Connect API Keys **list item**:**
+On the **Security** page, under **Store credentials**, select **App Store Connect API Keys** to open its side panel:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5765-api1_v2.png' />
 
@@ -175,8 +175,8 @@ Before using the App Store Connect Enterprise API Key, ensure that:
 
 Once the API key is generated, it must be added to Appcircle:
 
-1.	Navigate to the Organization module in Appcircle.
-2.	Click **Add New** next to the App Store Connect API Keys section under Credentials area.
+1.	Go to **Organization** > **Security** in Appcircle.
+2.	Under **Store credentials**, select **App Store Connect API Keys** to open its side panel.
 3.	Upload the downloaded .p8 file.
 4.	Enter the Key ID and Issuer ID obtained from App Store Connect.
 5.	Select the Enterprise API Key option for enterprise account integration.
@@ -194,9 +194,9 @@ Root Organization users have the ability to share their saved credentials with S
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-4_v2.png' />
 
-**1.**	Navigate to the Credentials Section
+**1.**	Navigate to the Store Credentials Section
 
-Go to My Organization > Security > Credentials.
+Go to **Organization** > **Security** > **Store credentials**.
 
 **2.** Open Manage Panel
 

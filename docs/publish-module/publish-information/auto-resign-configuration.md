@@ -16,7 +16,7 @@ The **Auto Re-sign** feature in Appcircle’s Publish to Stores module allows us
 
 ## Enabling Auto Re-sign
 
-To use the **Auto Re-sign** feature in the Appcircle Publish to Stores module, you need to enable the **Auto Re-sign** toggle within the Publish Settings section.
+To use the **Auto Re-sign** feature in the Appcircle Publish to Stores module, you need to enable the **Auto re-sign** toggle in the publish profile's **Settings**. To open **Settings**, select it from the **...** menu next to the profile name.
 
 :::caution Business Rule for Auto Publish and Auto Re-sign
 
@@ -30,7 +30,7 @@ Appcircle supports both **Auto Publish** and **Auto Re-sign** features. If both 
 
 ## Auto Re-sign Configuration
 
-To use Appcircle’s Auto Re-sign feature, you must first define a **configuration**. Appcircle will refer to this configuration for each automatic re-signing process and re-sign the incoming binary accordingly.
+To use Appcircle’s Auto Re-sign feature, you must first define a **configuration**. To do this, select **Auto re-sign configurations** from the **...** menu next to the profile name. Appcircle will refer to this configuration for each automatic re-signing process and re-sign the incoming binary accordingly.
 
 :::info Auto Re-sign
 

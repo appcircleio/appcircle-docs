@@ -11,12 +11,12 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Intune API key allows you to upload the binary file and metadata information to your Microsoft Intune account.
 
-Integration information for InTune can be added from the **Security** section under [**Appcircle Organization**](/account/my-organization).
+Integration information for Intune can be added from [**Organization**](/account/my-organization) > **Security**. Under **Store credentials**, select **Microsoft Intune API Keys** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneIntegration_v2.png' />
 
 
-After completing the required credentials information in the modal, your Microsoft InTune account is successfully integrated with Appcircle.
+After completing the required credentials information in the side panel, your Microsoft Intune account is successfully integrated with Appcircle.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneIntegrationModal_v2.png' />
 
@@ -48,8 +48,8 @@ Root Organization users have the ability to share their saved credentials with S
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-3_v2.png' />
 
-**1.**	Navigate to the Credentials Section
-Go to My Organization > Security > Credentials.
+**1.**	Navigate to the Store Credentials Section
+Go to **Organization** > **Security** > **Store credentials**.
 
 **2.** Open Manage Panel
 Click the respective credential type (e.g., App Store Connect API Keys) to view your saved credentials.

@@ -46,7 +46,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 ### Build Configuration for React Native iOS applications
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
@@ -62,13 +62,13 @@ Please don't forget to add additional scheme files to your version control.
 
 :::
 
-Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window. You can also set the preferred NodeJS version on this screen. If you don't set any version, `lts` version will be used.
+Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version on the **Config** tab of the build configuration. You can also set the preferred Node.js version in the **Node.js version** field on the same tab. If you don't set any version, `lts` version will be used.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-ios_v2.png' />
 
 ### Build Configuration for React Native Android applications
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-android_v2.png' />
 

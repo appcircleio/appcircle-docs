@@ -43,7 +43,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::info
 
-If you have filled in the required variables in the **Configuration** section, you will not need to redefine these variables again on the [**Workflows**](/workflows/). For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/configurations) document.
+If you have filled in **Modules** and **Variant** on the **Config** tab of the build configuration, you will not need to redefine these variables again on the [**Workflows**](/workflows/). For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/configurations) document.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_3_v2.png' alt="Configuration Image" />
 
@@ -64,7 +64,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 :::caution
 
-To view the Lint report on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps#export-build-artifacts) step is included in your **Workflow** after this step.
+To view the Lint report in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps#export-build-artifacts) step is included in your **Workflow** after this step.
 
 :::
 

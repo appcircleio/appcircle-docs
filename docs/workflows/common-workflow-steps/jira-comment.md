@@ -22,7 +22,7 @@ By adding Appcircle's [**Jira Comment**](https://github.com/appcircleio/appcircl
 Before using the **Jira Comment** step, make sure you have the following:
 
 - Credentials for your Jira instance: an API token and the associated account email for Jira Cloud, or a Personal Access Token (PAT) for Jira On-Prem.
-- An [**Environment Variables**](/build/build-environment-variables) group that holds those credentials, connected to your build profile. For security reasons, we recommend adding the token and the PAT as secret variables using the lock icon rather than entering them into the step inputs directly.
+- An [**Environment Variables**](/build/build-environment-variables) group that holds those credentials, connected to your build profile. For security reasons, we recommend adding the token and the PAT as secret variables rather than entering them into the step inputs directly. When you add each variable, select the **Secret** tab.
 - The key of the Jira issue to comment on, available to the step as an environment variable. See [Getting the Issue Key Dynamically](#getting-the-issue-key-dynamically) to extract it from the branch name.
 
 :::caution

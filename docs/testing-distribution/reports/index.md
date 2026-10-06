@@ -17,7 +17,7 @@ import CSVExport from '@site/docs/_csv-export.mdx';
 
 The Download Reports page provides visibility into application download activity within Testing Distribution. It helps organizations track which app versions have been downloaded, when the downloads occurred, and which devices and operating system versions were used.
 
-You can access Download Reports from the **Testing Distribution > Download Reports** section.
+To open the Download Reports page, go to **Testing Distribution** > **Download report** in the left sidebar.
 
 ## Overview
 

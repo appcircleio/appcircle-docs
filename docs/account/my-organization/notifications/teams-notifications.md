@@ -76,7 +76,7 @@ In order to get notifications, the administrator of the channel should add an in
 
 ### Connecting Appcircle to Microsoft Teams
 
-An Appcircle organization can be associated with a single Teams channel. To start, go to [My Organization](/account/my-organization) > Notifications screen and press the "Connect" button next to Microsoft Teams under the "Notification Providers" section.
+An Appcircle organization can be associated with a single Teams channel. To start, go to [Organization](/account/my-organization) > **Notifications**. Under **Chat integrations**, select **Microsoft Teams** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/integrations-teams_v2.png' />
 
@@ -212,7 +212,7 @@ Notifications for binary re-sign actions throughout each supporting module.
 
 ## Disconnecting Microsoft Teams
 
-If you want to disconnect or reauthorize the Microsoft Teams connection, scroll down to the end of the management screen and press the "Disconnect" button.
+If you want to disconnect or reauthorize the Microsoft Teams connection, open the **Microsoft Teams** side panel, scroll down to the end, and select **Disconnect**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure5_v2.png' />
 

@@ -12,7 +12,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### Creating environment variable groups
 
-To create an environment variable group, select Environment Variables from the build module. Click on the orange **...** icon and select '**Add Variable Group**'. Then, enter the name of the group into the input box, and press Enter to create the group.
+To create an environment variable group, select Environment Variables from the build module. Click **Add variable group**. Then, enter the name of the group into the input box, and press Enter to create the group.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-6_v2.png' />
 
@@ -26,7 +26,7 @@ You can add as many environment variables as you need.
 
 :::info
 
-Variables that need to be secret can be hidden using the lock icon. Such variables cannot be viewed by the users during the build process.
+To keep a variable secret, select the **Secret** tab when you add the variable (variable types are **Text**, **Secret** and **File**). Such variables cannot be viewed by the users during the build process.
 
 :::
 
@@ -60,7 +60,7 @@ You can edit encrypted variables by clicking the Edit option, just like text var
 
 You can export environment variable groups in bulk as a `.zip` file.
 
-To export variable groups, click on the three dots icon next to **Variable Groups** and select **Export Variable Group**.
+To export variable groups, click on the three dots icon next to **Variable groups** and select **Export variable group**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-8_v2.png' />
 
@@ -123,7 +123,7 @@ As seen in the example above;
 
 You can import environment variable groups in bulk using a `.zip` file.
 
-To import variable groups, click on the three dots icon next to **Variable Groups** and select **Import Variable Group**.
+To import variable groups, click on the three dots icon next to **Variable groups** and select **Import variable group**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-7_v2.png' />
 
@@ -189,7 +189,7 @@ After sharing:
 
 Environment variable groups can be used in builds to extend the workflow and add additional actions to workflow steps.
 
-To add an environment variable group to a build, go to the build profile from the build module and select _Build Configuration > Env. Variables_
+To add an environment variable group to a build, open the build profile from the **Build** module, select **Configurations** at the top right of the build profile, open the configuration, and go to the **Environment** tab.
 
 Here, you can see a list of previously created environment variable groups. Select the groups you want to be included in this specific build profile. Then click Save to save your selection.
 

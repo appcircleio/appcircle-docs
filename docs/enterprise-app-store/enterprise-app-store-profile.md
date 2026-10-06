@@ -25,7 +25,7 @@ Uploading binaries to the Enterprise App Store is an important step in managing 
 
 ### Manual Binary Upload
 
-- If no profile has been created before, the following screen will be displayed. The **Add New App** button should be clicked to open the upload panel.
+- If no profile has been created before, the following screen will be displayed. Select **Add a new app** to open the upload panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-upload1_v2.png' />
 
@@ -108,8 +108,8 @@ Several key actions are available within the Enterprise App Store to manage and 
 #### 1. **Open**
 The "Open" action allows entry into a specific profile, providing access to all details and settings associated with that profile. By selecting "Open" the apps, binaries, and configurations linked to the profile can be viewed and managed.
 
-#### 2. **Pin**
-The "Pin" action allows a profile to be prioritized by pinning it to the top of the profile list. When a profile is pinned, it remains easily accessible, especially when multiple profiles are managed. This action is particularly useful for frequently accessed profiles, ensuring they stay at the forefront of the workflow.
+#### 2. **Pin Profile**
+The "Pin Profile" action allows a profile to be prioritized by pinning it to the top of the profile list. When a profile is pinned, it remains easily accessible, especially when multiple profiles are managed. This action is particularly useful for frequently accessed profiles, ensuring they stay at the forefront of the workflow.
 
 #### 3. **Delete**
 The "Delete" action results in the permanent removal of a profile from the Enterprise App Store. Once a profile is deleted, all associated data, including uploaded binaries and settings, is also erased.
@@ -124,13 +124,13 @@ Unlike profiles from other modules within Appcircle, Enterprise App Store profil
 
 After the profile has been created, it should be configured and sent to different users and channels.
 
-Profile information can be accessed, and users can be added to grant them access to the Live and Beta channels by clicking the **Settings** button.
+To view profile information and add users who can access the Live and Beta channels, open the **...** menu next to the profile name and select **Settings**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-1_v2.png' />
 
 ### Config
 
-The Profile ID can be copied from the Info tab by clicking the copy icon located on the right side of the displayed ID.
+The profile ID is shown as **Enterprise App Store profile ID** in the **Config** tab. Select the ID and copy it.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-41_v2.png" />
 
@@ -142,7 +142,7 @@ For more information, please visit [In-App Updates](/enterprise-app-store/in-app
 
 ### Enterprise Portal
 
-You can use the Enterprise Portal settings tab to manage Portal related configurations of your Enterprise App Store profile.
+You can use the **Portal** tab in **Settings** to manage Portal related configurations of your Enterprise App Store profile.
 
 #### Show on Top
 
@@ -192,12 +192,12 @@ Uploaded binaries without metadata from a build module won’t show the selected
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-43_v2.png' />
 
-Binary tags can be managed through the Enterprise App Store Profile Settings under the Info tab:
+Binary tags can be managed through the Enterprise App Store Profile Settings under the **Portal** tab:
 1. Navigate to **Enterprise App Store** module.
 2. Select the relevant profile.
-3. Click the **Settings** icon.
-4. Under the **Info** tab, locate the **Binary Tags** section.
-5. Use the “Add a new tag” field to enter or select tags.
+3. Open the **...** menu next to the profile name and select **Settings**.
+4. Under the **Portal** tab, locate the **Binary tags** section.
+5. Open the **Binary tags** drop-down list and select the tags.
 6. Click **Save** to apply changes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-45_v2.png' />
@@ -249,8 +249,8 @@ Once published, these versions can be accessed via direct links or QR codes, fac
 
 To retrieve the direct links or QR codes for published app versions, follow these steps:
 
-- In the selected app profile, go to the Settings section.
-- Click on the Links tab to view the available Beta and Live channel links.
+- In the selected app profile, open the **...** menu next to the profile name and select **Settings**.
+- Click on the **Distribution links** tab to view the available Beta and Live channel links.
 - If the app version is published to either the Beta or Live channels, the corresponding direct link and QR code will be displayed.
 - Click the Copy button next to the link to copy it for sharing. Alternatively, you can use the QR code image to access via mobile devices.
 
@@ -324,7 +324,7 @@ When publishing an app version to either Beta or Live channels, you can enable t
 
 If enabled, the app version will not be displayed in the Enterprise Portal App List.
 
-You can access the app version only through a direct link, which can be obtained from the Profile Settings > [Links](/enterprise-app-store/enterprise-app-store-profile#distribution-links) section.
+You can access the app version only through a direct link, which can be obtained from the Profile Settings > [Distribution links](/enterprise-app-store/enterprise-app-store-profile#distribution-links) tab.
 
 Other applications published in the Enterprise Portal will not be visible to users accessing via this unlisted link. You can always use the main Enterprise Portal link which is located within the [Portal settings](/enterprise-app-store/portal-settings#store-domain), in order to access the rest of the app list.
 

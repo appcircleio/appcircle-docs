@@ -19,9 +19,9 @@ Only the name has changed, and all functionality remains the same.
 
 ## Generating/Managing the Personal Access Keys
 
-To generate a Personal Access Key, go to the [My Organization](/account/my-organization/profile-and-team/organization-management) screen in the Appcircle dashboard. After that, find the Security section from the left side menu. The Personal Access Key section is located on the bottom right.
+To generate a Personal Access Key, go to [Organization](/account/my-organization/profile-and-team/organization-management) > **Security** in the left sidebar of the Appcircle dashboard and find the **Personal access key** section.
 
-Press the "Generate Key" button to generate your first key.
+Select **Generate key** to generate your first key.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-1_v2.png' alt="Generate Personal Access Key"/>
 

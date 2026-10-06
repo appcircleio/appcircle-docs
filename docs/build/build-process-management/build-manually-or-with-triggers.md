@@ -19,7 +19,7 @@ For the manual builds, the currently available push triggers apply, and if no tr
 
 ## Triggers Configuration
 
-To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
+To set up or manage the build triggers, click the **Triggers** button at the top right of the build profile details.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-trigger_v2.png' />
 
@@ -51,7 +51,7 @@ Depending on how your Git provider is connected to Appcircle, the webhook setup 
 
 For repositories connected through SSH, you can set up triggers with webhooks in compatible repository providers.
 
-When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.
+When you connect a repository through SSH or through a public URL, the **Webhooks** option will be enabled in the **...** menu next to the build profile name, at the top of the profile details.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-ssh1_v2.png' />
 
@@ -63,9 +63,9 @@ To manually configure a webhook:
 
 **1.**	Go to your build profile.
 
-**2.**	Click the Webhook icon and select Repository Webhook URL.
+**2.**	Open the **...** menu next to the profile name and select **Webhooks**.
 
-**3.**	In the Repository Webhook URL popup:
+**3.**	In the **Webhooks** dialog:
 
 - **Select a Git Provider**:
   If the Git provider is detected, a compatible URL will be displayed automatically. If not, choose your Git provider (e.g., GitHub, GitLab, Bitbucket) from the dropdown list.
@@ -84,7 +84,7 @@ https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATI
 **4.**	Paste the Webhook URL in your Git repository.
 
 :::info
-**The Selected Git Provider** option on the **Webhook Configuration** screen is only available for repositories connected via **SSH** or **Public URL**.
+**The Selected Git Provider** option in the **Webhooks** dialog is only available for repositories connected via **SSH** or **Public URL**.
 
 If your repository is connected using GitHub, GitLab, Bitbucket or Azure Devops App integrations, this selection will not appear since webhooks are automatically managed.
 :::
@@ -222,7 +222,7 @@ You can also use[ appcircle-cli](/appcircle-api-and-cli) to trigger your builds 
 
 ## Managing Triggers for Builds
 
-To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
+To set up or manage the build triggers, click the **Triggers** button at the top right of the build profile details.
 
 ### Auto build on every push
 

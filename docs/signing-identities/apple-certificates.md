@@ -43,7 +43,7 @@ You can obtain your developer certificates and provisioning profiles from the Ap
 
 With Appcircle’s advanced Signing Identity module, you can easily generate certificates without logging into your Apple Developer account and securely store these certificates in  `.P12` format within the Appcircle.
 
-- To do this, navigate to the Apple Certificates section within the Signing Identity module. Then, using the Add New button, you can create a certificate.
+- To do this, navigate to the Apple Certificates section within the Signing Identity module. Then click **Add new** to create a certificate.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-appCertMainPagev2.png' />
 

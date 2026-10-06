@@ -108,9 +108,9 @@ To enable the policy:
 
 Build profiles that use the deprecated **Azure DevOps Cloud** connection lose access to their repositories when Microsoft removes Azure DevOps OAuth. Reconnect each of these build profiles with **Azure DevOps Entra ID** to avoid build interruptions.
 
-1. Open the build profile, and then select **Connection Settings**.
+1. Open the build profile, open the **...** menu next to the profile name, and then select **Source code**.
 2. Select **Disconnect**, and then confirm.
-3. Select **Reconnect** next to **Connection Settings**.
+3. Select **Reconnect** at the top of the build profile.
 4. Select **Azure**, and then select **Azure DevOps Entra ID** under **Create a New Azure DevOps Services Connection**.
 5. Sign in with your Microsoft Entra ID account, select the same repository, and then select **Save**.
 

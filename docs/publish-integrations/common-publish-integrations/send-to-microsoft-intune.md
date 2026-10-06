@@ -26,7 +26,7 @@ To send an app from Appcircle to Microsoft Intune, you need to register an appli
   Adding Microsoft Intune API Credentials
 </ContentRef>
 
-After completing the integration with Microsoft Intune, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list. Then, click on the **Save** button.
+After completing the integration with Microsoft Intune, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list. Then, click on the **Save** button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5766-Publish-intune-settings2_v2.png' />  
 

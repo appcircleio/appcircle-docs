@@ -17,7 +17,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Auth Activity Log provides visibility into authentication-related actions performed within your organization. It helps organization owners and authorized members monitor user access activity, including logins, logouts, and organization switches.
 
-You can access the Auth Activity Log by navigating to **My Organization > Auth Activity Log**.
+To open the Auth Activity Log, go to **Organization** > **Auth activity log** in the left sidebar.
 
 ## Overview
 

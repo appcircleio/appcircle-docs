@@ -41,7 +41,7 @@ Please note that the **CocoaPods Install** step uses the default system [**Cocoa
 
 :::danger
 
-Remember, if the project extension is not **.xcworkpace**, the pod install step will not work as expected. In the Configuration tab, make sure that the extension in the project path is **.xcworkspace**.
+Remember, if the project extension is not **.xcworkpace**, the pod install step will not work as expected. On the **Config** tab of the build configuration, make sure that the selected project or workspace path ends with **.xcworkspace**.
 
 :::
 

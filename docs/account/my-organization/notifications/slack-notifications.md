@@ -21,7 +21,7 @@ There is currently no Slack integration available on the self-hosted Appcircle. 
 
 ### Connecting Appcircle to Slack
 
-An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](/account/my-organization) > Notifications screen and press the **Connect** button next to Slack under the **Notification Providers** section.
+An Appcircle organization can be associated with a single Slack workspace. To start, go to [Organization](/account/my-organization) > **Notifications**. Under **Chat integrations**, select **Slack** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack1_v2.png' />
 
@@ -29,7 +29,7 @@ Provide permission to the Appcircle app on Slack so that the channel list can be
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (65).png' />
 
-You will then see that Slack is connected. To manage the notification settings or to disconnect, press the "Manage" button.
+You will then see that Slack is connected. To manage the notification settings or to disconnect, select **Slack** again to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack-manage_v2.png' />
 
@@ -183,6 +183,6 @@ Notifications for binary re-sign actions throughout each supporting module.
 
 ## Disconnecting Slack
 
-If you want to disconnect or reauthorize the Slack connection, scroll down to the end of the management screen and press the "Disconnect" button.
+If you want to disconnect or reauthorize the Slack connection, open the **Slack** side panel, scroll down to the end, and select **Disconnect**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be3113-slack2_v2.png' />

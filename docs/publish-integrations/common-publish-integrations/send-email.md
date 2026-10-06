@@ -74,7 +74,7 @@ For more information, please refer to the [Publish Variables](/publish-to-stores
 
 ### Selecting Environment Variables
 
-After creating the environment variables, you will need to select this variable group from your profile settings.
+After creating the environment variables, select this variable group in your profile settings: open the **...** menu next to the publish profile name, select **Settings**, and select the group under **Publish variables**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email5_v2.png' />
 

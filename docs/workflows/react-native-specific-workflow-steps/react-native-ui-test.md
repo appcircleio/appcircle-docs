@@ -52,7 +52,7 @@ If your **CocoaPods** dependencies are **embedded** in the project, you do not n
 
 :::danger React Native UI Test for Android
 
-For Appcircle **Cloud**, you need to use **Appcircle Linux Pool (x86_64)** to run your UI tests on the Android platform. Since **Appcircle Standard macOS Pool (arm64)** is based on **Apple Silicon's virtualization** technology, it does not support running Android emulators. If your organization has **self-hosted pools**, you can choose and use any pool that has bare-metal machines or VMs that support nested virtualization. For more information, please follow the [**Build Configuration**](/build/build-process-management/configurations) and [**Android Build Infrastructure**](/infrastructure/android-build-infrastructure) documentations.
+For Appcircle **Cloud**, you need to use **Appcircle Linux pool (x86_64)** to run your UI tests on the Android platform. Since **Appcircle macOS pool (arm64)** is based on **Apple Silicon's virtualization** technology, it does not support running Android emulators. If your organization has **self-hosted pools**, you can choose and use any pool that has bare-metal machines or VMs that support nested virtualization. For more information, please follow the [**Build Configuration**](/build/build-process-management/configurations) and [**Android Build Infrastructure**](/infrastructure/android-build-infrastructure) documentations.
 
 :::
 
@@ -110,7 +110,7 @@ For more information, please visit [**Continuous Testing**](/continuous-testing/
 
 :::info How to Download Screen Shots
 
-The Appcircle interface does **not** support displaying screenshots generated from UI tests in React Native projects. All screenshots created as a result of these tests are exported to [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) as `test_attachments.zip`. You can access the relevant screenshots in **Download Artifact** and download them directly.
+The Appcircle interface does **not** support displaying screenshots generated from UI tests in React Native projects. All screenshots created as a result of these tests are exported to the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts) side panel as `test_attachments.zip`. To get them, open the build's **...** menu in the build list, select **Download artifacts**, and download `test_attachments.zip`.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/downloadAttachments.png' />
 
@@ -118,7 +118,7 @@ The Appcircle interface does **not** support displaying screenshots generated fr
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+To view the output artifacts in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts) side panel, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
 
 :::
 

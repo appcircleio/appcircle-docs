@@ -45,7 +45,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 ### Output Variables
 
-This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts).
+This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-output_v2.png' />
 

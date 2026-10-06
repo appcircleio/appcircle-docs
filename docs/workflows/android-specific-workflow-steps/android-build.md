@@ -38,7 +38,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::info
 
-If you have filled in the necessary variables in the **Configuration** section, you will not need to redefine these variables again in the Workflow. For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/configurations) document. The information you fill in the configuration will be used as input in the Android Build step. Please replace the example information with your own details:
+If you have filled in **Modules**, **Variant** and **Output type** on the **Config** tab of the build configuration, you will not need to redefine these variables again in the Workflow. For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/configurations) document. The information you fill in the configuration will be used as input in the Android Build step. Please replace the example information with your own details:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_1_v2.png' alt="Configuration Image" />
 

@@ -55,9 +55,9 @@ However, you can connect an instance with that name for GitLab or Bitbucket Serv
 
 ### Connection Settings for Multiple Instances
 
-When we connect a repository using PAT (Personal Access Token) on multiple instances, you can use the "Connection Settings" button to view the PAT information and change the PAT information if there is a previously defined connection.
+When we connect a repository using PAT (Personal Access Token) on multiple instances, you can open the **...** menu next to the build profile name and select **Source code** to view the PAT information and change the PAT information if there is a previously defined connection.
 
-When we connect a repository using PAT over multiple instances, the user email and PAT list appear in the "Connection Settings".
+When we connect a repository using PAT over multiple instances, the user email and PAT list appear in the connection panel that opens from **Source code**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3_v2.png' />
 

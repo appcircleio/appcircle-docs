@@ -56,7 +56,7 @@ If a step other than the **Android Build** step is used to build an app, then th
 
 :::danger
 
-To share the signed apps created as an output of this step or to view them on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+To share the signed apps created as an output of this step or to view them in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 

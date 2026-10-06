@@ -25,7 +25,7 @@ You also need to have an AppGallery Connect API and its key as a JSON file. Plea
   Adding Huawei AppGallery API Key
 </ContentRef>
 
-After completing the integration with Huawei AppGallery API Key, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Huawei AppGallery API Key you uploaded, from the drop-down list.
+After completing the integration with Huawei AppGallery API Key, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Huawei AppGallery API Key you uploaded, from the drop-down list.
 
 If you are using [Publish Variables](/publish-to-stores-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-to-stores-module/publish-settings) window.
 

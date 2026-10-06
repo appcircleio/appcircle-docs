@@ -30,7 +30,7 @@ Appcircle's Testing Distribution module allows you to distribute your applicatio
 
 ## Creating a Profile
 
-Select the Testing Distribution from the left and click on the Add New button. Give a name to your distribution profile.
+Select **Testing Distribution** > **Profiles** from the left menu and click **New profile**. Give a name to your distribution profile.
 
 :::info
 
@@ -89,7 +89,7 @@ The Distribution Profile can be renamed by following these steps:
 The Distribution Profile can be pinned by following these steps:
 
 - Click on the three dot on the top right of the profile menu.
-- Click `Pin Item`.
+- Click `Pin`.
 
 Pinned profiles will stand out by appearing first in the list, making them easily accessible and distinguishable from the rest of the profiles. A pin icon will also be displayed on their profile card.
 
@@ -190,7 +190,7 @@ To get more information, please refer to our [API & CLI](/appcircle-api-and-cli)
 
 ## Settings
 
-The settings of your distribution profile can be customized. Click on the three dot (...) option on the top right corner, then click the settings button within the profile.
+The settings of your distribution profile can be customized. Open the **...** menu next to the profile name and select **Settings**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-3_v2.png' />
 
@@ -373,7 +373,7 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-10_v2.png' />
 
-To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
+To add your SSO and LDAP details, go to [Organization](/account/my-organization) > **Security**. Under **Authentication**, select **Testing Portal SSO login** or **Testing Portal LDAP login** to open its side panel.
 
 <ContentRef url="/account/my-organization/security/authentications/distribution-sso-authentication">SSO Login</ContentRef>
 <ContentRef url="/account/my-organization/security/authentications/distribution-ldap-authentication">LDAP Login</ContentRef>

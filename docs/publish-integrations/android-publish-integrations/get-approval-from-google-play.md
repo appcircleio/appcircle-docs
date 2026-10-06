@@ -37,7 +37,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
 
 :::info
 

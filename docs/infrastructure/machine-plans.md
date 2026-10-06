@@ -15,10 +15,6 @@ By default, all users are on the **Standard** plan, which is suitable for regula
 
 Users can view their current machine plan from:
 
-- **Build Configurations**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-1.png'/>
-
 - **Build Logs**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7131-3_v2.png'/>
@@ -27,7 +23,7 @@ Users can view their current machine plan from:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7131-7_v2.png'/>
 
-- **Billing Page**
+- **Billing** (**Organization** > **Billing**)
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7131-4_v2.png'/>
 

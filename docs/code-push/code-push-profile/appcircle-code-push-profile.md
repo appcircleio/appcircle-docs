@@ -14,7 +14,7 @@ This section explains how to create and manage a CodePush profile in Appcircle t
 
 ## Creating CodePush Profile
 
-To use CodePush in your project, you must first create a CodePush profile in Appcircle, which links your application to the update delivery system. In Appcircle, click the `Add New` button to create a new CodePush profile and assign a name to it.
+To use CodePush in your project, you must first create a CodePush profile in Appcircle, which links your application to the update delivery system. In Appcircle, go to **Build** > **CodePush** and click **New profile** to create a new CodePush profile, then assign a name to it.
 
 :::info CodePush Profile Name
 

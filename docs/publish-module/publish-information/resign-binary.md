@@ -204,7 +204,7 @@ To re-sign a binary, follow these steps:
 
 1. **Select the Version**: Choose the version of your app you wish to resign from the **Version List** in the Publish to Stores module.
 2. **Configure Re-signing Options**: Navigate to the **Re-sign Binary** action and configure the necessary fields such as the provisioning profile, entitlements, and other settings.
-3. **Sign the Binary**: After configuring, click the **Sign** button to re-sign the binary. This process will create a new package with the updated provisioning profile and entitlements.
+3. **Re-sign the Binary**: After configuring, click the **Re-sign** button to re-sign the binary. This process will create a new package with the updated provisioning profile and entitlements.
 
 ### Post-Resignation
 
@@ -330,7 +330,7 @@ When you opt to resign an Android binary:
 2. **Version Name & Code**: Adjust the version name and code if necessary. This helps in maintaining versioning integrity across different release channels.
 3. **Keystores**: Select the keystore you wish to use for re-signing the binary. This could be a newly added keystore or one previously used in other projects.
 
-After configuring the necessary options, click the **Sign** button to start the re-signing process.
+After configuring the necessary options, click the **Re-sign** button to start the re-signing process.
 
 ### Post-Resignation
 

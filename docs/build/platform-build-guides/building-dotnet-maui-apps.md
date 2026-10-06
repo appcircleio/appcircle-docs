@@ -41,7 +41,7 @@ You can disable the **Autofill** toggle or ignore the output of **Autofill** run
 
 :::info
 
-As of now, Appcircle does not have a sample repository for .NET MAUI apps. So the **quick start using the sample repository** option will not work for .NET MAUI build profiles. You should use your own repository.
+As of now, Appcircle does not have a sample repository for .NET MAUI apps. So the **Start with a sample repository** option will not work for .NET MAUI build profiles. You should use your own repository.
 
 :::
 
@@ -69,7 +69,7 @@ Keep in mind that, in order to switch to the selected Xcode version in the build
 
 :::caution
 
-The selected pool in the **SELECT A POOL** list should be the `Appcircle Standard macOS Pool (arm64)` for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
+The pool selected in the **Organization pool** field should be **Appcircle macOS pool (arm64)** for the Appcircle Cloud or a pool that has **`arm64`** macOS runners for the self-hosted Appcircle.
 
 Intel-based runners are not supported or documented as of now, and you might need extra customizations done in the custom scripts.
 
@@ -169,7 +169,7 @@ You can disable the **Autofill** toggle or ignore the output of **Autofill** run
 
 :::info
 
-As of now, Appcircle does not have a sample repository for .NET MAUI apps. So the **quick start using the sample repository** option will not work for .NET MAUI build profiles. You should use your own repository.
+As of now, Appcircle does not have a sample repository for .NET MAUI apps. So the **Start with a sample repository** option will not work for .NET MAUI build profiles. You should use your own repository.
 
 :::
 

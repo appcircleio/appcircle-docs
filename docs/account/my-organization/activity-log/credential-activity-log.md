@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Credential Activity Log provides visibility into all store credential operations performed within your organization. It helps Organization Owners and authorized members monitor credential-related activities, including credential creation, updates, deletion, sharing, and permission changes.
 
-You can access the Credential Activity Log by navigating to **My Organization > Credential Activity Log**.
+To open the Credential Activity Log, go to **Organization** > **Credential activity log** in the left sidebar.
 
 :::info
 Organization Owners can also monitor credential activities performed within their Sub-Organizations.

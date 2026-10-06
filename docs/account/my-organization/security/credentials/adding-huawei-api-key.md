@@ -43,7 +43,7 @@ Huawei AppGallery API Key is required to upload your binary to Huawei AppGallery
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/huaweiaccount-3downloadkey.png' />
 
-Your account key is ready. To add a key, go to [My Organization](/account/my-organization) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Huawei AppGallery API Keys" item under the Credentials section.
+Your account key is ready. To add a key, go to [Organization](/account/my-organization) > **Security** and select **Huawei AppGallery API Keys** under **Store credentials** to open its side panel.
 
 ## Sharing Huawei AppGallery Credentials
 
@@ -53,8 +53,8 @@ Root Organization users have the ability to share their saved credentials with S
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-2_v2.png' />
 
-**1.**	Navigate to the Credentials Section
-Go to My Organization > Security > Credentials.
+**1.**	Navigate to the Store Credentials Section
+Go to **Organization** > **Security** > **Store credentials**.
 
 **2.** Open Manage Panel
 Click the respective credential type (e.g., App Store Connect API Keys) to view your saved credentials.

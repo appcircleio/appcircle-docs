@@ -35,7 +35,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::info
 
-If the required variables are already defined in the **Configuration** section, there is no need to redefine them in the Workflow. For more details, see the [Build Profile Configuration Overview](/build/build-process-management/configurations). The details you provide in the configuration will serve as input for the **Android Build** step. Kindly substitute the example information with your details:
+If the required values are already set on the **Config** tab of the build configuration, there is no need to redefine them in the Workflow. For more details, see the [Build Profile Configuration Overview](/build/build-process-management/configurations). The details you provide in the configuration will serve as input for the **Android Build** step. Kindly substitute the example information with your details:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_3_v2.png'/>
 

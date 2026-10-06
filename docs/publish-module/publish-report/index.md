@@ -18,11 +18,12 @@ The Publish Report provides a detailed overview of all actions performed within 
 
 These are the displayed fields within the Publish Report:
 
-- Org Name
+- Organization
 - Profile Name
 - App Name
 - Version
 - Version Code
+- Publish Status
 - Initiated By
 - Trigger Type
 - Platform

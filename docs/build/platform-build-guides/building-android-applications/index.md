@@ -24,7 +24,7 @@ When you are done with the steps above, you can now start building your Android 
 
 ### Build Configuration
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 ### Private Modules
 
@@ -164,7 +164,7 @@ For the autofill, we have two options to choose from.
 
 You can add the `org.gradle.java.home` entry to the `gradle.properties` file in your Android project.
 
-For example, the below entry can be used to change the default Java version to 17 for the "Appcircle Standard macOS Pool (arm64)".
+For example, the below entry can be used to change the default Java version to 17 for the "Appcircle macOS pool (arm64)".
 
 ```properties
 org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu
