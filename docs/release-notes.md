@@ -18,6 +18,23 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ## 3.34.0 - 2026-09-04 Custom Role Mapping for SSO/LDAP, Certificate Auto Renewal, Bug Fixes and more
 
+<!-- DEMO ONLY: 3.34.1 and 3.34.2 below are dummy patch notes for the patch release layout prototype. Do not merge. -->
+
+<PatchRelease latest="3.34.2">
+
+### 3.34.2 - 2026-10-02
+
+- <FixTag/> An issue has been fixed where the branch list placed branches without commits above recently updated ones. <BuildBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where testers with the `Unsubscribed` status were counted as failed in distribution reports. <DistributionBadge/> <CloudBadge/>
+
+### 3.34.1 - 2026-09-18
+
+- <FixTag/> An issue has been fixed where automatic certificate renewal did not start for certificates uploaded before 3.34.0. <SigningIdentitiesBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where custom roles from SSO group mapping were applied only after the user signed in again. <AccountBadge/> <CloudBadge/>
+- <ImprovementTag/> [Build Failure Analysis](/appcircle-ai/ai-features-on-appcircle/build-failure-analysis) now names the failing workflow step in its summary. <CloudBadge/>
+
+</PatchRelease>
+
 ### 🆕 New Features
 
 - Custom roles can now be assigned automatically through SSO/LDAP group mapping and granted to API keys, so permissions no longer have to be managed per user. <AccountBadge/> <CloudBadge/>

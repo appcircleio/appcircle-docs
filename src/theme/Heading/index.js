@@ -6,7 +6,8 @@ export default function HeadingWrapper(props) {
   const location = useLocation();
   const isReleaseNotesPage = location.pathname === '/release-notes';
   
-  if (isReleaseNotesPage && props.as === 'h2') {
+  // h3 covers patch releases nested under their parent release
+  if (isReleaseNotesPage && (props.as === 'h2' || props.as === 'h3')) {
     const headingText = React.Children.toArray(props.children)
       .filter(child => typeof child === 'string')
       .join('');
