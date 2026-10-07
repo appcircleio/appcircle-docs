@@ -82,9 +82,11 @@ From now on, you will follow same installation steps seen below as other environ
 
 :::caution
 
-#### macOS VM for iOS builds
+#### macOS VM
 
-Installing Xcode through the runner is no longer supported for Xcode 16 and later. For iOS builds, use the ready-to-use macOS VM image, which comes with Xcode versions preinstalled. It can be run on macOS Sequoia or Tahoe `arm64` hosts according to the guest macOS version.
+Appcircle provides a ready-to-use macOS VM image that comes with both iOS (Xcode) and android build tools preinstalled, so it can run both iOS and android builds. It can be run on macOS Sequoia or Tahoe `arm64` hosts according to the guest macOS version.
+
+Installing Xcode through the runner is no longer supported for Xcode 16 and later, so iOS builds require the macOS VM image.
 
 See details in [here](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup).
 

@@ -4,7 +4,7 @@ You need to install some workflow required build tools once before executing any
 
 Installing Xcode through the runner is no longer supported for Xcode 16 and later. The `-o ios` platform option and the `-x` Xcode argument only cover Xcode 15.4 and earlier, which can't be used to submit apps to the App Store.
 
-For iOS builds, use the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) instead. It comes with Xcode versions preinstalled, so you don't need to install any iOS build tools on the runner.
+For iOS builds, use the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) instead. It comes with both iOS (Xcode) and android build tools preinstalled, so it can run both iOS and android builds without installing any build tools on the runner.
 
 :::
 

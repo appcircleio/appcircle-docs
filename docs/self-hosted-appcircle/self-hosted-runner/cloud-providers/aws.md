@@ -23,7 +23,7 @@ By following the steps below, you will create a dedicated host, Sequoia macOS, f
 
 Installing Xcode through the runner is no longer supported for Xcode 16 and later, so a runner installed directly on the EC2 Mac instance can't produce App Store-eligible iOS builds.
 
-For iOS builds, use the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) with Xcode versions preinstalled. It requires a macOS Sequoia or later Apple silicon host.
+For iOS builds, use the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) instead. It comes with both iOS (Xcode) and android build tools preinstalled, so it can run both iOS and android builds. It requires a macOS Sequoia or later Apple silicon host.
 
 :::
 
