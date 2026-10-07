@@ -28,6 +28,14 @@ Here are some reasons for choosing VM image for self-hosted runner;
 
 In order to use macOS VM, we need to install some dependencies on macOS host.
 
+:::caution Apple silicon only
+
+The macOS VM runs on Apple's Virtualization framework, which supports macOS guests only on Apple silicon (M-series) Macs. Intel-based Macs can't be used as a host.
+
+Xcode 27 and later also run only on Apple silicon, so Intel Macs are no longer an option for iOS builds either.
+
+:::
+
 ### 1. Install Homebrew
 
 Script explains what it will do, follow instructions on there.
@@ -1106,12 +1114,12 @@ Edit `appsettings.json` with your favorite editor. (nano, vi etc.)
 
 :::tip
 
-The latest macOS VM image,`macOS_240221` or later, has the ASPNETCORE_NOSHUTDOWN setting as `false` by default and has no pre-defined ASPNETCORE_BASE_API_URL setting in the `appsettings.json` file.
+All listed macOS VM images have the ASPNETCORE_NOSHUTDOWN setting as `false` by default and have no pre-defined ASPNETCORE_BASE_API_URL setting in the `appsettings.json` file.
 
 So, if you did not upgrade the packaged self-hosted runner at [previous steps](#1-check-the-runner-version) above, only modifying the ASPNETCORE_BASE_API_URL value with the following command should be enough for the configuration up-to-here.
 
 ```bash
-echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.test-appcircle.tool.zb/build/v1"' appsettings.json)" > appsettings.json
+echo "$(jq '.ASPNETCORE_BASE_API_URL="https://api.appcircle.spacetech.com/build/v1"' appsettings.json)" > appsettings.json
 ```
 
 If you upgraded the self-hosted runner, you must also modify the ASPNETCORE_NOSHUTDOWN setting as well.
@@ -1250,7 +1258,7 @@ local  vm02         130
 
 ### Prerequisites
 
-We need to create two seperate folders for two runners. These will be their working directories on runtime.
+We need to create two separate folders for two runners. These will be their working directories on runtime.
 
 Create folder for "runner1".
 
@@ -1642,10 +1650,10 @@ For instance, we have an instance for "runner2" seen below.
 ```bash
 % tart list
 Source Name                                      Size
-local  macOS_230309                              187
-local  vm01                                      140
-local  vm02                                      140
-local  vm02-3a003bce-a2ee-4ae7-9500-7754e181c314 125
+local  macOS_260914                              167
+local  vm01                                      130
+local  vm02                                      130
+local  vm02-3a003bce-a2ee-4ae7-9500-7754e181c314 130
 ```
 
 Remove dangling "runner2".
@@ -1732,13 +1740,17 @@ If you're not comfortable with CLI, you can also make your customizations using 
 
 For this purpose, remove `--no-graphics` argument from `tart run` commands.
 
-Below step in [update base images](#update-base-images) section,
+For example, the "Run `vm01` base image" step in the [update base images](#update-base-images) section starts the VM like this:
 
-> 2- Run `vm01` base image. `screen -d -m tart run vm01 --no-graphics`
+```bash
+screen -d -m tart run vm01 --no-graphics --disk=...
+```
 
-should be like this in this case.
+To get the desktop UI, run it without `--no-graphics` (keep the same `--disk` arguments for your image version):
 
-> 2- Run `vm01` base image. `screen -d -m tart run vm01`
+```bash
+screen -d -m tart run vm01 --disk=...
+```
 
 ### Deleting Xcode simulator runtimes to create free disk space
 
@@ -1757,7 +1769,7 @@ xcrun simctl runtime delete <runtime_id>
 ```
 
 :::caution
-Xcode simulator runtimes are essential for testing and debugging iOS, watchOS, and tvOS applications on virtual devices. Deleting a runtime will prevent you from running or debugging an app on that specific device. Other simulators and runtimes will remain unaffected.
+Xcode simulator runtimes are essential for testing and debugging iOS, watchOS, tvOS, and visionOS applications on virtual devices. Deleting a runtime will prevent you from running or debugging an app on that specific device. Other simulators and runtimes will remain unaffected.
 
 Be cautious when deleting Xcode simulator runtimes, as this action is irreversible. Removing a simulator runtime can impact the Xcode build process. For example, if you delete a watchOS runtime, you will no longer be able to build an iOS app that targets the deleted watchOS runtime. Ensure that the runtime you plan to delete is not required for your build pipeline.
 :::
