@@ -26,11 +26,11 @@ The following operating systems are supported for the self-hosted runner.
 
 **MacOS**
 
-- MacOS 11 (Big Sur) or later
+- MacOS 11 (Big Sur) or later on Apple silicon (`arm64`). Intel-based Macs are not supported.
 
 The following processor architectures are supported for operating systems.
 
-- `x64` Linux, macOS
+- `x64` Linux only
 - `arm64` macOS only
 
 To install and execute runner, you will need to have root access. Being able to run `sudo` (sudoer) is sufficient for runner operations.
@@ -45,7 +45,7 @@ These tools are already installed on most operating systems or can be got from d
 Minimum hardware requirements for self-hosted runner can be:
 
 - 100GB or more free disk space
-- 2 or more cores CPU (x64, arm64)
+- 2 or more cores CPU (`x64` for Linux, `arm64` for macOS)
 - 8 gigabytes (GB) or more RAM
 
 Minimum required disk space should be enough both for iOS and android platforms. But that value is only for one Xcode version. According to your selection of Xcode versions you need more disk space for successful installation.
@@ -109,20 +109,6 @@ Extract self-hosted runner package.
 
 ```bash
 unzip -o -u appcircle-runner-osx-arm64-1.8.5.zip
-```
-
-  </TabItem>
-
-  <TabItem value="osx-x64" label="macOS x64">
-
-```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.8.5.zip
-```
-
-Extract self-hosted runner package.
-
-```bash
-unzip -o -u appcircle-runner-osx-x64-1.8.5.zip
 ```
 
   </TabItem>

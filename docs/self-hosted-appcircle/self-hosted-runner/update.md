@@ -31,20 +31,6 @@ unzip -o -u appcircle-runner-osx-arm64-1.8.5.zip
 ```
 
   </TabItem>
-  <TabItem value="osx-x64" label="macOS x64">
-
-```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.8.5.zip
-```
-
-Extract self-hosted runner package.
-
-```bash
-unzip -o -u appcircle-runner-osx-x64-1.8.5.zip
-```
-
-  </TabItem>
-
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
