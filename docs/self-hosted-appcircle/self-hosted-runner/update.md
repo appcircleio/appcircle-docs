@@ -60,6 +60,12 @@ Self-hosted runner updates may include tool upgrades or introduce new required t
 
 To remember what configuration step was, please refer to [this](./installation#3-configure) page.
 
+:::caution macOS VM image
+
+If your runner runs in the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#1-check-the-runner-version), skip this step. The build tools come preinstalled with the image, and the platform argument (`-o`) replaces the runner's platforms instead of adding to them, so running `./ac-runner install -o android` would remove iOS from the runner.
+
+:::
+
 ## 3. Reinstall Service
 
 Although we change self-hosted runner files with above steps, we need to restart runner service in order to activate latest updates.

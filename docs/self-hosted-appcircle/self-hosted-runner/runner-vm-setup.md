@@ -175,7 +175,7 @@ The versions are listed in reverse chronological order, from the most recent to 
 
 :::info
 
-macOS VM images that ship only Xcode versions earlier than Xcode 16 are no longer listed, since Xcode 16 or later is required to submit apps to the App Store. Images that run on Sonoma or Ventura hosts are no longer listed either; the minimum supported host is macOS Sequoia. Images whose Xcode versions are all included in a newer listed image with the same host requirement are not listed either; use that newer image instead.
+macOS VM images that ship only Xcode versions earlier than Xcode 16 are no longer listed, since apps built with those Xcode versions can no longer be submitted to the App Store. Images that run on Sonoma or Ventura hosts are no longer listed either; the minimum supported host is macOS Sequoia. Images whose Xcode versions are all included in a newer listed image with the same host requirement are not listed either; use that newer image instead.
 
 If you still need an image that is no longer listed, contact us through our support channels.
 
@@ -1477,7 +1477,7 @@ On some cases, you may need to update to your macOS base images in order to make
 Below are the ones that frequently occur, but not limited to them.
 
 - Your team might use a tool frequently in build pipeline, that's not included in Appcircle macOS image. Installing that tool into the image once will save build time. Your build pipeline will be more efficient and optimized.
-- You may prefer to get iOS and android tool updates by using [self-hosted runner update](/self-hosted-appcircle/self-hosted-runner/update) method instead of getting fresh macOS VM image. When you get fresh macOS image you may need to make your custom configurations again.
+- You may prefer to update the Appcircle runner by using the [self-hosted runner update](/self-hosted-appcircle/self-hosted-runner/update) method instead of getting a fresh macOS VM image. When you get a fresh macOS image you may need to make your custom configurations again. Note that Xcode versions are not updated this way; newer Xcode versions come with newer macOS VM image releases.
 - You may need to make persistent proxy configuration for your internal network requirements.
 - You may need to add your corporate's self-signed root CAs to macOS VM image in order to succeed SSL connections.
 
