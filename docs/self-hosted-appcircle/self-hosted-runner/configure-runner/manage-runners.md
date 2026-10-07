@@ -91,28 +91,10 @@ When a self-hosted pool is deleted from organization for any reason, its related
 
 ### Adding Xcode After Install
 
-You can add more Xcode versions side-by-side or more up-to-date Xcode any time after installation.
+:::caution
 
-```bash
-./ac-runner xcode -v ${Xcode Version}
-```
+Installing Xcode through the runner (`./ac-runner xcode -v`) is no longer supported for Xcode 16 and later. It only covers Xcode 15.4 and earlier, which can't be used to submit apps to the App Store.
 
-Xcode version argument is similar to xcode argument on [installation](../installation#3-configure). You can give one or more versions comma-separated.
-
-For example, below command will install Xcode 13.1.x:
-
-```bash
-./ac-runner xcode -v 13.1
-```
-
-For example, below command will install both Xcode 13.1.x and 12.5.x side-by-side:
-
-```bash
-./ac-runner xcode -v 13.1,12.5
-```
-
-:::info
-
-Adding Xcode to self-hosted runner doesn't require service restart. Newly added Xcode versions will be enabled immediately without any manual intervention.
+To get newer Xcode versions, use the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) and upgrade to a newer image release when you need a newer Xcode. Each image comes with its Xcode versions preinstalled. If you need an Xcode version that isn't included in the image, you can install it manually on your base VMs as explained in [Update Base Images](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#update-base-images).
 
 :::

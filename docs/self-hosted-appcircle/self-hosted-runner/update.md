@@ -31,20 +31,6 @@ unzip -o -u appcircle-runner-osx-arm64-1.8.5.zip
 ```
 
   </TabItem>
-  <TabItem value="osx-x64" label="macOS x64">
-
-```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.8.5.zip
-```
-
-Extract self-hosted runner package.
-
-```bash
-unzip -o -u appcircle-runner-osx-x64-1.8.5.zip
-```
-
-  </TabItem>
-
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
@@ -73,6 +59,12 @@ Self-hosted runner updates may include tool upgrades or introduce new required t
 <NewRunnerOldServerRedisCaution/>
 
 To remember what configuration step was, please refer to [this](./installation#3-configure) page.
+
+:::caution macOS VM image
+
+If your runner runs in the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#1-check-the-runner-version), skip this step. The build tools come preinstalled with the image, and the platform argument (`-o`) replaces the runner's platforms instead of adding to them, so running `./ac-runner install -o android` would remove iOS from the runner.
+
+:::
 
 ## 3. Reinstall Service
 
