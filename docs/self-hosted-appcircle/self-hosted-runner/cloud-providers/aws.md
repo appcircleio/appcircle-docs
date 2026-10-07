@@ -17,7 +17,7 @@ import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/sel
 
 In this document, you will see how to create a self-hosted Appcircle runner instance on Amazon Web Services (AWS).
 
-By following the steps below, you will create a dedicated host, Sonoma macOS, from the base AMI, install the Appcircle runner, and make it ready to build Android applications.
+By following the steps below, you will create a dedicated host, Sequoia macOS, from the base AMI, install the Appcircle runner, and make it ready to build Android applications.
 
 :::caution iOS builds
 
@@ -188,7 +188,7 @@ You should fill out the required fields as per your needs. Please follow the bel
 
 - Enter an instance name in the "Name and Tags" field. For example, "My Appcircle Runner".
 
-- In order to select the AMI, click on the "macOS" button. Then select "macOS Sonoma" from the AMI drop-down menu. And for the architecture, select "64-bit (Mac-Arm)".
+- In order to select the AMI, click on the "macOS" button. Then select "macOS Sequoia" from the AMI drop-down menu. And for the architecture, select "64-bit (Mac-Arm)".
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-2757-aws7-ec2-ami.png' />
 
@@ -263,7 +263,7 @@ ssh -i "/path/to/your/private/key" ec2-user@ip-address-of-the-instance
 ```
 
 :::info
-The default user for the Sonoma macOS AMI is `ec2-user`. So you should use `ec2-user` while connecting to the newly created EC2 Mac instance.
+The default user for the Sequoia macOS AMI is `ec2-user`. So you should use `ec2-user` while connecting to the newly created EC2 Mac instance.
 
 So, let's assume that your instance IP address is `3.234.230.124` and your private SSH key path is `/home/spacetech/.ssh/id_rsa`.
 

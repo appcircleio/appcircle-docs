@@ -26,7 +26,7 @@ The following operating systems are supported for the self-hosted runner.
 
 **MacOS**
 
-- MacOS 11 (Big Sur) or later on Apple silicon (`arm64`). Intel-based Macs are not supported.
+- macOS 15 (Sequoia) or later on Apple silicon (`arm64`). Intel-based Macs are not supported.
 
 The following processor architectures are supported for operating systems.
 
