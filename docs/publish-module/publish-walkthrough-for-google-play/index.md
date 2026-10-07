@@ -237,7 +237,7 @@ View the real time status of your release.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejectionMessage_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejectionTag.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-rejectionTagv2.png' />
 
 ### Auditing Releases
 
