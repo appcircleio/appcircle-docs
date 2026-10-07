@@ -35,7 +35,7 @@ Then click on the "Connect to an Azure DevOps Server" button in the window that 
 
 In the next window, fill in the relevant fields and click on the "Connect" button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-new-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-new-1v2.png' />
 
 After the connection, the connected instances will appear on the new repository adding screen as follows.
 

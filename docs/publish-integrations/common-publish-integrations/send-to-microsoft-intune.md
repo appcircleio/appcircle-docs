@@ -47,7 +47,7 @@ Below are the parameters necessary for this step's operation for iOS, along with
 :::warning
 If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-to-stores-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v3.png' />
 :::
 ---
 
@@ -66,7 +66,7 @@ Below are the parameters necessary for this step's operation for Android, along 
 :::danger
 If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-to-stores-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
  - The `Targeted Platform` is set when the application is first created in Microsoft Intune and cannot be changed afterwards. Ensure that you select the correct platform before executing this step.
-<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v3.png' />
 :::
 
 :::danger

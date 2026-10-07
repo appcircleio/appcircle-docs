@@ -77,7 +77,7 @@ Here you can select the Git provider you want to change or the "Connect via SSH"
 
 Once the connection operations are completed, the Git provider redirects to the Appcircle build profile with the repository selection window.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/repo-select.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/autofillv2.png' />
 
 After you select the relevant Git repository and "Save", the build profile will be connected to the new Git provider.
 

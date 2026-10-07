@@ -41,7 +41,7 @@ The labels next to each option describe its state:
 
 When you successfully authorize your account, the following screen appears so that you can select a repository to connect:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-repository-bitbucket-gitlab.png' alt='Repository selection screen after a successful authorization' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/autofillv2.png' alt='Repository selection screen after a successful authorization' />
 
 After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building.
 

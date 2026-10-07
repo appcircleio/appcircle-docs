@@ -122,10 +122,6 @@ You can use **Release Notes** component to create release notes during your work
 
 **Repeato** is a test automation platform designed for mobile applications. It enables developers to create, manage, and execute automated tests for mobile apps across different platforms and devices. Repeato supports various testing frameworks and provides features for test script creation, test execution, result analysis, and reporting. It helps streamline the testing process, improve test coverage, and enhance the overall quality of mobile applications.
 
-## [Saucectl Run](/workflows/common-workflow-steps/saucectl-run)
-
-The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs. saucectl performs the underlying business logic to access the tests in your existing framework, runs them in the Sauce Labs Cloud, then securely transmits the test assets to the Sauce Labs platform, where you can review, share, and evaluate your test outcomes at scale.
-
 ## [Select Java Version](/workflows/common-workflow-steps/select-java-version)
 
 The **Select Java Version** step updates the JDK and Java version to the selected one during the build process.

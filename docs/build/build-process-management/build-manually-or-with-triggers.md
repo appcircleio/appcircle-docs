@@ -112,7 +112,7 @@ When a manual webhook (SSH/Public URL/Read-only PAT) is already configured for a
 - Selected Git Provider, Webhook URL, and the existing Webhook Key/Secret will be displayed as partially masked.
 - Users can directly click the Bind button to link the build profile to the existing webhook.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6529-hook.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6529-hookv2.png' />
 
 ### Webhook Setup for OAuth and PAT-Based Repository Connections
 
@@ -357,7 +357,7 @@ Builds that are **manually started** do not affect ongoing or queued builds; the
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline-canceled-builds-v3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline-canceled-builds-v4.png' />
 
 ## Further Automatic Build Subjects
 

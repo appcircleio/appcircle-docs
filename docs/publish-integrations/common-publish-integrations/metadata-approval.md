@@ -65,7 +65,7 @@ The parameters required for this step to work as expected are listed below.
 | **Optional Emails to Approve**   | Additional email addresses that can optionally approve. Their approvals contribute to the total approval count. <br />Example: `support@appcircle.io, team@appcircle.io` |
 | **Minimum Required Approval Count** | The minimum number of total approvals (required + optional) needed for the step to be considered successful. <br />Example: `2`                      |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish7.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish7_v2.png'/>
 
 :::caution Minimum Approval Count
 If the Minimum Required Approval Count cannot be achieved, the step will fail.
@@ -95,7 +95,7 @@ Please note that all of the data displayed in the metadata approval panel is **r
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish5.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish5_v2.png'/>
 
 :::info Successful Approval
 
@@ -105,8 +105,6 @@ Please note that all of the data displayed in the metadata approval panel is **r
 - The minimum required approval count is satisfied.
 
 :::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish6.png'/>
 
 :::warning Lock/Unlock Rules for Metadata Update 
 
@@ -127,15 +125,13 @@ Please note that in order to make any updates within [**Metadata Details**](/pub
 
 When a user wants to reject a metadata, they can reject by clicking the **Reject** button on the metadata approval panel that opens. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish5.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish5_v2.png'/>
 
 **When a rejection occurs;**
 
 - The rejecting user is asked to provide a **Rejection Message**.
 - This message is included in the **step logs** for an easy review.
 - The app version will also be tagged with `Metadata Rejected` in the Publish profile dashboard.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-publish4.png'/>
 
 ## Output Variables
 

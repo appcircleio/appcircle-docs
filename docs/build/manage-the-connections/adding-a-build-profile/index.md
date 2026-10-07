@@ -20,7 +20,7 @@ If you authorize Appcircle to connect to your Github, BitBucket, or GitLab accou
 
 When the "Autofill" toggle is activated on the **Select Repository** popup, Appcircle will try to create a default configuration using the selected repository and fill in the necessary fields.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/autofill.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/autofillv2.png' />
 
 :::caution
 When you have exceeded the build limit of your plan, Appcircle will not be able to **Autofill** your build profile, although you activated the toggle.

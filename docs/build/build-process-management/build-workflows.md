@@ -65,8 +65,6 @@ You can now drag and drop steps into your workflow. Any unwanted workflow steps 
 
 You can also reorder steps so that they will be executed in the order you specify.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/08-08-WF_Reorder.gif' />
-
 ### Editing Workflow Steps
 
 Each workflow step has its own set of configuration options, which can be set by clicking on the step in the workflow screen.

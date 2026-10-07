@@ -29,5 +29,5 @@ To use the Reject Binary feature, you must provide a rejection message. This mes
 
 This message is presented to the user with a tool type on the Rejected tag on the binary.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4123-rejectMessage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4123-rejectMessage_v2.png' />
 

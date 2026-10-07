@@ -99,8 +99,6 @@ The Bundle ID value of the profile imported via App Store Connect is assigned th
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-importProfile.png' />
-
 ## Android Publish Profiles
 
 Android Publish profiles can be created manually or by importing an existing Google Play Console profile.

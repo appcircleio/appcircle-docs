@@ -74,9 +74,9 @@ First, we need to set up a build configuration. Select **Configurations** at the
 
 ### Sending the Build Status to the Repository Providers
 
-At the bottom of the config tab, you will see the **Set Commit Build Status **option.
+At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-ios-build-commit-status.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-ios-build-commit-statusv2.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -104,7 +104,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-signing-empty.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-signing-emptyv2.png' />
 
 ### Signing React Native Android applications
 

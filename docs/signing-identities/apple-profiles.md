@@ -133,19 +133,11 @@ Provisioning profile and certificate matching will be done automatically. You ca
 
 :::
 
-:::tip
-
-You can upload multiple Provisioning Profile files at once.
-
-:::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-upload.png' />
-
-You can list and manage your provisioning profiles here. Newly uploaded files will display with a blue-colored background. If there is a matching certificate, the profile will show a green check mark. If not, you will see a red cross mark indicating there is no certificate matching the provisioning profile.
+You can list and manage your provisioning profiles here. Newly uploaded files will display with a 'new' tag. If there is a matching certificate, the profile will show a green check mark. If not, you will see a red cross mark indicating there is no certificate matching the provisioning profile.
 
 You can also see the matching application ID and expiration date of the profiles here.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-upload2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-upload2v2.png' />
 
 :::info Apple Profile Expiration Notifications
 
@@ -219,15 +211,13 @@ Profiles deleted on **Appcircle** will only be removed from **Appcircle** and wi
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete2v2.png' />
 
 :::caution
 
 Affected build profiles will not be displayed within the warning message if you delete multiple Provisioning Profiles.
 
 :::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4060-delete3.png' />
 
 ### Profile Actions
 

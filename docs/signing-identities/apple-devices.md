@@ -172,7 +172,7 @@ The mail containing the e-mail invitation will look like this.
 
 When you send an invitation to a user, the invitation will be listed in the **Invited Users** section. If the user has not taken any action, their status will appear as `Pending`. Once the user registers the device UDID, this status will change to `Registered`.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-pending.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-pendingv2.png' />
 
 ### Adding Device by Email
 

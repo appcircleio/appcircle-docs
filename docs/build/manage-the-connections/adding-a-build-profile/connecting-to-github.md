@@ -33,7 +33,7 @@ After you click on **GitHub**, the following screen will appear. This will let y
 
 When you successfully authorize your repository or repositories, the following screen will appear to let you select one for connection:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6444-connect-repository-github.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/autofillv2.png' />
 
 After the connection is successful, you can [view your newly created profile](/build/build-process-management/profile-creation#profile-listing) and start building!
 

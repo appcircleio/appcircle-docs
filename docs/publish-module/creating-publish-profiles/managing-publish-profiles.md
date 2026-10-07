@@ -42,8 +42,6 @@ Appcircle **does not delete** the application that has been submitted to the sto
 By deleting the Publish profile, all the application versions and Publish action logs related to that publish profile will be removed on the Appcircle side.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-11.png' />
-
 ### Profile Listing
 
 The profile list provides search, filtering, and ordering capabilities to help users quickly locate specific publish profiles.

@@ -300,7 +300,7 @@ If needed, you can rollback to a previous version of your app or pause a release
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejectionMessage_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejectionTag.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejectionTag_v2.png' />
 
 
 ### Auditing Releases

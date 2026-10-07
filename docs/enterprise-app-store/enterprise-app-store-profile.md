@@ -383,10 +383,6 @@ The Binary list on the Enterprise App Store profile screen, Binary Details scree
 - **Expire Soon** status is shown for binaries whose signing certificate/keystore is approaching its expiration date which is within 1 month.
 - **Expired** status is shown for binaries whose signing certificate/keystore has already expired.
 
-The expiration date is highlighted to help users identify binaries that require action:
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-3.png' />
-
 :::caution Expired Binary Restriction
 If the signing certificate/keystore of a binary is expired, the binary cannot be published to the **Beta** or **Live** channel.
 Also, if the expired binary was already published to a channel, it cannot be downloaded via Appcircle UI or Enterprise Portal.

@@ -20,7 +20,7 @@ If some optional users reject the request but there is still a chance to achieve
 
 <NoRunnerUsage />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email-1_v2.png'/>
 
 :::info
 
@@ -52,7 +52,7 @@ To proceed with the approval, users can click the link in the email, which opens
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss1_v2.png' />
 
 :::info Rejection
 Users who decide to reject the binary, must provide an explanation. This explanation message will be displayed on the Publish Flow window under the desicion of that user.

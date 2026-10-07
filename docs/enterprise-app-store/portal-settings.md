@@ -24,7 +24,7 @@ SSO and LDAP login is only available for Enterprise accounts. Only the Organizat
 
 Enterprise Portal authentication can be set to 'none,' allowing users to log in automatically without entering credentials.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-91.png" alt="None Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-91v2.png" alt="None Authentication Type for Enterprise Portal" />
 
 Please note that this authentication method will also affect the shared links and QR codes for app versions across all Enterprise Store profiles.
 
@@ -32,13 +32,13 @@ Please note that this authentication method will also affect the shared links an
 
 You can set a different username and password for live and beta apps. The usernames of the live and beta section must be different.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-92.png" alt="Static Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-92v2.png" alt="Static Authentication Type for Enterprise Portal" />
 
 ### SSO Login
 
 You may also use SSO for your Enterprise Portal. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/security/authentications/store-sso-authentication) documentation.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-90.png" alt="SSO Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-90v2.png" alt="SSO Authentication Type for Enterprise Portal" />
 
 :::info
 
@@ -203,7 +203,7 @@ The below screenshot shows an example configuration screen from Cloudflare.
 
 After creating the DNS settings, type your custom domain name, select your certificate, and update the configuration. DNS changes can take time to propagate. You may have to wait a few minutes or hours to see the redirect.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-domain.png" alt="Custom Domain Settings for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-domainv2.png" alt="Custom Domain Settings for Enterprise Portal" />
 
 :::caution
 
@@ -259,7 +259,7 @@ When the **Single Active Session** toggle is enabled, each user can have only on
 
 - If the same user signs in from another browser or device, the previous active session is automatically terminated.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-81.png" alt="Session Management Warning for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-81v2.png" alt="Session Management Warning for Enterprise Portal" />
 
 - This helps prevent simultaneous logins with the same account and improves overall account security.
 
