@@ -31,7 +31,7 @@ You can choose your self-hosted pools or Appcircle cloud anytime you want and sw
 
 Keep in mind that, pool selection is important for build pipeline success. Your self-hosted runners in that pool should have required capabilities for the selected build profile.
 
-For example, if your pool has only android tools configured in its runners, you can't build an iOS app in that pool. Or if you have runners with only Xcode 13.3 in your pool, your Xcode 13.4 selected build profile won't be executed in that pool.
+For example, if your pool has only android tools configured in its runners, you can't build an iOS app in that pool. Or if you have runners with only Xcode 26.5 in your pool, your Xcode 26.6 selected build profile won't be executed in that pool.
 
 :::
 

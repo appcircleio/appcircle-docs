@@ -48,7 +48,7 @@ Minimum hardware requirements for self-hosted runner can be:
 - 2 or more cores CPU (`x64` for Linux, `arm64` for macOS)
 - 8 gigabytes (GB) or more RAM
 
-Minimum required disk space should be enough both for iOS and android platforms. But that value is only for one Xcode version. According to your selection of Xcode versions you need more disk space for successful installation.
+Minimum required disk space is for the android platform tools. For iOS builds, see the disk space requirements of the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup).
 
 :::info
 
@@ -80,11 +80,11 @@ From now on, you will follow same installation steps seen below as other environ
 
 :::
 
-:::tip
+:::caution
 
-#### macOS VM
+#### macOS VM for iOS builds
 
-Appcircle provides a ready-to-use macOS VM image, especially for enterprise installations. It can be run on macOS Sequoia or Tahoe `arm64` hosts according to the guest macOS version.
+Installing Xcode through the runner is no longer supported for Xcode 16 and later. For iOS builds, use the ready-to-use macOS VM image, which comes with Xcode versions preinstalled. It can be run on macOS Sequoia or Tahoe `arm64` hosts according to the guest macOS version.
 
 See details in [here](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup).
 
@@ -168,7 +168,7 @@ You can install multiple VMs on a single bare-metal and deploy self-hosted runne
 
 You can also add or change platform tools after start of runner service.
 
-For example, you configure runner with iOS platform tools using `-o ios` at first, then add android platform tools with `-o ios,android` to build both iOS and android apps.
+The platform argument (`-o`) doesn't work as an append strategy; your latest platform argument will be the runner's **final** platform.
 
 Install command used for runner configuration, both adds tools to your system and makes some configurations for them. In order to activate changes and updates completely, you should restart runner service after configuration is done successfully.
 
