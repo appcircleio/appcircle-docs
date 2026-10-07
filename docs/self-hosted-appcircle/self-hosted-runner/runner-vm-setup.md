@@ -619,7 +619,7 @@ This image line replaces the Tahoe `26.3.2` line (`260723` and earlier) and ship
   </TabItem>
 </Tabs>
 
-In order to keep free disk space sufficient for build pipelines, we're packaging the latest and most frequently used Xcode versions. But you can also install other Xcode versions yourself if required.
+In order to keep free disk space sufficient for build pipelines, we're packaging the latest and most frequently used Xcode versions. But you can also install other Xcode versions manually on your base VMs if required. See [Update Base Images](#update-base-images).
 
 You can find more information about the build infrastructure in the documents below:
 
@@ -1477,7 +1477,7 @@ On some cases, you may need to update to your macOS base images in order to make
 Below are the ones that frequently occur, but not limited to them.
 
 - Your team might use a tool frequently in build pipeline, that's not included in Appcircle macOS image. Installing that tool into the image once will save build time. Your build pipeline will be more efficient and optimized.
-- You may prefer to update the Appcircle runner by using the [self-hosted runner update](/self-hosted-appcircle/self-hosted-runner/update) method instead of getting a fresh macOS VM image. When you get a fresh macOS image you may need to make your custom configurations again. Note that Xcode versions are not updated this way; newer Xcode versions come with newer macOS VM image releases.
+- You may prefer to update the Appcircle runner by using the [self-hosted runner update](/self-hosted-appcircle/self-hosted-runner/update) method instead of getting a fresh macOS VM image. When you get a fresh macOS image you may need to make your custom configurations again. Note that Xcode versions are not updated this way; newer Xcode versions come with newer macOS VM image releases, or you can install them manually on your base VMs.
 - You may need to make persistent proxy configuration for your internal network requirements.
 - You may need to add your corporate's self-signed root CAs to macOS VM image in order to succeed SSL connections.
 

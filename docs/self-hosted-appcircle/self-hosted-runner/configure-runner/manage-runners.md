@@ -95,6 +95,6 @@ When a self-hosted pool is deleted from organization for any reason, its related
 
 Installing Xcode through the runner (`./ac-runner xcode -v`) is no longer supported for Xcode 16 and later. It only covers Xcode 15.4 and earlier, which can't be used to submit apps to the App Store.
 
-To get newer Xcode versions, use the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) and upgrade to a newer image release when you need a newer Xcode. Each image comes with its Xcode versions preinstalled.
+To get newer Xcode versions, use the [macOS VM image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) and upgrade to a newer image release when you need a newer Xcode. Each image comes with its Xcode versions preinstalled. If you need an Xcode version that isn't included in the image, you can install it manually on your base VMs as explained in [Update Base Images](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#update-base-images).
 
 :::
