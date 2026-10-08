@@ -15,11 +15,11 @@ In order to manage version code and version name with Appcircle, two requirement
 
 - The build's Version Management toggle must be turned on and required input values must be entered.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-android-configuration.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-android-configuration_v2.png" />
 
 - **Increment Build and Version Number** component `1.0.*` or higher must be in your workflow.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-android-workflow.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/versioning-android-workflow_v2.png" />
 
 The Versioning tab manages the input values of the component. It is not recommended to change the values of the component with the workflow editor. Instead, it would be best if you always used the Versioning UI to manage the settings.
 
@@ -122,7 +122,7 @@ You can use the above values in the remaining steps of your workflow.
 
 The versioning system works by consuming environment variables. Even though it's easier to configure it by using UI, sometimes you may want to change them on the fly. Your commit messages or tags can be used to override those settings. The name of the variables and expected values can be found below.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-increment-build-and-version-number_2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-increment-build-and-version-number_2_v2.png' />
 
 | Variable Name                 | Description                                                                                                                                                                                                                                                                     | Status   |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

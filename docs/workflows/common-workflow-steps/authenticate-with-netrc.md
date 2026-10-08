@@ -20,13 +20,13 @@ Please note that you should use this step before your **Git Clone** step. If you
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2792-net_order.png ' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2792-net_order_v2.png ' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2792-net_inputs.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2792-net_inputs_v2.png' />
 
 :::danger
 

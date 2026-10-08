@@ -18,7 +18,7 @@ Before running the **Firebase Upload dSYM** step, you must complete certain prer
 |-------------------------------------------------|-------------------------------------------------|
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) | This step will build your application, create an Archive file, and generate `.ipa`. The Archive file contains the `.dSYM` file. Please use **Firebase Upload dSYM** step after this step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_step_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_step_order_v2.png' />
 
 :::danger
 
@@ -30,7 +30,7 @@ If this step is not used after **Xcodebuild for Devices**, the pipeline will giv
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsymInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsymInput_v2.png' />
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|

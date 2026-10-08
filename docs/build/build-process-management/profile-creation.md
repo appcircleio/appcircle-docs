@@ -13,13 +13,13 @@ A Build profile can be created by following these steps:
 
 ## Creating a Profile
 
-Click on the **Add New** button located in the middle of the screen. If you already have an existing profile displayed on the build profile list, this button will be in the top right corner.
+Click **New profile** at the top right of the build profile list. If you have no build profiles yet, click the link in the middle of the page instead.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build1.png' alt="Build Profile Creation" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build1_v2.png' alt="Build Profile Creation" />
 
 Provide a unique name for the build profile and choose a target operating system (OS), which can be Android or iOS.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build2.png' alt="Build Profile Naming" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build2_v2.png' alt="Build Profile Naming" />
 
 After selecting the target OS, specify the corresponding target platform to set up a compatible build environment:
 
@@ -45,7 +45,7 @@ Choose from the available repository connection options to link your project sou
 * Connect via URL
 * [Connecting to Multiple Instances](/build/manage-the-connections/connection-guides/connecting-multiple-instance)
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build3.png' alt="Repository connection" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build3_v2.png' alt="Repository connection" />
 
 :::info
 If you have not previously connected to a Git provider on Appcircle, i.e., created a profile but have not connected a repository, you will not see any connection on this page.
@@ -53,41 +53,25 @@ If you have not previously connected to a Git provider on Appcircle, i.e., creat
 For more information on creating repository connections, please refer to the [connections](/build/manage-the-connections) guide.
 :::
 
-To test drive Appcircle, you can find various sample projects on the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can just press the **Quick Start Using the Sample Repository** button to populate the repository with a compatible project based on the selected framework.
+To test drive Appcircle, you can find various sample projects on the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can select **Start with a sample repository** to populate the repository with a compatible project based on the selected framework.
 
 For detailed instructions on connecting to each repository, refer to the [Connection Guides](/build/manage-the-connections/connection-guides).
 
 Once the repository connection is established, the build profile will be created successfully. Appcircle will then pull your branches, commits, and other information from your repository. You can now use the build profile to manage and deploy your projects.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build4.png' alt="Build Profile"/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build4_v2.png' alt="Build Profile"/>
 
 ### Profile Listing
 
-You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same build profiles, allowing you to choose the layout that best fits their workflow.
+The profile list provides search, filtering, and ordering capabilities to help users quickly locate specific build profiles.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build2.png' />
-
-<Tabs
-defaultValue="board"
-values={[
-{ label: 'Profile Board View', value: 'board' },
-{ label: 'Profile List View', value: 'list' },
-]}
->
-  <TabItem value="board">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build6.png' />
-  </TabItem>
-  <TabItem value="list">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build5.png' />  </TabItem>
-</Tabs>
-
-In addition to view options, the profile list provides search, filtering, and ordering capabilities to help users quickly locate specific build profiles.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build2_v2.png' />
 
 #### Search Profiles
 
 Click the **Search** icon in the top right corner to open the profile search dialog. You can search for build profiles by name and quickly navigate to the desired profile from the search results. It will also bring your recent search results.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build4_v2.png' />
 
 :::info
 The search feature looks for matches in both Build Profile names and the associated full repository URLs. Any profile matching the entered keyword in either field will appear in the search results.
@@ -103,34 +87,34 @@ Use the **Filter** button to narrow down the profile list based on available cri
 
 Applied filters are displayed at the top of the page and can be removed individually when no longer needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build3_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build1_v2.png' />
 
 #### Sort and Order Profiles
 
 The profile list can also be organized using the available ordering options. Users can change the sorting direction and select different ordering criteria, such as **Last Build Date**, to customize how profiles are displayed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build5_v2.png' />
 
 ## Connection Settings
 
-After connecting a build profile to a Git provider, we can see the **"Connection Settings"** button in the build profile details.
+After connecting a build profile to a Git provider, you can view the connection from the **...** menu next to the build profile name.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-connection1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-connection1_v2.png' />
 
-You can click on the "Connection Settings" button under the build profile name and URL to see detailed information about the connection. (PAT, OAuth)
+Open the **...** menu next to the build profile name and select **Source code** to see detailed information about the connection. (PAT, OAuth)
 
 ### OAuth
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-connection2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-connection2_v2.png' />
 
 ### Personal Access Token (PAT)
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3_v2.png' />
 
 :::caution
-If you added your repository via **multiple instances** using PAT (Personal Access Token), the "Connection Settings" will look different.
+If you added your repository via **multiple instances** using PAT (Personal Access Token), the connection panel that opens from **Source code** will look different.
 
-You can review the [**Connecting Multiple Instances**](/build/manage-the-connections/connection-guides/connecting-multiple-instance#connection-settings-for-multiple-instances) page to learn how to use "Connection Settings" for multiple instances.
+You can review the [**Connecting Multiple Instances**](/build/manage-the-connections/connection-guides/connecting-multiple-instance#connection-settings-for-multiple-instances) page to learn how to use the connection panel for multiple instances.
 :::

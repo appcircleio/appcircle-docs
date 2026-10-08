@@ -10,11 +10,11 @@ sidebar_position: 1
 
 This section explains how to create and manage a CodePush profile in Appcircle to enable over-the-air (OTA) updates for your React Native projects. A properly configured profile allows you to connect your CodePush deployments with your Appcircle workflows, manage versioning, and control release behaviors through a user-friendly interface. Follow the steps below to get started.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-codePushEmptyState.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-codePushEmptyState_v2.png' />
 
 ## Creating CodePush Profile
 
-To use CodePush in your project, you must first create a CodePush profile in Appcircle, which links your application to the update delivery system. In Appcircle, click the `Add New` button to create a new CodePush profile and assign a name to it.
+To use CodePush in your project, you must first create a CodePush profile in Appcircle, which links your application to the update delivery system. In Appcircle, go to **Build** > **CodePush** and click **New profile** to create a new CodePush profile, then assign a name to it.
 
 :::info CodePush Profile Name
 
@@ -28,9 +28,9 @@ To ensure better manageability of your updates, we recommend creating two separa
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-codePushAddNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-codePushAddNew_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-profileCard.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-profileCard_v2.png' />
 
 ## Profile Actions
 
@@ -40,7 +40,7 @@ By clicking the three dots on the profile card, you can:
 - Pin the profile
 - Delete the existing profile
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-profileActions.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-profileActions_v2.png' />
 
 :::caution Changing Profile Name
 
@@ -56,13 +56,13 @@ This section provides an overview of how to manage your existing CodePush profil
 
 Deployment channels allow you to categorize and manage your CodePush releases, enabling different update strategies such as `Staging` and `Production` deployments.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentChannels.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentChannels_v2.png' />
 
 ### Deployment Channel Actions
 
 This section explains how to rename and delete existing deployment channels and view their release history for better control over your update workflow.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-channelActions.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-channelActions_v2.png' />
 
 By clicking the three dots on the channels, you can:
 
@@ -73,8 +73,8 @@ By clicking the three dots on the channels, you can:
 
 - To add a new deployment channel, click on the `+` button 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-addNewDeploy.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-addNewDeploy_v2.png' />
 
 - Provide a unique channel name in the opened modal, and save your configuration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-channelName.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-channelName_v2.png' />

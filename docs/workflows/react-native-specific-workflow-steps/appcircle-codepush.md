@@ -22,13 +22,13 @@ Before running the **Appcircle CodePush** step, you must complete certain prereq
 | **Node Install**           | This step will install Node modules for your application. Please note that the **Appcircle CodePush** step should be used after this step.                                                                                                                               |
 | **NPM/Yarn Commands**      | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. Please note that the **Appcircle CodePush** step should be used after this step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-stepOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-stepOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-stepInputs.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-stepInputs_v2.png' />
 
 :::danger Sensitive Variables
 
@@ -41,7 +41,7 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 | Variable Name                         | Description                                                                                                                                                                                                                                                        | Status   |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | `$AC_REPOSITORY_DIR`                  | Relative path of the React Native project.                                                                                                                                                                                                                         | Required |
-| `$AC_CODE_PUSH_TOKEN`                 | Appcircle personal access token. You can create a new Personal Access Key in the Appcircle dashboard under `Settings > Security > Personal Access Key`. For details, see [Generating and Managing Personal Access Keys](/account/my-organization/security/personal-access-key).  | Required |
+| `$AC_CODE_PUSH_TOKEN`                 | Appcircle personal access token. You can create a new Personal Access Key in the Appcircle dashboard under **Organization** > **Security** > **Personal access key**. For details, see [Generating and Managing Personal Access Keys](/account/my-organization/security/personal-access-key).  | Required |
 | `$AC_CODE_PUSH_SERVER_URL`            | This parameter specifies the server URL used by self-hosted Appcircle instances to authenticate CLI access (e.g. `https://api-appcircle.spacetech.com/codepush`). Ignore this if you are not a self-hosted Appcircle user.                                                                                               | Optional |
 | `$AC_CODE_PUSH_AUTH_URL`              | This parameter specifies the authentication URL used by self-hosted Appcircle instances to authenticate CLI access (e.g. `https://auth-appcircle.spacetech.com`). Ignore this if you are not a self-hosted Appcircle user.                                                                                       | Optional |
 | `AC_CODE_PUSH_APP_NAME`               | This parameter specifies the name of the app in Appcircle. The App Name parameter is the Appcircle CodePush profile name.  For example `MyApp-Android` or `MyApp-iOS`.                                                                                             | Required |
@@ -64,7 +64,7 @@ With the **Appcircle CodePush** step, you can also publish a **signed CodePush r
 
 - First, create a group in the **Environment Variables** sub‑section under the **Build** module, and upload your `.pem` file into that group. For more information, please visit the Environment Variable [documentation](/environment-variables).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6352-envPem.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6352-envPem_v2.png' />
 
 :::caution Environment Variables
 
@@ -74,7 +74,7 @@ In order to use the **Environment Variable** group you created in the relevant p
 
 - Next, in the **Appcircle CodePush** step, use the **Extra Arguments** input to pass the `--privateKeyPath <YOUR_ENV_KEY>` parameter and reference the environment variable you created.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-codeSignStep.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-codeSignStep_v2.png' />
 
 Once these steps are completed, running the **Appcircle CodePush** step will automatically sign the generated CodePush release with your provided `.pem` file and publish it.
 
@@ -84,4 +84,4 @@ With the **Package Diff** feature, users download only the changed files instead
 
  - In the **Appcircle CodePush** step, use the **Extra Arguments** input to pass the `--diffEnabled` parameter.
 
- <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-packageDiffNew.png' />
+ <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-packageDiffNew_v2.png' />

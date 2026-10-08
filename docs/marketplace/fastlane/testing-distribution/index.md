@@ -88,7 +88,7 @@ fastlane add_plugin appcircle_testing_distribution
 - `message`: Your message to testers, ensuring they receive important updates and information regarding the application.
 
 :::tip
-Profile creation settings are only used when a new profile is created. If you need to update these settings, please go to the [profile settings](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#settings) in the Appcircle dashboard.
+Profile creation settings are only used when a new profile is created. If you need to update these settings, open the Testing Distribution profile in the Appcircle dashboard, open the **...** menu next to the profile name, and select [**Settings**](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile#settings).
 :::
 
 :::caution Build Steps Order

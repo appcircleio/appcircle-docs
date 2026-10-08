@@ -14,7 +14,7 @@ You can customize the appearance of your portal by navigating to the Customize s
 
 The Customization feature allows you to tailor the login page of your Enterprise Portal to align with your organization's branding. This feature enables you to modify key elements to create a consistent and professional appearance that reflects your corporate identity.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-eas1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-eas1_v2.png' />
 
 - **Logo**: Replace the default logo with your company’s logo to reinforce brand recognition.
 - **App Store Header**: Choose from three options to customize the positions of your store title and logo on your App Store header: Default, Title Left, or Title Center.
@@ -32,13 +32,13 @@ values={[
 ]}
 >
   <TabItem value="login">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-eas1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-eas1_v2.png' />
   </TabItem>
   <TabItem value="list">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-eas2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-eas2_v2.png' />
   </TabItem>
   <TabItem value="detail">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-eas3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5909-eas3_v2.png' />
   </TabItem>
 </Tabs>
 

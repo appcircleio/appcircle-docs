@@ -34,7 +34,7 @@ Before running the **Firebase App Distribution** step, you must complete certain
 | [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_1_v2.png'/>
 
 #### For iOS (Objective-C / Swift and React Native) 
 
@@ -42,7 +42,7 @@ Before running the **Firebase App Distribution** step, you must complete certain
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_2_v2.png'/>
 
 #### For Android Flutter 
 
@@ -51,7 +51,7 @@ Before running the **Firebase App Distribution** step, you must complete certain
 | [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_3.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_3_v2.png'/>
 
 #### For iOS Flutter
 
@@ -60,13 +60,13 @@ Before running the **Firebase App Distribution** step, you must complete certain
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_4.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_4_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_5.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_5_v2.png'/>
 
 :::danger Sensitive Variables
 

@@ -27,23 +27,23 @@ See below for steps for an example case from Azure DevOps.
 
 First of all, we select the relevant Git provider from the add new repository screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1_v2.png' />
 
 Then click on the "Connect to an Azure DevOps Server" button in the window that opens.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect4_v2.png' />
 
 In the next window, fill in the relevant fields and click on the "Connect" button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-new-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-new-1v2.png' />
 
 After the connection, the connected instances will appear on the new repository adding screen as follows.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-last-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-last-1_v2.png' />
 
 Additionally, when we click on an instance, we can see it here with the name we gave it.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-new-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/azure-m-new-2_v2.png' />
 
 :::caution
 The instance name for each Git provider must be unique.
@@ -55,11 +55,11 @@ However, you can connect an instance with that name for GitLab or Bitbucket Serv
 
 ### Connection Settings for Multiple Instances
 
-When we connect a repository using PAT (Personal Access Token) on multiple instances, you can use the "Connection Settings" button to view the PAT information and change the PAT information if there is a previously defined connection.
+When we connect a repository using PAT (Personal Access Token) on multiple instances, you can open the **...** menu next to the build profile name and select **Source code** to view the PAT information and change the PAT information if there is a previously defined connection.
 
-When we connect a repository using PAT over multiple instances, the user email and PAT list appear in the "Connection Settings".
+When we connect a repository using PAT over multiple instances, the user email and PAT list appear in the connection panel that opens from **Source code**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-settings-main-3_v2.png' />
 
 :::caution
 In order to change the Personal Access Token (PAT), you must have provided more than one connection for the same Git provider. If you have more than one connection, you can switch between PATs.

@@ -18,17 +18,17 @@ You can select the files from the list.
 
 2. Click the **...** button and select **Binary Information**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-14.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-14_v2.png' />
 
 3. This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td_v2.png' />
 
 #### Build Metadata Details
 
 The following metadata is displayed in the Binary Information section of a Testing Distribution Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Testing Distribution module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td3_v2.png' />
 
 - **Trigger Type**: Indicates what initiated the build. Possible values include:
 
@@ -54,5 +54,5 @@ Binaries generated through the Appcircle Build Module include associated build d
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td4.png' />
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td4_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td2_v2.png' />

@@ -62,11 +62,11 @@ Optionally, you can use 3rd party tools like :link: [**XCParse**](https://github
 
 If you add [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-report-overview.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-report-overview_v2.png' />
 
 You must add this component **after** the `Xcodebuild for Unit and UI Tests` so that it can parse test results. Your workflow should look like the below.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-overview.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-overview_v2.png" />
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. To show coverage results, you must enable **Code Coverage** in Xcode's scheme settings.
 
@@ -78,11 +78,11 @@ You must add this component **after** the `Xcodebuild for Unit and UI Tests` so 
 
 Appcircle can show passing and failing tests in compact UI. If your tests generate artifacts, those artifacts are also displayed with your test cases.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-result-overview.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-result-overview_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-ui-detail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-ui-detail_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-coverage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-workflow-coverage_v2.png' />
 
 ## Automated Tests
 

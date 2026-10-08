@@ -20,7 +20,7 @@ You can build your Flutter applications in Appcircle for iOS or Android platform
 
 Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **Flutter **for **Target Platform**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/add-flutter-profile.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/add-flutter-profile_v2.png' />
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
@@ -44,19 +44,19 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 ### Build Configuration for Flutter iOS applications
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
 You can also select a specific Xcode version if you have certain dependencies or if you want to test your build on a specific version.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-flutter-config-ios.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-flutter-config-ios_v2.png' />
 
 ### Build Configuration for Flutter Android applications
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. For Flutter Android apps, the fetch operation is not required. You can simply select the build mode (e.g. debug or release) and the output type (APK or Splik APK as AAB).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-flutter-config-android.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-flutter-config-android_v2.png' />
 
 ### Build Configuration for Flutter Web applications
 
@@ -66,9 +66,9 @@ Flutter Web apps are built alongside iOS or Android Flutter apps. For more infor
 
 ### Sending the Build Status to the Repository Providers
 
-At the bottom of the config tab, you will see the **Set Commit Build Status **option.
+At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-flutter-build-commit-status.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-flutter-build-commit-statusv2.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -96,13 +96,13 @@ The next step in the build configuration is Signing. Here, please select the pro
 
 For signing iOS apps, press add, select the bundle ID from the first dropdown and then select a compatible provisioning profile (added from the signing identities module) from the second dropdown.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration_v2.png" />
 
 ### Signing Flutter Android Applications
 
 Here, please select the Android Keystore you added in the [Android Keystores](/signing-identities/android-keystores) section. For signing Android apps, simply select a keystore (added from the signing identities module).
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-android-signing.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-android-signing_v2.png" />
 
 ### Distribution (Deployment) Configuration
 
@@ -136,7 +136,7 @@ Please refer to the following document for more information on environment varia
 
 Once you complete your build configuration, you can edit your build workflow. Flutter builds have additional steps for Flutter commands. You can also arrange, add or remove workflow steps using Appcircle's workflow editor and Workflow Marketplace.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/image (6).png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/image (6)_v2.png' />
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
@@ -146,7 +146,7 @@ To learn more about Appcircle's Workflow editor, see the corresponding page belo
 
 To change the Flutter version, open the Flutter Install workflow step from the workflow editor and set the version under the "Selected Flutter Version" field.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-flutter-select-version-workflow.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/build-configuration-flutter-select-version-workflow_v2.png" />
 
 You can also set the preferred Flutter version on the config screen. If you don't set any version, `stable` version will be used.
 
@@ -154,11 +154,11 @@ You can also set the preferred Flutter version on the config screen. If you don'
 
 You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild1_v2.png' />
 
 Select a configuration, workflow, and commit ID and click on **Start Build button**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build-modal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build-modal_v2.png' />
 
 :::info
 

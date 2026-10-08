@@ -48,7 +48,7 @@ Similarly, the authorized person in your approval mechanism will provide approva
 
 This step does not depend on any other steps to function. However, it is advisable to use it as the initial step in your **Publish Flow**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2917-appInfo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2917-appInfo_v2.png' />
 
 ### Input Variables
 

@@ -43,21 +43,21 @@ You can obtain your developer certificates and provisioning profiles from the Ap
 
 With Appcircle’s advanced Signing Identity module, you can easily generate certificates without logging into your Apple Developer account and securely store these certificates in  `.P12` format within the Appcircle.
 
-- To do this, navigate to the Apple Certificates section within the Signing Identity module. Then, using the Add New button, you can create a certificate.
+- To do this, navigate to the Apple Certificates section within the Signing Identity module. Then click **Add new** to create a certificate.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-appCertMainPage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-appCertMainPagev2.png' />
 
 - In the opened window, continue by selecting the “Create an Apple Certificate” step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertModal_v2.png' />
 
 - Appcircle **requires** an **App Store Connect API Key** associated with your account to create a certificate. If the API Key is **not** added to your Appcircle organization, you **cannot** proceed with the certificate creation process. For more information, please refer to the [**App Store Connect API Key**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertAPIKeySelect.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertAPIKeySelect_v2.png' />
 
 - After selecting the appropriate API Key, Appcircle requires a `CSR` (Certificate Signing Request) file to create an Apple certificate. With the option provided by Appcircle, you can select one created on Appcircle from the list. For more detailed information about the `CSR` creation process, please refer to the [**Generate Signing Request to Create Certificate**](/signing-identities/apple-certificates#creating-certificate-signing-request-file) section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5963-csrSelectNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5963-csrSelectNew_v2.png' />
 
 
 ### Create Certificate with CSR File
@@ -72,13 +72,13 @@ Adding a password during `P12` export is completely **optional**. If you do **no
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-selectCsr.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-selectCsr_v2.png' />
 
 ### Creating Certificate Signing Request File
 
 The **Certificate Signing Request (CSR)** file is required by **Apple** when creating a certificate. This file allows the user to generate a certificate, so it must be created in advance and provided as needed. Since this file can only be generated on a `macOS` operating system, it is unlikely to be created on other systems. Therefore, you can **easily** generate a `CSR` file using Appcircle’s **Generate Signing Request to Create Certificates** feature.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-csrCreate.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-csrCreate_v2.png' />
 
 By correctly filling in the required parameters such as **name**, **email**, and **country** you can generate this file without needing a `macOS` operating system.
 
@@ -88,17 +88,17 @@ It is **important** that the information provided is **accurate**. Any errors in
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-csrDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-csrDetails_v2.png' />
 
 ### Creating P12 File Without Mac
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/02-02-Add-iOS-Certificates.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/02-02-Add-iOS-Certificates_v2.png' />
 
 To generate your iOS certificates, simply fill in your details and Appcircle will provide a CSR (certificate signing request) which you can use on Apple Developer Portal to generate your signing certificate.
 
 - Create a CSR File
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/02-07-Generate-iOS-Cert_v2.png' />
 
 - Download your CSR file
 - Go to the Apple Developer Portal and select "Certificates, IDs & Profiles" from the left menu, then click on "Certificates."
@@ -116,8 +116,8 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 
 - Upload the CER file to the signing identities module by clicking on the upload button next to the CSR file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ac-csr-list.png' />
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ac-createp12.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ac-csr-list_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ac-createp12_v2.png' />
 
 - Your CSR will now be converted to a P12 file as an iOS signing certificate. (Please note that the P12 file comes with an empty password.)
 
@@ -125,7 +125,7 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 
 To upload your Apple Certificate, select "Upload Certificate Bundle (.p12)" button and upload your pre-obtained Apple Certificate file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/02-02-Upload-iOS-Certificates.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/02-02-Upload-iOS-Certificates_v2.png' />
 
 You can see a list of your created or uploaded certificates. Each certificate will display the certificate name, certificate type (development, ad-hoc, in-house, or app store distribution) along with expiration dates.
 
@@ -135,7 +135,7 @@ If your password contains special characters such as `$` and `#`, your workflow 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/02-08-CertificateList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/02-08-CertificateList_v2.png' />
 
 :::info Apple Certificate Expiration Notifications
 
@@ -151,9 +151,9 @@ You will be notified when an Apple Certificate is about to expire. You can see t
 
 Apple Certificates have a limited validity period and must be renewed before they expire to avoid interruptions in your build and distribution workflows. Appcircle allows you to manually renew an existing Apple Certificate directly from the **Signing Identities** module, so you can generate an up-to-date certificate without having to remove and reconfigure your current one.
 
-- In order to manually renew Apple Certificate, navigate to the action button of related certificate and click the renew button.
+- In order to manually renew an Apple Certificate, open the **...** menu of the related certificate under the Actions column, select **Renew**, and choose **Manual renew Apple certificate (.cer)**. Then select the App Store Connect API key that Appcircle will use for the renewal and click **Next**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/actionCert.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/actionCert_v2.png' />
 
 :::info App Store Connect API Key
 
@@ -219,9 +219,9 @@ Revoking an Enterprise or Ad Hoc distribution certificate immediately renders al
 
 ### Revoke Certificate
 
-On Appcircle, you can revoke your certificates directly without having to go to the Apple Developer Portal. To do this, use the “Revoke” action found under the certificate's “Action” button.
+On Appcircle, you can revoke your certificates directly without having to go to the Apple Developer Portal. To do this, open the **...** menu of the certificate under the Actions column and select **Revoke**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/revokeCert.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/revokeCert_v2.png' />
 
 :::danger Revoke Certificate
 
@@ -240,7 +240,7 @@ Certificates deleted on **Appcircle** will only be removed from **Appcircle** an
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-AppleCertificates-Delete-Annotated2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-AppleCertificates-Delete-Annotated2_v2.png' />
 
 ## Sharing Apple Certificates
 
@@ -250,7 +250,7 @@ Shared certificates can be used in Sub-Organizations just like locally created o
 
 ### How to Share Apple Certificates
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-20.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-20_v2.png' />
 
 1. Navigate to the Apple Certificates Section  
    Go to the Signing Identity module and open the **Apple Certificates** section.
@@ -259,7 +259,7 @@ Shared certificates can be used in Sub-Organizations just like locally created o
    Locate the certificate you want to share from the list.
 
 3. Select the Certificate  
-   Click the **Share** icon under the Actions column for the selected certificate.
+   Open the **...** menu under the Actions column for the selected certificate and select **Share**.
 
 4. Configure Sharing Settings  
    In the Share panel:
@@ -270,7 +270,7 @@ Shared certificates can be used in Sub-Organizations just like locally created o
 5. Save Sharing Configuration  
    Click **Share** to apply the configuration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-30.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-30_v2.png' />
 
 ### Behavior in Sub-Organizations
 
@@ -278,13 +278,13 @@ Shared certificates can be used in Sub-Organizations just like locally created o
 - These certificates will be marked with a **Shared** tag on Root Organization and **Inherited** tag on Sub Organizations' certificate list.
 - Sub-Organization users **cannot edit, rename, or delete** shared certificates.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-24.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-24_v2.png' />
 
 :::tip
 - When **Share with all sub-organizations** is enabled, the certificate will automatically be available in newly created sub-organizations as well. 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-31.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-31_v2.png' />
 
 :::caution
 - Any updates or deletions made in the Root Organization will directly affect all Sub-Organizations using the shared certificate.

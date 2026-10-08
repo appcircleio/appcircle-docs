@@ -120,13 +120,13 @@ Google Service Account is required to upload your binary to Google Play Store. T
 
 To add the key on Appcircle, follow these steps:
 
-1. Navigate to [My Organization](/account/my-organization).
+1. Navigate to [Organization](/account/my-organization) > **Security**.
 
-2. Locate the `Google Play Developer API Keys` under the `Credentials` section.
+2. Locate **Google Play Console API Keys** under the **Store credentials** section.
 
-3. Click the `Manage` button if you have saved keys, or directly click the `Add New` button.
+3. Select **Google Play Console API Keys** to open its side panel, where you can view your saved keys and add a new one.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/google-service14_v2.png' />
 
 ## Sharing Google Play Developer Credentials
 
@@ -134,10 +134,10 @@ Root Organization users have the ability to share their saved credentials with S
 
 #### How to Share Credentials
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-1_v2.png' />
 
-**1.**	Navigate to the Credentials Section
-Go to My Organization > Security > Credentials.
+**1.**	Navigate to the Store Credentials Section
+Go to **Organization** > **Security** > **Store credentials**.
 
 **2.** Open Manage Panel
 Click the respective credential type (e.g., App Store Connect API Keys) to view your saved credentials.
@@ -154,7 +154,7 @@ In the Share Credentials panel:
 **5.** Save Sharing Configuration
 Once your selections are made, click Share to apply.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss9_v2.png' />
 
 Shared credentials will be visible and usable in the selected Sub-Organizations as if they were their own.
 
@@ -170,7 +170,7 @@ When the “Share with all sub-organizations” toggle is enabled, the credentia
 
 :::info Editing Credential Name
 You can also edit the name of the credential setting by clicking the edit button
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-1_v2.png' />
 :::
 
 ## FAQ

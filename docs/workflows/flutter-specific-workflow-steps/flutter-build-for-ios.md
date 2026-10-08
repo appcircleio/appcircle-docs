@@ -25,7 +25,7 @@ Once you have compiled your app for Flutter iOS, the native environment will be 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterOrder1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterOrder1_v2.png' />
 
 :::danger
 
@@ -37,7 +37,7 @@ Once you have compiled your app for Flutter iOS, the native environment will be 
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2854-flutterInput_v2.png' />
 
 | Variable Name                 | Description                                    | Status 			|
 |-------------------------------|------------------------------------------------|------------------|

@@ -20,13 +20,13 @@ Before running the **AppSweep Mobile Security Testing** step, you must complete 
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The **AppSweep Mobile Security Testing** step requires the repository to be cloned from the Git provider before it can function properly. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_2_v2.png'/>
 
 :::danger Sensitive Variables
 

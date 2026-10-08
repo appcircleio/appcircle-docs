@@ -22,13 +22,13 @@ Before running the **React Native Unit Test** step, you must complete certain pr
 | [**Install Node**](/workflows/react-native-specific-workflow-steps#install-node)           | This step will install Node modules for your application.                                                                                                                              |
 | [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands) | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/unitOrderNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/unitOrderNew_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/newUnitInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/newUnitInput_v2.png' />
 
 | Variable Name              | Description                                                                                                                                                                                                                                                                                                                                                                                                       | Status   |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -38,7 +38,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+To view the output artifacts in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts) side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 

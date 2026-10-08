@@ -21,17 +21,17 @@ There is currently no Slack integration available on the self-hosted Appcircle. 
 
 ### Connecting Appcircle to Slack
 
-An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](/account/my-organization) > Notifications screen and press the **Connect** button next to Slack under the **Notification Providers** section.
+An Appcircle organization can be associated with a single Slack workspace. To start, go to [Organization](/account/my-organization) > **Notifications**. Under **Chat integrations**, select **Slack** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack1_v2.png' />
 
 Provide permission to the Appcircle app on Slack so that the channel list can be fetched for selection and the status can be sent as a message.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/image (65).png' />
 
-You will then see that Slack is connected. To manage the notification settings or to disconnect, press the "Manage" button.
+You will then see that Slack is connected. To manage the notification settings or to disconnect, select **Slack** again to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack-manage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack-manage_v2.png' />
 
 ### Setting Up Module-Based Notifications in the Slack Settings
 
@@ -53,7 +53,7 @@ Keep scrolling down on Appcircle to see the full list of events.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be3113-slack1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be3113-slack1_v2.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Slack.
@@ -62,14 +62,14 @@ To enable this feature, ensure you include the [**Publish Release Notes**](https
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail_v2.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share the test results via Slack.
 To enable this feature, ensure you include the [**Test Reports**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report) step in your workflow.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail_v2.png' />
 
 ## Available Notification Events by Module
 
@@ -183,6 +183,6 @@ Notifications for binary re-sign actions throughout each supporting module.
 
 ## Disconnecting Slack
 
-If you want to disconnect or reauthorize the Slack connection, scroll down to the end of the management screen and press the "Disconnect" button.
+If you want to disconnect or reauthorize the Slack connection, open the **Slack** side panel, scroll down to the end, and select **Disconnect**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be3113-slack2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be3113-slack2_v2.png' />

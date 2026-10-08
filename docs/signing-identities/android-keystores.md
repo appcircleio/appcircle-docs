@@ -13,13 +13,13 @@ You need to sign your Android applications with a keystore in order to install a
 
 Android keystores can be generated in Appcircle or pre-obtained keystores can be uploaded to use for signing Android applications. If you want to generate keystore in your machine, you can use [KeyStore Explorer](https://keystore-explorer.org).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/02-04-Android-Keystores.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/02-04-Android-Keystores_v2.png' />
 
 ### 1. Generate Android Keystores
 
 You can create a keystore just by entering the necessary information. No additional software is needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/02-05-Generate-Android-Keystores.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/02-05-Generate-Android-Keystores_v2.png' />
 
 ### 2. Upload Android Keystore File
 
@@ -31,7 +31,7 @@ Only files with .keystore extension can be uploaded.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8651-keystorenewpage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8651-keystorenewpage_v2.png' />
 
 Builds with debug type will be signed with a default keystore and don't need a keystore file to be uploaded to Appcircle. If you are building your app for distribution, you need to upload your keystore file in order to have your application signed.
 
@@ -63,7 +63,7 @@ Shared keystores can be used in Sub-Organizations just like locally created or u
 
 #### How to Share Android Keystores
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-15.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-15_v2.png' />
 
 1. Navigate to the Android Keystores Section  
    Go to the Signing Identity module and open the **Android Keystores** section.
@@ -72,7 +72,7 @@ Shared keystores can be used in Sub-Organizations just like locally created or u
    Locate the keystore you want to share.
 
 3. Select the Keystore  
-   Click the **Share** icon under the Actions column.
+   Open the **...** menu under the Actions column and select **Share**.
 
 4. Configure Sharing Settings  
    In the Share panel:
@@ -83,7 +83,7 @@ Shared keystores can be used in Sub-Organizations just like locally created or u
 5. Save Sharing Configuration  
    Click **Share** to complete the process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-16.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-16_v2.png' />
 
 #### Behavior in Sub-Organizations
 
@@ -91,7 +91,7 @@ Shared keystores can be used in Sub-Organizations just like locally created or u
 - These keystores will be marked with a **Shared** on Root Organizations and **Inherited** tag on Sub Organizations.
 - Sub-Organization users **cannot edit, rename, or delete** shared keystores.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-18.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-18_v2.png' />
 
 :::tip
 - If **Share with all sub-organizations** is enabled, the keystore will also be automatically available in newly created sub-organizations.

@@ -60,7 +60,7 @@ Note that you can put the **Custom Script from Git** component anywhere you want
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6419-csfromgit.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6419-csfromgit_v2.png' />
 
 ### Input Variables
 
@@ -68,7 +68,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <SensitiveVariablesDanger />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6419-csfromgitinput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6419-csfromgitinput_v2.png' />
 
 
 | Variable Name                  | Description                                                                                                                                                                                            | Status   |
@@ -85,7 +85,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6419-csfromgitoutput.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6419-csfromgitoutput_v2.png'/>
 
 | Variable Name                 | Description                                                                                                                              |
 |-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------| 

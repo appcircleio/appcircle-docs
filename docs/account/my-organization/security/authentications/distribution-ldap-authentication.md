@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 This document serves as a helpful guide for setting up and managing LDAP (Lightweight Directory Access Protocol) login integration within our organizational system.
 Whether you're new to LDAP or looking to streamline your authentication process, this document provides step-by-step instructions to ensure a smooth setup and management experience.
 
-To get started, simply navigate to the **Security** page within our platform and click on the "Add New" button next to LDAP Login under the **Authentications** section.
+To get started, go to **Organization** > **Security** and select **Testing Portal LDAP login** under **Authentication** to open its side panel.
 From there, you'll be guided through the process of creating LDAP configurations, including filling in the necessary details and enabling Two Factor Authentication (2FA) for added security.
 
 :::note
@@ -30,11 +30,11 @@ This means you can tailor access permissions according to your organization's sp
 
 If you ever need to remove LDAP Login integration, the document also provides clear instructions for doing so, ensuring that your system remains secure and up-to-date.
 
-To start, go to [My Organization](/account/my-organization) > Security screen and press the **Add New** button next to LDAP Login under the **Authentications** section.
+To start, go to [Organization](/account/my-organization) > **Security**. Under **Authentication**, select **Testing Portal LDAP login** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-ldap-add-new.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-ldap-add-new_v2.png' />
 
-- The **Manage Testing Portal LDAP Login** window will open, click **Create New Authentication** button.
+- The **Manage Testing Portal LDAP Login** side panel opens. Click the **Create New Authentication** button.
 
 - The **Create New Authentication** window will open, presenting two options:
     - **Create New Authentication**
@@ -42,25 +42,25 @@ To start, go to [My Organization](/account/my-organization) > Security screen 
 You can create new configuration or create from existing configuration. Click on the **Create New Authentication** section to create new configuration.
 Please refer the [**Create From Existing LDAP Configuration**](/account/my-organization/security/authentications/distribution-ldap-authentication#create-from-existing-ldap-configuration).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-ldap-create-options.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-ldap-create-options_v2.png' />
 
 - Fill in the details of your LDAP Configurations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap2_v2.png' />
 
-- The Connect button will switch to the Manage button once a configuration is created.
+- Once a configuration is created, select **Testing Portal LDAP login** again to manage it in the side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/distribute-ldap-login4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/distribute-ldap-login4_v2.png' />
 
-- To access the LDAP integration settings, click the "Manage" button of the "LDAP Login" after click **Manage Authentication** button. Then click the "Edit" button of the existing LDAP provider.
+- To access the LDAP integration settings, select **Testing Portal LDAP login** under **Authentication** to open its side panel. Then click **Manage Authentication** button and select the "Edit" button of the existing LDAP provider.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login-configuration-edit.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login-configuration-edit_v2.png' />
 
 - The "Order" field in your LDAP configuration determines the priority or sequence in which providers are utilized when conducting a user lookup.
   Providers are entities responsible for retrieving user information from LDAP servers.
   Specifying the order allows you to prioritize certain providers over others, ensuring efficient user lookup operations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap3_v2.png' />
 
 :::info
 
@@ -74,15 +74,15 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
 
 - The "Connection Pooling" option in your LDAP configuration determines whether Appcircle should utilize connection pooling for accessing the LDAP server.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login-connection-pooling.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login-connection-pooling_v2.png' />
 
-- To enable Two Factor Authentication, open it by clicking the Manage button and select the verification method.
+- To enable Two Factor Authentication, open the **Testing Portal LDAP login** side panel and select the verification method.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login5_v2.png' />
 
-- To change the distribution authorization, navigate to the Distribution Profiles screen and select your distribution profile. Click **Settings** button and under the Authentication tab you should see LDAP Login. Toggle the **LDAP Login** to 'On'.
+- To change the distribution authorization, go to **Testing Distribution** > **Profiles** and select your distribution profile. Open the **...** menu next to the profile name and select **Settings**. Under the Authentication tab you should see LDAP Login. Toggle the **LDAP Login** to 'On'.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login6_v2.png' />
 
 - After this step, it will be necessary to log in from the LDAP Login screen to access the distributed links.
 
@@ -101,20 +101,20 @@ In this example, when conducting a user lookup, Appcircle will first attempt to 
 
   Appcircle allows you to create a new SSO configuration based on an existing one, ensuring a smooth and efficient setup experience. 
  
-- Navigate to the **Organization > Security > Authentications** section on your dashboard.
-- Select the **Add New** on the **Testing Portal LDAP Login**.
+- Go to **Organization** > **Security** and find the **Authentication** section.
+- Select **Testing Portal LDAP login** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button_v2.png' /> 
 
 - Select the **Create New Authentication** and then select the **Create From Existing Configuration**.
 
 Existing LDAP configurations will be listed on the screen. Select one and click **Next** to proceed. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-create-from-existing.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-create-from-existing_v2.png' /> 
 
 - On the Create LDAP Configuration screen, fill in the **Name** and **Credential** fields (all other values are prefilled). Adjust any fields as needed, then click **Save**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5679-ldap2_v2.png' />
 
 :::info
 The LDAP authentication configuration for Testing Portal can be enabled or disabled by clicking the “Activate LDAP” toggle.
@@ -122,14 +122,14 @@ The LDAP authentication configuration for Testing Portal can be enabled or disab
 
 ## Deleting LDAP Login
 
-- To delete, go to the [My Organization](/account/my-organization) > Security screen and press the Manage button next to LDAP Login under the Authentications section.
+- To delete, go to [Organization](/account/my-organization) > **Security** and select **Testing Portal LDAP login** under **Authentication** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login10_v2.png' />
 
 - Click the Remove button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login11.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login11_v2.png' />
 
 - Type the alias’s name to confirm deletion and click the Delete button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login12.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login12_v2.png' />

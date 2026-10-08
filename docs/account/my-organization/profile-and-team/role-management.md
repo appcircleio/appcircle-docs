@@ -422,7 +422,7 @@ If you want to assign a role in a sub-organization, please do so within the resp
 
 :::caution Appcircle Login and LDAP/SSO Integrations
 
-LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-app-store).
+The Testing Portal and Enterprise Portal LDAP/SSO logins under **Organization** > **Security** > **Authentication** are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-app-store).
 
 Please use [**Appcircle Login**](/account/my-organization/security/authentications) for **LDAP** and **SSO** integration when logging into Appcircle.
 

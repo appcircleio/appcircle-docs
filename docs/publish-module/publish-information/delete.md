@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The "Delete" function in the Publish to Stores module allows users to remove specific versions of an app from the module. This action does not affect any versions of the app that have been submitted to app stores; it only removes the version from Appcircle's Publish to Stores module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-27.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-27_v2.png' />
 
 ## Steps to Delete a Build Version
 
@@ -22,7 +22,7 @@ The "Delete" function in the Publish to Stores module allows users to remove spe
 
 2. **Access Delete Option:**
 
-   - Click on the trash can icon or the menu option for the version you want to delete.
+   - Open the **...** menu on the row of the version you want to delete and select **Delete**.
 
 3. **Confirm Deletion:**
 

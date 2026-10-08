@@ -12,15 +12,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-2_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-eas1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-eas1_v2.png' />
 
 #### Build Metadata Details
 
 The following metadata is displayed in the Binary Details section of a Enterprise App Store Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Enterprise App Store module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-eas4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-eas4_v2.png' />
 
 - **Trigger Type**: Indicates what initiated the build. Possible values include:
 
@@ -46,5 +46,5 @@ Binaries generated through the Appcircle Build Module include associated build d
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-eas3.png' />
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-eas2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-eas3_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-eas2_v2.png' />

@@ -26,7 +26,7 @@ To keep the report after the build, add the [**Export Build Artifacts**](/workfl
 | [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app (APK or AAB) required for the **MobSF Binary Scan** step. |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign) | Signs the app (APK or AAB). If the app is already signed, this step can be skipped. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-android.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-android_v2.png' />
 
 #### For Android Flutter
 
@@ -35,7 +35,7 @@ To keep the report after the build, add the [**Export Build Artifacts**](/workfl
 | [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app (APK or AAB) required for the **MobSF Binary Scan** step. |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign) | Signs the app (APK or AAB). If the app is already signed, this step can be skipped. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-flutter-android.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-flutter-android_v2.png' />
 
 #### For iOS (Objective-C / Swift and React Native)
 
@@ -43,7 +43,7 @@ To keep the report after the build, add the [**Export Build Artifacts**](/workfl
 | -------------------------- | ----------- |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary_v2.png' />
 
 #### For iOS Flutter
 
@@ -52,13 +52,13 @@ To keep the report after the build, add the [**Export Build Artifacts**](/workfl
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-flutter.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-flutter_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-input.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-binary-input_v2.png' />
 
 
 | Variable Name | Description | Status |

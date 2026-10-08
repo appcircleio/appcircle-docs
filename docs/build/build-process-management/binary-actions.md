@@ -9,7 +9,7 @@ sidebar_position: 7
 
 With Appcircle's post-build actions, you can easily distribute your binary file manually, access artifacts, and examine build logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-action.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-action_v2.png' />
 
 ## Distribute Binary
 
@@ -21,13 +21,13 @@ Please note that AAB files will not be distributed automatically since they cann
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-dist.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-dist_v2.png' />
 
 ## View Build Logs
 
 This feature allows the relevant build logs to be reviewed in the Appcircle log window. The logs can be examined step by step separately.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-log.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-log_v2.png' />
 
 ## Download Artifacts
 
@@ -61,7 +61,7 @@ Build logs help you to observe and understand exactly what happened during a bui
 
 In the build logs, the **Builds/Statuses** column is sorted by the latest completion build date. As a result, the start dates displayed in the list might not be in chronological order:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-working-with-build-logs.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-working-with-build-logs_v2.png' />
 
 :::
 
@@ -77,7 +77,7 @@ If you want to free up space from your Artifact Storage, you can delete older bu
 
 To do that, simply navigate to the Builds tab and select the builds, then click on the Delete icon.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-delete5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-delete5_v2.png' />
 
 :::info
 
@@ -97,7 +97,7 @@ Older builds and/or testing distributions will use almost all of your storage. I
 
 #### [Refer here to delete a Publish Profile](/publish-to-stores-module/creating-publish-profiles/managing-publish-profiles#delete-publish-profile)
 
-In order for storage to be freed up, you should also remove the other references pointing to the artifact. For example, if you have built an app, distributed it to testers, and submitted it to the Store Submit, you should delete that build from Testing Distribution, Store Submit, and Builds, respectively.
+In order for storage to be freed up, you should also remove the other references pointing to the artifact. For example, if you have built an app, distributed it to testers, and sent it to Publish to Stores, you should delete that build from Testing Distribution, Publish to Stores, and Builds, respectively.
 
 :::caution
 

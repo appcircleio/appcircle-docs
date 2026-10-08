@@ -19,7 +19,7 @@ Before running the **Xcodebuild for iOS Simulator** step, you must complete cert
 | [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)     | This step selects the Xcode version that is specified. |
 | [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)   | This step installs all the dependencies of the pod file. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2586-sim_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2586-sim_order_v2.png' />
 
 :::caution
 
@@ -31,7 +31,7 @@ If you use SPM (Swift Package Manager), Xcode will manage itself when a project 
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2586-simInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2586-simInput_v2.png' />
 
 
 | Variable Name                 | Description                                    | Status |

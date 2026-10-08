@@ -36,13 +36,13 @@ Note that you can put the **Check Network Accessibility** component anywhere you
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6281-wf2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6281-wf2_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6281-comp2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6281-comp2_v2.png' />
 
 | Variable Name                                              | Description                                                                                                                                                           | Status   |
 | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

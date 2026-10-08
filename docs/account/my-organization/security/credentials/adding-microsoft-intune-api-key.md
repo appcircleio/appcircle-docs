@@ -11,14 +11,14 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Intune API key allows you to upload the binary file and metadata information to your Microsoft Intune account.
 
-Integration information for InTune can be added from the **Security** section under [**Appcircle Organization**](/account/my-organization).
+Integration information for Intune can be added from [**Organization**](/account/my-organization) > **Security**. Under **Store credentials**, select **Microsoft Intune API Keys** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneIntegration.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneIntegration_v2.png' />
 
 
-After completing the required credentials information in the modal, your Microsoft InTune account is successfully integrated with Appcircle.
+After completing the required credentials information in the side panel, your Microsoft Intune account is successfully integrated with Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneIntegrationModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneIntegrationModal_v2.png' />
 
 #### Fields Explained
 
@@ -46,10 +46,10 @@ Root Organization users have the ability to share their saved credentials with S
 
 #### How to Share Credentials
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-3_v2.png' />
 
-**1.**	Navigate to the Credentials Section
-Go to My Organization > Security > Credentials.
+**1.**	Navigate to the Store Credentials Section
+Go to **Organization** > **Security** > **Store credentials**.
 
 **2.** Open Manage Panel
 Click the respective credential type (e.g., App Store Connect API Keys) to view your saved credentials.
@@ -66,7 +66,7 @@ In the Share Credentials panel:
 **5.** Save Sharing Configuration
 Once your selections are made, click Share to apply.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss9_v2.png' />
 
 Shared credentials will be visible and usable in the selected Sub-Organizations as if they were their own.
 
@@ -82,5 +82,5 @@ When the “Share with all sub-organizations” toggle is enabled, the credentia
 
 :::info Editing Credential Name
 You can also edit the name of the credential setting by clicking the edit button
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-3_v2.png' />
 :::

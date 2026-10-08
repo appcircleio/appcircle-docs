@@ -13,7 +13,7 @@ This option provides an in-depth view of the selected version's publish process.
 <!--
 The "Publish Details" feature in the Publish to Stores module provides a comprehensive view of the publish flow for both Android and iOS builds. It is where you can see the progress and logs of your publishing process to different platforms like Google Play Store and TestFlight. -->
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-22.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-22_v2.png' />
 
 ## Accessing Publish Details
 
@@ -25,7 +25,7 @@ To view the details of your publish flow:
 
 2. **Open Publish Details:**
 
-   - Click on the "Publish Details" option to open the detailed view of the publish flow.
+   - Open the **...** menu on the version row and select **Publish details**. The **Publish flow** panel opens with the detailed view of the publish flow.
 
 3. **Review the Logs:**
    - Examine the logs to monitor the progress of your publishing actions.

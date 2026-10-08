@@ -24,7 +24,7 @@ Appcircle will use your `package.json` file to determine and use the dependencie
 
 Simply create a new build profile as usual and select your target operating system as iOS or Android. Select **React Native** for **Target Platform**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-profile.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-profile_v2.png' />
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
@@ -46,7 +46,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 ### Build Configuration for React Native iOS applications
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
@@ -62,21 +62,21 @@ Please don't forget to add additional scheme files to your version control.
 
 :::
 
-Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version in the Build Configuration window. You can also set the preferred NodeJS version on this screen. If you don't set any version, `lts` version will be used.
+Major Xcode versions are available for building in Appcircle. You can select the preferred Xcode version on the **Config** tab of the build configuration. You can also set the preferred Node.js version in the **Node.js version** field on the same tab. If you don't set any version, `lts` version will be used.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-ios.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-ios_v2.png' />
 
 ### Build Configuration for React Native Android applications
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-android.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-build-edit-configuration-android_v2.png' />
 
 ### Sending the Build Status to the Repository Providers
 
-At the bottom of the config tab, you will see the **Set Commit Build Status **option.
+At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-ios-build-commit-status.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-react-native-ios-build-commit-statusv2.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -104,7 +104,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-signing-empty.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-ios-signing-emptyv2.png' />
 
 ### Signing React Native Android applications
 
@@ -154,7 +154,7 @@ To learn more about Appcircle's Workflow editor, see the corresponding page belo
 
 ### Starting a React Native Build and After a Build
 
-To start your first build, just press the start build button – the play button under the actions columns (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in real time.
+To start your first build, just click **Start build** at the top right of the build list (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in real time.
 
 Once your build is complete, you can now download the binary file or deploy it to Testing Distribution manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at any time.
 

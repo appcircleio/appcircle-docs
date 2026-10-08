@@ -35,7 +35,7 @@ If you're working with a **React Native Android** project, ensure that the follo
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build-for-ui-testing_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build-for-ui-testing_1_v2.png'/>
 
 :::note
 
@@ -47,7 +47,7 @@ The **[Firebase Test Lab for Android](/workflows/android-specific-workflow-steps
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build-for-ui-testing_2.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build-for-ui-testing_2_v2.png' alt="image2" />
 
 | Variable Name        | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | -------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |

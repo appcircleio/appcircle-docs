@@ -44,7 +44,7 @@ To connect Appcircle using Workflows:
 
 7. Paste this URL into Appcircle when configuring notification webhooks (for example via the *Send webhook alerts to channel* workflow step).
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8339-3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8339-3_v2.png" />
 
 When a notification payload is sent to this workflow URL, Microsoft Teams processes the request and posts the message to the configured channel.
 
@@ -76,13 +76,13 @@ In order to get notifications, the administrator of the channel should add an in
 
 ### Connecting Appcircle to Microsoft Teams
 
-An Appcircle organization can be associated with a single Teams channel. To start, go to [My Organization](/account/my-organization) > Notifications screen and press the "Connect" button next to Microsoft Teams under the "Notification Providers" section.
+An Appcircle organization can be associated with a single Teams channel. To start, go to [Organization](/account/my-organization) > **Notifications**. Under **Chat integrations**, select **Microsoft Teams** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/integrations-teams.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/integrations-teams_v2.png' />
 
 Write the webhook URL that you created in the previous step and select the events you want to receive. You can set up notifications for the major events in each module (Build, Signing Identities, Distribute and Store Submission).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure4_v2.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Microsoft Teams.
@@ -91,14 +91,14 @@ To enable this feature, ensure you include the [**Publish Release Notes**](https
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail_v2.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share the test results via Microsoft Teams.
 To enable this feature, ensure you include the [**Test Reports**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report) step in your workflow.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail_v2.png' />
 
 ## Available Notification Events by Module
 
@@ -212,9 +212,9 @@ Notifications for binary re-sign actions throughout each supporting module.
 
 ## Disconnecting Microsoft Teams
 
-If you want to disconnect or reauthorize the Microsoft Teams connection, scroll down to the end of the management screen and press the "Disconnect" button.
+If you want to disconnect or reauthorize the Microsoft Teams connection, open the **Microsoft Teams** side panel, scroll down to the end, and select **Disconnect**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/msteams-configure5_v2.png' />
 
 ## Troubleshooting & FAQ
 

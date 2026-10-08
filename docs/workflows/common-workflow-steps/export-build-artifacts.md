@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Export Build Artifact
 
-Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download in the artifacts section of the completed build.
+Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download in the **Download artifacts** side panel of the completed build.
 
 :::danger
 
@@ -27,7 +27,7 @@ We **recommend** using it as the **last** step in your workflow.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportOrder_v2.png' />
 
 :::danger
 
@@ -37,15 +37,15 @@ Remember, if you set a step to run after this step, artifacts generated after th
 
 ### Download Exported Artifacts
 
-You can access and download the exported artifacts by clicking on the three dots (**⋮**) in the Build list and selecting download artifact. 
+To download the exported artifacts, open the build's **...** menu in the build list and select **Download artifacts**. A side panel lists the artifacts of the build.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportDownload.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportDownload_v2.png' />
 
 :::caution
 
 If you use the **Default Workflow** templates, the option "**Always run this step even if the previous steps fail**" is already enabled for the **Export Build Artifacts** step by default. However, **if you want to ensure that the build log and any extracted artifacts are available even if the pipeline fails, you need to turn on this option.**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/exportToggle.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/exportToggle_v2.png' />
 
 :::
 
@@ -53,7 +53,7 @@ If you use the **Default Workflow** templates, the option "**Always run this ste
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2584-exportInput_v2.png' />
 
 
 | Variable Name                 | Description                                    | Status |

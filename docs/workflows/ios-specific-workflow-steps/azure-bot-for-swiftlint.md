@@ -36,13 +36,13 @@ Before running the **Azure Bot for Swiftlint** step, you must complete certain p
 |-------------------------------------------------|-------------------------------------------------|
 | [**Swiftlint**](/workflows/ios-specific-workflow-steps/swiftlint) | This component will check the source code for programmatic as well as stylistic errors. This is helpful in identifying some common and uncommon mistakes that are made during coding. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotInput_v2.png' />
 
 :::danger Sensitive Variables
 

@@ -30,7 +30,7 @@ Once your project builds without error, complete the following sections:
 1. Repository
 2. Dependencies
 3. Signing
-4. Integrations
+4. Store credentials
 5. Extra suggestions
 
 ## Repository
@@ -149,9 +149,9 @@ For Android, upload the keystore file used to sign the project. Simply uploading
 Android Signing for Google Play
 </ContentRef>
 
-## Integrations
+## Store credentials
 
-Add App Store, Google Play, or Huawei AppGallery keys to Appcircle to upload IPA or APK-AAB files. Follow these guides for detailed instructions:
+Add App Store, Google Play, or Huawei AppGallery keys to Appcircle under **Organization** > **Security** > **Store credentials** to upload IPA or APK-AAB files. Follow these guides for detailed instructions:
 
 <ContentRef url="/publish-integrations/ios-publish-integrations/send-to-app-store">
 Send to App Store

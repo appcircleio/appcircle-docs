@@ -20,13 +20,13 @@ Before running the **Android Dependency Report** step, you must complete certain
 |------------------------------------------------------------------------------------| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/build/build-process-management/configurations) | To initiate the **Android Dependency Report** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Dependency Report** step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_2.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_2_v2.png' alt="image2" />
 
 | Variable Name                  | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | ------------------------------ |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
@@ -45,9 +45,9 @@ The output(s) resulting from the operation of this component are as follows:
 
 :::danger
 
-If you wish to review or download the **Android Dependencies Report**, you can find them directly from [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts). To do this, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step follows the **Android Dependency Report** workflow step.
+If you wish to review or download the **Android Dependencies Report**, you can find them in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list). To do this, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step follows the **Android Dependency Report** workflow step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_3.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-dependency-report_3_v2.png'/>
 
 :::
 

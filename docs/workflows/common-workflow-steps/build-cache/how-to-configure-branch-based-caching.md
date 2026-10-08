@@ -35,7 +35,7 @@ Cache benefits will apply starting from the second and subsequent builds of the 
    ```
    $AC_BUILD_PROFILE_ID/$AC_BUILD_BRANCH_ID/cache
    ```
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-197-branch-based-cache-pull.png' />
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-197-branch-based-cache-pull_v2.png' />
 
 3. Save the changes in the Cache Pull step.
 
@@ -53,7 +53,7 @@ Cache benefits will apply starting from the second and subsequent builds of the 
    $AC_BUILD_PROFILE_ID/$AC_BUILD_BRANCH_ID/cache
    ```
    
-   <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-197-branch-based-cache-push.png' />
+   <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-197-branch-based-cache-push_v2.png' />
 
 
 6. Save the changes in the Cache Push step.

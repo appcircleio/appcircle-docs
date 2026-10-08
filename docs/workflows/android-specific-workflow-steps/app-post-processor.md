@@ -36,7 +36,7 @@ The workflow steps that need to be executed before running the **Android App Pos
 | [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | To process Android output, these outputs must be obtained from the build step. |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign) | If a signed app is created, this step needs to be run beforehand to process this output. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_1.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_1_v2.png' alt="image2" />
 
 :::caution
 
@@ -52,7 +52,7 @@ There is no need to enter an input for this component. It will process Android f
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_2.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-post-processor_2_v2.png' alt="image2" />
 
 | Variable Name                          | Description                                       |
 |----------------------------------------|---------------------------------------------------|
@@ -75,7 +75,7 @@ The output post-processing JSON file should adhere to the following structure:
 
 :::caution
 
-To share the signed apps created as a result of this step or to view them on the **Download Artifacts** page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+To share the signed apps created as a result of this step or to view them in the **Download artifacts** side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
 
 :::
 

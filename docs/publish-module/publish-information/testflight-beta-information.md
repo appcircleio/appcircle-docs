@@ -24,9 +24,9 @@ This tab displays testing-related statuses such as:
 
 The information shown in this section is based on the TestFlight Beta Information available on App Store Connect.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-3_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-4_v2.png' />
 
 
 :::info Testing Status
@@ -39,7 +39,7 @@ The data displayed on the **Testing Status** tab is read-only. It shows the stat
 
 The **Beta App Information** tab allows you to manage the metadata that will be displayed to beta testers on **TestFlight**. With this feature, you can easily update the desired data without having to log in to your App Store Connect account.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/beta-info.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/beta-info_v2.png' />
 
 :::caution Beta App Information
 
@@ -59,7 +59,7 @@ The localization option in the Beta App Information section applies only to the 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/tf-beta-localization.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/tf-beta-localization_v2.png' />
 
 ### Fields Explained
 

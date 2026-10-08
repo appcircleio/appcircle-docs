@@ -21,7 +21,7 @@ There are no prerequisites required before using the **Appium Server** step.
 
 Below is a list of input variables that can be used with this component, with a description of each.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2795-appiumInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2795-appiumInput_v2.png' />
 
 | Variable Name                 | Description                                    | Status           |
 |-------------------------------|------------------------------------------------|------------------|

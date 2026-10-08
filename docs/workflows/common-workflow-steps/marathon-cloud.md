@@ -38,18 +38,18 @@ Please note that if you do not change this parameter, the Marathon Cloud compone
 
 #### For Android
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonOrderAnd.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonOrderAnd_v2.png' />
 
 #### For iOS
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonOrder_v2.png' />
 
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2990-marathonInput_v2.png' />
 
 :::danger Sensitive Variables
 

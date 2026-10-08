@@ -20,7 +20,7 @@ Since the primary objective of this report is to provide visibility on who used 
 
 The date and time are displayed in the current timezone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-10.png' alt="Signing Reports" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-10_v2.png' alt="Signing Reports" />
 
 You can filter the report pages according to the organization.
 

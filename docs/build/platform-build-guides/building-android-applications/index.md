@@ -24,7 +24,7 @@ When you are done with the steps above, you can now start building your Android 
 
 ### Build Configuration
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 ### Private Modules
 
@@ -40,7 +40,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-status.png' alt="Sending Build Status" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-statusv2.png' alt="Sending Build Status" />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -72,7 +72,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-signing.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-signing_v2.png' />
 
 ### Distribution
 
@@ -82,7 +82,7 @@ The next step on build configuration is Distribution. You can create a new distr
   Create a Distribution Profile and Sharing with Testers
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-distribution.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-distribution_v2.png' />
 
 :::info
 
@@ -92,7 +92,7 @@ Any previous build can be deployed to the Testing Distribution without the need 
 
 ### Environment Variables
 
-The final step on build configuration is Environment Variables.
+The final tab of the build configuration is **Environment**.
 
 Appcircle Build module is simple and powerful. You can get your builds instantly just with a few clicks, advanced management of builds is also possible with the environment variables and workflows.
 
@@ -104,13 +104,13 @@ Please see the following page for more information about environment variables:
   Why Use Environment Variables and Secrets?
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-env-variables.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-env-variables_v2.png' />
 
 Please click on the Save button and close this modal.
 
 ### Workflow Editor
 
-You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use the workflow editor.
+You can use the workflow editor for in-depth configuration of all build steps. Click **Workflows** at the top right of the build profile to open and use the workflow editor.
 
 :::info
 
@@ -126,11 +126,11 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidbuild1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidbuild1_v2.png' />
 
 Select a configuration, workflow, commit ID and click on **Start Build button**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-build-modal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-build-modal_v2.png' />
 
 Appcircle will start building your application. The build log window will open, and you can follow the build process in real time.
 
@@ -140,7 +140,7 @@ You can safely close the build log window; it won't affect the status of your bu
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-workflow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-android-workflow_v2.png' />
 
 **Distribute Your Build**
 
@@ -164,7 +164,7 @@ For the autofill, we have two options to choose from.
 
 You can add the `org.gradle.java.home` entry to the `gradle.properties` file in your Android project.
 
-For example, the below entry can be used to change the default Java version to 17 for the "Appcircle Standard macOS Pool (arm64)".
+For example, the below entry can be used to change the default Java version to 17 for the "Appcircle macOS pool (arm64)".
 
 ```properties
 org.gradle.java.home=/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu
@@ -181,8 +181,8 @@ For example, you can take the following steps to change the default Java version
 1. Create a variable group that has a variable with the properties below.
     1. The key should be `JAVA_HOME`.
     2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu`.
-2. Go to the configuration section of the build profile that you want to autofill.
-3. Go to the 'Env. Variables' tab in configuration.
+2. Select **Configurations** at the top right of the build profile that you want to autofill and open the configuration.
+3. Go to the **Environment** tab in the configuration.
     1. You should see the variable group that you created in the list.
 4. Select the variable group that has `JAVA_HOME` and 'Save' settings.
 5. Go back to the config tab and start autofilling there.

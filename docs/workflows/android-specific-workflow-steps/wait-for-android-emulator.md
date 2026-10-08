@@ -14,7 +14,7 @@ For additional details, please refer to the [**Emulator**](/infrastructure/andro
 
 :::danger
 
-Ensure that you select the **Appcircle Linux Pool (x86_64)** in the Configuration tab, as the **Wait for Android Emulator** step will not function in the **Appcircle Standard macOS Pool (arm64)**. Please refer to [this documentation](/build/build-process-management/configurations#config-details) for selecting a pool in Configuration.
+Ensure that you select **Appcircle Linux pool (x86_64)** as the **Organization pool** on the **Config** tab of the build configuration, as the **Wait for Android Emulator** step will not function in the **Appcircle macOS pool (arm64)**. Please refer to [this documentation](/build/build-process-management/configurations#config-details) for selecting a pool in the build configuration.
 
 :::
 
@@ -33,13 +33,13 @@ If a step other than the **Android Build** or **Android Sign** step is used to b
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-wait-for-android-emulator_2_v2.png'/>
 
 | Variable Name               | Description                                                                                                                                                                                                                                                                                                                                                                  | Status   |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

@@ -30,13 +30,13 @@ If a step other than the **Android Build** or **Android Sign** step is used to b
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_2_v2.png'/>
 
 <SensitiveVariablesDanger />
 
@@ -57,7 +57,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_3.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_3_v2.png'/>
 
 | Variable Name                          | Description                                                                                                                                                                                                        |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

@@ -12,27 +12,27 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### Creating environment variable groups
 
-To create an environment variable group, select Environment Variables from the build module. Click on the orange **...** icon and select '**Add Variable Group**'. Then, enter the name of the group into the input box, and press Enter to create the group.
+To create an environment variable group, select Environment Variables from the build module. Click **Add variable group**. Then, enter the name of the group into the input box, and press Enter to create the group.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-6_v2.png' />
 
 ### Adding key and text-based value pairs
 
 To add an environment variable to the group, select the "Text" tab from the top and use the inputs below. Enter a key name, then enter the value for the key and press enter.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-5_v2.png' />
 
 You can add as many environment variables as you need.
 
 :::info
 
-Variables that need to be secret can be hidden using the lock icon. Such variables cannot be viewed by the users during the build process.
+To keep a variable secret, select the **Secret** tab when you add the variable (variable types are **Text**, **Secret** and **File**). Such variables cannot be viewed by the users during the build process.
 
 :::
 
 Please note that some environment variables may need to be duplicated to be used in different groups for different purposes.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-3_v2.png' />
 
 ### Adding files as environment variables
 
@@ -42,9 +42,9 @@ To add a file, select the "File" tab from the top and enter a key name from the 
 
 Then press add to upload the file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-2_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-1_v2.png' />
 
 :::info
 
@@ -60,11 +60,11 @@ You can edit encrypted variables by clicking the Edit option, just like text var
 
 You can export environment variable groups in bulk as a `.zip` file.
 
-To export variable groups, click on the three dots icon next to **Variable Groups** and select **Export Variable Group**.
+To export variable groups, click on the three dots icon next to **Variable groups** and select **Export variable group**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-8_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-10.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-10_v2.png' />
 
 In the export modal:
 
@@ -72,7 +72,7 @@ In the export modal:
 - All selected groups will be included in the exported file.
 - The export will be downloaded as a `.zip` file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-11.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-11_v2.png' />
 
 :::info
 - Secret variables and file contents are not exposed directly for security reasons.
@@ -123,11 +123,11 @@ As seen in the example above;
 
 You can import environment variable groups in bulk using a `.zip` file.
 
-To import variable groups, click on the three dots icon next to **Variable Groups** and select **Import Variable Group**.
+To import variable groups, click on the three dots icon next to **Variable groups** and select **Import variable group**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-7_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-9_v2.png' />
 
 In the import flow:
 
@@ -135,7 +135,7 @@ In the import flow:
 2. On the next screen, select the groups you want to import.
 3. Review the variables within each group before confirming.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-12.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-12_v2.png' />
 
 
 If a variable group or variable already exists, it will be marked with an `Exists` tag.
@@ -145,7 +145,7 @@ You can control how conflicts are handled using the following options:
 - **Overwrite if there is existing group**: Replaces the entire group and all its variables.
 - **Overwrite if there is existing variables**: Updates only the existing variables with new values.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-13.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-13_v2.png' />
 
 :::info
 - Existing variables or groups will not be overwritten unless the corresponding overwrite option is enabled.
@@ -158,27 +158,27 @@ You can share environment variable groups from the root organization to sub-orga
 
 To share a variable group, click on the three dots icon next to a group and select **Share**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-30.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-30_v2.png' />
 
 In the share modal:
 
 - You can select specific sub-organizations to share the variable group with.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-31.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-31_v2.png' />
 
 - Optionally, enable **Share with all sub-organizations** to automatically share the group with all existing and future sub-organizations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-32.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-32_v2.png' />
 
 After sharing:
 
 - Shared variable groups will be marked with a **Shared** tag in the root organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-33.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-33_v2.png' />
 
 - In sub-organizations, these groups will appear with an **Inherited** tag.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-34.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-34_v2.png' />
 
 :::info
 - Users in sub-organizations cannot edit, rename, or delete inherited variable groups.
@@ -189,13 +189,13 @@ After sharing:
 
 Environment variable groups can be used in builds to extend the workflow and add additional actions to workflow steps.
 
-To add an environment variable group to a build, go to the build profile from the build module and select _Build Configuration > Env. Variables_
+To add an environment variable group to a build, open the build profile from the **Build** module, select **Configurations** at the top right of the build profile, open the configuration, and go to the **Environment** tab.
 
 Here, you can see a list of previously created environment variable groups. Select the groups you want to be included in this specific build profile. Then click Save to save your selection.
 
 Then in workflows, you can specify the environment variable for use.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables_v2.png' />
 
 #### Creating environment variables on the fly
 
@@ -217,17 +217,17 @@ So you can add environment variables and use them in multiple projects. Also, th
 You can create an environment variable and enter the key value for the Personal Access Token.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var7_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/repocon-azure.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/repocon-azure_v2.png' />
 
 :::info
 If you are going to use an SSH private key, you need to upload it as a file.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3108-var8_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sshconn-var.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sshconn-var_v2.png' />
 
 :::caution
 There are two use cases for the variable group naming here.

@@ -20,7 +20,7 @@ Before running the **MobSF Source Code Scan** step, you must complete the prereq
 | -------------------------- | ----------- |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | Clones the repository to the build agent, so that the scanner has source code to read. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-scan.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-scan_v2.png' />
 
 Place the step after **Git Clone** and before the build steps. The scan reads the source code only, so it does not need a built app.
 
@@ -30,7 +30,7 @@ To keep the reports after the build, add the [**Export Build Artifacts**](/workf
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-scan-inputs.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mobsf-scan-inputs_v2.png' />
 
 | Variable Name | Description | Status |
 | ------------- | ----------- | ------ |

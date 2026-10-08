@@ -10,23 +10,23 @@ tags: [publish settings, publish, settings]
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-When a build is completed on the Build module and its artifacts are distributed to the Publish to Stores module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
+When a build is completed on the Build module and its artifacts are distributed to the Publish to Stores module, we can start the publish process to the stores using the **Auto publish** toggle in **Settings**. To open **Settings**, select it from the **...** menu next to the publish profile name.
 
 Your configured publish flow will be executed automatically when you enable **Auto Publish**.
 
-You can also select a runner pool from the **SELECT A POOL** dropdown list.
+You can also select a runner pool from the **Select a pool** dropdown list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30_v2.png'/>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-33.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-33_v2.png'/>
 
-"Appcircle Linux Pool (x86_64)" and "Appcircle Standard macOS Pool (arm64)" are Appcircle cloud-hosted pools and only available for the cloud services.
+"Appcircle Linux Pool (x86_64)" and "Appcircle macOS Pool (arm64)" are Appcircle cloud-hosted pools and only available for the cloud services.
 
 :::info
 
 You can use both cloud-hosted pools for the Android publish profiles.
 
-On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Appcircle Standard macOS Pool (arm64)".
+On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Appcircle macOS Pool (arm64)".
 
 "Appcircle Linux Pool (x86_64)" support is not available for the iOS publish profiles.
 
@@ -53,13 +53,13 @@ You can select a runner pool from the dropdown list to execute the publish flow.
 There are two default pools available for cloud services:
 
 - Appcircle Linux Pool (x86_64)
-- Appcircle Standard macOS Pool (arm64)
+- Appcircle macOS Pool (arm64)
 
 :::info
 
 You can use both cloud-hosted pools for the Android publish profiles.
 
-On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Appcircle Standard macOS Pool (arm64)".
+On the other hand, for iOS publish profiles, the only option for Appcircle Cloud is Apple Silicon-based "Appcircle macOS Pool (arm64)".
 
 "Appcircle Linux Pool (x86_64)" support is not available for the iOS publish profiles.
 
@@ -69,7 +69,7 @@ Self-hosted Appcircle users will see their self-hosted pools in this list.
 
 ## Publish Variables
 
-Publish Variables are key-value pairs that can be used to store configuration settings, credentials, and other data required during the publish process. You can add new variables directly in the Publish Variables section without the need for an additional menu or button.
+Publish Variables are key-value pairs that can be used to store configuration settings, credentials, and other data required during the publish process. You create variable groups and their variables on the **Publish variables** page of the Publish to Stores module, and then select the groups to use under **Publish variables** in **Settings**.
 
 For detailed information on Publish Variables, follow the link below.
 
@@ -106,9 +106,9 @@ For instance, if a high-priority publish is added to the queue after a low-prior
 
 This functionality allows for better management of publish processes, enabling teams to prioritize critical updates and enhancements efficiently.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority1.png' alt="Publish Priority" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority1_v2.png' alt="Publish Priority" />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority2.png' alt="Publish Priority Selection" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority2_v2.png' alt="Publish Priority Selection" />
 
 :::info
 This feature is only available for organizations with Enterprise license.

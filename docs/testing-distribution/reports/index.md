@@ -17,13 +17,13 @@ import CSVExport from '@site/docs/_csv-export.mdx';
 
 The Download Reports page provides visibility into application download activity within Testing Distribution. It helps organizations track which app versions have been downloaded, when the downloads occurred, and which devices and operating system versions were used.
 
-You can access Download Reports from the **Testing Distribution > Download Reports** section.
+To open the Download Reports page, go to **Testing Distribution** > **Download report** in the left sidebar.
 
 ## Overview
 
 The Download Reports page lists download events for applications distributed through the Testing Portal.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa55-new.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa55-new_v2.png' />
 
 Each record includes:
 
@@ -48,7 +48,7 @@ Download records can be filtered by date range to help you analyze download acti
 
 The report is automatically updated when filters are applied.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa55-new2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa55-new2_v2.png' />
 
 :::info Public Link Downloads
 When an application is downloaded through an email invitation, the user information is associated with the recipient and displayed in the **User** column.

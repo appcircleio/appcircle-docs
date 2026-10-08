@@ -35,13 +35,13 @@ The prerequisite steps for this operation are listed below.
 The **App Information from App Store** step is not mandatory before the **Send to TestFlight** step. However, if included in your workflow, it should precede the **TestFlight** step.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2913-testFlight.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2913-testFlight_v2.png' />
 
 ### Input Variables
 
 Below are the parameters necessary for this step's operation.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2913-testFlightInfo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2913-testFlightInfo_v2.png' />
 
 | Variable Name        | Description                                                                                                                                                                                                                                       | Status   |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

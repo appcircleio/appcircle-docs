@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Enterprise Portal Reports
 
-You can get the reports of your Enterprise Portal from this screen. The reports screen allows you to see the following data with a clear and concise user interface.
+To view the download reports of your Enterprise Portal, go to **Enterprise App Store** > **Download report**. The **Download report** page shows the following data with a clear and concise user interface.
 
 - App name
 - Users
@@ -26,12 +26,12 @@ In the filter options, you can only view and select the organization and sub-org
 :::
 
 You can download the report as a .csv file by clicking the **Export** button.
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep1_v2.png' />
 
 :::caution
-If you are working for a sub-organization, you can only see the reports of the applications belonging to that organization in the reports section.
+If you are working for a sub-organization, you can only see the reports of the applications belonging to that organization on the **Download report** page.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep2_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep3_v2.png' />

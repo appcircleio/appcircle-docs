@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 You can view Build module actions such as creating, deleting, and adding Build profiles or updating configurations performed on Build profiles in your Organization or Sub-Organizations in the Build Activity Log section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7138-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7138-3_v2.png' />
 
 Here is the full list of actions that can be monitored:
 
@@ -59,12 +59,12 @@ Here is the full list of actions that can be monitored:
 Organization Owners can also observe the actions of their Sub-Organizations unless the search filter is specifically set for the root organization.
 :::
 
-You can edit the required date range by clicking the time filter in the top filter header as the default search time option is the last 30 days. Alternatively, you can choose custom dates from the calendar by selecting 'In Between' option.
+The list shows the last 7 days by default. To change the date range, click the date chip next to **Filter** at the top of the page. To choose your own dates from the calendar, select **Custom range**.
 
 Team activity logs also include filters to help users perform more precise searches. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7138-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7138-1_v2.png'/>
 
 Another method to search is by **Actions**. Simply click the filter option and select **Actions**. Then you can choose a specific action to refine your search.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7138-2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7138-2_v2.png'/>

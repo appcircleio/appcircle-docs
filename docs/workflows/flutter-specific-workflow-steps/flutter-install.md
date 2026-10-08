@@ -32,7 +32,7 @@ These steps depend on Flutter installation and can only be used after the **Flut
 :::
 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2851-installOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2851-installOrder_v2.png' />
 
 :::danger
 
@@ -44,7 +44,7 @@ The steps specified in the table are steps dependent on the **Flutter Install** 
 ### Input Variables
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2851-installInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2851-installInput_v2.png' />
 
 | Variable Name                 | Description                                    | Status 			|
 |-------------------------------|------------------------------------------------|------------------|

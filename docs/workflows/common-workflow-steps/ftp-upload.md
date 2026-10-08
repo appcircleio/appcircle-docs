@@ -19,7 +19,7 @@ There are no prerequisites required before using the **FTP Upload** step.
 
 This step has no prerequisites but must follow the artifact production step. For example, as the screenshot below demonstrates, use it right after the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) step. This setup ensures the IPA file produced in the pipeline is sent to any **FTP server**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3153-ftpOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3153-ftpOrder_v2.png' />
 
 :::
 
@@ -35,7 +35,7 @@ Note that to send a file to an **FTP server**, the file must be generated within
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3153-ftpInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3153-ftpInput_v2.png' />
 
 :::danger Sensitive Variables
 

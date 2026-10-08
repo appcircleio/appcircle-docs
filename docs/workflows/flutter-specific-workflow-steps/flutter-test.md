@@ -19,7 +19,7 @@ Before running the **Flutter Test** step, you must complete certain prerequisite
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |
 | [**Flutter Install**](/workflows/flutter-specific-workflow-steps/flutter-install) | This step will install the [Flutter SDK](https://flutter-ko.dev/development/tools/sdk/releases) release. If the version is not specified, it will install the latest **stable** version.|
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2853-testOrder1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2853-testOrder1_v2.png' />
 
 :::danger
 
@@ -31,7 +31,7 @@ This step is particularly dependent on the Flutter Install step. If the Flutter 
 
 You can find all the parameters required for this step in the table below, with their descriptions in detail.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2853-testInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2853-testInput_v2.png' />
 
 | Variable Name                 	       | Description                         | Status 			|
 |-------------------------------|------------------------------------------------|------------------|

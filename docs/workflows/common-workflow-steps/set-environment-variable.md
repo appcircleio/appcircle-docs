@@ -19,13 +19,13 @@ Please note that you must use the **Set Environment Variable** step before the s
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/set-environment-variable_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/set-environment-variable_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/set-environment-variable_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/set-environment-variable_2_v2.png'/>
 
 :::danger Sensitive Variables
 

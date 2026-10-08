@@ -15,9 +15,9 @@ sidebar_position: 1
 ---
 import Screenshot from '@site/src/components/Screenshot';
 
-You can view team management actions such as creating, deleting, and adding members to Organizations or Sub Organizations in the Organization Activity section within the My Organization area.
+You can view team management actions such as creating, deleting, and adding members to Organizations or Sub Organizations in **Organization** > **Organization activity log** in the left sidebar.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-1_v2.png' />
 
 Here is the full list of actions that can be monitored:
 
@@ -59,14 +59,14 @@ Organization Owners can also observe the team activity actions of their Sub-Orga
 
 :::
 
-You can edit the required date range by clicking the **Filter** button and choosing a date option from various options.
+To change the date range, select the date chip next to the **Filter** button and choose **Today**, **Yesterday**, **Last 7 days**, **This month**, **Last month**, or **Custom range**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-2_v2.png' />
 
 Organization Activity also include filters to help users perform more precise searches. By clicking the **Filter** button and choosing Organization: 'All' option, you can select a specific organization or sub-organization from the list, provided you have access to monitor their organization activity.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-3_v2.png' />
 
 Another method to search is by **Actions**. Simply click the **Filter** button and select **Actions**. Then choose a specific action to refine your search.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-4_v2.png' />

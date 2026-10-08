@@ -28,7 +28,7 @@ https://appcircle.io/publish-to-stores
 
 The Publish to Stores module in Appcircle is a versatile tool that simplifies the app release process. To make the most of this module, it's important to ensure that you meet all prerequisites and properly configure the necessary settings. The following sections outline the initial steps to start a release process using the Publish to Stores module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishStart.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishStart_v2.png' />
 
 ## Prerequisites for Using the Publish to Stores Module
 
@@ -50,16 +50,16 @@ Please visit the [**Apple App Store Connect Permission**](https://developer.appl
 
 ### Adding an App Store Connect API Key
 
-For App Store Connect integration, go to Integrations under My Organization. Select the App Store Connect API Key from the Connections section. Fill in and save the information in the next screen.
+For App Store Connect integration, go to **Organization** > **Security**. Under **Store credentials**, select **App Store Connect API Keys**, then fill in and save the information in the side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-orgIntegration.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-orgIntegration_v2.png' />
 
 
 - **Issuer ID**: Identifies the issuer who created the authentication token. Your issuer ID from the API Keys page in App Store Connect, for example, `57246542-96fe-1a63-e053-0824d011072a`
 - **Key ID**: The .p8 file ID value.
 - **.p8 File**: Generated API key file.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-integrationModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-integrationModal_v2.png' />
 
 :::caution For .p8 File
 
@@ -96,9 +96,9 @@ The binary file can be uploaded to the Publish to Stores module either manually,
 
 ### Creating a Publish Profile
 
-- Your Publish profile should be correctly set up within the Appcircle platform. This includes having a configured project with the necessary app builds (binary files) available for release. To set up a profile, click the **Add New** button on the top right.
+- Your Publish profile should be correctly set up within the Appcircle platform. This includes having a configured project with the necessary app builds (binary files) available for release. To set up a profile, click **Add new profile** at the top right.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishStartCreate.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishStartCreate_v2.png' />
 
 :::tip Creating a Publish Profile
 
@@ -108,7 +108,7 @@ If you haven't create a Publish profile in Appcircle before, follow the detailed
 
 - There are two different ways to create a Publish Profile. One option is to create the profile manually, and the other is to retrieve an existing profile from App Store Connect. For detailed information please visit the [**Creating Publish Profile**](/publish-to-stores-module/creating-publish-profiles) documentation.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-profileCreateModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-profileCreateModal_v2.png' />
 
 :::info Create from App Store Connect
 
@@ -118,54 +118,54 @@ To use this profile creation method, you must have an API key integration in pla
 
 ### Selecting an App Store API Key
 
-Once the required integrations are set up, you can access these platforms from your profile within the Publish to Stores module. To initiate a release process, you need to select the credentials for the related store from the `Settings` screen under the Publish profile.
+Once the required integrations are set up, you can access these platforms from your profile within the Publish to Stores module. To initiate a release process, you need to select the credentials for the related store in `Settings`. To open it, select `Settings` from the `...` menu next to the Publish profile name.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30_v2.png' />
 
 - All available integrations will be shown in the `Settings` screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishSettingDetail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishSettingDetail_v2.png' />
 
 ### Updating App Store Connect Information
 
 - Within the Publish to Stores module, you can update and review your app's information directly. This includes updating app name, subtitle, categories, and other store-related information such as privacy URLs, primary languages, etc. Please visit the [**App Store Connect Information**](/publish-to-stores-module/publish-information/app-information) documentation for detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-19.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-19_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoDetails_v2.png' />
 
 ### Updating TestFlight Beta Information
 
 - Within the Publish to Stores module, you can update and review your **TestFlight Beta Information** directly. This includes editing the description, feedback email, beta app review details, and other store-related information such as privacy URLs, etc.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-34.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-34_v2.png' />  
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-testFlightBetaDetails.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-testFlightBetaDetails_v2.png' />  
 
 ### Customizing the Publish Flow
 
 Publish flow is used to automate multiple tasks and introduce automation checkpoints for application publishing to stores. You can create and manage flows within the Publish to Stores module as outlined below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17_v2.png' />
 
-- **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section.
+- **Update the Publish Flow**: Select `Manage publish flow` from the `...` menu next to the profile name and update the flow based on your needs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manageFlowDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manageFlowDetails_v2.png' />
 
 :::info 
 
-You can back up your current Publish flow by clicking the `Download YAML` button at the bottom. You can also upload your Publish flow as a YAML file using the `Replace Flow` button at the top right.
+You can back up your current Publish flow by clicking the `Download YAML` button at the bottom. You can also upload your Publish flow as a YAML file using the `Replace flow` button at the top right.
 
 :::
 
 - You can choose from predefined flows or create a custom flow based on your specific needs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-dragDropFlow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-dragDropFlow_v2.png' />
 
 
 - **Configure Flow Steps**: Define each step of the flow, such as fetching app information, submitting to TestFlight, or updating metadata. Configure the settings for each step according to your requirements.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-configureStep.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-configureStep_v2.png' />
 
 - **Save**: Once the flow is configured, you can save it for use in the publish process.
 
@@ -188,16 +188,16 @@ With the Appcircle Publish to Stores module, you can manage your entire release 
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): After receiving approval from TestFlight and uploading the metadata, you can send an approval email to the Release Manager to review the Beta Test and the updated metadata. If everything is in order, the Release Manager can approve the process, allowing the flow to continue and submit the version for release.
 - [**Submit for Review on App Store**](/publish-integrations/ios-publish-integrations/add-for-review-on-app-store): After receiving the final approval from the Release Manager, the binary file and the updated metadata are sent to the final step of the release process: app review. This step directly submits the version for review in the store.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-betaReleaseFlow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-betaReleaseFlow_v2.png' />
 
 
 ### Setting Up Notifications
 
-- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish to Stores module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful publishing or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
+- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish to Stores module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful publishing or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications**](/account/my-organization/notifications) documentation for more detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-notificationInteg.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-notificationInteg_v2.png' />  
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-notiIntegDetail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-notiIntegDetail_v2.png' />
 
 ## Managing Releases
 
@@ -213,7 +213,7 @@ Easily upload your binary file to the Publish to Stores module **manually**, via
 
 You can upload your binary file directly to the Publish to Stores module using the manual upload option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manuelUpload1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-manuelUpload1_v2.png' />
 
 #### Uploading via Build Module
 
@@ -229,7 +229,7 @@ To upload a binary from the Build module, please refer to the [**Distribution Co
 
 You can send your binary file to the Publish to Stores module from the Testing Distribution module.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main12.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4163-main12_v2.png" />
 
 :::info Uploading via Testing Distribution Module
 
@@ -249,28 +249,28 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 - Designate the current build as the Release Candidate, signaling that it is ready for final testing and potential release. You can refer to the [**Marking as Release Candidate**](/publish-to-stores-module/publish-information/marking-release-candidates) document for detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-31.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-31_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-32.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-32_v2.png' />
 
 ### Updating Metadata
 
 - Within the Publish to Stores module, you can manage your app's metadata directly. This includes updating app descriptions, keywords, and other store-related information. Please visit the [**Metadata Details**](/publish-to-stores-module/publish-information/meta-data-information) documentation for more information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23_v2.png' />
 
 - Regularly review and update your app's metadata to ensure it is current and relevant, as outdated information can negatively impact your app's visibility and user experience.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadataDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadataDetails_v2.png' />
 
 - After updating your app's metadata, use the [**Metadata Approval**](/publish-integrations/common-publish-integrations/metadata-approval)
 step to get approval before submitting the metadata to App Store Connect.
 
 ### Starting the Flow
 
-- You can start the Publish flow manually by clicking on the `Publish Details` or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the selected app stores.
+- You can start the Publish flow manually with the play icon on the release candidate (RC) version row and follow it from the version row's **...** menu > **Publish details**, or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the selected app stores.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-22.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-22_v2.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishLog.png' />
 
@@ -282,7 +282,7 @@ After initiating a release, the Publish to Stores module provides tools to monit
 
 View the status of your releases in real-time, including pending approvals, successful submissions, and any errors that occur.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-monitorRelease.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-monitorRelease_v2.png' />
 
 #### Rollback Options
 
@@ -296,11 +296,11 @@ If needed, you can rollback to a previous version of your app or pause a release
 
 - The binary can be rejected to be excluded from the publish process, and the rejection reason is displayed as a tag on binary
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-26.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-26_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejectionMessage.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejectionMessage_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejectionTag.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejectionTag_v2.png' />
 
 
 ### Auditing Releases
@@ -309,7 +309,7 @@ The Publish to Stores module provides comprehensive auditing and reporting featu
 
 - **Activity Log**: The Activity Log keeps a detailed record of every action taken during the release process, including who performed each action and when it occurred. This log is invaluable for tracking changes, identifying issues, and ensuring accountability within your team.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-logActivity.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-logActivity_v2.png' />
 
 
 ## Publish to Stores module Troubleshooting
@@ -330,10 +330,10 @@ While the Publish to Stores module is designed for reliability, you may occasion
 
 #### How do I update my app's metadata?
 
-To update your app's metadata, navigate to the Publish to Stores module, select the relevant profile, click the Actions button for the binary, and go to Metadata details. You can now update the metadata fields such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
+To update your app's metadata, navigate to the Publish to Stores module, select the relevant profile, open the **...** menu on the binary's version row, and select **Metadata details**. You can now update the metadata fields such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23.png' />
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadataDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadataDetails_v2.png' />
 
 #### How do I send my app's metadata for review before publishing?
 If you would like to get email-based approval before publishing your app's metadata, you can add the [**Metadata
@@ -345,19 +345,19 @@ feedback in case of rejection.
 
 Yes, it is possible. The Publish to Stores module allows you to set up automated notifications for your team members at various stages of the release process. You can configure notifications to be sent via email or integrate with collaboration tools like Slack or Microsoft Teams, ensuring that everyone involved is kept up to date on the release status.
 
-For more information, please refer to the [**Notification Integrations**](/account/my-organization/notifications) document.
+For more information, please refer to the [**Notifications**](/account/my-organization/notifications) document.
 
 #### Can I track the progress of the app release in real-time?
 
 Yes, the Publish to Stores module provides real-time tracking of the app release process. You can monitor each step of the flow, view the status of your submission, and receive notifications about any changes or issues. This feature allows you to stay informed and take action immediately if necessary.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-monitorRelease.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-monitorRelease_v2.png' />
 
 #### What happens if a release is rejected by Apple?
 
 If your binary is rejected by Apple in App Store Connect, the status on Appcircle will change to **Rejected**. You can view the binary's status directly from Appcircle without the need to visit App Store Connect. However, the rejection reasons are not shared with external parties through the App Store Connect APIs. To find out the specific reason for the rejection, you can view them on App Store Connect.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-monitorRelease.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-monitorRelease_v2.png' />
 
 #### Can I use the Publish to Stores module with other CI tools?
 
@@ -377,9 +377,9 @@ Yes, the Publish to Stores module allows you to manage multiple app store accoun
 
 #### How do I create a custom flow in the Publish to Stores module?
 
-To create a custom flow, navigate to the Publish to Stores module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allows you to tailor the release process to fit your specific needs.
+To create a custom flow, open your publish profile in the Publish to Stores module and select **Manage publish flow** from the **...** menu next to the profile name. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allows you to tailor the release process to fit your specific needs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17_v2.png' />
 
 #### Why can't I edit the Publish Flow?
 

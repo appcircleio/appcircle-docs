@@ -28,11 +28,11 @@ When you are done with the steps above, you can now start building your iOS appl
 
 ### Build Configuration
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch_v2.png' />
 
 **Share your iOS schemes**
 
@@ -70,13 +70,13 @@ The list of currently available Xcode versions can be found in the following doc
 
 By default, the most recent stable version of Xcode is selected. If available, you can also switch to the most recent Xcode beta at the top of the list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-fetch_v2.png' />
 
 ### Sending the Build Status to the Repository Providers
 
 At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/create-ios-build-commit-status.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/create-ios-build-commit-status_v2.png' />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -108,7 +108,7 @@ You can get both unsigned and signed build artifacts based on your configuration
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-profile-ios-signing-configuration_v2.png' />
 
 ### Distribution
 
@@ -134,7 +134,7 @@ The versioning tab will allow you to change the build or version number during t
 
 ### Environment Variables
 
-The final step on build configuration is Environment Variables.
+The final tab of the build configuration is **Environment**.
 
 Appcircle Build module is simple and powerful. You can get your builds instantly just with a few clicks; advanced management of builds is also possible with the environment variables and workflows.
 
@@ -146,13 +146,13 @@ Please see the following page for more information about environment variables:
   Why Use Environment Variables and Secrets?
 </ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables_v2.png' />
 
 Please click on the Save button and close this modal.
 
 ### Workflow Editor
 
-You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use the workflow editor.
+You can use the workflow editor for in-depth configuration of all build steps. Click **Workflows** at the top right of the build profile to open and use the workflow editor.
 
 :::info
 
@@ -168,11 +168,11 @@ For details on using Appcircle's workflow editor, please see the related page be
 
 You are now ready to start your first build. Select the branch from the left side and click on the **Start Build** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild1_v2.png' />
 
 Select a configuration, workflow, commit id and click on **Start Build button**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build-modal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-start-build-modal_v2.png' />
 
 Appcircle will start building your application. The build log window will open, and you can follow build process in real time.
 
@@ -182,7 +182,7 @@ You can safely close the build log window; it won't affect the status of your bu
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-ios-build-workflow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-ios-build-workflow_v2.png' />
 
 ---
 
@@ -192,7 +192,7 @@ Your build will be distributed automatically if you had set up auto build earlie
 
 <ContentRef url="/build/post-build-operations/after-a-build">After a Build</ContentRef>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-iosbuild2_v2.png' />
 
 ## FAQ
 
@@ -231,7 +231,7 @@ DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_
 This error typically occurs with Cocoapods version 1.12.1 and older. To resolve it, update your local Cocoapods to a newer version and commit the changes, or update Cocoapods during the workflow at the Cocoapods Install step.
 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/faq-cocoapods-version.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/faq-cocoapods-version_v2.png'/>
 
 :::info
 The resolution for this error is available in Cocoapods version 1.13.0 or higher.

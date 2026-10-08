@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Credential Activity Log provides visibility into all store credential operations performed within your organization. It helps Organization Owners and authorized members monitor credential-related activities, including credential creation, updates, deletion, sharing, and permission changes.
 
-You can access the Credential Activity Log by navigating to **My Organization > Credential Activity Log**.
+To open the Credential Activity Log, go to **Organization** > **Credential activity log** in the left sidebar.
 
 :::info
 Organization Owners can also monitor credential activities performed within their Sub-Organizations.
@@ -38,7 +38,7 @@ Each activity record contains detailed information about the credential operatio
 
 These records provide an audit trail of credential management activities across your organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-1_v2.png' />
 
 ## Filtering Activity Records
 
@@ -54,7 +54,7 @@ Available filters include:
 
 Multiple filters can be applied simultaneously to narrow down the displayed results.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-8_v2.png' />
 
 ## Tracked Actions
 
@@ -68,4 +68,4 @@ The Credential Activity Log records the following actions:
 | Credential Shared with Sub Organization | A credential was shared with a Sub-Organization.                    |
 | Credential Unshared from Sub Organization | A previously shared credential was removed from a Sub-Organization. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-9_v2.png' />

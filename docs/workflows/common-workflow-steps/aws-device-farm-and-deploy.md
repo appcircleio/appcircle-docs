@@ -33,17 +33,17 @@ Pay attention to the dependent step on whichever platform you are working on.
 
 #### For iOS
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsiosOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsiosOrder_v2.png' />
 
 #### For Android
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsandroidOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsandroidOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-awsInput_v2.png' />
 
 :::danger Sensitive Variables
 

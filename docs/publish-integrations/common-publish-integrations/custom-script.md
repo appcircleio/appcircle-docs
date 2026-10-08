@@ -61,7 +61,7 @@ end
 
 The script above is written in Ruby. To execute it, select `Ruby` as the `Execute with` option in the **Custom Script** step.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/publishflow-custom-script-faq-0.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/publishflow-custom-script-faq-0_v2.png" />
 
 :::
 

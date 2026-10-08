@@ -19,7 +19,7 @@ Before running the **BrowserStack App Automate (XCUI)** step, you must complete 
 |-------------------------------------------------|-------------------------------------------------|
 | [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-testing) | After the [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-testing) step runs, the test IPA paths (`$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH`) will be created automatically. So that the **BrowserStack** component depends on these paths. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2587-bs_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2587-bs_order_v2.png' />
 
 :::danger
 
@@ -31,7 +31,7 @@ In the build step, if there is no **Xcodebuild Build for Testing** step before *
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2587-bsInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2587-bsInput_v2.png' />
 
 :::danger Sensitive Variables
 

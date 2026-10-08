@@ -15,13 +15,13 @@ There are multiple ways to trigger a build in Appcircle. You can run builds manu
 
 For the manual builds, the currently available push triggers apply, and if no trigger is configured, the following trigger is provided by default under the [push triggers](#auto-build-on-every-push). If there are others, they may take precedence based on the [trigger priorities](#trigger-priorities).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-push-trigger.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-push-trigger_v2.png' />
 
 ## Triggers Configuration
 
-To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
+To set up or manage the build triggers, click the **Triggers** button at the top right of the build profile details.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-trigger.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-trigger_v2.png' />
 
 The Triggers panel is organized into tabs: **On Every Push**, **On Merge/Pull Request**, **On Tag Push**, and **Scheduled** `(Beta)`. Event-based triggers (push, merge/pull request, and tag) are set up at the profile level, and you can specify individual branch names or [utilize wildcards](/build/build-process-management/build-manually-or-with-triggers#wildcard-reference) for branch names to trigger builds. Scheduled triggers, described in [Scheduled builds](#scheduled-builds-beta), instead run at fixed times regardless of repository activity.
 
@@ -51,21 +51,21 @@ Depending on how your Git provider is connected to Appcircle, the webhook setup 
 
 For repositories connected through SSH, you can set up triggers with webhooks in compatible repository providers.
 
-When you connect a repository through SSH or through a public URL, the Webhook URL option will be enabled in the context menu of the build profile, accessible from the top of the profile details.
+When you connect a repository through SSH or through a public URL, the **Webhooks** option will be enabled in the **...** menu next to the build profile name, at the top of the profile details.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-ssh1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-ssh1_v2.png' />
 
 You can copy this URL and paste it in the related section in the git provider repository settings with the copy button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-provider.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-provider_v2.png' />
 
 To manually configure a webhook:
 
 **1.**	Go to your build profile.
 
-**2.**	Click the Webhook icon and select Repository Webhook URL.
+**2.**	Open the **...** menu next to the profile name and select **Webhooks**.
 
-**3.**	In the Repository Webhook URL popup:
+**3.**	In the **Webhooks** dialog:
 
 - **Select a Git Provider**:
   If the Git provider is detected, a compatible URL will be displayed automatically. If not, choose your Git provider (e.g., GitHub, GitLab, Bitbucket) from the dropdown list.
@@ -84,7 +84,7 @@ https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATI
 **4.**	Paste the Webhook URL in your Git repository.
 
 :::info
-**The Selected Git Provider** option on the **Webhook Configuration** screen is only available for repositories connected via **SSH** or **Public URL**.
+**The Selected Git Provider** option in the **Webhooks** dialog is only available for repositories connected via **SSH** or **Public URL**.
 
 If your repository is connected using GitHub, GitLab, Bitbucket or Azure Devops App integrations, this selection will not appear since webhooks are automatically managed.
 :::
@@ -112,7 +112,7 @@ When a manual webhook (SSH/Public URL/Read-only PAT) is already configured for a
 - Selected Git Provider, Webhook URL, and the existing Webhook Key/Secret will be displayed as partially masked.
 - Users can directly click the Bind button to link the build profile to the existing webhook.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6529-hook.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6529-hookv2.png' />
 
 ### Webhook Setup for OAuth and PAT-Based Repository Connections
 
@@ -120,7 +120,7 @@ When a repository is connected to Appcircle via OAuth connection (such as GitHub
 
 In some cases, Appcircle handles webhook setup automatically, while in others—particularly when using read-only access—manual configuration may be required to enable trigger-based builds.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-noprovider.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-noprovider_v2.png' />
 
 Below is a breakdown of how webhooks are managed for each supported Git provider based on the connection method.
 
@@ -222,13 +222,13 @@ You can also use[ appcircle-cli](/appcircle-api-and-cli) to trigger your builds 
 
 ## Managing Triggers for Builds
 
-To set up or manage the build triggers, click the Triggers button in the context menu of the build profile, accessible from the top of the profile details.
+To set up or manage the build triggers, click the **Triggers** button at the top right of the build profile details.
 
 ### Auto build on every push
 
 Appcircle will start building your application whenever you push a commit to your Git repository. For the specified branches, your project will be built automatically with the selected workflow.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-push-trigger.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-manual-push-trigger_v2.png' />
 
 You must choose both workflow, and a configuration when you're setting up a trigger.
 
@@ -242,7 +242,7 @@ The build will be done with the pull/merge result using the selected workflow. T
 Make sure that the names of the source branch and the target branch are spelled correctly.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/mr-pr-last.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/mr-pr-last_v2.png' />
 
 :::info
 
@@ -262,7 +262,7 @@ Appcircle will only run the trigger for PR creation or PR updates.
 
 Now you will be able to trigger different workflows in the same source branch and target branch on Appcircle at once. As soon as the trigger is triggered, Appcircle will start running all the triggered triggers in the build queue, starting from the first place in the established trigger queue.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/build-pr-mr-trigger-multiple.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-pr-mr-trigger-multiple_v2.png' />
 
 ### Selective auto build with specific tags
 
@@ -270,7 +270,7 @@ Appcircle will start building your application with the selected workflow whenev
 
 This allows building scenarios like building only specific pushes that have the "release" in the tag.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/tag-last.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/tag-last_v2.png' />
 
 ### Scheduled builds (Beta)
 
@@ -280,13 +280,13 @@ To set up a scheduled trigger:
 
 **1.** Open the Triggers panel for the build profile and select the **Scheduled** tab.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/QA86-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA86-1_v2.png' />
 
 **2.** Configure the schedule:
 
 - **Time Zone**: The time zone used to interpret the cron expression below. Appcircle offers the full list of UTC offsets (e.g., `UTC+03:00`, `UTC+03:30`) so you can schedule builds in your team's local time rather than converting to UTC manually.
 
-  <Screenshot url='https://cdn.appcircle.io/docs/assets/QA86-2.png' />
+  <Screenshot url='https://cdn.appcircle.io/docs/assets/QA86-2_v2.png' />
 
 - **Cron Expression**: A standard 5-field cron expression that defines when the build should run, in the format `minute hour day-of-month month day-of-week`:
 
@@ -337,11 +337,11 @@ This helps prevent unnecessary resource usage and reduces queue time by skipping
 
 To enable this feature:
 
-1. Go to the `Build Profiles` and select `Configurations`.
-2. Scroll down and activate `Auto Cancel Redundant Pipeline`.
-3. Click `Save` changes.
+1. Open the build profile and select **Configurations** at the top right.
+2. Open the configuration and, on the **Config** tab, turn on the **Auto cancel** toggle.
+3. Click **Save**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline_v2.png' />
 
 The Auto-Cancel Redundant Pipeline mechanism works based on four key parameters:
 - Build Configuration
@@ -357,7 +357,7 @@ Builds that are **manually started** do not affect ongoing or queued builds; the
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline-canceled-builds-v3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline-canceled-builds-v4.png' />
 
 ## Further Automatic Build Subjects
 

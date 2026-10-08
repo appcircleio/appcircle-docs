@@ -11,8 +11,8 @@ import Screenshot from '@site/src/components/Screenshot';
 
 Accounts can only be deleted by the owner. 
 
-- Please log in to your account navigate to **My Account**. 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6855-account7.png' />
+- Please log in to your account, select your email address at the bottom of the left sidebar, and choose **My account**. 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6855-account7_v2.png' />
 
 - Click **Delete Account** link and confirm the dialog.
 

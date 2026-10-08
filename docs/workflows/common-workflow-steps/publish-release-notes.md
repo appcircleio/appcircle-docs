@@ -24,7 +24,7 @@ Appcircle currently does not publish release notes to TestFlight, as TestFlight 
 
 There are no prerequisites required before using the **Publish Release Notes** step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-flow.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-flow_v2.png' />
 
 :::danger
 
@@ -36,7 +36,7 @@ To create rich release notes, the Release Notes component should be included in 
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-inputs.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-inputs_v2.png' />
 
 | Variable Name                | Description                                                                                                                                                                                                                   | Status   |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -45,9 +45,9 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 ### Output Variables
 
-This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts).
+This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-output.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-output_v2.png' />
 
 :::danger
 

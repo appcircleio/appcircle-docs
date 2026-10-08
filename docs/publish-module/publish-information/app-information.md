@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 For a binary to be successfully sent for review, certain information must be completed. By using Appcircle's App Information feature, you can update the required information for binary submission.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-19.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-19_v2.png' />
 
 ### Localizable Informations
 
@@ -20,7 +20,7 @@ The localization dropdown allows you to select the language in which you want to
 
 When you select a language, you will provide localized versions of your app's information, including name, subtitle, and privacy policies. Localization helps in reaching a wider audience by providing information in the users' native language.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-localizeInfo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-localizeInfo_v2.png' />
 
 ### General Informations
 
@@ -28,13 +28,13 @@ General information area allows you to see and update some of your information t
 
 In these fields, you can specify the category of your application and provide information about the content it contains.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-generalInfo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-generalInfo_v2.png' />
 
 ### Update and Save
 
 You can instantly view your current App Information details and, if desired, simultaneously update these values on your App Store Connect account. Each time this screen is opened, the current information will be retrieved.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-appInfoDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-appInfoDetails_v2.png' />
 
 :::danger App Information Save
 

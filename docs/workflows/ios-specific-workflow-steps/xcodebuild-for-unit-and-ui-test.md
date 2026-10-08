@@ -25,13 +25,13 @@ Before running the **Xcodebuild for Unit and UI Testing** step, you must complet
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone)                | The repository must be cloned to initiate the unit and UI testing process. Following the clone, this step will run the tests and create the `$AC_REPOSITORY_DIR` variable. |
 | [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)    | This step selects the specified Xcode version. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitInput_v2.png' />
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
@@ -54,7 +54,7 @@ Ensure the simulator type matches the OS version used. For example, if you use t
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+To view the output artifacts in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 

@@ -20,13 +20,13 @@ Before running the **Snyk Scan Security** step, you must complete certain prereq
 | -------------------------- | --------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | Fetches the repository to be built from the specified branch, ensuring that the [Snyk CLI](https://docs.snyk.io/snyk-cli) can run on the repository path. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_2_v2.png'/>
 
 :::danger Sensitive Variables
 

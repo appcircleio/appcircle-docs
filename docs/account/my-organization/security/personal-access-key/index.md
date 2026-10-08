@@ -19,21 +19,21 @@ Only the name has changed, and all functionality remains the same.
 
 ## Generating/Managing the Personal Access Keys
 
-To generate a Personal Access Key, go to the [My Organization](/account/my-organization/profile-and-team/organization-management) screen in the Appcircle dashboard. After that, find the Security section from the left side menu. The Personal Access Key section is located on the bottom right.
+To generate a Personal Access Key, go to [Organization](/account/my-organization/profile-and-team/organization-management) > **Security** in the left sidebar of the Appcircle dashboard and find the **Personal access key** section.
 
-Press the "Generate Key" button to generate your first key.
+Select **Generate key** to generate your first key.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-1.png' alt="Generate Personal Access Key"/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-1_v2.png' alt="Generate Personal Access Key"/>
 
 The key will then be generated and displayed above the button. Please make sure that you save the key before navigating away from the page as it will be displayed only once for security reasons.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-2.png' alt="Display Personal API Token" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-2_v2.png' alt="Display Personal API Token" />
 
 If you want to delete a previously generated key, press "Delete Key" and confirm. You can then generate a new access key if you would like.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-3.png' alt="Revoke Personal API Token"/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-3_v2.png' alt="Revoke Personal API Token"/>
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-4.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-4_v2.png'/>
 
 :::caution Personal Access Key for Sub-Organizations
 To generate a Personal Access Key for a sub-organization, you must be added as a **member** of that sub-organization. Users **inherited** from a parent organization cannot generate a Personal Access Key. For additional details on [Organization](/account/my-organization/profile-and-team/organization-management#working-with-multiple-organizations) and [Team management](/account/my-organization/profile-and-team/team-management#managing-team-members), refer to the relevant documentation.

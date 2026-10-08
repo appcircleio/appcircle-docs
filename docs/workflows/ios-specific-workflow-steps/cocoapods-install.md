@@ -19,13 +19,13 @@ Before running the **Cocoapods Install** step, you must complete certain prerequ
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_order_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_version.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_version_v2.png' />
 
 | Variable Name           | Description                                                                                                                                                                                                                                   | Status   |
 | ----------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
@@ -41,7 +41,7 @@ Please note that the **CocoaPods Install** step uses the default system [**Cocoa
 
 :::danger
 
-Remember, if the project extension is not **.xcworkpace**, the pod install step will not work as expected. In the Configuration tab, make sure that the extension in the project path is **.xcworkspace**.
+Remember, if the project extension is not **.xcworkpace**, the pod install step will not work as expected. On the **Config** tab of the build configuration, make sure that the selected project or workspace path ends with **.xcworkspace**.
 
 :::
 

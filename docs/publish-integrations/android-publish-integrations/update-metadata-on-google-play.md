@@ -21,13 +21,13 @@ This step uploads all edited metadata information from the [**Metadata Informati
 
 This step operates independently; it does not require any specific prior steps. You can incorporate it anywhere in the Publish Flow according to your workflow.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5968-google3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5968-google3_v2.png' />
 
 ### Input Variables
 
 Below are the parameters necessary for this step's operation, along with their descriptions.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5968-google2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5968-google2_v2.png' />
 
 | Input Variables                                            | Description                                                                                                                                                                                                                                                       |
 |------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

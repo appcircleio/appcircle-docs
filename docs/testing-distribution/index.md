@@ -56,7 +56,7 @@ Appcircle has a separate distribution screen designed to make it easy for test g
 
 ## [Reporting](/testing-distribution/reports)
 
-Optimize your application management with detailed reports. Utilize the App Sharing Report and App Versions Report to gain insights and make informed decisions about your app's distribution and evolution.
+Optimize your application management with detailed reports. Use the **Download report** to see which app versions were downloaded, when, and on which devices, and to make informed decisions about your app's distribution and evolution.
 
 <ContentRef url="/testing-distribution/reports">Reporting</ContentRef>
 

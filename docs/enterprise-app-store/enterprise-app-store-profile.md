@@ -25,17 +25,17 @@ Uploading binaries to the Enterprise App Store is an important step in managing 
 
 ### Manual Binary Upload
 
-- If no profile has been created before, the following screen will be displayed. The **Add New App** button should be clicked to open the upload panel.
+- If no profile has been created before, the following screen will be displayed. Select **Add a new app** to open the upload panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-upload1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-upload1_v2.png' />
 
 - Choose your APK or IPA file and click the **Upload** button.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-upload2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-upload2_v2.png" />
 
 - If a valid APK or IPA file has been uploaded, a brand new profile should be displayed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile2_v2.png' />
 
 :::caution
 
@@ -69,31 +69,15 @@ You can also upload binaries from other CI tools using ready-to-use plugins.
 
 ## Profile Listing
 
-You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same enterprise app store profiles, allowing you to choose the layout that best fits their workflow.
+The profile list provides search, filtering, and ordering capabilities to help users quickly locate specific enterprise app store profiles.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas1.png' />
-
-<Tabs
-defaultValue="board"
-values={[
-{ label: 'Profile Board View', value: 'board' },
-{ label: 'Profile List View', value: 'list' },
-]}
->
-  <TabItem value="board">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas2.png' />
-  </TabItem>
-  <TabItem value="list">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas3.png' />  </TabItem>
-</Tabs>
-
-In addition to view options, the profile list provides search, filtering, and ordering capabilities to help users quickly locate specific enterprise app store profiles.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas1_v2.png' />
 
 #### Search Profiles
 
 Click the **Search** icon in the top right corner to open the profile search dialog. You can search for enterprise app store profiles by name and quickly navigate to the desired profile from the search results. It will also bring your recent search results.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas4_v2.png' />
 
 #### Filter Profiles
 
@@ -105,27 +89,27 @@ Use the **Filter** button to narrow down the profile list based on available cri
 
 Applied filters are displayed at the top of the page and can be removed individually when no longer needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas5_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas6_v2.png' />
 
 #### Sort and Order Profiles
 
 The profile list can also be organized using the available ordering options. Users can change the sorting direction and select different ordering criteria, such as **Create Date**, to customize how profiles are displayed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas2_v2.png' />
 
 ## Profile Actions
 
 Several key actions are available within the Enterprise App Store to manage and interact with profiles efficiently. The descriptions of the available profile actions are provided below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile3_v2.png' />
 
 #### 1. **Open**
 The "Open" action allows entry into a specific profile, providing access to all details and settings associated with that profile. By selecting "Open" the apps, binaries, and configurations linked to the profile can be viewed and managed.
 
-#### 2. **Pin**
-The "Pin" action allows a profile to be prioritized by pinning it to the top of the profile list. When a profile is pinned, it remains easily accessible, especially when multiple profiles are managed. This action is particularly useful for frequently accessed profiles, ensuring they stay at the forefront of the workflow.
+#### 2. **Pin Profile**
+The "Pin Profile" action allows a profile to be prioritized by pinning it to the top of the profile list. When a profile is pinned, it remains easily accessible, especially when multiple profiles are managed. This action is particularly useful for frequently accessed profiles, ensuring they stay at the forefront of the workflow.
 
 #### 3. **Delete**
 The "Delete" action results in the permanent removal of a profile from the Enterprise App Store. Once a profile is deleted, all associated data, including uploaded binaries and settings, is also erased.
@@ -140,15 +124,15 @@ Unlike profiles from other modules within Appcircle, Enterprise App Store profil
 
 After the profile has been created, it should be configured and sent to different users and channels.
 
-Profile information can be accessed, and users can be added to grant them access to the Live and Beta channels by clicking the **Settings** button.
+To view profile information and add users who can access the Live and Beta channels, open the **...** menu next to the profile name and select **Settings**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-1_v2.png' />
 
 ### Config
 
-The Profile ID can be copied from the Info tab by clicking the copy icon located on the right side of the displayed ID.
+The profile ID is shown as **Enterprise App Store profile ID** in the **Config** tab. Select the ID and copy it.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-41.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-41_v2.png" />
 
 #### In-App Update Secret
 
@@ -158,13 +142,13 @@ For more information, please visit [In-App Updates](/enterprise-app-store/in-app
 
 ### Enterprise Portal
 
-You can use the Enterprise Portal settings tab to manage Portal related configurations of your Enterprise App Store profile.
+You can use the **Portal** tab in **Settings** to manage Portal related configurations of your Enterprise App Store profile.
 
 #### Show on Top
 
 The **Show on Top** feature allows you to prioritize app versions by displaying them at the top of the list in their respective channels within the Enterprise Portal.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-42.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-42_v2.png" />
 
 :::caution
 Please note that due to the caching model in the service, updates may take up to 10 minutes to take effect.
@@ -178,7 +162,7 @@ Enabling the Hide Certificate Details toggle in the Enterprise App Store profile
 
 This setting applies across all listed versions under the selected profile.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-44.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-44_v2.png" />
 
 #### Binary Tags
 
@@ -206,17 +190,17 @@ Uploaded binaries without metadata from a build module won’t show the selected
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-43.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-43_v2.png' />
 
-Binary tags can be managed through the Enterprise App Store Profile Settings under the Info tab:
+Binary tags can be managed through the Enterprise App Store Profile Settings under the **Portal** tab:
 1. Navigate to **Enterprise App Store** module.
 2. Select the relevant profile.
-3. Click the **Settings** icon.
-4. Under the **Info** tab, locate the **Binary Tags** section.
-5. Use the “Add a new tag” field to enter or select tags.
+3. Open the **...** menu next to the profile name and select **Settings**.
+4. Under the **Portal** tab, locate the **Binary tags** section.
+5. Open the **Binary tags** drop-down list and select the tags.
 6. Click **Save** to apply changes.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-45.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-45_v2.png' />
 
 Once tags are saved in the profile settings:
 - Tags will automatically appear next to the app version on the Enterprise Portal after being published to a channel.
@@ -265,12 +249,12 @@ Once published, these versions can be accessed via direct links or QR codes, fac
 
 To retrieve the direct links or QR codes for published app versions, follow these steps:
 
-- In the selected app profile, go to the Settings section.
-- Click on the Links tab to view the available Beta and Live channel links.
+- In the selected app profile, open the **...** menu next to the profile name and select **Settings**.
+- Click on the **Distribution links** tab to view the available Beta and Live channel links.
 - If the app version is published to either the Beta or Live channels, the corresponding direct link and QR code will be displayed.
 - Click the Copy button next to the link to copy it for sharing. Alternatively, you can use the QR code image to access via mobile devices.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-47.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-47_v2.png" />
 
 :::info
 If no app versions are published to either channel, the links and QR codes will not be available.
@@ -291,20 +275,20 @@ The Enterprise App Store module includes two channels: Beta and Live.
 
 Apps can be sent to the Beta or Live channels by hitting the `...` button and then selecting the **Publish** menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-3_v2.png' />
 
 The channel can be selected, and a summary and release notes for the release can be written. Once the **Publish** button is clicked, the particular binary will be made available to all beta users.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss2_v2.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss3_v2.png" />
 
 A version can be sent to the Live Channel in two ways:
 
 - Click the **Publish** button and select **Live** for the channel.
 - Click the ... button for any beta build and select **Go Live** from the menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-4_v2.png' />
 
 :::info
 
@@ -320,9 +304,9 @@ Any app versions published by sub-organizations to the **Live** or **Beta** chan
 
 When a binary is published to the Live or Beta channel, it will be displayed with the corresponding channel tag. This information will also be shown in the profile header within the profile and on the profile card in the Enterprise App Store profile list.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8261-5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8261-5_v2.png" />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-profiles.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-profiles_v2.png" />
 
 :::info
 
@@ -336,11 +320,11 @@ The **‘Publish as Unlisted’** feature allows users to provide direct access 
 
 When publishing an app version to either Beta or Live channels, you can enable the ‘Publish as Unlisted’ toggle.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss1_v2.png" />
 
 If enabled, the app version will not be displayed in the Enterprise Portal App List.
 
-You can access the app version only through a direct link, which can be obtained from the Profile Settings > [Links](/enterprise-app-store/enterprise-app-store-profile#distribution-links) section.
+You can access the app version only through a direct link, which can be obtained from the Profile Settings > [Distribution links](/enterprise-app-store/enterprise-app-store-profile#distribution-links) tab.
 
 Other applications published in the Enterprise Portal will not be visible to users accessing via this unlisted link. You can always use the main Enterprise Portal link which is located within the [Portal settings](/enterprise-app-store/portal-settings#store-domain), in order to access the rest of the app list.
 
@@ -350,7 +334,7 @@ Other applications published in the Enterprise Portal will not be visible to use
 •	The authentication process for accessing an Unlisted app remains the same as the Enterprise Portal’s configured [authentication](/enterprise-app-store/portal-settings#store-authentication) settings.
 :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8261-6.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8261-6_v2.png" />
 
 :::tip
 App versions that were published to the Beta or Live channels as unlisted will display an **'Unlisted'** tag in the app version list within the Enterprise App Store profile.
@@ -360,7 +344,7 @@ App versions that were published to the Beta or Live channels as unlisted will d
 
 Any binary can be removed from the Live or Beta channels by selecting the **Unpublish** action from the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-7_v2.png' />
 
 ### Re-sign Binary
 
@@ -374,13 +358,13 @@ Please refer to [Re-sign Binary](/enterprise-app-store/resign-binary) documentat
 
 The binary artifact in the Enterprise App Store profile can be downloaded by selecting the Download button from the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-8_v2.png' />
 
 ### Delete
 
 Binaries in the Enterprise App Store profiles can be deleted by clicking the Delete button in the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-9_v2.png' />
 
 :::info
 
@@ -392,16 +376,12 @@ Please note that you **cannot** delete a binary that is published to the Beta or
 
 The Binary list on the Enterprise App Store profile screen, Binary Details screen and the Binary Comparison screen display certificate or keystore expiration information for uploaded binaries.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-1_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-2_v2.png' />
 
 - **Expire Soon** status is shown for binaries whose signing certificate/keystore is approaching its expiration date which is within 1 month.
 - **Expired** status is shown for binaries whose signing certificate/keystore has already expired.
-
-The expiration date is highlighted to help users identify binaries that require action:
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-3.png' />
 
 :::caution Expired Binary Restriction
 If the signing certificate/keystore of a binary is expired, the binary cannot be published to the **Beta** or **Live** channel.

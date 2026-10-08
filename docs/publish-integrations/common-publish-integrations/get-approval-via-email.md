@@ -10,7 +10,7 @@ import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Get Approval via Email
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publish-worflow-email-approval-overview.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publish-worflow-email-approval-overview_v2.png'/>
 
 The **Get Approval via Email** step allows you to get approval from the email addresses entered as input in the step before moving on to the next steps in Publish.
 
@@ -20,7 +20,7 @@ If some optional users reject the request but there is still a chance to achieve
 
 <NoRunnerUsage />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email-1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email-1_v2.png'/>
 
 :::info
 
@@ -52,7 +52,7 @@ To proceed with the approval, users can click the link in the email, which opens
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss1_v2.png' />
 
 :::info Rejection
 Users who decide to reject the binary, must provide an explanation. This explanation message will be displayed on the Publish Flow window under the desicion of that user.
@@ -66,7 +66,7 @@ There are no required steps that must precede the **Get Approval via Email** ste
 
 The parameters required for this step to work as expected are listed below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/common-publishflow-components-approval-email_v2.png'/>
 
 | Variable Name                  | Description                                                                                                                                                                                                                                                                                                                                                                              | Status   |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |

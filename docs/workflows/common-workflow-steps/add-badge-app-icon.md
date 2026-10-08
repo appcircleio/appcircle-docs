@@ -29,14 +29,14 @@ If you are using the [**Increment Build and Version Number**](/versioning/ios-ve
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3061-badgeOrder1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3061-badgeOrder1_v2.png' />
 
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3061-badgeInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3061-badgeInput_v2.png' />
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|

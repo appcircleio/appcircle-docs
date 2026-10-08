@@ -18,13 +18,13 @@ Before running the **Gradle Runner** step, you must complete certain prerequisit
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Gradle Runner** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Gradle Runner** step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_2_v2.png' />
 
 | Variable Name                      | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | ---------------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
@@ -42,7 +42,7 @@ As the output may vary depending on the task you execute, there is no specific o
 
 :::caution
 
-If there is an output generated, ensure to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step afterward to ensure it is included in the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page.
+If there is an output generated, ensure to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step afterward to ensure it is included in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list).
 
 :::
 

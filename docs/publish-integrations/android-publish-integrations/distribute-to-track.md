@@ -22,7 +22,7 @@ The Publish flow steps that need to be executed before running the **Distribute 
 |------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4602-track1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4602-track1_v2.png'/>
 
 :::warning
 
@@ -34,7 +34,7 @@ If you have previously submitted this app version to the Google Play Console, yo
 
 Following input configurations are required for the **Distribute to Track** step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4602-track.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4602-track_v2.png'/>
 
 | Variable Name        | Description                                                                                                                                                                                                                                                                                                                                                 | Status    |
 | -------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| --------- |

@@ -36,15 +36,15 @@ When you enter the profile after the build, the following screen will appear. Cl
 
 :::tip
 
-Clicking **Quick start using the sample repository** will also connect the relevant sample project with a public connection.
+Clicking **Start with a sample repository** will also connect the relevant sample project with a public connection.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-repoconnect1_v2.png' />
 
 After you click on **Connect via URL**, the following screen will appear and let you enter an URI.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-via-url.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connect-via-url_v2.png' />
 
 Enter the URL of your repository, or continue with the sample project if you plan to preview Appcircle.
 

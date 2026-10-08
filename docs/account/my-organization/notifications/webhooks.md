@@ -25,17 +25,17 @@ provide.
 
 ### Creating Webhook
 
-Multiple webhooks can be created for different events and build profiles. To start, go to [My Organization](/account/my-organization) Notifications screen and press the **Manage** button next to Webhook under the **Notification Providers** section.
+Multiple webhooks can be created for different events and build profiles. To start, go to [Organization](/account/my-organization) > **Notifications**. Under **Email and webhooks**, select **Webhooks** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-integration-webhook.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-integration-webhook_v2.png' />
 
 - Click Add Webhook button to create your webhook
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook2_v2.png' />
 
 - Fill in the details of your webhook
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook3_v2.png' />
 
 ## Available Notification Events by Module
 
@@ -149,11 +149,11 @@ You may also check the `timestamp` of the payload to prevent replay attacks. You
 
 You can check all the webhooks Appcircle sends to your endpoint by clicking the... button and then clicking the **Request History** section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook4_v2.png' />
 
 You can see all the requests and their results by clicking on them.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/webhook5_v2.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Webhooks.
@@ -162,14 +162,14 @@ To enable this feature, ensure you include the [**Publish Release Notes**](https
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-ReleaseNotesViaEmail_v2.png' />
 
 :::info
 After completing the specified action in Appcircle, you have the option to share the test results via Webhooks.
 To enable this feature, ensure you include the [**Test Reports**](https://docs.appcircle.io/continuous-testing/running-ios-unit-and-ui-tests#generating-test-report) step in your workflow.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/2446-TestReportsViaEmail_v2.png' />
 
 ## Editing Webhook
 

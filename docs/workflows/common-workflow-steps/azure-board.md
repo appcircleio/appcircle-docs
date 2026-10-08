@@ -23,7 +23,7 @@ Before using the **Azure Boards** step, make sure you have the following:
 
 - An Azure DevOps organization and a project that contains the work items you want to update.
 - A personal access token (PAT) with the **Work Items (Read & Write)** scope, together with the email of the account that owns it.
-- An [**Environment Variables**](/build/build-environment-variables) group that holds those credentials, connected to your build profile. For security reasons, we recommend adding the token as a secret variable using the lock icon rather than entering it into the step inputs directly.
+- An [**Environment Variables**](/build/build-environment-variables) group that holds those credentials, connected to your build profile. For security reasons, we recommend adding the token as a secret variable rather than entering it into the step inputs directly. When you add the variable, select the **Secret** tab.
 - The ID of the work item to update, available to the step as an environment variable. See [Getting the Work Item ID Dynamically](#getting-the-work-item-id-dynamically) to extract it from the branch name.
 
 :::caution
@@ -84,7 +84,7 @@ You can add further operations to the array to update other fields of the work i
 This step needs the input variables below in order to work. The table below explains these variables.
 
 <Screenshot
-  url='https://cdn.appcircle.io/docs/assets/BE3049-azureInput.png'
+  url='https://cdn.appcircle.io/docs/assets/BE3049-azureInput_v2.png'
   alt='Azure Boards step input variables'
 />
 
@@ -101,7 +101,7 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 | `$AC_AZUREBOARD_INSTANCE`      | The base URL of your Azure DevOps instance, including the scheme. For Azure DevOps Services this is `https://dev.azure.com`, which is also the default value. For a self-hosted Azure DevOps Server, enter your own URL, for example: `https://azuredevops.mycompany.com/tfs`                     | Required |
 | `$AC_AZUREBOARD_API_VERSION`   | The version of the Azure DevOps Services REST API. The default value is `7.0`                                                                                                                                                                                                                    | Required |
 | `$AC_AZUREBOARD_EMAIL`         | The email of the Azure DevOps account that owns the personal access token. Please use [**Environment Variables**](/build/build-environment-variables).                                                                                                                                           | Required |
-| `$AC_AZUREBOARD_TOKEN`         | Personal access token of the user, with the **Work Items (Read & Write)** scope. It can be created by visiting User settings. Please add it as a locked [**Environment Variable**](/build/build-environment-variables).                                                                           | Required |
+| `$AC_AZUREBOARD_TOKEN`         | Personal access token of the user, with the **Work Items (Read & Write)** scope. It can be created by visiting User settings. Please add it as a secret [**Environment Variable**](/build/build-environment-variables).                                                                           | Required |
 | `$AC_AZUREBOARD_ORG`           | Azure DevOps organization. The organization can be identified by its URL: for example, in `https://dev.azure.com/JohnDoe/MyProject/_boards/board/t/MyTeam/Issues`, **JohnDoe** is the organization name. On a self-hosted Azure DevOps Server, enter the collection name instead.                 | Required |
 | `$AC_AZUREBOARD_PROJECT`       | Azure DevOps project. The project can be identified by its URL: for example, in `https://dev.azure.com/JohnDoe/MyProject/_boards/board/t/MyTeam/Issues`, **MyProject** is the project name.                                                                                                      | Required |
 | `$AC_AZUREBOARD_WORKITEM`      | Azure work item ID. The work item ID (integer) is shown next to the work item title in Azure Boards. Refer to the [Getting the Work Item ID Dynamically](#getting-the-work-item-id-dynamically) section for instructions on extracting it from branch names.                                      | Required |

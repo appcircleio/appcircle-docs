@@ -92,14 +92,14 @@ Follow **3. Specific Provider Configuration** section to complete this steps.
 
 ### Accessing SSO Mapping Settings
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Appcircle SSO login** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso_v2.png' /> 
 
 3. Select the **Manage Authorization**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button_v2.png' /> 
 
 ### Group and Role Mapping Configuration
 
@@ -113,12 +113,12 @@ You can refer to the [Overview of Configuring SSO Authorization](#overview-of-co
 
 2. Click Add to map the SSO group to an Appcircle organization. This will automatically link users from the SSO group to the selected organization in Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-group-mapping.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-group-mapping_v2.png' /> 
 
 3. You must define role mappings for each group mapping. Click the **Configure** button to set up role mappings.
 4. Enter the role name and select the corresponding Appcircle roles you want to map. Ensure the role name is correct.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-role-mapping_v2.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-role-mapping_v3.png' /> 
 
 5. Finally, enable SSO Authorization with the **Enable SSO Authorization** toggle.
 
@@ -215,14 +215,14 @@ exports.onExecutePostLogin = async (event, api) => {
 
 #### Step 5. Define Group and Role Claim Names in Appcircle
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Appcircle SSO login** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso_v2.png' /> 
 
 3. Select the **Manage Authorization**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button_v2.png' /> 
 
 2. Enter the Group Claim Name as org_id and the Role Claim Name as your_namespace_roles. Note that the role claim is created as a custom claim in Auth0, so use the name you determined earlier.
 
@@ -319,18 +319,18 @@ exports.onExecutePostLogin = async (event, api) => {
 
 #### Step 5. Define Group and Role Attributes names in Appcircle
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Appcircle SSO login** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso_v2.png' /> 
 
 3. Select the **Manage Authorization**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button_v2.png' /> 
 
 4. Enter the Group Attribute Name as `http://schemas.auth0.com/org_id` and the Role Attribute Name as `http://schemas.auth0.com/your_namespace_roles`. Note that the role attribute is created as a custom attribute in Auth0, so you must use the name you determined previously.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-saml-ac-group-role-attribute-name.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-auth0-saml-ac-group-role-attribute-name_v2.png' />
 
 </details>
 
@@ -394,20 +394,20 @@ exports.onExecutePostLogin = async (event, api) => {
 
 #### Step 4. Define Group and Role Attribute names in Appcircle
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Appcircle SSO login** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso_v2.png' /> 
 
 3. Select the **Manage Authorization**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button_v2.png' /> 
 
 4. Enter **Group Attribute Name** as ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups`` and **Role Attribute Name** as ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups``.
 
 We use EntraID groups to manage user groups and roles. Both are sent to Appcircle in one claim. If needed, you can set up a more advanced configuration with a separate claim for roles.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-ac-group-role-attribute-name.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-azure-saml-ac-group-role-attribute-name_v2.png' />
 
 </details>
 
@@ -444,14 +444,14 @@ We use EntraID groups to manage user groups and roles. Both are sent to Appcircl
 
 #### Step 2. Define Group and Role Claim in Appcircle
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Appcircle SSO login** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso_v2.png' /> 
 
 3. Select the **Manage Authorization**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button_v2.png' /> 
 
 4. Enter **Group Attribute Name** as ``groups`` and **Role Attribute Name** as ``groups``.
 
@@ -461,15 +461,15 @@ We use Okta groups to manage user groups and roles. Both are sent to Appcircle i
 
 #### Step 3: Update SSO Scope Configuration
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.  
-2. Select the **Manage** option under the **Appcircle SSO Login**.  
+1. Navigate to **Organization** > **Security** on your dashboard.  
+2. Under **Authentication**, select **Appcircle SSO login** to open its side panel.  
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso_v2.png' /> 
 
 3. Select **Manage Authentication** and click the **Edit** button.
 4. Add the **groups** to the **Default Scope** field.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-openid-groups.png' /> 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-openid-groups_v2.png' /> 
 
 5. Click the **Save** button.
 
@@ -515,20 +515,20 @@ We use Okta groups to manage user groups and roles. Both are sent to Appcircle i
 
 #### Step 3. Define Group and Role Claim in Appcircle
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Appcircle SSO Login**
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Appcircle SSO login** to open its side panel.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/manage-appcircle-sso_v2.png' />
 
 3. Select the **Manage Authorization**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sso-manage-authz-button_v2.png' />
 
 4. Enter **Group Attribute Name** as ``groups`` and **Role Attribute Name** as ``groups``.
 
 We use Okta groups to manage user groups and roles. Both are sent to Appcircle in one claim. If needed, you can set up a more advanced configuration with a separate claim for roles.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-saml-ac-group-role-attribute-name-v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-saml-ac-group-role-attribute-name-v2_v2.png' />
 
 </details> 
 

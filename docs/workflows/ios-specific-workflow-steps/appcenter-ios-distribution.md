@@ -28,7 +28,7 @@ Before running the **App Center iOS Distrubiton** step, you must complete certai
 |-------------------------------------------------|-------------------------------------------------|
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) | This step will build your application in ARM architecture and generate an `IPA` and `dSYM` file. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-center_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-center_order_v2.png' />
 
 :::caution
 
@@ -40,7 +40,7 @@ Note that if you do not use this step after the [**Xcodebuild for Devices**](/wo
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-centerInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-centerInput_v2.png' />
 
 :::danger Sensitive Variables
 

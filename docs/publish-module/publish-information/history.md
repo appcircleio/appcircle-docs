@@ -31,7 +31,7 @@ You can also access the Resign History for an app version by navigating to it's 
 
 To view the Publish History, navigate to the History section in the Publish to Stores module. Once History is selected, The Publish History tab will be displayed by default. This section lists all versions of the app along with the dates and times their publishing actions started along with their publish status.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7115-1.png' alt="Publish History" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7115-1_v2.png' alt="Publish History" />
 
 ### Viewing Logs
 
@@ -54,7 +54,7 @@ Upon selecting a specific version, you will be presented with a detailed log. Th
 - Any warnings or errors that were logged.
 - The completion status of the publish action.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-history-log_v2.png' />
 
 ### Best Practices
 
@@ -66,18 +66,6 @@ Upon selecting a specific version, you will be presented with a detailed log. Th
 
 The Publish History is a key feature that provides transparency and traceability in the application deployment process. By regularly reviewing this section, you can ensure that your publish actions are performing as expected and maintain a high level of quality control over your release management process.
 
-### Accessing Build History
-
-To view the Build History, go to the History section for an app version in the Publish to Stores module, and then navigate to the Build History tab.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history2.png' alt="Publish Build History"/>
-
-This displays the build logs of the selected binary, initiated in the original build profile before being distributed to the publish profile.
-
-:::info
-Please note that to access the build logs from this tab, the selected binary must be automatically distributed from a build profile.
-:::
-
 ### Accessing Resign History
 
 To view the Resign History, navigate to the History section in the Publish to Stores module, then simply select the Resign History tab.
@@ -86,9 +74,9 @@ To view the Resign History, navigate to the History section in the Publish to St
 
 Each signing process will be listed for that binary. If you click on the displayed resign action , you can get more details about the process by seeing the logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history4.png' alt="Publish Resign History" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history4_v2.png' alt="Publish Resign History" />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history5.png' alt="Publish Resign History Logs" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history5_v2.png' alt="Publish Resign History Logs" />
 
 :::info
 

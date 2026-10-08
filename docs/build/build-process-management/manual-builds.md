@@ -11,23 +11,23 @@ To initiate a build in Appcircle, follow these steps:
 
 - Click on the Start Build button to begin the process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start1_v2.png' />
 
 - Appcircle will prompt you to choose a configuration and workflow settings from the saved configurations. Select the appropriate settings that match your project requirements.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start2_v2.png' />
 
 - Once the configurations are selected, click the Start button to start the build.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start3_v2.png' />
 
 - Users can monitor the progress, results, and logs of the workflow steps in real-time via the interface.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start4_v2.png' />
 
 - After the build is complete, you have the option to download the build logs for reference or troubleshooting purposes.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start5_v2.png' />
 
 - Upon completion, the binary along with the artifacts will be displayed on the selected branch. These can be accessed for deployment or further use.
 

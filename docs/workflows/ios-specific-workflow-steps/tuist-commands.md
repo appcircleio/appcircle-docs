@@ -31,13 +31,13 @@ For more information about Tuist CLI Commands, please visit the [**Tuist CLI**](
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/tuistCommandsOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/tuistCommandsOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4430New-tuistCommandInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4430New-tuistCommandInput_v2.png' />
 
 | Variable Name        | Description                                                                                                                                                                         | Status   |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|

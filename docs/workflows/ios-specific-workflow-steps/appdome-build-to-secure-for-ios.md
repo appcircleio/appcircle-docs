@@ -28,13 +28,13 @@ If a step other than the **Xcodebuild for Devices** step is used to build or sig
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeOrder1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeOrder1_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-domeInput_v2.png' />
 
 :::danger Sensitive Variables
 
@@ -62,7 +62,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+To view the output artifacts in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 

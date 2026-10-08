@@ -14,10 +14,10 @@ After building the application, we can start the publishing process by sending i
 
 For this, it is necessary to first create a publish profile within the Publish to Stores module. Afterwards, the relevant publish profile must be selected from the **Distribution** tab in the configuration of the relevant profile in the Build module.
 
-In order to create a publish profile, click on the "Add New" button in the Publish to Stores module.
+To create a publish profile, click **Add new profile** on the **iOS publish** or **Android publish** page of the Publish to Stores module.
 
 :::info 
-If it's your first time, set up connections to the app stores under [API Integrations](/account/my-organization).
+If it's your first time, add your app store credentials in [Organization](/account/my-organization) > **Security** > **Store credentials**.
 :::
 
 ### Adding a New Publish Profile
@@ -25,7 +25,7 @@ If it's your first time, set up connections to the app stores under [API Integra
 
 There are 2 different options for creating a Publish Profile. One of them is manual creation and the other is to import your existing Store profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-1_v2.png' />
 
 :::caution Creating a Publish Profile
 
@@ -49,7 +49,7 @@ The Bundle ID set during manual creation cannot be changed later and is assigned
 
 When manual creation is selected, the name and BundleID fields required for the Publish profile must be filled in.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-2_v2.png' />
 
 - **Publish Profile Name**: The name Publish profile is the name given to distinguish your profile from other profiles and appears on the profile card.
 - **BundleID**: BundleID is the unique identifier of your application. It is hard-coded when the profile is created and cannot be changed afterwards.
@@ -63,7 +63,7 @@ Please note that once the BundleID value of your profile has been set, it cannot
 After manually creating your profile, you will see your profile card displayed on the Publish screen.
 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-manuelCreateCard.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-manuelCreateCard_v2.png' />
 
 :::caution Main Bundle ID
 
@@ -71,7 +71,7 @@ Once a main Bundle ID is set, this Bundle ID is assigned to the created profile.
 
 An exclamation mark appears next to the binary that does not match the main Bundle ID of the profile. This means that the current Bundle ID of the binary does not match the specified Bundle ID.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-3_v2.png' />
 
 :::
 
@@ -87,9 +87,9 @@ If an **Apple Enterprise API** key has been added in your organization, it **can
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-4_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-6_v2.png' />
 
 Profiles on App Store Connect are listed with API key connection. In this list, the profile is imported by selecting either multiple or single profiles.
 
@@ -98,8 +98,6 @@ Profiles on App Store Connect are listed with API key connection. In this list, 
 The Bundle ID value of the profile imported via App Store Connect is assigned the same value as the profile you imported. It cannot be changed afterwards.
 
 :::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-importProfile.png' />
 
 ## Android Publish Profiles
 
@@ -115,39 +113,39 @@ The Package Name set during manual creation **cannot** be changed later and is a
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-7_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-2_v2.png' />
 
 When manual creation is selected, the name and Package Name fields required for the Publish profile must be filled in.
 
 - **Publish Profile Name**: The name Publish profile is the name given to distinguish your profile from other profiles and appears on the profile card.
 - **Package Name**: Package Name is the unique identifier of your application. It is hard-coded when the profile is created and cannot be changed afterwards.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-8_v2.png' />
 
 After manually creating your profile, you will see your profile card displayed on the Publish screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-4_v2.png' />
 
 ### Create from Google Play Console
 
 Another option to create a profile is to import it. With this feature, a Publish profile is created with your existing app profile information on Google Play Console.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-5_v2.png' />
 
 First, a Google Play Console API key must be selected. This will be used to retrieve certain information from Google Play Console during the profile creation process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-androidApıKeySelect.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-androidApıKeySelect_v2.png' />
 
 
 Next, a Package Name must be provided. Appcircle will use the selected API key and the given Package Name to search for a match in Google Play Console. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-checkingPackageName.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-checkingPackageName_v2.png' />
 
 If a correct match is found, the profile details will be displayed on the screen.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-infoTab.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP238-infoTab_v2.png' />
 
 :::caution Create from Google Play Connect
 
@@ -155,4 +153,4 @@ The Package Name value of the profile imported via Google Play Connect is assign
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-8_v2.png' />

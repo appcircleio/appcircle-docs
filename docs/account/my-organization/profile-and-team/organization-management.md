@@ -10,15 +10,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 ## Managing Organization
 
-The "My Organization" screen is accessible from the button with the organization name initials at the bottom left and it contains all operations to manage an organization.
+The **Organization** section is accessible from the left sidebar and contains all operations to manage an organization.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-organization.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-organization_v2.png' />
 
 ### Organization Name and ID Management
 
 When you create an account, an individual organization for you is created by default with your email address.
 
-In the left column under the organization management screen, you can change your organization name, which is a descriptive name, for that specific organization.
+On the **Organization** > **Profile and team** page, you can change your organization name, which is a descriptive name, for that specific organization.
 
 :::caution Organization Identifier
 
@@ -32,23 +32,23 @@ When your Appcircle organization is first created, your email address is used as
 
 :::
 
-To update these details, simply enter the new values and press _Update_.
+To change the organization name, open the **...** menu next to the **Profile and team** title, select **Rename organization**, and enter the new name. To copy the organization ID, select **Copy organization ID**.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org1_v2.png" />
 
 ## Working with Multiple Organizations
 
 ### Adding an Organization
 
-To add a new organization, press the "Create New Organization" button on the top-right (denoted by a plus sign) and type in the Organization Name. The organization will be created with the specified name and your role will be set as the owner.
+To add a new organization, open the **...** menu next to the **Profile and team** title, select **Create organization**, and type in the Organization Name. The organization will be created with the specified name and your role will be set as the owner.
 
 :::caution
 If you are on the Starter Plan, you cannot add a new organization. To create more organizations, you need to upgrade to a higher plan.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-addOrg.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-addOrg_v2.png' />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org2_v2.png" />
 
 ### Adding a Sub Organization
 
@@ -76,9 +76,9 @@ Please note that an **Enterprise License** is required to use this feature.
 
 :::
 
-If you have an enterprise license, you can create sub-organizations from the organization by navigating to the "My Organization" page, clicking on the **`Create Sub Organization`** button, and entering the necessary details for the sub-organization.
+If you have an enterprise license, you can create sub-organizations from the organization by going to **Organization** > **Profile and team**, opening the **...** menu next to the **Profile and team** title, selecting **Create sub-organization**, and entering the necessary details for the sub-organization.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org3.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org3_v2.png" />
 
 Multiple sub-organizations can be created from an organization as required. This feature is particularly useful for businesses with multiple teams working on different projects, providing a way to manage each team's access to Appcircle separately. With the Sub-Organization feature, businesses can create and manage multiple sub-organizations linked to the organization, giving different teams access to the tools they need to work on their specific projects.
 
@@ -88,7 +88,7 @@ Sub-organizations are subsidiary organizations linked to the main organization, 
 
 ### Switching Organizations
 
-Once you create an organization or accept an organization invite, you will be switched to that organization automatically. To switch between organizations, press the quick team switching button on the bottom-left on status bar and select an organization from the menu. The currently selected one is indicated with a check mark.
+Once you create an organization or accept an organization invite, you will be switched to that organization automatically. To switch between organizations, use the organization switcher at the top left of the sidebar and select an organization from the list. The currently selected one is indicated with a check mark.
 
 Each organization is isolated from each other, and switching means that you will switch to the "workspace" of that organization.
 
@@ -98,12 +98,12 @@ Once you select your organization, you will only see the profiles, artifacts, an
 You can switch between organizations at any time without any data loss.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4073-switch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4073-switch_v2.png' />
 
 To switch between organizations or sub organizations, follow these steps:
 
 1. **Locate the Organization Switch Button:**
-  - Find the button displaying the name of your current organization at the bottom of your screen.
+  - Find the organization switcher at the top left of the sidebar. It displays your email address and the name of your current organization.
 
 2. **Press the Organization Switch Button:**
   - Click this button to display a list of available organizations and sub-organizations you are part of.
@@ -141,4 +141,4 @@ Both leaving and deleting are irreversible operations and it is advised to use t
 - If you delete an organization, you will lose ALL platform data including apps, profiles, and artifacts.
   :::
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org5_v2.png" />

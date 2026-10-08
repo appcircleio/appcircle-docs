@@ -52,11 +52,11 @@ If a step other than the **Android Build** step is used to build an app, then th
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_0.png' alt="image1" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_0_v2.png' alt="image1" />
 
 :::danger
 
-To share the signed apps created as an output of this step or to view them on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+To share the signed apps created as an output of this step or to view them in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 
@@ -64,7 +64,7 @@ To share the signed apps created as an output of this step or to view them on th
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_1.png' alt="image1" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_1_v2.png' alt="image1" />
 
 | Variable Name               | Description                                  | Status |
 |-----------------------------|----------------------------------------------|--------|
@@ -80,7 +80,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 The output(s) resulting from the operation of this component are as follows:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_2.png' alt="image2" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_2_v2.png' alt="image2" />
 
 | Variable Name          | Description                                 |
 |------------------------|---------------------------------------------|

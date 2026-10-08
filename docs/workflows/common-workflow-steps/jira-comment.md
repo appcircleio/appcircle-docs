@@ -22,7 +22,7 @@ By adding Appcircle's [**Jira Comment**](https://github.com/appcircleio/appcircl
 Before using the **Jira Comment** step, make sure you have the following:
 
 - Credentials for your Jira instance: an API token and the associated account email for Jira Cloud, or a Personal Access Token (PAT) for Jira On-Prem.
-- An [**Environment Variables**](/build/build-environment-variables) group that holds those credentials, connected to your build profile. For security reasons, we recommend adding the token and the PAT as secret variables using the lock icon rather than entering them into the step inputs directly.
+- An [**Environment Variables**](/build/build-environment-variables) group that holds those credentials, connected to your build profile. For security reasons, we recommend adding the token and the PAT as secret variables rather than entering them into the step inputs directly. When you add each variable, select the **Secret** tab.
 - The key of the Jira issue to comment on, available to the step as an environment variable. See [Getting the Issue Key Dynamically](#getting-the-issue-key-dynamically) to extract it from the branch name.
 
 :::caution
@@ -37,7 +37,7 @@ If you do use transitions, make sure the step is placed in the correct order in 
 
 To ensure that the **Jira Comment** step runs even if your workflow fails, enable the `Always run this step even if the previous steps fail` switch. This switch is required for `$AC_JIRA_FAIL_TRANSITION` to take effect.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraPrerequisites.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraPrerequisites_v2.png' />
 
 :::
 
@@ -113,7 +113,7 @@ The step fails if the value you enter does not match any available transition, s
 - For [Jira REST API version 2](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#version): This version can be used by both Jira On-Prem and Jira Cloud users. Choose `2.*.*` from the selection list.
 - For [Jira REST API version 3](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#version): This version can only be used by Jira Cloud users. Choose `3.*.*` from the selection list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraAPIVersion.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraAPIVersion_v2.png' />
 
 ## Changing Template
 
@@ -129,7 +129,7 @@ Both the `$AC_JIRA_TEMPLATE_V2` and `$AC_JIRA_TEMPLATE_V3` inputs come prefilled
 
 This step needs the input variables below in order to work. The table below explains these variables.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3199-jiraInput_v2.png' />
 
 :::danger Sensitive Variables
 

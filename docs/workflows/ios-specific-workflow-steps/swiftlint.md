@@ -18,7 +18,7 @@ Before running the **SwiftLint** step, you must complete certain prerequisites, 
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step will clone your repository. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. This variable is the required input variable for **SwiftLint**. |
 | [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)| This step will install the dependencies in the project before **SwiftLint** can run. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lint_order.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lint_order_v2.png' />
 
 :::danger
 
@@ -38,7 +38,7 @@ If you have SPM in your project and you are using the **SwiftLint** component in
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lintInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2613-lintInput_v2.png' />
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|

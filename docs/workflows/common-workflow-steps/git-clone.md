@@ -24,7 +24,7 @@ If you have not connected your repo via SSH, the **Git Clone** does not have any
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2794-gitOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2794-gitOrder_v2.png' />
 
 :::info
 
@@ -36,7 +36,7 @@ We recommend using this step at the beginning of the workflow to avoid any probl
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2794-gitDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2794-gitDetails_v2.png' />
 
 :::danger
 

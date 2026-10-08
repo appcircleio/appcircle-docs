@@ -30,7 +30,7 @@ In order for this step to work, the following steps must be present before this 
 |-------------------------------------------------|-------------------------------------------------|
 | [**Send to TestFlight**](/publish-integrations/ios-publish-integrations/sent-to-testflight) | This step allows you to submit your application to TestFlight. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-submissionOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-submissionOrder_v2.png' />
 
 :::danger Prerequisites
 
@@ -45,7 +45,7 @@ For this reason, the binary file must be present on **TestFlight**.
 
 Below are the parameters necessary for this step's operation, along with their descriptions.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-submissionInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3926-submissionInput_v2.png' />
 
 
 | Variable Name                 | Description                         | Status           |

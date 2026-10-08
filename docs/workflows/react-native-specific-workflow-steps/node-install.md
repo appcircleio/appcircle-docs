@@ -24,13 +24,13 @@ Please note that this step should be used before steps that need the **npm/yarn 
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2796-nodeOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2796-nodeOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2796-nodeDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2796-nodeDetails_v2.png' />
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|

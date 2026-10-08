@@ -27,13 +27,13 @@ Before running the **Azure DevOps Bot for Detekt Report** step, you must complet
  |-------------------------------------------------|--------------------------------------------------|
  | [**Detekt**](/workflows/android-specific-workflow-steps/detekt) | In order to generate the [Detekt report](https://detekt.dev/docs/introduction/reporting/), the **Detekt** step must be executed beforehand.  |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-azure-bot-for-detekt-report_2_v2.png'/>
 
 :::danger Sensitive Variables
 

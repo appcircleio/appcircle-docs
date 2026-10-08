@@ -18,13 +18,13 @@ Before running the **Flutter Build for Android** step, you must complete certain
 | -------------------------- | --------------------------------------------------------------------------------------------- |
 | [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step fetches the repository that needs to be built from the specified branch. It is essential for initiating the Flutter Android build process. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_1.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_1_v2.png'/>
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_2.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_2_v2.png'/>
 
 | Variable Name                 | Description                                                                                           | Status    |
 |-------------------------------|-------------------------------------------------------------------------------------------------------|-----------|
@@ -35,9 +35,9 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::info
 
-If the required variables are already defined in the **Configuration** section, there is no need to redefine them in the Workflow. For more details, see the [Build Profile Configuration Overview](/build/build-process-management/configurations). The details you provide in the configuration will serve as input for the **Android Build** step. Kindly substitute the example information with your details:
+If the required values are already set on the **Config** tab of the build configuration, there is no need to redefine them in the Workflow. For more details, see the [Build Profile Configuration Overview](/build/build-process-management/configurations). The details you provide in the configuration will serve as input for the **Android Build** step. Kindly substitute the example information with your details:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_3.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_3_v2.png'/>
 
 :::
 

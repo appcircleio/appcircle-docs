@@ -18,13 +18,13 @@ Before running the **NPM/Yarn Commands** step, you must complete certain prerequ
 |-------------------------------------------------|-------------------------------------------------|
 | [**Install Node**](/workflows/react-native-specific-workflow-steps/node-install) | This step will install Node modules for your application. Please note that the **NPM/Yarn Commands** step should be used after this step. |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2797-npmOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2797-npmOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2797-nmpDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2797-nmpDetails_v2.png' />
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|

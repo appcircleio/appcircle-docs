@@ -25,6 +25,6 @@ You can filter the report pages according to the organization.
 In the filtering options, you can only view and select the organization and sub-organization you belong to.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-4_v2.png' />
 
 <CSVExport />

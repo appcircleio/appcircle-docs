@@ -25,13 +25,13 @@ Please note that if you do not run **Xcodebuild for Unit and UI Tests** before t
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertOrder_v2.png' />
 
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2989-convertInput_v2.png' />
 
 | Variable Name                 | Description                         | Status           |
 |-------------------------------|-------------------------------------|------------------|
@@ -48,11 +48,11 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                 | Description                         | 
 |-------------------------------|-------------------------------------|
-| `AC_CONVERTED_TEST_RESULT_PATH`           | Specifies the path where the converted result is stored. Users can access this path via this variable. Additionally, it will be available for download in the [**Download Artifact**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) section.  |
+| `AC_CONVERTED_TEST_RESULT_PATH`           | Specifies the path where the converted result is stored. Users can access this path via this variable. Additionally, it will be available for download in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel.  |
 
 :::caution
 
-To view the converted test reports on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+To view the converted test reports in the [**Download artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) side panel (available from the build's **...** menu in the build list), please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 

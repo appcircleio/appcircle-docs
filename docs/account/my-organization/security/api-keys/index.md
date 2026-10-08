@@ -14,9 +14,9 @@ Appcircle provides a secure method to create and manage API keys for accessing i
 
 To generate a new API key:
 
-**1.** Click on the **Create a New API Key** button.
+**1.** Go to **Organization** > **Security** and select **New API key** under **API keys**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api4_v2.png' />
 
 **2.** Enter a name for your API key and select an expiry date.  
 *Note: The expiry date and API key name cannot be modified after creation.*
@@ -25,15 +25,15 @@ To generate a new API key:
 Appcircle will set a default expiry date of 6 months from the time you created the API Key. This can be edited to last up to 1 year or lower than 6 months.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api1_v2.png' />
 
 **3.** Select the **Organization** and the **Roles** that the API key should have access to.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api2_v2.png' />
 
 **4.** Once the key is created, the **API key secret** will be shown **only once**. Copy and store it securely. After this, it will be encrypted and hidden. However, users can create a new key with the **same expiry date** if needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api3_v2.png' />
 
 :::tip Expiry Notification
 Appcircle will send a reminder to the organization owners if any API key is due to expire within a week; for sub-organizations, notifications are sent to their owners, and if no owner exists, they are forwarded to the root organization’s owners.
@@ -48,7 +48,7 @@ You can view all your API keys under the API Keys section. The status of each ke
 
 - **Delete**: Permanently removes the API key from the system.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api4_v2.png' />
 
 - Each API key includes an **auto-generated email** used for audit logging purposes.
 

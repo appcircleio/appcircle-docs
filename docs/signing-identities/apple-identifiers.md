@@ -13,13 +13,13 @@ The first requirement for publishing an application on the Apple App Store is to
 
 With the **Apple Identifiers** option in Appcircle's Signing Identities module, you can easily register a BundleID on the Apple Developer Portal or list your existing BundleIDs on Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-appleIdentifer.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-appleIdentifer_v2.png' />
 
 ## Register Bundle Identifier
 
 With the **Register Bundle Identifier** option, you can register a new BundleID on the Apple Developer portal using Appcircle.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerBundle1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerBundle1_v2.png' />
 
 You can specify the BundleID you wish to save, provide a description to identify this identifier, and select the capabilities you want it to have. Once you click the Save button, Appcircle will store this BundleID in your Apple Developer account.
 
@@ -29,7 +29,7 @@ When you register a BundleID, it will be created simultaneously in your Apple De
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerDetails_v2.png' />
 
 - **Description**: A brief explanation to distinguish BundleID.
 - **BundleID**: BundleID value to be saved.
@@ -39,21 +39,21 @@ When you register a BundleID, it will be created simultaneously in your Apple De
 
 In this option, all currently registered BundleIDs are listed. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getBundle1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getBundle1_v2.png' />
 
 You can list your registered BundleIDs on Appcircle by making selections from this list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getBundleList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-getBundleList_v2.png' />
 
 After the registration process is completed, the selected or registered BundleIDs will be listed as follows.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerListv2.png' alt='Registered bundle IDs listed under Apple identifiers' />
 
 ## Edit BundleID
 
-With the Actions button in the BundleID list, you can edit your existing BundleID content.
+Open the **...** menu of the BundleID under the Actions column and select **Edit** to edit your existing BundleID content.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editBundle.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editBundlev2.png' alt='Edit action in the Apple identifiers actions menu' />
 
 :::info Edit Bundle
 
@@ -61,9 +61,9 @@ The changes you make here will be modified **simultaneously** and saved in your 
 
 :::
 
-In the Edit screen, you can see all the capabilitiy it has in BundleID and you can add or remove them if you wish.
+In the **Edit** panel, you can see all the capabilities the BundleID has, add or remove them if you wish, and click **Save**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editModalv2.png' alt='Edit panel of an Apple identifier with its capabilities' />
 
 ## Delete BundleID
 
@@ -75,4 +75,4 @@ BundleIDs deleted on **Appcircle** will only be removed from **Appcircle** and w
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-Apple-Identifiers-Delete-Annotated.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-Apple-Identifiers-Delete-Annotatedv2.png' alt='Delete action in the Apple identifiers actions menu' />

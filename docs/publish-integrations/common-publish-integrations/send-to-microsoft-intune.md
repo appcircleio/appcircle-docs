@@ -26,9 +26,9 @@ To send an app from Appcircle to Microsoft Intune, you need to register an appli
   Adding Microsoft Intune API Credentials
 </ContentRef>
 
-After completing the integration with Microsoft Intune, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list. Then, click on the **Save** button.
+After completing the integration with Microsoft Intune, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list. Then, click on the **Save** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5766-Publish-intune-settings2.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5766-Publish-intune-settings2_v2.png' />  
 
 ### Input Variables
 
@@ -36,7 +36,7 @@ After completing the integration with Microsoft Intune, go to [Publishing Settin
 
 Below are the parameters necessary for this step's operation for iOS, along with their descriptions.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-microsoft-intune-inputs-ios-light.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-microsoft-intune-inputs-ios-light_v2.png' />
 
 | Variable Name        | Description                                                                                                                                                                                                                       | Status   |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -47,7 +47,7 @@ Below are the parameters necessary for this step's operation for iOS, along with
 :::warning
 If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-to-stores-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v3.png' />
 :::
 ---
 
@@ -55,7 +55,7 @@ If you choose to create a new application in Microsoft Intune while marking the 
 
 Below are the parameters necessary for this step's operation for Android, along with their descriptions.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-microsoft-intune-inputs-android-light.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-microsoft-intune-inputs-android-light_v2.png' />
 
 | Variable Name        | Description                                                                                                                                                                                                                       | Status   |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -66,7 +66,7 @@ Below are the parameters necessary for this step's operation for Android, along 
 :::danger
 If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-to-stores-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
  - The `Targeted Platform` is set when the application is first created in Microsoft Intune and cannot be changed afterwards. Ensure that you select the correct platform before executing this step.
-<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v3.png' />
 :::
 
 :::danger

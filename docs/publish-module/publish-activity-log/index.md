@@ -14,7 +14,7 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 You can view Publish to Stores module actions such as Publish Flow and Publish Step statutes, along with resign binary operations within the Organizations or Sub Organizations in the Activity Log section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-11.png' alt="Activity Log for Publish" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-11_v2.png' alt="Activity Log for Publish" />
 
 Here is the full list of actions that can be monitored:
 
@@ -67,10 +67,10 @@ Organization Owners can also observe the actions of their Sub-Organizations.
 
 :::
 
-You can edit the required date range by clicking the time filter in the top filter header as the default search time option is the last 30 days. Alternatively, you can choose custom dates from the calendar by selecting 'In Between' option.
+The list shows the last 7 days by default. To change the date range, click the date chip next to **Filter** at the top of the page. To choose your own dates from the calendar, select **Custom range**.
 
 Another method to search is by **Actions**. Simply click the filter option and select **Actions**. Then you can choose a specific action to refine your search.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-12.png' alt="Filtering Activity Log for Publish" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-12_v2.png' alt="Filtering Activity Log for Publish" />
 
 <CSVExport />

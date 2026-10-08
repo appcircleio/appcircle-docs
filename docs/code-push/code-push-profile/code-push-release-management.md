@@ -13,19 +13,19 @@ This section describes how to manage and distribute CodePush updates through App
 
 Deployment keys are used to link your deployment channels with the CodePush SDK, ensuring that updates are delivered to the correct target environment. For each newly created deployment channel, Appcircle will automatically generate a unique deployment key.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentKeys.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentKeys_v2.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentKeysDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-deploymentKeysDetails_v2.png' />
 
 ## Upload New Release
 
 With the Appcircle CodePush **Upload New Release** feature, you can manually release a bundle file that you have generated in your local environment.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-newRelease.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-newRelease_v2.png' />
 
 To use this feature, you need to upload the bundle file you created as a `.zip` archive. Below you can find a detailed explanation of the required inputs for the Upload Release feature.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-newReleaseDetails.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-newReleaseDetails_v2.png' />  
 
 - **App Version:** Specifies which app version the update is targeted for. Make sure it matches the version defined in your project settings.
 - **Release Note:** A description of the changes or improvements included in this release. This helps users and team members understand what the update contains.
@@ -38,7 +38,7 @@ To use this feature, you need to upload the bundle file you created as a `.zip` 
 
 The version management section allows you to view and compare previous CodePush releases for better control and organization of your update history. All fields in the version list are explained below.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionList_v2.png' />
 
 - **Release Version:** Indicates the version of the CodePush update you have uploaded.
 - **Target Version:** Shows which app version this release is intended to run on.
@@ -52,14 +52,14 @@ The version management section allows you to view and compare previous CodePush 
 
 In this section, you can perform actions such as viewing details, disabling, or enabling a specific CodePush version to manage your release lifecycle more effectively.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionActions.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionActions_v2.png' />
 
 All version actions are detailed below.
 
 ### Details
 This option allows you to view all the information and configuration details of a specific CodePush release.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-versionDetails_v2.png' />
 
   - **Released on:** Displays the exact date and time when this release was created.
   - **Channel:** Indicates the deployment channel (e.g., Staging or Production) to which this release belongs.
@@ -74,7 +74,7 @@ This option allows you to view all the information and configuration details of 
 ### Promote
 Use this action to promote a release from one deployment channel to another, such as from Staging to Production.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-promote.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-promote_v2.png' />  
 
   - **Released Version:** Displays the exact version identifier of the release you are promoting.
   - **Released on:** Shows the original date and time when this release was first created.
@@ -85,12 +85,12 @@ Use this action to promote a release from one deployment channel to another, suc
 ### Rollback
 This action reverts your app to the previous stable CodePush version in case of issues with the latest update. You can also roll back to any specific version if needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-rollback.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-rollback_v2.png' />
 
 ### Settings
 Allows you to modify release configurations such as rollout percentage or mark the release as mandatory.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-Settings.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6380-Settings_v2.png' />  
 
 - **Description:** A brief note summarizing what this specific version includes. Useful for internal tracking and user communication.
 - **Package Diff:** Ensures users download only the modified files instead of the full package, reducing update size and speeding up delivery.
@@ -119,4 +119,4 @@ For example, if you release an update with a 70% rollout percentage, 7 out of 10
 ### Download Bundle
 Use this option to download the `.zip` bundle file associated with a specific CodePush release.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-downloadBundle.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6122-downloadBundle_v2.png' />
