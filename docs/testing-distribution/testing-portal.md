@@ -157,7 +157,7 @@ For more information about using distribution links, please visit the [using dis
 
 #### Profile Card
 
-When the user icon is selected, the distribution profile information will be displayed. This information can be updated from the [Info](/testing-distribution/create-or-select-a-distribution-profile#config) tab within the profile settings.
+When the user icon is selected, the distribution profile information will be displayed. This information can be updated from the **Testing Portal** tab within the [profile settings](/testing-distribution/create-or-select-a-distribution-profile#config).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
 
@@ -168,5 +168,5 @@ In the example image, the profile has a static authentication method, so it is d
 You can find out more about the login methods in the [using authentication for distribution](/testing-distribution/create-or-select-a-distribution-profile#authentication) section.
 
 :::info
-Please note that the Privacy and Terms URLs are optional. If they have not been configured within the Info tab of your profile settings, they will not be visible in the Testing Portal.
+Please note that the Privacy and Terms URLs are optional. If they have not been configured within the **Testing Portal** tab of your profile settings, they will not be visible in the Testing Portal.
 :::

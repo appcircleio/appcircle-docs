@@ -11,7 +11,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 ### Mark Version as Release Candidate
 
-Appcircle allows you to mark your app version as RC and designate any version as a **Release Candidate** with ease by simply selecting the desired app version and clicking on the **Mark as RC** button.
+Appcircle allows you to mark your app version as RC and designate any version as a **Release Candidate** with ease by simply opening the **...** menu on the desired version row and selecting **Mark as RC**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-31_v2.png' />
 

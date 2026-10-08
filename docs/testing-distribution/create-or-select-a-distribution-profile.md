@@ -123,7 +123,7 @@ Once the upload is complete, the new version will be added to the top of the lis
 
 :::info
 
-Please note that iOS and Android binaries are displayed in separate tabs. The required OS tab should be clicked to navigate between them.
+Please note that iOS and Android binaries are listed separately. Use the iOS/Android toggle above the binary list to switch between them.
 
 :::
 
@@ -133,7 +133,7 @@ Please note that iOS and Android binaries are displayed in separate tabs. The re
 
 With a successful build, a new version of the application will be added to the distribution profile.
 
-Simply go to _Build Module_ _>_ _Build Configuration_ _>_ _Distribution_ and select a distribution profile you want your build to be sent.
+Simply go to **Build** > select the build profile > **Configurations** > select a configuration > **Distribution** tab and select a distribution profile you want your build to be sent.
 
 :::tip
 
@@ -345,11 +345,11 @@ Uploaded binaries without metadata from a build module won’t show the selected
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-8_v2.png' />
 
-Binary tags can be managed through the Testing Distribution Profile Settings under the Info tab:
+Binary tags can be managed through the Testing Distribution Profile Settings under the **Testing Portal** tab:
 1. Navigate to **Testing Distribution** module.
 2. Select the relevant distribution profile.
-3. Click the **Settings** icon.
-4. Under the **Info** tab, locate the **Binary Tags** section.
+3. Open the **...** menu next to the profile name and select **Settings**.
+4. Under the **Testing Portal** tab, locate the **Binary tags** section.
 5. Use the “Add a new tag” field to enter or select tags.
 6. Click **Save** to apply changes.
 

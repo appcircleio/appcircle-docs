@@ -268,7 +268,7 @@ step to get approval before submitting the metadata to App Store Connect.
 
 ### Starting the Flow
 
-- You can start the Publish flow manually by clicking on the `Publish Details` or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the selected app stores.
+- You can start the Publish flow manually with the play icon on the release candidate (RC) version row and follow it from the version row's **...** menu > **Publish details**, or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the selected app stores.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-22_v2.png' />
 
@@ -330,7 +330,7 @@ While the Publish to Stores module is designed for reliability, you may occasion
 
 #### How do I update my app's metadata?
 
-To update your app's metadata, navigate to the Publish to Stores module, select the relevant profile, click the Actions button for the binary, and go to Metadata details. You can now update the metadata fields such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
+To update your app's metadata, navigate to the Publish to Stores module, select the relevant profile, open the **...** menu on the binary's version row, and select **Metadata details**. You can now update the metadata fields such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23_v2.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadataDetails_v2.png' />

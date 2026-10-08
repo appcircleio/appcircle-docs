@@ -50,13 +50,13 @@ Steps to Generate a Profile-Specific Secret:
 
 #### Enterprise Portal Prefix
 
-Navigate to the Enterprise App Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
+Go to **Enterprise App Store** > **Settings** in the left sidebar to find the **STORE PREFIX** information. You can also modify it if needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-60_v2.png' />
 
 #### Enterprise Portal URL
 
-Navigate to the Enterprise Store module and settings page to find the **STORE URL** information.
+Go to **Enterprise App Store** > **Settings** in the left sidebar to find the **STORE URL** information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-61_v2.png' />
 

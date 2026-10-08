@@ -25,7 +25,7 @@ To view the details of your publish flow:
 
 2. **Open Publish Details:**
 
-   - Click on the "Publish Details" option to open the detailed view of the publish flow.
+   - Open the **...** menu on the version row and select **Publish details**. The **Publish flow** panel opens with the detailed view of the publish flow.
 
 3. **Review the Logs:**
    - Examine the logs to monitor the progress of your publishing actions.

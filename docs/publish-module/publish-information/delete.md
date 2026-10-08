@@ -22,7 +22,7 @@ The "Delete" function in the Publish to Stores module allows users to remove spe
 
 2. **Access Delete Option:**
 
-   - Click on the trash can icon or the menu option for the version you want to delete.
+   - Open the **...** menu on the row of the version you want to delete and select **Delete**.
 
 3. **Confirm Deletion:**
 

@@ -213,7 +213,7 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 ### Starting the Flow
 
-- You can start the Publish flow manually by clicking on the `Publish Details` or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the Google Play Console.
+- You can start the Publish flow manually with the play icon on the release candidate (RC) version row and follow it from the version row's **...** menu > **Publish details**, or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the Google Play Console.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-startPublish_v2.png' />
 
@@ -264,7 +264,7 @@ For more information, please refer to the [**What to do if I lost my key store**
 
 #### Can I re-sign an Android binary with a different keystore?
 
-Yes. The Resign Binary step allows you to re-sign your APK or AAB using a different keystore. This is useful when distributing the same build under a different signing identity. Make sure to use a trusted and correct keystore when re-signing your binary. The Publish to Stores module fully supports Android binary re-signing.
+Yes. The **Re-sign binary** action (version row **...** menu) allows you to re-sign your APK or AAB using a different keystore. This is useful when distributing the same build under a different signing identity. Make sure to use a trusted and correct keystore when re-signing your binary. The Publish to Stores module fully supports Android binary re-signing.
 
 :::caution
 
@@ -292,7 +292,7 @@ Keep in mind that, once a rollout has started, the percentage can only be increa
 
 #### How do I update my app's metadata?
 
-To update your app's metadata, navigate to the Publish to Stores module, select the relevant profile, click the `Actions` button for the binary, and go to `Metadata details`. You can now update the metadata fields, such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
+To update your app's metadata, navigate to the Publish to Stores module, select the relevant profile, open the **...** menu on the binary's version row, and select **Metadata details**. You can now update the metadata fields, such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
 
 :::caution
 
@@ -340,7 +340,7 @@ The Publish to Stores module is an **enterprise-level** solution, so only users 
 
 Google Play does not support directly rolling back to a previously published version. However, you can functionally roll back by re-releasing the previous binary using a higher `version code`.
 
-To do this in Appcircle, go to the Publish to Stores module, select the previous version from your release history, and `Resign` the binary that you want to re-release.
+To do this in Appcircle, go to the Publish to Stores module, find the previous version in the version table, then open its **...** menu and select **Re-sign binary** for the binary that you want to re-release.
 
 For more information, please refer to the [**Resign binary**](/publish-to-stores-module/publish-information/resign-binary).
 

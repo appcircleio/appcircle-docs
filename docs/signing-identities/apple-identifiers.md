@@ -47,13 +47,13 @@ You can list your registered BundleIDs on Appcircle by making selections from th
 
 After the registration process is completed, the selected or registered BundleIDs will be listed as follows.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-registerListv2.png' alt='Registered bundle IDs listed under Apple identifiers' />
 
 ## Edit BundleID
 
-With the Actions button in the BundleID list, you can edit your existing BundleID content.
+Open the **...** menu of the BundleID under the Actions column and select **Edit** to edit your existing BundleID content.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editBundle.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editBundlev2.png' alt='Edit action in the Apple identifiers actions menu' />
 
 :::info Edit Bundle
 
@@ -61,9 +61,9 @@ The changes you make here will be modified **simultaneously** and saved in your 
 
 :::
 
-In the Edit screen, you can see all the capabilitiy it has in BundleID and you can add or remove them if you wish.
+In the **Edit** panel, you can see all the capabilities the BundleID has, add or remove them if you wish, and click **Save**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-editModalv2.png' alt='Edit panel of an Apple identifier with its capabilities' />
 
 ## Delete BundleID
 
@@ -75,4 +75,4 @@ BundleIDs deleted on **Appcircle** will only be removed from **Appcircle** and w
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-Apple-Identifiers-Delete-Annotated.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-Apple-Identifiers-Delete-Annotatedv2.png' alt='Delete action in the Apple identifiers actions menu' />

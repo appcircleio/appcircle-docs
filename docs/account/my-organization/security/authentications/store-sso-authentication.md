@@ -73,7 +73,7 @@ Begin by enabling SSO within your Appcircle organization settings. Follow these 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-add-new_v2.png' />
 
-4. The **Manage Appcircle SSO Login** side panel opens, presenting two options:
+4. The **Manage Enterprise Portal SSO Login** side panel opens, presenting two options:
     - **Create New Authentication**
     - **Create From Existing Authentication**
 You can create new configuration or create from existing configuration. Click on the **Create New Authentication** section to create new configuration.

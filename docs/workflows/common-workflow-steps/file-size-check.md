@@ -43,7 +43,7 @@ When you enter this component detail, you need to specify the **File Size** and 
 
 With **warn**, the build status does not change, so check the build log for the size warning. To keep the build running but mark it in your build list, select **fail** and turn on **Continue with the next step even if this step fails** for this step. The build then appears as **Warning** in your build list:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_warn.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2582-size_warnv2.png' alt='Build list showing a build with the Warning status' />
 
 :::
 

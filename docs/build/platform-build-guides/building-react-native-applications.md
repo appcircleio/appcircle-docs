@@ -154,7 +154,7 @@ To learn more about Appcircle's Workflow editor, see the corresponding page belo
 
 ### Starting a React Native Build and After a Build
 
-To start your first build, just press the start build button – the play button under the actions columns (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in real time.
+To start your first build, just click **Start build** at the top right of the build list (or push some code to your repo if autobuild is configured.) You will see the build progress and the log in real time.
 
 Once your build is complete, you can now download the binary file or deploy it to Testing Distribution manually (if autodistribute is enabled, it will be sent automatically after a successful build). You can also view or download your build logs at any time.
 

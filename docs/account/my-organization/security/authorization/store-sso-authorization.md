@@ -64,8 +64,8 @@ This section provides a brief summary of the configuration steps.
 
 #### Step 3. Define Group Claim Name in Appcircle
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Enterprise Portal SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Enterprise Portal SSO login** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button_v2.png' /> 
 
@@ -191,8 +191,8 @@ This section provides a brief summary of the configuration steps.
 #### Step 5. Define Group Attributes names in Appcircle
 
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Enterprise Portal SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Enterprise Portal SSO login** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button_v2.png' /> 
 
@@ -243,8 +243,8 @@ This section provides a brief summary of the configuration steps.
 
 #### Step 2. Define Group Claim in Appcircle
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Enterprise Portal SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Enterprise Portal SSO login** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button_v2.png' /> 
 
@@ -258,8 +258,8 @@ This section provides a brief summary of the configuration steps.
 
 #### Step 3: Update SSO Scope Configuration
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.  
-2. Select the **Manage** option under the **Enterprise Portal SSO Login**.  
+1. Navigate to **Organization** > **Security** on your dashboard.  
+2. Under **Authentication**, select **Enterprise Portal SSO login** to open its side panel.  
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button_v2.png' /> 
 
@@ -306,8 +306,8 @@ This section provides a brief summary of the configuration steps.
 
 #### Step 4. Define Group Claim in Appcircle
 
-1. Navigate to the **Organization > Security > Authentications** section on your dashboard.
-2. Select the **Manage** on the **Enterprise Portal SSO Login**.
+1. Navigate to **Organization** > **Security** on your dashboard.
+2. Under **Authentication**, select **Enterprise Portal SSO login** to open its side panel.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-sso-manage-button_v2.png' /> 
 

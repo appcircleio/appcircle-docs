@@ -40,7 +40,7 @@ https://github.com/appcircleio/appcircle-netrc-component
 
 At the bottom of the config tab, you will see the **Set Commit Build Status** option.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-status.png' alt="Sending Build Status" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-statusv2.png' alt="Sending Build Status" />
 
 When this option is enabled, the build status for that commit is shared with the repository provider.
 
@@ -92,7 +92,7 @@ Any previous build can be deployed to the Testing Distribution without the need 
 
 ### Environment Variables
 
-The final step on build configuration is Environment Variables.
+The final tab of the build configuration is **Environment**.
 
 Appcircle Build module is simple and powerful. You can get your builds instantly just with a few clicks, advanced management of builds is also possible with the environment variables and workflows.
 
@@ -110,7 +110,7 @@ Please click on the Save button and close this modal.
 
 ### Workflow Editor
 
-You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use the workflow editor.
+You can use the workflow editor for in-depth configuration of all build steps. Click **Workflows** at the top right of the build profile to open and use the workflow editor.
 
 :::info
 
@@ -181,8 +181,8 @@ For example, you can take the following steps to change the default Java version
 1. Create a variable group that has a variable with the properties below.
     1. The key should be `JAVA_HOME`.
     2. Value should be `/Users/appcircle/.sdkman/candidates/java/17.0.9-zulu`.
-2. Go to the configuration section of the build profile that you want to autofill.
-3. Go to the 'Env. Variables' tab in configuration.
+2. Select **Configurations** at the top right of the build profile that you want to autofill and open the configuration.
+3. Go to the **Environment** tab in the configuration.
     1. You should see the variable group that you created in the list.
 4. Select the variable group that has `JAVA_HOME` and 'Save' settings.
 5. Go back to the config tab and start autofilling there.

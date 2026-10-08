@@ -202,8 +202,8 @@ If you want to perform **In-house** signing using an **Enterprise API** Key, mak
 
 To re-sign a binary, follow these steps:
 
-1. **Select the Version**: Choose the version of your app you wish to resign from the **Version List** in the Publish to Stores module.
-2. **Configure Re-signing Options**: Navigate to the **Re-sign Binary** action and configure the necessary fields such as the provisioning profile, entitlements, and other settings.
+1. **Select the Version**: Choose the version of your app you wish to resign from the version table of your publish profile in the Publish to Stores module.
+2. **Configure Re-signing Options**: Open the **...** menu on the version row, select **Re-sign binary**, and configure the necessary fields such as the provisioning profile, entitlements, and other settings.
 3. **Re-sign the Binary**: After configuring, click the **Re-sign** button to re-sign the binary. This process will create a new package with the updated provisioning profile and entitlements.
 
 ### Post-Resignation

@@ -337,9 +337,9 @@ This helps prevent unnecessary resource usage and reduces queue time by skipping
 
 To enable this feature:
 
-1. Go to the `Build Profiles` and select `Configurations`.
-2. Scroll down and activate `Auto Cancel Redundant Pipeline`.
-3. Click `Save` changes.
+1. Open the build profile and select **Configurations** at the top right.
+2. Open the configuration and, on the **Config** tab, turn on the **Auto cancel** toggle.
+3. Click **Save**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/auto-cancel-redundant-pipeline_v2.png' />
 

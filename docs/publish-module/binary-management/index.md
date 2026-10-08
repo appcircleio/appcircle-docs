@@ -43,7 +43,7 @@ When a binary BundleID uploaded to the Publish profile does not match the master
 
 Note that you cannot mark your application version with a mismatched BundleID as a [**Release Candidate**](/publish-to-stores-module/publish-information/marking-release-candidates). 
 
-For BundleID change, you can use the [**Resign Binary**](/publish-to-stores-module/publish-information/resign-binary) feature in the Action button or upload a matching binary.
+For BundleID change, you can use the [**Resign Binary**](/publish-to-stores-module/publish-information/resign-binary) feature from the **...** menu on the version row or upload a matching binary.
 
 :::
 
@@ -51,7 +51,7 @@ Afterwards, you can start submitting your application to the stores with the pub
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-14_v2.png' />
 
-For this, click on the **Actions** button for the relevant version and go to **Details**. From there, you can manually **Start Flow** for the uploaded application version.
+For this, click the play icon on the release candidate (RC) version row to start the flow manually, or open the **...** menu on the version row and select **Publish details** to follow the flow for the uploaded application version.
 
 ## Store Status
 
@@ -97,16 +97,16 @@ The iOS Publish filter options will only display the available statuses from the
 
 Within the Publish to Stores module, binaries display expiration-related statuses based on their signing certificate validity.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-4v2.png' alt='Expired binaries in the Publish to Stores version list' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-5v2.png' alt='Expired tag on the Binary information panel' />
 
 - **Expire Soon** status is shown when the certificate is approaching its expiration date.
 - **Expired** status is shown when the certificate has already expired.
 
 When hovering over these status tags, a tooltip is displayed:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-6v2.png' alt='Tooltip showing the binary expiration date' />
 
 For expired binaries:
 

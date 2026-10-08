@@ -166,7 +166,7 @@ Shared provisioning profiles can be used in Sub-Organizations just like locally 
    Locate the provisioning profile you want to share.
 
 3. Select the Profile  
-   Click the **Share** icon under the Actions column.
+   Open the **...** menu under the Actions column and select **Share**.
 
 4. Configure Sharing Settings  
    In the Share panel:
@@ -221,13 +221,15 @@ Affected build profiles will not be displayed within the warning message if you 
 
 ### Profile Actions
 
-You can access different Actions for existing provisions within 3 points in the area where the provisions are listed on the Appcircle.
+You can access different actions for existing provisions from the **...** menu under the Actions column of the Apple profiles list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-renewOption.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3953-renewOptionv2.png' alt='Apple profile actions menu' />
 
 - **Renew**: Renews provisioning that has expired or become out of date
-- **Apple Devices**: Lists the device UDIDs registered in the provision
+- **Share**: Shares the selected provisioning with sub-organizations
+- **Profile information**: Shows the provisioning details and the device UDIDs registered in the provision
 - **Download**: Downloads the selected provisioning
+- **Delete**: Deletes the selected provisioning from Appcircle
 
 :::danger Renew
 
@@ -247,21 +249,21 @@ If a provision profile is used in a Build Profile, it will continue to be used w
 
 With Appcircle’s Apple Profiles feature, you can easily add the UDIDs of your test devices to the corresponding provisioning profile.
 
-To manage devices and view the current device list, click the **Profile Action** button and navigate to the **Apple Devices** section.
+To manage devices and view the current device list, open the **...** menu under the Actions column of the provisioning profile and select **Profile information**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-deviceAction.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-deviceActionv2.png' alt='Profile information action in the Apple profile actions menu' />
 
-When you click the **Apple Devices** action, you will see a list of devices currently included in the **selected** provisioning profile. In the modal that opens, you can update this list by clicking the **Manage Devices** button.
+When you click the **Profile information** action, you will see the details of the **selected** provisioning profile and, under **Provisioned devices**, a list of devices currently included in it. In the panel that opens, you can update this list by clicking the **Manage device** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-manageDeviceModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-manageDeviceModalv2.png' alt='Provisioned devices and the Manage device button on the profile information panel' />
 
-After clicking the Manage Devices button, you will see two different lists.
+After clicking the **Manage device** button, you will see two different lists.
 
-The **Existing Devices** list displays the device **UDIDs** currently included in the **selected** provisioning profile. You can remove a device from the provisioning profile by unchecking its checkbox in this list.
+The **Existing devices** list displays the device **UDIDs** currently included in the **selected** provisioning profile. You can remove a device from the provisioning profile by unchecking its checkbox in this list.
 
-Below this, there is the **Non-Existing Devices** list. This list shows the devices that are **registered** in your **Apple Developer Portal** account but are not **included** in the provisioning profile. To add a new device **UDID** to the provisioning profile, select the desired device from this list and proceed.
+Below this, there is the **Non-existing devices** list. This list shows the devices that are **registered** in your **Apple Developer Portal** account but are not **included** in the provisioning profile. To add a new device **UDID** to the provisioning profile, select the desired device from this list and proceed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-deviceAddRemove.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-deviceAddRemovev2.png' alt='Existing and non-existing device lists of a provisioning profile' />
 
 :::caution Minimum Device Count
 
@@ -269,9 +271,11 @@ According to **Apple’s Developer Portal** rules, a provisioning profile must i
 
 :::
 
-After selecting the devices, you will see a final **Preview** screen. This screen displays the updated device list that will be included in the provisioning profile. You can update the devices in the provisioning profile by clicking the **Update Profile** button.
+After selecting the devices, click **Next** and select the **App Store Connect API key** that Appcircle will use to update the provisioning profile on the Apple Developer Portal.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-addDevicePreview.png' />
+Then you will see a final **Preview** screen. This screen displays the updated device list that will be included in the provisioning profile. You can update the devices in the provisioning profile by clicking the **Update profile** button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5008-addDevicePreviewv2.png' alt='Preview of the updated device list for a provisioning profile' />
 
 When the profile update is successfully completed, the updated version of the selected provisioning profile will be displayed in the Apple Profiles list.
 

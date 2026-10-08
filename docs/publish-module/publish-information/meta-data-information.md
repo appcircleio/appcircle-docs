@@ -173,7 +173,7 @@ If the Microsoft Intune credential is not selected, the metadata fields will not
 
 If there is existing metadata associated with your app on the Microsoft Intune, the **Metadata Information** page will automatically populate these fields with the existing data. This feature simplifies the update process by allowing you to review and modify the pre-filled information rather than starting from scratch. It ensures consistency and accuracy in your app’s metadata across different versions.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneMetadataRetrieve.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-inTuneMetadataRetrievev2.png' alt='Retrieve button on the Microsoft Intune metadata panel' />
 
 ### Fields Explained
 

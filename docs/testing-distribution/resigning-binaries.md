@@ -32,7 +32,7 @@ You can use manual re-sign to:
 
 1. Select the binary.
 
-You can either select the files from the list or upload IPA, xcarchive files by clicking the **Upload** button at the top of the list.
+You can either select the files from the list or upload IPA, xcarchive files by clicking the **Upload binary** button at the top right.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
 
@@ -64,7 +64,7 @@ To sign an Android binary, a valid keystore file is required. Both APK and AAB f
 
 1. Select the binary.
 
-Files can either be selected from the list or uploaded by clicking the **Upload** button at the top of the list for APK and AAB files.
+Files can either be selected from the list or uploaded by clicking the **Upload binary** button at the top right for APK and AAB files.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-23_v2.png' />
 
@@ -98,13 +98,13 @@ In addition to manual resigning, the **Testing Distribution** module supports **
 
 The **Auto Re-sign** feature allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
-You can enable the **Auto Re-sign** feature by navigating to Settings option and enabling Auto-resign toggle for iOS and/or Android.
+You can enable the **Auto Re-sign** feature by opening the **...** menu next to the profile name, selecting **Settings**, and enabling the **Auto re-sign for iOS** and/or **Auto re-sign for Android** toggles on the **Config** tab.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-26_v2.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-27_v2.png' />
 
-Once it's enabled, you will need to configure the Auto Re-sign feature for iOS and Android. **Auto Re-sign Configurations** options can be found by clicking **...**.
+Once it's enabled, you will need to configure the Auto Re-sign feature for iOS and Android. The configurations can be found in the **...** menu next to the profile name as **Auto re-sign for iOS** and **Auto re-sign for Android**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-26_v2.png' />
 
@@ -292,11 +292,11 @@ Testing Distribution profiles will not allow `.AAB` binaries to be shared with t
 
 1. Select the binary.
 
-You can either select the files from the list or upload binaries by clicking the **Upload** button at the top of the list.
+You can either select the files from the list or upload binaries by clicking the **Upload binary** button at the top right.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
 
-2. Click the... button and select **Resign History**
+2. Click the **...** button and select **Re-sign history**
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-28_v2.png' />
 

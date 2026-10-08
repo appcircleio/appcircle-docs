@@ -177,7 +177,7 @@ The PAT connection list section on the right-hand side has a list of connections
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-main-pat-new_v2.png' />
 
-The list first shows the logo of the Git provider we're connecting to, then the name we gave to the connection (when multiple instances are used), and finally the URL of the Git provider we're connecting to.
+The list first shows the logo of the Git provider we're connecting to, then the name we gave to the connection, and finally the token type, such as **Personal Access Token (Cloud)** or **Personal Access Token (User) (Self-Hosted)**.
 
 ### Adding PAT Connection
 
@@ -190,26 +190,26 @@ After clicking **New PAT connection**, Appcircle will ask us to select a Git pro
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-select-provider_v2.png' />
 
 :::info
-The name you defined in the **Connection Name** section must be unique for each Git provider.
+The name you defined in the **Connection name** field must be unique for each Git provider.
 
 For example, if you have created a PAT named "my-secret-pat" for GitHub, you cannot create another PAT with the same name for GitHub.
 
 But you can create a PAT named "my-secret-pat" for GitLab or Bitbucket, for instance.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connections-fill-provider-new-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connections-fill-provider-new-1v2.png' alt='Azure DevOps Server personal access token connection form' />
 
 :::info
-In Azure DevOps Server connections, the **Owner Username** field on Appcircle corresponds to the **Collection Name** on Azure.
+In Azure DevOps Server connections, enter the name of your Azure DevOps Server collection (for example, `DefaultCollection`) in the **Collection name** field.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-success-pat.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connection-success-patv2.png' alt='New PAT connection listed under PAT connections' />
 
 Now you're ready to use the added PAT connection in your build profiles. While making a new connection, you can see the PAT connection in the available connections list after selecting the Git provider.
 
 ### Editing PAT Connections
 
-We can see the details of the PAT connection by opening the connection's **...** menu and selecting **Edit**. These are **Provider**, **Instance URL**, **Token Owner**, **Token**, and **PAT**.
+We can see the details of the PAT connection by opening the connection's **...** menu and selecting **Edit**. These are **Provider**, **Instance URL**, **Token owner**, **Personal access token**, and the optional **Expiration date**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/connections-pat-detail_v2.png' />
 
@@ -217,7 +217,7 @@ In the **Edit** side panel, we can change the PAT (Personal Access Token) value.
 
 However, we must make sure that the value we change here is correct and that it was created on the Git provider correctly. Otherwise, the affected build profile or profiles will not be connected.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/connections-pat-edit.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/connections-pat-editv2.png' alt='Personal access token field on the PAT connection edit panel' />
 
 :::caution
 In the **Edit** side panel, you can see the build profiles where PAT is used under "Affected Build Profiles".

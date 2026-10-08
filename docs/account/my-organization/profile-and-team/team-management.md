@@ -20,15 +20,15 @@ Each organization must have at least one Owner and each user must be an Owner of
 
 ### Managing Team Members
 
-As an Owner, you can invite new members simply by entering their email address under the related field in Team Management and pressing the **Add a New User** button.
+As an Owner, you can invite new members by going to **Organization** > **Profile and team**, selecting **Invite**, and entering their email address.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-inviteMember_v2.png' />
 
-The user will be then shown in a **Pending** state until the invitation is accepted. At the same time, you can resend the invitation with the **Resend** option. You can also revoke a pending invite by pressing the delete button at the end of the row.
+The user will be then shown in a **Pending** state until the invitation is accepted. At the same time, you can resend the invitation by selecting **Resend invitation** from the row's **...** menu. You can also revoke a pending invite by selecting **Delete invitation** from the same menu.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-pending_v2.png' />
 
-Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, with the **Manage Roles** button next to the user ID. You can also delete a user by pressing the delete button.
+Once a user accepts an invite, it will be added to the team as a Member with read only access. You can change the role of any user, including yourself, by opening the member's **...** menu and selecting **Manage roles**. You can also remove a user by selecting **Remove member** from the same menu.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4072-org4_v2.png" />
 
@@ -51,7 +51,7 @@ If you want a user to be part of only a specific sub-organization, invite them d
 :::
 
 :::tip
-The search bar within the Team Management area allows you to efficiently manage and locate organization members by searching their email addresses to enhance visibility and streamline the management of both current and newly invited members.
+The **Filter** field on the **Profile and team** page allows you to efficiently manage and locate organization members by searching their email addresses to enhance visibility and streamline the management of both current and newly invited members.
 
 :::
 
@@ -63,7 +63,7 @@ The search bar within the Team Management area allows you to efficiently manage 
 Team management with fine-grained roles and integration with enterprise identity systems are available in the enterprise plan. Please [contact us](https://appcircle.io/contact) for more information.
 :::
 
-Once you click the "Manage Roles" button, you will be presented with a detailed selection of roles for each module.
+Once you select **Manage roles** from the member's **...** menu, you will be presented with a detailed selection of roles for each module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/permission-all-v3_v2.png' />
 

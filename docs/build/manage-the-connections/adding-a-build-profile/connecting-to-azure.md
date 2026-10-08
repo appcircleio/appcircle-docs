@@ -189,10 +189,10 @@ If your Azure DevOps Server is upgraded from a TFS server, you should identify y
 - Copy a repository clone URL for any git repository.
 - Check if your URL has an unexpected **path** in the URL.
   - For example: `https://azure.spacetech.com/tfs/DefaultCollection/MOBILE_IOS/_git/wallet`
-- If there is a path between your domain (`azure.spacetech.com`) and your collection name (`DefaultCollection`), you must give that path (`tfs`) as a prefix in the "Owner Username".
+- If there is a path between your domain (`azure.spacetech.com`) and your collection name (`DefaultCollection`), you must give that path (`tfs`) as a prefix in the "Collection name".
   - For example, the fields should have values like below.
     - Azure DevOps Server URL: `https://azure.spacetech.com`
-    - Owner Username: `tfs/DefaultCollection`
+    - Collection name: `tfs/DefaultCollection`
     - Personal Access Token: `54rdrkce6wa4d22kf75lhmq4hosgx7iy7h76cc62y77oguombnnq`
 
 :::

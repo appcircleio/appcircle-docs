@@ -151,7 +151,7 @@ You will be notified when an Apple Certificate is about to expire. You can see t
 
 Apple Certificates have a limited validity period and must be renewed before they expire to avoid interruptions in your build and distribution workflows. Appcircle allows you to manually renew an existing Apple Certificate directly from the **Signing Identities** module, so you can generate an up-to-date certificate without having to remove and reconfigure your current one.
 
-- In order to manually renew Apple Certificate, navigate to the action button of related certificate and click the renew button.
+- In order to manually renew an Apple Certificate, open the **...** menu of the related certificate under the Actions column, select **Renew**, and choose **Manual renew Apple certificate (.cer)**. Then select the App Store Connect API key that Appcircle will use for the renewal and click **Next**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/actionCert_v2.png' />
 
@@ -219,7 +219,7 @@ Revoking an Enterprise or Ad Hoc distribution certificate immediately renders al
 
 ### Revoke Certificate
 
-On Appcircle, you can revoke your certificates directly without having to go to the Apple Developer Portal. To do this, use the “Revoke” action found under the certificate's “Action” button.
+On Appcircle, you can revoke your certificates directly without having to go to the Apple Developer Portal. To do this, open the **...** menu of the certificate under the Actions column and select **Revoke**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/revokeCert_v2.png' />
 
@@ -259,7 +259,7 @@ Shared certificates can be used in Sub-Organizations just like locally created o
    Locate the certificate you want to share from the list.
 
 3. Select the Certificate  
-   Click the **Share** icon under the Actions column for the selected certificate.
+   Open the **...** menu under the Actions column for the selected certificate and select **Share**.
 
 4. Configure Sharing Settings  
    In the Share panel:

@@ -34,7 +34,7 @@ To start, go to [Organization](/account/my-organization) > **Security**. Under *
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-ldap-add-new_v2.png' />
 
-- The **Manage Testing Portal LDAP Login** side panel opens. Click the **Create New Authentication** button.
+- The **Manage Enterprise Portal LDAP Login** side panel opens. Click the **Create New Authentication** button.
 
 - The **Create New Authentication** window will open, presenting two options:
     - **Create New Authentication**

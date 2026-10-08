@@ -14,7 +14,7 @@ Appcircle provides a secure method to create and manage API keys for accessing i
 
 To generate a new API key:
 
-**1.** Click on the **Create a New API Key** button.
+**1.** Go to **Organization** > **Security** and select **New API key** under **API keys**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api4_v2.png' />
 

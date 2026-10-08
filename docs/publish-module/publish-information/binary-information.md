@@ -21,7 +21,7 @@ To access the binary details for a specific version of your app:
    - Within the Publish to Stores module, locate and select the version you want to examine.
 
 2. **Open Binary Information:**
-   - Click on the "Binary Information" option to display the binary details.
+   - Open the **...** menu on the version row and select **Binary information** to display the binary details.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-pub_v2.png' />
 

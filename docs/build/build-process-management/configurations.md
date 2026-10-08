@@ -155,7 +155,7 @@ You can either upload your iOS [certificate](/signing-identities/apple-certifica
 
 ### Distribution configuration
 
-Set up automated distribution for your builds by configuring distribution settings in Appcircle. This feature allows you to automatically send completed builds to selected modules, including Testing Distribution, Publish, or the Enterprise Store, ensuring a seamless deployment process.
+Set up automated distribution for your builds by configuring distribution settings in Appcircle. This feature allows you to automatically send completed builds to selected modules, including Testing Distribution, Publish to Stores, or the Enterprise App Store, ensuring a seamless deployment process.
 
 Simply enable the toggle of the module that you need and select the required profiles.
 

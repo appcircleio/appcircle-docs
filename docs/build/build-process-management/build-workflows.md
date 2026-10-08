@@ -19,7 +19,7 @@ Please note that modifying workflow steps may cause your builds to fail, so utmo
 
 ### Setting Up Workflows
 
-To access the workflow editor for a build profile, click the Workflows button in the context menu of the build profile, accessible from the top of the profile details.
+To access the workflow editor for a build profile, click **Workflows** at the top right of the build profile page.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-workflow1_v2.png' alt="workflow overview"/>
 

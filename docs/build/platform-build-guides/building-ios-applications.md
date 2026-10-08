@@ -28,7 +28,7 @@ When you are done with the steps above, you can now start building your iOS appl
 
 ### Build Configuration
 
-First, we need to set up a build configuration. Select the configuration from the **Configuration** section. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
+First, we need to set up a build configuration. Select **Configurations** at the top right of the build profile, open the configuration, and go to the **Config** tab. The first step will be to enter project details. You can enter details manually or click on the "Autofill" button to retrieve them from your project.
 
 Your iOS project needs to have an **Xcode project** or an **Xcode workspace** and a **shared scheme** to complete the build configuration successfully. Appcircle can fetch these workspaces and shared schemes from your branch automatically.
 
@@ -134,7 +134,7 @@ The versioning tab will allow you to change the build or version number during t
 
 ### Environment Variables
 
-The final step on build configuration is Environment Variables.
+The final tab of the build configuration is **Environment**.
 
 Appcircle Build module is simple and powerful. You can get your builds instantly just with a few clicks; advanced management of builds is also possible with the environment variables and workflows.
 
@@ -152,7 +152,7 @@ Please click on the Save button and close this modal.
 
 ### Workflow Editor
 
-You can use the workflow editor for in-depth configuration of all build steps. Please click on the workflow icon to open and use the workflow editor.
+You can use the workflow editor for in-depth configuration of all build steps. Click **Workflows** at the top right of the build profile to open and use the workflow editor.
 
 :::info
 

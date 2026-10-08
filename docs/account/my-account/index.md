@@ -6,7 +6,7 @@ tags: [account, account management]
 
 # My Account
 
-The "My Account" screen is accessible from the bottom left hover menu and it contains all operations to manage your personal account details including account security.
+The **My account** screen is accessible by selecting your email address at the bottom of the left sidebar and choosing **My account**. It contains all operations to manage your personal account details including account security.
 
 Current headlines and the actions you can complete are listed below:
 

@@ -69,7 +69,7 @@ Auto Re-sign enables Appcircle to automatically re-sign newly uploaded binaries 
 
 Before using this feature, you must first configure the Auto Re-sign settings for the relevant platform (iOS or Android), including identifier management, versioning strategy, and signing credentials.
 
-After completing the configuration, make sure to enable the Auto Re-sign option from the Enterprise App Store profile settings. Otherwise, newly uploaded binaries will not be re-signed automatically.
+After completing the configuration, make sure to enable the Auto Re-sign option from the Enterprise App Store profile settings (**...** menu next to the profile name > **Settings**). Otherwise, newly uploaded binaries will not be re-signed automatically.
 
 ### iOS Auto Re-sign
 
@@ -223,7 +223,7 @@ If you want to perform **In-house** signing using an **Enterprise API** Key, mak
 :::
 
 :::info Enabling Auto Re-sign
-Once you configure the Auto Re-sign settings, you must enable the Auto Re-sign feature from the Enterprise App Store profile settings. Otherwise, newly uploaded binaries will not be re-signed automatically.
+Once you configure the Auto Re-sign settings, you must enable the Auto Re-sign feature from the Enterprise App Store profile settings (**...** menu next to the profile name > **Settings**). Otherwise, newly uploaded binaries will not be re-signed automatically.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an7_v2.png' />
@@ -315,7 +315,7 @@ The **Convert AAB to APK** option allows you to automatically convert an Android
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a13_v2.png' />
 
 :::info Enabling Auto Re-sign
-Once you configure the Auto Re-sign settings, you must enable the Auto Re-sign feature from the Enterprise App Store profile settings. Otherwise, newly uploaded binaries will not be re-signed automatically.
+Once you configure the Auto Re-sign settings, you must enable the Auto Re-sign feature from the Enterprise App Store profile settings (**...** menu next to the profile name > **Settings**). Otherwise, newly uploaded binaries will not be re-signed automatically.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an8_v2.png' />

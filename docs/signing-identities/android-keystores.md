@@ -72,7 +72,7 @@ Shared keystores can be used in Sub-Organizations just like locally created or u
    Locate the keystore you want to share.
 
 3. Select the Keystore  
-   Click the **Share** icon under the Actions column.
+   Open the **...** menu under the Actions column and select **Share**.
 
 4. Configure Sharing Settings  
    In the Share panel:

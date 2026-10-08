@@ -64,7 +64,7 @@ This component scans your app using Mobile Secure.
 
 ## [Export Build Artifacts](/workflows/common-workflow-steps/export-build-artifacts)
 
-Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download from the artifacts section of the completed build.
+Exports the specified build artifacts from the build agent to the Appcircle dashboard. The exported files will be available for download in the **Download artifacts** side panel, opened from the build's **...** menu in the build list.
 
 ## [Fastlane](/workflows/common-workflow-steps/fastlane)
 
