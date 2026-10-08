@@ -36,12 +36,19 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 27.0 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 - A new macOS-based build stack (Tahoe `26.6.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 27.0](https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes) (`27A266a`) installed along with Xcode 26.6 (`17F113`), plus up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Follow [the setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has Xcode 27.1 beta and Xcode 27.2 beta installed on runners. Xcode 27.1 adds the iOS 27.1 SDK and the iPhone Duo Simulator; Xcode 27.2 adds the 27.2 SDKs for all Apple platforms. Beta releases are intended for compatibility testing only and cannot be used for App Store submission - continue using Xcode 27.0 for your release workflows. <InfrastructureBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has Xcode 27.1 RC installed on runners, replacing Xcode 27.1 beta, with the iOS 27.1 SDK and the iPhone Duo Simulator. Continue using Xcode 27.0 for App Store release workflows until Xcode 27.1 is generally available. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue has been fixed where deleting a branch could fail when the build event payload exceeded the message size limit. <BuildBadge/> <CloudBadge/>
 - An issue has been fixed where the last commit endpoint returned an error when git connection metadata was missing. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where builds of deleted profiles were shown as "N/A" in the dashboard's Last Builds list. <BuildBadge/> <CloudBadge/>
 - An issue has been fixed where an error occurred while adding a device to provisioning profiles when no profile matched the given name. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue has been fixed where some distribution download records were missing from reports when a profile was downloaded from more than one organization. <ReportsBadge/> <CloudBadge/>
+- An issue has been fixed where exporting Testing Distribution download reports only included the current page. <ReportsBadge/> <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where metadata download could fail for apps with large binaries. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where deleting or reordering a single screenshot in Android metadata details did not work. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where release notes were not sent to Huawei AppGallery during publish. <PublishBadge/> <CloudBadge/>
 
 ## 3.33.0 - 2026-08-07 Custom Roles, Scheduled Builds, Activity Log Improvements, Bug Fixes and more
 
