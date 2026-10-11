@@ -37,8 +37,13 @@ This page applies to Appcircle servers configured with HTTPS (`external.scheme: 
 
 - Choose a port that is free on the Appcircle server and allowed by your security policy. The examples on this page use `6380`.
 - Allow the Appcircle runners to connect **directly** to the Appcircle server on that port.
-  - If a load balancer is in front of the Appcircle server, create a direct route (firewall rule) from the runners to the Appcircle server for this port instead of sending it through the load balancer. Web traffic on port `443` keeps using the load balancer as before.
-  - If there is no load balancer, allow the port in the same way as the existing runner access to the Appcircle server.
+  - If there is no load balancer in front of the Appcircle server, allow the port in your firewall in the same way as the existing runner access to the Appcircle server.
+  - If a load balancer is in front of the Appcircle server, make the `redis` subdomain (for example `redis.appcircle.spacetech.com`) resolve to the IP address of the Appcircle server instead of the load balancer, and allow the runners to reach the Appcircle server on the new port in your firewall. Runners connect to Redis by this host name, so their Redis traffic goes straight to the Appcircle server while web traffic on port `443` keeps using the load balancer. After this change the `redis` subdomain is only used for Redis, so pointing it to the Appcircle server does not affect any other service.
+
+    :::caution
+    If your DNS uses a wildcard record (for example `*.appcircle.spacetech.com`) that points to the load balancer, add a separate record for the `redis` subdomain. A specific record takes precedence over the wildcard.
+    :::
+
 - If the Appcircle server uses `firewalld`, open the port on the server:
 
   ```bash
@@ -138,6 +143,8 @@ If your runners are macOS virtual machines created from a base image, update `ap
    echo "$(jq '.ASPNETCORE_REDIS_STREAM_ENDPOINT="redis.appcircle.spacetech.com:443,ssl=true"' appsettings.json)" > appsettings.json
    ./ac-runner service -c restart
    ```
+
+4. If you pointed the `redis` subdomain to the IP address of the Appcircle server because of a load balancer, point it back to the load balancer, since Redis is served on port `443` again.
 
 :::info
 The Appcircle DMZ server does not handle Redis traffic, so this configuration does not require any change on the DMZ server.
