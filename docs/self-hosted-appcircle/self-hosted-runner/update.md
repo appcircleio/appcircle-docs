@@ -21,7 +21,7 @@ Download and extract the latest self-hosted runner package.
   <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.8.5.zip
+curl -O -L "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/runner/appcircle-runner-osx-arm64-1.8.5.zip"
 ```
 
 Extract self-hosted runner package.

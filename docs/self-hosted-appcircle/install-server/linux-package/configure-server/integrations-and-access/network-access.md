@@ -18,6 +18,8 @@ Enabling external network access is essential to ensuring the smooth operation a
 
 You can see different scenarios below according to how you want to install the Appcircle server and runner.
 
+If the Appcircle server and runners have no internet access, only your artifact proxy needs external access. See [Air-Gapped Network](#air-gapped-network) at the end of this page.
+
 :::info
 If you are hosting a yum or apt package repository locally on your network, you do not need to allow external domains for RHEL and Ubuntu repos.
 :::
@@ -481,3 +483,83 @@ If your self-hosted Appcircle server is configured as HTTPS:
 If your self-hosted Appcircle server is configured as HTTP:
 
 - `80`
+
+## Air-Gapped Network
+
+In an air-gapped network, the Appcircle server, the macOS hosts and the runner VMs have no internet access. An artifact proxy in your network, such as Sonatype Nexus or JFrog Artifactory, is the only component that connects to the internet. It serves the Appcircle container images, the macOS VM and Xcode images, the runner files and the packages your builds need.
+
+:::info
+
+This section covers the Docker/Podman Appcircle server, installed fresh from version 3.33.0, with macOS VM runners on Apple silicon hosts. It doesn't cover Kubernetes/OpenShift installations, the DMZ architecture or Linux runners.
+
+:::
+
+The Appcircle server, the macOS hosts and the runner VMs need access only to:
+
+- The artifact proxy.
+- The Appcircle server. Runner VMs connect to it as described in [Appcircle Runner Runtime](#appcircle-runner-runtime).
+- Your internal services: Git provider, identity provider (LDAP or SSO), SMTP server, SMS gateway if you use SMS, NTP and DNS.
+
+The Appcircle server package is downloaded on a separate host with internet access and brought into your network, for example by uploading it to a hosted repository on the artifact proxy or by copying it to the server. See [Appcircle Server Install and Update](#appcircle-server-install-and-update).
+
+The artifact proxy needs access to the hosts below. Several downloads redirect to another host, so the list includes the redirect targets, and the proxy must follow redirects.
+
+- Appcircle container images:
+
+```access_list
+europe-west1-docker.pkg.dev
+```
+
+- macOS VM and Xcode images, runner files, Flutter SDK artifacts:
+
+```access_list
+storage.googleapis.com
+cdn.appcircle.io
+```
+
+- Gradle and Maven:
+
+```access_list
+services.gradle.org
+plugins.gradle.org
+plugins-artifacts.gradle.org
+repo1.maven.org
+repo.maven.apache.org
+maven.google.com
+dl.google.com
+```
+
+- Gradle distributions and other release downloads that redirect to GitHub:
+
+```access_list
+github.com
+release-assets.githubusercontent.com
+codeload.github.com
+```
+
+- CocoaPods:
+
+```access_list
+cdn.cocoapods.org
+cdn.jsdelivr.net
+```
+
+- npm, RubyGems, PyPI, Node.js and pub:
+
+```access_list
+registry.npmjs.org
+rubygems.org
+index.rubygems.org
+pypi.org
+files.pythonhosted.org
+nodejs.org
+pub.dev
+```
+
+Add the repositories your projects declare in addition to these, for example `jitpack.io` or a vendor's Maven repository. Content delivery hosts can change over time, so confirm the list from the proxy logs after the first builds.
+
+:::tip
+
+Configure the firewall to reject blocked connections instead of dropping them, and let your DNS return no answer for public names. A blocked call then fails immediately instead of waiting for a timeout.
+
+:::
