@@ -65,3 +65,9 @@ Optimize your application management with detailed reports. Use the **Download r
 You can view Testing Distribution module actions such as profile, app version, and testing group operations, along with LDAP and SSO settings changes, within the Organizations or Sub-Organizations in the Activity Log section.
 
 <ContentRef url="/testing-distribution/testing-distribution-activity-log">Activity Log</ContentRef>
+
+## [Testing Distribution Walkthrough](/testing-distribution/testing-distribution-walkthrough)
+
+A step-by-step guide covering the full Testing Distribution setup, from creating a profile and configuring its settings to sharing versions with testers and tracking their downloads.
+
+<ContentRef url="/testing-distribution/testing-distribution-walkthrough">Testing Distribution Walkthrough</ContentRef>
