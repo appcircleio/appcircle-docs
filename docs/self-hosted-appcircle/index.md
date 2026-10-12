@@ -51,9 +51,9 @@ For more information about the Appcircle DMZ architecture, you can check the [En
 
 In an air-gapped network, the Appcircle server, the macOS hosts and the runner VMs have no internet access. An artifact proxy in your network, such as Sonatype Nexus or JFrog Artifactory, is the only component that connects to the internet. Everything Appcircle publishes, such as container images, macOS VM and Xcode images and runner files, and every public package your builds need comes through it.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology.png' alt='Air-gapped architecture of self-hosted Appcircle' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology_v2.png' alt='Air-gapped architecture of self-hosted Appcircle' />
 
-To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology.png). It will open the diagram in new browser tab.
+To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology_v2.png). It will open the diagram in new browser tab.
 
 Compared to the [standalone architecture](#dockerpodman-standalone-architecture):
 
