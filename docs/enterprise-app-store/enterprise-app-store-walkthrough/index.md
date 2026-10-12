@@ -21,8 +21,6 @@ https://appcircle.io/enterprise-app-store
 
 This walkthrough follows the order in which an Enterprise App Store setup is usually done: configure the Enterprise Portal, add your first app, configure the app profile, publish a version to a channel, and track the results. The following sections describe each step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas1_v2.png' />
-
 ## Prerequisites for Using the Enterprise App Store Module
 
 ### iOS: Signing for In-House Distribution
@@ -49,10 +47,6 @@ Android apps can be signed with any keystore, but users must allow their browser
 `.aab` is a store-only format and cannot be installed directly on a device. If your build produces an `.aab`, use [Auto Re-sign](#auto-re-sign) with the **Convert AAB to APK** option so users receive an installable `.apk`.
 
 :::
-
-### Supported iOS Versions
-
-The Enterprise Portal works as expected on iOS 15 and later. Unexpected errors may occur on earlier versions.
 
 ## Enterprise Portal Setup Process
 
