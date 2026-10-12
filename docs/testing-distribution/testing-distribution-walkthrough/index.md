@@ -21,7 +21,7 @@ https://appcircle.io/testing-distribution
 
 This walkthrough follows the order in which a Testing Distribution setup is usually done: create a profile, configure its settings, create testing groups, add app versions, share them with testers, and track the results. The following sections describe each step.
 
-<!-- SS: Testing Distribution module landing page / profile list -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-start_v2.png' />
 
 ## Prerequisites for Using the Testing Distribution Module
 
@@ -54,7 +54,7 @@ Android binaries downloaded from the Testing Portal are installed outside Google
 
 Select **Testing Distribution** > **Profiles** from the left menu and click **New profile**. Give your profile a name, usually the name of your application.
 
-<!-- SS: New profile dialog -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main1_v2.png' />
 
 :::info One Profile per Application
 
@@ -68,13 +68,13 @@ For details on listing, searching, renaming, pinning, and deleting profiles, see
 
 To open the profile settings, select **Settings** from the **...** menu next to the profile name. The settings are grouped into the tabs described below, in the order they appear on the screen.
 
-<!-- SS: Settings menu (... next to the profile name) -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-3_v2.png' />
 
 #### Config
 
 The **Config** tab holds binary-related settings for the profile.
 
-<!-- SS: Config tab -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-4_v2.png' />
 
 **Bundle/Package Identifier Validation**
 
@@ -111,7 +111,7 @@ For all configuration options, including versioning and display name updates, se
 
 The **Auto Send** tab lists your testing groups. Enable the groups that should receive every new version automatically, whether the version comes from a build, a manual upload, or the CLI.
 
-<!-- SS: Auto Send tab -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-29_v2.png' />
 
 - **Show Only the Shared Version to Tester**: When enabled together with auto send, testers only see the most recently shared version on the Testing Portal.
 
@@ -125,7 +125,7 @@ Testing groups must exist before they can be selected here. See [Creating Testin
 
 The **Testing Portal** tab controls what testers see on the portal for this profile.
 
-<!-- SS: Testing Portal tab -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-32_v2.png' />
 
 - **Publisher information**: **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**. Testers see this information when they select the user icon on the portal.
 - **Exclude from Shared Application List**: Hides this profile from the shared application list of other profiles. Testers who received a direct email invitation can still access it.
@@ -137,7 +137,7 @@ The **Testing Portal** tab controls what testers see on the portal for this prof
 
 The **Authentication** tab sets how testers sign in to the Testing Portal for this profile.
 
-<!-- SS: Authentication tab -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-10_v2.png' />
 
 - **None**: Anyone with the link can download the binaries.
 - **Static Username and Password**: A single username and password shared by all testers.
@@ -150,7 +150,7 @@ SSO and LDAP appear as options only after they are configured under **Organizati
 
 The **Distribution Link** tab enables a public link (and a QR code) that gives access to all versions of the profile. It is the quickest way to share a profile with people who are not in a testing group, for example during a demo.
 
-<!-- SS: Distribution Link tab with QR code -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-13_v2.png' />
 
 :::caution
 
@@ -166,7 +166,7 @@ Testing groups let you share versions with a predefined audience (for example "Q
 2. Click the **+** button, type a group name, and press Enter.
 3. Type a tester's email address in the input at the top of the page and press Enter. Repeat for each tester.
 
-<!-- SS: Testing Groups page with testers -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing3_v2.png' />
 
 :::tip Bulk Import
 
@@ -181,7 +181,7 @@ Testers can also be imported from a CSV file or synced from LDAP groups. See [Te
 #### Upload via Build Module
 
 Every successful build can be sent to a distribution profile automatically. Go to **Build** > select the build profile > **Configurations** > select a configuration > **Distribution** tab, then select the distribution profile.
-<!-- SS: Build configuration > Distribution tab -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1_v2.png' />
 
 For details, see [Distribution Configuration](/build/build-process-management/configurations#distribution-configuration).
 
@@ -195,17 +195,17 @@ Only signed builds are distributed. If **Bundle/Package Identifier Validation** 
 
 Click **Upload Binary** at the top right of the profile and select an `.ipa`, `.apk`, or `.aab` file. The file is validated and its metadata is parsed; any errors are shown in the upload area.
 
-<!-- SS: Upload Binary -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
 
 #### Version List and Version Details
 
 New versions appear at the top of the profile's version list. iOS and Android versions are listed separately; use the iOS/Android toggle above the list to switch between them. Each row shows the version, build number, signing status (a **signed** badge after re-signing), and expiration status (**Expire Soon** / **Expired**) of the signing certificate.
 
-<!-- SS: Version list with iOS/Android toggle -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update2_v2.png' />
 
 Select a version to open its details: provisioning profile type, certificate, build metadata (branch, commit, build logs), and the option to compare it with another version. See [Binary Information](/testing-distribution/binary-information).
 
-<!-- SS: Version details -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td_v2.png' />
 
 ### Sharing with Testers
 
@@ -213,7 +213,7 @@ Select a version to open its details: provisioning profile type, certificate, bu
 
 Select a version and click **Share with Testers**. Choose one or more testing groups, or type individual email addresses to send the version directly without a group.
 
-<!-- SS: Share with Testers dialog -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist9_v2.png' />
 
 #### Message to Testers
 
@@ -230,7 +230,7 @@ A version whose signing certificate has expired cannot be shared, and its downlo
 - **Tester emails**: Each tester receives an email with the version, release notes, and a link to the Testing Portal. The profile name is used as the sender name. On self-hosted installations, emails can be sent from your own domain through [SMTP settings](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/integration#email).
 - **Team notifications**: Notify your team on Slack, Microsoft Teams, or email when a new version is added or shared. See [Notifications](/account/my-organization/notifications).
 
-<!-- SS: Tester email -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss1.png' />
 
 ## Tester Experience: Testing Portal
 
@@ -238,7 +238,7 @@ A version whose signing certificate has expired cannot be shared, and its downlo
 
 Testers open the link in the email (or the distribution link) and land on the Testing Portal. The login screen depends on the profile's authentication method: no login for **None**, a username and password for **Static**, the identity provider's page for **SSO**, and LDAP credentials for **LDAP**.
 
-<!-- SS: Testing Portal login -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-portalentry.png' />
 
 :::info
 
@@ -250,16 +250,16 @@ Testing Portal accounts are independent of Appcircle accounts and are used only 
 
 After signing in, testers see the versions shared with them, grouped by profile, with each version's size, certificate type, release notes, and binary tags. They can search by app name, version, release notes, or build number, filter by OS, and sort by version or date. Unless **Hide Shared Application List** is enabled, they can also switch to other applications shared with them.
 
-<!-- SS: Testing Portal app list -->
-<!-- SS: Testing Portal app details -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-portal2.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-portal3.png' />
 
 ### Installing on iOS and Android
 
 - **iOS**: Open the portal in Safari on the device and tap **Install**. For enterprise-signed apps, go to **Settings** > **General** > **VPN & Device Management** and trust the developer certificate before opening the app. The portal shows this guidance for enterprise builds.
 - **Android**: Tap **Download**, open the `.apk`, and allow installing unknown apps for the browser when prompted.
 
-<!-- SS: iOS install flow -->
-<!-- SS: Android install flow -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-enterprise.png' />
 
 For more information, see [Testing Portal](/testing-distribution/testing-portal).
 
@@ -274,19 +274,19 @@ After a version is shared, the profile shows each tester's status for that versi
 - **Login, No Download**: The tester signed in but has not downloaded the binary.
 - **Downloaded**: The tester downloaded the binary.
 
-<!-- SS: Tester status list -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-2_v2.png' />
 
 ### Download Report
 
 Go to **Testing Distribution** > **Download report** to see every download with the user, app, profile, version, device platform, OS version, and date. Filter by date range and export the list as CSV. See [Reporting](/testing-distribution/reports).
 
-<!-- SS: Download report -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa55-new_v2.png' />
 
 ### Activity Log
 
 The [Activity Log](/testing-distribution/testing-distribution-activity-log) records profile, app version, and testing group operations, as well as SSO and LDAP settings changes. It is available to organization owners and users with the Organization Management role.
 
-<!-- SS: Activity log -->
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-7_v2.png' />
 
 ## Automating Testing Distribution with Appcircle CLI & API
 
