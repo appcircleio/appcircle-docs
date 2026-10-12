@@ -38,12 +38,6 @@ When a new tester joins an Ad Hoc distribution, register the tester's device UDI
 
 :::
 
-:::info Enterprise Signing
-
-Appcircle does not provide an enterprise signing service. The way your app is signed depends on your own Apple Developer membership and workflows. For more information, see [Signing Identities](/signing-identities) and [Apple Profiles](/signing-identities/apple-profiles).
-
-:::
-
 ### Android: Installing from Unknown Sources
 
 Android binaries downloaded from the Testing Portal are installed outside Google Play. Testers must allow their browser (or file manager) to **install unknown apps** on their device. Android prompts for this permission the first time a tester opens a downloaded `.apk`.
@@ -100,8 +94,8 @@ After enabling a toggle, configure it from the **...** menu next to the profile 
 
 Auto re-sign uses the signing assets stored in your organization, so they must be in place before you save the configuration:
 
-- **iOS**: The certificate must be uploaded under **Signing Identities** > **Apple Certificates**, and an [App Store Connect API key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) must be selected. A macOS pool must also be selected, otherwise the process does not start and the binary remains unsigned.
-- **Android**: The keystore must be uploaded under **Signing Identities** > **Android Keystores**, and a pool must be selected.
+- **iOS**: The certificate must be uploaded under **Signing Identities** > **Apple Certificates**, and an [App Store Connect API key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) must be selected.
+- **Android**: The keystore must be uploaded under **Signing Identities** > **Android Keystores**.
 
 :::
 
@@ -316,35 +310,29 @@ appcircle testing-distribution upload \
 
 Profiles, testing groups, and testers can also be managed from the CLI (`appcircle testing-distribution profile`, `appcircle testing-distribution testing-group`). For direct REST access, see the [Appcircle API](/appcircle-api-and-cli/api-authentication).
 
-## Testing Distribution Troubleshooting
+## FAQ
 
-### Frequently Asked Questions About the Testing Distribution Module
-
-#### Why is my binary rejected as invalid during upload?
+### Why is my binary rejected as invalid during upload?
 
 The file is validated and parsed before it is added to the profile. Make sure it is a valid, signed `.ipa`, `.apk`, or `.aab`, and that it is not corrupted. If **Bundle/Package Identifier Validation** is enabled, the binary's identifier must exactly match the identifier locked on the profile.
 
-#### Why does the Testing Portal say no compatible package was found?
+### Why does the Testing Portal say no compatible package was found?
 
 The tester's device platform does not match the versions shared with them, for example an Android tester opening a profile with only iOS versions shared. Share a version for the tester's platform. An `.aab` that was not converted to `.apk` cannot be installed either; enable **Convert AAB to APK** in [Auto Re-sign](#auto-re-sign).
 
-#### Why can't a tester install the iOS app?
+### Why can't a tester install the iOS app?
 
 With an Ad Hoc provisioning profile, the tester's device UDID must be registered in your Apple Developer account and included in the provisioning profile used to sign the binary. Register the device, regenerate the provisioning profile, and rebuild or re-sign the binary. Then share the new version.
 
-#### Why did auto re-sign fail or leave the binary unsigned?
-
-Check that a pool is selected in the auto re-sign configuration, that the certificate (iOS) or keystore (Android) exists in **Signing Identities**, and that an App Store Connect API key is selected for iOS. The re-sign logs of each version are available under **Re-sign history** in the version's **...** menu. See [Re-sign Binaries](/testing-distribution/resigning-binaries).
-
-#### Why are two Android packages distributed for one build?
+### Why are two Android packages distributed for one build?
 
 Your project signs the APK with Gradle and the Appcircle **Android Sign** step is also enabled, so two signed APKs are produced. Use only one signing path. See the [Distribution Profile FAQ](/testing-distribution/create-or-select-a-distribution-profile#faq).
 
-#### Why didn't a tester receive the email?
+### Why didn't a tester receive the email?
 
 Ask the tester to check the spam folder. If the tester previously unsubscribed, add their email address directly in **Share with Testers** to re-subscribe them. See [Testing Groups](/testing-distribution/testing-groups#managing-unsubscribed-users).
 
-### Further Support and Resources
+## Further Support and Resources
 
 <ContentRef url="/testing-distribution">Testing Distribution</ContentRef>
 <ContentRef url="/testing-distribution/create-or-select-a-distribution-profile">Distribution Profile</ContentRef>
