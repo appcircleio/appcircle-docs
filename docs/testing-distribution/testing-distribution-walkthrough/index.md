@@ -274,8 +274,6 @@ After a version is shared, the profile shows each tester's status for that versi
 - **Login, No Download**: The tester signed in but has not downloaded the binary.
 - **Downloaded**: The tester downloaded the binary.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-2_v2.png' />
-
 ### Download Report
 
 Go to **Testing Distribution** > **Download report** to see every download with the user, app, profile, version, device platform, OS version, and date. Filter by date range and export the list as CSV. See [Reporting](/testing-distribution/reports).
