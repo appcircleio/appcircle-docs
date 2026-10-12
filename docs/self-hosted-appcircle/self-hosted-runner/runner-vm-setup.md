@@ -1,8 +1,8 @@
 ---
-title: Runner Virtual Machine Setup
+title: Self-hosted Runner as macOS VM Image
 description: Learn how to set up a self-hosted runner as a macOS VM image
 tags: [self-hosted runner, runner, vm, virtual machine, setup]
-sidebar_class_name: hidden
+sidebar_position: 25
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 import NewRunnerOldServerRedisCaution from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_new_runner-old_server-redis-caution.mdx';
 import HostRequirements from '@site/docs/self-hosted-appcircle/self-hosted-runner/\_host-warning.mdx';
 
-# Self-hosted Runner as MacOS VM Image
+# Self-hosted Runner as macOS VM Image
 
 Self-hosted runner installation is explained at Appcircle [docs](installation) in detail. You can install runner in your self-hosted environment by yourself, following instructions on there.
 
@@ -33,6 +33,12 @@ In order to use macOS VM, we need to install some dependencies on macOS host.
 The macOS VM runs on Apple's Virtualization framework, which supports macOS guests only on Apple silicon (M-series) Macs. Intel-based Macs can't be used as a host.
 
 Xcode 27 and later also run only on Apple silicon, so Intel Macs are no longer an option for iOS builds either.
+
+:::
+
+:::info Hosts without internet access
+
+Homebrew, Tart and Pigz are installed from the internet in the steps below. If the host has no internet access, install them before you continue, for example through temporary internet access or through an HTTP(S) proxy. The macOS VM image, the Xcode images and the runner scripts can then be downloaded through an artifact proxy in your network, as described in the download step.
 
 :::
 
@@ -155,11 +161,80 @@ You can ignore power failure settings if they are not supported.
 
 ## Download MacOS VM
 
-You have two options to obtain the Appcircle runner images: manual or automated.
+First choose where the host downloads the files from. Then download the images manually or automatically.
 
 To perform these tasks manually, you can follow our step-by-step guide on [downloading the macOS VM image manually](#download-the-macos-vm-image-manually).
 
 Alternatively, you can automate this process in the background by following our instructions on [downloading the macOS VM and Xcode images automatically](#download-the-macos-vm-and-xcode-images-automatically).
+
+### Choose the Download Source
+
+The commands on this page download the macOS VM image, the Xcode images and the runner scripts from Appcircle by default. If the host has no internet access, it can download the same files through an artifact proxy in your network, such as Sonatype Nexus or JFrog Artifactory.
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
+No action is needed. Continue with the next step.
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+Before you start, note what works differently when the runners have no internet access:
+
+- Publishing to App Store, Google Play, Huawei AppGallery and Microsoft Intune, App Store Connect certificate management, and Slack or Microsoft Teams notifications need the internet and don't work.
+- The Android emulator doesn't run inside the macOS VM, so emulator-based UI tests can't run on these runners.
+- Builds download their dependencies, such as Gradle, CocoaPods and npm packages, through the same artifact proxy. You point the build tools at it in the base VM configuration later in this guide.
+- Workflow steps that call an internet service fail. For example, the **Check Network Access** step fails with its default inputs, because it tests public addresses.
+
+Ask your artifact proxy administrator to create two proxy repositories for the Appcircle download locations:
+
+| Repository name (example) | Sonatype Nexus type | JFrog Artifactory type | Remote URL |
+| ------------------------- | ------------------- | ---------------------- | ---------- |
+| `appcircle-gcs` | `raw (proxy)` | Generic remote | `https://storage.googleapis.com/appcircle-dev-common/self-hosted/` |
+| `appcircle-cdn` | `raw (proxy)` | Generic remote | `https://cdn.appcircle.io/self-hosted/` |
+
+<details>
+<summary>Notes for the artifact proxy administrator</summary>
+
+- The proxy server needs outbound access to these two remote URLs. The host only needs access to the proxy.
+- Every image has a `.md5` checksum file next to it. The proxy serves it from the same remote URL; no extra repository is needed.
+- A macOS VM image is about 85 GB and an Xcode image package is several GB. Appcircle releases a new image every one to two months, and most organizations upgrade when they need a new Xcode version. The proxy keeps every image it has served, so plan the storage and a cleanup policy for old images.
+- The first download of a new image takes longer, because the proxy fetches it from Appcircle at the same time.
+
+</details>
+
+Set the URLs of these two repositories on your artifact proxy on the host. Replace `nexus.example.com` and the repository names with your own. Writing them to `~/.zprofile` keeps them for new terminal sessions and for later image upgrades.
+
+```bash
+echo 'export AC_RUNNER_IMAGE_BASE_URL="https://nexus.example.com/repository/appcircle-gcs"' >> ~/.zprofile
+echo 'export AC_RUNNER_CDN_BASE_URL="https://nexus.example.com/repository/appcircle-cdn"' >> ~/.zprofile
+source ~/.zprofile
+```
+
+If your artifact proxy requires a username and password to read these repositories, store the credentials in `~/.netrc` and let `curl` read that file. Replace `nexus.example.com` and `<username>` with your own; the password is asked for and isn't kept in the shell history.
+
+```bash
+printf "Artifact proxy password: " && read -rs AC_PROXY_PASSWORD && echo
+printf 'machine %s login %s password %s\n' "nexus.example.com" "<username>" "$AC_PROXY_PASSWORD" >> ~/.netrc
+unset AC_PROXY_PASSWORD
+chmod 600 ~/.netrc
+echo 'netrc-optional' >> ~/.curlrc
+```
+
+With `netrc-optional` in `~/.curlrc`, every `curl` command on this page sends the credentials to the proxy host only. Skip this step if your artifact proxy allows anonymous read access to these repositories.
+
+Check that the host can download through both repositories on your artifact proxy:
+
+```bash
+curl -fsS -o /dev/null "$AC_RUNNER_IMAGE_BASE_URL/run.sh" && \
+curl -fsS -o /dev/null "$AC_RUNNER_CDN_BASE_URL/download-runner.sh" && \
+echo "Artifact proxy is reachable."
+```
+
+The download commands on this page use these URLs from now on. You don't need to change them.
+
+  </TabItem>
+</Tabs>
 
 ### Download the macOS VM Image Manually
 
@@ -181,20 +256,20 @@ If you still need an image that is no longer listed, contact us through our supp
 
 :::
 
-Download macOS VM from Appcircle bucket.
+Download the macOS VM image.
 
 <Tabs groupId="macos-image">
   <TabItem value="260914" label="260914" default>
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_260914.tar.gz
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/macOS_260914.tar.gz"
 ```
 
   </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_260723.tar.gz
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/macOS_260723.tar.gz"
 ```
 
   </TabItem>
@@ -202,14 +277,14 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
   <TabItem value="260303" label="260303">
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_260303.tar.gz
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/macOS_260303.tar.gz"
 ```
 
   </TabItem>
   <TabItem value="251015" label="251015">
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_251015.tar.gz
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/macOS_251015.tar.gz"
 ```
 
   </TabItem>
@@ -403,21 +478,21 @@ du -sh $HOME/.tart/vms/macOS_251015
 
 ### Download Xcode Images Manually
 
-Download Xcode images from the Appcircle bucket. They are disk images for each Xcode version archived in a package.
+Download the Xcode images. They are disk images for each Xcode version archived in a package.
 
 <Tabs groupId="macos-image">
 
   <TabItem value="260914" label="260914" default>
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_260914.tar.gz
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/xcodes_260914.tar.gz"
 ```
 
   </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_260723.tar.gz
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/xcodes_260723.tar.gz"
 ```
 
   </TabItem>
@@ -425,14 +500,14 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
   <TabItem value="260303" label="260303">
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_260303.tar.gz
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/xcodes_260303.tar.gz"
 ```
 
   </TabItem>
   <TabItem value="251015" label="251015">
 
 ```bash
-curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_251015.tar.gz
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/xcodes_251015.tar.gz"
 ```
 
   </TabItem>
@@ -635,7 +710,7 @@ To download and extract the Appcircle runner VM and Xcode images in the backgrou
   <TabItem value="260914" label="260914" default>
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/download-runner.sh" -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "260914" &
 ```
@@ -644,7 +719,7 @@ nohup ./download-runner.sh "260914" &
   <TabItem value="260723" label="260723">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/download-runner.sh" -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "260723" &
 ```
@@ -654,7 +729,7 @@ nohup ./download-runner.sh "260723" &
   <TabItem value="260303" label="260303">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/download-runner.sh" -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "260303" &
 ```
@@ -663,7 +738,7 @@ nohup ./download-runner.sh "260303" &
   <TabItem value="251015" label="251015">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/download-runner.sh" -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "251015" &
 ```
@@ -691,6 +766,10 @@ But be aware that there might be some errors while downloading and extracting th
 
 :::tip
 If no specific image identifier is provided when executing the `download-runner.sh` tool, it will automatically attempt to download the most recent runner images.
+:::
+
+:::info
+If you chose the artifact proxy as the download source, the tool downloads the images through the proxy too. Always give the image identifier in that case, as in the commands above. Finding the most recent image works only with the Appcircle download location.
 :::
 
 ## Create Base Images
@@ -983,6 +1062,28 @@ You may have installed the latest Appcircle runner VM image, but the Appcircle r
 
 You can follow the steps below to check the Appcircle runner version and upgrade if it isn't the latest version.
 
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
+No extra action is needed.
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+The runner package is downloaded through your artifact proxy too. Set the URL of the `appcircle-cdn` repository on your artifact proxy inside the VM as well. The base VM keeps it for every runner VM created from it.
+
+```bash
+echo 'export AC_RUNNER_CDN_BASE_URL="https://nexus.example.com/repository/appcircle-cdn"' >> ~/.zprofile
+source ~/.zprofile
+```
+
+If your artifact proxy requires a username and password to read its repositories, run the `~/.netrc` and `~/.curlrc` commands from [Choose the Download Source](#choose-the-download-source) inside the VM as well. Use an account with read access only, because every build runs on a clone of this VM and can read that file.
+
+Workflow steps come with the runner package. Update the runner to the latest version after every Appcircle server upgrade, so that it includes the step versions your server offers. A step version that isn't in the runner package is downloaded from GitHub during the build and fails without internet access.
+
+  </TabItem>
+</Tabs>
+
 - Check the version of the current installation.
 
 ```bash
@@ -1081,7 +1182,110 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates#adding-certificates) page.
 :::
 
-##### 4. Configure Runner Service
+##### 4. Point Build Tools to Your Artifact Proxy
+
+Builds download their dependencies, such as npm packages, Ruby gems, CocoaPods and Gradle dependencies, while they run.
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
+No action is needed. Builds download their dependencies from the public registries.
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+Point the build tools at your artifact proxy in the base VM. Every runner VM is cloned from this base VM, so the settings apply to every build. Repeat this step after every macOS VM image upgrade, because a new image starts without them.
+
+Ask your artifact proxy administrator for proxy repositories of the package registries your projects use:
+
+| Registry | Sonatype Nexus type | JFrog Artifactory type | Remote URL |
+| -------- | ------------------- | ---------------------- | ---------- |
+| npm (npm, Yarn 1) | `npm (proxy)` | npm remote | `https://registry.npmjs.org` |
+| RubyGems (CocoaPods, Fastlane, Bundler) | `rubygems (proxy)` | Gems remote | `https://rubygems.org` |
+| PyPI | `pypi (proxy)` | PyPI remote | `https://pypi.org` |
+| Maven (Google, Maven Central, Gradle plugins) | `maven2 (proxy)` per remote, combined in a `maven2 (group)` | Maven remote per remote, combined in a Maven virtual | `https://maven.google.com`, `https://repo1.maven.org/maven2`, `https://plugins.gradle.org/m2` |
+| Gradle distributions | `raw (proxy)` | Generic remote | `https://services.gradle.org/distributions` |
+| CocoaPods | `cocoapods (proxy)` | CocoaPods remote | `https://cdn.cocoapods.org` |
+| Dart and Flutter packages | `pub (proxy)`, Nexus 3.92.0 or later | Pub remote | `https://pub.dev` |
+| Flutter SDK artifacts | `raw (proxy)` | Generic remote | `https://storage.googleapis.com` |
+| Node.js distributions | `raw (proxy)` | Generic remote | `https://nodejs.org/dist` |
+
+<details>
+<summary>Notes for the artifact proxy administrator</summary>
+
+- Several registries redirect to another host, so the proxy must follow redirects and reach the target host too: Gradle distributions redirect to `github.com` and `release-assets.githubusercontent.com`, CocoaPods specs to `cdn.jsdelivr.net`, `maven.google.com` to `dl.google.com`, and `plugins.gradle.org` to `plugins-artifacts.gradle.org` or `repo.maven.apache.org`.
+- The full list of hosts the proxy needs is on the [Network Access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#air-gapped-network) page.
+
+</details>
+
+Run the commands below inside the VM. They cover the tools that workflow steps and your builds use outside the project configuration. Replace `https://nexus.example.com/repository` and the repository names with your own, and skip the tools your projects don't use. The settings are written to files in the home folder of the `appcircle` user, which builds also read when a step runs a command with `sudo`.
+
+```bash
+PROXY="https://nexus.example.com/repository"
+
+# npm and Yarn 1
+npm config set registry "$PROXY/npm/"
+
+# RubyGems and Bundler (CocoaPods, Fastlane)
+gem sources --add "$PROXY/rubygems/" --remove "https://rubygems.org/"
+bundle config set --global mirror.https://rubygems.org "$PROXY/rubygems/"
+
+# pip
+pip config set global.index-url "$PROXY/pypi/simple"
+
+# Homebrew analytics
+brew analytics off
+```
+
+Some tools read their settings only from environment variables. The runner service loads the `~/.zshrc` file of the `appcircle` user when it starts, so add the variables there. Skip the lines of the tools your projects don't use.
+
+```bash
+cat >> ~/.zshrc <<'ZSHRC'
+# Package mirrors
+export PUB_HOSTED_URL="https://nexus.example.com/repository/pub"
+export FLUTTER_STORAGE_BASE_URL="https://nexus.example.com/repository/flutter-storage"
+export N_NODE_MIRROR="https://nexus.example.com/repository/nodejs-dist"
+# Update checks and usage reports
+export FASTLANE_SKIP_UPDATE_CHECK=1
+export FASTLANE_OPT_OUT_USAGE=1
+export TUIST_STATS_OPT_OUT=1
+export SNYK_DISABLE_ANALYTICS=1
+ZSHRC
+```
+
+The first three variables point Dart and Flutter packages, Flutter SDK artifacts and the Node.js versions installed with `n` to the proxy. Without the last four, Fastlane, Tuist and Snyk still work, but each build waits for their update checks and usage reports to time out.
+
+:::caution
+
+Commands that a step runs with `sudo` don't get these variables. The files written above are still read, because `sudo` keeps the home folder of the `appcircle` user.
+
+:::
+
+Some settings live in your projects, not in the VM. Set them in every project that builds on these runners. Without them, the build tries the public addresses and fails, because the runner can't reach them.
+
+**Gradle repositories:** in `settings.gradle` or `settings.gradle.kts`, replace the repositories in `pluginManagement` and `dependencyResolutionManagement`, such as `google()`, `mavenCentral()` and `gradlePluginPortal()`, with your Maven group repository. If your project declares its repositories in `build.gradle` instead, change them there.
+
+```groovy
+pluginManagement {
+    repositories {
+        maven { url = uri("https://nexus.example.com/repository/maven-public/") }
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        maven { url = uri("https://nexus.example.com/repository/maven-public/") }
+    }
+}
+```
+
+**Gradle wrapper:** point `distributionUrl` in `gradle/wrapper/gradle-wrapper.properties` to your Gradle distributions repository, for example `distributionUrl=https\://nexus.example.com/repository/gradle-dist/gradle-8.9-bin.zip`.
+
+**CocoaPods:** add your CocoaPods repository as the first line of the `Podfile`, for example `source 'https://nexus.example.com/repository/cocoapods/'`.
+
+</TabItem>
+</Tabs>
+
+##### 5. Configure Runner Service
 
 ---
 
@@ -1241,7 +1445,7 @@ After login, configuration steps for Appcircle runner service are the same as "r
 
 The only difference should be runner naming. It must be unique. For the second runner, just give a different name. For example, "runner2".
 
-Refer to the [Configure Runner Service](#4-configure-runner-service) for detailed Appcircle runner service configuration.
+Refer to the [Configure Runner Service](#5-configure-runner-service) for detailed Appcircle runner service configuration.
 
 After shutdown, we're ready to run instances from `vm01` and `vm02` base VM images.
 
@@ -1283,7 +1487,7 @@ For "runner1" use below commands.
   <TabItem value="260914" label="260914" default>
 
 ```bash
-curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.7.0.sh && \
+curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.7.0.sh" && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1291,7 +1495,7 @@ chmod u+x $HOME/runner1/run.sh
   <TabItem value="260723" label="260723">
 
 ```bash
-curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.6.0.sh && \
+curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.6.0.sh" && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1300,7 +1504,7 @@ chmod u+x $HOME/runner1/run.sh
   <TabItem value="260303" label="260303">
 
 ```bash
-curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.3.0.sh && \
+curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.3.0.sh" && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1308,7 +1512,7 @@ chmod u+x $HOME/runner1/run.sh
   <TabItem value="251015" label="251015">
 
 ```bash
-curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.9.sh && \
+curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.0.9.sh" && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1322,7 +1526,7 @@ For "runner2" use below commands.
   <TabItem value="260914" label="260914" default>
 
 ```bash
-curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.7.0.sh && \
+curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.7.0.sh" && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -1330,7 +1534,7 @@ chmod u+x $HOME/runner2/run.sh
   <TabItem value="260723" label="260723">
 
 ```bash
-curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.6.0.sh && \
+curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.6.0.sh" && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -1339,7 +1543,7 @@ chmod u+x $HOME/runner2/run.sh
   <TabItem value="260303" label="260303">
 
 ```bash
-curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.3.0.sh && \
+curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.3.0.sh" && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -1347,7 +1551,7 @@ chmod u+x $HOME/runner2/run.sh
   <TabItem value="251015" label="251015">
 
 ```bash
-curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.0.9.sh && \
+curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.0.9.sh" && \
 chmod u+x $HOME/runner2/run.sh
 ```
 

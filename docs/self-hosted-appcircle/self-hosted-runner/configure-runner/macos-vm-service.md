@@ -43,7 +43,7 @@ This page is about the **Tart macOS VM runners**. It is not the same as [Service
 Download `runner-service.sh` into the runner folder and make it executable:
 
 ```bash
-curl -fsSL -o $HOME/runner1/runner-service.sh https://cdn.appcircle.io/self-hosted/runner-service.sh && \
+curl -fsSL -o $HOME/runner1/runner-service.sh "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/runner-service.sh" && \
   chmod +x $HOME/runner1/runner-service.sh
 ```
 
@@ -142,7 +142,7 @@ cd $HOME/runner1 && ./runner-service.sh logs
 For a full check of the host, download the readiness script. It is read-only and reports PASS, WARN or FAIL per item, covering sizing, power settings, the keychain, automatic login, FileVault, egress reachability, Tart images and runner supervision:
 
 ```bash
-curl -fsSL -O https://cdn.appcircle.io/self-hosted/check-runner-host.sh && \
+curl -fsSL -O "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/check-runner-host.sh" && \
   chmod +x check-runner-host.sh && \
   sudo ./check-runner-host.sh
 ```

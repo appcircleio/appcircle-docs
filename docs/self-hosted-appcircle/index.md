@@ -35,6 +35,8 @@ To see the topology diagram in greater detail, click [here](https://cdn.appcircl
 
 :::tip
 You can see all external network access details on the [Network Access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access) page.
+
+If the Appcircle server and runners have no internet access, see the [air-gapped architecture](#dockerpodman-architecture-in-an-air-gapped-network) below.
 :::
 
 ## Docker/Podman Architecture With DMZ Support
@@ -44,6 +46,33 @@ If you plan to use the Enterprise App Store and Testing Distribution modules iso
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-dmz-topology.png' />
 
 For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) document.
+
+## Docker/Podman Architecture in an Air-Gapped Network
+
+In an air-gapped network, nothing inside the network has a connection to the internet. The Appcircle server, the macOS hosts and the runner VMs download everything from an artifact mirror in your network, such as Sonatype Nexus or JFrog Artifactory with hosted repositories. You prepare the content of the mirror outside the network, in a staging artifact repository that you operate, and bring it in through a periodic, controlled offline transfer, such as removable media or a data diode.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology_v6.png' alt='Air-gapped architecture of self-hosted Appcircle' />
+
+To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology_v6.png). It will open the diagram in new browser tab.
+
+Compared to the [standalone architecture](#dockerpodman-standalone-architecture):
+
+| Area | Standalone | Air-gapped |
+| ---- | ---------- | ---------- |
+| Container images | Appcircle registry | Artifact mirror (Docker hosted repository) |
+| Server package | Downloaded on the server | Downloaded outside the network and brought in with the offline transfer |
+| macOS VM and Xcode images, runner files | Appcircle storage and CDN | Artifact mirror (raw hosted repositories) |
+| Build dependencies (Maven, Gradle, npm, CocoaPods, RubyGems, PyPI, pub) | Public registries | Artifact mirror (hosted repositories) |
+| Source code, sign-in, email, time, name resolution, certificates | Internal or public services | Internal services only: Git provider, LDAP or SSO, SMTP, NTP, DNS and your corporate root CA |
+| App store publishing, App Store Connect certificate management, Slack and Teams notifications | Available | Not available |
+
+:::info
+
+The air-gapped architecture covers the Docker/Podman Appcircle server, installed fresh from version 3.33.0, with [macOS VM runners](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) on Apple silicon hosts. It doesn't cover the DMZ architecture, Kubernetes/OpenShift installations or Linux runners.
+
+:::
+
+The installation guides cover the air-gapped setup in their own steps: the runner VM setup asks where the host downloads from and continues with the same commands.
 
 ## Kubernetes/OpenShift Architecture Using Helm Chart
 
