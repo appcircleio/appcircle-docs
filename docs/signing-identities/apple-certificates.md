@@ -47,7 +47,7 @@ With Appcircle’s advanced Signing Identity module, you can easily generate cer
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-appCertMainPagev2.png' />
 
-- In the opened window, continue by selecting the “Create an Apple Certificate” step.
+- In the **Add a certificate** panel, continue by selecting **Create an Apple certificate**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertModal_v2.png' />
 
@@ -114,7 +114,7 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 
 - Download your generated CER file from the Apple Developer portal
 
-- Upload the CER file to the signing identities module by clicking on the upload button next to the CSR file.
+- Upload the CER file to the signing identities module by opening the **...** menu of the CSR file under the Actions column and selecting **Upload**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ac-csr-list_v2.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ac-createp12_v2.png' />
@@ -123,7 +123,7 @@ To generate your iOS certificates, simply fill in your details and Appcircle wil
 
 ### Uploading P12 Certificate
 
-To upload your Apple Certificate, select "Upload Certificate Bundle (.p12)" button and upload your pre-obtained Apple Certificate file.
+To upload your Apple Certificate, click **Add new**, select **Upload certificate bundle (.p12)** and upload your pre-obtained Apple Certificate file.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/02-02-Upload-iOS-Certificates_v2.png' />
 
@@ -218,6 +218,7 @@ Revoking an Enterprise or Ad Hoc distribution certificate immediately renders al
 :::
 
 ### Auto Renew Certificate
+
 Instead of renewing an Apple Certificate manually before each expiry, you can let Appcircle renew it for you. When auto renew is enabled, Appcircle renews the certificate automatically a selected number of days before it expires, regenerates its provisioning profiles, and replaces the old certificate in your build, re-sign and distribution profiles, exactly like a manual renewal.
 
 :::info Availability
@@ -227,22 +228,32 @@ Certificate auto renewal is available on Appcircle Cloud starting from version 3
 :::
 
 #### Requirements
+
 To enable auto renew for a certificate, the following are required:
 
-* App Store Connect API Key: A valid App Store Connect API Key that Appcircle will use for every renewal.
-* CSR File generated on Appcircle: Only CSR files generated on Appcircle can be selected. Uploaded CSR files are not listed.
-* Eligible certificate: The certificate must be stored in Appcircle with its private key, must not be revoked or already superseded by a renewal, and must belong to your current organization. Certificates shared from a root organization cannot be configured in a sub-organization.
+- **App Store Connect API Key**: A valid App Store Connect API Key that Appcircle will use for every renewal.
+- **CSR file generated on Appcircle**: Only CSR files generated on Appcircle can be selected. Uploaded CSR files are not listed.
+- **Eligible certificate**: The certificate must be stored in Appcircle with its private key, must not be revoked or already superseded by a renewal, and must belong to your current organization. Certificates shared from a root organization cannot be configured in a sub-organization.
 
 #### Enabling Auto Renew
-Open the … menu of the related certificate under the Actions column and select Renew.
 
-Select the App Store Connect API Key that Appcircle will use for the renewal.
+1. Open the **...** menu of the related certificate under the Actions column and select **Renew**.
 
-Turn on the Enable Auto Renew toggle.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-106-renewMenu.png' alt='Renew action in the Apple certificate actions menu' />
 
-Select the CSR file and choose how many days before the expiration date the certificate should be renewed: 1, 3, 5 or 7 days. The default is 5 days.
+2. Select **Auto renew Apple certificate (.cer)**.
 
-Click Next, review the preview and confirm.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-106-renewOptions.png' alt='Auto renew Apple certificate option on the Renew Apple certificate panel' />
+
+3. Turn on the **Enable auto renew** toggle.
+4. Under **Certificate signing request**, select the CSR file. Then, under **Lead time before expiry**, choose how many days before the expiration date the certificate should be renewed: 1, 3, 5 or 7 days. The default is 5 days.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-106-autoRenewSettings.png' alt='Enable auto renew toggle, certificate signing request and lead time settings' />
+
+5. Click **Next** and review the **Auto renew preview**. It shows the selected certificate signing request, the lead time, the date the certificate will be renewed on and its new expiry date.
+6. Click **Save** to enable auto renew.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-106-autoRenewPreview.png' alt='Auto renew preview with the renewal configuration and dates' />
 
 The new certificate uses the same password as the current certificate, so no password input is needed for auto renewal.
 
@@ -253,26 +264,32 @@ If the selected lead time is longer than the remaining lifetime of the certifica
 :::
 
 #### Auto Renew Status in the Certificate List
-The certificate list contains an Auto Renew column. Certificates with auto renew enabled display an Enabled tag. Hover over the tag to see the scheduled renewal date and the expiration date of the certificate.
+
+The certificate list contains an **Auto renew** column. Certificates with auto renew enabled display an **Enabled** tag followed by the scheduled renewal date. The expiration date of the certificate is shown in the **Expires** column.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-106-autoRenewEnabled.png' alt='Enabled auto renew tag in the Auto renew column of the certificate list' />
+
+Hover over the tag to see the scheduled renewal date.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-106-autoRenewTooltip.png' alt='Tooltip showing the scheduled auto renewal date' />
 
 :::info How Auto Renewal Works
+
 - The renewal runs on the scheduled day (expiration date minus the selected lead time) at 03:00 UTC.
 - Auto renewal always revokes the old certificate on the Apple Developer Portal:
-If the Apple certificate limit for that certificate type is full, the old certificate is revoked first to free a slot, then the new one is created.
-If there is a free slot, the new certificate is created first and the old one is revoked afterwards.
+  - If the Apple certificate limit for that certificate type is full, the old certificate is revoked first to free a slot, then the new one is created.
+  - If there is a free slot, the new certificate is created first and the old one is revoked afterwards.
+- The old certificate is removed from the certificate list, and the new certificate takes its place.
+- All provisioning profiles associated with the certificate are regenerated, and the certificate is replaced in build and re-sign profiles, the same way as in a manual renewal.
+- The new certificate inherits the auto renew settings (CSR file and lead time), so it is renewed automatically again before its own expiry.
 
-The old certificate is removed from the certificate list, and the new certificate takes its place.
-
-All provisioning profiles associated with the certificate are regenerated, and the certificate is replaced in build and re-sign profiles, the same way as in a manual renewal.
-
-The new certificate inherits the auto renew settings (API key, CSR file and lead time), so it is renewed automatically again before its own expiry.
 :::
 
 :::danger Enterprise and Ad Hoc Distribution Certificates
 
 Because auto renewal always revokes the old certificate, applications signed with an Enterprise (in-house) or Ad Hoc distribution certificate stop working on end-user devices as soon as the renewal completes, including versions that are already installed.
 
-Do not enable auto renew for these certificates unless you are sure that no distributed application still depends on the old certificate. Follow the manual renewal order for them instead.
+Do not enable auto renew for these certificates unless you are sure that no distributed application still depends on the old certificate. Follow the [manual renewal order](#renewing-an-enterprise-or-ad-hoc-distribution-certificate) for them instead.
 
 :::
 
@@ -283,19 +300,23 @@ Applications that were already built and distributed keep the profile they were 
 :::
 
 #### Failed Renewals
+
 - Temporary errors (for example, Apple services being unavailable or rate limiting) are retried automatically every 6 hours until the certificate expires.
 - Permanent errors (for example, an invalid or unauthorized API key, a missing CSR file, or an error returned by Apple) stop the retries, and auto renew is turned off for the certificate.
-If the certificate expires without a successful renewal, auto renew is turned off.
-In every failure case, an Apple Certificate Auto Renew Failed notification is sent, stating the reason and whether another attempt will be made. If auto renew was turned off, renew the certificate manually.
+- If the certificate expires without a successful renewal, auto renew is turned off.
 
-When Auto Renew Is Turned Off Automatically
-Auto renew depends on the API key, the CSR file and the certificate itself. Appcircle turns auto renew off immediately, and sends an Apple Certificate Auto Renew Turned Off notification, when:
+In every failure case, an **Apple Certificate Auto Renew Failed** notification is sent, stating the reason and whether another attempt will be made. If auto renew was turned off, renew the certificate manually.
 
-The App Store Connect API Key used for the renewal is removed.
-The App Store Connect API Key is no longer shared with the organization that owns the certificate.
-The CSR file used for the renewal is deleted.
-The certificate is revoked.
-Restoring the dependency (for example, sharing the API key again) does not re-enable auto renew. Enable it again from the Renew action.
+#### When Auto Renew Is Turned Off Automatically
+
+Auto renew depends on the API key, the CSR file and the certificate itself. Appcircle turns auto renew off immediately, and sends an **Apple Certificate Auto Renew Turned Off** notification, when:
+
+- The App Store Connect API Key used for the renewal is removed.
+- The App Store Connect API Key is no longer shared with the organization that owns the certificate.
+- The CSR file used for the renewal is deleted.
+- The certificate is revoked.
+
+Restoring the dependency (for example, sharing the API key again) does not re-enable auto renew. Enable it again from the **Renew** action.
 
 :::warning Deleting a CSR File Used by Auto Renew
 
@@ -304,24 +325,30 @@ When you try to delete a CSR file that is used by auto renew, Appcircle shows a 
 :::
 
 #### Changing or Disabling Auto Renew
-To change the API key, CSR file or lead time, open the Renew action of the certificate again, update the settings in the auto renew configuration and save.
 
-To disable auto renew, open the same screen, turn off the Enable Auto Renew toggle and click Save.
+Once auto renew is enabled, the **Renew** panel of the certificate shows **Configure certificate auto-renewal** instead of **Auto renew Apple certificate (.cer)**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-106-configureAutoRenew.png' alt='Configure certificate auto-renewal option on the Renew Apple certificate panel' />
+
+To change the CSR file or lead time, open the **...** menu of the certificate, select **Renew** > **Configure certificate auto-renewal**, update the settings, click **Next** and then **Save**.
+
+To disable auto renew, open the same screen, turn off the **Enable auto renew** toggle and click **Save**. The **Auto renew** column of the certificate shows **-** again.
 
 :::info Manual Renewal While Auto Renew Is Enabled
 
-Manual renewal is not available for a certificate while auto renew is enabled. To renew it manually, disable auto renew first.
+Manual renewal is not available for a certificate while auto renew is enabled, so **Manual renew Apple certificate (.cer)** appears disabled on the **Renew** panel. To renew it manually, disable auto renew first.
 
 :::
 
 #### Notifications and Activity Logs
+
 Auto renew events are delivered through the in-app notification window and, if configured, through Email, Slack and Microsoft Teams notifications:
 
-Apple Certificate Auto Renew On: Auto renew was enabled or its settings were updated. Shows the lead time, the next renewal date and the expiration date.
-Apple Certificate Auto Renew Turned Off: Auto renew was turned off, with the reason.
-Apple Certificate Auto Renew Failed: A renewal attempt failed, with the reason and the next attempt time, if any.
-A successful automatic renewal is reported as an automatically renewed certificate.
-These events are also recorded in the Signing Identities activity logs.
+- **Apple Certificate Auto Renew On**: Auto renew was enabled or its settings were updated. Shows the lead time, the next renewal date and the expiration date.
+- **Apple Certificate Auto Renew Turned Off**: Auto renew was turned off, with the reason.
+- **Apple Certificate Auto Renew Failed**: A renewal attempt failed, with the reason and the next attempt time, if any.
+
+A successful automatic renewal is reported as an automatically renewed certificate. These events are also recorded in the Signing Identities activity logs.
 
 ### Revoke Certificate
 
