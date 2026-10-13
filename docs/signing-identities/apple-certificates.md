@@ -175,12 +175,12 @@ There are limits on the number of certificates that can be generated on Apple. T
 
 - Appcircle requires certain inputs for the certificate you wish to renew. The purposes of these inputs are explained below.
 
-   - **Revoke This Certificate Before Renew**: If you want to revoke the certificate you wish to renew on the Apple Developer Portal first, and then create a new certificate, you will need to enable this toggle. If you keep this toggle **disabled**, Appcircle creates the new certificate and leaves the old one valid on the Apple Developer Portal. In that case the new certificate counts against the Apple certificate creation limit described above, so the renewal fails with an error if you have already reached the limit for that certificate type.
+   - **Revoke This Certificate Before Renew**: If you want to revoke the certificate you wish to renew on the Apple Developer Portal first, and then create a new certificate, you will need to enable this toggle. If you keep this toggle **disabled**, Appcircle creates the new certificate and leaves the old one valid on the Apple Developer Portal. In that case the new certificate counts against the Apple certificate creation limit described above. If you have already reached the limit for that certificate type, this toggle is not shown; instead, a warning states that the certificate will be revoked, and the renewal revokes it on the Apple Developer Portal to free a slot.
    - **CSR File**: Apple will not allow a certificate to be generated without a CSR file. Therefore, a CSR file must be selected.
    - **Automatically Generate Password**: Appcircle will automatically generate a random password if this toggle is enabled.
    - **Password(Optional)**: When generating a certificate, you are prompted to set a password. This password is entirely optional, and the certificate will be generated without any issues even if you do not set one.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/certCsr.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/certCsr_v2.png' alt='Renew Apple certificate inputs with the CSR file list and password options' />
 
 #### Renew Preview 
 
@@ -190,7 +190,7 @@ Before performing the Appcircle renewal process, this panel provides the user wi
  - **Replacement Certificate**: This certificate will replace the existing one once the renewal is confirmed. All associated provisioning profiles are regenerated automatically.
  - **Affected Profiles Details**: The profiles listed below will be affected after the renew operation. This may cause build failures and errors in automatic re-sign processes.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/certPreview.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/certPreview_v2.png' alt='Certificate renew preview with the existing and replacement certificates' />
 
 :::warning Affected Provision, Build and Re-sign Profiles
 
