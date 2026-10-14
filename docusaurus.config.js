@@ -3,6 +3,7 @@
 
 const { themes } = require("prism-react-renderer");
 const remarkExternalUrlRef = require("./src/plugins/remark-externalUrlRef");
+const remarkReleaseTimeline = require("./src/plugins/remark-release-timeline");
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -29,7 +30,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          remarkPlugins: [remarkExternalUrlRef],
+          remarkPlugins: [remarkExternalUrlRef, remarkReleaseTimeline],
           // Please change this to your repo.
           editUrl:
             "https://github.com/appcircleio/appcircle-docusaurus/tree/master/",
