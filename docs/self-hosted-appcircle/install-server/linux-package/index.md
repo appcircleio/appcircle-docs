@@ -17,7 +17,7 @@ Before proceeding with the installation, it is essential to verify the compatibi
 
 If you're planning to use **Docker** as the container runtime engine, you should check for compatible OS versions [here.](/self-hosted-appcircle/install-server/linux-package/installation/docker#supported-linux-distributions)
 
-If you're planning to use **Podman** as the container runtime engine, you should check for compatible OS versions [here.](/self-hosted-appcircle/install-server/linux-package/installation/docker#supported-linux-distributions)
+If you're planning to use **Podman** as the container runtime engine, you should check for compatible OS versions [here.](/self-hosted-appcircle/install-server/linux-package/installation/podman#supported-linux-distributions)
 
 ### Hardware Requirements
 
