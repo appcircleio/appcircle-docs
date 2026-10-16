@@ -339,7 +339,7 @@ After a couple of minutes later you should see the output below.
   <TabItem value="261016" label="261016" default>
 
 ```bash
-MD5 (macOS_261016.tar.gz) = <TO_BE_FILLED>
+MD5 (macOS_261016.tar.gz) = 2de7bebe305a6eceb558f602e60ecd5c
 ```
 
   </TabItem>
@@ -559,7 +559,7 @@ After a couple of minutes later you should see the output below.
   <TabItem value="261016" label="261016" default>
 
 ```bash
-MD5 (xcodes_261016.tar.gz) = <TO_BE_FILLED>
+MD5 (xcodes_261016.tar.gz) = bf5a733e3e1900b3baeb054a400cc8a3
 ```
 
   </TabItem>
