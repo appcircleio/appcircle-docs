@@ -114,7 +114,7 @@ After the Appcircle server restarts, runners that still use port `443` cannot re
    For more details, see [managing the self-hosted runner service](/self-hosted-appcircle/self-hosted-runner/configure-runner/runner-service).
 
 :::info
-If your runners are macOS virtual machines created from a base image, update `appsettings.json` in the base runner VM as well, so that new runner VMs use the new port. See [configuring the runner service on the runner VM](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#4-configure-runner-service).
+If your runners are macOS virtual machines created from a base image, update `appsettings.json` in the base runner VM as well, so that new runner VMs use the new port. See [configuring the runner service on the runner VM](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#5-configure-runner-service).
 :::
 
 ## Verifying the Configuration
