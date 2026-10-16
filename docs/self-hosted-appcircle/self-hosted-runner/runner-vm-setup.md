@@ -266,13 +266,6 @@ curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appc
 ```
 
   </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/macOS_260914.tar.gz"
-```
-
-  </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
@@ -315,13 +308,6 @@ md5 macOS_261016.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-md5 macOS_260914.tar.gz
-```
-
-  </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
@@ -354,13 +340,6 @@ After a couple of minutes later you should see the output below.
 
 ```bash
 MD5 (macOS_261016.tar.gz) = <TO_BE_FILLED>
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-MD5 (macOS_260914.tar.gz) = 650f11824bd9888b4ded41fcfb85c0e5
 ```
 
   </TabItem>
@@ -401,13 +380,6 @@ mkdir -p $HOME/.tart/vms/macOS_261016
 ```
 
   </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-mkdir -p $HOME/.tart/vms/macOS_260914
-```
-
-  </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
@@ -440,13 +412,6 @@ Extract archive into VMs folder.
 
 ```bash
 pigz -cvdp 4 macOS_261016.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_261016
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-pigz -cvdp 4 macOS_260914.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_260914
 ```
 
   </TabItem>
@@ -487,13 +452,6 @@ du -sh $HOME/.tart/vms/macOS_261016
 ```
 
   </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-du -sh $HOME/.tart/vms/macOS_260914
-```
-
-  </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
@@ -528,13 +486,6 @@ Download the Xcode images. They are disk images for each Xcode version archived 
 
 ```bash
 curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/xcodes_261016.tar.gz"
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/xcodes_260914.tar.gz"
 ```
 
   </TabItem>
@@ -577,13 +528,6 @@ md5 xcodes_261016.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-md5 xcodes_260914.tar.gz
-```
-
-  </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
@@ -616,13 +560,6 @@ After a couple of minutes later you should see the output below.
 
 ```bash
 MD5 (xcodes_261016.tar.gz) = <TO_BE_FILLED>
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-MD5 (xcodes_260914.tar.gz) = 5a86aad75bd5ecac87c4e1bc2ac124b5
 ```
 
   </TabItem>
@@ -669,13 +606,6 @@ pigz -cvdp 4 xcodes_261016.tar.gz | tar xvf - --directory $HOME/images
 ```
 
   </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-pigz -cvdp 4 xcodes_260914.tar.gz | tar xvf - --directory $HOME/images
-```
-
-  </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
@@ -718,23 +648,13 @@ It may take a little to complete. Be patient and wait return of command.
 
 :::info
 
-Same Tahoe `26.6.2` base as `260914`, with Xcode 27.1 added. Xcode 26.6 and 27.0 are unchanged, so builds pinned to either keep working after the upgrade. Xcode 27.1 is required for iPhone Duo targets.
+This image replaces `260914` (same Tahoe `26.6.2` base, Xcode 27.1 added). If you are on `260914`, Xcode 26.6 and 27.0 are unchanged, so builds pinned to either keep working after the upgrade. Xcode 27.1 is required for iPhone Duo targets.
 
 :::
 
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-**Note:** This macOS VM image is the Tahoe (`26.6.2`) stack and comes with the Xcode versions below:
-
-| Version | Build |
-| ------- | ----- |
-| 27.0 | `27A266a` |
-| 26.6 | `17F113` |
-
 :::caution
 
-This image line replaces the Tahoe `26.3.2` line (`260723` and earlier) and ships **two** Xcode versions instead of four. If your builds are pinned to Xcode 26.3, 26.4 or 26.5, move them to 26.6 or 27.0 before upgrading. Xcode 26.6 is available on both image lines, so it is the safe version to migrate on.
+Compared to the Tahoe `26.3.2` line (`260723` and earlier), this image ships **three** Xcode versions instead of four. If your builds are pinned to Xcode 26.3, 26.4 or 26.5, move them to 26.6, 27.0 or 27.1 before upgrading. Xcode 26.6 is available on both image lines, so it is the safe version to migrate on.
 
 :::
 
@@ -800,15 +720,6 @@ To download and extract the Appcircle runner VM and Xcode images in the backgrou
 curl -fsSL "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/download-runner.sh" -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "261016" &
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-curl -fsSL "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/download-runner.sh" -o download-runner.sh && \
-chmod +x download-runner.sh && \
-nohup ./download-runner.sh "260914" &
 ```
 
   </TabItem>
@@ -910,13 +821,6 @@ Create VM image for runner1.
 
 ```bash
 tart clone macOS_261016 vm01
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-tart clone macOS_260914 vm01
 ```
 
   </TabItem>
@@ -1057,15 +961,6 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.26.6.dmg:ro \
   --disk=$HOME/images/xcode.27.0.dmg:ro \
   --disk=$HOME/images/xcode.27.1.dmg:ro
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-screen -d -m tart run vm01 --no-graphics \
-  --disk=$HOME/images/xcode.26.6.dmg:ro \
-  --disk=$HOME/images/xcode.27.0.dmg:ro
 ```
 
   </TabItem>
@@ -1510,15 +1405,6 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-screen -d -m tart run vm02 --no-graphics \
-  --disk=$HOME/images/xcode.26.6.dmg:ro \
-  --disk=$HOME/images/xcode.27.0.dmg:ro
-```
-
-  </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
@@ -1576,7 +1462,7 @@ At this stage, your VM list returned by `tart list` might be like below, accordi
 
 ```txt
 Source Name         Size
-local  macOS_260914 167
+local  macOS_261016 167
 local  vm01         130
 local  vm02         130
 ```
@@ -1611,14 +1497,6 @@ For "runner1" use below commands.
 
 ```bash
 curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.8.0.sh" && \
-chmod u+x $HOME/runner1/run.sh
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.7.0.sh" && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1658,14 +1536,6 @@ For "runner2" use below commands.
 
 ```bash
 curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.8.0.sh" && \
-chmod u+x $HOME/runner2/run.sh
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.7.0.sh" && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -1735,7 +1605,7 @@ We can see running instances on macOS host with `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_260914                              167
+local  macOS_261016                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -1770,7 +1640,7 @@ First you need to have to find out online runner's VM name from `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_260914                              167
+local  macOS_261016                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -1803,7 +1673,7 @@ After shutdown, you won't see anymore instance from `vm01` on `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_260914                              167
+local  macOS_261016                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-9f1fc62a-f43c-40f3-98d0-523ed9a67042 130
@@ -1838,15 +1708,6 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.26.6.dmg:ro \
   --disk=$HOME/images/xcode.27.0.dmg:ro \
   --disk=$HOME/images/xcode.27.1.dmg:ro
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-screen -d -m tart run vm01 --no-graphics \
-  --disk=$HOME/images/xcode.26.6.dmg:ro \
-  --disk=$HOME/images/xcode.27.0.dmg:ro
 ```
 
   </TabItem>
@@ -1908,15 +1769,6 @@ screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.26.6.dmg:ro \
   --disk=$HOME/images/xcode.27.0.dmg:ro \
   --disk=$HOME/images/xcode.27.1.dmg:ro
-```
-
-  </TabItem>
-  <TabItem value="260914" label="260914">
-
-```bash
-screen -d -m tart run vm02 --no-graphics \
-  --disk=$HOME/images/xcode.26.6.dmg:ro \
-  --disk=$HOME/images/xcode.27.0.dmg:ro
 ```
 
   </TabItem>
@@ -2013,7 +1865,7 @@ For instance, we have an instance for "runner2" seen below.
 ```bash
 % tart list
 Source Name                                      Size
-local  macOS_260914                              167
+local  macOS_261016                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-3a003bce-a2ee-4ae7-9500-7754e181c314 130
