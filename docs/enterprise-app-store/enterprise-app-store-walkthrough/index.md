@@ -9,11 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-## Why Use the Enterprise App Store Module
-
-The Enterprise App Store module lets you run your own private app store for in-house iOS and Android applications that are not meant for the Apple App Store or Google Play. Your users sign in to a branded Enterprise Portal, see the apps they are allowed to access, and install them directly on their devices, while you control which version is live, who can reach beta versions, and how users authenticate.
-
-Testing Distribution and the Enterprise App Store serve different stages of the release cycle. Testing Distribution is for sharing in-progress builds with testers so that each iteration can be validated. The Enterprise App Store is the final distribution channel for internal users: one stable version per channel, a store experience under your own domain and branding, access control through your identity provider, and in-app update support. A version validated in Testing Distribution can be sent to the Enterprise App Store with a single action.
+The Enterprise App Store lets you run your own private, branded app store for in-house iOS and Android apps. Your users sign in with your authentication method and install the apps they are allowed to see, while you control which version is live and who can access beta versions. Versions validated in Testing Distribution can be sent here with a single action.
 
 https://appcircle.io/enterprise-app-store
 
