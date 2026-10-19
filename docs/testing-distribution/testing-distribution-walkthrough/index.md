@@ -40,7 +40,7 @@ Android binaries downloaded from the Testing Portal are installed outside Google
 
 :::tip AAB Binaries
 
-`.aab` is a store-only format and cannot be installed directly on a device. If your build produces an `.aab`, enable **Auto re-sign for Android** with the **Convert AAB to APK** option so testers receive an installable `.apk`. See [Auto Re-sign](#auto-re-sign) below.
+`.aab` is a store-only format and cannot be installed directly on a device. If your build produces an `.aab`, enable **Auto re-sign for Android** with the **Convert AAB to APK** option so testers receive an installable `.apk`. See [Auto Re-sign](/testing-distribution/resigning-binaries#auto-re-sign).
 
 :::
 
@@ -75,8 +75,6 @@ The **Config** tab holds binary-related settings for the profile.
 **Bundle/Package Identifier Validation**
 
 When enabled, only binaries whose bundle or package identifier matches the profile can be uploaded. See [Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile).
-
-<a id="auto-re-sign"></a>
 
 **Auto Re-sign**
 
@@ -289,7 +287,7 @@ The file is validated and parsed before it is added to the profile. Make sure it
 
 ### Why does the Testing Portal say no compatible package was found?
 
-The tester's device platform does not match the versions shared with them, for example an Android tester opening a profile with only iOS versions shared. Share a version for the tester's platform. An `.aab` that was not converted to `.apk` cannot be installed either; enable **Convert AAB to APK** in [Auto Re-sign](#auto-re-sign).
+The tester's device platform does not match the versions shared with them, for example an Android tester opening a profile with only iOS versions shared. Share a version for the tester's platform. An `.aab` that was not converted to `.apk` cannot be installed either; enable **Convert AAB to APK** in [Auto Re-sign](/testing-distribution/resigning-binaries#auto-re-sign).
 
 ### Why can't a tester install the iOS app?
 
