@@ -9,11 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-## Why Use the Testing Distribution Module
-
-The Testing Distribution module lets you share iOS and Android builds with testers before release, from a single profile per application. You decide who receives which version, deliver new builds automatically as soon as they are produced, control how testers sign in to download them, and see who installed what and when.
-
-Teams coming from Expo Application Services (EAS) usually know internal distribution as a shareable install link generated for an EAS build. Appcircle's Testing Distribution covers the same need and adds a managed layer around it: reusable testing groups, a branded Testing Portal with SSO, LDAP or static authentication, automatic re-signing (including AAB to APK conversion) before delivery, and download reports and activity logs for auditing. It accepts binaries from any source (the Appcircle Build module, manual uploads, or your existing CI through the Appcircle CLI and API), and it is available on both Appcircle Cloud and self-hosted installations.
+The Testing Distribution module lets you share iOS and Android builds with testers before release, from a single profile per app. New builds can reach your testing groups automatically, testers download them from a branded portal with the sign-in method you choose, and you can see who installed which version.
 
 https://appcircle.io/testing-distribution
 
@@ -78,9 +74,7 @@ The **Config** tab holds binary-related settings for the profile.
 
 **Bundle/Package Identifier Validation**
 
-- **Bundle Validation for iOS** and **Package Validation for Android** restrict uploads to binaries whose identifier exactly matches the one defined in the profile.
-- When validation is enabled, the profile header shows a **Locked** tag next to the identifier, and binaries with a different identifier are rejected during upload, including those sent from the Build module.
-- Validation is not retroactive. Versions uploaded before it was enabled remain available.
+When enabled, only binaries whose bundle or package identifier matches the profile can be uploaded. See [Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile).
 
 <a id="auto-re-sign"></a>
 
@@ -88,24 +82,7 @@ The **Config** tab holds binary-related settings for the profile.
 
 The **Auto re-sign for iOS** and **Auto re-sign for Android** toggles re-sign every new binary uploaded to the profile, before it reaches testers. This is useful when builds are signed with a development identity, or when a single binary must be distributed under a different certificate, provisioning profile, or keystore.
 
-After enabling a toggle, configure it from the **...** menu next to the profile name (**Auto re-sign for iOS** / **Auto re-sign for Android**).
-
-:::caution Auto Re-sign Depends on Signing Identities
-
-Auto re-sign uses the signing assets stored in your organization, so they must be in place before you save the configuration:
-
-- **iOS**: The certificate must be uploaded under **Signing Identities** > **Apple Certificates**, and an [App Store Connect API key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) must be selected.
-- **Android**: The keystore must be uploaded under **Signing Identities** > **Android Keystores**.
-
-:::
-
-:::tip Convert AAB to APK
-
-Testing Distribution profiles do not allow `.aab` binaries to be shared with testers. Keep the **Convert AAB to APK** option of **Auto re-sign for Android** enabled so that every `.aab` sent to the profile is converted and signed as an installable `.apk`.
-
-:::
-
-For all configuration options, including versioning and display name updates, see [Re-sign Binaries](/testing-distribution/resigning-binaries#auto-re-sign).
+Auto re-sign uses the certificates and keystores in **Signing Identities**. For requirements and all configuration options, see [Re-sign Binaries](/testing-distribution/resigning-binaries#auto-re-sign).
 
 #### Auto Send
 
@@ -127,11 +104,7 @@ The **Testing Portal** tab controls what testers see on the portal for this prof
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-32_v2.png' />
 
-- **Publisher information**: **Publisher Name**, **Contact Email**, **Privacy Policy URL**, and **Terms of Service URL**. Testers see this information when they select the user icon on the portal.
-- **Exclude from Shared Application List**: Hides this profile from the shared application list of other profiles. Testers who received a direct email invitation can still access it.
-- **Hide Shared Application List**: Testers of this profile see only this profile's application and cannot browse applications shared from other profiles.
-- **Single Active Session**: Each tester can have only one active session across browsers and devices. Signing in elsewhere ends the previous session. Not applicable when authentication is set to **None**.
-- **Binary Tags**: Shows build metadata (commit message, branch, Git tag, workflow name, and more) next to each version on the portal. Tags are only available for binaries sent from the Build module.
+You can add publisher information, control whether the app appears in the shared application list, limit testers to a single active session, and show build metadata as binary tags. See [Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile).
 
 #### Authentication
 
@@ -199,11 +172,11 @@ Click **Upload Binary** at the top right of the profile and select an `.ipa`, `.
 
 #### Version List and Version Details
 
-New versions appear at the top of the profile's version list. iOS and Android versions are listed separately; use the iOS/Android toggle above the list to switch between them. Each row shows the version, build number, signing status (a **signed** badge after re-signing), and expiration status (**Expire Soon** / **Expired**) of the signing certificate.
+New versions appear at the top of the profile's version list, separated by iOS and Android, with their signing and expiration status.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update2_v2.png' />
 
-Select a version to open its details: provisioning profile type, certificate, build metadata (branch, commit, build logs), and the option to compare it with another version. See [Binary Information](/testing-distribution/binary-information).
+For signing and build details of a version, see [Binary Information](/testing-distribution/binary-information).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td_v2.png' />
 
@@ -227,7 +200,7 @@ A version whose signing certificate has expired cannot be shared, and its downlo
 
 #### Notifications
 
-- **Tester emails**: Each tester receives an email with the version, release notes, and a link to the Testing Portal. The profile name is used as the sender name. On self-hosted installations, emails can be sent from your own domain through [SMTP settings](https://docs.appcircle.io/self-hosted-appcircle/configure-server/integrations-and-access/integration#email).
+- **Tester emails**: Each tester receives an email with the version, release notes, and a link to the Testing Portal.
 - **Team notifications**: Notify your team on Slack, Microsoft Teams, or email when a new version is added or shared. See [Notifications](/account/my-organization/notifications).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss1.png' />
@@ -248,7 +221,7 @@ Testing Portal accounts are independent of Appcircle accounts and are used only 
 
 ### Shared Application List and App Details
 
-After signing in, testers see the versions shared with them, grouped by profile, with each version's size, certificate type, release notes, and binary tags. They can search by app name, version, release notes, or build number, filter by OS, and sort by version or date. Unless **Hide Shared Application List** is enabled, they can also switch to other applications shared with them.
+After signing in, testers see the versions shared with them with their release notes, and can search, filter, and switch between the apps shared with them.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-portal2.png' />
 
@@ -276,13 +249,13 @@ After a version is shared, the profile shows each tester's status for that versi
 
 ### Download Report
 
-Go to **Testing Distribution** > **Download report** to see every download with the user, app, profile, version, device platform, OS version, and date. Filter by date range and export the list as CSV. See [Reporting](/testing-distribution/reports).
+Go to **Testing Distribution** > **Download report** to see who downloaded which version and on which device, and export it as CSV. See [Reporting](/testing-distribution/reports).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/qa55-new_v2.png' />
 
 ### Activity Log
 
-The [Activity Log](/testing-distribution/testing-distribution-activity-log) records profile, app version, and testing group operations, as well as SSO and LDAP settings changes. It is available to organization owners and users with the Organization Management role.
+The [Activity Log](/testing-distribution/testing-distribution-activity-log) records profile, version, and testing group changes for auditing.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-7_v2.png' />
 
