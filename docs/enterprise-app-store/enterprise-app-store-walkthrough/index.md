@@ -81,8 +81,7 @@ Set a **store prefix** to define your Enterprise Portal URL, then copy the URL t
 
 #### Captcha and Session Management
 
-- **Enable Captcha**: Shows a captcha after a set number of failed login attempts and blocks further attempts after a limit (Enterprise plans).
-- **Single Active Session**: Each user can have only one active session across browsers and devices. Signing in elsewhere ends the previous session.
+Protect the portal with a captcha after failed login attempts (Enterprise plans) and optionally limit each user to a single active session.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-70_v2.png" alt="Captcha Settings for Enterprise Portal" />
 
@@ -136,7 +135,7 @@ Upload from your existing CI with the Appcircle CLI. See [Automating the Enterpr
 
 #### Version List and Version Details
 
-Uploaded versions are listed in the profile with their channel tag (**Beta**, **Live**, or **Unlisted**) and the expiration status of their signing certificate or keystore (**Expire Soon** / **Expired**). Select **Binary Information** from a version's **...** menu to see the provisioning profile type, certificate, build metadata, and to compare it with another version. See [Binary Information](/enterprise-app-store/binary-information).
+Uploaded versions are listed in the profile with their channel and signing expiration status. For signing and build details of a version, see [Binary Information](/enterprise-app-store/binary-information).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile2_v2.png' />
 
@@ -160,14 +159,7 @@ Auto Re-sign re-signs every new binary uploaded to the profile with the signing 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an7_v2.png' />
 
-:::caution Auto Re-sign Depends on Signing Identities
-
-- **iOS**: The certificate must be uploaded under **Signing Identities** > **Apple Certificates**, and an [App Store Connect API key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) must be selected.
-- **Android**: The keystore must be uploaded under **Signing Identities** > **Android Keystores**. Enable **Convert AAB to APK** so that `.aab` uploads are delivered as installable `.apk` files.
-
-:::
-
-For all configuration options, see [Re-sign Binary](/enterprise-app-store/resign-binary).
+Auto Re-sign uses the certificates and keystores in **Signing Identities**. For requirements and all configuration options, see [Re-sign Binary](/enterprise-app-store/resign-binary).
 
 ### Portal
 
@@ -175,9 +167,7 @@ The **Portal** tab controls how the app is displayed on the Enterprise Portal.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-42_v2.png" />
 
-- **Show on Top**: Shows the app at the top of its channel's list on the portal. Changes may take up to 10 minutes to appear.
-- **Hide Certificate Details**: Hides the signing certificate information of all versions in this profile on the portal.
-- **Binary Tags**: Shows build metadata (commit message, branch, Git tag, workflow name, and more) next to each version on the portal. Tags are only available for binaries sent from the Build module.
+You can pin the app to the top of the list, hide certificate details, and show build metadata as binary tags. See [Enterprise App Store Profile](/enterprise-app-store/enterprise-app-store-profile).
 
 ### Manage Access
 
@@ -190,7 +180,7 @@ The **Manage Access** tab defines who can see the versions published to the **Be
 - If **Beta** channel access is not configured, beta versions are not visible to anyone.
 - If **Live** channel access is not configured, live versions are visible to everyone who can sign in to the portal.
 
-Manage Access requires the portal authentication to be **SSO** or **LDAP**. Emails are not case-sensitive, but group names are. For Okta group-based access, see [Store SSO Authorization](/account/my-organization/security/authorization/store-sso-authorization).
+Manage Access requires **SSO** or **LDAP** authentication. For group-based access, see [Store SSO Authorization](/account/my-organization/security/authorization/store-sso-authorization).
 
 :::
 
@@ -250,7 +240,7 @@ Select **Unpublish** from the version's **...** menu to remove it from its chann
 ### Notifications
 
 - **Team notifications**: Notify your team on Slack, Microsoft Teams, or email when a new version is uploaded, deployed, or shared on the Enterprise App Store. See [Notifications](/account/my-organization/notifications).
-- **Expiration notifications**: For versions published to Beta or Live, Appcircle sends notifications 1 month, 2 weeks, 1 week, and 24 hours before the signing certificate or keystore expires. Enable the related setting in the Notifications section to receive them by email.
+- **Expiration notifications**: Get notified before the signing certificate or keystore of a published version expires.
 
 ## User Experience: Enterprise Portal
 
@@ -283,7 +273,7 @@ For more information, see [Enterprise Portal](/enterprise-app-store/enterprise-p
 
 ### Download Report
 
-Go to **Enterprise App Store** > **Download report** to see every download with the app name, user, version, channel (Live or Beta), device, OS, and date. Filter by organization, user, date, app version, or app name, and export the list as CSV. In a sub-organization, only that organization's apps are shown.
+Go to **Enterprise App Store** > **Download report** to see who downloaded which version and on which device, filter the results, and export them as CSV.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5444-rep1_v2.png' />
 
@@ -291,7 +281,7 @@ See [Portal Reports](/enterprise-app-store/enterprise-reports).
 
 ### Activity Log
 
-The [Activity Log](/enterprise-app-store/enterprise-app-store-activity-log) records profile, app version, and custom domain operations, as well as SSO and LDAP settings changes. It is available to organization owners and users with the Organization Management role.
+The [Activity Log](/enterprise-app-store/enterprise-app-store-activity-log) records profile, version, and portal setting changes for auditing.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/QA84-4_v2.png' />
 
