@@ -772,7 +772,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 ### :muscle: Improvements
 
 - Webhook distribution to profiles in Appcircle is now handled through a single repository-level webhook registration, streamlining integration across associated profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A Webhook Key Generation option has been added to the [manual webhook creation](/build/build-process-management/build-manually-or-with-triggers#setting-up-manual-webhooks-based-on-repository-connection-type) screen for build profiles with public and SSH repositories. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A Webhook Key Generation option has been added to the [manual webhook creation](/build/build-process-management/build-manually-or-with-triggers#webhook-setup-by-connection-type) screen for build profiles with public and SSH repositories. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Repository-based](/build/manage-the-connections/connection-guides/connecting-to-bitbucket#connecting-to-bitbucket-cloud-repository) access support has been added for build profiles to be used with both Bitbucket Self-Hosted and Bitbucket Cloud. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - UI improvements have been made to the [connection](/build/manage-the-connections) list, where the used provider and connection type such as Personal Access Token (User)(Cloud) are now displayed as tags next to the saved PAT connections. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Notification support has been added for CodePush actions across Email, Microsoft Teams, and Slack channels. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>

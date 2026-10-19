@@ -43,7 +43,7 @@ There are two options to set up webhooks for automatic builds:
 Scheduled builds do not rely on repository webhooks at all, since they are started by Appcircle itself at the times you configure. No webhook setup is required for scheduled triggers. See [Scheduled builds](#scheduled-builds-beta) below.
 :::
 
-## Setting up Manual Webhooks Based on Repository Connection Type
+## Webhook Setup by Connection Type
 
 Depending on how your Git provider is connected to Appcircle, the webhook setup may be handled automatically or may require manual configuration.
 
@@ -103,7 +103,7 @@ To manually configure a webhook for an Azure DevOps repository:
 2. In Azure DevOps, navigate to:
    `Project Settings → Service Hooks → + Create Subscription`
 3. Choose Web Hooks as the service.
-4. Select your repository and choose the required trigger events (e.g., code push, pull request).
+4. Select your repository and an event. Create one subscription for each of these events: **Code pushed**, **Pull request created**, **Pull request updated**, **Pull request merge attempted**, and **Pull request commented on**.
 5. In the “Action” step, paste the webhook URL.
 6. “Accept untrusted SSL certificates“ option can stay disabled.
 7. Enter `appcircle` as username.
@@ -122,9 +122,7 @@ When a manual webhook (SSH/Public URL/Read-only PAT) is already configured for a
 
 ### Webhook Setup for OAuth and PAT-Based Repository Connections
 
-When a repository is connected to Appcircle via OAuth connection (such as GitHub, GitLab, or Bitbucket) or using a Personal Access Token (PAT), the behavior of webhook creation varies depending on the type of integration and the permission level of the token.
-
-In some cases, Appcircle handles webhook setup automatically, while in others—particularly when using read-only access—manual configuration may be required to enable trigger-based builds.
+When a repository is connected to Appcircle via an OAuth connection (such as GitHub, GitLab, or Bitbucket) or a Personal Access Token (PAT), Appcircle tries to create the webhook automatically with the connection's credentials. Whether this succeeds depends on the role of the connected user in the repository and, for tokens, on the token's permissions. When it can't, set up a manual webhook from the **Webhooks** dialog.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6019-noprovider_v2.png' />
 
@@ -132,29 +130,33 @@ Below is a breakdown of how webhooks are managed for each supported Git provider
 
 #### GitHub OAuth Connection
 
-When your repository is connected using the GitHub OAuth connection, webhooks are created automatically. No manual configuration is needed.
+When your repository is connected using the GitHub OAuth connection or the GitHub App, Appcircle creates the webhook automatically. The connected GitHub user must have **admin** access to the repository, because GitHub only lets repository admins manage webhooks. Otherwise, set up a manual webhook.
+
+#### GitHub PAT and GitHub Enterprise Connections
+
+To create a webhook automatically, Appcircle must be able to add a webhook to the repository settings. GitHub requires the **Webhooks: Read and write** permission (fine-grained PAT) or the `write:repo_hook` scope (classic PAT) for this, and the token owner must have admin access to the repository. This permission only covers the repository's webhook settings. It doesn't give write access to code or pull requests, so the **Contents** permission can stay read-only. If you don't want to grant webhook permissions, set up a manual webhook from the **Webhooks** dialog.
 
 #### GitLab OAuth Connection
 
-Webhooks are also automatically created when connecting via the GitLab OAuth connection.
+Appcircle creates the webhook automatically when the connected GitLab user has at least the **Maintainer** role on the project. GitLab doesn't let lower roles manage webhooks. Otherwise, set up a manual webhook.
 
 #### GitLab Cloud/Server - PAT Connection
 
-The behavior differs depending on the PAT’s permission level:
+The behavior depends on the role of the PAT owner on the project:
 
-- **Admin Permissions**: Webhooks are created automatically.
-- **Read-Only Permissions**: Manual webhook creation is required.
+- **Maintainer or Owner role**: Webhooks are created automatically. The token also needs the `api` scope.
+- **Lower roles (Developer, Reporter, Guest)**: Manual webhook creation is required.
 
-To set up a manual webhook for a read-only PAT:
+To set up a manual webhook:
 
-1. Connect the GitLab repository to Appcircle using the read-only PAT and create a build profile.
-2. In GitLab Server, go to:  
+1. Connect the GitLab repository to Appcircle using the PAT and create a build profile.
+2. In GitLab, go to:  
    `Projects → <Your Connected Repository> → Settings → Webhooks → Add Webhook`
 3. Copy the webhook URL and secret from the build profile's **Webhooks** dialog and paste them into GitLab. The URL has this format:
    ```
    https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATION_ID}/custom/{WEBHOOK_KEY}/V11
    ```
-4. Paste the webhook secret into the **Secret token** field, and enable **Push events**, **Tag push events**, and **Merge request events**. Also enable **Comments** if you want to [retry a workflow](#retrying-a-workflow) with a `[retry]` merge request comment. Otherwise it isn't needed.
+4. Paste the webhook secret into the **Secret token** field, and select the events listed in [Events to Select for Manual Webhooks](#events-to-select-for-manual-webhooks).
 
 :::warning PAT Role
 For Appcircle to create the webhook automatically, the PAT owner must have at least the **Maintainer** role on the project and the token must have the `api` scope. GitLab does not allow lower roles to manage webhooks.
@@ -162,25 +164,29 @@ For Appcircle to create the webhook automatically, the PAT owner must have at le
 
 #### Bitbucket OAuth Connection
 
-When using the Bitbucket OAuth connection, Appcircle automatically creates the webhook—no further action is needed.
+Appcircle creates the webhook automatically when the connected Bitbucket user is an **admin** of the repository. Bitbucket only lets repository admins create webhooks. Otherwise, set up a manual webhook.
+
+#### Bitbucket Cloud Token Connections
+
+For API tokens and access tokens, Appcircle creates the webhook automatically when the token has the `read:webhook:bitbucket` and `write:webhook:bitbucket` scopes and its owner is a repository admin. Otherwise, set up a manual webhook from the **Webhooks** dialog. See [API Token Permissions for Bitbucket Cloud Integration](/build/manage-the-connections/connection-guides/connecting-to-bitbucket#api-token-permissions-for-bitbucket-cloud-integration).
 
 #### Bitbucket Server - PAT Connection
 
-Webhook behavior is determined by the PAT’s permissions:
+Webhook behavior is determined by the token's repository permission:
 
-- **Admin Permissions**: Webhook is created automatically.
-- **Read-Only Permissions**: Manual setup is required.
+- **Repository admin**: The webhook is created automatically.
+- **Repository read or write**: Manual setup is required.
 
-To manually configure a webhook for a Bitbucket Server repository using a read-only PAT:
+To manually configure a webhook for a Bitbucket Server repository:
 
-1. Connect the Bitbucket Server repository using the read-only PAT and create a build profile in Appcircle.
+1. Connect the Bitbucket Server repository using the token and create a build profile in Appcircle.
 2. In Bitbucket Server, go to:  
    `Repositories → <Your Connected Repository> → Repository Settings → Webhooks → Create Web Hook`
 3. Copy the webhook URL and secret from the build profile's **Webhooks** dialog and paste them into Bitbucket Server. The URL has this format:
    ```
    https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATION_ID}/custom/{WEBHOOK_KEY}/V11
    ```
-4. Select the **Repository: Push** and **Repository: Modified** events, and the **Pull request: Opened** and **Pull request: Source branch updated** events.
+4. Select the events listed in [Events to Select for Manual Webhooks](#events-to-select-for-manual-webhooks).
 
 :::warning Token Permission
 For Appcircle to create the webhook automatically, the HTTP access token must have **Repository admin** permission. Bitbucket only allows repository admins to manage webhooks.
@@ -188,15 +194,7 @@ For Appcircle to create the webhook automatically, the HTTP access token must ha
 
 #### Azure Devops - PAT Connection
 
-When using the Azure DevOps PAT integration, Appcircle automatically creates the service hook subscriptions. The token owner must be allowed to edit service hook subscriptions in the project (Project Administrators by default). If they aren't, follow the manual Azure DevOps steps above.
-
-#### GitHub PAT and GitHub Enterprise Connections
-
-To create a webhook automatically, Appcircle must be able to add a webhook to the repository settings. GitHub requires the **Webhooks: Read and write** permission (fine-grained PAT) or the `write:repo_hook` scope (classic PAT) for this, and the token owner must have admin access to the repository. This permission only covers the repository's webhook settings. It doesn't give write access to code or pull requests, so the **Contents** permission can stay read-only. If you don't want to grant webhook permissions, set up a manual webhook from the **Webhooks** dialog.
-
-#### Bitbucket Cloud Token Connections
-
-For API tokens and access tokens, Appcircle creates the webhook automatically when the token has webhook read and write permissions and its owner is a repository admin. Otherwise, set up a manual webhook from the **Webhooks** dialog.
+When using the Azure DevOps PAT integration, Appcircle automatically creates the service hook subscriptions. The token owner needs the **View subscriptions** and **Edit subscriptions** permissions in the project, which only Project Administrators have by default. Otherwise, follow the manual Azure DevOps steps above.
 
 ### Automatically Created Webhooks
 
@@ -204,33 +202,58 @@ When Appcircle creates a webhook in your Git provider, it uses the following set
 
 - **Name/description:** `Appcircle/V11`
 - **URL:** `https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATION_ID}/{HOOK_ID}/V11`. Self-hosted Appcircle uses its own API address.
-- **Security:** Each webhook has its own secret, which Appcircle checks on every request. GitHub and Bitbucket sign the payload with it, GitLab sends it as the secret token, and Azure DevOps uses basic authentication with username `appcircle`.
+- **Security:** Each webhook has its own secret, which Appcircle checks on every request. GitHub and Bitbucket sign the payload with it (HMAC SHA-256), GitLab sends it in the `X-Gitlab-Token` header, and Azure DevOps uses basic authentication with username `appcircle`.
 
-| Provider | Subscribed events |
-|---|---|
-| GitHub / GitHub Enterprise | `push`, `create`, `delete`, `pull_request` |
-| GitLab | Push events, Tag push events, Merge request events, Comments |
-| Bitbucket Cloud | `repo:push`, `pullrequest:created`, `pullrequest:updated` |
-| Bitbucket Server | `repo:refs_changed`, `repo:modified`, `pr:opened`, `pr:from_ref_updated` |
-| Azure DevOps | Code pushed, Pull request created, Pull request updated, Pull request merge attempted, Pull request commented on |
+| Provider | Subscribed event | Used in Appcircle for |
+|---|---|---|
+| GitHub / GitHub Enterprise | `push` | Push and tag triggers, new commits |
+| | `create`, `delete` | Branch list sync |
+| | `pull_request` | Pull request triggers |
+| GitLab | Push events | Push triggers, new commits, branch list sync |
+| | Tag push events | Tag triggers |
+| | Merge request events | Merge request triggers |
+| | Comments | `[retry]` comments ([Retrying a workflow](#retrying-a-workflow)) |
+| Bitbucket Cloud | `repo:push` | Push and tag triggers, new commits, branch list sync |
+| | `pullrequest:created`, `pullrequest:updated` | Pull request triggers |
+| Bitbucket Server | `repo:refs_changed` | Push and tag triggers, new commits, branch list sync |
+| | `repo:modified` | Repository changes, not used for triggers |
+| | `pr:opened`, `pr:from_ref_updated` | Pull request triggers |
+| Azure DevOps | Code pushed | Push and tag triggers, new commits |
+| | Pull request created, Pull request updated, Pull request merge attempted | Pull request triggers |
+| | Pull request commented on | `[retry]` comments ([Retrying a workflow](#retrying-a-workflow)) |
 
 :::info
-These events are notifications that the Git provider sends to Appcircle, for example "a pull request was opened or got new commits". Subscribing to them doesn't let Appcircle change your code, branches, or pull requests. Appcircle uses them to start push, tag, and pull request builds (for example when new commits are pushed to an open pull request) and to keep the branch list in sync when branches are created or deleted.
+These events are notifications that the Git provider sends to Appcircle, for example "a pull request was opened or got new commits". Subscribing to them doesn't let Appcircle change your code, branches, or pull requests.
 :::
 
-Appcircle also tries to create the webhook again every time the repository is refreshed.
+Appcircle checks the webhook again every time the repository is refreshed and recreates it if it's missing or outdated. This needs the same webhook permissions as the first setup.
+
+:::caution Downgrading the token after setup
+Some guides allow you to downgrade the token to read access after the webhook is created. The existing webhook keeps working, and the **Webhooks** option doesn't reappear. However, Appcircle can no longer verify or recreate the webhook on refresh. If the webhook is deleted in the Git provider or a new webhook version is released, you need to restore the token's admin permission or set up a manual webhook.
+:::
+
+#### Events to Select for Manual Webhooks
+
+When you set up a manual webhook, select the same events that Appcircle uses for automatic webhooks:
+
+- **GitHub / GitHub Enterprise:** **Pushes**, **Branch or tag creation**, **Branch or tag deletion**, and **Pull requests**. Set **Content type** to `application/json` and paste the webhook secret into **Secret**.
+- **GitLab:** **Push events**, **Tag push events**, and **Merge request events**. Add **Comments** to use `[retry]` comments.
+- **Bitbucket Cloud:** **Repository: Push**, **Pull request: Created**, and **Pull request: Updated**.
+- **Bitbucket Server:** **Repository: Push**, **Repository: Modified**, **Pull request: Opened**, and **Pull request: Source branch updated**.
+- **Azure DevOps:** One service hook subscription for each of **Code pushed**, **Pull request created**, **Pull request updated**, **Pull request merge attempted**, and **Pull request commented on**.
+
+To use `[retry]` comments on GitHub, Bitbucket Cloud, or Bitbucket Server, also select the comment event in your manual webhook: **Issue comments** (GitHub), **Pull request: Comment created** (Bitbucket Cloud), or **Pull request: Comment added** (Bitbucket Server).
 
 #### When Appcircle Cannot Create the Webhook
 
 Appcircle can't create the webhook automatically in these cases:
 
 - The repository is connected via SSH or a public URL.
-- The connection token does not have the webhook permissions described above (for example a read-only PAT, or a GitLab role lower than Maintainer).
+- The user connected via OAuth isn't an admin of the repository (GitHub, Bitbucket) or has a role lower than Maintainer (GitLab).
+- The connection token does not have the webhook permissions described above (for example a read-only token, or a GitLab role lower than Maintainer).
 - The Git server rejects or can't reach the request (for example GitLab blocks local network requests, see [Outbound Requests](/build/manage-the-connections/connection-guides/connecting-to-gitlab#outbound-requests)).
 
-The build profile is still created, but triggers won't fire until a webhook exists. You can tell this happened when the **Webhooks** option appears in the **...** menu of the build profile and no `Appcircle/V11` webhook exists in your repository settings. Set up a manual webhook from that dialog, or fix the token permissions and refresh the repository so Appcircle can try again.
-
-This ensures proper webhook communication across all supported Git repository configurations.
+The build profile is still created, but triggers won't fire until a webhook exists. You can tell this happened when the **Webhooks** option appears in the **...** menu of the build profile and no `Appcircle/V11` webhook exists in your repository settings. Set up a manual webhook from that dialog, or fix the permissions and refresh the repository so Appcircle can try again.
 
 Please refer to the following guides to set up webhooks in various git providers:
 
@@ -241,30 +264,6 @@ Please refer to the following guides to set up webhooks in various git providers
 [https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/](https://support.atlassian.com/bitbucket-cloud/docs/manage-webhooks/)
 
 [https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops](https://docs.microsoft.com/en-us/azure/devops/service-hooks/overview?view=azure-devops)
-
-### Webhook Events Reference
-
-You can enable or disable webhook event scopes according to your needs. The table below lists supported events for each Git provider along with their descriptions:
-
-| **Event**                     | **Description**                                                            | **GitHub** | **GitLab** | **Bitbucket** | **Azure DevOps** |
-|------------------------------|----------------------------------------------------------------------------|------------|------------|---------------|------------------|
-| Push / Code Push             | Triggered when code is pushed to any branch.                              | ✅         | ✅         | ✅            | ✅               |
-| Tag Push / Tag Created       | Triggered when a new tag is pushed.                                       | ✅         | ✅         | ✅            | ✅               |
-| Branch or Tag Creation       | Triggered when a new branch or tag is created.                            | ✅         | ✅         | ✅            | ✅               |
-| Branch or Tag Deletion       | Triggered when a branch or tag is deleted.                                | ✅         | ✅         | ✅            | ✅               |
-| Pull/Merge Request Created   | Triggered when a PR/MR is opened.                                         | ✅         | ✅         | ✅            | ✅               |
-| Pull/Merge Request Updated   | Triggered when commits are added or changes are made to the PR/MR.        | ✅         | ✅         | ✅            | ✅               |
-| Pull/Merge Request Merged    | Triggered when a PR/MR is merged.                                         | ✅         | ✅         | ✅            | ✅               |
-| Pull/Merge Request Closed    | Triggered when a PR/MR is closed or abandoned.                            | ✅         | ✅         | ✅            | ✅               |
-| Issue or PR Comment Added    | Triggered when a comment is added to an issue or PR.                      | ✅         | ✅         | ✅            | ❌               |
-| Pipeline Status Changed      | Triggered when a pipeline/build status changes (e.g., success/failure).   | ❌         | ✅         | ❌            | ✅               |
-| Work Item Updated            | Triggered when a task/ticket is updated in the tracker system.            | ❌         | ❌         | ❌            | ✅               |
-
-:::info
-✅ = Supported by the provider  
-❌ = Not supported or not applicable  
-Note: Terminology may vary slightly across providers (e.g., PR vs. Merge Request).
-:::
 
 :::tip
 You can also use[ appcircle-cli](/appcircle-api-and-cli) to trigger your builds from the command line as well.
@@ -378,7 +377,12 @@ If your commit message includes `[skip ci]` or `[ci skip]`, your workflow will b
 
 ### Retrying a workflow
 
-If your merge request comment includes `[retry]`, your workflow will be retried.
+If your pull/merge request comment includes `[retry]`, your workflow will be retried.
+
+Appcircle needs to receive comment events for this to work:
+
+- **GitLab and Azure DevOps:** Automatic webhooks already include comment events.
+- **GitHub, Bitbucket Cloud, and Bitbucket Server:** Automatic webhooks don't include comment events, so `[retry]` comments are not received. To use `[retry]`, set up a manual webhook that includes the comment event. See [Events to Select for Manual Webhooks](#events-to-select-for-manual-webhooks).
 
 ### Auto Cancel Redundant Pipeline
 
