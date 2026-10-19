@@ -78,9 +78,8 @@ You can view Enterprise App Store module actions such as profile, app version, a
 In-app updates enable applications to deliver and install updates directly within the app, enhancing user experience by minimizing disruption.
 
 <ContentRef url="/enterprise-app-store/in-app-updates">In-app Updates</ContentRef>
-
 ## [Enterprise App Store Walkthrough](/enterprise-app-store/enterprise-app-store-walkthrough)
 
-A quick overview of the Enterprise App Store, from setting up the Enterprise Portal to publishing apps and tracking downloads.
+A step-by-step guide covering the full Enterprise App Store setup, from configuring the Enterprise Portal and adding apps to publishing versions to the Beta and Live channels and tracking downloads.
 
 <ContentRef url="/enterprise-app-store/enterprise-app-store-walkthrough">Enterprise App Store Walkthrough</ContentRef>
