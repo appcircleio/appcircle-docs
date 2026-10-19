@@ -154,7 +154,7 @@ To set up a manual webhook for a read-only PAT:
    ```
    https://api.appcircle.io/build/v1/callback/hooks/{GIT_PROVIDER}/{YOUR_ORGANIZATION_ID}/custom/{WEBHOOK_KEY}/V11
    ```
-4. Paste the webhook secret into the **Secret token** field, and enable **Push events**, **Tag push events**, **Merge request events**, and **Comments**.
+4. Paste the webhook secret into the **Secret token** field, and enable **Push events**, **Tag push events**, and **Merge request events**. Also enable **Comments** if you want to [retry a workflow](#retrying-a-workflow) with a `[retry]` merge request comment. Otherwise it isn't needed.
 
 :::warning PAT Role
 For Appcircle to create the webhook automatically, the PAT owner must have at least the **Maintainer** role on the project and the token must have the `api` scope. GitLab does not allow lower roles to manage webhooks.
@@ -192,7 +192,7 @@ When using the Azure DevOps PAT integration, Appcircle automatically creates the
 
 #### GitHub PAT and GitHub Enterprise Connections
 
-Appcircle creates the webhook automatically when the token has the **Webhooks: Read and write** permission (fine-grained PAT) or the `admin:repo_hook` scope (classic PAT), and the token owner has admin access to the repository. Otherwise, set up a manual webhook from the **Webhooks** dialog.
+To create a webhook automatically, Appcircle must be able to add a webhook to the repository settings. GitHub requires the **Webhooks: Read and write** permission (fine-grained PAT) or the `write:repo_hook` scope (classic PAT) for this, and the token owner must have admin access to the repository. This permission only covers the repository's webhook settings. It doesn't give write access to code or pull requests, so the **Contents** permission can stay read-only. If you don't want to grant webhook permissions, set up a manual webhook from the **Webhooks** dialog.
 
 #### Bitbucket Cloud Token Connections
 
@@ -213,6 +213,10 @@ When Appcircle creates a webhook in your Git provider, it uses the following set
 | Bitbucket Cloud | `repo:push`, `pullrequest:created`, `pullrequest:updated` |
 | Bitbucket Server | `repo:refs_changed`, `repo:modified`, `pr:opened`, `pr:from_ref_updated` |
 | Azure DevOps | Code pushed, Pull request created, Pull request updated, Pull request merge attempted, Pull request commented on |
+
+:::info
+These events are notifications that the Git provider sends to Appcircle, for example "a pull request was opened or got new commits". Subscribing to them doesn't let Appcircle change your code, branches, or pull requests. Appcircle uses them to start push, tag, and pull request builds (for example when new commits are pushed to an open pull request) and to keep the branch list in sync when branches are created or deleted.
+:::
 
 Appcircle also tries to create the webhook again every time the repository is refreshed.
 

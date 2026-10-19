@@ -42,7 +42,8 @@ The connection method you choose decides which automation features are available
 
 | Feature | OAuth / GitHub App | PAT / Access Token | SSH | Public URL |
 |---|---|---|---|---|
-| Listing repositories and branches | Yes | Yes | No | No |
+| Selecting the repository from a list | Yes | Yes | No, the repository URL is entered manually | No, the repository URL is entered manually |
+| Listing branches and commits | Yes | Yes | Yes | Yes |
 | Automatic webhook creation | Yes | Yes, if the token has webhook permissions | No, manual webhook only | No, manual webhook only |
 | Push, pull/merge request, and tag triggers | Yes | Yes (with an automatic or manual webhook) | Yes, with a manual webhook | Yes, with a manual webhook |
 | Commit build status | Yes | Yes, if the token can write commit statuses | No | No |
@@ -69,15 +70,9 @@ The provider-side requirements are:
 | Bitbucket Server / Data Center | The token needs at least **Repository read** permission. |
 | Azure DevOps | PAT scope **Code (Status)** (or Code (Read & write)). |
 
-:::info
-GitHub has no "canceled" status, so a canceled build is shown as **error** on GitHub. Bitbucket Server shows a canceled build as **failed**. On GitLab, a canceled build is reported as **canceled**, which GitLab shows as a canceled pipeline.
-:::
-
 ## FAQ
 
-### Should I use an OAuth or a PAT connection?
-
-Use OAuth (or the GitHub App) for cloud providers when possible: Appcircle manages the token lifecycle, and webhooks and commit statuses work without extra permission settings. Use a PAT for self-hosted Git servers (GitLab Self-Managed, Bitbucket Server / Data Center, Azure DevOps Server, GitHub Enterprise), or when your organization does not allow OAuth apps. With a PAT, make sure the token has the webhook and commit status permissions listed in the provider guide, and renew it before it expires.
+Please note that currently only Git repositories are supported. Any third party version control repositories need to be transferred to a proper Git repository on either GitHub or Bitbucket.
 
 ### Why is the commit build status not visible in my Git provider?
 
@@ -92,10 +87,6 @@ Check the following:
 
 Appcircle can no longer refresh branches and commits, create webhooks, or send commit statuses with that connection. Create a new token in your Git provider and update it from [Editing PAT Connections](/build/manage-the-connections/reconnect-change-provider#editing-pat-connections). Existing webhooks keep working because they don't use the token.
 
-## Repository Connection Issues
-
-Please note that currently only Git repositories are supported. Any third party version control repositories need to be transferred to a proper Git repository on either GitHub or Bitbucket.
-
 ### **How to change your connected GitHub, Bitbucket, or GitLab account?**
 
 You will need to go to your GitHub, Bitbucket, or GitLab account and revoke access to Appcircle and then reconnect your account from Appcircle.
@@ -108,6 +99,10 @@ Please check if you have owner/admin access in the specific organization from wh
 
 - Only members who have an admin role on the repository or are owners of the organization can install the GitHub app in an organization that owns that repository.
 - Only members who have an admin role on a repository or are owners of the organization can connect a repository to a profile.
+
+### Should I use an OAuth or a PAT connection?
+
+Use OAuth (or the GitHub App) for cloud providers when possible: Appcircle manages the token lifecycle, and webhooks and commit statuses work without extra permission settings. Use a PAT for self-hosted Git servers (GitLab Self-Managed, Bitbucket Server / Data Center, Azure DevOps Server, GitHub Enterprise), or when your organization does not allow OAuth apps. With a PAT, make sure the token has the webhook and commit status permissions listed in the provider guide, and renew it before it expires.
 
 If you still can't solve your issues, ask on our Slack page. Our community and our support engineers will help you whenever they're available:
 
