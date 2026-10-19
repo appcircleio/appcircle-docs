@@ -65,7 +65,7 @@ The provider-side requirements are:
 | Provider | Requirement |
 |---|---|
 | GitHub | OAuth / GitHub App: granted during installation. Fine-grained PAT: **Commit statuses: Read and write**. Classic PAT: `repo:status` (or `repo`). The token owner needs write access to the repository. |
-| GitLab | Token with the `api` scope and at least the **Developer** role. **CI/CD must be enabled for the project** (`Settings → General → Visibility, project features, permissions → CI/CD`). When CI/CD is disabled, GitLab rejects commit statuses for every user and no status appears. |
+| GitLab | Token with the `api` scope and at least the **Developer** role on the project. The project's **Repository** feature must be enabled. Commit statuses are accepted even when the project's CI/CD feature is turned off. |
 | Bitbucket Cloud | Repository read access is enough to write build statuses. Bitbucket only lets the user who created a status update it, so keep the same connection owner. |
 | Bitbucket Server / Data Center | The token needs at least **Repository read** permission. |
 | Azure DevOps | PAT scope **Code (Status)** (or Code (Read & write)). |
@@ -81,7 +81,7 @@ Check the following:
 1. **Set Commit Build Status** is enabled in the build profile configuration.
 2. The repository is not connected via SSH or a public URL. These connection types cannot send commit statuses.
 3. The connection token has the commit status permissions listed in [Commit Build Status](#commit-build-status) and has not expired or been revoked.
-4. **GitLab only:** CI/CD is enabled for the project. If it is disabled, GitLab rejects every commit status.
+4. **GitLab only:** The token owner has at least the **Developer** role on the project. GitLab rejects commit statuses from lower roles.
 
 ### What happens when my PAT expires?
 
