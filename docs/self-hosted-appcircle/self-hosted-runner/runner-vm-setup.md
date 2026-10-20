@@ -1290,6 +1290,8 @@ dependencyResolutionManagement {
 
 **CocoaPods:** add your CocoaPods repository as the first line of the `Podfile`, for example `source 'https://nexus.example.com/repository/cocoapods/'`.
 
+**Android SDK packages:** if your Android projects need an SDK package that the image doesn't contain, such as another NDK version, install it into the base VM from your artifact proxy. See [Android SDK Packages](/self-hosted-appcircle/self-hosted-runner/configure-runner/android-sdk-packages).
+
 </TabItem>
 </Tabs>
 
