@@ -1,12 +1,12 @@
 The server package is licensed to your organization and is downloaded with your `cred.json` file, so a proxy repository can't fetch it. Download it on a computer with internet access and upload it to the `appcircle-install` repository on your artifact proxy. Keep `cred.json` on that computer; the Appcircle server doesn't need it.
 
-On the computer with internet access, copy `cred.json` to an empty directory and download the package. Set the version explicitly, so you know which version you install. For the available versions, see the [version history](/self-hosted-appcircle/install-server/linux-package/update#version-history).
+Use a Linux computer with `bash`, `curl` and `openssl` for this step. On the computer with internet access, copy `cred.json` to an empty directory and download the package. Set the version explicitly, so you know which version you install. For the available versions, see the [version history](/self-hosted-appcircle/install-server/linux-package/update#version-history).
 
 ```bash
 curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | AC_SERVER_VERSION=3.33.0 bash
 ```
 
-Calculate the checksum of the package and upload both files to the artifact proxy. Replace the file name with the one the download printed, and `nexus.example.com` and `<username>` with your own. On macOS, use `shasum -a 256` instead of `sha256sum`.
+Calculate the checksum of the package and upload both files to the artifact proxy. Replace the file name with the one the download printed, and `nexus.example.com` and `<username>` with your own.
 
 ```bash
 AC_SERVER_PACKAGE="appcircle-server-linux-x64-3.33.0-<build>.zip"

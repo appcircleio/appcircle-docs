@@ -246,7 +246,7 @@ Install Podman and Python from your internal package repositories. `netavark` an
 sudo dnf install -y podman python3 python3-pip netavark socat
 ```
 
-Point `pip` at the `pypi-proxy` repository on your artifact proxy. Replace `nexus.example.com` and the repository name with your own. The `cert` line makes `pip` use the system trust store, which has your corporate root certificate if you added it in [Choose the Download Source](#choose-the-download-source); `pip` doesn't read it otherwise.
+Point `pip` at the `pypi-proxy` repository on your artifact proxy. Replace `nexus.example.com` and the repository name with your own. The RHEL `pip` package already trusts the system trust store, where you added your corporate root certificate in [Choose the Download Source](#choose-the-download-source); the `cert` line keeps it that way if `pip` was upgraded from PyPI, which brings its own certificate bundle.
 
 ```bash
 sudo tee /etc/pip.conf > /dev/null <<'EOF'
