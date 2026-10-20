@@ -24,6 +24,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Signing certificates and their passwords can now be renewed automatically before expiry in the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/>
 - [Build Failure Analysis](/appcircle-ai/ai-features-on-appcircle/build-failure-analysis) (Beta) has been introduced for builds, analyzing a failed build to identify the root cause of a failure and suggest how to fix it. <CloudBadge/>
 - Appcircle now comes with a redesigned user interface, offering a cleaner, more modern and consistent experience across all modules, along with performance improvements for faster page loads and smoother navigation. <CloudBadge/> 
+- [MobSF Binary Scan](/publish-integrations/common-publish-integrations/mobsf-binary-scan) component has been added to the Publish module, running a full MobSF static analysis on the APK, AAB or IPA about to be submitted to the store, with the option to stop the publish flow on a security finding or a low security score. <PublishIntegrationsBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
