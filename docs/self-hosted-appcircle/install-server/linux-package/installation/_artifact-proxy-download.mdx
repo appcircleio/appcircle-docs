@@ -1,0 +1,30 @@
+The server package is licensed to your organization and is downloaded with your `cred.json` file, so a proxy repository can't fetch it. Download it on a computer with internet access and upload it to the `appcircle-install` repository on your artifact proxy. Keep `cred.json` on that computer; the Appcircle server doesn't need it.
+
+On the computer with internet access, copy `cred.json` to an empty directory and download the package. Set the version explicitly, so you know which version you install. For the available versions, see the [version history](/self-hosted-appcircle/install-server/linux-package/update#version-history).
+
+```bash
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-server.sh | AC_SERVER_VERSION=3.33.0 bash
+```
+
+Calculate the checksum of the package and upload both files to the artifact proxy. Replace the file name with the one the download printed, and `nexus.example.com` and `<username>` with your own. On macOS, use `shasum -a 256` instead of `sha256sum`.
+
+```bash
+AC_SERVER_PACKAGE="appcircle-server-linux-x64-3.33.0-<build>.zip"
+sha256sum "$AC_SERVER_PACKAGE" > "$AC_SERVER_PACKAGE.sha256"
+curl -fu "<username>" --upload-file "$AC_SERVER_PACKAGE" "https://nexus.example.com/repository/appcircle-install/$AC_SERVER_PACKAGE"
+curl -fu "<username>" --upload-file "$AC_SERVER_PACKAGE.sha256" "https://nexus.example.com/repository/appcircle-install/$AC_SERVER_PACKAGE.sha256"
+```
+
+The checksum file confirms on the server that the package didn't change on its way through your network.
+
+On the Appcircle server, download the package and its checksum from the artifact proxy, check the package and extract it. Use the same file name as above.
+
+```bash
+AC_SERVER_PACKAGE="appcircle-server-linux-x64-3.33.0-<build>.zip"
+curl -fO "$AC_SERVER_PACKAGE_URL/$AC_SERVER_PACKAGE"
+curl -fO "$AC_SERVER_PACKAGE_URL/$AC_SERVER_PACKAGE.sha256"
+sha256sum -c "$AC_SERVER_PACKAGE.sha256"
+unzip -o -u "$AC_SERVER_PACKAGE" -d appcircle-server
+```
+
+`sha256sum -c` must print `OK`. If it doesn't, download the package again.

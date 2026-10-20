@@ -72,7 +72,7 @@ The air-gapped architecture covers the Docker/Podman Appcircle server, installed
 
 :::
 
-The installation guides cover the air-gapped setup in their own steps: the runner VM setup asks where the host downloads from and continues with the same commands.
+The installation guides cover the air-gapped setup in their own steps: the [server installation](/self-hosted-appcircle/install-server/linux-package/installation/docker#choose-the-download-source) and the runner VM setup ask where the server or the host downloads from and continue with the same commands.
 
 ## Kubernetes/OpenShift Architecture Using Helm Chart
 

@@ -48,6 +48,12 @@ If you are using the Nexus registry and are facing a "manifest not found" error,
 
 To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
+You can also limit the parallel pulls of the `up` and `upgrade` commands, for example `COMPOSE_PARALLEL_LIMIT=1 ./ac-self-hosted.sh -n "spacetech" up`.
+
+### Can the Appcircle server be installed without internet access?
+
+Yes. Appcircle server `3.33.0` or later on Docker or Podman can download the server package and the container images through an artifact proxy in your network, such as Sonatype Nexus or JFrog Artifactory. Choose the artifact proxy in [Choose the Download Source](./installation/docker#choose-the-download-source); the installation and update steps then show the commands for it.
+
 ### Where should we download the zip package while we are updating?
 
 Download the zip package of the appcircle server and extract it to the same folder as the already existing Appcircle server folder. Your data and configuration will be saved while updating.

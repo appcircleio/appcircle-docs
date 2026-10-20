@@ -101,6 +101,8 @@ You can check the required steps on how to define a custom image registry [here.
 
 You need `cred.json` file to pull the container images. Only the enterprise customers who have self-hosted Appcircle license can have `cred.json`.
 
+If the server pulls the images through an artifact proxy, `cred.json` is configured on the artifact proxy and isn't needed on the server. See [Choose the Download Source](/self-hosted-appcircle/install-server/linux-package/installation/docker#choose-the-download-source).
+
 For details about the `cred.json`, see [here.](/self-hosted-appcircle/install-server/linux-package/installation/docker#artifact-registry-credentials-credjson)
 
 :::

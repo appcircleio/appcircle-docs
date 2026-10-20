@@ -13,6 +13,12 @@ The primary purpose of providing offline container images is to enable seamless 
 
 Here you will find how to use the Appcircle server's offline container images.
 
+:::info
+
+If your server has no internet access but can reach an artifact proxy in your network, such as Sonatype Nexus or JFrog Artifactory, you don't need this page. Follow the [installation guide](/self-hosted-appcircle/install-server/linux-package/installation/docker#choose-the-download-source) and choose the artifact proxy as the download source. This page is for servers that can't reach any container registry.
+
+:::
+
 ## Requirements
 
 ### Software Requirements

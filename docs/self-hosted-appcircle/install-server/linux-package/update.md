@@ -6,6 +6,9 @@ sidebar_position: 50
 ---
 
 import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_redis-domain-caution.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ArtifactProxyDownload from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-download.mdx';
 
 # Overview
 
@@ -50,6 +53,8 @@ If you want to update the Appcircle server in an automated way, you can check ou
 You can effortlessly manage all the commands listed below.
 
 Additionally, you can set up recurring cron jobs (daily or weekly) to automatically check if Appcircle's server needs updating.
+
+Auto-upgrading needs internet access. If your server downloads through an artifact proxy, update it with the steps below.
 :::
 
 :::caution
@@ -183,6 +188,11 @@ Below is the version history of the self-hosted Appcircle server. This table hel
 
 ### 1. Download Latest
 
+The steps follow the download source you chose in the [installation](/self-hosted-appcircle/install-server/linux-package/installation/docker#choose-the-download-source).
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
 To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package. This typically means copying the `cred.json` file to the same directory containing the `appcircle-server` directory.
 
 :::info
@@ -248,6 +258,16 @@ You should use the downloaded `zip` archive while extracting so that the actual 
 
 :::
 
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+Download the new version on the computer with internet access, upload it to your artifact proxy and download it on the server, as in the installation. Extract it over the existing `appcircle-server` folder, so your `projects` folder stays in place.
+
+<ArtifactProxyDownload />
+
+  </TabItem>
+</Tabs>
+
 Change directory into extracted `appcircle-server` folder for following steps.
 
 ```bash
@@ -268,6 +288,9 @@ So as a result, you will downgrade the Appcircle server if you download an older
 
 ### 2. Update Packages
 
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
 Although it's rare, update may have new packages or package updates. Those are the tools that self-hosted Appcircle depends on. So they should be kept up-to-date same as Appcircle server.
 
 :::caution
@@ -285,6 +308,14 @@ sudo ./ac-self-hosted.sh -i
 You can also use the long option `--install-package` for the same purpose.
 
 For other details and troubleshooting, you can refer to [packages](/self-hosted-appcircle/install-server/linux-package/installation/docker#2-packages) section in installation docs.
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+Keep Docker or Podman, and Podman Compose, up to date from your internal repositories with your usual update process. If the release notes ask for a newer version, update it before the next steps, as in the installation's [packages](/self-hosted-appcircle/install-server/linux-package/installation/docker#2-packages) step. No other action is needed.
+
+  </TabItem>
+</Tabs>
 
 ### 3. Update Server
 
@@ -339,6 +370,9 @@ To activate image updates, first stop all running docker containers.
 
 Upgrade images.
 
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
 ```bash
 ./ac-self-hosted.sh -n "spacetech" upgrade
 ```
@@ -348,6 +382,20 @@ If you are using a proxy on the server, then you should maintain the proxy varia
 
 Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration#maintenance-of-no_proxy-variables) for more details.
 :::
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+The artifact proxy fetches the images of the new version from Appcircle while the server pulls them. Limit the parallel pulls, as in the first installation:
+
+```bash
+COMPOSE_PARALLEL_LIMIT=1 ./ac-self-hosted.sh -n "spacetech" upgrade
+```
+
+If a pull fails with `manifest unknown` or `not found`, ask the administrator to invalidate the cache of the `appcircle-docker` repository on the artifact proxy, then run the command again.
+
+  </TabItem>
+</Tabs>
 
 Then start with below command.
 

@@ -48,7 +48,7 @@ vi ./projects/spacetech/global.yaml
 
 - The `image` key should be configured with your **registry** details:
 
-  - **`url`**: Registry URL. (For our example, "registry.spacetech.com:8083/appcircle").
+  - **`url`**: Registry URL, without `https://` and without a `/` at the end. (For our example, "registry.spacetech.com:8083/appcircle/docker-registry").
   - **`username`**: Username of the registry.
   - **`password`**: Password of the registry.
   - **`requiredLogin`**: If this variable is set to `true`, the Appcircle server will use the `username` and `password` variables to login to the registry. If the end-user is logged in to his artifact registry manually, or the registry doesn't need authentication, then this variable should be `false`.
@@ -70,7 +70,8 @@ To use Sonatype Nexus as your proxy registry, you should follow the below steps.
 - Set the registry `name` and `port` as you wish.
 - Set the `Remote Storage` as `https://europe-west1-docker.pkg.dev`.
 - For the authentication section, you should set `Username` as `_json_key` and `Password` as the content of the `cred.json` file. See the sample screenshot [here.](https://cdn.appcircle.io/docs/assets/nexus-proxy-settings-3.png)
-- For SSL, the recommended way is to use a reverse proxy in front of Nexus.
+- For SSL, the recommended way is to use a reverse proxy in front of Nexus. If its certificate comes from your corporate certificate authority, see [HTTPS Registry With a Private Certificate Authority](#https-registry-with-a-private-certificate-authority).
+- `cred.json` is needed only here, in the Nexus repository settings. The Appcircle server logs in to Nexus with the `global.yaml` credentials below and doesn't need `cred.json`.
 
 :::tip
 
@@ -279,6 +280,36 @@ chmod +x mirror-images.sh
 If your registry is not using HTTPS, you may get an error during the Docker/Podman push step.
 
 You need to add your registry as an insecure registry. Please check the [Insecure Registry](#insecure-registry) section to configure an HTTP registry.
+
+:::
+
+## HTTPS Registry With a Private Certificate Authority
+
+If your registry serves HTTPS with a certificate from your corporate certificate authority, the container engine on the Appcircle server must trust that authority. Add the root certificate, in PEM format, to the system trust store of the server. Replace `corporate-root-ca.pem` with your certificate file.
+
+On RHEL:
+
+```bash
+sudo cp corporate-root-ca.pem /etc/pki/ca-trust/source/anchors/corporate-root-ca.pem
+sudo update-ca-trust
+```
+
+On Ubuntu and Debian:
+
+```bash
+sudo cp corporate-root-ca.pem /usr/local/share/ca-certificates/corporate-root-ca.crt
+sudo update-ca-certificates
+```
+
+If you use Docker, restart it afterwards.
+
+```bash
+sudo systemctl restart docker
+```
+
+:::info
+
+`external.ca` in `global.yaml` is a different setting. It makes the Appcircle services trust your certificate authority when they connect to your Git provider, LDAP or SMTP server. It doesn't configure the container engine. See [External Services](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#external-services).
 
 :::
 
