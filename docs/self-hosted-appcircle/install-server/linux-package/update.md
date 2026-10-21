@@ -389,7 +389,7 @@ Please head to the [Maintenance of Proxy Variables](/self-hosted-appcircle/insta
 The artifact proxy fetches the images of the new version from Appcircle while the server pulls them. Limit the parallel pulls, as in the first installation:
 
 ```bash
-COMPOSE_PARALLEL_LIMIT=1 ./ac-self-hosted.sh -n "spacetech" upgrade
+COMPOSE_PARALLEL_LIMIT=3 ./ac-self-hosted.sh -n "spacetech" upgrade
 ```
 
 If a pull fails with `manifest unknown` or `not found`, ask the administrator to invalidate the cache of the `appcircle-docker` repository on the artifact proxy, then run the command again.

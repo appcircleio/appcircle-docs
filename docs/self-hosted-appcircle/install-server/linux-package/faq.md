@@ -48,7 +48,7 @@ If you are using the Nexus registry and are facing a "manifest not found" error,
 
 To pull images one by one, you can see the [Pulling Image One By One](./configure-server/external-image-registry#pulling-images-one-by-one) document. Then you can pull images one by one with this script. So you won't face "manifest not found" error any more.
 
-You can also limit the parallel pulls of the `up` and `upgrade` commands, for example `COMPOSE_PARALLEL_LIMIT=1 ./ac-self-hosted.sh -n "spacetech" up`.
+You can also pull the images with a limited number of parallel pulls before you start the server: `COMPOSE_PARALLEL_LIMIT=3 ./ac-self-hosted.sh -n "spacetech" upgrade`, then `./ac-self-hosted.sh -n "spacetech" up`. Don't set `COMPOSE_PARALLEL_LIMIT` for `up` itself: Docker Compose also applies it to starting the containers, and services that wait for other services can then wait forever.
 
 ### Can the Appcircle server be installed without internet access?
 

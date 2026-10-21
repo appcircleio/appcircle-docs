@@ -1,9 +1,12 @@
-The first start of a new version pulls every image through the artifact proxy, which fetches them from Appcircle at the same time. Many parallel pulls against an artifact proxy that doesn't have the images yet can fail with errors such as `manifest unknown` or `not found`. Limit the parallel pulls with `COMPOSE_PARALLEL_LIMIT` for the command that pulls the images:
+The first start of a new version pulls every image through the artifact proxy, which fetches them from Appcircle at the same time. Many parallel pulls against an artifact proxy that doesn't have the images yet can fail with errors such as `manifest unknown` or `not found`. Pull the images first with a limited number of parallel pulls, then start the server:
 
 ```bash
-COMPOSE_PARALLEL_LIMIT=1 ./ac-self-hosted.sh -n "spacetech" up
+COMPOSE_PARALLEL_LIMIT=3 ./ac-self-hosted.sh -n "spacetech" upgrade
+./ac-self-hosted.sh -n "spacetech" up
 ```
 
-On updates, use it the same way with `upgrade`, the command that pulls the new images.
+`upgrade` only pulls the images. Don't set `COMPOSE_PARALLEL_LIMIT` for `up`: Docker Compose also applies the limit to starting the containers, and services that wait for other services can then wait forever.
+
+On updates, `upgrade` is the step that pulls the new images; use the same limit there.
 
 If a pull failed before, the artifact proxy may remember the missing image for a while (in Nexus, the negative cache of the repository). Ask the administrator to invalidate the cache of the `appcircle-docker` repository, then run the command again.
