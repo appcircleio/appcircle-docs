@@ -57,9 +57,11 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Webhook             | View Webhook URL, Webhook Key              | ✅     | ✅       | ✅        | ✅      |
 | Webhook             | Generate Webhook Key                       | ✅     | ✅       | ⛔        | ⛔      |
 | Configuration       | Add/Delete/Update Build Configuration      | ✅     | ✅       | ⛔        | ⛔      |
-| Configuration       | View Build Configuration                   | ✅     | ✅       | ✅        | ✅      |
+| Configuration       | List Build Configurations                  | ✅     | ✅       | ✅        | ⛔      |
+| Configuration       | View Build Configuration Details           | ✅     | ✅       | ⛔        | ⛔      |
 | Workflow            | Add/Delete/Update Workflows                | ✅     | ✅       | ⛔        | ⛔      |
-| Workflow            | View Workflows                             | ✅     | ✅       | ✅        | ✅      |
+| Workflow            | List Workflows                             | ✅     | ✅       | ✅        | ⛔      |
+| Workflow            | View Workflow Details                      | ✅     | ✅       | ⛔        | ⛔      |
 | Triggers            | Add/Delete/Update Triggers                 | ✅     | ✅       | ⛔        | ⛔      |
 | Triggers            | View Triggers                              | ✅     | ✅       | ✅        | ✅      |
 | Build Actions       | Start Build                                | ✅     | ✅       | ✅        | ⛔      |
