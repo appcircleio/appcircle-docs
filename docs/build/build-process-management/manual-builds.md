@@ -84,6 +84,9 @@ if [ "$RUN_UI_TESTS" = "true" ]; then
   echo "Running UI tests"
 fi
 ```
+:::warning Environment Variable Groups take precedence
+If a variable with the same name is also defined in an Environment Variable Group that is attached to the configuration, the value from the group is used and the value in the request is ignored. Do not define the variables that you send through the API in any attached variable group.
+:::
 
 :::caution
 - The request body is a JSON object of string key/value pairs.
