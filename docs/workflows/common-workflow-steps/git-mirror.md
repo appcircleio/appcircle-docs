@@ -70,7 +70,7 @@ Some Swift packages download a prebuilt framework as a zip file (`.binaryTarget(
 }
 ```
 
-If you open the project from an `.xcworkspace`, put the file under `<App>.xcworkspace/xcshareddata/swiftpm/configuration/` instead. Xcode reads only this project file, not `~/.swiftpm/configuration/mirrors.json`.
+If you open the project from an `.xcworkspace`, put the file under `<App>.xcworkspace/xcshareddata/swiftpm/configuration/` instead.
 
 To find the URLs, look for `.binaryTarget(` with a `url:` in the `Package.swift` of each package. A build without the mirror fails with `failed downloading '<url>'`, which names the file.
 
