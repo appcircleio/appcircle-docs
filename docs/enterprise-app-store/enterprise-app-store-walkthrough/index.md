@@ -107,7 +107,7 @@ For your first app, select **Add a new app**. When at least one profile exists, 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-upload1_v2.png' />
 
-Choose your `.ipa` or `.apk` file and click **Upload**.
+Choose your `.ipa`, `.apk`, or `.aab` file and click **Upload**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-upload2_v2.png' />
 
@@ -153,7 +153,7 @@ The **Config** tab shows the **Enterprise App Store profile ID**, which you need
 
 #### Auto Re-sign
 
-Auto Re-sign re-signs every new binary uploaded to the profile with the signing identity and versioning rules you define, so that, for example, a development-signed build can be distributed with your enterprise certificate. Select **Auto re-sign configurations** from the **...** menu next to the profile name, configure iOS and/or Android, then enable **Auto re-sign** in **Settings** > **Config**. Otherwise, new uploads are not re-signed.
+Auto Re-sign re-signs every new binary uploaded to the profile with the signing identity and versioning rules you define, so that, for example, a development-signed build can be distributed with your enterprise certificate. Select **Auto Re-sign Configurations** from the **...** menu next to the profile name, configure iOS and/or Android, then enable **Auto Re-sign** in **Settings** > **Config**. Otherwise, new uploads are not re-signed.
 
 The profile is created by the first upload, so the first binary is never auto re-signed. Only later uploads are. For example, the first `.aab` upload is not converted to `.apk`; re-sign it manually or upload it again after you enable Auto Re-sign.
 
@@ -211,7 +211,7 @@ Only one version can be in each channel at a time. Publishing a new version to a
 
 1. Select **Publish** from the version's **...** menu.
 2. Select the **Beta** or **Live** channel, and enter a summary and release notes.
-3. Click **Next**, review the details, and confirm.
+3. Click **Next**, review the details on the **Preview and publish** screen, and click **Publish**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-3_v2.png' />
 
