@@ -1202,36 +1202,38 @@ No action is needed. Builds download their dependencies from the public registri
   </TabItem>
   <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
 
-Point the build tools at your artifact proxy in the base VM. Every runner VM is cloned from this base VM, so the settings apply to every build. Repeat this step after every macOS VM image upgrade, because a new image starts without them.
+Two places point builds at your artifact proxy: the base VM, for the tools that workflow steps install, and the mirror steps in your workflows, for your projects' dependencies.
 
-Ask your artifact proxy administrator for proxy repositories of the package registries your projects use:
+**Proxy repositories:** ask your artifact proxy administrator for proxy repositories of the registries your projects use.
 
-| Registry | Sonatype Nexus type | JFrog Artifactory type | Remote URL |
-| -------- | ------------------- | ---------------------- | ---------- |
-| npm (npm, Yarn 1) | `npm (proxy)` | npm remote | `https://registry.npmjs.org` |
-| RubyGems (CocoaPods, Fastlane, Bundler) | `rubygems (proxy)` | Gems remote | `https://rubygems.org` |
-| PyPI | `pypi (proxy)` | PyPI remote | `https://pypi.org` |
-| Maven (Google, Maven Central, Gradle plugins) | `maven2 (proxy)` per remote, combined in a `maven2 (group)` | Maven remote per remote, combined in a Maven virtual | `https://maven.google.com`, `https://repo1.maven.org/maven2`, `https://plugins.gradle.org/m2` |
-| Gradle distributions | `raw (proxy)` | Generic remote | `https://services.gradle.org/distributions` |
-| CocoaPods | `cocoapods (proxy)` | CocoaPods remote | `https://cdn.cocoapods.org` |
-| Dart and Flutter packages | `pub (proxy)`, Nexus 3.92.0 or later | Pub remote | `https://pub.dev` |
-| Flutter SDK artifacts | `raw (proxy)` | Generic remote | `https://storage.googleapis.com` |
-| Node.js distributions | `raw (proxy)` | Generic remote | `https://nodejs.org/dist` |
+| Registry | Sonatype Nexus type | JFrog Artifactory type | Remote URL | Used by |
+| -------- | ------------------- | ---------------------- | ---------- | ------- |
+| Maven (Google, Maven Central, Gradle plugins) | `maven2 (proxy)` per remote, combined in a `maven2 (group)` | Maven remote per remote, combined in a Maven virtual | `https://dl.google.com/dl/android/maven2/`, `https://repo1.maven.org/maven2/`, `https://plugins.gradle.org/m2/` | Gradle Mirror step |
+| Gradle distributions | `raw (proxy)` | Generic remote | `https://services.gradle.org/` | Gradle Mirror step |
+| CocoaPods | `cocoapods (proxy)` | CocoaPods remote | `https://cdn.cocoapods.org/` | CocoaPods Mirror step |
+| npm | `npm (proxy)` | npm remote | `https://registry.npmjs.org` | npm Mirror step, base VM |
+| Node.js distributions | `raw (proxy)` | Generic remote | `https://nodejs.org/dist` | npm Mirror step |
+| Dart and Flutter packages | `pub (proxy)`, Nexus 3.92.0 or later | Pub remote | `https://pub.dev` | Flutter Mirror step |
+| Flutter SDK and engine files | `raw (proxy)` | Generic remote | `https://storage.googleapis.com` | Flutter Mirror step |
+| RubyGems (CocoaPods, Fastlane, Bundler) | `rubygems (proxy)` | Gems remote | `https://rubygems.org` | base VM |
+| PyPI | `pypi (proxy)` | PyPI remote | `https://pypi.org` | base VM |
+
+If your projects use public git repositories (Swift packages, git pods, submodules), mirror them on your git server too.
 
 <details>
 <summary>Notes for the artifact proxy administrator</summary>
 
-- Several registries redirect to another host, so the proxy must follow redirects and reach the target host too: Gradle distributions redirect to `github.com` and `release-assets.githubusercontent.com`, CocoaPods specs to `cdn.jsdelivr.net`, `maven.google.com` to `dl.google.com`, and `plugins.gradle.org` to `plugins-artifacts.gradle.org` or `repo.maven.apache.org`.
+- Several registries redirect to another host, so the proxy must follow redirects and reach the target host too: Gradle distributions redirect to `github.com` and `release-assets.githubusercontent.com`, CocoaPods specs to `cdn.jsdelivr.net`, `plugins.gradle.org` to `plugins-artifacts.gradle.org` or `repo.maven.apache.org`, and Maven Central sends React Native artifacts to `repo.reactnative.dev`.
 - The full list of hosts the proxy needs is on the [Network Access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#air-gapped-network) page.
 
 </details>
 
-Run the commands below inside the VM. They cover the tools that workflow steps and your builds use outside the project configuration. Replace `https://nexus.example.com/repository` and the repository names with your own, and skip the tools your projects don't use. The settings are written to files in the home folder of the `appcircle` user, which builds also read when a step runs a command with `sudo`.
+**Base VM:** run the commands below inside the VM. Every runner VM is cloned from this base VM, so the settings apply to every build. Repeat them after every macOS VM image upgrade, because a new image starts without them. Replace `https://nexus.example.com/repository` and the repository names with your own, and skip the tools your projects don't use.
 
 ```bash
 PROXY="https://nexus.example.com/repository"
 
-# npm and Yarn 1
+# npm (tools that steps install with npm)
 npm config set registry "$PROXY/npm/"
 
 # RubyGems and Bundler (CocoaPods, Fastlane)
@@ -1243,17 +1245,9 @@ pip config set global.index-url "$PROXY/pypi/simple"
 
 # Homebrew analytics
 brew analytics off
-```
 
-Some tools read their settings only from environment variables. The runner service loads the `~/.zshrc` file of the `appcircle` user when it starts, so add the variables there. Skip the lines of the tools your projects don't use.
-
-```bash
+# Update checks and usage reports. The runner service loads ~/.zshrc when it starts.
 cat >> ~/.zshrc <<'ZSHRC'
-# Package mirrors
-export PUB_HOSTED_URL="https://nexus.example.com/repository/pub"
-export FLUTTER_STORAGE_BASE_URL="https://nexus.example.com/repository/flutter-storage"
-export N_NODE_MIRROR="https://nexus.example.com/repository/nodejs-dist"
-# Update checks and usage reports
 export FASTLANE_SKIP_UPDATE_CHECK=1
 export FASTLANE_OPT_OUT_USAGE=1
 export TUIST_STATS_OPT_OUT=1
@@ -1261,34 +1255,31 @@ export SNYK_DISABLE_ANALYTICS=1
 ZSHRC
 ```
 
-The first three variables point Dart and Flutter packages, Flutter SDK artifacts and the Node.js versions installed with `n` to the proxy. Without the last four, Fastlane, Tuist and Snyk still work, but each build waits for their update checks and usage reports to time out.
+Without the last four lines, Fastlane, Tuist and Snyk still work, but each build waits for their update checks and usage reports to time out.
 
-:::caution
+**Mirror steps:** add the mirror steps right after **Git Clone** in each workflow:
 
-Commands that a step runs with `sudo` don't get these variables. The files written above are still read, because `sudo` keeps the home folder of the `appcircle` user.
+| App type | Steps |
+| -------- | ----- |
+| Android | [Gradle Mirror](/workflows/android-specific-workflow-steps/gradle-mirror) |
+| iOS | [CocoaPods Mirror](/workflows/ios-specific-workflow-steps/cocoapods-mirror), [Git Mirror](/workflows/common-workflow-steps/git-mirror) |
+| Flutter | [Flutter Mirror](/workflows/flutter-specific-workflow-steps/flutter-mirror), plus Gradle Mirror for Android and CocoaPods Mirror for iOS |
+| React Native | [npm Mirror](/workflows/react-native-specific-workflow-steps/npm-mirror), plus Gradle Mirror for Android and CocoaPods Mirror for iOS |
 
-:::
+Add Git Mirror to any workflow whose dependencies come from git. The steps change the project settings that point at public addresses (the Gradle wrapper, the `Podfile` source, Yarn 1 lockfiles) in the build's copy of the repository.
 
-Some settings live in your projects, not in the VM. Set them in every project that builds on these runners. Without them, the build tries the public addresses and fails, because the runner can't reach them.
+Create one [environment variable group](/environment-variables) with your repository URLs and select it in each build configuration. The steps read these variables:
 
-**Gradle repositories:** in `settings.gradle` or `settings.gradle.kts`, replace the repositories in `pluginManagement` and `dependencyResolutionManagement`, such as `google()`, `mavenCentral()` and `gradlePluginPortal()`, with your Maven group repository. If your project declares its repositories in `build.gradle` instead, change them there.
-
-```groovy
-pluginManagement {
-    repositories {
-        maven { url = uri("https://nexus.example.com/repository/maven-public/") }
-    }
-}
-dependencyResolutionManagement {
-    repositories {
-        maven { url = uri("https://nexus.example.com/repository/maven-public/") }
-    }
-}
-```
-
-**Gradle wrapper:** point `distributionUrl` in `gradle/wrapper/gradle-wrapper.properties` to your Gradle distributions repository, for example `distributionUrl=https\://nexus.example.com/repository/gradle-dist/gradle-8.9-bin.zip`.
-
-**CocoaPods:** add your CocoaPods repository as the first line of the `Podfile`, for example `source 'https://nexus.example.com/repository/cocoapods/'`.
+| Variable | Value |
+| -------- | ----- |
+| `AC_MIRROR_GRADLE` | Maven group, for example `https://nexus.example.com/repository/maven-public/` |
+| `AC_MIRROR_GRADLE_DISTRIBUTION` | Gradle distributions proxy |
+| `AC_MIRROR_COCOAPODS` | CocoaPods proxy |
+| `AC_MIRROR_GIT` | Base URL of the git mirrors, for example `https://git.example.com/github/` |
+| `AC_MIRROR_NPM` | npm proxy |
+| `AC_MIRROR_NODE` | Node.js distributions proxy |
+| `AC_MIRROR_PUB` | pub proxy |
+| `AC_MIRROR_FLUTTER` | Flutter SDK and engine files proxy |
 
 **Android SDK packages:** if your Android projects need an SDK package that the image doesn't contain, such as another NDK version, install it into the base VM from your artifact proxy. See [Android SDK Packages](/self-hosted-appcircle/self-hosted-runner/configure-runner/android-sdk-packages).
 
