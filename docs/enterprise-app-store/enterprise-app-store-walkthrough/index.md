@@ -40,7 +40,7 @@ Android apps can be signed with any keystore, but users must allow their browser
 
 :::tip AAB Binaries
 
-`.aab` is a store-only format and cannot be installed directly on a device. If your build produces an `.aab`, use [Auto Re-sign](#auto-re-sign) with the **Convert AAB to APK** option so users receive an installable `.apk`.
+`.aab` is a store-only format and cannot be installed directly on a device. If your build produces an `.aab`, use [Auto Re-sign](#auto-re-sign) with the **Convert AAB to APK** option so users receive an installable `.apk`. The first upload creates the profile and is not converted, so re-sign it manually or upload it again after you enable Auto Re-sign.
 
 :::
 
@@ -61,7 +61,7 @@ Select how users sign in to the Enterprise Portal:
 - **SSO Login**: Users sign in with your identity provider (Enterprise plans).
 - **LDAP Login**: Users sign in with their LDAP credentials (Enterprise plans). Multiple LDAP connections and two-factor authentication (2FA) are supported.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-90v2.png" alt="SSO Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-90v2.png" alt="Enterprise App Store Settings" />
 
 :::info
 
@@ -77,7 +77,7 @@ Set a **store prefix** to define your Enterprise Portal URL, then copy the URL t
 
 #### Captcha and Session Management
 
-Protect the portal with a captcha after failed login attempts (Enterprise plans) and optionally limit each user to a single active session.
+Protect the portal with a CAPTCHA after failed login attempts (Enterprise plans) and optionally limit each user to a single active session.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-70_v2.png" alt="Captcha Settings for Enterprise Portal" />
 
@@ -101,7 +101,7 @@ Enterprise App Store profiles cannot be named or renamed manually. The app name 
 
 :::
 
-#### Manual Binary Upload
+### Manual Binary Upload
 
 Select **Add a new app**, choose your `.ipa` or `.apk` file, and click **Upload**.
 
@@ -113,27 +113,27 @@ The bundle or package identifier must match the profile, and the version or buil
 
 :::
 
-#### Upload via Build Module
+### Upload via Build Module
 
 Every successful build can be sent to the Enterprise App Store automatically from the **Distribution** tab of the build configuration. See [Distribution Configuration](/build/build-process-management/configurations#distribution-configuration).
 
-#### Upload via Testing Distribution Module
+### Upload via Testing Distribution Module
 
 After a version has been validated by testers, select **Send to Enterprise App Store** from the version's **...** menu in the Testing Distribution profile. See [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#send-your-application-to-enterprise-app-store).
 
-#### Upload via Publish Module
+### Upload via Publish Module
 
 Add the [Send to Enterprise App Store](/publish-integrations/common-publish-integrations/send-to-enterprise-app-store) step to your Publish flow.
 
-#### Upload via Appcircle CLI & API
+### Upload via Appcircle CLI & API
 
 Upload from your existing CI with the Appcircle CLI. See [Automating the Enterprise App Store with Appcircle CLI & API](#automating-the-enterprise-app-store-with-appcircle-cli--api).
 
-#### Version List and Version Details
+### Version List and Version Details
 
 Uploaded versions are listed in the profile with their channel and signing expiration status. For signing and build details of a version, see [Binary Information](/enterprise-app-store/binary-information).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile2_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-2_v2.png' />
 
 ## Configuring the App Profile
 
@@ -147,11 +147,11 @@ The **Config** tab shows the **Enterprise App Store profile ID**, which you need
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-41_v2.png" />
 
-<a id="auto-re-sign"></a>
-
 #### Auto Re-sign
 
-Auto Re-sign re-signs every new binary uploaded to the profile with the signing identity and versioning rules you define, so that, for example, a development-signed build can be distributed with your enterprise certificate. First configure the auto re-sign settings for iOS and/or Android, then enable Auto Re-sign in the profile settings. Otherwise, new uploads are not re-signed.
+Auto Re-sign re-signs every new binary uploaded to the profile with the signing identity and versioning rules you define, so that, for example, a development-signed build can be distributed with your enterprise certificate. Select **Auto re-sign configurations** from the **...** menu next to the profile name, configure iOS and/or Android, then enable **Auto re-sign** in **Settings** > **Config**. Otherwise, new uploads are not re-signed.
+
+The profile is created by the first upload, so the first binary is never auto re-signed. Only later uploads are. For example, the first `.aab` upload is not converted to `.apk`; re-sign it manually or upload it again after you enable Auto Re-sign.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an7_v2.png' />
 
@@ -206,12 +206,14 @@ Only one version can be in each channel at a time. Publishing a new version to a
 ### Publishing a Version
 
 1. Select **Publish** from the version's **...** menu.
-2. Select the **Beta** or **Live** channel.
-3. Enter a summary and release notes, then click **Publish**.
+2. Select the **Beta** or **Live** channel, and enter a summary and release notes.
+3. Click **Next**, review the details, and confirm.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-3_v2.png' />
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss2_v2.png" />
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss3_v2.png" />
 
 To promote a beta version to production, select **Go Live** from its **...** menu, or publish it again with the **Live** channel selected.
 
@@ -250,8 +252,6 @@ Users open the portal URL or a distribution link and sign in with the portal's a
 
 After signing in, users see the apps available to them with their channel. Users with Beta access see both Beta and Live versions, while other users see only Live versions. Selecting an app shows its details, release notes, size, and binary tags.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-store3.png" />
-
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-newmobile.png" />
 
 ### Installing on iOS and Android
@@ -260,6 +260,8 @@ After signing in, users see the apps available to them with their channel. Users
 - **Android**: Tap **Download**, open the `.apk`, and allow installing unknown apps for the browser when prompted.
 
 `.ipa` files can only be installed from an iOS device and `.apk` files from an Android device. On desktop, the portal shows a QR code to open the page on a mobile device.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-store3.png" />
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4225-mobile2.png" />
 
