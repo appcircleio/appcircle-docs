@@ -82,6 +82,10 @@ Send your apps to be distributed via Firebase App Distribution.
 
 https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
 
+## [Flutter Mirror](/workflows/common-workflow-steps/flutter-mirror)
+
+Points pub and the Flutter tool at your artifact proxy, for Flutter builds on runners without internet access.
+
 ## [Fortify On Demand](/workflows/common-workflow-steps/fod-mobile-assesment)
 
 This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment.
@@ -93,6 +97,14 @@ This component uploads file or folders to given FTP server.
 ## [Git Clone](/workflows/common-workflow-steps/git-clone)
 
 Clones the Git repository to the build agent with the given arguments.
+
+## [Git Mirror](/workflows/common-workflow-steps/git-mirror)
+
+Points git at mirrors on your git server, for Swift packages, git pods, submodules and other git dependencies on runners without internet access.
+
+## [Gradle Mirror](/workflows/common-workflow-steps/gradle-mirror)
+
+Points Gradle at a Maven repository on your artifact proxy, for Android builds on runners without internet access.
 
 ## [KOBIL Appshield Scanner for Android/iOS](/workflows/common-workflow-steps/kobil-appshield-scanner)
 
@@ -109,6 +121,10 @@ This component runs a full MobSF static analysis on the built APK, AAB, or IPA, 
 ## [MobSF Source Code Scan](/workflows/common-workflow-steps/mobsf-source-code-scan)
 
 This component runs MobSF static analysis on Android and iOS source code, reporting the file, line, severity, and CWE or OWASP MASVS references of each finding.
+
+## [npm Mirror](/workflows/common-workflow-steps/npm-mirror)
+
+Points npm, Yarn, pnpm and Node.js installs at your artifact proxy, for React Native builds on runners without internet access.
 
 ## [Repeato Mobile Test Automation](/workflows/common-workflow-steps/repeato-test-runner)
 
