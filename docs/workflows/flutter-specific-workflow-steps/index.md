@@ -34,6 +34,10 @@ This component builds a web app with the [Flutter SDK](https://flutter.dev/docs/
 
 This workflow step installs the specified Flutter SDK to run the Flutter CLI for subsequent, Analyze, Build and Test operations.
 
+## [Flutter Mirror](/workflows/flutter-specific-workflow-steps/flutter-mirror)
+
+Points pub and the Flutter tool at your artifact proxy, for Flutter builds on runners without internet access.
+
 ## [Flutter Test](/workflows/flutter-specific-workflow-steps/flutter-test)
 
 This component allows you to run [Flutter unit tests](https://flutter.dev/docs/cookbook/testing/unit/introduction#run-tests-in-a-terminal).

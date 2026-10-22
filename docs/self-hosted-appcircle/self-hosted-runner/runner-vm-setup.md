@@ -1261,10 +1261,10 @@ Without the last four lines, Fastlane, Tuist and Snyk still work, but each build
 
 | App type | Steps |
 | -------- | ----- |
-| Android | [Gradle Mirror](/workflows/common-workflow-steps/gradle-mirror) |
+| Android | [Gradle Mirror](/workflows/android-specific-workflow-steps/gradle-mirror) |
 | iOS | [CocoaPods Mirror](/workflows/ios-specific-workflow-steps/cocoapods-mirror), [Git Mirror](/workflows/common-workflow-steps/git-mirror) |
-| Flutter | [Flutter Mirror](/workflows/common-workflow-steps/flutter-mirror), plus Gradle Mirror for Android and CocoaPods Mirror for iOS |
-| React Native | [npm Mirror](/workflows/common-workflow-steps/npm-mirror), plus Gradle Mirror for Android and CocoaPods Mirror for iOS |
+| Flutter | [Flutter Mirror](/workflows/flutter-specific-workflow-steps/flutter-mirror), plus Gradle Mirror for Android and CocoaPods Mirror for iOS |
+| React Native | [npm Mirror](/workflows/react-native-specific-workflow-steps/npm-mirror), plus Gradle Mirror for Android and CocoaPods Mirror for iOS |
 
 Add Git Mirror to any workflow whose dependencies come from git. The steps change the project settings that point at public addresses (the Gradle wrapper, the `Podfile` source, Yarn 1 lockfiles) in the build's copy of the repository.
 

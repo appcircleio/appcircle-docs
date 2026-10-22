@@ -18,7 +18,7 @@ The step changes nothing in your repository. If all its URLs are empty, it does 
 
 - Place the step after **Git Clone** and before **Install Node** and [**npm/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands).
 - For the rest of a React Native build, add:
-  - Android: [**Gradle Mirror**](/workflows/common-workflow-steps/gradle-mirror);
+  - Android: [**Gradle Mirror**](/workflows/android-specific-workflow-steps/gradle-mirror);
   - iOS: [**CocoaPods Mirror**](/workflows/ios-specific-workflow-steps/cocoapods-mirror) and [**Git Mirror**](/workflows/common-workflow-steps/git-mirror);
   - Android, when a dependency comes from git: **Git Mirror**.
 - Your artifact proxy has these repositories, with anonymous read:

@@ -17,7 +17,7 @@ The step only sets `PUB_HOSTED_URL` and `FLUTTER_STORAGE_BASE_URL` for the later
 
 - Place the step after **Git Clone**, with the other mirror steps, and before [**Flutter Install**](/workflows/flutter-specific-workflow-steps/flutter-install).
 - For the rest of a Flutter build, add:
-  - Android: [**Gradle Mirror**](/workflows/common-workflow-steps/gradle-mirror);
+  - Android: [**Gradle Mirror**](/workflows/android-specific-workflow-steps/gradle-mirror);
   - iOS with CocoaPods: [**CocoaPods Mirror**](/workflows/ios-specific-workflow-steps/cocoapods-mirror);
   - `git:` packages in `pubspec.yaml`: [**Git Mirror**](/workflows/common-workflow-steps/git-mirror).
 - Your artifact proxy has these repositories, with anonymous read:

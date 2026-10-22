@@ -77,7 +77,7 @@ To find the URLs, look for `.binaryTarget(` with a `url:` in the `Package.swift`
 ## Limits
 
 - Only git is redirected. Other file downloads, such as GitHub release files, need your artifact proxy. For Swift package binary targets, see [Swift Package Binary Targets](#swift-package-binary-targets).
-- npm downloads `github:` dependencies as files from `codeload.github.com`, not with git. See [**npm Mirror**](/workflows/common-workflow-steps/npm-mirror#limits).
+- npm downloads `github:` dependencies as files from `codeload.github.com`, not with git. See [**npm Mirror**](/workflows/react-native-specific-workflow-steps/npm-mirror#limits).
 
 ---
 
