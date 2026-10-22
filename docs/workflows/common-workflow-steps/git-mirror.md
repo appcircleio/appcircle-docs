@@ -52,9 +52,31 @@ Add the URL to an [environment variable group](/environment-variables) once and 
 | Flutter | `git:` entries in `pubspec.yaml` and `pubspec.lock` |
 | React Native | git URLs in `package.json` and the lockfile |
 
+## Swift Package Binary Targets
+
+Some Swift packages download a prebuilt framework as a zip file (`.binaryTarget(url:checksum:)` in their `Package.swift`). This is a file download, not git, so the Git Mirror step does not cover it. Point it at a raw (generic) proxy of `https://github.com` on your artifact proxy with a SwiftPM mirror file in your project:
+
+`<App>.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/configuration/mirrors.json`
+
+```json
+{
+  "object": [
+    {
+      "original": "https://github.com/rive-app/rive-ios/releases/download/6.28.0/RiveRuntime.xcframework.zip",
+      "mirror": "https://nexus.example.com/repository/github/rive-app/rive-ios/releases/download/6.28.0/RiveRuntime.xcframework.zip"
+    }
+  ],
+  "version": 1
+}
+```
+
+If you open the project from an `.xcworkspace`, put the file under `<App>.xcworkspace/xcshareddata/swiftpm/configuration/` instead. Xcode reads only this project file, not `~/.swiftpm/configuration/mirrors.json`.
+
+To find the URLs, look for `.binaryTarget(` with a `url:` in the `Package.swift` of each package. A build without the mirror fails with `failed downloading '<url>'`, which names the file.
+
 ## Limits
 
-- Only git is redirected. Plain file downloads, such as Swift package binary targets or GitHub release files, need your artifact proxy.
+- Only git is redirected. Other file downloads, such as GitHub release files, need your artifact proxy. For Swift package binary targets, see [Swift Package Binary Targets](#swift-package-binary-targets).
 - npm downloads `github:` dependencies as files from `codeload.github.com`, not with git. See [**npm Mirror**](/workflows/common-workflow-steps/npm-mirror#limits).
 
 ---

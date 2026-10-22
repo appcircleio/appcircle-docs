@@ -47,6 +47,7 @@ source 'https://nexus.example.com/repository/cocoapods-proxy/'
 
 - The step reads plain `source '<url>'` lines. If your `Podfile` builds its sources in Ruby code, set the source in the project.
 - Some pods download files during `pod install` with their own scripts (`prepare_command`), outside CocoaPods. Serve those files from your artifact proxy and point the pod at them.
+- A project can use Swift packages next to CocoaPods (a `Package.resolved` in the `.xcworkspace`). Those packages need the [**Git Mirror**](/workflows/common-workflow-steps/git-mirror) step.
 
 ---
 
