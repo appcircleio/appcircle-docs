@@ -75,7 +75,7 @@ Set a **store prefix** to define your Enterprise Portal URL, then copy the URL t
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-94_v2.png" alt="Store Prefix Settings for Enterprise Portal" />
 
-#### Captcha and Session Management
+#### CAPTCHA and Session Management
 
 Protect the portal with a CAPTCHA after failed login attempts (Enterprise plans) and optionally limit each user to a single active session.
 
@@ -256,7 +256,7 @@ After signing in, users see the apps available to them with their channel. Users
 
 ### Installing on iOS and Android
 
-- **iOS**: Open the portal in Safari on the device and tap **Install**. For enterprise-signed apps, go to **Settings** > **General** > **VPN & Device Management** and trust the developer certificate before opening the app.
+- **iOS**: Open the portal in a browser on the device and tap **Install**. For enterprise-signed apps, go to **Settings** > **General** > **VPN & Device Management** and trust the developer certificate before opening the app.
 - **Android**: Tap **Download**, open the `.apk`, and allow installing unknown apps for the browser when prompted.
 
 `.ipa` files can only be installed from an iOS device and `.apk` files from an Android device. On desktop, the portal shows a QR code to open the page on a mobile device.
