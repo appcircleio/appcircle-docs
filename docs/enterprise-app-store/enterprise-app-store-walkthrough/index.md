@@ -103,9 +103,13 @@ Enterprise App Store profiles cannot be named or renamed manually. The app name 
 
 ### Manual Binary Upload
 
-Select **Add a new app**, choose your `.ipa` or `.apk` file, and click **Upload**.
+For your first app, select **Add a new app**. When at least one profile exists, use the **Upload binary** button at the top right instead.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-upload1_v2.png' />
+
+Choose your `.ipa` or `.apk` file and click **Upload**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-upload2_v2.png' />
 
 :::caution
 
@@ -216,6 +220,8 @@ Only one version can be in each channel at a time. Publishing a new version to a
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE5939-ss3_v2.png" />
 
 To promote a beta version to production, select **Go Live** from its **...** menu, or publish it again with the **Live** channel selected.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-4_v2.png' />
 
 :::caution Expired Binaries
 
