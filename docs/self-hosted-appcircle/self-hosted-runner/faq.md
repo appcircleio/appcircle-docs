@@ -47,7 +47,25 @@ curl -v https://api.appcircle.spacetech.com
 
 You should check if there is a self-signed certificate problem. You can refer to the [Custom Certificates](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates) page to trust the root CA certificate of your organization.
 
-If you already trusted the root CA cert, you should check the Appcircle server's certificate. If it is too long, like 5 years, it should be trusted using the graphical user interface. You should open the Keychain Access application from the GUI and add the Appcircle server's certificate. After that, you should click on the certificate and select "Always trust".
+If the Appcircle server's certificate is valid for more than 825 days, macOS does not accept it even when the root CA is trusted. Run `install_cert.sh` with the server's URL: it trusts such a certificate as well.
+
+### The runner VM does not start over SSH after the host was restarted.
+
+After a restart, the login keychain of the host user stays locked until someone logs in to the macOS desktop. Tart needs it to start a VM, so `tart run` fails. When the runner was started with `screen`, the error is not shown and the VM never starts.
+
+Check the keychain over SSH:
+
+```bash
+security show-keychain-info ~/Library/Keychains/login.keychain-db
+```
+
+If it prints `User interaction is not allowed`, the keychain is locked. Unlock it with the host user's password, then start the runners again:
+
+```bash
+security unlock-keychain ~/Library/Keychains/login.keychain-db
+```
+
+To have the runners start on their own after a restart, run them as a service. See [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service).
 
 ### We are facing "LoginName too long" error while running the `screen` command.
 
