@@ -175,7 +175,22 @@ You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/
 
 According to the selected Linux distribution and installation method, you need to configure firewall rules (or permissions) for the Appcircle server. All required domains that are used for installation are detailed in the [network access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access) section.
 
-- [ ] Review the [network access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#appcircle-server-install-and-update) section and be sure that the listed domains are reachable from the Appcircle server.
+- [ ] If the server has internet access, directly or through an HTTP proxy: review the [network access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#appcircle-server-install-and-update) section and be sure that the listed domains are reachable from the Appcircle server.
+- [ ] If the server has no internet access: complete the [artifact proxy](#prepare-the-artifact-proxy-no-internet-access-only) checklist below instead.
+
+### Prepare the Artifact Proxy (No Internet Access Only)
+
+Skip this section if the Appcircle server has internet access. Details are in [Choose the Download Source](./docker#choose-the-download-source).
+
+- [ ] The artifact proxy has the repositories for the Appcircle container images and the server package, and for Podman a PyPI proxy repository.
+- [ ] The artifact proxy can reach `europe-west1-docker.pkg.dev`. The Appcircle server can reach the artifact proxy.
+- [ ] `cred.json` is configured on the artifact proxy and is available on a computer with internet access that downloads the server package. It isn't needed on the Appcircle server.
+- [ ] A user with read access to these repositories exists for the Appcircle server, and a user with write access for uploading the server package.
+- [ ] Docker or Podman, `curl` and `unzip` can be installed on the server from your internal package repositories.
+- [ ] If the artifact proxy uses a certificate from your corporate certificate authority, you have the root certificate in PEM format.
+- [ ] The server can reach your internal NTP server.
+- [ ] Your DNS resolves the internal names and returns no answer for public names.
+- [ ] Your firewall rejects blocked connections instead of dropping them, so a blocked call fails immediately instead of waiting for a timeout.
 
 ## Runner Checklist
 
