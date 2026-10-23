@@ -9,13 +9,20 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-The Testing Distribution module lets you share iOS and Android builds with testers before release, from a single profile per app. New builds can reach your testing groups automatically, testers download them from a branded portal with the sign-in method you choose, and you can see who installed which version.
+## Why Use the Testing Distribution Module: Features and Benefits
+
+The Testing Distribution module lets you share iOS and Android builds with testers before release, from a single profile per app. It helps you to:
+
+- **Distribute Automatically**: Send every new build, manual upload, or CLI upload to your testing groups without manual steps.
+- **Control Access**: Let testers download from a branded Testing Portal with the sign-in method you choose (none, static credentials, SSO, or LDAP).
+- **Re-sign Binaries**: Re-sign iOS and Android binaries for testers, and convert AAB files to installable APKs.
+- **Track Testers**: See which tester opened, signed in, and downloaded which version, and export a download report.
 
 https://appcircle.io/testing-distribution
 
 ## Getting Started
 
-This walkthrough follows the order in which a Testing Distribution setup is usually done: create a profile, configure its settings, create testing groups, add app versions, share them with testers, and track the results. The following sections describe each step.
+This walkthrough follows the order in which a Testing Distribution setup is usually done: create a profile, create testing groups, configure the profile settings, add app versions, share them with testers, and track the results. The following sections describe each step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/distribution-start_v2.png' />
 
@@ -60,6 +67,22 @@ A distribution profile holds the versions of the same application for both iOS a
 
 For details on listing, searching, renaming, pinning, and deleting profiles, see the [Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile) documentation.
 
+### Creating Testing Groups and Adding Testers
+
+Testing groups let you share versions with a predefined audience (for example "QA", "Beta", or a customer team) instead of typing email addresses each time.
+
+1. Go to **Testing Distribution** > **Testing groups**.
+2. Click **Add testing group**, type a group name, and press Enter.
+3. Type one or more tester email addresses (separated by commas or spaces) and click **Add**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing3_v2.png' />
+
+:::tip Bulk Import
+
+Testers can also be imported from a CSV file or synced from LDAP groups. See [Testing Groups](/testing-distribution/testing-groups).
+
+:::
+
 ### Configuring the Profile Settings
 
 To open the profile settings, select **Settings** from the **...** menu next to the profile name. The settings are grouped into the tabs described below, in the order they appear on the screen.
@@ -88,7 +111,7 @@ The **Auto Send** tab lists your testing groups. Enable the groups that should r
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-29_v2.png' />
 
-- **Show Only the Shared Version to Tester**: When enabled together with auto send, testers only see the most recently shared version on the Testing Portal.
+- **Show Only the Shared Version to the Tester**: When enabled together with auto send, testers only see the most recently shared version on the Testing Portal.
 
 :::info
 
@@ -129,29 +152,14 @@ Anyone who has the link can reach every version in the profile. The link uses th
 
 :::
 
-### Creating Testing Groups and Adding Testers
-
-Testing groups let you share versions with a predefined audience (for example "QA", "Beta", or a customer team) instead of typing email addresses each time.
-
-1. Go to **Testing Distribution** > **Testing Groups**.
-2. Click the **+** button, type a group name, and press Enter.
-3. Type a tester's email address in the input at the top of the page and press Enter. Repeat for each tester.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5885-testing3_v2.png' />
-
-:::tip Bulk Import
-
-Testers can also be imported from a CSV file or synced from LDAP groups. See [Testing Groups](/testing-distribution/testing-groups).
-
-:::
-
 ## Managing App Versions
 
 ### Adding an App Version to the Profile
 
 #### Upload via Build Module
 
-Every successful build can be sent to a distribution profile automatically. Go to **Build** > select the build profile > **Configurations** > select a configuration > **Distribution** tab, then select the distribution profile.
+Every successful build can be sent to a distribution profile automatically. Go to **Build** > select the build profile > **Configurations** > select a configuration > **Distribution** tab, enable the **Testing Distribution** toggle, select one or more distribution profiles, and click **Save**.
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1_v2.png' />
 
 For details, see [Distribution Configuration](/build/build-process-management/configurations#distribution-configuration).
@@ -164,7 +172,7 @@ Only signed builds are distributed. If **Bundle/Package Identifier Validation** 
 
 #### Manual Binary Upload
 
-Click **Upload Binary** at the top right of the profile and select an `.ipa`, `.apk`, or `.aab` file. The file is validated and its metadata is parsed; any errors are shown in the upload area.
+Click **Upload binary** at the top right of the profile and select an `.ipa`, `.apk`, or `.aab` file. The file is validated and its metadata is parsed; any errors are shown in the upload area.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
 
@@ -172,7 +180,7 @@ Click **Upload Binary** at the top right of the profile and select an `.ipa`, `.
 
 New versions appear at the top of the profile's version list, separated by iOS and Android, with their signing and expiration status.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update2_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
 
 For signing and build details of a version, see [Binary Information](/testing-distribution/binary-information).
 
@@ -182,13 +190,15 @@ For signing and build details of a version, see [Binary Information](/testing-di
 
 #### Share with Testers
 
-Select a version and click **Share with Testers**. Choose one or more testing groups, or type individual email addresses to send the version directly without a group.
+Select a version and click **Share with testers**. Choose one or more testing groups, or type individual email addresses to send the version directly without a group.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist9_v2.png' />
 
 #### Message to Testers
 
-Use the **Message to testers** field to add release notes or testing instructions. The message is included in the email testers receive. For builds coming from the Build module, the Git commit message is added automatically, and the message can be automated with the [Release Notes component](https://github.com/appcircleio/appcircle-release-notes-component/).
+Use the **Message to testers** field to add release notes or testing instructions. The message is included in the email testers receive, as in the example below. For builds coming from the Build module, the Git commit message is added automatically, and the message can be automated with the [Release Notes component](https://github.com/appcircleio/appcircle-release-notes-component/).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss1.png' />
 
 :::caution Expired Binaries
 
@@ -198,10 +208,8 @@ A version whose signing certificate has expired cannot be shared, and its downlo
 
 #### Notifications
 
-- **Tester emails**: Each tester receives an email with the version, release notes, and a link to the Testing Portal.
+- **Tester emails**: Each tester receives an email with the version, release notes, and a link to the Testing Portal. The distribution profile name is shown as the sender name.
 - **Team notifications**: Notify your team on Slack, Microsoft Teams, or email when a new version is added or shared. See [Notifications](/account/my-organization/notifications).
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss1.png' />
 
 ## Tester Experience: Testing Portal
 
@@ -238,12 +246,14 @@ For more information, see [Testing Portal](/testing-distribution/testing-portal)
 
 ### Tester Status
 
-After a version is shared, the profile shows each tester's status for that version:
+After a version is shared, the version detail view shows the status of each tester next to the tester's email address:
 
 - **Pending**: The tester has not opened the link yet.
 - **Clicked**: The tester opened the link but has not signed in (authenticated profiles only).
 - **Login, No Download**: The tester signed in but has not downloaded the binary.
 - **Downloaded**: The tester downloaded the binary.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-2_v2.png' />
 
 ### Download Report
 
@@ -295,11 +305,11 @@ With an Ad Hoc provisioning profile, the tester's device UDID must be registered
 
 ### Why are two Android packages distributed for one build?
 
-Your project signs the APK with Gradle and the Appcircle **Android Sign** step is also enabled, so two signed APKs are produced. Use only one signing path. See the [Distribution Profile FAQ](/testing-distribution/create-or-select-a-distribution-profile#faq).
+Your project signs the APK with Gradle and the Appcircle **Android Sign** step is also enabled, so two signed APKs are produced. Use only one signing path. See the [Distribution Profile FAQ](/testing-distribution/create-or-select-a-distribution-profile#why-two-android-packages-are-distributed).
 
 ### Why didn't a tester receive the email?
 
-Ask the tester to check the spam folder. If the tester previously unsubscribed, add their email address directly in **Share with Testers** to re-subscribe them. See [Testing Groups](/testing-distribution/testing-groups#managing-unsubscribed-users).
+Ask the tester to check the spam folder. If the tester previously unsubscribed, add their email address directly in **Share with testers** to re-subscribe them. See [Testing Groups](/testing-distribution/testing-groups#managing-unsubscribed-users).
 
 ## Further Support and Resources
 
