@@ -9,8 +9,6 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-## Why Use the Testing Distribution Module: Features and Benefits
-
 The Testing Distribution module lets you share iOS and Android builds with testers before release, from a single profile per app. It helps you to:
 
 - **Distribute Automatically**: Send every new build, manual upload, or CLI upload to your testing groups without manual steps.
@@ -176,25 +174,25 @@ Click **Upload binary** at the top right of the profile and select an `.ipa`, `.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
 
-#### Version List and Version Details
+### Version List and Version Details
 
 New versions appear at the top of the profile's version list, separated by iOS and Android, with their signing and expiration status.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-2_v2.png' />
 
 For signing and build details of a version, see [Binary Information](/testing-distribution/binary-information).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-td_v2.png' />
 
-### Sharing with Testers
+## Sharing with Testers
 
-#### Share with Testers
+### Sharing a Version
 
 Select a version and click **Share with testers**. Choose one or more testing groups, or type individual email addresses to send the version directly without a group.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-dist9_v2.png' />
 
-#### Message to Testers
+### Message to Testers
 
 Use the **Message to testers** field to add release notes or testing instructions. The message is included in the email testers receive, as in the example below. For builds coming from the Build module, the Git commit message is added automatically, and the message can be automated with the [Release Notes component](https://github.com/appcircleio/appcircle-release-notes-component/).
 
@@ -206,7 +204,7 @@ A version whose signing certificate has expired cannot be shared, and its downlo
 
 :::
 
-#### Notifications
+### Notifications
 
 - **Tester emails**: Each tester receives an email with the version, release notes, and a link to the Testing Portal. The distribution profile name is shown as the sender name.
 - **Team notifications**: Notify your team on Slack, Microsoft Teams, or email when a new version is added or shared. See [Notifications](/account/my-organization/notifications).
@@ -252,8 +250,6 @@ After a version is shared, the version detail view shows the status of each test
 - **Clicked**: The tester opened the link but has not signed in (authenticated profiles only).
 - **Login, No Download**: The tester signed in but has not downloaded the binary.
 - **Downloaded**: The tester downloaded the binary.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-2_v2.png' />
 
 ### Download Report
 
