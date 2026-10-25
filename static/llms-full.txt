@@ -24296,15 +24296,6 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `auth.auth-keycloak.extraInitContainers`                      | Additional init containers for the Keycloak deployment.                                              | []                            |
 | `auth.auth-keycloak.extraVolumeMounts`                        | Extra volume mounts for the Keycloak deployment.                                                     | []                            |
 | `auth.auth-keycloak.extraVolumes`                             | Extra volumes for the Keycloak deployment.                                                           | []                            |
-| `auth.auth-keycloak.identityProviders.bitbucket.clientId`     | Client ID for Bitbucket integration.                                                                 | -                             |
-| `auth.auth-keycloak.identityProviders.bitbucket.clientSecret` | Client secret for Bitbucket integration.                                                             | -                             |
-| `auth.auth-keycloak.identityProviders.bitbucket.enabled`      | Enables Bitbucket as an identity provider.                                                           | false                         |
-| `auth.auth-keycloak.identityProviders.github.clientId`        | Client ID for GitHub integration.                                                                    | -                             |
-| `auth.auth-keycloak.identityProviders.github.clientSecret`    | Client secret for GitHub integration.                                                                | -                             |
-| `auth.auth-keycloak.identityProviders.github.enabled`         | Enables GitHub as an identity provider.                                                              | false                         |
-| `auth.auth-keycloak.identityProviders.google.clientId`        | Client ID for Google integration.                                                                    | -                             |
-| `auth.auth-keycloak.identityProviders.google.clientSecret`    | Client secret for Google integration.                                                                | -                             |
-| `auth.auth-keycloak.identityProviders.google.enabled`         | Enables Google as an identity provider.                                                              | false                         |
 | `auth.auth-keycloak.image.pullPolicy`                         | Image pull policy for Keycloak.                                                                      | -                             |
 | `auth.auth-keycloak.image.repository`                         | Repository for the Keycloak image.                                                                   | -                             |
 | `auth.auth-keycloak.image.tag`                                | Tag of the Keycloak image.                                                                           | -                             |
