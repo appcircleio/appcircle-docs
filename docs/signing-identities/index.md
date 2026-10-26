@@ -67,3 +67,9 @@ The Signing Reports section contains the list of builds selected for signing in 
 You can view Signing Identity module actions such as creating, deleting, and adding Apple Certificates or Android Keystores to Organizations or Sub Organizations in the Activity Log section.
 
 <ContentRef url="/signing-identities/signing-identities-activity-log">Activity Log</ContentRef>
+
+## [Signing Identities Walkthrough](/signing-identities/signing-identities-walkthrough)
+
+Follow the complete journey of the Signing Identities module, from the prerequisites and the iOS and Android setup to using, renewing, and auditing your signing identities.
+
+<ContentRef url="/signing-identities/signing-identities-walkthrough">Signing Identities Walkthrough</ContentRef>
