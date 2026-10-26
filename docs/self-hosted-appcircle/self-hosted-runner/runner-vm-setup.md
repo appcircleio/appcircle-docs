@@ -1174,17 +1174,13 @@ You can use the helper script named `install_cert.sh` that comes with your runn
 
 - You will find a script named `install_cert.sh` in the `scripts` folder inside the `appcircle-runner` directory.
 
-- Run the script like the example below:
+- Run the script with the host name of each resource the runner connects to:
 
 ```bash
-./scripts/install_cert.sh
+./scripts/install_cert.sh --url api.appcircle.spacetech.com --url git.spacetech.com
 ```
 
-- The script will ask you to enter a URL. Please give the URL of the resource that you need to connect to from the runner.
-
-- Hit "enter" and check the results.
-
-- Your organization's root CA certificate is now trusted on the OS, Java, Ruby, and Node.js.
+- Your organization's root CA certificate is now trusted on macOS, Xcode, Git, Ruby, Java, and Node.js.
 
 :::info
 For more detailed usage, you can check the [Self-signed Certificates](./configure-runner/custom-certificates#adding-certificates) page.
