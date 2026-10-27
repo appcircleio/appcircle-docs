@@ -41194,7 +41194,7 @@ To download and extract the Appcircle runner VM and Xcode images in the backgrou
   <TabItem value="260303" label="260303" default>
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "260303" &
 ```
@@ -41203,7 +41203,7 @@ nohup ./download-runner.sh "260303" &
   <TabItem value="251224" label="251224">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "251224" &
 ```
@@ -41212,7 +41212,7 @@ nohup ./download-runner.sh "251224" &
   <TabItem value="251113" label="251113">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "251113" &
 ```
@@ -41221,7 +41221,7 @@ nohup ./download-runner.sh "251113" &
   <TabItem value="251015" label="251015">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "251015" &
 ```
@@ -41230,7 +41230,7 @@ nohup ./download-runner.sh "251015" &
   <TabItem value="250603" label="250603">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "250603" &
 ```
@@ -41239,7 +41239,7 @@ nohup ./download-runner.sh "250603" &
   <TabItem value="250512" label="250512">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "250512" &
 ```
@@ -41248,7 +41248,7 @@ nohup ./download-runner.sh "250512" &
   <TabItem value="241227" label="241227">
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "241227" &
 ```
