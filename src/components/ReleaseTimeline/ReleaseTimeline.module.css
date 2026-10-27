@@ -1,0 +1,142 @@
+/* The rail is the left border of each entry; entries sit flush so it stays continuous. */
+.entry {
+  --dot-size: 18px;
+  --title-size: 2rem;
+  /* Infima's light --ifm-background-color is transparent, so the dots need a solid fill */
+  --dot-fill: #fff;
+  position: relative;
+  margin-left: 0.5rem;
+  padding: 0 0 2.5rem 2rem;
+  border-left: 2px solid color-mix(in srgb, var(--ifm-heading-color) 30%, transparent);
+}
+
+.entry::before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  left: calc(-1px - var(--dot-size) / 2);
+  top: calc(var(--title-size) * var(--ifm-heading-line-height) / 2 - var(--dot-size) / 2);
+  border-radius: 50%;
+}
+
+/* Infima only sizes and spaces direct children of .markdown, so repeat those rules here */
+.entry > h2 {
+  --ifm-h2-font-size: var(--title-size);
+  margin-top: 0;
+  margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading));
+}
+
+.entry > h3 {
+  --ifm-h3-font-size: 1.5rem;
+  margin-top: calc(var(--ifm-h3-vertical-rhythm-top) * var(--ifm-leading));
+  margin-bottom: calc(var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading));
+}
+
+.entry > p,
+.entry > ul,
+.entry > pre {
+  margin-bottom: var(--ifm-leading);
+}
+
+.entry > :last-child {
+  margin-bottom: 0;
+}
+
+.release::before {
+  background: var(--ifm-heading-color);
+  box-shadow: 0 0 0 4px var(--dot-fill);
+}
+
+.patch {
+  --dot-size: 12px;
+  --title-size: 1.35rem;
+  padding-bottom: 1.75rem;
+}
+
+/* The rail ends with the last timeline release; older releases follow in the classic layout */
+.entry:last-of-type {
+  padding-bottom: 0;
+}
+
+.patch::before {
+  background: var(--dot-fill);
+  border: 2px solid var(--ifm-heading-color);
+}
+
+.patch > h2 {
+  margin-bottom: 0.5rem;
+}
+
+.patch > p {
+  margin-bottom: 0.5rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
+
+.patchBadge {
+  display: inline-block;
+  margin-left: 0.25rem;
+  padding: 4px 7px 3px;
+  border-radius: 5px;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  font-family: var(--ifm-font-family-base);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.tag {
+  display: inline-block;
+  margin-right: 0.35rem;
+  padding: 3px 6px 2px;
+  border-radius: 4px;
+  font-family: var(--ifm-font-family-base);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+}
+
+.fix {
+  background: #fde8e6;
+  color: #a8321f;
+}
+
+.improvement {
+  background: #e3f3ea;
+  color: #1d6b43;
+}
+
+:global(html[data-theme="dark"]) .entry {
+  --dot-fill: var(--ifm-background-color);
+}
+
+:global(html[data-theme="dark"]) .patchBadge {
+  background: rgba(255, 129, 20, 0.18);
+  color: var(--ifm-color-primary-light);
+}
+
+:global(html[data-theme="dark"]) .fix {
+  background: #3b1915;
+  color: #ff9d8c;
+}
+
+:global(html[data-theme="dark"]) .improvement {
+  background: #12301f;
+  color: #7fd6a4;
+}
+
+@media (max-width: 996px) {
+  .entry {
+    margin-left: 0.25rem;
+    padding-left: 1.25rem;
+  }
+}
