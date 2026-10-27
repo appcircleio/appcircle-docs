@@ -35,7 +35,7 @@ This page is about the **Tart macOS VM runners**. It is not the same as [Service
 ## Requirements
 
 - A macOS host set up as described in [Self-hosted Runner as MacOS VM Image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup), with at least one base VM and one runner folder such as `$HOME/runner1`.
-- `run.sh` version 1.10.0 or newer in that runner folder, the version for image `261016`. Older versions do not unlock the keychain and do not wait for Tart and the network at boot, so the VM does not start after a reboot.
+- Image `261016` or newer with `run.sh` version 1.10.0 or newer in that runner folder. The `run.sh` versions of older images do not unlock the keychain and do not wait for Tart and the network at boot, so the VM does not start after a reboot. On an older image, upgrade the runner image first.
 - Administrator access on the host, since the service is installed in launchd's system domain.
 
 ## Install the service
