@@ -4,26 +4,13 @@ const path = require("path");
 // (`## 3.34.0 - ...`) so the page can render as a version timeline.
 // A heading that contains <PatchBadge/> becomes a patch entry.
 const RELEASE_NOTES_PATH = path.join("docs", "release-notes.md");
-const VERSION_PATTERN = /^(\d+)\.(\d+)\.(\d+)/;
+const VERSION_PATTERN = /^\d+\.\d+\.\d+/;
 
-// Releases older than this keep the classic layout
-const TIMELINE_START_VERSION = [3, 34, 0];
-
-const getVersion = (node) => {
-  if (node.type !== "heading" || node.depth !== 2) return null;
-  if (node.children[0]?.type !== "text") return null;
-  const match = node.children[0].value.match(VERSION_PATTERN);
-  return match ? match.slice(1).map(Number) : null;
-};
-
-const isOnTimeline = (version) => {
-  for (let i = 0; i < version.length; i++) {
-    if (version[i] !== TIMELINE_START_VERSION[i]) {
-      return version[i] > TIMELINE_START_VERSION[i];
-    }
-  }
-  return true;
-};
+const isVersionHeading = (node) =>
+  node.type === "heading" &&
+  node.depth === 2 &&
+  node.children[0]?.type === "text" &&
+  VERSION_PATTERN.test(node.children[0].value);
 
 const isPatchHeading = (node) =>
   node.children.some(
@@ -53,10 +40,9 @@ const remarkReleaseTimeline = () => {
         children.push(node);
         continue;
       }
-      const version = getVersion(node);
-      if (version) {
-        entry = isOnTimeline(version) ? createEntry(isPatchHeading(node)) : null;
-        if (entry) children.push(entry);
+      if (isVersionHeading(node)) {
+        entry = createEntry(isPatchHeading(node));
+        children.push(entry);
       }
       if (entry) {
         entry.children.push(node);
