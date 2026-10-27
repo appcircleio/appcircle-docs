@@ -55,7 +55,7 @@
   padding-bottom: 1.75rem;
 }
 
-/* The rail ends with the last timeline release; older releases follow in the classic layout */
+/* The rail ends with the oldest release at the bottom of the page */
 .entry:last-of-type {
   padding-bottom: 0;
 }
@@ -138,5 +138,20 @@
   .entry {
     margin-left: 0.25rem;
     padding-left: 1.25rem;
+  }
+}
+
+/* Matches Infima's smaller .markdown headings on phones */
+@media (max-width: 576px) {
+  .entry {
+    --title-size: 1.5rem;
+  }
+
+  .entry > h3 {
+    --ifm-h3-font-size: 1.25rem;
+  }
+
+  .patch {
+    --title-size: 1.2rem;
   }
 }
