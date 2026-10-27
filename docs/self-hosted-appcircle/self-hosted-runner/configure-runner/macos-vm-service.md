@@ -53,6 +53,12 @@ Install the service, passing the base VM the runner should clone:
 cd $HOME/runner1 && sudo ./runner-service.sh install vm01
 ```
 
+At every start, `run.sh` waits until the host can reach `www.apple.com` before it starts the VM, so that the VM gets a working network and a correct clock. If the host cannot reach it, for example an air-gapped host or one that reaches the internet only through a proxy, the VM starts about 3 minutes late. Pass a host it can reach instead, such as your Appcircle server's API domain, and pass it again whenever you run `install`:
+
+```bash
+cd $HOME/runner1 && sudo ./runner-service.sh install vm01 --net-check-host api.appcircle.example.com:443
+```
+
 The service label is derived from the runner folder name, so `$HOME/runner1` becomes `io.appcircle.runner1`. Several runners on one host get independent services; repeat the steps in `$HOME/runner2` with `vm02`.
 
 The runner starts immediately, restarts if it exits unexpectedly, and starts again on every host reboot.
