@@ -41,7 +41,7 @@ Learn how to use self-signed certificates with your runners. This section provid
 
 ## [Hardening the macOS Host](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-host-hardening)
 
-Apply a safe security baseline to the physical macOS machine that runs your build VMs. Learn what the `harden-host.sh` script changes, why Remote Login stays enabled, and how to run it.
+Apply a safe security baseline to the physical macOS machine that runs your build VMs. Learn what the `harden-macos-host.sh` script changes, why Remote Login stays enabled, and how to run it.
 
 ## [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service)
 
