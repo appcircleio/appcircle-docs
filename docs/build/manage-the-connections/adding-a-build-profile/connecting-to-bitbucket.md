@@ -126,7 +126,7 @@ If you are not sure what those are, contact your system administrator.
 
 :::info
 
-Appcircle requires admin-level access to automatically create the necessary webhooks. After the webhooks are successfully created, the associated access token can be safely downgraded to read access.
+Appcircle requires admin-level access to automatically create the necessary webhooks. After the webhooks are successfully created, the associated access token can be downgraded to read access. The existing webhooks keep working, but Appcircle can no longer verify or recreate them when the repository is refreshed. See [Automatically Created Webhooks](/build/build-process-management/build-manually-or-with-triggers#automatically-created-webhooks).
 
 :::
 

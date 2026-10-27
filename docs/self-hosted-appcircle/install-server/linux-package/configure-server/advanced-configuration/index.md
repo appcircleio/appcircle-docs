@@ -34,6 +34,10 @@ Customize the CLI to suit your workflow needs. This includes setting up environm
 
 Learn how to configure the network subnets of the container engine for the Appcircle server and Appcircle DMZ server.
 
+### [Dedicated Redis Port](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/redis-dedicated-port)
+
+Give Redis its own port on an HTTPS Appcircle server. This removes an internal proxy hop on port `443` so the server handles more traffic under high load, and requires updating the Redis endpoint of your Appcircle runners.
+
 ### [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz)
 
 Securely distribute and test enterprise applications by placing your app store and testing environment in a DMZ (Demilitarized Zone). This configuration isolates testing from production, enhances security by acting as a buffer against external threats, and streamlines deployment processes.

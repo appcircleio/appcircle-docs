@@ -33,7 +33,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS runners have Xcode versions 27.2.x (beta), 27.1.x (RC), 27.0.x, 26.6.x, 26.5.x, 26.4.x, 26.3.x, 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
+Our macOS runners have Xcode versions 27.2.x (RC), 27.1.x, 27.0.x, 26.6.x, 26.5.x, 26.4.x, 26.3.x, 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
 
 The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.3.2`) stack has the Xcode versions below:
 
@@ -48,22 +48,29 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.6.2`) stack has the Xcod
 
 | Version | Build |
 | ------- | ----- |
-| 27.2 beta 1 | `27B5019j` |
-| 27.1 RC 1 | `27A9275` |
+| 27.2 RC 1 | `27B48` |
+| 27.1 | `27A9275` |
 | 27.0 | `27A266a` |
 | 26.6 | `17F113` |
 
 :::info
 
-The macOS Tahoe (`26.6.2`) stack carries the stable Xcode 27.0 together with Xcode 26.6. Xcode 26.6 is available on the macOS Tahoe (`26.3.2`) stack as well, so you can move between the two stacks without changing the Xcode version you select.
+The macOS Tahoe (`26.6.2`) stack carries the stable Xcode 27.0 and 27.1 together with Xcode 26.6. Xcode 26.6 is available on the macOS Tahoe (`26.3.2`) stack as well, so you can move between the two stacks without changing the Xcode version you select.
 
 Xcode 27.0, 27.1 and 27.2 all require macOS 26.6 or later, so they are available on this stack only. We strongly recommend testing your workflows on them before relying on them for production builds.
 
 :::
 
-:::caution Xcode 27.1 and 27.2 are pre-release versions
+:::caution Xcode 27.2 is a pre-release version
 
-Xcode 27.1 is a release candidate and Xcode 27.2 is a beta. App Store Connect rejects binaries produced by a beta toolchain with `Unsupported SDK or Xcode version`. Keep **Xcode 27.0** selected for any workflow that publishes to the App Store or TestFlight until Xcode 27.1 is generally available, and use 27.1 / 27.2 for compatibility testing.
+Xcode 27.2 is a release candidate, not a generally available release. Keep **Xcode 27.0** or **Xcode 27.1** selected for App Store and TestFlight release workflows until Xcode 27.2 is generally available, and use 27.2 for compatibility testing with the 27.2 SDKs.
+
+Known issues in Xcode 27.2 that can affect builds:
+
+- The macOS, watchOS, tvOS and visionOS 27.2 SDKs incorrectly accept 27.1 as a deployment target. A build with that deployment target can succeed but behave unexpectedly, so do not use 27.1 as a deployment target with Xcode 27.2.
+- Cloning a simulator device running the 27.2 runtime can fail due to incorrect file permissions, which can affect test runs with parallel testing enabled. If this happens, Apple's workaround is to run `find ~/Library/Developer/CoreSimulator/Devices/<SOURCE_UDID>/data -name '*.sb-????????-??????' -delete` in a [Custom Script](/workflows/common-workflow-steps/custom-script) step before the test step.
+
+Xcode 27.1 is generally available and adds the iOS 27.1 SDK and the iPhone Duo Simulator; the other platform SDKs stay on 27.0. Projects that use iOS 27.1 APIs may fail to compile for Mac Catalyst, and the first Simulator launch on 27.1 can take several minutes.
 
 For known issues on these toolchains, see Apple's [Xcode 27.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes) and [Xcode 27.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) release notes.
 
