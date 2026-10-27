@@ -27,6 +27,7 @@ To find the package version the project needs:
 - Flutter projects use `flutter.ndkVersion` unless `android/app/build.gradle` sets `ndkVersion`.
 - React Native projects set `ndkVersion` in `android/build.gradle`.
 - Otherwise the default NDK of the project's Android Gradle Plugin version applies.
+- Platforms and build-tools: the module's `compileSdk` and `buildToolsVersion` name them. The packages are `platforms;android-<API>` and `build-tools;<version>`; from API 37 the platform package has a minor version, for example `platforms;android-37.0`.
 
 To see which packages the image already contains, run this inside a runner VM:
 
@@ -79,6 +80,8 @@ Install the package once into each base VM, `vm01` and `vm02`. Every runner VM i
      "$SDK/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$SDK" --install "ndk;27.0.12077973"
    ```
 
+   The same command installs platform and build-tools packages. Pass several packages in one call, for example `--install "platforms;android-37.0" "build-tools;37.0.0" "ndk;27.1.12297006"`.
+
    `SDK_TEST_BASE_URL` makes `sdkmanager` read the package lists and download the archives from your artifact proxy instead of `https://dl.google.com/android/repository/`. Keep the trailing `/`. The variable is not documented by Google: if your `sdkmanager` version ignores it, the next step shows it, and you can use [the manual installation](#manual-installation) instead.
 
 4. Check the installed version:
@@ -87,6 +90,8 @@ Install the package once into each base VM, `vm01` and `vm02`. Every runner VM i
    grep Pkg.Revision "$SDK/ndk/27.0.12077973/source.properties"
    # Pkg.Revision = 27.0.12077973
    ```
+
+   For a platform or build-tools package, read `source.properties` in its folder, for example `$SDK/platforms/android-37.0/source.properties` or `$SDK/build-tools/37.0.0/source.properties`.
 
 5. Enable the runner service again and shut down the VM:
 
@@ -108,7 +113,7 @@ Repeat this after every macOS VM image upgrade, because a new image starts witho
 
 ### Manual Installation
 
-Use this when `sdkmanager` can't use your artifact proxy. It does the same steps by hand: it finds the macOS archive of the package in the package list, downloads it from the proxy, verifies its checksum and extracts it where the Android Gradle Plugin looks for it. Run it in place of step 3 above.
+Use this when `sdkmanager` can't use your artifact proxy. It does the same steps by hand: it finds the macOS archive of the package in the package list, downloads it from the proxy, verifies its checksum and extracts it where the Android Gradle Plugin looks for it. Run it in place of step 3 above. The script installs an NDK version (`ndk;<version>`).
 
 ```bash
 SDK="$HOME/android-sdk-linux"
