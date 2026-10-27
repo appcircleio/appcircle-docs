@@ -35,7 +35,7 @@ This page is about the **Tart macOS VM runners**. It is not the same as [Service
 ## Requirements
 
 - A macOS host set up as described in [Self-hosted Runner as MacOS VM Image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup), with at least one base VM and one runner folder such as `$HOME/runner1`.
-- `run.sh` version 1.7.0 or newer in that runner folder. Older versions do not wait for Tart and the network to become usable at boot, so they exit instead of starting the VM.
+- Image `261016` or newer with `run.sh` version 1.10.0 or newer in that runner folder. The `run.sh` versions of older images do not unlock the keychain and do not wait for Tart and the network at boot, so the VM does not start after a reboot. On an older image, upgrade the runner image first.
 - Administrator access on the host, since the service is installed in launchd's system domain.
 
 ## Install the service
@@ -53,6 +53,12 @@ Install the service, passing the base VM the runner should clone:
 cd $HOME/runner1 && sudo ./runner-service.sh install vm01
 ```
 
+At every start, `run.sh` waits until the host can reach `www.apple.com` before it starts the VM, so that the VM gets a working network and a correct clock. If the host cannot reach it, for example an air-gapped host or one that reaches the internet only through a proxy, the VM starts about 3 minutes late. Pass a host it can reach instead, such as your Appcircle server's API domain, and pass it again whenever you run `install`:
+
+```bash
+cd $HOME/runner1 && sudo ./runner-service.sh install vm01 --net-check-host api.appcircle.example.com:443
+```
+
 The service label is derived from the runner folder name, so `$HOME/runner1` becomes `io.appcircle.runner1`. Several runners on one host get independent services; repeat the steps in `$HOME/runner2` with `vm02`.
 
 The runner starts immediately, restarts if it exits unexpectedly, and starts again on every host reboot.
@@ -61,11 +67,15 @@ The runner starts immediately, restarts if it exits unexpectedly, and starts aga
 
 launchd starts the service without anyone being logged in. On macOS 15 and newer that is not enough on its own.
 
-Tart cannot read the Virtualization.framework HostKey unless the runner account's login keychain exists and is unlocked. Without it the VM never starts and the runner log shows:
+Tart cannot read the Virtualization.framework HostKey unless the runner account's login keychain exists and is unlocked. Without it the VM never starts and `stdout.log` in the runner folder shows one of these errors, depending on the macOS version:
 
 ```txt
 Error Domain=VZErrorDomain Code=-9 "The virtual machine encountered a security error."
 ... Failed to get current HostKey / Failed to create new HostKey ...
+```
+
+```txt
+Error Domain=VZErrorDomain Code=1 "The virtual machine failed to start."
 ```
 
 A desktop login normally performs that unlock. There are two supported ways to get it done, and you only need one.
@@ -126,7 +136,7 @@ If you choose Option 2, keep **"Require password after sleep or screen saver beg
 
 :::info
 
-Neither option is needed on macOS 13, where the service starts Tart with no session at all. macOS 14 and 15 have not been verified. The behaviour described here was measured on macOS 26.6.2.
+Neither option is needed on macOS 13, where the service starts Tart with no session at all. macOS 14 has not been verified. The behaviour described here was measured on macOS 15.7.7 and 26.6.2.
 
 :::
 
@@ -198,17 +208,19 @@ cd $HOME/runner1 && ./runner-service.sh status
 
 If the service is not loaded, it may have been disabled by an earlier `stop --disable`. Start it again with `sudo ./runner-service.sh start`.
 
-If the service is running but the VM is not, read `service-stdout.log` and `stderr.log` in the runner folder.
+If the service is running but the VM is not, read `service-stdout.log`, `stdout.log` and `stderr.log` in the runner folder.
 
-### `VZErrorDomain Code=-9` in the logs
+### `VZErrorDomain` errors in the logs
 
-Tart cannot reach the HostKey. Check the keychain:
+Tart cannot reach the HostKey because the login keychain is locked. With Option 1, check whether `run.sh` unlocked it:
 
 ```bash
-security show-keychain-info ~/Library/Keychains/login.keychain-db
+grep -i keychain $HOME/runner1/service-stdout.log
 ```
 
-`no-timeout` is what Tart needs. Anything else, including `locked`, means the unlock did not happen. Confirm that `~/.appcircle/runner-keychain.pw` exists, holds the correct password and is mode 600, or that automatic login is enabled and `/etc/kcpassword` is present.
+`Keychain unlocked with no auto-lock` means the unlock worked. Any other message means it did not. Confirm that `~/.appcircle/runner-keychain.pw` exists, holds the correct password and is mode 600, or that automatic login is enabled and `/etc/kcpassword` is present.
+
+Do not rely on `security show-keychain-info` over SSH for this check. From an SSH session it can answer `User interaction is not allowed` even when the service has unlocked the keychain.
 
 If this appears weeks after a working install, the account password was most likely rotated. See the password rotation warning above.
 
