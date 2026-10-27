@@ -1498,7 +1498,7 @@ For "runner1" use below commands.
   <TabItem value="261016" label="261016" default>
 
 ```bash
-curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.8.0.sh" && \
+curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.10.0.sh" && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1537,7 +1537,7 @@ For "runner2" use below commands.
   <TabItem value="261016" label="261016" default>
 
 ```bash
-curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.8.0.sh" && \
+curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.10.0.sh" && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
