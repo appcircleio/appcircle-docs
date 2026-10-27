@@ -21,6 +21,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 Patch for [3.34.0](#3-34-0)
 
 - <FixTag/> General stability and robustness improvements across backend services. <CloudBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> Self-hosted macOS runners can now be [configured](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service) to start automatically when the host Mac restarts. <SelfHostedBadge/>
 
 ## 3.34.1 - 2026-10-13 <PatchBadge/>
 
@@ -36,7 +37,7 @@ Patch for [3.34.0](#3-34-0)
 - Signing certificates and their passwords can now be [renewed automatically](/signing-identities/apple-certificates#auto-renew-certificate) before expiry in the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Build Failure Analysis](/appcircle-ai/ai-features-on-appcircle/build-failure-analysis) (Beta) has been introduced for builds, analyzing a failed build to identify the root cause of a failure and suggest how to fix it. <CloudBadge/>
 - Appcircle now comes with a redesigned user interface, offering a cleaner, more modern and consistent experience across all modules, along with performance improvements for faster page loads and smoother navigation. <CloudBadge/> 
-- [MobSF Binary Scan](/publish-integrations/common-publish-integrations/mobsf-binary-scan) component has been added to the Publish module, running a full MobSF static analysis on the APK, AAB or IPA about to be submitted to the store, with the option to stop the publish flow on a security finding or a low security score. <PublishIntegrationsBadge/> <CloudBadge/>
+- [MobSF Binary Scan](/publish-integrations/common-publish-integrations/mobsf-binary-scan) component has been added to the Publish module, running a full MobSF static analysis on the APK, AAB or IPA about to be submitted to the store, with the option to stop the publish flow on a security finding or a low security score. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
