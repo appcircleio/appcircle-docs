@@ -31,7 +31,7 @@ This walkthrough follows the order in which you set up your first build: prepare
 
 Appcircle reads your source code from a Git repository. Prepare one of the following before you create a build profile:
 
-- **OAuth or GitHub App access**: Authorize Appcircle for GitHub, GitLab, or Bitbucket.
+- **GitHub App or OAuth access**: Authorize the Appcircle GitHub App for GitHub, or authorize Appcircle with OAuth for GitLab, Bitbucket, or Azure DevOps (Microsoft Entra ID).
 - **Personal Access Token (PAT)**: A token with repository read access for GitHub, GitLab, Bitbucket, or Azure DevOps, in the cloud or on a self-hosted server.
 - **SSH key**: A private key whose public key is added to the repository, for any Git provider that supports SSH.
 - **Public URL**: A public repository, with no credentials.
@@ -47,7 +47,7 @@ Binaries must be signed before they can be installed on a device or sent to a st
 
 :::info
 
-Without signing, an iOS build produces an `.xcarchive` file instead of an `.ipa`, and unsigned binaries are not distributed. Android debug builds are signed with a default keystore.
+Without signing, an iOS build produces an `.xcarchive` file instead of an `.ipa`, and unsigned binaries are not distributed. See [Download Artifacts](/build/build-process-management/binary-actions#download-artifacts). Android debug builds are signed with a default keystore.
 
 :::
 
@@ -59,7 +59,7 @@ To send builds to other modules automatically, create the target profiles first.
 
 ### Supported Platforms
 
-The Build module supports native iOS (Objective-C / Swift), native Android (Java / Kotlin), React Native, and Flutter projects. For the requirements of each platform, see [Platform Build Guides](/build/platform-build-guides).
+The Build module supports native iOS (Objective-C / Swift), native Android (Java / Kotlin), React Native, Flutter, .NET MAUI, Xamarin, and Ionic (with custom scripts) projects. For the requirements of each platform, see [Platform Build Guides](/build/platform-build-guides).
 
 ## Build Profile Setup Process
 
@@ -151,7 +151,7 @@ On this tab, you can also:
 
 - Select a self-hosted runner pool in the **Organization pool** field. See [Self-hosted Runners](/self-hosted-appcircle/self-hosted-runner).
 - Set the **Build Priority** (Low, Medium, or High) to decide which queued build starts first (Enterprise plans).
-- Enable **Auto cancel** so that a new build cancels a running build with the same configuration, workflow, trigger, and branch. See [Auto Cancel Redundant Pipeline](/build/build-process-management/build-manually-or-with-triggers#auto-cancel-redundant-pipeline).
+- Enable **Auto cancel** so that a new build cancels a running build with the same configuration, workflow, trigger type, and branch. See [Auto Cancel Redundant Pipeline](/build/build-process-management/build-manually-or-with-triggers#auto-cancel-redundant-pipeline).
 
 #### Signing
 
@@ -167,7 +167,7 @@ Select the signing identities for the build.
 Enable the modules that receive every new signed build automatically:
 
 - **Testing Distribution**: Select one or more distribution profiles. See the [Testing Distribution Walkthrough](/testing-distribution/testing-distribution-walkthrough).
-- **Publish**: Select one or more publish profiles. See [Publish to Stores](/publish-to-stores-module/creating-publish-profiles).
+- **Publish**: Select one or more publish profiles. The publish profiles must exist before you select them. See [Publish to Stores](/publish-to-stores-module/creating-publish-profiles).
 - **Enterprise App Store**: The first build creates an Enterprise App Store profile automatically. See the [Enterprise App Store Walkthrough](/enterprise-app-store/enterprise-app-store-walkthrough).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1_v2.png' alt="Distribution configuration" />
@@ -274,7 +274,7 @@ Use `*` in branch or tag names, for example `feature-*`. If more than one trigge
 
 Event-based triggers need a webhook in your Git provider:
 
-- **OAuth, GitHub App, and PAT connections**: Appcircle creates the webhook automatically.
+- **GitHub App, OAuth, and PAT connections**: Appcircle tries to create the webhook automatically. This needs webhook permissions for the connected user or token, for example repository admin access on GitHub or the Maintainer role on GitLab. If the user or token does not have these permissions (for example, a read-only PAT), add a manual webhook from the **Webhooks** dialog.
 - **SSH and public URL connections**: Select **Webhooks** from the **...** menu next to the profile name, copy the webhook URL, and add it to your repository settings.
 
 To see the webhook events that Appcircle received and their payloads, click **External webhooks** on the **Connections** page. See [External Webhooks](/build/manage-the-connections/reconnect-change-provider#external-webhooks).
@@ -335,7 +335,7 @@ appcircle login personal-access-key --secret "$AC_PERSONAL_ACCESS_KEY"
 
 # Find the build profile and its workflows
 appcircle build profile list
-appcircle build profile workflows --profile "My App iOS"
+appcircle build profile workflow list --profile "My App iOS"
 
 # Start a build, wait for it, and download the logs and artifacts
 appcircle build start \
@@ -348,13 +348,13 @@ appcircle build start \
   --path ./appcircle-output
 ```
 
-To send environment variables that apply to a single build, start the build with the Appcircle API. See [Starting a Manual Build via API](/build/build-process-management/manual-builds#starting-a-manual-build-via-api). For direct REST access, see the [Appcircle API](/appcircle-api-and-cli/api-authentication).
+The download options cannot be used with `--no-wait`, because the CLI must wait for the build to finish. To send environment variables that apply to a single build, start the build with the Appcircle API. See [Starting a Manual Build via API](/build/build-process-management/manual-builds#starting-a-manual-build-via-api). For direct REST access, see the [Appcircle API](/appcircle-api-and-cli/api-authentication).
 
 ## FAQ
 
 ### Why does my trigger not start a build?
 
-Make sure that the trigger's branch, target branch, or tag pattern matches the event, and that the webhook exists in your Git provider. Compare the delivery history in your Git provider with the **External webhooks** page in Appcircle. For response codes and other causes, see the [Triggers FAQ](/build/build-process-management/build-manually-or-with-triggers#faq).
+Make sure that the trigger's branch, target branch, or tag pattern matches the event, and that the webhook exists in your Git provider. If Appcircle could not create the webhook because the connected user or token has no webhook permissions, add a manual webhook. Compare the delivery history in your Git provider with the **External webhooks** page in Appcircle. For response codes and other causes, see the [Triggers FAQ](/build/build-process-management/build-manually-or-with-triggers#faq).
 
 ### Why is my iOS build output an `.xcarchive` instead of an `.ipa`?
 
