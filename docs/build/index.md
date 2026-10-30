@@ -60,3 +60,9 @@ The Build History Report provides a comprehensive list of build sessions initiat
 Build Activity Log allows you to monitor Build module related actions such as creating, deleting, and adding Build profiles or updating configurations performed on Build profiles in your Organization or Sub-Organizations.
 
 <ContentRef url="/build/build-activity-log">Build Activity Log</ContentRef>
+
+## [Build Walkthrough](/build/build-walkthrough)
+
+A step-by-step guide covering the full Build setup, from connecting a repository and configuring a build profile to running manual, triggered, and scheduled builds and tracking their results.
+
+<ContentRef url="/build/build-walkthrough">Build Walkthrough</ContentRef>
