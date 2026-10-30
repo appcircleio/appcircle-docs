@@ -119,6 +119,48 @@ After making any changes (API Key, permissions, App ID):
 
 This ensures that all recent configuration updates are properly applied.
 
+### Upload fails with Net::ReadTimeout
+
+**Error**
+
+The step log shows `Uploading app`, and the step then fails with an error similar to the following:
+
+```text
+Net::ReadTimeout with #<TCPSocket:(closed)> (Net::ReadTimeout)
+```
+
+**Cause**
+
+The step sends the binary to Huawei AppGallery and waits for an answer. By default, it waits 60 seconds. Behind a slow proxy, or a proxy that inspects TLS traffic, Huawei AppGallery can answer many minutes after it receives the binary. The step stops waiting and fails, although the upload can succeed with a longer wait.
+
+**Solution**
+
+Increase the wait time with the `AC_HUAWEI_HTTP_TIMEOUT_SECONDS` variable:
+
+1. On the **Publish variables** page, add `AC_HUAWEI_HTTP_TIMEOUT_SECONDS` to a variable group. Use a whole number of seconds from `1` to `86400`, for example `1800`.
+2. In the **Settings** of the publish profile, select this group under **Publish variables**.
+3. Run the **Send to Huawei AppGallery** step again. The step log shows the value that the step uses:
+
+```text
+Huawei AppGallery HTTP read/write timeout set to 1800 s (AC_HUAWEI_HTTP_TIMEOUT_SECONDS).
+```
+
+If you do not set the variable, the step uses the default of 60 seconds. If the value is not a whole number from `1` to `86400`, the step logs a warning and uses the default.
+
+For more information on variable groups, see [Publish Variables](/publish-to-stores-module/publish-settings#publish-variables).
+
+:::caution
+
+When an upload times out, the step sends the binary one more time. A failed upload therefore takes about twice the value that you set. Make sure that the [Build Time Limit](/account/my-organization/billing) of your plan, which also applies to publish, is longer than twice the value. For example, with `1800`, the limit must be more than 60 minutes.
+
+:::
+
+:::info Self-hosted runners behind a proxy
+
+The Huawei AppGallery requests of this step read the proxy address from the `http_proxy` environment variable, also for HTTPS addresses. If your runner connects through a proxy, set `http_proxy` on the runner, not only `https_proxy`.
+
+:::
+
 ---
 
 If the problem persists after completing all steps, please contact support with your pipeline details and error logs.
