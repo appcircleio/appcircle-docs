@@ -21,7 +21,7 @@ https://appcircle.io/build
 
 ## Getting Started
 
-This walkthrough follows the order in which a Build setup is usually done: connect a repository and create a build profile, configure the build, set up the workflow, run the first build, automate it with triggers, and track the results. The following sections describe each step.
+This walkthrough follows the order in which you set up your first build: prepare the prerequisites, create a build profile and connect a repository, create environment variable groups, configure the build, set up the workflow, and start the build. After the first build, you automate builds with triggers, work with the build results, and track them.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build4_v2.png' alt="Build Profile" />
 
@@ -31,7 +31,7 @@ This walkthrough follows the order in which a Build setup is usually done: conne
 
 Appcircle reads your source code from a Git repository. Prepare one of the following before you create a build profile:
 
-- **OAuth or GitHub App access**: Authorize Appcircle for GitHub, GitLab, or Bitbucket. Webhooks for triggers are then created automatically.
+- **OAuth or GitHub App access**: Authorize Appcircle for GitHub, GitLab, or Bitbucket.
 - **Personal Access Token (PAT)**: A token with repository read access for GitHub, GitLab, Bitbucket, or Azure DevOps, in the cloud or on a self-hosted server.
 - **SSH key**: A private key whose public key is added to the repository, for any Git provider that supports SSH.
 - **Public URL**: A public repository, with no credentials.
@@ -40,7 +40,7 @@ If your repository is in an internal network, Appcircle must be able to reach it
 
 ### Signing Identities
 
-Binaries must be signed before they can be installed on a device or sent to a store. Add the signing identities that your builds need to the [Signing Identities](/signing-identities) module before your first release build:
+Binaries must be signed before they can be installed on a device or sent to a store. Before your first release build, add the signing identities to the [Signing Identities](/signing-identities) module:
 
 - **iOS**: A certificate (`.p12`) and a provisioning profile (`.mobileprovision`) for each bundle identifier.
 - **Android**: A keystore (`.keystore`) with its passwords and alias.
@@ -53,6 +53,10 @@ Without signing, an iOS build produces an `.xcarchive` file instead of an `.ipa`
 
 For an end-to-end guide, see the [Signing Identities Walkthrough](/signing-identities/signing-identities-walkthrough).
 
+### Distribution Targets (Optional)
+
+To send builds to other modules automatically, create the target profiles first. A Testing Distribution profile or a Publish profile must exist before you can select it in the build configuration. An Enterprise App Store profile does not need to exist, because the first build creates it.
+
 ### Supported Platforms
 
 The Build module supports native iOS (Objective-C / Swift), native Android (Java / Kotlin), React Native, and Flutter projects. For the requirements of each platform, see [Platform Build Guides](/build/platform-build-guides).
@@ -63,11 +67,11 @@ The Build module supports native iOS (Objective-C / Swift), native Android (Java
 
 A build profile holds the repository connection, configurations, workflows, and triggers of one app for one platform.
 
-1. Go to **Build** and click **New profile** at the top right. If you have no build profiles yet, click the link in the middle of the page.
+Go to **Build** and click **New profile** at the top right. If you have no build profiles yet, click the link in the middle of the page.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build1_v2.png' alt="Build Profile Creation" />
 
-2. Enter a unique name, select the target OS (**iOS** or **Android**) and the target platform, and click **Save**.
+Enter a unique name, select the target OS (**iOS** or **Android**) and the target platform, and click **Save**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build2_v2.png' alt="Build Profile Naming" />
 
@@ -102,6 +106,30 @@ All OAuth and PAT connections of the organization are listed in **Build** > **Co
 :::
 
 ## Configuring the Build
+
+### Creating Environment Variable Groups
+
+Environment variables keep keys, secrets, and files out of your repository. Variable groups are shared by all build profiles in the organization, so create them before you configure the build.
+
+1. Go to **Build** > **Environment Variables** and click **Add variable group**.
+2. Enter a group name, for example `Prod` or `Dev`, and press Enter.
+3. Add variables to the group as **Text**, **Secret**, or **File**. Secret values are not shown in build logs.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-5_v2.png' alt="Adding a variable to an environment variable group" />
+
+Appcircle also provides read-only `AC_` variables, such as `AC_REPOSITORY_DIR` and `AC_OUTPUT_DIR`, to every build. To create a variable during the build and use it in later steps, write it to `$AC_ENV_FILE_PATH`:
+
+```bash
+echo "BUILD_NUMBER=$(date +%s)" >> $AC_ENV_FILE_PATH
+```
+
+:::tip Share Across Teams
+
+Root organization users can share variable groups with sub-organizations. Shared groups are marked **Shared** in the root organization and **Inherited** in sub-organizations, where they cannot be edited.
+
+:::
+
+For details, see [Environment Variables](/build/build-environment-variables).
 
 ### Creating a Configuration
 
@@ -139,14 +167,20 @@ Select the signing identities for the build.
 Enable the modules that receive every new signed build automatically:
 
 - **Testing Distribution**: Select one or more distribution profiles. See the [Testing Distribution Walkthrough](/testing-distribution/testing-distribution-walkthrough).
-- **Publish**: Select one or more publish profiles. The publish profiles must exist before you select them.
+- **Publish**: Select one or more publish profiles. See [Publish to Stores](/publish-to-stores-module/creating-publish-profiles).
 - **Enterprise App Store**: The first build creates an Enterprise App Store profile automatically. See the [Enterprise App Store Walkthrough](/enterprise-app-store/enterprise-app-store-walkthrough).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/multiple-dist-build-1_v2.png' alt="Distribution configuration" />
 
 :::caution
 
-Only signed binaries are distributed, and `.aab` files are not sent to Testing Distribution automatically. If **Bundle/Package Identifier Validation** is enabled on the Testing Distribution profile, a build whose identifier does not match is rejected.
+Only signed binaries are distributed. If **Bundle/Package Identifier Validation** is enabled on the Testing Distribution profile, a build whose identifier does not match is rejected.
+
+:::
+
+:::tip AAB Binaries
+
+`.aab` files are also sent to Testing Distribution, but they cannot be installed on a device directly. To give testers an installable `.apk`, enable **Convert AAB to APK** in the Testing Distribution profile's [Auto Re-sign](/testing-distribution/resigning-binaries#auto-re-sign) settings.
 
 :::
 
@@ -158,33 +192,11 @@ Set rules to increase the build number and the version number automatically. See
 
 #### Environment
 
-Select the environment variable groups that the build uses. See [Using Environment Variables](#using-environment-variables).
+Select the environment variable groups that the build uses, and click **Save**. The variables in the selected groups are available to all workflow steps. See [Creating Environment Variable Groups](#creating-environment-variable-groups).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/build-configuration-env-variables_v2.png' alt="Environment tab of the build configuration" />
 
 For all configuration options, see [Configurations](/build/build-process-management/configurations).
-
-### Using Environment Variables
-
-Environment variables keep keys, secrets, and files out of your repository.
-
-1. Go to **Build** > **Environment Variables** and click **Add variable group**.
-2. Add variables to the group as **Text**, **Secret**, or **File**. Secret values are not shown in build logs.
-3. In the configuration, open the **Environment** tab and select the group.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8488-5_v2.png' alt="Adding a variable to an environment variable group" />
-
-Appcircle also provides read-only `AC_` variables, such as `AC_REPOSITORY_DIR` and `AC_OUTPUT_DIR`, to every build. To create a variable during the build and use it in later steps, write it to `$AC_ENV_FILE_PATH`:
-
-```bash
-echo "BUILD_NUMBER=$(date +%s)" >> $AC_ENV_FILE_PATH
-```
-
-:::tip Share Across Teams
-
-Root organization users can share variable groups with sub-organizations. Shared groups are marked **Shared** in the root organization and **Inherited** in sub-organizations, where they cannot be edited.
-
-:::
-
-For details, see [Environment Variables](/build/build-environment-variables).
 
 ## Setting Up Workflows
 
@@ -198,7 +210,7 @@ Click **Workflows** at the top right of the build profile and select a workflow 
 
 Click **Manage Workflow** to open the Workflow Marketplace on the right. Drag steps into your workflow, reorder them, or remove the ones you do not need. Steps run from top to bottom.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-workflow7_v2.png' alt="Workflow Marketplace" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-workflow6_v2.png' alt="Workflow steps" />
 
 Select a step to edit its inputs and its common options:
 
@@ -219,8 +231,7 @@ For details, see [Workflows](/build/build-process-management/build-workflows) an
 
 ### Starting a Manual Build
 
-1. Select a branch and a commit, and click **Start Build**.
-2. Select a configuration and a workflow, and click **Start**.
+Select a branch and a commit, and click **Start Build**. Then select a configuration and a workflow, and click **Start**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-start2_v2.png' alt="Start build" />
 
@@ -232,7 +243,7 @@ You can follow the progress and the logs of each step in real time.
 
 - **Success**: All workflow steps finished successfully.
 - **Failed**: One or more workflow steps failed.
-- **Warning**: A step set to **Continue with the next step even if this step fails** failed, and all other steps succeeded.
+- **Warning**: A step that is allowed to fail failed, and all other steps succeeded.
 - **Timeout**: The build exceeded the timeout limit.
 - **Canceled**: The build was canceled by a user or by Auto Cancel Redundant Pipeline.
 
@@ -288,9 +299,9 @@ After a build is complete, open the **...** menu of the build to:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-action_v2.png' alt="Binary actions" />
 
-:::tip Artifact Storage
+:::tip Artifact Retention
 
-To free storage, delete old builds from the **Builds** tab (Enterprise plans). Delete the same binary from Testing Distribution and Publish too, because each reference uses storage.
+Build artifacts use your organization's artifact storage. To delete old artifacts automatically, go to **Organization** > **Artifacts** > **Retention Period**. Enterprise organizations can set a retention period for successful and failed build artifacts, and keep or delete artifacts by file extension, for example `.ipa`. Starter organizations use the default rule, which deletes artifacts every month. See [Retention Period](/account/my-organization/artifacts/retention-period).
 
 :::
 
@@ -304,7 +315,7 @@ Notify your team on Slack, Microsoft Teams, or email when a build succeeds or fa
 
 ### Build History
 
-Go to **Build** > **Build History** to see all builds started in a selected time period, with their trigger type, status, and duration. Filter by organization and export the report as CSV. See [Build History](/build/build-history).
+Go to **Build** > **Build History** to see all builds started in a selected time period, with their trigger type, status, and duration. Use the filters at the top of the report to select the time period and the organization, and export the results as CSV. See [Build History](/build/build-history).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7112-4_v2.png' alt="Build History" />
 
@@ -343,27 +354,27 @@ To send environment variables that apply to a single build, start the build with
 
 ### Why does my trigger not start a build?
 
-Make sure that the trigger's branch, target branch, or tag pattern matches the event, and that the webhook exists in your Git provider. Check the webhook delivery history in your Git provider and the **External webhooks** page in Appcircle. See the [Triggers FAQ](/build/build-process-management/build-manually-or-with-triggers#faq).
-
-### Why does my tag trigger start a build on a different branch?
-
-A tag points to a commit, not to a branch. Appcircle uses the branch where it last recorded the tagged commit. Push an empty commit to the branch you want and tag that commit.
+Make sure that the trigger's branch, target branch, or tag pattern matches the event, and that the webhook exists in your Git provider. Compare the delivery history in your Git provider with the **External webhooks** page in Appcircle. For response codes and other causes, see the [Triggers FAQ](/build/build-process-management/build-manually-or-with-triggers#faq).
 
 ### Why is my iOS build output an `.xcarchive` instead of an `.ipa`?
 
 The build was not signed. Select a certificate and a provisioning profile in the configuration's **Signing** tab, and make sure the signing step is active in the workflow.
 
-### Why are two Android packages produced for one build?
+### Why does my build wait in the queue?
 
-Your Gradle file signs the APK and the Appcircle **Android Sign** step is also active. Use only one signing method.
+When the number of running builds reaches the concurrency limit of your plan, new builds wait in the queue and start when a slot is free. With an Enterprise license, set a higher **Build Priority** in the configuration so that critical builds start first. To remove outdated builds from the queue, enable **Auto cancel**.
 
-### Why did my build end with the Warning status?
+### Can I use the same configuration in an iOS and an Android build profile?
 
-A step with **Continue with the next step even if this step fails** enabled failed, and the other steps succeeded. Open the build logs to see which step failed.
+No. A configuration YAML file is specific to the project type. For example, a file downloaded from an iOS Swift profile cannot be uploaded to an Android React Native profile. Download and upload configurations only between profiles of the same type.
 
-### Why isn't my scheduled build running at the expected time?
+### Why don't I see my latest commits or a new branch?
 
-Check the cron expression, the selected time zone, and that the branch, configuration, and workflow still exist. In Build History, filter by the **Schedule** trigger type to see whether the build ran.
+Appcircle updates branches and commits through webhooks. If a webhook event did not arrive, click the refresh button next to the branch list title to fetch the latest branches and commits manually.
+
+### Can I build the same branch with different workflows?
+
+Yes. Add one trigger for each workflow with the same branch. For example, build `develop` with a development workflow on every push, and with a release workflow every night with a scheduled trigger. Each matching trigger starts its own build.
 
 ## Further Support and Resources
 
