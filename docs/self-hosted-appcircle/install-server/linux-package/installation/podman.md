@@ -13,6 +13,12 @@ import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/install-ser
 import SwapConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_swap-configuration.mdx';
 
 import HttpsOnlySupportedFeatures from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_https-only-supported-features.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ArtifactProxyDownloadSource from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-download-source.mdx';
+import ArtifactProxyDownload from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-download.mdx';
+import ArtifactProxyRegistry from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-registry.mdx';
+import ArtifactProxyFirstPull from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-first-pull.mdx';
 
 # Overview
 
@@ -119,6 +125,23 @@ You can run the Appcircle server in the background now.
 
 <FirewalldConfiguration/>
 
+### Choose the Download Source
+
+The installation downloads the Appcircle server package and the container images from Appcircle by default. If the server has no internet access, it can download them through an artifact proxy in your network, such as Sonatype Nexus or JFrog Artifactory.
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
+No action is needed. Continue with the installation.
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+<ArtifactProxyDownloadSource />
+
+  </TabItem>
+</Tabs>
+
 ## Installation
 
 ### 1. Download
@@ -127,6 +150,9 @@ You need to have the following tools installed on your system:
 
 - curl
 - unzip
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
 
 To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package.
 
@@ -154,6 +180,14 @@ You should use the downloaded `zip` archive while extracting so that the actual 
 
 :::
 
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+<ArtifactProxyDownload />
+
+  </TabItem>
+</Tabs>
+
 Change directory into extracted `appcircle-server` folder for following steps.
 
 ```bash
@@ -161,6 +195,9 @@ cd appcircle-server
 ```
 
 ### 2. Packages
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
 
 You need to have the following tool(s) installed on your system.
 
@@ -191,6 +228,52 @@ Podman is one of our major dependencies. So, its version is also important for A
 Older podman versions may be incompatible for our operations. Podman versions above `4.3.0` should be preferred to eliminate any compatibility issues.
 
 :::
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+The `-i` option of the script installs Podman Compose from the internet, so install the tools first from your internal repositories.
+
+:::caution
+
+You need to have root access on your system for this step. Being able to run `sudo` is sufficient for the following step. (sudoer)
+
+:::
+
+Install Podman and Python from your internal package repositories. `netavark` and `socat` are needed in the next sections.
+
+```bash
+sudo dnf install -y podman python3 python3-pip netavark socat
+```
+
+Point `pip` at the `pypi-proxy` repository on your artifact proxy. Replace `nexus.example.com` and the repository name with your own. The RHEL `pip` package already trusts the system trust store, where you added your corporate root certificate in [Choose the Download Source](#choose-the-download-source); the `cert` line keeps it that way if `pip` was upgraded from PyPI, which brings its own certificate bundle.
+
+```bash
+sudo tee /etc/pip.conf > /dev/null <<'EOF'
+[global]
+index-url = https://nexus.example.com/repository/pypi-proxy/simple
+cert = /etc/pki/tls/certs/ca-bundle.crt
+EOF
+```
+
+If the `pypi-proxy` repository needs a username and password, add them to the URL as `https://<username>:<password>@nexus.example.com/...`, or ask the administrator to allow anonymous read access.
+
+Install Podman Compose as root and check the versions. See [Podman Requirements](#podman-requirements) for the versions you need.
+
+```bash
+sudo pip3 install "podman-compose>=1.5.0"
+podman --version
+sudo /usr/local/bin/podman-compose --version
+```
+
+Then run the script with the `-i` argument. With Podman and Podman Compose already installed, it only records Podman as the container engine and configures Podman logging; it doesn't download anything.
+
+```bash
+sudo ./ac-self-hosted.sh -i --options container=podman
+```
+
+  </TabItem>
+</Tabs>
 
 #### Podman Network Stack
 
@@ -436,6 +519,21 @@ Now you can run services again. It should complete without any error.
 
 :::
 
+#### Configuring the Image Registry
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
+No action is needed. The server pulls the container images from the Appcircle registry with your `cred.json` file when you [run the server](#6-run-server).
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+<ArtifactProxyRegistry />
+
+  </TabItem>
+</Tabs>
+
 #### Configuring Secrets
 
 As seen in previous section, we left some secrets out of the `global.yaml` to set them in `user-secret` file. So we need to take additional steps to complete configuration. If you set them as plain text in `global.yaml` then you don't need to take `user-secret` steps.
@@ -652,6 +750,9 @@ projects/
     └── user-secret
 ```
 
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
 Run Appcircle server services.
 
 ```bash
@@ -697,6 +798,18 @@ which shows us successful artifact registry login.
 If you get any error for some reason at this step, you can remove `${XDG_RUNTIME_DIR}/containers/auth.json` file to reset and execute same command again to retake same steps.
 
 :::
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+Run Appcircle server services. The server doesn't need `cred.json`: it logged in to your artifact proxy with the `image.registry` credentials from `global.yaml` when you initialized the vault (`Login Succeeded` in that output).
+
+<ArtifactProxyFirstPull />
+
+If the login fails, check the `image.registry` values in `global.yaml`, run `export` again, then remove `${XDG_RUNTIME_DIR}/containers/auth.json` and run the command again.
+
+  </TabItem>
+</Tabs>
 
 :::info
 

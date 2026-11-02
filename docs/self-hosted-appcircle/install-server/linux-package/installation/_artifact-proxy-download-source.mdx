@@ -1,0 +1,64 @@
+Before you start, note what an installation without internet access covers:
+
+- New installations of Appcircle server `3.33.0` or later on Docker or Podman. Kubernetes and OpenShift installations and the [DMZ architecture](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) aren't covered.
+- Publishing to App Store, Google Play, Huawei AppGallery and Microsoft Intune, App Store Connect certificate management, Slack or Microsoft Teams notifications and cloud Git providers such as GitHub.com need the internet and don't work.
+- The server uses your internal services instead: Git provider, identity provider (LDAP or SSO), SMTP server, NTP and DNS. See [Air-Gapped Network](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access#air-gapped-network) for the full picture.
+
+Ask your artifact proxy administrator to create these repositories:
+
+| Repository name (example) | Sonatype Nexus type | JFrog Artifactory type | Remote URL | Used for |
+| ------------------------- | ------------------- | ---------------------- | ---------- | -------- |
+| `appcircle-docker` | `docker (proxy)` | Docker remote | `https://europe-west1-docker.pkg.dev` | Appcircle container images |
+| `appcircle-install` | `raw (hosted)` | Generic local | None, you upload the package | Appcircle server package |
+| `pypi-proxy` | `pypi (proxy)` | PyPI remote | `https://pypi.org/` | `podman-compose`, Podman only |
+
+The server installs its operating system packages, such as Docker or Podman, `curl` and `unzip`, from your internal package repositories: proxy repositories for your Linux distribution on the same artifact proxy, or an internal mirror.
+
+<details>
+<summary>Notes for the artifact proxy administrator</summary>
+
+- `appcircle-docker`: set the remote authentication to the username `_json_key` and, as the password, the full content of the `cred.json` file you received from Appcircle. `cred.json` stays on the artifact proxy; the Appcircle server doesn't need it.
+- The artifact proxy needs outbound access to `europe-west1-docker.pkg.dev` for the images; the image layers are downloaded from the same host. The Appcircle server only needs access to the artifact proxy.
+- Serve `appcircle-docker` over HTTPS, on its own port (for example `nexus.example.com:8083`) or with path-based routing, with a certificate from your corporate certificate authority. Plain HTTP also works, but the server then needs an [insecure registry](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry#insecure-registry) setting.
+- Create one user with read access to these repositories for the Appcircle server, and one with write access to `appcircle-install` for uploading new packages.
+- The first pull of a new version takes longer, because the artifact proxy fetches the images from Appcircle at the same time.
+- If nothing in your network may connect to the internet, create hosted repositories with the same names and paths instead of proxy repositories, and fill them from a staging repository outside the network, as described in the [air-gapped architecture](/self-hosted-appcircle#dockerpodman-architecture-in-an-air-gapped-network). The server configuration below stays the same.
+
+</details>
+
+Write the URL of the `appcircle-install` repository to your shell profile on the server. The download steps of the installation and of later updates read it. Replace `nexus.example.com` and the repository name with your own.
+
+```bash
+echo 'export AC_SERVER_PACKAGE_URL="https://nexus.example.com/repository/appcircle-install"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+If your artifact proxy requires a username and password to read its repositories, store the credentials in `~/.netrc` and let `curl` read that file. Replace `nexus.example.com` and `<username>` with your own; the password is asked for and isn't kept in the shell history.
+
+```bash
+printf "Artifact proxy password: " && read -rs AC_PROXY_PASSWORD && echo
+printf 'machine %s login %s password %s\n' "nexus.example.com" "<username>" "$AC_PROXY_PASSWORD" >> ~/.netrc
+unset AC_PROXY_PASSWORD
+chmod 600 ~/.netrc
+echo 'netrc-optional' >> ~/.curlrc
+```
+
+If the artifact proxy uses a certificate from your corporate certificate authority, add the root certificate to the system trust store of the server. The container engine and `curl` read it from there. Replace `corporate-root-ca.pem` with your root certificate in PEM format.
+
+On RHEL:
+
+```bash
+sudo cp corporate-root-ca.pem /etc/pki/ca-trust/source/anchors/corporate-root-ca.pem
+sudo update-ca-trust
+```
+
+On Ubuntu and Debian:
+
+```bash
+sudo cp corporate-root-ca.pem /usr/local/share/ca-certificates/corporate-root-ca.crt
+sudo update-ca-certificates
+```
+
+If Docker is already running, restart it with `sudo systemctl restart docker` so it reads the new certificate.
+
+Finally, make sure the server's clock is synchronized with your internal NTP server, for example with `timedatectl`. Signed tokens and certificates fail when the clock is wrong.

@@ -8,6 +8,12 @@ sidebar_position: 30
 import Screenshot from '@site/src/components/Screenshot';
 
 import HttpsOnlySupportedFeatures from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_https-only-supported-features.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ArtifactProxyDownloadSource from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-download-source.mdx';
+import ArtifactProxyDownload from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-download.mdx';
+import ArtifactProxyRegistry from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-registry.mdx';
+import ArtifactProxyFirstPull from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_artifact-proxy-first-pull.mdx';
 
 # Overview
 
@@ -82,6 +88,23 @@ The `swappiness` parameter configures how often your system swaps data out of RA
 
 :::
 
+### Choose the Download Source
+
+The installation downloads the Appcircle server package and the container images from Appcircle by default. If the server has no internet access, it can download them through an artifact proxy in your network, such as Sonatype Nexus or JFrog Artifactory.
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
+No action is needed. Continue with the installation.
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+<ArtifactProxyDownloadSource />
+
+  </TabItem>
+</Tabs>
+
 ## Installation
 
 ### 1. Download
@@ -90,6 +113,9 @@ You need to have the following tools installed on your system:
 
 - curl
 - unzip
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
 
 To download the licensed Appcircle Server package for your organization, you must copy the `cred.json` file to the directory where you want to install the package.
 
@@ -117,6 +143,14 @@ You should use the downloaded `zip` archive while extracting so that the actual 
 
 :::
 
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+<ArtifactProxyDownload />
+
+  </TabItem>
+</Tabs>
+
 Change directory into extracted `appcircle-server` folder for following steps.
 
 ```bash
@@ -124,6 +158,9 @@ cd appcircle-server
 ```
 
 ### 2. Packages
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
 
 You need to have the following tool(s) installed on your system.
 
@@ -199,6 +236,36 @@ docker compose version
 If `docker-compose-plugin` is missing in your system, follow its [docs](https://docs.docker.com/compose/install/linux/) to install docker compose V2 manually.
 
 :::
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+The `-i` option of the script installs Docker from the internet, so install Docker first from your internal package repositories:
+
+- Docker Engine `20.10.11` or later, with the Docker Compose V2 plugin (`docker-compose-plugin`).
+- Use the [official installation method](https://docs.docker.com/engine/install/) for your Linux distribution, with the Docker package repository served by your artifact proxy or an internal mirror. Docker installed with `snap`, or the `install-docker.sh` script, isn't supported here.
+
+Check the versions:
+
+```bash
+docker --version
+docker compose version
+```
+
+Then run the script with the `-i` argument. With Docker already installed, it only records Docker as the container engine and configures Docker logging; it doesn't download anything.
+
+:::caution
+
+You need to have root access on your system for this step. Being able to run `sudo` is sufficient for the following step. (sudoer)
+
+:::
+
+```bash
+sudo ./ac-self-hosted.sh -i --options container=docker
+```
+
+  </TabItem>
+</Tabs>
 
 #### Change the Docker Data Location
 
@@ -409,6 +476,21 @@ Now you can run services again. It should complete without any error.
 ```
 
 :::
+
+#### Configuring the Image Registry
+
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
+No action is needed. The server pulls the container images from the Appcircle registry with your `cred.json` file when you [run the server](#6-run-server).
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+<ArtifactProxyRegistry />
+
+  </TabItem>
+</Tabs>
 
 #### Configuring Secrets
 
@@ -626,6 +708,9 @@ projects/
     └── user-secret
 ```
 
+<Tabs groupId="download-source">
+  <TabItem value="appcircle" label="Appcircle (internet or HTTP proxy)" default>
+
 Run Appcircle server services.
 
 ```bash
@@ -671,6 +756,18 @@ which shows us successful artifact registry login.
 If you get any error for some reason at this step, you can remove `~/.docker/config` file to reset and execute same command again to retake same steps.
 
 :::
+
+  </TabItem>
+  <TabItem value="artifact-proxy" label="Artifact proxy (no internet access)">
+
+Run Appcircle server services. The server doesn't need `cred.json`: it logged in to your artifact proxy with the `image.registry` credentials from `global.yaml` when you initialized the vault (`Login Succeeded` in that output).
+
+<ArtifactProxyFirstPull />
+
+If the login fails, check the `image.registry` values in `global.yaml`, run `export` again, then remove the artifact proxy entry from `~/.docker/config.json` and run the command again.
+
+  </TabItem>
+</Tabs>
 
 :::info
 
