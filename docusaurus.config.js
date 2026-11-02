@@ -23,6 +23,22 @@ const config = {
   projectName: "appcircle-docusaurus", // Usually your repo name.
   trailingSlash: false,
 
+  // Context7 docs chat widget, loaded only with ?experiments=true while we evaluate it.
+  headTags: [
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: `if (new URLSearchParams(location.search).get("experiments") === "true") {
+  var s = document.createElement("script");
+  s.src = "https://context7.com/widget.js";
+  s.async = true;
+  s.dataset.library = "/websites/appcircle_io";
+  s.dataset.color = "#FF8F34";
+  document.head.appendChild(s);
+}`,
+    },
+  ],
+
   presets: [
     [
       "classic",
