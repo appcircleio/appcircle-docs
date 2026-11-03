@@ -411,14 +411,14 @@ Extract archive into VMs folder.
   <TabItem value="261016" label="261016" default>
 
 ```bash
-pigz -cvdp 4 macOS_261016.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_261016
+pigz -cvdp 4 macOS_261016.tar.gz | tar -S -xvf - --directory $HOME/.tart/vms/macOS_261016
 ```
 
   </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
-pigz -cvdp 4 macOS_260723.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_260723
+pigz -cvdp 4 macOS_260723.tar.gz | tar -S -xvf - --directory $HOME/.tart/vms/macOS_260723
 ```
 
   </TabItem>
@@ -426,14 +426,14 @@ pigz -cvdp 4 macOS_260723.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_2
   <TabItem value="260303" label="260303">
 
 ```bash
-pigz -cvdp 4 macOS_260303.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_260303
+pigz -cvdp 4 macOS_260303.tar.gz | tar -S -xvf - --directory $HOME/.tart/vms/macOS_260303
 ```
 
   </TabItem>
   <TabItem value="251015" label="251015">
 
 ```bash
-pigz -cvdp 4 macOS_251015.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_251015
+pigz -cvdp 4 macOS_251015.tar.gz | tar -S -xvf - --directory $HOME/.tart/vms/macOS_251015
 ```
 
   </TabItem>
@@ -602,14 +602,14 @@ Extract archive into the folder.
   <TabItem value="261016" label="261016" default>
 
 ```bash
-pigz -cvdp 4 xcodes_261016.tar.gz | tar xvf - --directory $HOME/images
+pigz -cvdp 4 xcodes_261016.tar.gz | tar -S -xvf - --directory $HOME/images
 ```
 
   </TabItem>
   <TabItem value="260723" label="260723">
 
 ```bash
-pigz -cvdp 4 xcodes_260723.tar.gz | tar xvf - --directory $HOME/images
+pigz -cvdp 4 xcodes_260723.tar.gz | tar -S -xvf - --directory $HOME/images
 ```
 
   </TabItem>
@@ -617,14 +617,14 @@ pigz -cvdp 4 xcodes_260723.tar.gz | tar xvf - --directory $HOME/images
   <TabItem value="260303" label="260303">
 
 ```bash
-pigz -cvdp 4 xcodes_260303.tar.gz | tar xvf - --directory $HOME/images
+pigz -cvdp 4 xcodes_260303.tar.gz | tar -S -xvf - --directory $HOME/images
 ```
 
   </TabItem>
   <TabItem value="251015" label="251015">
 
 ```bash
-pigz -cvdp 4 xcodes_251015.tar.gz | tar xvf - --directory $HOME/images
+pigz -cvdp 4 xcodes_251015.tar.gz | tar -S -xvf - --directory $HOME/images
 ```
 
   </TabItem>
