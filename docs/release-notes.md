@@ -33,8 +33,8 @@ Patch for [3.34.0](#3-34-0)
 
 Patch for [3.34.0](#3-34-0)
 
-<FixTag/> General stability and robustness improvements across backend services. <CloudBadge/> <SelfHostedBadge/>
-<ImprovementTag/> Self-hosted macOS runners can now be configured to start automatically when the host Mac restarts. <SelfHostedBadge/>
+- <FixTag/> General stability and robustness improvements across backend services. <CloudBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> Self-hosted macOS runners can now be configured to start automatically when the host Mac restarts. <SelfHostedBadge/>
 
 ## 3.34.1 - 2026-10-13 <PatchBadge/>
 
