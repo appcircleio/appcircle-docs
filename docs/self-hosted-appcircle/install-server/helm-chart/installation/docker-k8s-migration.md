@@ -80,7 +80,9 @@ By default, Appcircle uses the following subdomains:
 4. hook.appcircle.spacetech.com
 5. resource.appcircle.spacetech.com
 6. my.appcircle.spacetech.com
-7. redis.appcircle.spacetech.com
+7. kvs.appcircle.spacetech.com
+8. codepush.appcircle.spacetech.com
+9. mcp.appcircle.spacetech.com
 
 **Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the Ingress objects created in Kubernetes.
 
