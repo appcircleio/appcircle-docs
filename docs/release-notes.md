@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.34.3 - 2026-10-27 <PatchBadge/>
+## 3.34.3 - 2026-11-03 <PatchBadge/>
 
 Patch for [3.34.0](#3-34-0)
 
