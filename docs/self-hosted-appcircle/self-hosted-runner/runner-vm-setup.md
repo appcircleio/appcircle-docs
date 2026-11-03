@@ -259,10 +259,10 @@ If you still need an image that is no longer listed, contact us through our supp
 Download the macOS VM image.
 
 <Tabs groupId="macos-image">
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/macOS_261016.tar.gz"
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/macOS_261102.tar.gz"
 ```
 
   </TabItem>
@@ -301,10 +301,10 @@ If you encounter network interruption, just run the same command again. It shoul
 **Note:** You can check the integrity of downloaded file by comparing the MD5 checksum.
 
 <Tabs groupId="macos-image">
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-md5 macOS_261016.tar.gz
+md5 macOS_261102.tar.gz
 ```
 
   </TabItem>
@@ -336,10 +336,10 @@ After a couple of minutes later you should see the output below.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-MD5 (macOS_261016.tar.gz) = 2de7bebe305a6eceb558f602e60ecd5c
+MD5 (macOS_261102.tar.gz) = 2c4f8732a24b6ff4b1064c21d980703b
 ```
 
   </TabItem>
@@ -373,10 +373,10 @@ Create folder for VM.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-mkdir -p $HOME/.tart/vms/macOS_261016
+mkdir -p $HOME/.tart/vms/macOS_261102
 ```
 
   </TabItem>
@@ -408,10 +408,10 @@ Extract archive into VMs folder.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-pigz -cvdp 4 macOS_261016.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_261016
+pigz -cvdp 4 macOS_261102.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_261102
 ```
 
   </TabItem>
@@ -445,10 +445,10 @@ You can track progress of extraction by monitoring VM folder size.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-du -sh $HOME/.tart/vms/macOS_261016
+du -sh $HOME/.tart/vms/macOS_261102
 ```
 
   </TabItem>
@@ -482,10 +482,10 @@ Download the Xcode images. They are disk images for each Xcode version archived 
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/xcodes_261016.tar.gz"
+curl -L -O -C - "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/xcodes_261102.tar.gz"
 ```
 
   </TabItem>
@@ -521,10 +521,10 @@ If you encounter network interruption, just run the same command again. It shoul
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-md5 xcodes_261016.tar.gz
+md5 xcodes_261102.tar.gz
 ```
 
   </TabItem>
@@ -556,10 +556,10 @@ After a couple of minutes later you should see the output below.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-MD5 (xcodes_261016.tar.gz) = bf5a733e3e1900b3baeb054a400cc8a3
+MD5 (xcodes_261102.tar.gz) = 753c5f7fab1d97641ce37f39965bbfa0
 ```
 
   </TabItem>
@@ -599,10 +599,10 @@ Extract archive into the folder.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-pigz -cvdp 4 xcodes_261016.tar.gz | tar xvf - --directory $HOME/images
+pigz -cvdp 4 xcodes_261102.tar.gz | tar xvf - --directory $HOME/images
 ```
 
   </TabItem>
@@ -636,25 +636,28 @@ It may take a little to complete. Be patient and wait return of command.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 **Note:** This macOS VM image is the Tahoe (`26.6.2`) stack and comes with the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
+| 27.2 | `27B52` |
 | 27.1 | `27A9275` |
 | 27.0 | `27A266a` |
 | 26.6 | `17F113` |
 
 :::info
 
-This image replaces `260914` (same Tahoe `26.6.2` base, Xcode 27.1 added). If you are on `260914`, Xcode 26.6 and 27.0 are unchanged, so builds pinned to either keep working after the upgrade. Xcode 27.1 is required for iPhone Duo targets.
+This image replaces `261016` (same Tahoe `26.6.2` base, Xcode 27.2 added). If you are on `261016` or `260914`, Xcode 26.6, 27.0 and 27.1 are unchanged, so builds pinned to any of them keep working after the upgrade. Xcode 27.1 is required for iPhone Duo targets.
+
+The image comes with Appcircle runner `1.9.3` installed. Use `run.sh` `1.11.0` with it (the download commands below fetch it): it mounts the Xcode 27.2 disk, which older `run.sh` versions do not.
 
 :::
 
 :::caution
 
-Compared to the Tahoe `26.3.2` line (`260723` and earlier), this image ships **three** Xcode versions instead of four. If your builds are pinned to Xcode 26.3, 26.4 or 26.5, move them to 26.6, 27.0 or 27.1 before upgrading. Xcode 26.6 is available on both image lines, so it is the safe version to migrate on.
+Compared to the Tahoe `26.3.2` line (`260723` and earlier), this image ships a different Xcode set (26.6, 27.0, 27.1 and 27.2). If your builds are pinned to Xcode 26.3, 26.4 or 26.5, move them to 26.6, 27.0, 27.1 or 27.2 before upgrading. Xcode 26.6 is available on both image lines, so it is the safe version to migrate on.
 
 :::
 
@@ -714,12 +717,12 @@ To download and extract the Appcircle runner VM and Xcode images in the backgrou
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
 curl -fsSL "${AC_RUNNER_CDN_BASE_URL:-https://cdn.appcircle.io/self-hosted}/download-runner.sh" -o download-runner.sh && \
 chmod +x download-runner.sh && \
-nohup ./download-runner.sh "261016" &
+nohup ./download-runner.sh "261102" &
 ```
 
   </TabItem>
@@ -817,10 +820,10 @@ Create VM image for runner1.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-tart clone macOS_261016 vm01
+tart clone macOS_261102 vm01
 ```
 
   </TabItem>
@@ -954,13 +957,14 @@ Start runner1 VM image for configuration.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.26.6.dmg:ro \
   --disk=$HOME/images/xcode.27.0.dmg:ro \
-  --disk=$HOME/images/xcode.27.1.dmg:ro
+  --disk=$HOME/images/xcode.27.1.dmg:ro \
+  --disk=$HOME/images/xcode.27.2.dmg:ro
 ```
 
   </TabItem>
@@ -1397,13 +1401,14 @@ Start runner2 image for configuration.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.26.6.dmg:ro \
   --disk=$HOME/images/xcode.27.0.dmg:ro \
-  --disk=$HOME/images/xcode.27.1.dmg:ro
+  --disk=$HOME/images/xcode.27.1.dmg:ro \
+  --disk=$HOME/images/xcode.27.2.dmg:ro
 ```
 
   </TabItem>
@@ -1464,7 +1469,7 @@ At this stage, your VM list returned by `tart list` might be like below, accordi
 
 ```txt
 Source Name         Size
-local  macOS_261016 167
+local  macOS_261102 167
 local  vm01         130
 local  vm02         130
 ```
@@ -1495,10 +1500,10 @@ For "runner1" use below commands.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.10.0.sh" && \
+curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.11.0.sh" && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1534,10 +1539,10 @@ For "runner2" use below commands.
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
-curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.10.0.sh" && \
+curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.11.0.sh" && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -1607,7 +1612,7 @@ We can see running instances on macOS host with `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_261016                              167
+local  macOS_261102                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -1642,7 +1647,7 @@ First you need to have to find out online runner's VM name from `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_261016                              167
+local  macOS_261102                              167
 local  vm01                                      130
 local  vm01-4f496549-cfe8-462c-ba55-774f01c03b4f 130
 local  vm02                                      130
@@ -1675,7 +1680,7 @@ After shutdown, you won't see anymore instance from `vm01` on `tart list`.
 
 ```txt
 Source Name                                      Size
-local  macOS_261016                              167
+local  macOS_261102                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-9f1fc62a-f43c-40f3-98d0-523ed9a67042 130
@@ -1703,13 +1708,14 @@ Steps, that we need to take, are technically similar as in [Create Base Images](
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.26.6.dmg:ro \
   --disk=$HOME/images/xcode.27.0.dmg:ro \
-  --disk=$HOME/images/xcode.27.1.dmg:ro
+  --disk=$HOME/images/xcode.27.1.dmg:ro \
+  --disk=$HOME/images/xcode.27.2.dmg:ro
 ```
 
   </TabItem>
@@ -1764,13 +1770,14 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm01)
 
 <Tabs groupId="macos-image">
 
-  <TabItem value="261016" label="261016" default>
+  <TabItem value="261102" label="261102" default>
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.26.6.dmg:ro \
   --disk=$HOME/images/xcode.27.0.dmg:ro \
-  --disk=$HOME/images/xcode.27.1.dmg:ro
+  --disk=$HOME/images/xcode.27.1.dmg:ro \
+  --disk=$HOME/images/xcode.27.2.dmg:ro
 ```
 
   </TabItem>
@@ -1867,7 +1874,7 @@ For instance, we have an instance for "runner2" seen below.
 ```bash
 % tart list
 Source Name                                      Size
-local  macOS_261016                              167
+local  macOS_261102                              167
 local  vm01                                      130
 local  vm02                                      130
 local  vm02-3a003bce-a2ee-4ae7-9500-7754e181c314 130
