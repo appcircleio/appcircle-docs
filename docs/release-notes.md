@@ -20,16 +20,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 Patch for [3.34.0](#3-34-0)
 
-- <ImprovementTag/> CAPTCHA can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- <ImprovementTag/> The upload timeout of the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step can now be configured (default 60 seconds). Increase it if large binaries fail with `Net::ReadTimeout` behind slow or inspecting proxies. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
-- <ImprovementTag/> Recipients who unsubscribe from notification emails by mistake can now resubscribe from the unsubscribe confirmation page. <IntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
-- <ImprovementTag/> Re-sign history and logs now have their own permissions (List / Get Resign), which can be assigned through custom roles. <PublishBadge/> <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- <ImprovementTag/> General security and stability improvements across services. <CloudBadge/> <SelfHostedBadge/>
-- <FixTag/> An issue has been fixed where saving several scheduled triggers left orphan schedules when one of them was invalid. Invalid cron expressions and time zones now return a clear validation error. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- <FixTag/> An issue has been fixed where the version, added by and source profile filters of the app versions report matched unrelated values (for example, `1.0` also returned `1.100`). <ReportsBadge/> <CloudBadge/> <SelfHostedBadge/>
-- <FixTag/> An issue has been fixed where the verification code on the Testing Portal accepted fewer attempts than documented. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- <FixTag/> An issue has been fixed where profile and app icons on the Testing Portal failed to load when the container filesystem was not writable (OpenShift). <DistributionBadge/> <SelfHostedBadge/>
-- <FixTag/> An issue has been fixed where database migrations were skipped when MongoDB or Redis was briefly unavailable at service startup, for example during a Helm upgrade. <SelfHostedBadge/>
+- <ImprovementTag/> CAPTCHA can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/>
+- <ImprovementTag/> The upload timeout of the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step can now be configured (default 60 seconds). Increase it if large binaries fail with `Net::ReadTimeout` behind slow or inspecting proxies. <PublishIntegrationsBadge/> <CloudBadge/>
+- <ImprovementTag/> Recipients who unsubscribe from notification emails by mistake can now resubscribe from the unsubscribe confirmation page. <IntegrationsBadge/> <CloudBadge/>
+- <ImprovementTag/> Re-sign history and logs now have their own permissions (List / Get Resign), which can be assigned through custom roles. <PublishBadge/> <AccountBadge/> <CloudBadge/>
+- <ImprovementTag/> General stability improvements across services. <CloudBadge/>
+- <FixTag/> An issue has been fixed where saving several scheduled triggers left orphan schedules when one of them was invalid. Invalid cron expressions and time zones now return a clear validation error. <BuildBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where the version, added by and source profile filters of the app versions report matched unrelated values (for example, `1.0` also returned `1.100`). <ReportsBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where the verification code on the Testing Portal accepted fewer attempts than documented. <DistributionBadge/> <CloudBadge/>
 
 ## 3.34.3 - 2026-11-03 <PatchBadge/>
 
