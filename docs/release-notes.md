@@ -16,24 +16,64 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.34.5 - 2026-11-03 <PatchBadge/>
+
+Patch for [3.34.0](#3-34-0)
+
+- <ImprovementTag/> CAPTCHA can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/>
+- <ImprovementTag/> The upload timeout of the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step can now be configured (default 60 seconds). Increase it if large binaries fail with `Net::ReadTimeout` behind slow or inspecting proxies. <PublishIntegrationsBadge/> <CloudBadge/>
+- <ImprovementTag/> Recipients who unsubscribe from notification emails by mistake can now resubscribe from the unsubscribe confirmation page. <IntegrationsBadge/> <CloudBadge/>
+- <ImprovementTag/> Re-sign history and logs now have their own permissions (List / Get Resign), which can be assigned through custom roles. <PublishBadge/> <AccountBadge/> <CloudBadge/>
+- <ImprovementTag/> General stability improvements across services. <CloudBadge/>
+- <ImprovementTag/> The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 27.2 installed on runners (replacing Xcode 27.2 RC), with the 27.2 SDKs for all Apple platforms. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where saving several scheduled triggers left orphan schedules when one of them was invalid. Invalid cron expressions and time zones now return a clear validation error. <BuildBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where the version, added by and source profile filters of the app versions report matched unrelated values (for example, `1.0` also returned `1.100`). <ReportsBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where the verification code on the Testing Portal accepted fewer attempts than documented. <DistributionBadge/> <CloudBadge/>
+
+## 3.34.4 - 2026-10-28 <PatchBadge/>
+
+Patch for [3.34.0](#3-34-0)
+
+- <ImprovementTag/> General stability improvements for organization roles, permissions and sessions. <AccountBadge/> <CloudBadge/> 
+- <ImprovementTag/> General stability improvements for resource and artifact downloads. <CloudBadge/>
+- <ImprovementTag/> General stability improvements for CodePush. <CloudBadge/> 
+- <FixTag/> An issue has been fixed where over-the-air downloads on iOS stayed on "Waiting" instead of showing download progress. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- <FixTag/> Leading and trailing spaces are now trimmed from build profile and environment variable group names. <BuildBadge/> <EnvironmentVariablesBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where a Testing Distribution profile could be created or renamed with a name that was already in use. <DistributionBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where the sharing settings of an environment variable group were applied at creation instead of only through the share action. <EnvironmentVariablesBadge/> <CloudBadge/>
+
+## 3.34.3 - 2026-10-21 <PatchBadge/>
+
+Patch for [3.34.0](#3-34-0)
+
+- <ImprovementTag/> A new macOS VM image (`261102`, Tahoe `26.6.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 27.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) (`27B52`) installed along with Xcode 27.1 (`27A9275`), Xcode 27.0 (`27A266a`) and Xcode 26.6 (`17F113`), plus Appcircle runner `1.9.3` and up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Use `run.sh` 1.11.0 with this image. It replaces the 261016 image. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
+- <FixTag/> General stability and robustness improvements across backend services. <CloudBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> Self-hosted macOS runners can now be configured to start automatically when the host Mac restarts. <SelfHostedBadge/>
+
+## 3.34.1 - 2026-10-13 <PatchBadge/>
+
+Patch for [3.34.0](#3-34-0)
+
+- <FixTag/> General stability and validation improvements for Enterprise App Store In-App Update and app version endpoints. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+
 ## 3.34.0 - 2026-09-04 Custom Role Mapping for SSO/LDAP, Certificate Auto Renewal, Bug Fixes and more
 
 ### 🆕 New Features
 
-- Custom roles can now be assigned automatically through SSO/LDAP group mapping and granted to API keys, so permissions no longer have to be managed per user. <AccountBadge/> <CloudBadge/>
-- Signing certificates and their passwords can now be renewed automatically before expiry in the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/>
+- Custom roles can now be assigned automatically through SSO/LDAP group mapping and granted to API keys, so permissions no longer have to be managed per user. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Signing certificates and their passwords can now be [renewed automatically](/signing-identities/apple-certificates#auto-renew-certificate) before expiry in the Signing Identities module. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Build Failure Analysis](/appcircle-ai/ai-features-on-appcircle/build-failure-analysis) (Beta) has been introduced for builds, analyzing a failed build to identify the root cause of a failure and suggest how to fix it. <CloudBadge/>
 - Appcircle now comes with a redesigned user interface, offering a cleaner, more modern and consistent experience across all modules, along with performance improvements for faster page loads and smoother navigation. <CloudBadge/> 
-- [MobSF Binary Scan](/publish-integrations/common-publish-integrations/mobsf-binary-scan) component has been added to the Publish module, running a full MobSF static analysis on the APK, AAB or IPA about to be submitted to the store, with the option to stop the publish flow on a security finding or a low security score. <PublishIntegrationsBadge/> <CloudBadge/>
+- [MobSF Binary Scan](/publish-integrations/common-publish-integrations/mobsf-binary-scan) component has been added to the Publish module, running a full MobSF static analysis on the APK, AAB or IPA about to be submitted to the store, with the option to stop the publish flow on a security finding or a low security score. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- Testers who opted out of distribution emails are now shown with a dedicated `Unsubscribed` status instead of being marked as `Failed`. <DistributionBadge/> <CloudBadge/>
-- The branch list is now sorted by last commit date, with the most recently updated branch first. <BuildBadge/> <CloudBadge/>
-- Release notes for the "Distribute to Track" step are now resolved from publish variables, and language tags are parsed so localized notes are submitted to the correct store locale. <PublishBadge/> <CloudBadge/>
-- Provisioning profiles are now fetched from App Store Connect in larger pages, significantly reducing the time taken by device and provisioning profile updates. <SigningIdentitiesBadge/> <CloudBadge/>
-- A descriptive error message is now returned when domain verification fails. <AccountBadge/> <CloudBadge/>
-- Character validation for name field of Sub-Organization Creation has been improved. <AccountBadge/> <CloudBadge/>
+- Testers who opted out of distribution emails are now shown with a dedicated `Unsubscribed` status instead of being marked as `Failed`. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The branch list is now sorted by last commit date, with the most recently updated branch first. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Release notes for the "Distribute to Track" step are now resolved from publish variables, and language tags are parsed so localized notes are submitted to the correct store locale. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Provisioning profiles are now fetched from App Store Connect in larger pages, significantly reducing the time taken by device and provisioning profile updates. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A descriptive error message is now returned when domain verification fails. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Character validation for name field of Sub-Organization Creation has been improved. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 27.0 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 - A new macOS-based build stack (Tahoe `26.6.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 27.0](https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes) (`27A266a`) installed along with Xcode 26.6 (`17F113`), plus up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Follow [the setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has Xcode 27.1 beta and Xcode 27.2 beta installed on runners. Xcode 27.1 adds the iOS 27.1 SDK and the iPhone Duo Simulator; Xcode 27.2 adds the 27.2 SDKs for all Apple platforms. Beta releases are intended for compatibility testing only and cannot be used for App Store submission - continue using Xcode 27.0 for your release workflows. <InfrastructureBadge/> <CloudBadge/>
@@ -44,15 +84,17 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🐞 Fixes
 
-- An issue has been fixed where deleting a branch could fail when the build event payload exceeded the message size limit. <BuildBadge/> <CloudBadge/>
-- An issue has been fixed where the last commit endpoint returned an error when git connection metadata was missing. <BuildBadge/> <CloudBadge/>
-- An issue has been fixed where builds of deleted profiles were shown as "N/A" in the dashboard's Last Builds list. <BuildBadge/> <CloudBadge/>
-- An issue has been fixed where an error occurred while adding a device to provisioning profiles when no profile matched the given name. <SigningIdentitiesBadge/> <CloudBadge/>
-- An issue has been fixed where some distribution download records were missing from reports when a profile was downloaded from more than one organization. <ReportsBadge/> <CloudBadge/>
-- An issue has been fixed where exporting Testing Distribution download reports only included the current page. <ReportsBadge/> <DistributionBadge/> <CloudBadge/>
-- An issue has been fixed where metadata download could fail for apps with large binaries. <PublishBadge/> <CloudBadge/>
-- An issue has been fixed where deleting or reordering a single screenshot in Android metadata details did not work. <PublishBadge/> <CloudBadge/>
-- An issue has been fixed where release notes were not sent to Huawei AppGallery during publish. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where deleting a branch could fail when the build event payload exceeded the message size limit. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the last commit endpoint returned an error when git connection metadata was missing. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where builds of deleted profiles were shown as "N/A" in the dashboard's Last Builds list. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where an error occurred while adding a device to provisioning profiles when no profile matched the given name. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where some distribution download records were missing from reports when a profile was downloaded from more than one organization. <ReportsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where exporting Testing Distribution download reports only included the current page. <ReportsBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where metadata download could fail for apps with large binaries. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where deleting or reordering a single screenshot in Android metadata details did not work. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where App Review Information attachments could not be downloaded from the Publish module on self-hosted installations using MinIO storage. <PublishBadge/> <SelfHostedBadge/>
+- An issue has been fixed where release notes were not sent to Huawei AppGallery during publish. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the two-factor authentication code could not be resent on Testing Distribution and Enterprise App Store login after the previous code had expired. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.33.0 - 2026-08-07 Custom Roles, Scheduled Builds, Activity Log Improvements, Bug Fixes and more
 

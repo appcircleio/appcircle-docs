@@ -102,4 +102,4 @@ For the full request schemas, see the [Build API reference](https://api.appcircl
 - **Failed**: The build has failed due to one or more workflow steps failing.
 - **Warning**: The build has finished with a failed workflow step that does not affect the final outcome.
 - **Timeout**: The build exceeded the timeout limit and ended prematurely.
-- **Canceled**: The build was canceled by the user.
+- **Canceled**: The build was canceled by the user or by [Auto Cancel Redundant Pipeline](/build/build-process-management/build-manually-or-with-triggers#auto-cancel-redundant-pipeline).

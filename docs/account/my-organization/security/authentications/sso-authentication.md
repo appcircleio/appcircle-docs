@@ -6,6 +6,7 @@ sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import SamlCertificateUpdate from '@site/docs/account/my-organization/security/authentications/_saml-certificate-update.mdx';
 
 # Appcircle Login Single Sign-On (SSO) Providers Configuration
 
@@ -869,6 +870,10 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 If the test is successful, your integration is complete, and you can start using OneLogin (SAML) as your identity provider for Appcircle.
 
 </details>
+
+## SAML Signing Certificate Update
+
+<SamlCertificateUpdate />
 
 ## 5. Troubleshooting
 

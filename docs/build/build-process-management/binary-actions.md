@@ -45,7 +45,7 @@ When you build and distribute an application with multiple flavors, and `.apk` f
 
 iOS applications can be downloaded or distributed as IPA file format if you configure signing identities and sign the application during the build process.
 
-If you disable signing or don't use any signing identities, iOS output will be a `.xarchive` file.
+If you disable signing or don't use any signing identities, iOS output will be a `.xcarchive` file.
 
 :::
 

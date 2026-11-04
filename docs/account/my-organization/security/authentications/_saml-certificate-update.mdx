@@ -1,0 +1,58 @@
+When the signing certificate of your identity provider (IdP) expires or is renewed, update the certificate in Appcircle and make sure **Validate signature** is on. Appcircle does not update the certificate for you.
+
+:::caution
+Apply the steps below separately for each SAML SSO configuration you use: **Appcircle Login SSO**, **Enterprise Portal SSO** and **Testing Portal SSO**. Each configuration keeps its own certificate.
+:::
+
+### Step 1: Update the Certificate
+
+Use one of the two methods below.
+
+**Method A: Import the SAML metadata XML (recommended)**
+
+Download the current SAML metadata XML file from your identity provider. In the **Set up SAML SSO provider** panel, use **Import SAML configuration** to upload the file. The form fills in the new certificate. This is the recommended and most reliable method.
+
+<Screenshot
+  url="https://cdn.appcircle.io/docs/assets/BE-9824-saml-certificate-update-xml-import.png"
+  alt="Import SAML configuration in the Set up SAML SSO provider panel"
+/>
+
+**Method B: Update only the certificate**
+
+1. Turn on **Validate signature**. The **Validating X509 certificates** field shows only when this setting is on.
+2. Paste the certificate into the **Validating X509 certificates** field. Paste only the base64 content between the header and the footer lines.
+
+:::danger
+Do not paste the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines, and remove all line breaks. If you save the certificate with these lines, SSO login does not work.
+:::
+
+Correct:
+
+```text
+MIIC8DCCAdigAwIBAgIQ...kXq3vB1aZ0=
+```
+
+Incorrect:
+
+```text
+-----BEGIN CERTIFICATE-----
+MIIC8DCCAdigAwIBAgIQ...
+...kXq3vB1aZ0=
+-----END CERTIFICATE-----
+```
+
+If you need more than one certificate, separate them with a comma.
+
+### Step 2: Check the Validate Signature Setting
+
+Make sure that **Validate signature** is on and that the **Validating X509 certificates** field is not empty. Keep the setting on, then click **Save**.
+
+<Screenshot
+  url="https://cdn.appcircle.io/docs/assets/BE-9824-saml-certificate-update-validate-signature.png"
+  alt="Validate signature turned on with a certificate in the Validating X509 certificates field"
+/>
+
+### Step 3: Test the Login
+
+- **Appcircle Login SSO:** Do not log out of your current session. Open a private (incognito) browser window and log in with SSO. If the login fails, use your open session to correct the settings or to contact us.
+- **Enterprise Portal and Testing Portal:** Go to the portal URL and log in with SSO.
