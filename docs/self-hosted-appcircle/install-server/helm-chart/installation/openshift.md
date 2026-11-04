@@ -30,7 +30,7 @@ In this documentation, we will use `appcircle.spacetech.com` as an **example mai
 <details>
     <summary>Click to view more details about domain name prerequisite.</summary>
 
-By default, Appcircle uses nine subdomains. These subdomains are:
+By default, Appcircle uses the following subdomains:
 
 1. api.appcircle.spacetech.com
 2. auth.appcircle.spacetech.com

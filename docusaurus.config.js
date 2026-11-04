@@ -23,6 +23,40 @@ const config = {
   projectName: "appcircle-docusaurus", // Usually your repo name.
   trailingSlash: false,
 
+  // Context7 docs chat widget.
+  headTags: [
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: `var s = document.createElement("script");
+s.src = "https://context7.com/widget.js";
+s.async = true;
+s.dataset.library = "/websites/appcircle_io";
+s.dataset.color = "#FF8F34";
+s.dataset.welcomeMessage = [
+  "Hi 👋 I'm the Appcircle Docs AI, here to help you with anything about Appcircle.",
+  "",
+  "Answers are AI-generated from docs.appcircle.io",
+  "",
+  "Just let me know what you're working on, and I'll fetch the relevant documentation for you!",
+].join("\\n");
+// The widget renders the welcome message as escaped text in a closed shadow root,
+// so catch that root to keep the message's line breaks.
+var attachShadow = Element.prototype.attachShadow;
+Element.prototype.attachShadow = function (init) {
+  var root = attachShadow.call(this, init);
+  if (this.id === "context7-widget") {
+    Element.prototype.attachShadow = attachShadow;
+    var style = document.createElement("style");
+    style.textContent = ".c7-messages > .c7-msg:first-child p { white-space: pre-line; }";
+    root.appendChild(style);
+  }
+  return root;
+};
+document.head.appendChild(s);`,
+    },
+  ],
+
   presets: [
     [
       "classic",
