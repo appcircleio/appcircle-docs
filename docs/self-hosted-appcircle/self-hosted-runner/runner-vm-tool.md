@@ -29,11 +29,13 @@ See the images and their Xcode versions:
 ```
 
 ```text
-IMAGE    GUEST MACOS      HOST MACOS     RUN.SH   STATE      XCODE (BUILD)
-261102   Tahoe 26.6.2     Tahoe+         1.11.0   -          27.2 (27B52), 27.1 (27A9275), 27.0 (27A266a), 26.6 (17F113)
+Current host macOS: 26.6.2, 512 GB free
+
+IMAGE    GUEST MACOS      REQUIRED HOST    RUN.SH   STATE            XCODE (BUILD)
+261102   Tahoe 26.6.2     Tahoe 26+        1.11.0   available        27.2 (27B52), 27.1 (27A9275), 27.0 (27A266a), 26.6 (17F113)
 ```
 
-Pick the image with the Xcode versions you need. **HOST MACOS** is the oldest macOS the host can run.
+Pick the image with the Xcode versions you need. **Current host macOS** is the macOS of your host, and **REQUIRED HOST** is the oldest macOS the image runs on. If the host is too old, **STATE** shows `host too old`: update the host's macOS first.
 
 :::info Hosts without internet access
 Set `AC_RUNNER_IMAGE_BASE_URL` and `AC_RUNNER_CDN_BASE_URL` to your artifact proxy, as described in [Choose the Download Source](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#choose-the-download-source).
