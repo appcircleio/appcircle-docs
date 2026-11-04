@@ -1932,7 +1932,7 @@ For configuring NTP settings, see [Configure Base Runner's NTP Settings](#2-conf
 
 Runners started with `screen` do not survive a reboot. If you expect them to come back on their own, install them as a launchd service. See [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service).
 
-If the service is already installed and the runners still did not come back, the login keychain is the usual cause on macOS 15 and newer. See [the troubleshooting section](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service#vzerrordomain-code-9-in-the-logs) on that page.
+If the service is already installed and the runners still did not come back, the login keychain is the usual cause on macOS 15 and newer. See [the troubleshooting section](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service#vzerrordomain-errors-in-the-logs) on that page.
 
 As for the reboot itself, if there is no system crash, one reason for an unintentional reboot may be caused by automatic updates.
 
