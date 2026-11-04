@@ -5,6 +5,8 @@ tags: [sso, distribution, okta, auth0, entraid, azure, saml, openid]
 sidebar_position: 3
 ---
 
+import SamlCertificateUpdate from '@site/docs/account/my-organization/security/authentications/_saml-certificate-update.mdx';
+
 # Testing Portal Single Sign-On (SSO) Providers Configuration
 
 ## 1. Introduction
@@ -533,6 +535,10 @@ Now, upload the SAML metadata XML file to Appcircle to complete the configuratio
 5. Click **Save** to finalize the SSO setup.
 
 </details>
+
+## SAML Signing Certificate Update
+
+<SamlCertificateUpdate />
 
 ## 5. Troubleshooting
 
