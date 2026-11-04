@@ -60,19 +60,67 @@ AC_REDIS_STREAM_ENDPOINT=redis.appcircle.spacetech.com:443,ssl=true
 
 ### 2. Add What Your Network Needs
 
-Skip what you do not use.
+Everything here is optional: add only what your runners need. A complete folder looks like this:
 
-| What | Where in `~/appcircle-runner-config` |
-| ---- | ------------------------------------ |
-| Root certificates | `.pem` files in `certs/` |
-| Hosts your builds reach over HTTPS (server, Git, artifact proxy) | `trust-urls.txt`, one host per line |
-| NTP server | `NTP_SERVER` in `host.env` |
-| Proxy | `PROXY_HOSTPORT`, `PROXY_USER`, `PROXY_PASSWORD`, `NO_PROXY` in `host.env` |
-| `/etc/hosts` lines | `hosts` |
-| Files for the VM home folder, such as `.npmrc` | `files/`, at the same path |
-| Tools | `tools.txt`: `brew <formula>` or `url <URL> <sha256> <path>` |
-| Android SDK packages | `android-sdk.txt` |
-| Anything else | a `.sh` script in `scripts/` |
+```text
+~/appcircle-runner-config/
+├── host.env              your server, NTP and proxy
+├── certs/
+│   └── company-root.pem  your root certificate
+├── trust-urls.txt        hosts your builds reach over HTTPS
+├── hosts                 lines for /etc/hosts
+├── files/
+│   └── .npmrc            copied to the VM's home folder as ~/.npmrc
+├── tools.txt             tools to install
+├── android-sdk.txt       Android SDK packages to install
+└── scripts/
+    └── 10-license.sh     your own setup step, runs last
+```
+
+**`host.env`**: NTP and proxy, if your network needs them.
+
+```bash
+NTP_SERVER=ntp.spacetech.com
+PROXY_HOSTPORT=proxy.spacetech.com:8080
+PROXY_USER=runner
+PROXY_PASSWORD=secret
+NO_PROXY=localhost,127.0.0.1,.spacetech.com
+```
+
+**`certs/`**: Copy the root certificate of your company (`.pem`) here. Do not copy server certificates.
+
+**`trust-urls.txt`**: Every host your builds reach over HTTPS, one per line. Add a port if it is not 443.
+
+```text
+api.appcircle.spacetech.com
+redis.appcircle.spacetech.com
+git.spacetech.com
+nexus.spacetech.com:8443
+```
+
+**`hosts`**: Lines for `/etc/hosts`, if some of your hosts are not in DNS.
+
+```text
+10.0.0.15 git.spacetech.com
+```
+
+**`files/`**: Files your builds need in the home folder, at the same path. For example `files/.npmrc` becomes `~/.npmrc`, and `files/.gradle/init.d/mirror.gradle` becomes `~/.gradle/init.d/mirror.gradle`.
+
+**`tools.txt`**: One tool per line, from Homebrew or from a URL with its SHA-256 checksum and install folder.
+
+```text
+brew xcbeautify
+url https://github.com/realm/SwiftLint/releases/download/0.65.1/portable_swiftlint.zip c1e429b0599cf1b516f369a2d9ec04eaf0e436f3c12b637df8851fa52ff694d0 /opt/tools/swiftlint
+```
+
+**`android-sdk.txt`**: Android SDK packages the image does not have, one per line.
+
+```text
+platforms;android-37.0
+build-tools;36.1.0
+```
+
+**`scripts/`**: Anything else, such as installing a licensed tool, as a `.sh` script. Scripts run last, in name order.
 
 :::caution
 Builds can read everything in this folder. Do not put licenses or passwords in it, except the proxy password. Use a proxy account that has no other access.
