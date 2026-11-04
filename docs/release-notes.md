@@ -29,6 +29,18 @@ Patch for [3.34.0](#3-34-0)
 - <FixTag/> An issue has been fixed where the version, added by and source profile filters of the app versions report matched unrelated values (for example, `1.0` also returned `1.100`). <ReportsBadge/> <CloudBadge/>
 - <FixTag/> An issue has been fixed where the verification code on the Testing Portal accepted fewer attempts than documented. <DistributionBadge/> <CloudBadge/>
 
+## 3.34.4 - 2026-10-28 <PatchBadge/>
+
+Patch for [3.34.0](#3-34-0)
+
+- <ImprovementTag/> General stability improvements for organization roles, permissions and sessions. <AccountBadge/> <CloudBadge/> 
+- <ImprovementTag/> General stability improvements for resource and artifact downloads. <CloudBadge/>
+- <ImprovementTag/> General stability improvements for CodePush. <CloudBadge/> 
+- <FixTag/> An issue has been fixed where over-the-air downloads on iOS stayed on "Waiting" instead of showing download progress. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- <FixTag/> Leading and trailing spaces are now trimmed from build profile and environment variable group names. <BuildBadge/> <EnvironmentVariablesBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where a Testing Distribution profile could be created or renamed with a name that was already in use. <DistributionBadge/> <CloudBadge/>
+- <FixTag/> An issue has been fixed where the sharing settings of an environment variable group were applied at creation instead of only through the share action. <EnvironmentVariablesBadge/> <CloudBadge/>
+
 ## 3.34.3 - 2026-11-03 <PatchBadge/>
 
 Patch for [3.34.0](#3-34-0)
