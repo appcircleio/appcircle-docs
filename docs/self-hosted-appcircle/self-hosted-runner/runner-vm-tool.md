@@ -95,7 +95,7 @@ The tool asks for the token and your password. It downloads the image, builds an
 The runners are online in the **Self-hosted Runners** list after a minute.
 
 :::tip
-The download takes hours. Over SSH, run the command in `screen` or `tmux`.
+The download takes hours. Over SSH, run the command in `screen` or `tmux`. If it stops, run the same command again: it downloads only what is missing and continues where it stopped.
 :::
 
 ## Upgrade Runners
