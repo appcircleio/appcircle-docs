@@ -46,6 +46,7 @@ Patch for [3.34.0](#3-34-0)
 
 Patch for [3.34.0](#3-34-0)
 
+- <ImprovementTag/> A new macOS VM image (`261102`, Tahoe `26.6.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 27.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) (`27B52`) installed along with Xcode 27.1 (`27A9275`), Xcode 27.0 (`27A266a`) and Xcode 26.6 (`17F113`), plus Appcircle runner `1.9.3` and up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Use `run.sh` 1.11.0 with this image. It replaces the 261016 image. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 - <FixTag/> General stability and robustness improvements across backend services. <CloudBadge/> <SelfHostedBadge/>
 - <ImprovementTag/> Self-hosted macOS runners can now be configured to start automatically when the host Mac restarts. <SelfHostedBadge/>
 

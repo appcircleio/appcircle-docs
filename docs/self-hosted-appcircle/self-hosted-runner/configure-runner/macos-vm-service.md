@@ -35,7 +35,15 @@ This page is about the **Tart macOS VM runners**. It is not the same as [Service
 ## Requirements
 
 - A macOS host set up as described in [Self-hosted Runner as MacOS VM Image](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup), with at least one base VM and one runner folder such as `$HOME/runner1`.
-- Image `261016` or newer with `run.sh` version 1.10.0 or newer in that runner folder. The `run.sh` versions of older images do not unlock the keychain and do not wait for Tart and the network at boot, so the VM does not start after a reboot. On an older image, upgrade the runner image first.
+- Image `261102` with `run.sh` version 1.11.0 in that runner folder, or image `261016` with `run.sh` version 1.10.0. The `run.sh` versions of older images do not unlock the keychain and do not wait for Tart and the network at boot, so the VM does not start after a reboot. On an older image, upgrade the runner image first.
+
+  The [runner VM setup](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup) page downloads `run.sh` 1.11.0 for image `261102`. If you stay on image `261016`, download `run.sh` 1.10.0 into each runner folder instead:
+
+  ```bash
+  curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.10.0.sh" && \
+  chmod u+x $HOME/runner1/run.sh
+  ```
+
 - Administrator access on the host, since the service is installed in launchd's system domain.
 
 ## Install the service
