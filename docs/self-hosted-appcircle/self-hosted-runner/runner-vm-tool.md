@@ -49,14 +49,14 @@ Set `AC_RUNNER_IMAGE_BASE_URL` and `AC_RUNNER_CDN_BASE_URL` to your artifact pro
 ~/runner-vm.sh init
 ```
 
-Open `~/appcircle-runner-config/host.env` and set your server and the VM size:
+Open `~/appcircle-runner-config/host.env` and set your server:
 
 ```bash
 AC_BASE_API_URL=https://api.appcircle.spacetech.com/build/v1
 AC_REDIS_STREAM_ENDPOINT=redis.appcircle.spacetech.com:443,ssl=true
-VM_CPU=4
-VM_MEMORY_MB=8192
 ```
+
+`init` also sets the CPU and memory of each runner VM from your host: half of the host's cores and memory each, for two runners. If you run only one runner, double `VM_CPU` and `VM_MEMORY_MB`.
 
 ### 2. Add What Your Network Needs
 
