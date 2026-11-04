@@ -110,11 +110,9 @@ For example, if your company is "Spacetech" with the domain `spacetech.com`, you
 
 It will be the **main domain** for the self-hosted Appcircle server.
 
-The main domain (`appcircle.spacetech.com`, for instance.) should have seven subdomains which should resolve to the IP address of the Appcircle server.
+The main domain (`appcircle.spacetech.com`, for instance.) should have the subdomains below, which should resolve to the IP address of the Appcircle server.
 
-These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource** and **store**.
-
-- [ ] Create these seven domain name entries on your DNS.
+- [ ] Create these domain name entries on your DNS.
 
   - [ ] `api.appcircle.spacetech.com`
   - [ ] `auth.appcircle.spacetech.com`
@@ -132,7 +130,7 @@ You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/
 
 ### Obtain an SSL Certificate
 
-- [ ] You should create only one SSL certificate that covers all seven domain names which you have seen in the [Configure DNS](#configure-the-dns-settings) section above.
+- [ ] You should create only one SSL certificate that covers all the domain names which you have seen in the [Configure DNS](#configure-the-dns-settings) section above.
 - [ ] The SSL certificate should be in PEM format.
 - [ ] The SSL certificate private key must not have a passphrase.
 - [ ] Obtain the root CA certificate of your company.
