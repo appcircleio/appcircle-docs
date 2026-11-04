@@ -25,6 +25,7 @@ Patch for [3.34.0](#3-34-0)
 - <ImprovementTag/> Recipients who unsubscribe from notification emails by mistake can now resubscribe from the unsubscribe confirmation page. <IntegrationsBadge/> <CloudBadge/>
 - <ImprovementTag/> Re-sign history and logs now have their own permissions (List / Get Resign), which can be assigned through custom roles. <PublishBadge/> <AccountBadge/> <CloudBadge/>
 - <ImprovementTag/> General stability improvements across services. <CloudBadge/>
+- <ImprovementTag/> The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 27.2 installed on runners (replacing Xcode 27.2 RC), with the 27.2 SDKs for all Apple platforms. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 - <FixTag/> An issue has been fixed where saving several scheduled triggers left orphan schedules when one of them was invalid. Invalid cron expressions and time zones now return a clear validation error. <BuildBadge/> <CloudBadge/>
 - <FixTag/> An issue has been fixed where the version, added by and source profile filters of the app versions report matched unrelated values (for example, `1.0` also returned `1.100`). <ReportsBadge/> <CloudBadge/>
 - <FixTag/> An issue has been fixed where the verification code on the Testing Portal accepted fewer attempts than documented. <DistributionBadge/> <CloudBadge/>
@@ -41,7 +42,7 @@ Patch for [3.34.0](#3-34-0)
 - <FixTag/> An issue has been fixed where a Testing Distribution profile could be created or renamed with a name that was already in use. <DistributionBadge/> <CloudBadge/>
 - <FixTag/> An issue has been fixed where the sharing settings of an environment variable group were applied at creation instead of only through the share action. <EnvironmentVariablesBadge/> <CloudBadge/>
 
-## 3.34.3 - 2026-11-03 <PatchBadge/>
+## 3.34.3 - 2026-10-21 <PatchBadge/>
 
 Patch for [3.34.0](#3-34-0)
 
