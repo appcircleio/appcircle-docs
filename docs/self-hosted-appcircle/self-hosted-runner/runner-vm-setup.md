@@ -1498,7 +1498,7 @@ For "runner1" use below commands.
   <TabItem value="261016" label="261016" default>
 
 ```bash
-curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.8.0.sh" && \
+curl -L -o $HOME/runner1/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.10.0.sh" && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -1537,7 +1537,7 @@ For "runner2" use below commands.
   <TabItem value="261016" label="261016" default>
 
 ```bash
-curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.8.0.sh" && \
+curl -L -o $HOME/runner2/run.sh "${AC_RUNNER_IMAGE_BASE_URL:-https://storage.googleapis.com/appcircle-dev-common/self-hosted}/run-1.10.0.sh" && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -1925,7 +1925,7 @@ For configuring NTP settings, see [Configure Base Runner's NTP Settings](#2-conf
 
 Runners started with `screen` do not survive a reboot. If you expect them to come back on their own, install them as a launchd service. See [Running macOS VM Runners as a Service](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service).
 
-If the service is already installed and the runners still did not come back, the login keychain is the usual cause on macOS 15 and newer. See [the troubleshooting section](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service#vzerrordomain-code-9-in-the-logs) on that page.
+If the service is already installed and the runners still did not come back, the login keychain is the usual cause on macOS 15 and newer. See [the troubleshooting section](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-vm-service#vzerrordomain-errors-in-the-logs) on that page.
 
 As for the reboot itself, if there is no system crash, one reason for an unintentional reboot may be caused by automatic updates.
 
