@@ -96,7 +96,7 @@ However, please note that you cannot change the generation after the VM is creat
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-5-create-vm-3-select-appcircle-image.png' />
 
-- We will use the `Standart_D4s_v4` size for our sample configuration since it meets the minimum requirements for the vCPU count and memory size.
+- We will use the `Standard_D8s_v5` size (8 vCPU, 32 GiB memory) for our sample configuration since it meets the minimum CPU and RAM requirements.
   
   - Use the dropdown menu to view the recommended instance types for this image.  
   - To choose a different configuration, click on **"See all sizes"** to browse all available instance types.  
