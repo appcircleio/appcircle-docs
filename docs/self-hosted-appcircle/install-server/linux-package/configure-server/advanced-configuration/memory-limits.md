@@ -14,7 +14,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-The Appcircle server runs each service in its own container. Each service container has two memory settings:
+The Appcircle server runs each service in its own container. Each container has two memory settings:
 
 - **Limit**: the most memory the service can use. If a service uses more, the kernel stops it and the container restarts automatically. The host and the other services keep running.
 - **Reservation**: the memory the kernel protects for the service when the host runs low on memory.
@@ -27,73 +27,74 @@ Per-service memory limits are available in Appcircle server `3.34.5` and later, 
 
 ## Default Values
 
-The table shows the default limit and reservation of each service in MiB.
+The table shows the default limit and reservation of each container in MiB. Setup containers run once during `up` and exit when they finish.
 
-| Service            | Limit (MiB) | Reservation (MiB) |
-| ------------------ | ----------- | ----------------- |
-| `agent_cache`      | 640         | 128               |
-| `api_gateway`      | 896         | 128               |
-| `app_parser`       | 9216        | 128               |
-| `build`            | 3456        | 256               |
-| `codepush`         | 896         | 128               |
-| `distribution`     | 2560        | 128               |
-| `grafana`          | 256         | 128               |
-| `kafka`            | 2560        | 1024              |
-| `kafka_zookeeper`  | 640         | 128               |
-| `keycloak`         | 1536        | 768               |
-| `license`          | 1024        | 256               |
-| `loki`             | 640         | 256               |
-| `mcp`              | 256         | 128               |
-| `nginx`            | 384         | 128               |
-| `notification`     | 896         | 128               |
-| `otp`              | 256         | 128               |
-| `postgres`         | 256         | 128               |
-| `publish`          | 1152        | 256               |
-| `report`           | 896         | 128               |
-| `resign`           | 384         | 128               |
-| `resource`         | 3072        | 128               |
-| `schedule_service` | 512         | 128               |
-| `signing_identity` | 896         | 128               |
-| `snsd` (MinIO)     | 1536        | 640               |
-| `store_admin`      | 512         | 128               |
-| `store_api`        | 768         | 128               |
-| `store_profile`    | 640         | 128               |
-| `store_report`     | 640         | 128               |
-| `store_submit`     | 512         | 128               |
-| `store_web`        | 640         | 128               |
-| `task`             | 384         | 128               |
-| `tester_admin`     | 640         | 128               |
-| `tester_api`       | 2816        | 128               |
-| `tester_web`       | 640         | 128               |
-| `vault`            | 640         | 128               |
-| `web_app`          | 256         | 128               |
-| `web_event`        | 512         | 128               |
-| `webhook`          | 512         | 128               |
+| Container                                            | Limit (MiB) | Reservation (MiB) |
+| ---------------------------------------------------- | ----------- | ----------------- |
+| `agent_cache`                                        | 640         | 128               |
+| `api_gateway`                                        | 896         | 128               |
+| `app_parser`                                         | 9216        | 128               |
+| `build`                                              | 3456        | 256               |
+| `codepush`                                           | 896         | 128               |
+| `distribution`                                       | 2560        | 128               |
+| `grafana`                                            | 256         | 128               |
+| `kafka`                                              | 2560        | 1024              |
+| `kafka_zookeeper`                                    | 640         | 128               |
+| `keycloak`                                           | 1536        | 768               |
+| `keycloak_migration` (setup)                         | 1536        | 768               |
+| `license`                                            | 1024        | 256               |
+| `loki`                                               | 640         | 256               |
+| `mcp`                                                | 256         | 128               |
+| `minio_1` to `minio_4` (deprecated multi-node MinIO) | 1536        | 640               |
+| `minio_setup` (setup)                                | 256         | 64                |
+| `mongo_setup` (setup)                                | 512         | 64                |
+| `nginx`                                              | 384         | 128               |
+| `notification`                                       | 896         | 128               |
+| `otp`                                                | 256         | 128               |
+| `postgres`                                           | 256         | 128               |
+| `publish`                                            | 1152        | 256               |
+| `redis`                                              | 512         | 64                |
+| `report`                                             | 896         | 128               |
+| `resign`                                             | 384         | 128               |
+| `resource`                                           | 3072        | 128               |
+| `schedule_service`                                   | 512         | 128               |
+| `signing_identity`                                   | 896         | 128               |
+| `sms` (when enabled)                                 | 512         | 128               |
+| `snsd` (MinIO)                                       | 1536        | 640               |
+| `store_admin`                                        | 512         | 128               |
+| `store_api`                                          | 768         | 128               |
+| `store_profile`                                      | 640         | 128               |
+| `store_report`                                       | 640         | 128               |
+| `store_setup` (setup, custom store domain only)      | 256         | 64                |
+| `store_submit`                                       | 512         | 128               |
+| `store_web`                                          | 640         | 128               |
+| `task`                                               | 384         | 128               |
+| `tester_admin`                                       | 640         | 128               |
+| `tester_api`                                         | 2816        | 128               |
+| `tester_web`                                         | 640         | 128               |
+| `vault`                                              | 640         | 128               |
+| `web_app`                                            | 256         | 128               |
+| `web_event`                                          | 512         | 128               |
+| `web_event_redis`                                    | 512         | 64                |
+| `web_event_redis_replica`                            | 512         | 64                |
+| `webhook`                                            | 512         | 128               |
 
 The limits add up to more than the memory of most hosts. This is expected, because the services do not reach their limits at the same time.
 
-MongoDB and the containers that are not in the table, such as Redis, use a percentage of the host memory instead:
-
-- The MongoDB primary uses up to 25% and each of the 2 secondaries up to 12.5% of the host memory.
-- The other containers use up to the percentage in `resources.limits.memory`, 80% by default.
-
-:::info
-`resources.limits.memory` does not change the limits of the services in the table. To change a service, use `resources.services` as shown below.
-:::
+MongoDB is the only part that uses a share of the host memory instead: the MongoDB primary uses up to 25% and each of the 2 secondaries up to 12.5%.
 
 ## Number of Services
 
 With the default configuration, the Appcircle server runs 44 containers:
 
-- 38 Appcircle services, listed in the [Default Values](#default-values) table.
+- 41 containers from the [Default Values](#default-values) table, without the setup containers, `minio_1` to `minio_4`, `sms` and `store_setup`.
 - 3 MongoDB containers.
-- 3 Redis containers.
 
-A few setup containers, such as `mongo_setup` and `keycloak_migration`, also run during `up` and exit when they finish. If you use the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) setup, `store_web` and `tester_web` run on the Appcircle DMZ server instead.
+The setup containers `minio_setup`, `mongo_setup` and `keycloak_migration` also run during `up` and exit when they finish. If you use the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) setup, `store_web` and `tester_web` run on the Appcircle DMZ server instead.
 
 ### Services With Replicas
 
-Some services can run more than one replica, that is, more than one copy of the same container that share the load. By default, every service runs one replica.
+Some services can run more than one replica, that is, more than one copy of the same container. By default, every service runs one replica.
 
 The limit and the reservation apply to each replica. A service with 2 replicas can use up to 2 times its limit, and reserves 2 times its reservation.
 
@@ -217,9 +218,9 @@ podman stats --no-stream
 
 ## Host Memory Check
 
-The `check` command warns you when the host has less memory than the services need. The minimum is the sum of the service reservations plus 4096 MiB for MongoDB and the operating system.
+The `check` command warns you when the host has less memory than the containers need. The minimum is the sum of the reservations of the containers your Appcircle server runs, counting each replica, plus 4096 MiB for MongoDB and the operating system.
 
-With the default values, the minimum is 11520 MiB. If you raise reservations, the minimum grows by the same amount.
+With the default configuration, the minimum is 12608 MiB. If you raise a reservation or add a replica, the minimum grows by the same amount.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" check
@@ -228,7 +229,7 @@ With the default values, the minimum is 11520 MiB. If you raise reservations, th
 If you see the warning below, add memory to the host. For the recommended host size, see [Check the RAM Size](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#check-the-ram-size).
 
 ```text
-WARNING: The host has 7680 MiB of memory, less than the 11520 MiB the services reserve plus MongoDB and the OS. Add memory to the host.
+WARNING: The host has 7680 MiB of memory, less than the 12608 MiB the services reserve plus MongoDB and the OS. Add memory to the host.
 ```
 
 <NeedHelp />
