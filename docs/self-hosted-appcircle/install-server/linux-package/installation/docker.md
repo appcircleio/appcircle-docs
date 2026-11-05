@@ -19,48 +19,11 @@ Below are the hardware and OS requirements for self-hosted Appcircle installatio
 
 ### Supported Linux Distributions
 
-Self-hosted Appcircle server utilizing Docker, can only be installed on Linux operating system.
-
-- Ubuntu 20.04 or later
-- Debian 11 or later
-- CentOS 8 or later
-- RHEL 8 or later
+Self-hosted Appcircle server utilizing Docker, can only be installed on Linux operating system. See the supported versions in the [server requirements](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements).
 
 ### Hardware Requirements
 
-Minimum hardware requirements for self-hosted Appcircle can be:
-
-- 100GB or more free disk space
-- 4 or more cores CPU
-- 16 or more gigabytes (GB) RAM
-
-:point_up: These hardware specs are minimum requirements for basic execution and it can be used only for quick evaluation or development purposes.
-
-:::caution
-
-CPU architecture must be AMD or Intel 64-bit arch (`x86_64`).
-
-:::
-
-:::info
-
-If you have enough RAM and a recent CPU, performance of Appcircle server can be limited by hard drive seek times. So, having a fast drive like a solid state drive (SSD) improves runtime.
-
-:::
-
-Higher numbers will be better especially for increased number of users.
-
-For an enterprise installation, **minimum** hardware requirements are
-
-- 500GB SSD
-- 8 CPU
-- 16GB RAM
-
-For production environments, **recommended** hardware requirements are
-
-- 1TB SSD
-- 32 CPU
-- 64GB RAM
+See the [server requirements](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements) for the CPU, RAM, disk, and swap sizes of the Appcircle server.
 
 :::caution
 

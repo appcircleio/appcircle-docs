@@ -19,7 +19,7 @@ The Appcircle server runs each service in its own container. Each container has 
 - **Limit**: the most memory the service can use. If a service uses more, the kernel stops it and the container restarts automatically. The host and the other services keep running.
 - **Reservation**: the memory the kernel protects for the service when the host runs low on memory.
 
-The default values below fit most installations. Change them only for a service that needs more memory, for example a service that restarts because it reaches its limit.
+The default values below fit most installations. If a service restarts because it reaches its limit, raise the limit of that service first. On Docker, add [replicas](#services-with-replicas) when the load, such as the number of concurrent users or builds, grows.
 
 :::info
 Per-service memory limits are available in Appcircle server `3.34.5` and later, on both Docker and Podman.
@@ -79,7 +79,7 @@ The table shows the default limit and reservation of each container in MiB. Setu
 | `web_event_redis_replica`                            | 512         | 64                |
 | `webhook`                                            | 512         | 128               |
 
-The limits add up to more than the memory of most hosts. This is expected, because the services do not reach their limits at the same time.
+The limits add up to more than the memory of most hosts. This is expected, because the services do not reach their limits at the same time. Limits are ceilings: memory that the services do not use works as the kernel's file cache, for example for MinIO and MongoDB data, so it is not wasted.
 
 MongoDB is the only part that uses a share of the host memory instead: the MongoDB primary uses up to 25% and each of the 2 secondaries up to 12.5%.
 
@@ -226,7 +226,7 @@ With the default configuration, the minimum is 12608 MiB. If you raise a reserva
 ./ac-self-hosted.sh -n "spacetech" check
 ```
 
-If you see the warning below, add memory to the host. For the recommended host size, see [Check the RAM Size](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#check-the-ram-size).
+If you see the warning below, add memory to the host. For the recommended host size, see the [server requirements](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements).
 
 ```text
 WARNING: The host has 7680 MiB of memory, less than the 12608 MiB the services reserve plus MongoDB and the OS. Add memory to the host.

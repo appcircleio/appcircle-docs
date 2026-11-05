@@ -102,7 +102,7 @@ However, please note that you cannot change the generation after the VM is creat
   - To choose a different configuration, click on **"See all sizes"** to browse all available instance types.  
 
 :::info
-For the details about minimum hardware requirements, you should see the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/installation/docker#hardware-requirements) section.
+For the details about minimum hardware requirements, you should see the [Server Requirements](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements) section.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-6050-machine-type-2.png' />
@@ -126,7 +126,7 @@ If you choose to change the username, please be aware that **[additional steps](
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4345-7-create-vm-disks.png' />
 
 :::info
-You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/installation/docker#hardware-requirements) section.
+You should see the recommended storage sizes and other disk requirements in the [Server Requirements](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements) section.
 :::
 
 - Click "Next: Networking >"
