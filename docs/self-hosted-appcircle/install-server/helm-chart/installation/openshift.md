@@ -39,8 +39,8 @@ By default, Appcircle uses the following subdomains:
 5. resource.appcircle.spacetech.com
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
-8. codepush.appcircle.spacetech.com
-9. mcp.appcircle.spacetech.com
+8. mcp.appcircle.spacetech.com
+9. store.appcircle.spacetech.com
 
 **Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in OpenShift.
 
@@ -120,9 +120,9 @@ Additionally, ensure that your OpenShift cluster is running version 4.12 or late
 
 The **`oc`** OpenShift CLI is **required**.
 
-### 2. Helm v3
+### 2. Helm
 
-**Helm version `3.11.0`** or later is **required**.
+**Helm version `3.11.0`** or later is **required**. Helm 3 and Helm 4 are both supported.
 
 ## Pre-installation Steps
 
@@ -464,11 +464,10 @@ router-default   LoadBalancer  10.217.4.108   10.45.140.78  80/TCP,443/TCP,1936/
    - `auth.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `dist.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `resource.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
-   - `*.store.appcircle.spacetech.com` → You can skip this domain and use a [Custom Enterprise App Store Domain](https://docs.appcircle.io/enterprise-app-store/portal-settings#store-domain).
+   - `store.appcircle.spacetech.com` → **api.appcircle.spacetech.com**. You can skip this domain if you use a [Custom Enterprise App Store Domain](https://docs.appcircle.io/enterprise-app-store/portal-settings#store-domain).
    - `my.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `hook.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `kvs.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
-   - `codepush.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `mcp.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
 
 ### 2. Login to the Appcircle Dashboard
