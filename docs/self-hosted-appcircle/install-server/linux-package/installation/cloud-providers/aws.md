@@ -85,7 +85,7 @@ You should fill out the required fields as per your needs. Please follow the bel
 - We will use the `t3.2xlarge` instance type for our sample configuration since it meets the minimum requirements for the vCPU count.
 
 :::info
-For the details about minimum hardware requirements, you should see the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/installation/docker#hardware-requirements) section.
+For the details about minimum hardware requirements, you should see the [Server Requirements](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements) section.
 :::
 
 - Select an existing key pair or click on the "Create new key pair" button if you don't have any on the AWS console.
@@ -109,7 +109,7 @@ If you want to also send `ping` requests to the instance for health check purpos
 - For storage, you can select a minimum 100-GB disk for a PoC setup or testing purposes.
 
 :::info
-You should see the recommended storage sizes and other disk requirements in the [Hardware Requirements](/self-hosted-appcircle/install-server/linux-package/installation/docker#hardware-requirements) section.
+You should see the recommended storage sizes and other disk requirements in the [Server Requirements](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements) section.
 :::
 
 :::caution

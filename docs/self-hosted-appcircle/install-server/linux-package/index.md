@@ -15,15 +15,15 @@ For detailed instructions, please refer to the corresponding pages mentioned bel
 
 Before proceeding with the installation, it is essential to verify the compatibility of the targeted operating system version.
 
-If you're planning to use **Docker** as the container runtime engine, you should check for compatible OS versions [here.](/self-hosted-appcircle/install-server/linux-package/installation/docker#supported-linux-distributions)
+If you're planning to use **Docker** as the container runtime engine, you should check for compatible OS versions [here.](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements)
 
-If you're planning to use **Podman** as the container runtime engine, you should check for compatible OS versions [here.](/self-hosted-appcircle/install-server/linux-package/installation/podman#supported-linux-distributions)
+If you're planning to use **Podman** as the container runtime engine, you should check for compatible OS versions [here.](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements)
 
 ### Hardware Requirements
 
 Check CPU, memory, swap, and disk space requirements.
 
-You can check the hardware requirements [here.](/self-hosted-appcircle/install-server/linux-package/installation/docker#hardware-requirements)
+You can check the hardware requirements [here.](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#server-requirements)
 
 ### Dependencies for Download
 

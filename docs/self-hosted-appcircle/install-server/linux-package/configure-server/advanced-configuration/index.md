@@ -30,6 +30,10 @@ Optimize your server's performance by configuring the cache size. This setting a
 
 Customize the CLI to suit your workflow needs. This includes setting up environment variables, enabling specific commands, and configuring access permissions for a streamlined command-line experience.
 
+### [Service Memory Limits](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/memory-limits)
+
+See the memory limit and reservation of each Appcircle server service, how many services the server runs, and how to change the memory of a service.
+
 ### [Container Engine Network Subnet](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/container-engine-network-subnet)
 
 Learn how to configure the network subnets of the container engine for the Appcircle server and Appcircle DMZ server.
