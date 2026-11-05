@@ -94,11 +94,11 @@ The setup containers `minio_setup`, `mongo_setup` and `keycloak_migration` also 
 
 ### Services With Replicas
 
-Some services can run more than one replica, that is, more than one copy of the same container. By default, every service runs one replica.
+On Docker, some services can run more than one replica, that is, more than one copy of the same container. By default, every service runs one replica. On Podman, every service runs one container and the replica count is not used.
 
 The limit and the reservation apply to each replica. A service with 2 replicas can use up to 2 times its limit, and reserves 2 times its reservation.
 
-The services below support replicas. The second column is the key that sets the replica count in the `global.yaml` file.
+The services below support replicas on Docker. The second column is the key that sets the replica count in the `global.yaml` file.
 
 | Service            | Replica count key in `global.yaml` |
 | ------------------ | ---------------------------------- |
@@ -218,7 +218,7 @@ podman stats --no-stream
 
 ## Host Memory Check
 
-The `check` command warns you when the host has less memory than the containers need. The minimum is the sum of the reservations of the containers your Appcircle server runs, counting each replica, plus 4096 MiB for MongoDB and the operating system.
+The `check` command warns you when the host has less memory than the containers need. The minimum is the sum of the reservations of the containers your Appcircle server runs plus 4096 MiB for MongoDB and the operating system. On Docker, each replica's reservation is counted.
 
 With the default configuration, the minimum is 12608 MiB. If you raise a reservation or add a replica, the minimum grows by the same amount.
 
