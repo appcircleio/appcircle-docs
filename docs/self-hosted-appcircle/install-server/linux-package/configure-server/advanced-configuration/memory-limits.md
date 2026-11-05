@@ -39,19 +39,19 @@ The table shows the default limit and reservation of each container in MiB. Setu
 | `distribution`                                       | 2560        | 128               |
 | `grafana`                                            | 256         | 128               |
 | `kafka`                                              | 2560        | 1024              |
-| `kafka_zookeeper`                                    | 640         | 128               |
+| `kafka_zookeeper`                                    | 768         | 128               |
 | `keycloak`                                           | 1536        | 768               |
 | `keycloak_migration` (setup)                         | 1536        | 768               |
 | `license`                                            | 1024        | 256               |
 | `loki`                                               | 640         | 256               |
 | `mcp`                                                | 256         | 128               |
-| `minio_1` to `minio_4` (deprecated multi-node MinIO) | 1536        | 640               |
+| `minio_1` to `minio_4` (deprecated multi-node MinIO) | 3072        | 640               |
 | `minio_setup` (setup)                                | 256         | 64                |
 | `mongo_setup` (setup)                                | 512         | 64                |
 | `nginx`                                              | 384         | 128               |
 | `notification`                                       | 896         | 128               |
 | `otp`                                                | 256         | 128               |
-| `postgres`                                           | 256         | 128               |
+| `postgres`                                           | 384         | 128               |
 | `publish`                                            | 1152        | 256               |
 | `redis`                                              | 512         | 64                |
 | `report`                                             | 896         | 128               |
@@ -60,7 +60,7 @@ The table shows the default limit and reservation of each container in MiB. Setu
 | `schedule_service`                                   | 512         | 128               |
 | `signing_identity`                                   | 896         | 128               |
 | `sms` (when enabled)                                 | 512         | 128               |
-| `snsd` (MinIO)                                       | 1536        | 640               |
+| `snsd` (MinIO)                                       | 3072        | 640               |
 | `store_admin`                                        | 512         | 128               |
 | `store_api`                                          | 768         | 128               |
 | `store_profile`                                      | 640         | 128               |
