@@ -1,0 +1,234 @@
+---
+title: Service Memory Limits
+description: See the memory limit and reservation of each self-hosted Appcircle server service, and change them in the global.yaml file.
+tags: [self-hosted, advanced configuration, system optimization, docker, podman]
+sidebar_position: 13
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_spacetech-example-info.mdx';
+import RestartAppcircleServer from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_restart-appcircle-server.mdx';
+import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_appcircle-server-downtime-caution.mdx';
+import NeedHelp from '@site/docs/\_need-help.mdx';
+
+## Overview
+
+The Appcircle server runs each service in its own container. Each service container has two memory settings:
+
+- **Limit**: the most memory the service can use. If a service uses more, the kernel stops it and the container restarts automatically. The host and the other services keep running.
+- **Reservation**: the memory the kernel protects for the service when the host runs low on memory.
+
+The default values below fit most installations. Change them only for a service that needs more memory, for example a service that restarts because it reaches its limit.
+
+:::info
+Per-service memory limits are available in Appcircle server `3.34.5` and later, on both Docker and Podman.
+:::
+
+## Default Values
+
+The table shows the default limit and reservation of each service in MiB.
+
+| Service            | Limit (MiB) | Reservation (MiB) |
+| ------------------ | ----------- | ----------------- |
+| `agent_cache`      | 640         | 128               |
+| `api_gateway`      | 896         | 128               |
+| `app_parser`       | 9216        | 128               |
+| `build`            | 3456        | 256               |
+| `codepush`         | 896         | 128               |
+| `distribution`     | 2560        | 128               |
+| `grafana`          | 256         | 128               |
+| `kafka`            | 2560        | 1024              |
+| `kafka_zookeeper`  | 640         | 128               |
+| `keycloak`         | 1536        | 768               |
+| `license`          | 1024        | 256               |
+| `loki`             | 640         | 256               |
+| `mcp`              | 256         | 128               |
+| `nginx`            | 384         | 128               |
+| `notification`     | 896         | 128               |
+| `otp`              | 256         | 128               |
+| `postgres`         | 256         | 128               |
+| `publish`          | 1152        | 256               |
+| `report`           | 896         | 128               |
+| `resign`           | 384         | 128               |
+| `resource`         | 3072        | 128               |
+| `schedule_service` | 512         | 128               |
+| `signing_identity` | 896         | 128               |
+| `snsd` (MinIO)     | 1536        | 640               |
+| `store_admin`      | 512         | 128               |
+| `store_api`        | 768         | 128               |
+| `store_profile`    | 640         | 128               |
+| `store_report`     | 640         | 128               |
+| `store_submit`     | 512         | 128               |
+| `store_web`        | 640         | 128               |
+| `task`             | 384         | 128               |
+| `tester_admin`     | 640         | 128               |
+| `tester_api`       | 2816        | 128               |
+| `tester_web`       | 640         | 128               |
+| `vault`            | 640         | 128               |
+| `web_app`          | 256         | 128               |
+| `web_event`        | 512         | 128               |
+| `webhook`          | 512         | 128               |
+
+The limits add up to more than the memory of most hosts. This is expected, because the services do not reach their limits at the same time.
+
+MongoDB and the containers that are not in the table, such as Redis, use a percentage of the host memory instead:
+
+- The MongoDB primary uses up to 25% and each of the 2 secondaries up to 12.5% of the host memory.
+- The other containers use up to the percentage in `resources.limits.memory`, 80% by default.
+
+:::info
+`resources.limits.memory` does not change the limits of the services in the table. To change a service, use `resources.services` as shown below.
+:::
+
+## Number of Services
+
+With the default configuration, the Appcircle server runs 44 containers:
+
+- 38 Appcircle services, listed in the [Default Values](#default-values) table.
+- 3 MongoDB containers.
+- 3 Redis containers.
+
+A few setup containers, such as `mongo_setup` and `keycloak_migration`, also run during `up` and exit when they finish. If you use the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) setup, `store_web` and `tester_web` run on the Appcircle DMZ server instead.
+
+### Services With Replicas
+
+Some services can run more than one replica, that is, more than one copy of the same container that share the load. By default, every service runs one replica.
+
+The limit and the reservation apply to each replica. A service with 2 replicas can use up to 2 times its limit, and reserves 2 times its reservation.
+
+The services below support replicas. The second column is the key that sets the replica count in the `global.yaml` file.
+
+| Service            | Replica count key in `global.yaml` |
+| ------------------ | ---------------------------------- |
+| `api_gateway`      | `apiGateway.deploy.replicas`       |
+| `app_parser`       | `appParser.deploy.replicas`        |
+| `build`            | `build.deploy.replicas`            |
+| `mcp`              | `mcpServer.deploy.replicas`        |
+| `notification`     | `notification.deploy.replicas`     |
+| `resource`         | `resource.deploy.replicas`         |
+| `store_api`        | `storeApi.deploy.replicas`         |
+| `store_web`        | `storeWeb.deploy.replicas`         |
+| `tester_api`       | `testerApi.deploy.replicas`        |
+| `tester_web`       | `testerWeb.deploy.replicas`        |
+| `web_app`          | `webApp.deploy.replicas`           |
+| `web_event`        | `webEvent.deploy.replicas`         |
+
+To change a replica count, set its key in the `global.yaml` file, then restart the Appcircle server with the `down`, `export` and `up` commands as shown in [Change the Memory of a Service](#change-the-memory-of-a-service). The example below runs 2 replicas of the `build` service.
+
+```yaml
+build:
+  deploy:
+    replicas: 2
+```
+
+:::caution
+Each extra replica can use as much memory as the limit of the service. Make sure the host has enough memory before you increase a replica count.
+:::
+
+## Change the Memory of a Service
+
+<DowntimeCaution />
+
+- Log in to the Appcircle server with SSH or a remote connection.
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+- Edit the `global.yaml` file of your project.
+
+<SpacetechExampleInfo />
+
+```bash
+vi ./projects/spacetech/global.yaml
+```
+
+- Add the service under `resources.services` and set its limit, its reservation, or both. The example below raises the limit of the `build` service to 4096 MiB.
+
+```yaml
+resources:
+  services:
+    build:
+      memory:
+        limit: 4096
+        reservation: 256
+```
+
+Write the values as whole numbers in MiB, without a unit. The reservation must not be larger than the limit. If a value is not valid, the `export` command stops with an error that names the service.
+
+Services you do not add keep their default values.
+
+:::caution
+A limit lower than what a service needs makes the service restart repeatedly. Do not set the `app_parser` limit below its default value.
+:::
+
+<RestartAppcircleServer />
+
+## Verify the Limits
+
+Check the limit and the reservation of a service. The output is in bytes: `4294967296` is 4096 MiB.
+
+<Tabs groupId="container-engine">
+  <TabItem value="docker" label="Docker" default>
+
+```bash
+docker inspect --format '{{.HostConfig.Memory}} {{.HostConfig.MemoryReservation}}' spacetech-build-1
+```
+
+  </TabItem>
+
+  <TabItem value="podman" label="Podman">
+
+```bash
+podman inspect --format '{{.HostConfig.Memory}} {{.HostConfig.MemoryReservation}}' spacetech_build_1
+```
+
+  </TabItem>
+</Tabs>
+
+Below is a sample output for the example above.
+
+```text
+4294967296 268435456
+```
+
+To see the current memory usage of every service next to its limit, run the command below.
+
+<Tabs groupId="container-engine">
+  <TabItem value="docker" label="Docker" default>
+
+```bash
+docker stats --no-stream
+```
+
+  </TabItem>
+
+  <TabItem value="podman" label="Podman">
+
+```bash
+podman stats --no-stream
+```
+
+  </TabItem>
+</Tabs>
+
+## Host Memory Check
+
+The `check` command warns you when the host has less memory than the services need. The minimum is the sum of the service reservations plus 4096 MiB for MongoDB and the operating system.
+
+With the default values, the minimum is 11520 MiB. If you raise reservations, the minimum grows by the same amount.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+If you see the warning below, add memory to the host. For the recommended host size, see [Check the RAM Size](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist#check-the-ram-size).
+
+```text
+WARNING: The host has 7680 MiB of memory, less than the 11520 MiB the services reserve plus MongoDB and the OS. Add memory to the host.
+```
+
+<NeedHelp />
