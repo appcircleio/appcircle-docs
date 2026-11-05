@@ -41,7 +41,7 @@ Minimum hardware requirements for self-hosted Appcircle can be:
 
 - 100GB or more free disk space
 - 4 or more cores CPU
-- 8 or more gigabytes (GB) RAM
+- 16 or more gigabytes (GB) RAM
 
 :point_up: These hardware specs are minimum requirements for basic execution and it can be used only for quick evaluation or development purposes.
 
