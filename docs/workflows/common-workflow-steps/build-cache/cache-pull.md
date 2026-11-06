@@ -66,6 +66,20 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <CacheTokenIdCaution />
 
+### Cache Formats
+
+Cache Pull **`1.0.8`** and later restore both cache formats that [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push#compression) writes: the `zip` format and the faster `tar` and `zstd` format. The format is detected automatically.
+
+- To restore the `zstd` format, the runner must have `zstd`. Without it, the step logs a warning and skips the cache. The build continues.
+- Files on disk that are newer than their cached copy, for example files from **Git Clone**, are not overwritten.
+- Restored files are owned by the runner user.
+
+:::info
+
+Update **Cache Pull** to `1.0.8` or later before you update **Cache Push**. When Cache Push finds an older Cache Pull in the workflow, it keeps the `zip` format, so the cache still works, but without the faster compression.
+
+:::
+
 ---
 
 To access the source code of this component, please use the following link:
