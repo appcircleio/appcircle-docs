@@ -41,6 +41,36 @@ Claude Code and claude.ai install the plugin differently, so follow the steps fo
    ```
 5. Ask Claude an Appcircle question. For "how do I" or troubleshooting questions, for example "How do I set up automatic code signing for my iOS builds," Claude uses the `appcircle-assistant` skill. For questions about your own organization, for example "List my build profiles," Claude uses the Appcircle MCP tools, which requires step 1.
 
+### Self-Hosted Appcircle in Claude Code
+
+Self-hosted Appcircle installations include their own Appcircle MCP Server at `https://mcp.<your-appcircle-domain>`. The plugin always points to the cloud server, `mcp.appcircle.io`, so register your self-hosted server yourself.
+
+:::info
+The Appcircle MCP Server is available on self-hosted Appcircle server 3.31.0 and later.
+:::
+
+:::warning
+On a self-hosted Appcircle server, don't set `APPCIRCLE_ACCESS_TOKEN`, and remove it from your shell profile if you already set it. The plugin's server reads that variable and would send your self-hosted token to `mcp.appcircle.io`. Keep your self-hosted token in a separate variable, `APPCIRCLE_SELFHOSTED_TOKEN`, so it never reaches the cloud server.
+:::
+
+1. Export a token issued by your self-hosted Appcircle server:
+   ```bash
+   export APPCIRCLE_SELFHOSTED_TOKEN=<your-self-hosted-token>
+   ```
+2. Register your server:
+   ```bash
+   claude mcp add --scope user --transport http appcircle-selfhosted https://mcp.<your-appcircle-domain> \
+     --header 'Authorization: Bearer ${APPCIRCLE_SELFHOSTED_TOKEN}'
+   ```
+   Keep the single quotes around the header. Claude Code stores `${APPCIRCLE_SELFHOSTED_TOKEN}` as is and reads the token each time it starts, so you don't need to register again when the token changes.
+
+   The plugin's `appcircle` server still appears and fails to connect because it has no token. You can ignore it.
+3. If your server's certificate is signed by an internal certificate authority, point `NODE_EXTRA_CA_CERTS` to the CA bundle (PEM):
+   ```bash
+   export NODE_EXTRA_CA_CERTS=/path/to/internal-ca.pem
+   ```
+4. Restart Claude Code.
+
 ### In claude.ai
 
 You can install this plugin's skills in claude.ai too. MCP tools remain Claude Code-only for now.
