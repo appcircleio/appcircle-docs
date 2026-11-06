@@ -3228,6 +3228,11 @@ quay:
   description: "Documentation related to GitHub Copilot"
   permalink: "/copilot"
 
+"codex":
+  label: "codex"
+  description: "Documentation related to Codex"
+  permalink: "/codex"
+
 "assistant":
   label: "assistant"
   description: "Documentation related to AI assistants"
