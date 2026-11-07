@@ -200,6 +200,7 @@ Ask your artifact proxy administrator to create two proxy repositories for the A
 - Every image has a `.md5` checksum file next to it. The proxy serves it from the same remote URL; no extra repository is needed.
 - A macOS VM image is about 85 GB and an Xcode image package is several GB. Appcircle releases a new image every one to two months, and most organizations upgrade when they need a new Xcode version. The proxy keeps every image it has served, so plan the storage and a cleanup policy for old images.
 - The first download of a new image takes longer, because the proxy fetches it from Appcircle at the same time.
+- If a reverse proxy such as nginx sits in front of the artifact proxy, make sure it passes large downloads to the end, such as the images and the Flutter SDK archive (about 2.3 GB). With its default `proxy_max_temp_file_size` of 1 GB, nginx can cut a download at about 1 GB when the client reads slower than the artifact proxy sends. Set `proxy_max_temp_file_size 0;` in the `location` of the artifact proxy.
 
 </details>
 
@@ -1284,6 +1285,7 @@ Create one [environment variable group](/environment-variables) with your reposi
 | `AC_MIRROR_NODE` | Node.js distributions proxy |
 | `AC_MIRROR_PUB` | pub proxy |
 | `AC_MIRROR_FLUTTER` | Flutter SDK and engine files proxy |
+| `AC_MIRROR_USERNAME`, `AC_MIRROR_PASSWORD` | User and password, if your Maven group needs a login. The Gradle Mirror step uses them; the other mirror steps need repositories with anonymous read. Store the password as a secret variable. |
 
 **Android SDK packages:** if your Android projects need an SDK package that the image doesn't contain, such as another NDK version, install it into the base VM from your artifact proxy. See [Android SDK Packages](/self-hosted-appcircle/self-hosted-runner/configure-runner/android-sdk-packages).
 
