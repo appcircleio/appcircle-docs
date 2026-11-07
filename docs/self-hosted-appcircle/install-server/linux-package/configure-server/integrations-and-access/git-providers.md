@@ -221,8 +221,8 @@ Below are the configuration steps you should follow for setting up the GitHub Ap
    1. For example, `https://auth.appcircle.spacetech.com/auth/realms/appcircle/broker/githubapp/endpoint?gitProvider=GithubApp`
 5. The "Request user authorization (OAuth) during installation" option in the "Identifying and authorizing users" section should be in the `checked` state.
 6. The "Redirect on update" option in the "Post installation" section should be in the `checked` state.
-7. Webhook should be "Active", and enter the **API** URL as "Webhook URL" by appending `/build/v1/hooks/github` at the end.
-   1. For example, `https://api.appcircle.spacetech.com/build/v1/hooks/github`
+7. Webhook should be "Active", and enter the **API** URL as "Webhook URL" by appending `/build/v1/callback/hooks/github` at the end.
+   1. For example, `https://api.appcircle.spacetech.com/build/v1/callback/hooks/github`
 8. Select the "Enable SSL verification" option in the "SSL Verification" for better security practices if your SSL certificates can be trusted by GitHub.
 9. Select required "Repository" permissions using [permissions for the GitHub integration](https://docs.appcircle.io/build/manage-the-connections/adding-a-build-profile/connecting-to-github#oauth2-and-personal-access-token-permissions-for-github-integration) guide.
 10. Select "Webhooks" as "Read and Write" in the "Organization" permissions.

@@ -3332,6 +3332,7 @@ quay:
   label: "auto-login"
   description: "Documentation related to auto-login"
   permalink: "/auto-login"
+
 "build failure analysis":
   label: "build failure analysis"
   description: "Documentation related to build failure analysis"
@@ -3341,3 +3342,34 @@ quay:
   label: "ai features"
   description: "Documentation related to AI features on Appcircle"
   permalink: "/ai-features"
+
+"beta channel":
+  label: "beta channel"
+  description: "Documentation related to beta channel on Appcircle"
+  permalink: "/beta-channel"
+
+"live channel":
+  label: "live channel"
+  description: "Documentation related to live channel on Appcircle"
+  permalink: "/live-channel"
+
+
+"testing portal":
+  label: "testing portal"
+  description: "Documentation related to testing portal on Appcircle"
+  permalink: "/testing-portal"
+
+"ndk":
+  label: "ndk"
+  description: "Documentation related to ndk on Appcircle"
+  permalink: "/ndk"
+
+"air-gapped":
+  label: "air-gapped"
+  description: "Documentation related to air-gapped on Appcircle"
+  permalink: "/air-gapped"
+
+"artifact proxy":
+  label: "artifact proxy"
+  description: "Documentation related to artifact proxy on Appcircle"
+  permalink: "/artifact-proxy"
