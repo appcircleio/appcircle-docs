@@ -39,8 +39,19 @@ Also you need to have the following tools installed on your system:
 
 - curl
 - unzip
+- tar
+- zstd (recommended)
 
 These tools are already installed on most operating systems or can be got from default package managers.
+
+:::info
+
+The [**Cache Push**](/workflows/common-workflow-steps/build-cache/cache-push#compression) and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull#cache-formats) steps use `zstd` for faster cache compression. When `zstd` is missing, Cache Push uses `zip`. Install `zstd` on every self-hosted runner:
+
+- macOS: `brew install zstd`
+- Ubuntu/Debian: `sudo apt-get install -y zstd`
+
+:::
 
 Minimum hardware requirements for self-hosted runner can be:
 

@@ -49,7 +49,7 @@ For example, in the screenshot, to use cached files for Cocoapods, the **Cache P
 
 :::danger
 
-If there are no previously cached files and you attempt to use this step, the **Cache Pull** step will result in a **`not found error`** because it cannot locate the specified files at the remote location.
+If no cache exists for the cache label, for example on the first build or after a failed push, **Cache Pull** logs an error (HTTP `404`). The build is marked **Warning** and continues. It does not fail.
 
 :::
 
@@ -77,6 +77,21 @@ Cache Pull **`1.0.8`** and later restore both cache formats that [**Cache Push**
 :::info
 
 Update **Cache Pull** to `1.0.8` or later before you update **Cache Push**. When Cache Push finds an older Cache Pull in the workflow, it keeps the `zip` format, so the cache still works, but without the faster compression.
+
+:::
+
+#### Backward Compatibility
+
+Cache Pull versions older than **`1.0.8`** cannot read the `tar` and `zstd` format. They fail to extract it with an `unzip` error, which is a cache miss. The build is marked **Warning** and continues. This can happen in these cases:
+
+- **A cache label is shared between workflows or build profiles.** For example, you [share a cache between build profiles](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles) with another profile ID in the cache label. One workflow uses Cache Pull `1.0.8` or later with Cache Push `1.0.8` or later, so it writes the `zstd` format. Another workflow reads the same cache label with a Cache Pull older than `1.0.8` and gets a cache miss.
+- **The same workflow pins an older Cache Pull and uses a new cache label.** On the first build, Cache Pull finds no cache, and Cache Push writes the `zstd` format. On the second build, the older Cache Pull cannot read it (cache miss), and Cache Push detects the older Cache Pull and writes `zip`. On the third build, the older Cache Pull restores the cache. So there is one cache miss.
+
+On runners without `zstd`, for example some self-hosted runners, Cache Pull logs a warning and skips a `zstd` cache (cache miss). The build continues.
+
+:::caution
+
+Update every **Cache Pull** step that uses the cache label to `1.0.8` or later before you update **Cache Push**. This includes the steps in other workflows and build profiles that share the cache label.
 
 :::
 

@@ -96,7 +96,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both **Cache Push** and **Cache Pull** steps should have the same value to match. | Required |
 | `$AC_CACHE_INCLUDED_PATHS` | Specifies the files and folders that should be in the cache. Multiple glob patterns can be provided as a colon-separated list. For example; `.gradle:app/build` or `Pods:Podfile.lock`. | Required |
 | `$AC_CACHE_EXCLUDED_PATHS` | Specifies the files and folders that should be ignored from the cache. Multiple glob patterns can be provided as a colon-separated list. For example, `.gradle/*.lock:*.apk`. An exclude applies only to included paths with the same prefix. See [Excluded Paths and Prefixes](#excluded-paths-and-prefixes). | Optional |
-| `$AC_CACHE_KEY_FILE`       | Path to your dependency lock file, relative to the repository root. For example, `Podfile.lock` (iOS), `gradle/libs.versions.toml` (Android), `yarn.lock` or `package-lock.json` (React Native), `pubspec.lock` (Flutter). If this file and the included and excluded paths did not change since the last push, the push is skipped. Leave empty to always push. See [Skipping Unchanged Caches](#skipping-unchanged-caches). | Optional |
+| `$AC_CACHE_KEY_FILE`       | Path to your dependency lock file. The path can be relative to the repository root, start with `~/`, or be absolute. For example, `Podfile.lock` (iOS), `gradle/libs.versions.toml` (Android), `yarn.lock` or `package-lock.json` (React Native), `pubspec.lock` (Flutter). If this file and the included and excluded paths did not change since the last push, the push is skipped. Leave empty to always push. See [Skipping Unchanged Caches](#skipping-unchanged-caches). | Optional |
 | `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Optional |
 
 :::info
@@ -133,9 +133,17 @@ If the key file is not found, the step logs a warning and pushes the cache. The 
 
 ### Compression
 
-When `zstd` is available on the runner, Cache Push archives each included path with `tar` and compresses it with `zstd`. This is much faster than `zip`. If `zstd` is not available, the step uses `zip`. The uploaded cache keeps the same file name in both formats.
+When `zstd` is available on the runner, Cache Push archives each included path with `tar` and compresses it with `zstd`. This is much faster than `zip`. If `zstd` is not available, the step uses `zip`. The uploaded cache keeps the same file name in both formats: `<cache key>.zip`, even when the content is a `tar` archive. This matters only if you process the cache file yourself. Extended file attributes (xattrs) are not preserved in the cache.
 
 If the workflow uses a Cache Pull version older than **`1.0.8`**, Cache Push uses `zip`, so that the older Cache Pull can still restore the cache. To use the faster format, update **Cache Pull** before **Cache Push**.
+
+The first build after a workflow moves to Cache Push `1.0.8` and Cache Pull `1.0.8` always uploads the full cache, because the archive format and the change check differ from the older versions. The [Cache Key File](#skipping-unchanged-caches) skip works from the second push onward. Cache Pull `1.0.8` still restores existing `zip` caches.
+
+:::info
+
+In a runner pool that mixes runners with and without `zstd`, for example self-hosted runners, the cache format can change between builds, so the cache is uploaded more often. Install `zstd` on every [self-hosted runner](/self-hosted-appcircle/self-hosted-runner/installation).
+
+:::
 
 :::caution
 
@@ -146,6 +154,16 @@ If you change a Cache Push step to a version older than `1.0.8` (React Native An
 :::tip
 
 **Cache Push** uses a pattern in order to select files and folders. Although the pattern is not a RegExp, it's closer to a shell glob. For example, `~/Library/Caches/CocoaPods` and `Pods` will select the `CocoaPods` folder from home and the repository direction as a whole. Or for an Android project, you can cache the `.gradle ` folder with `~/.gradle` include path and exclude all `.lock` files from there with `~/.gradle/**/*.lock` exclude path. Patterns that can be used in both included and excluded paths are explained in detail [here](https://github.com/appcircleio/appcircle-cache-push-component#included--excluded-paths).
+
+:::
+
+### Known Issues
+
+:::warning Cache Push can report success when the cache is not stored
+
+**Cache Push** can report success even when the cache was not stored. Uploads that took about 70 seconds or longer were missing in the next build, and **Cache Pull** got a `404` error, while the **Cache Push** step was successful. Cache size alone did not cause this: 1.1 GB and 1.6 GB caches were restored when the upload was fast. The root cause is under investigation.
+
+As a workaround, keep your caches small. Narrow the included paths and use excluded paths. If **Cache Pull** gets a `404` error after a successful **Cache Push**, treat it as this known issue.
 
 :::
 
