@@ -5,107 +5,85 @@ tags: [self-hosted runner, certificates, self-signed certificates]
 sidebar_position: 5
 ---
 
-# Overview
+## Overview
 
-If you're using self-signed certificates in your environment, the same certificates must also be added to runners. It can be your self-hosted Appcircle server or your own git repositories.
+If your servers use certificates signed by your organization's own certificate authority (CA), the runner must trust that CA. These servers can be your self-hosted Appcircle server, your Git server, an artifact proxy, or a proxy that inspects TLS traffic.
 
-If you don't add and trust those self-signed certificates, runner will most probably get SSL connection errors while trying to access those resources.
-
-While adding root CAs and sub CAs to host, you should consider the following locations:
-
-- System keychain (macOS)
-- `ca-certificates`, `ca-trust` (linux)
-- Ruby's `DEFAULT_CERT_DIR`
-- Java's keystore `cacerts`
-- Node.js `NODE_EXTRA_CA_CERTS`
+Without it, the runner and the build tools fail with SSL errors.
 
 ## Adding Certificates
 
-The self-hosted runner has a command-line tool to help you install the required certificates. When called, it connects to the given host via the URL and extracts the root CA. It adds the root CA to the locations listed above.
+The runner package includes `install_cert.sh` in the `scripts` directory of the `appcircle-runner` directory. It connects to the server, finds the root CA of its certificate, and trusts it in:
 
-If your runner version `1.3.12` or later, you can find it in the `scripts` directory inside the Appcircle runner directory.
+- the macOS System keychain (the runner, Xcode, `curl`)
+- the OpenSSL certificate directories (Ruby, CocoaPods, fastlane, Git)
+- every Java installation
+- Node.js (`NODE_EXTRA_CA_CERTS`)
 
-If your runner version is older than `1.3.12`, then you can follow one of the steps below:
-
-- [Upgrade](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) the Appcircle runner to `1.3.12` or later
-
-- If you can't upgrade the Appcircle runner, you can [download the latest](/self-hosted-appcircle/self-hosted-runner/update#1-update-runner) runner package and get the script from there after you extract the archive.
-
-Execute the bash script like below.
+Run it with the host name of the server:
 
 ```bash
-./install_cert.sh
+./scripts/install_cert.sh --url api.appcircle.spacetech.com
 ```
 
-When asked, enter the URL that you need to connect to.
+Repeat `--url` for each server, and add the port when it is not `443`:
 
-Below is a sample log that was run on macOS.
-
-```txt
-% ./install_cert.sh
-[+] OS: Darwin
-Enter a URL or 'q' to quit: gitlabint.fintek.local
-Valid URL entered: gitlabint.fintek.local
-[-] Allowing addition of root certificates
-[-] Getting root certificate of 'gitlabint.fintek.local'
- [+] Subject: mkcert osboxes@osboxes (osboxes.org)
- [+] Expires on: Feb 11 08:10:48 2033 GMT
- [+] Certificate written to 'gitlabint.fintek.local.crt'
-[-] Adding 'gitlabint.fintek.local.crt' to Keychain
-YES (0)
-YES (0)
-[-] Adding 'gitlabint.fintek.local.crt' to Ruby
- [+] Copying 'gitlabint.fintek.local.crt' to '/Users/appcircle/.rbenv/versions/2.7.5/openssl/ssl/certs'
- [+] Rehashing 'gitlabint.fintek.local.crt' via /Users/appcircle/.rbenv/versions/2.7.5/openssl/bin/c_rehash
-Doing /Users/appcircle/.rbenv/versions/2.7.5/openssl/ssl/certs
-[-] Adding 'gitlabint.fintek.local.crt' to Java Keystore
-Certificate was added to keystore
-[-] Verifying connection to 'gitlabint.fintek.local'
- [+] Verification successful!'
-Enter a URL or 'q' to quit: q
-%
+```bash
+./scripts/install_cert.sh --url api.appcircle.spacetech.com --url git.spacetech.com:8443
 ```
 
-After the script is complete, the operating system, default Java (`17`), Ruby, and Node.js trust the root certificate.
+Sample output:
+
+```text
+[INFO] install_cert.sh 2.0.0
+[INFO] api.appcircle.spacetech.com:443: server certificate "api.appcircle.spacetech.com", 2 certificate(s) in the chain
+[INFO] Trusting "SpaceTech Root CA" (SHA-256 3A:9F:...:C4:E1, valid until Apr 11 12:17:31 2036 GMT)
+[INFO] Keychain: trusted "SpaceTech Root CA" (trustRoot)
+[INFO] OpenSSL: /opt/homebrew/etc/openssl@3/certs (1 added)
+[INFO] Java: added to 8.0.492-zulu 11.0.31-zulu 17.0.19-zulu 21.0.11-zulu 25.0.3-zulu
+[INFO] Node.js: /Users/appcircle/cacerts.crt updated
+[INFO] Verified https://api.appcircle.spacetech.com:443
+[INFO] Done. Open a new terminal session for Node.js to pick up NODE_EXTRA_CA_CERTS.
+```
 
 :::caution
-Please exit from the current terminal session and start a new one for changes to take effect.
+Open a new terminal session after the script completes for the changes to take effect.
 :::
 
-### Adding Certificates Manually
+You can run the script again at any time. Certificates that are already trusted are not added twice.
 
-In situations where automatic root certificate detection may not work, the bash script provides a user-friendly manual trust method.
+### Certificates Valid for More Than 825 Days
 
-Users can supply the root certificates themselves locally to the tool and import them.
+macOS does not accept a server certificate valid for more than 825 days, even when its root CA is trusted. The script detects such a certificate and trusts it as well. Run the script again when the certificate is renewed.
 
-Once imported, the operating system and other tools listed above will trust the certificate, ensuring secure connections to the server, just like getting them from a URL.
+### If the Server Does Not Send Its Root CA
 
-If `install_cert.sh` can't auto-detect the root CA from URL, follow the steps below to import it from disk:
+Most servers send only their own certificate and an intermediate CA. The script then downloads the root CA from the address in the intermediate certificate. If that is not possible, it stops without changing anything.
 
-- Get your organization's root CA and copy its content.
-
-- Go to the `scripts` directory, which is in the `appcircle-runner` directory.
-
-- Create a file named `rootca.crt` and paste the root CA content inside it.
+In that case, get the root CA file from your IT team and pass it with `--cert`:
 
 ```bash
-vi rootca.crt
+./scripts/install_cert.sh --cert rootca.crt --url api.appcircle.spacetech.com
 ```
+
+With `--cert`, only the given certificates are trusted. The server is used to test the connection.
+
+### Behind a Proxy
+
+The script uses the `HTTPS_PROXY` and `NO_PROXY` environment variables, like other tools. If your proxy inspects TLS traffic, trust the proxy's CA as well: run the script with an external host, for example `--url github.com`, or pass the proxy's CA file with `--cert`.
+
+### Exit Codes
+
+| Code | Meaning |
+| --- | --- |
+| `0` | The certificates are trusted and the connection test passed. |
+| `1` | Invalid usage. Run the script with `--help`. |
+| `2` | The server's certificate or its root CA could not be fetched. |
+| `3` | A trust step failed. |
+| `4` | The certificates are trusted, but the connection test failed. The cause is printed. |
+
+Add `--debug` to see the details of each step.
 
 :::info
-Alternatively, you can push the certificate files to the runner disk and use them directly as certificate arguments.
+If macOS answers that the trust change was denied, System Integrity Protection is enabled on that Mac (Appcircle runner VM images have it disabled). Trust the certificate in Keychain Access with **Always Trust**, or with a certificate payload from your MDM, then run the script again.
 :::
-
-- To use the `install_cert.sh` in manual mode, you should provide the root CA and a URL to test the connection.
-
-```bash
-./install_cert.sh <path to the CA cert> <url to test connection>
-```
-
-For example, if you saved the root CA in the `rootca.crt` file and want to import and test the connection to the Appcircle server, see the example below:
-
-```bash
-./install_cert.sh rootca.crt api.appcircle.spacetech.com
-```
-
-After the script completes successfully, the certificate will be trusted in your system.

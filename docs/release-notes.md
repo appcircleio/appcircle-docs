@@ -966,7 +966,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 
 ### 🆕 New Features
 
-- Binary Tags can now be configured from the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#binary-tags) and [Enterprise Portal](/enterprise-app-store/enterprise-app-store-profile#binary-tags) profile settings to be displayed on the Testing and Enterprise Portals. The data for these tags is provided by the Build module. These tags help testers identify the context, source, and purpose of each app version. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Binary Tags can now be configured from the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#predefined-tags) and [Enterprise Portal](/enterprise-app-store/enterprise-app-store-profile#binary-tags) profile settings to be displayed on the Testing and Enterprise Portals. The data for these tags is provided by the Build module. These tags help testers identify the context, source, and purpose of each app version. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Support has been added for downloading build logs using the `commitId` and `buildId` parameters, with optional path support. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The **Select Java Version** step, commonly used in Android projects, has been added to the default workflows. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The **Release Notes** component is now enriched with build Git metadata by default and added to the Default Workflow for all platforms. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>

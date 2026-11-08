@@ -95,8 +95,53 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 |----------------------------|------------------------------------------------|--------|
 | `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both **Cache Push** and **Cache Pull** steps should have the same value to match. | Required |
 | `$AC_CACHE_INCLUDED_PATHS` | Specifies the files and folders that should be in the cache. Multiple glob patterns can be provided as a colon-separated list. For example; `.gradle:app/build` or `Pods:Podfile.lock`. | Required |
-| `$AC_CACHE_EXCLUDED_PATHS` | Specifies the files and folders that should be ignored from the cache. Multiple glob patterns can be provided as a colon-separated list. For example, `.gradle/*.lock:*.apk`. | Optional |
+| `$AC_CACHE_EXCLUDED_PATHS` | Specifies the files and folders that should be ignored from the cache. Multiple glob patterns can be provided as a colon-separated list. For example, `.gradle/*.lock:*.apk`. An exclude applies only to included paths with the same prefix. See [Excluded Paths and Prefixes](#excluded-paths-and-prefixes). | Optional |
+| `$AC_CACHE_KEY_FILE`       | Path to your dependency lock file, relative to the repository root. For example, `Podfile.lock` (iOS), `gradle/libs.versions.toml` (Android), `yarn.lock` or `package-lock.json` (React Native), `pubspec.lock` (Flutter). If this file and the included and excluded paths did not change since the last push, the push is skipped. Leave empty to always push. See [Skipping Unchanged Caches](#skipping-unchanged-caches). | Optional |
 | `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Optional |
+
+:::info
+
+`$AC_CACHE_KEY_FILE` is available in Cache Push **`1.0.8`** and later. For the React Native Android Cache Push component, it is available in **`1.0.7`** and later.
+
+:::
+
+### Excluded Paths and Prefixes
+
+An exclude pattern applies only to included paths with the same prefix:
+
+- A pattern without a prefix, for example `*.lock`, applies only to included paths in the repository.
+- A pattern that starts with `~/` applies only to included paths that start with `~/`.
+- A pattern that starts with `/` or with an environment variable applies only to included paths under the same base path.
+
+For example, to exclude the `.lock` files in the `~/.gradle` included path, use `~/.gradle/**/*.lock`. The pattern `*.lock` does not exclude them.
+
+### Skipping Unchanged Caches
+
+Cache Push runs these checks in order. Each check stops the step as early as possible:
+
+1. If `AC_CACHE_PUSH_SKIP` is `true`, the push is skipped. The value is not case-sensitive. You can set it from a [**Custom Script**](/workflows/common-workflow-steps/custom-script) step, for example `echo "AC_CACHE_PUSH_SKIP=true" >> $AC_ENV_FILE_PATH`. This variable is not shown in the step inputs.
+2. If `$AC_CACHE_KEY_FILE` is set, Cache Push calculates the SHA-256 of the file together with the included and excluded paths. If the result is the same as the key stored in the pulled cache, the push is skipped before compression. The build log shows `<file> has not changed since the last push. Cache push is skipped.`
+3. After compression, if the cache is the same as the pulled cache, the upload is skipped.
+
+:::caution
+
+The key file check needs a **Cache Pull** step with the same cache label earlier in the workflow, because the stored key is read from the pulled cache. Without it, the push always runs.
+
+If the key file is not found, the step logs a warning and pushes the cache. The build does not fail. The first push of a label always runs.
+
+:::
+
+### Compression
+
+When `zstd` is available on the runner, Cache Push archives each included path with `tar` and compresses it with `zstd`. This is much faster than `zip`. If `zstd` is not available, the step uses `zip`. The uploaded cache keeps the same file name in both formats.
+
+If the workflow uses a Cache Pull version older than **`1.0.8`**, Cache Push uses `zip`, so that the older Cache Pull can still restore the cache. To use the faster format, update **Cache Pull** before **Cache Push**.
+
+:::caution
+
+If you change a Cache Push step to a version older than `1.0.8` (React Native Android: `1.0.7`) in the same edit, the `$AC_CACHE_KEY_FILE` input can stay on the step, and the build fails with `Component does not have input. Input name: AC_CACHE_KEY_FILE`. To fix it, open the step again and save it.
+
+:::
 
 :::tip
 
