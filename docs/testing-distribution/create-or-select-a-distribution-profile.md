@@ -146,7 +146,7 @@ The following rules apply to custom tags:
 
 - A tag can contain spaces. Only **Enter** or a comma adds a new tag, so a tag cannot contain a comma.
 - A tag can be at most 256 characters.
-- A binary can have at most 50 custom tags. [Predefined tags](#binary-tags) are not counted.
+- A binary can have at most 50 custom tags. [Predefined tags](#predefined-tags) are not counted.
 - Tags are case-sensitive. For example, `Beta` and `beta` are two different tags.
 - The same tag cannot be added twice to a binary.
 - A tag cannot contain control characters, such as a line break or a tab.
