@@ -20,7 +20,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Binary tags and a message can now be added when a binary is uploaded manually to a Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
+- [Custom tags](/testing-distribution/create-or-select-a-distribution-profile#custom-tags) and a message for test details can now be added when a binary is uploaded manually to a Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
 {/* - Self-hosted Appcircle can now run in air-gapped mode. Integrations that need an external SaaS service (App Store Connect, Google Play, Huawei AppGallery, Intune, Slack, Microsoft Teams and outgoing webhooks) can be disabled per service, social login providers are disabled, and the related features and workflow steps are hidden in the UI. <SelfHostedBadge/>*/}
 {/* - Workflow and publish components no longer need GitHub access on self-hosted runners. They are embedded in the runner as one versioned snapshot and served by the Build Server, with git clone as the last fallback. <InfrastructureBadge/> <SelfHostedBadge/>*/}
 
@@ -74,7 +74,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 Patch for [3.34.0](#3-34-0)
 
-- <ImprovementTag/> CAPTCHA can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/>
+- <ImprovementTag/> [CAPTCHA](/testing-distribution/create-or-select-a-distribution-profile#enable-captcha) can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/>
 - <ImprovementTag/> The upload timeout of the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step can now be configured (default 60 seconds). Increase it if large binaries fail with `Net::ReadTimeout` behind slow or inspecting proxies. <PublishIntegrationsBadge/> <CloudBadge/>
 - <ImprovementTag/> Recipients who unsubscribe from notification emails by mistake can now resubscribe from the unsubscribe confirmation page. <IntegrationsBadge/> <CloudBadge/>
 - <ImprovementTag/> Re-sign history and logs now have their own permissions (List / Get Resign), which can be assigned through custom roles. <PublishBadge/> <AccountBadge/> <CloudBadge/>
