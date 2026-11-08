@@ -3373,3 +3373,8 @@ quay:
   label: "artifact proxy"
   description: "Documentation related to artifact proxy on Appcircle"
   permalink: "/artifact-proxy"
+
+"configurations":
+  label: "configurations"
+  description: "Documentation related to configurations on Appcircle"
+  permalink: "/configurations"
