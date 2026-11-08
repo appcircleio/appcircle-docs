@@ -29,9 +29,9 @@ We generally recommend a standalone approach by deploying a single node environm
 
 When we look at self-hosted Appcircle deployment as a whole, we will see below architecture in execution for a basic installation.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-topology.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-755-standalone-topology_v2.png' />
 
-To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/be-3008-appcircle-topology.png). It will open the diagram in new browser tab.
+To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/PL-755-standalone-topology_v2.png). It will open the diagram in new browser tab.
 
 :::tip
 You can see all external network access details on the [Network Access](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access) page.
@@ -43,7 +43,7 @@ If the Appcircle server and runners have no internet access, see the [air-gapped
 
 If you plan to use the Enterprise App Store and Testing Distribution modules isolated from the internal network in which these modules are only exposed to the external networks, you can use Docker/Podman Architecture in DMZ formation.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3008-appcircle-dmz-topology.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-755-dmz-topology_v2.png' />
 
 For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) document.
 
@@ -51,9 +51,9 @@ For more information about the Appcircle DMZ architecture, you can check the [En
 
 In an air-gapped network, nothing inside the network has a connection to the internet. The Appcircle server, the macOS hosts and the runner VMs download everything from an artifact mirror in your network, such as Sonatype Nexus or JFrog Artifactory with hosted repositories. You prepare the content of the mirror outside the network, in a staging artifact repository that you operate, and bring it in through a periodic, controlled offline transfer, such as removable media or a data diode.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology_v6.png' alt='Air-gapped architecture of self-hosted Appcircle' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology_v8.png' alt='Air-gapped architecture of self-hosted Appcircle' />
 
-To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology_v6.png). It will open the diagram in new browser tab.
+To see the topology diagram in greater detail, click [here](https://cdn.appcircle.io/docs/assets/PL-468-airgap-topology_v8.png). It will open the diagram in new browser tab.
 
 Compared to the [standalone architecture](#dockerpodman-standalone-architecture):
 
@@ -78,7 +78,7 @@ The installation guides cover the air-gapped setup in their own steps: the runne
 
 In addition to the standalone and DMZ architectures, you can deploy Appcircle using the Helm chart for Kubernetes/OpenShift environments. This method allows for greater scalability and management flexibility.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-5525-k8s-ocp-arch-diagram.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-755-helm-topology_v2.png' />
 
 For detailed instructions on installing and configuring Appcircle using the Helm chart, refer to the relevant Helm chart installation documentation for [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes) or [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift). These documentation pages include steps for setting up Helm, configuring `values.yaml`, and deploying the Appcircle server.
 
