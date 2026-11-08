@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 4.0.0 - 2026-11-08 Binary Tags for Manual Uploads, Custom Role Details, Consistent Permission States, Bug Fixes and more
+## 4.0.0 - 2026-11-08 Custom Tags for Testing Distribution Manual Uploads, Consistent Permission States, Bug Fixes and more
 
 ### 🆕 New Features
 
