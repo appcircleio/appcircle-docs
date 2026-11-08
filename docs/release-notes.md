@@ -16,11 +16,65 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 4.0.0 - 2026-11-08 Binary Tags for Manual Uploads, Custom Role Details, Consistent Permission States, Bug Fixes and more
+
+### 🆕 New Features
+
+- [Custom tags](/testing-distribution/create-or-select-a-distribution-profile#custom-tags) and a message for test details can now be added when a binary is uploaded manually to a Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
+{/* - Self-hosted Appcircle can now run in air-gapped mode. Integrations that need an external SaaS service (App Store Connect, Google Play, Huawei AppGallery, Intune, Slack, Microsoft Teams and outgoing webhooks) can be disabled per service, social login providers are disabled, and the related features and workflow steps are hidden in the UI. <SelfHostedBadge/>*/}
+{/* - Workflow and publish components no longer need GitHub access on self-hosted runners. They are embedded in the runner as one versioned snapshot and served by the Build Server, with git clone as the last fallback. <InfrastructureBadge/> <SelfHostedBadge/>*/}
+
+### :muscle: Improvements
+
+- Permission and availability states are now applied consistently on the Dashboard, Build, Signing Identities, Testing Distribution, Enterprise App Store, Publish to Stores, Organization and Admin pages. Pages that the user cannot access now redirect to an Access Denied page instead of showing a blurred overlay. <AccountBadge/> <CloudBadge/>
+- Custom role details now have `Assigned Scopes` and `Members` tabs, which show the scopes a role grants and the members it is assigned to. <AccountBadge/> <CloudBadge/>
+- Deleting a custom role now asks for confirmation and lists the LDAP/SSO group mappings that use the role. <AccountBadge/> <CloudBadge/>
+- Organization membership removal emails now show who removed the member and from which organization. <AccountBadge/> <CloudBadge/>
+- Role scope names now use the terminology of their modules. <AccountBadge/> <CloudBadge/>
+- API key expiration now also applies to access tokens that were issued before the key expired. <AccountBadge/> <CloudBadge/>
+- Build profile API responses no longer include credentials in repository URLs. <BuildBadge/> <CloudBadge/>
+- The GitHub App connection flow on build profile creation has been improved, so it no longer stays in the "Connecting to the selected..." state. <BuildBadge/> <CloudBadge/>
+- The release note field of Android publish binary information is now limited to 500 characters, the Google Play limit. <PublishBadge/> <CloudBadge/>
+- `Replace flow` is now hidden on plans that do not include publish flow updates. <PublishBadge/> <CloudBadge/>
+- The warning popup of Android publish has been redesigned. <PublishBadge/> <CloudBadge/>
+- On the Starter plan, the daily fair-usage limit for tester emails now applies, resends included. <DistributionBadge/> <CloudBadge/>
+- The `Message to Testers` field now has a character limit and a counter. <DistributionBadge/> <CloudBadge/>
+- Re-sign requests from Testing Distribution, Publish and Enterprise App Store now validate the signing assets and runner pool when the request is sent, and return a clear error instead of failing on the runner. <DistributionBadge/> <PublishBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- On the Starter plan, unsubscribing from Testing Distribution, Signing Identities and integration notification emails is now permanent. <DistributionBadge/> <SigningIdentitiesBadge/> <IntegrationsBadge/> <CloudBadge/>
+- The LDAP test connection for Testing Distribution and Enterprise App Store now reports success only after a verified LDAP bind. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- Cache Push and Cache Pull now compress caches with `zstd`, which is several times faster than zip. The new Cache Key File input skips the cache push when your dependency lock file has not changed. Requires Cache Pull 1.0.8 and Cache Push 1.0.8 (React Native Android: 1.0.7). <BuildIntegrationsBadge/> <CloudBadge/>
+- Select Java Version now switches Java without `SDKMAN`, so restricted networks no longer get internet warnings. Java 25 can be selected, and the error message names the selected version when it is not available. <BuildIntegrationsBadge/> <CloudBadge/>
+- Flutter Install now installs Flutter from official release archives and supports internal mirrors through `FLUTTER_STORAGE_BASE_URL`. <BuildIntegrationsBadge/> <CloudBadge/>
+- Bundletool and Android Re-sign steps support a configurable bundletool download location and no longer look up the latest version on GitHub by default. <BuildIntegrationsBadge/> <CloudBadge/>
+- The Tuist step installs Tuist from release binaries and supports internal mirrors instead of Homebrew taps. <BuildIntegrationsBadge/> <CloudBadge/>
+- The Xcresult Converter step no longer depends on a Homebrew tap. <BuildIntegrationsBadge/> <CloudBadge/>
+- The Marathon Cloud step installs its CLI from release binaries instead of a Homebrew tap. <BuildIntegrationsBadge/> <CloudBadge/>
+- Fixed Git LFS cloning and the Azure DevOps SwiftLint bot for on-premises servers. <BuildIntegrationsBadge/> <CloudBadge/>
+- Outbound requests to App Store Connect, Slack, Microsoft Teams and Git providers now have explicit timeouts. <CloudBadge/>
+- General stability improvements for organization roles, membership and runner access tokens. <CloudBadge/>
+- General stability improvements for resource downloads, domain verification and page loads. <CloudBadge/>
+{/* - Self-hosted services now read their configuration from the new central configuration service, and runtime secrets are kept in OpenBao. <SelfHostedBadge/>*/}
+{/* - The Git providers available on a self-hosted Build Server can now be limited with one `AC_GIT_PROVIDERS` setting. <BuildBadge/> <SelfHostedBadge/>*/}
+
+### 🐞 Fixes
+
+- An issue has been fixed where Starter organizations saw a limit warning instead of the Enterprise upgrade screen on domain verification. <AccountBadge/> <CloudBadge/>
+- An issue has been fixed where the Source code link in the build profile header opened the raw git URL. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where re-sign jobs could wait in the queue behind other jobs for a long time. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where the publish activity log could not be exported. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where webhooks for publish success, failure and stop events were not delivered. <PublishBadge/> <IntegrationsBadge/> <CloudBadge/>
+- An issue has been fixed where an Enterprise App Store custom domain under the platform store domain always showed the static login page. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue has been fixed where release notes were displayed incorrectly in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue has been fixed where updating a bundle identifier failed with an Apple 403 error because of the read-only In-App Purchase capability. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue has been fixed where Apple API keys whose private key starts with a zero byte could not sign App Store Connect and Enterprise requests. <SigningIdentitiesBadge/> <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where the limit warning closed immediately after it opened. <CloudBadge/>
+{/* - An issue has been fixed where looking up a user by email imported the user from LDAP automatically. <AccountBadge/> <SelfHostedBadge/> */}
+
 ## 3.34.5 - 2026-11-03 <PatchBadge/>
 
 Patch for [3.34.0](#3-34-0)
 
-- <ImprovementTag/> CAPTCHA can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/>
+- <ImprovementTag/> [CAPTCHA](/testing-distribution/create-or-select-a-distribution-profile#enable-captcha) can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/>
 - <ImprovementTag/> The upload timeout of the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step can now be configured (default 60 seconds). Increase it if large binaries fail with `Net::ReadTimeout` behind slow or inspecting proxies. <PublishIntegrationsBadge/> <CloudBadge/>
 - <ImprovementTag/> Recipients who unsubscribe from notification emails by mistake can now resubscribe from the unsubscribe confirmation page. <IntegrationsBadge/> <CloudBadge/>
 - <ImprovementTag/> Re-sign history and logs now have their own permissions (List / Get Resign), which can be assigned through custom roles. <PublishBadge/> <AccountBadge/> <CloudBadge/>
