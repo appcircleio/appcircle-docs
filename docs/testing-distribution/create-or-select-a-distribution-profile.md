@@ -111,15 +111,24 @@ To free up space, other references pointing to the artifact should also be remov
 
 ## Uploading Binary
 
+Binaries can be uploaded manually on Testing Distribution UI and through Build module.
+
 ### Manual Binary Upload
 
 Pre-built iOS or Android applications can be uploaded for distribution by clicking the "**Upload Binary**" button at the top right corner.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1_v2.png' />
 
+In the upload panel, you can choose the binary file and optionally fill in the fields below before you click **Upload**:
+
+- **Test details**: Tell your testers what you want them to test in this build. Test details can be at most 1000 characters. This field is optional.
+- **Custom tags**: Label the binary with your own tags. Type a tag and press **Enter** or type a comma to add it. This field is optional.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-166-1.png' />
+
 After the file is uploaded, it is checked for errors and parsed for metadata. Any errors that occur will be displayed in the upload area.
 
-Once the upload is complete, the new version will be added to the top of the list with parsed metadata. This version can then be shared with testers or previewed on a virtual device in the browser.
+Once the upload is complete, the new version will be added to the top of the list with parsed metadata, test details and custom tags. This version can then be shared with testers or previewed on a virtual device in the browser.
 
 :::info
 
@@ -128,6 +137,48 @@ Please note that iOS and Android binaries are listed separately. Use the iOS/And
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update2_v2.png' />
+
+#### Custom Tags
+
+Custom tags help testers identify a binary that you uploaded manually, for example `Release Candidate` or `Hotfix`. Custom tags are displayed on the Testing Portal next to the binary.
+
+The following rules apply to custom tags:
+
+- A tag can contain spaces. Only **Enter** or a comma adds a new tag, so a tag cannot contain a comma.
+- A tag can be at most 256 characters.
+- A binary can have at most 50 custom tags. [Predefined tags](#binary-tags) are not counted.
+- Tags are case-sensitive. For example, `Beta` and `beta` are two different tags.
+- The same tag cannot be added twice to a binary.
+- A tag cannot contain control characters, such as a line break or a tab.
+- Tags can contain characters from all alphabets.
+
+:::caution
+
+If a tag in the field is not valid, the **Upload** button is disabled until you fix or remove the tag.
+
+:::
+
+You can also edit the custom tags of a binary after the upload. Select the binary in the profile, then add or remove tags in the **Tags** area below the test details.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-166-3.png' />
+
+The predefined tags that you selected in the profile settings are shown in the same area. They come from the Build module, so you cannot remove them from a binary.
+
+:::tip Upload with API & CLI
+
+You can also send test details and custom tags when you upload a binary through the API. Add the `message` and `customTag` fields to the body of the commit request. Separate multiple custom tags with commas.
+
+```bash
+curl --location 'https://api.appcircle.io/distribution/v1/profiles/{profileId}/app-versions?action=commitFileUpload' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ACCESS_TOKEN' \
+--data '{
+    "fileId": "FILE_ID",
+    "fileName": "app.ipa",
+    "message": "Verify the new checkout flow.",
+    "customTag": "Release Candidate,Hotfix"
+}'
+```
 
 ### Upload via Build Module
 
@@ -317,9 +368,9 @@ The **Single Active Session** feature supports all valid authentication types: *
 This feature is **not** applicable when the authentication type is set to **None (No Authentication)**.
 :::
 
-#### Binary Tags
+#### Predefined Tags
 
-The Binary Tags feature allows you to label your application binaries with meaningful metadata, which is displayed on the Testing Portal for easy identification by testers.
+The Predefined Tags feature allows you to label your application binaries with meaningful metadata, which is displayed on the Testing Portal for easy identification by testers.
 
 These tags help testers understand each binary's origin, purpose, and how it was triggered. The available tags are:
 - Commit ID
@@ -343,17 +394,15 @@ Uploaded binaries without metadata from a build module won’t show the selected
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-8_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-166-4.png' />
 
-Binary tags can be managed through the Testing Distribution Profile Settings under the **Testing Portal** tab:
+Predefined tags can be managed through the Testing Distribution Profile Settings under the **Testing Portal** tab:
 1. Navigate to **Testing Distribution** module.
 2. Select the relevant distribution profile.
 3. Open the **...** menu next to the profile name and select **Settings**.
-4. Under the **Testing Portal** tab, locate the **Binary tags** section.
+4. Under the **Testing Portal** tab, locate the **Predefined tags** section.
 5. Use the “Add a new tag” field to enter or select tags.
 6. Click **Save** to apply changes.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-9_v2.png' />
 
 Once tags are saved in the profile settings:
 - Tags will automatically appear next to the app version on the Testing Portal after being distributed.
@@ -384,6 +433,36 @@ If SSO and LDAP details are not configured for your organization, these authenti
 
 :::
 
+#### Enable Captcha
+
+The captcha configuration in the Testing Distribution profile is designed to enhance login security for the [Testing Portal](/testing-distribution/testing-portal). It provides flexibility for administrators to control how and when captcha is enforced, as well as to set restrictions on failed login attempts. It is supported for Static and LDAP authentication methods.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-166-5.png' />
+
+##### Captcha Enable/Disable Toggle
+
+- **Disabled**: The captcha system remains inactive regardless of the number of failed login attempts.
+- **Enabled**: The captcha system enforces additional security based on two specific settings available in the user interface.
+
+##### When Captcha Will Be Shown
+
+Defines the threshold of failed login attempts after which captcha is displayed to users.
+
+The default setting is 3. However, it can be set to 0 to always enable captcha, requiring users to solve it on every login attempt.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-166-6.png' />
+
+##### Restrict Failed Attempts
+
+Limits the number of login attempts a user can make after which the system blocks further attempts.
+
+The maximum number of failed attempts is determined by the value set in this configuration. This value must be greater than 1.
+
+If a user gets restricted due to failed attempts, the recovery time is 1 hour.
+
+:::info
+Captcha settings are configured separately for each Testing Distribution profile and apply only to the Testing Portal login of that profile. The Enterprise App Store captcha settings do not affect them.
+:::
 
 ### Distribution Link
 
