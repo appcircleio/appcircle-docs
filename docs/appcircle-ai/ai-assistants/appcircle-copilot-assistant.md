@@ -31,9 +31,38 @@ The plugin registers the [Appcircle MCP Server](/appcircle-ai/ai-features-on-app
    ```
 3. Install the plugin:
    ```shell
-   copilot plugin install appcircle@appcircle-ai-plugins
+   copilot plugin install appcircle@appcircle
    ```
 4. Ask Copilot an Appcircle question. For "how do I" or troubleshooting questions, for example "How do I set up automatic code signing for my iOS builds," Copilot uses the `appcircle-assistant` skill. For questions about your own organization, for example "List my build profiles," Copilot uses the Appcircle MCP tools, which requires step 1.
+
+### Self-Hosted Appcircle in Copilot CLI
+
+Self-hosted Appcircle installations include their own Appcircle MCP Server at `https://mcp.<your-appcircle-domain>`. The plugin always points to the cloud server, `mcp.appcircle.io`, so disable the plugin's server and register your self-hosted server yourself.
+
+:::info
+The Appcircle MCP Server is available on self-hosted Appcircle server 3.31.0 and later.
+:::
+
+:::warning
+On a self-hosted Appcircle server, don't set `APPCIRCLE_ACCESS_TOKEN`, and remove it from your shell profile if you already set it. The plugin's server reads that variable and would send your self-hosted token to `mcp.appcircle.io`. Keep your self-hosted token in a separate variable, `APPCIRCLE_SELFHOSTED_TOKEN`, so it never reaches the cloud server.
+:::
+
+1. Export a token issued by your self-hosted Appcircle server:
+   ```bash
+   export APPCIRCLE_SELFHOSTED_TOKEN=<your-self-hosted-token>
+   ```
+2. Disable the plugin's server, then register yours:
+   ```bash
+   copilot mcp disable appcircle
+   copilot mcp add --transport http appcircle-selfhosted https://mcp.<your-appcircle-domain> \
+     --header 'Authorization: Bearer ${APPCIRCLE_SELFHOSTED_TOKEN}'
+   ```
+   Keep the single quotes around the header. Copilot CLI stores `${APPCIRCLE_SELFHOSTED_TOKEN}` as is and reads the token each time it starts, so you don't need to register again when the token changes.
+3. If your server's certificate is signed by an internal certificate authority, point `NODE_EXTRA_CA_CERTS` to the CA bundle (PEM):
+   ```bash
+   export NODE_EXTRA_CA_CERTS=/path/to/internal-ca.pem
+   ```
+4. Restart Copilot CLI.
 
 ### In VS Code
 

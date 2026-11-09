@@ -49,7 +49,7 @@ Choose how the MCP server runs based on whether you want to install anything loc
 
 | Mode | Summary |
 |------|---------|
-| Remote host | Connect to `https://mcp.appcircle.io`. No local install; your client sends your Appcircle Access Token on each request. |
+| Remote host | Connect to `https://mcp.appcircle.io`. No local install; your client sends your Appcircle Access Token on each request. Self-hosted Appcircle server 3.31.0 and later includes its own Appcircle MCP Server at `https://mcp.<your-appcircle-domain>`. |
 | Local (stdio) | Run the server from source (requires Python and pip) and let your MCP client start it as a subprocess. Set `APPCIRCLE_ACCESS_TOKEN` in the environment. |
 | Local (streamable-http) | Run the server locally over HTTP and have your client connect to that URL, sending its token with each request. |
 | Local (Docker) | Run the official Docker image on your machine. Requires Docker. |
