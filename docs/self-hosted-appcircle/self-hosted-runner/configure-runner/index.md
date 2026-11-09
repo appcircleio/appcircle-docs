@@ -47,6 +47,10 @@ Apply a safe security baseline to the physical macOS machine that runs your buil
 
 Install your Tart macOS VM runners as a launchd service so they survive an SSH logout and start automatically after a host reboot. Covers the login keychain unlock and automatic login, and why FileVault must stay off.
 
+## [Installing Additional JDK Versions](/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-jdk-versions)
+
+Install a JDK version that is not preinstalled on a self-hosted Linux runner. Learn how to add the JDK with SDKMAN, expose it to the runner service, select it from a workflow, and what changes when the runner runs inside a Docker container.
+
 ## [Upgrading Runner](/self-hosted-appcircle/self-hosted-runner/update)
 
 Keep your runners up-to-date with the latest features and improvements. Find out how to upgrade your runners to the latest version with minimal downtime.
