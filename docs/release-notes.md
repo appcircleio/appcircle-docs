@@ -43,6 +43,15 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - On the Starter plan, unsubscribing from Testing Distribution, Signing Identities and integration notification emails is now permanent. <DistributionBadge/> <SigningIdentitiesBadge/> <IntegrationsBadge/> <CloudBadge/>
 - The LDAP test connection for Testing Distribution and Enterprise App Store now reports success only after a verified LDAP bind. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 - Cache Push and Cache Pull now compress caches with `zstd`, which is several times faster than zip. The new Cache Key File input skips the cache push when your dependency lock file has not changed. Requires Cache Pull 1.0.8 and Cache Push 1.0.8 (React Native Android: 1.0.7). <BuildIntegrationsBadge/> <CloudBadge/>
+  - Existing workflows keep working. No inputs were removed, existing `zip` caches are restored, and cache errors do not fail the build.
+  - Compatibility and behavior changes:
+    - The first build after the update uploads the full cache.
+    - Cache Pull older than 1.0.8 cannot read the new format. Update [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull#backward-compatibility) first, including the Cache Pull steps that share the cache label in other workflows or build profiles.
+    - Runners without `zstd` fall back to `zip`.
+    - React Native Android Cache Push: 1.0.7. All other Cache Push components: 1.0.8.
+  - Known issues:
+    - If you change Cache Push to a version older than 1.0.8 (React Native Android: 1.0.7) in the same edit, the Cache Key File input stays on the step, and the build fails with `Component does not have input. Input name: AC_CACHE_KEY_FILE`. To fix it, open the step again and save it.
+    - [Cache Push can report success when the cache is not stored](/workflows/common-workflow-steps/build-cache/cache-push#known-issues). Uploads that took about 70 seconds or longer were missing in the next build. Keep caches small, and treat a `404` error in Cache Pull after a successful Cache Push as this issue.
 - Select Java Version now switches Java without `SDKMAN`, so restricted networks no longer get internet warnings. Java 25 can be selected, and the error message names the selected version when it is not available. <BuildIntegrationsBadge/> <CloudBadge/>
 - Flutter Install now installs Flutter from official release archives and supports internal mirrors through `FLUTTER_STORAGE_BASE_URL`. <BuildIntegrationsBadge/> <CloudBadge/>
 - Bundletool and Android Re-sign steps support a configurable bundletool download location and no longer look up the latest version on GitHub by default. <BuildIntegrationsBadge/> <CloudBadge/>
