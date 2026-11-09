@@ -15,7 +15,7 @@ If your selected pool from config is "Appcircle macOS Pool (arm64)", there are s
 
 | Xcode Selection | macOS Version |
 | ------- | ----- |
-| 26.6.x - 27.2.x | Tahoe `26.6.2` |
+| 26.6.x - 27.3.x | Tahoe `26.6.2` |
 | 26.3.x - 26.6.x | Tahoe `26.3.2` |
 | 16.3.x - 26.3.x | Sequoia `15.6.1` / Sequoia `15.4.1` |
 | 16.0.x - 16.2.x | Sequoia `15.6.1` / Sequoia `15.4.1` / Sonoma `14.5` |
@@ -33,7 +33,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS runners have Xcode versions 27.2.x (RC), 27.1.x, 27.0.x, 26.6.x, 26.5.x, 26.4.x, 26.3.x, 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
+Our macOS runners have Xcode versions 27.3.x (beta), 27.2.x, 27.1.x, 27.0.x, 26.6.x, 26.5.x, 26.4.x, 26.3.x, 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
 
 The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.3.2`) stack has the Xcode versions below:
 
@@ -48,22 +48,27 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.6.2`) stack has the Xcod
 
 | Version | Build |
 | ------- | ----- |
-| 27.2 RC 1 | `27B48` |
+| 27.3 beta 1 | `27C5020n` |
+| 27.2 | `27B52` |
 | 27.1 | `27A9275` |
 | 27.0 | `27A266a` |
 | 26.6 | `17F113` |
 
 :::info
 
-The macOS Tahoe (`26.6.2`) stack carries the stable Xcode 27.0 and 27.1 together with Xcode 26.6. Xcode 26.6 is available on the macOS Tahoe (`26.3.2`) stack as well, so you can move between the two stacks without changing the Xcode version you select.
+The macOS Tahoe (`26.6.2`) stack carries the stable Xcode 27.0, 27.1 and 27.2 together with Xcode 26.6. Xcode 26.6 is available on the macOS Tahoe (`26.3.2`) stack as well, so you can move between the two stacks without changing the Xcode version you select.
 
-Xcode 27.0, 27.1 and 27.2 all require macOS 26.6 or later, so they are available on this stack only. We strongly recommend testing your workflows on them before relying on them for production builds.
+Xcode 27.0, 27.1, 27.2 and 27.3 all require macOS 26.6 or later, so they are available on this stack only. We strongly recommend testing your workflows on them before relying on them for production builds.
 
 :::
 
-:::caution Xcode 27.2 is a pre-release version
+:::caution Xcode 27.3 is a pre-release version
 
-Xcode 27.2 is a release candidate, not a generally available release. Keep **Xcode 27.0** or **Xcode 27.1** selected for App Store and TestFlight release workflows until Xcode 27.2 is generally available, and use 27.2 for compatibility testing with the 27.2 SDKs.
+Xcode 27.3 is a beta, not a generally available release. App Store Connect does not accept builds from a beta Xcode. Keep **Xcode 27.2** (or **Xcode 27.1** for iPhone Duo targets) selected for App Store and TestFlight release workflows, and use 27.3 for compatibility testing with the 27.3 SDKs.
+
+If a publish step does not have an Xcode version selected, it can use the newest Xcode on the runners, which is now 27.3 beta. Select Xcode 27.2 in your App Store and TestFlight publish steps explicitly.
+
+Xcode 27.3 adds support for UI tests written with Swift Testing and `XCUIAutomation`.
 
 Known issues in Xcode 27.2 that can affect builds:
 
@@ -72,7 +77,7 @@ Known issues in Xcode 27.2 that can affect builds:
 
 Xcode 27.1 is generally available and adds the iOS 27.1 SDK and the iPhone Duo Simulator; the other platform SDKs stay on 27.0. Projects that use iOS 27.1 APIs may fail to compile for Mac Catalyst, and the first Simulator launch on 27.1 can take several minutes.
 
-For known issues on these toolchains, see Apple's [Xcode 27.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes) and [Xcode 27.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) release notes.
+For known issues on these toolchains, see Apple's [Xcode 27.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes), [Xcode 27.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes) and [Xcode 27.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-27_3-release-notes) release notes.
 
 :::
 
