@@ -27,6 +27,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :muscle: Improvements
 
 - Permission and availability states are now applied consistently on the Dashboard, Build, Signing Identities, Testing Distribution, Enterprise App Store, Publish to Stores, Organization and Admin pages. Pages that the user cannot access now redirect to an Access Denied page instead of showing a blurred overlay. <AccountBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has Xcode 27.3 beta installed on runners, adding the 27.3 SDKs for all Apple platforms. Beta releases are intended for compatibility testing only and cannot be used for App Store submission - continue using Xcode 27.2 for your release workflows. <InfrastructureBadge/> <CloudBadge/>
 - Custom role details now have `Assigned Scopes` and `Members` tabs, which show the scopes a role grants and the members it is assigned to. <AccountBadge/> <CloudBadge/>
 - Deleting a custom role now asks for confirmation and lists the LDAP/SSO group mappings that use the role. <AccountBadge/> <CloudBadge/>
 - Organization membership removal emails now show who removed the member and from which organization. <AccountBadge/> <CloudBadge/>
