@@ -51,11 +51,12 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'personalAccessKey=your_access_key' \
-  -d 'scope=openid,profile,email'
-  -d 'subOrganization={orgId}"
+  -d 'subOrganization={orgId}'
 ```
 
-Please ensure that the endpoint you are using is v2.
+Leave out the `subOrganization` line to get a token for the organization where the key was created. On a self-hosted Appcircle server, use `https://auth.<your-appcircle-domain>/auth/v3/token`.
+
+Please ensure that the endpoint you are using is v3.
 
 :::warning Personal API Token Renamed
 The Personal Access Key was previously referred to as the Personal API Token. The old endpoint is still available, but it is recommended to migrate to the new version.
@@ -65,8 +66,7 @@ curl -X 'POST' \
   'https://auth.appcircle.io/auth/v2/token' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'pat=$pat' \
-  -d 'scope=openid,profile,email'
-  -d 'subOrganization={orgId}"
+  -d "pat=$pat" \
+  -d 'subOrganization={orgId}'
 ```
 :::

@@ -5,6 +5,9 @@ tags: [appcircle ai, claude, assistant]
 sidebar_position: 3
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Appcircle Claude Assistant
 
 The **Appcircle Claude Plugin** connects Claude to the Appcircle platform, bundling the [Appcircle MCP Server](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp) with Appcircle-aware skills so you can ask Claude about your Appcircle organization or how to use Appcircle.
@@ -53,23 +56,84 @@ The Appcircle MCP Server is available on self-hosted Appcircle server 3.31.0 and
 On a self-hosted Appcircle server, don't set `APPCIRCLE_ACCESS_TOKEN`, and remove it from your shell profile if you already set it. The plugin's server reads that variable and would send your self-hosted token to `mcp.appcircle.io`. Keep your self-hosted token in a separate variable, `APPCIRCLE_SELFHOSTED_TOKEN`, so it never reaches the cloud server.
 :::
 
-1. Export a token issued by your self-hosted Appcircle server:
-   ```bash
-   export APPCIRCLE_SELFHOSTED_TOKEN=<your-self-hosted-token>
-   ```
-2. Register your server:
-   ```bash
-   claude mcp add --scope user --transport http appcircle-selfhosted https://mcp.<your-appcircle-domain> \
-     --header 'Authorization: Bearer ${APPCIRCLE_SELFHOSTED_TOKEN}'
-   ```
+Run the steps below in a terminal: zsh or bash on macOS and Linux, PowerShell on Windows. Select your system once; the tabs below follow it.
+
+1. In your Appcircle dashboard, create a [Personal Access Key](/account/my-organization/security/personal-access-key) and copy it.
+2. Exchange the key for an access token on your server. The commands ask for the key without showing it and keep the token in the `APPCIRCLE_SELFHOSTED_TOKEN` variable of this terminal:
+
+<Tabs groupId="os">
+  <TabItem value="unix" label="macOS / Linux" default>
+
+```bash
+read -rs PAK
+export APPCIRCLE_SELFHOSTED_TOKEN=$(curl -s -X POST https://auth.<your-appcircle-domain>/auth/v3/token \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d "personalAccessKey=$PAK" | jq -r '.access_token // empty')
+unset PAK
+echo "token length: ${#APPCIRCLE_SELFHOSTED_TOKEN}"
+```
+
+  </TabItem>
+  <TabItem value="windows" label="Windows (PowerShell)">
+
+```powershell
+$key = Read-Host 'Personal Access Key' -AsSecureString
+$body = @{ personalAccessKey = [System.Net.NetworkCredential]::new('', $key).Password }
+$response = Invoke-RestMethod -Method Post `
+  -Uri 'https://auth.<your-appcircle-domain>/auth/v3/token' `
+  -ContentType 'application/x-www-form-urlencoded' -Body $body
+$env:APPCIRCLE_SELFHOSTED_TOKEN = $response.access_token
+Remove-Variable key, body, response
+"token length: $($env:APPCIRCLE_SELFHOSTED_TOKEN.Length)"
+```
+
+  </TabItem>
+</Tabs>
+
+   The token length should be about 1,000 characters. If it is `0`, the exchange failed: run the request again without saving the result to see the error message. The macOS / Linux commands need `jq`.
+
+   To work in a sub-organization, create the key in the root organization and add `subOrganization=<sub-organization-id>` to the request (in PowerShell, `subOrganization = '<sub-organization-id>'` in `$body`). A token works only in the organization it was issued for. See [Sub-organization scope](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp#authentication).
+
+3. Register your server once:
+
+<Tabs groupId="os">
+  <TabItem value="unix" label="macOS / Linux" default>
+
+```bash
+claude mcp add --scope user --transport http appcircle-selfhosted https://mcp.<your-appcircle-domain> \
+  --header 'Authorization: Bearer ${APPCIRCLE_SELFHOSTED_TOKEN}'
+```
+
+  </TabItem>
+  <TabItem value="windows" label="Windows (PowerShell)">
+
+```powershell
+claude mcp add --scope user --transport http appcircle-selfhosted https://mcp.<your-appcircle-domain> `
+  --header 'Authorization: Bearer ${APPCIRCLE_SELFHOSTED_TOKEN}'
+```
+
+  </TabItem>
+</Tabs>
+
    Keep the single quotes around the header. Claude Code stores `${APPCIRCLE_SELFHOSTED_TOKEN}` as is and reads the token each time it starts, so you don't need to register again when the token changes.
 
-   The plugin's `appcircle` server still appears and fails to connect because it has no token. You can ignore it.
-3. If your server's certificate is signed by an internal certificate authority, point `NODE_EXTRA_CA_CERTS` to the CA bundle (PEM):
+4. Check the connection from the same terminal:
    ```bash
-   export NODE_EXTRA_CA_CERTS=/path/to/internal-ca.pem
+   claude mcp list
    ```
-4. Restart Claude Code.
+   `appcircle-selfhosted` should show as connected. The plugin's `appcircle` server still appears and fails to connect because it has no token. You can ignore it.
+
+5. Start Claude Code from the same terminal with `claude`. Claude Code reads the token only when it starts.
+
+:::info Token renewal
+The access token is valid for 24 hours. When it expires, repeat step 2 and restart Claude Code. You don't need to register the server again.
+:::
+
+:::info Certificates signed by an internal certificate authority
+Claude Code trusts the certificate authorities in your operating system's certificate store. If your server's certificate is signed by an internal certificate authority that is not in that store, point `NODE_EXTRA_CA_CERTS` to the CA certificate (PEM) before you start Claude Code, for example `export NODE_EXTRA_CA_CERTS=/path/to/internal-ca.pem` or `$env:NODE_EXTRA_CA_CERTS = 'C:\certs\internal-ca.pem'`.
+:::
+
+If `claude mcp list` shows `Invalid or expired access token`, the token is expired or `APPCIRCLE_SELFHOSTED_TOKEN` is empty in this terminal. Repeat step 2 in the terminal you start Claude Code from.
 
 ### In claude.ai
 
