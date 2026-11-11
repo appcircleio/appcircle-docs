@@ -92,7 +92,7 @@ Remove-Variable key, body, response
 
    The token length should be about 1,000 characters. If it is `0`, the exchange failed: run the request again without saving the result to see the error message. The macOS / Linux commands need `jq`.
 
-   To work in a sub-organization, create the key in the root organization and add `subOrganization=<sub-organization-id>` to the request (in PowerShell, `subOrganization = '<sub-organization-id>'` in `$body`). A token works only in the organization it was issued for. See [Sub-organization scope](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp#authentication).
+   The token works only in the organization where you created the key. To work in a sub-organization, switch to it in the dashboard and create the key there. See [Sub-organization scope](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp#authentication).
 
 3. Register your server once:
 
