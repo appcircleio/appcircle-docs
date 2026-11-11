@@ -42,7 +42,7 @@ To generate a Personal Access Key for a sub-organization, you must be added as a
 :::info
 Personal Access Keys are only accessible within the organization where they were generated. However, a Personal Access Key created in the Root organization can also be used for sub-organizations.
 
-You can pass the `subOrganization` parameter when obtaining a Personal Access Token(PAT) using a Root Personal Access Key.
+To get a Personal Access Token (PAT) for a sub-organization with a Root Personal Access Key, send the sub-organization ID in the `Sub-Organization-Id` header.
 :::
 
 ```bash
@@ -50,11 +50,11 @@ curl -X 'POST' \
   'https://auth.appcircle.io/auth/v3/token' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'personalAccessKey=your_access_key' \
-  -d 'subOrganization={orgId}'
+  -H 'Sub-Organization-Id: {orgId}' \
+  -d 'personalAccessKey=your_access_key'
 ```
 
-Leave out the `subOrganization` line to get a token for the organization where the key was created. On a self-hosted Appcircle server, use `https://auth.<your-appcircle-domain>/auth/v3/token`.
+Leave out the `Sub-Organization-Id` header to get a token for the organization where the key was created. On a self-hosted Appcircle server, use `https://auth.<your-appcircle-domain>/auth/v3/token`.
 
 Please ensure that the endpoint you are using is v3.
 
@@ -66,7 +66,6 @@ curl -X 'POST' \
   'https://auth.appcircle.io/auth/v2/token' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d "pat=$pat" \
-  -d 'subOrganization={orgId}'
+  -d "pat=$pat"
 ```
 :::

@@ -92,7 +92,7 @@ Remove-Variable key, body, response
 
    The token length should be about 1,000 characters. If it is `0`, the exchange failed: run the request again without saving the result to see the error message. The macOS / Linux commands need `jq`.
 
-   The token works only in the organization where you created the key. To work in a sub-organization, switch to it in the dashboard and create the key there. See [Sub-organization scope](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp#authentication).
+   The token works in the organization where you created the key. To work in a sub-organization, use a key created in the root organization and send the sub-organization ID in a header: add `-H 'Sub-Organization-Id: <sub-organization-id>'` to the `curl` command, or `-Headers @{ 'Sub-Organization-Id' = '<sub-organization-id>' }` to `Invoke-RestMethod`. This also works for users who reach the sub-organization through the root organization and can't create a key there. See [Sub-organization scope](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp#authentication).
 
 3. Register your server once:
 
