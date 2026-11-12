@@ -3228,6 +3228,16 @@ quay:
   description: "Documentation related to GitHub Copilot"
   permalink: "/copilot"
 
+"github copilot":
+  label: "github copilot"
+  description: "Documentation related to GitHub Copilot"
+  permalink: "/github-copilot"
+
+"copilot cli":
+  label: "copilot cli"
+  description: "Documentation related to GitHub Copilot CLI"
+  permalink: "/copilot-cli"
+
 "codex":
   label: "codex"
   description: "Documentation related to Codex"

@@ -44,39 +44,11 @@ MCP tools are available in Codex. Installing the plugin in the ChatGPT desktop a
 2. Install the plugin:
    - **Codex CLI:** run `/plugins` and install the Appcircle plugin.
    - **ChatGPT desktop app:** restart the app, open the **Plugins Directory**, pick the Appcircle source, and install the plugin.
+3. Ask an Appcircle question. For "how do I" or troubleshooting questions, for example "How do I set up automatic code signing for my iOS builds," Codex uses the `appcircle-assistant` skill. For questions about your own organization, for example "List my build profiles," Codex uses the Appcircle MCP tools, which need the MCP server connected below.
 
 ### Connect the MCP Server in Codex
 
-The plugin can't pass your token to the MCP server in Codex, so register the server yourself. This replaces the plugin's own `appcircle` entry.
-
-1. Set your [Appcircle Access Token](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/appcircle_access_token.md) in the shell where Codex runs:
-   ```bash
-   export APPCIRCLE_ACCESS_TOKEN=<your-access-token>
-   ```
-2. Register the server:
-   ```bash
-   codex mcp add appcircle --url https://mcp.appcircle.io --bearer-token-env-var APPCIRCLE_ACCESS_TOKEN
-   ```
-3. Restart Codex so the MCP server picks up the token. When the token expires, export a new one and restart again.
-4. Ask an Appcircle question. For "how do I" or troubleshooting questions, for example "How do I set up automatic code signing for my iOS builds," Codex uses the `appcircle-assistant` skill. For questions about your own organization, for example "List my build profiles," Codex uses the Appcircle MCP tools.
-
-### Self-Hosted Appcircle
-
-Self-hosted Appcircle installations include their own Appcircle MCP Server at `https://mcp.<your-appcircle-domain>`. Register your self-hosted server with a token from a separate variable, `APPCIRCLE_SELFHOSTED_TOKEN`, instead of the steps above.
-
-:::info
-The Appcircle MCP Server is available on self-hosted Appcircle server 3.31.0 and later.
-:::
-
-1. Export a token issued by your self-hosted Appcircle server:
-   ```bash
-   export APPCIRCLE_SELFHOSTED_TOKEN=<your-self-hosted-token>
-   ```
-2. Register your server:
-   ```bash
-   codex mcp add appcircle --url https://mcp.<your-appcircle-domain> --bearer-token-env-var APPCIRCLE_SELFHOSTED_TOKEN
-   ```
-3. Restart Codex.
+The plugin can't pass your token to the MCP server in Codex, so register the server yourself by following the [Codex installation guide](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/installation-guides/codex). It covers Appcircle Cloud and self-hosted Appcircle servers, and replaces the plugin's own `appcircle` entry.
 
 To access the source code of this plugin, please use the following link:
 

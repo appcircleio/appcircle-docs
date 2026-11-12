@@ -18,9 +18,11 @@ The plugin registers the [Appcircle MCP Server](/appcircle-ai/ai-features-on-app
 | `appcircle-assistant` | Answers Appcircle questions using official sources (`docs.appcircle.io` and `appcircle.io`) |
 | `build-insights-report` | Renders a visual Build Insights Report (health & trends, root cause, workflow quality, artifact health, queue time, and CI maturity) from the `get_build_insights_report` MCP tool. See [Build Insights](/appcircle-ai/ai-insights/build-insights) for the full metric reference |
 
+The MCP tools are optional. The `appcircle-assistant` skill works without them. The MCP tools, and the `build-insights-report` skill that uses them, need an [Appcircle Access Token](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/authentication).
+
 ### In GitHub Copilot CLI
 
-1. *(Optional, for MCP tools)* Before starting Copilot CLI, set your [Appcircle Access Token](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/appcircle_access_token.md) in your shell so the MCP server can authenticate:
+1. *(Optional, for MCP tools)* Before starting Copilot CLI, set your [Appcircle Access Token](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/authentication) in your shell so the MCP server can authenticate:
    ```bash
    export APPCIRCLE_ACCESS_TOKEN=<your-access-token>
    ```
@@ -37,36 +39,11 @@ The plugin registers the [Appcircle MCP Server](/appcircle-ai/ai-features-on-app
 
 ### Self-Hosted Appcircle in Copilot CLI
 
-Self-hosted Appcircle installations include their own Appcircle MCP Server at `https://mcp.<your-appcircle-domain>`. The plugin always points to the cloud server, `mcp.appcircle.io`, so disable the plugin's server and register your self-hosted server yourself.
-
-:::info
-The Appcircle MCP Server is available on self-hosted Appcircle server 3.31.0 and later.
-:::
-
-:::warning
-On a self-hosted Appcircle server, don't set `APPCIRCLE_ACCESS_TOKEN`, and remove it from your shell profile if you already set it. The plugin's server reads that variable and would send your self-hosted token to `mcp.appcircle.io`. Keep your self-hosted token in a separate variable, `APPCIRCLE_SELFHOSTED_TOKEN`, so it never reaches the cloud server.
-:::
-
-1. Export a token issued by your self-hosted Appcircle server:
-   ```bash
-   export APPCIRCLE_SELFHOSTED_TOKEN=<your-self-hosted-token>
-   ```
-2. Disable the plugin's server, then register yours:
-   ```bash
-   copilot mcp disable appcircle
-   copilot mcp add --transport http appcircle-selfhosted https://mcp.<your-appcircle-domain> \
-     --header 'Authorization: Bearer ${APPCIRCLE_SELFHOSTED_TOKEN}'
-   ```
-   Keep the single quotes around the header. Copilot CLI stores `${APPCIRCLE_SELFHOSTED_TOKEN}` as is and reads the token each time it starts, so you don't need to register again when the token changes.
-3. If your server's certificate is signed by an internal certificate authority, point `NODE_EXTRA_CA_CERTS` to the CA bundle (PEM):
-   ```bash
-   export NODE_EXTRA_CA_CERTS=/path/to/internal-ca.pem
-   ```
-4. Restart Copilot CLI.
+The plugin's MCP server always points to the cloud server, `mcp.appcircle.io`. On a self-hosted Appcircle server, skip step 1 and register your own server by following the [Copilot CLI self-hosted installation guide](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/installation-guides/github-copilot#self-hosted-appcircle-in-copilot-cli).
 
 ### In VS Code
 
-1. *(Optional, for MCP tools)* Set your [Appcircle Access Token](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/appcircle_access_token.md) so the bundled MCP server can authenticate. You can export it before launching VS Code, or supply it when prompted after installing the plugin.
+1. *(Optional, for MCP tools)* Set your [Appcircle Access Token](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/authentication) so the bundled MCP server can authenticate. You can export it before launching VS Code, or supply it when prompted after installing the plugin.
 2. Click **Chat Settings** -> **Plugins** -> **Install Plugin from Source**.
 
    <img src="https://cdn.appcircle.io/docs/assets/AI-115-vscode-plugin.png" alt="Enter the repository URL" width="480" style={{display: 'block', margin: 0}} />
@@ -76,6 +53,8 @@ On a self-hosted Appcircle server, don't set `APPCIRCLE_ACCESS_TOKEN`, and remov
    <img src="https://cdn.appcircle.io/docs/assets/AI-115-vscode-plugin-2.png" alt="Enter the repository URL" width="480" style={{display: 'block', margin: 0}} />
 
 4. Open Copilot Chat and ask an Appcircle question, for example "How do I set up automatic code signing for my iOS builds" or "List my build profiles."
+
+The plugin's MCP server always points to the cloud server, `mcp.appcircle.io`. On a self-hosted Appcircle server, don't enter your self-hosted token when the plugin asks for one. Register your own server by following the [VS Code self-hosted installation guide](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/installation-guides/github-copilot#self-hosted-appcircle-in-vs-code).
 
 To access the source code of this plugin, please use the following link:
 

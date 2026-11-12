@@ -18,11 +18,13 @@ The plugin registers the [Appcircle MCP Server](/appcircle-ai/ai-features-on-app
 | `appcircle:appcircle-assistant` | Answers Appcircle questions using official sources (`docs.appcircle.io` and `appcircle.io`) |
 | `appcircle:build-insights-report` | Renders a visual Build Insights Report (health & trends, root cause, workflow quality, artifact health, queue time, and CI maturity) from the `get_build_insights_report` MCP tool. See [Build Insights](/appcircle-ai/ai-insights/build-insights) for the full metric reference |
 
-Claude Code and claude.ai install the plugin differently, so follow the steps for the surface you use. MCP tools are only available in Claude Code for now; installing the plugin in claude.ai gets you the `appcircle-assistant` skill, not the MCP tools.
+The MCP tools are optional. The `appcircle-assistant` skill works without them. The MCP tools, and the `build-insights-report` skill that uses them, need an [Appcircle Access Token](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/authentication).
+
+Claude Code installs the plugin differently from claude.ai and Claude Desktop, so follow the steps for the app you use. The plugin includes the MCP tools only in Claude Code. In claude.ai and Claude Desktop, it installs the skills only.
 
 ### In Claude Code
 
-1. *(Optional, for MCP tools)* Before starting Claude Code, set your [Appcircle Access Token](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/appcircle_access_token.md) in your shell so the MCP server can authenticate:
+1. *(Optional, for MCP tools)* Before starting Claude Code, set your [Appcircle Access Token](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/authentication) in your shell so the MCP server can authenticate:
    ```bash
    export APPCIRCLE_ACCESS_TOKEN=<your-access-token>
    ```
@@ -43,37 +45,15 @@ Claude Code and claude.ai install the plugin differently, so follow the steps fo
 
 ### Self-Hosted Appcircle in Claude Code
 
-Self-hosted Appcircle installations include their own Appcircle MCP Server at `https://mcp.<your-appcircle-domain>`. The plugin always points to the cloud server, `mcp.appcircle.io`, so register your self-hosted server yourself.
+The plugin's MCP server always points to the cloud server, `mcp.appcircle.io`. On a self-hosted Appcircle server, skip step 1 and register your own server by following the [Claude Code self-hosted installation guide](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/installation-guides/claude-applications#self-hosted-appcircle-in-claude-code). The plugin's skills then use your self-hosted server's MCP tools.
 
-:::info
-The Appcircle MCP Server is available on self-hosted Appcircle server 3.31.0 and later.
-:::
+### In claude.ai and Claude Desktop
+
+You can install this plugin's skills in claude.ai and Claude Desktop.
 
 :::warning
-On a self-hosted Appcircle server, don't set `APPCIRCLE_ACCESS_TOKEN`, and remove it from your shell profile if you already set it. The plugin's server reads that variable and would send your self-hosted token to `mcp.appcircle.io`. Keep your self-hosted token in a separate variable, `APPCIRCLE_SELFHOSTED_TOKEN`, so it never reaches the cloud server.
+The plugin doesn't add the MCP tools in claude.ai or Claude Desktop. In Claude Desktop, you can add them yourself, on Appcircle Cloud or a self-hosted Appcircle server, by following the [Claude Desktop installation guide](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/installation-guides/claude-applications#claude-desktop). claude.ai doesn't currently support the Appcircle MCP Server.
 :::
-
-1. Export a token issued by your self-hosted Appcircle server:
-   ```bash
-   export APPCIRCLE_SELFHOSTED_TOKEN=<your-self-hosted-token>
-   ```
-2. Register your server:
-   ```bash
-   claude mcp add --scope user --transport http appcircle-selfhosted https://mcp.<your-appcircle-domain> \
-     --header 'Authorization: Bearer ${APPCIRCLE_SELFHOSTED_TOKEN}'
-   ```
-   Keep the single quotes around the header. Claude Code stores `${APPCIRCLE_SELFHOSTED_TOKEN}` as is and reads the token each time it starts, so you don't need to register again when the token changes.
-
-   The plugin's `appcircle` server still appears and fails to connect because it has no token. You can ignore it.
-3. If your server's certificate is signed by an internal certificate authority, point `NODE_EXTRA_CA_CERTS` to the CA bundle (PEM):
-   ```bash
-   export NODE_EXTRA_CA_CERTS=/path/to/internal-ca.pem
-   ```
-4. Restart Claude Code.
-
-### In claude.ai
-
-You can install this plugin's skills in claude.ai too. MCP tools remain Claude Code-only for now.
 
 1. Click **Customize > Plugins > Add > Add marketplace**.
 
