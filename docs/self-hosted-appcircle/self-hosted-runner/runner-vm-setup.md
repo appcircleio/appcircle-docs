@@ -24,6 +24,10 @@ Here are some reasons for choosing VM image for self-hosted runner;
 - Since we use virtual machine for runner, it provides a clean, isolated instance for every build job. It means, known and more stable runner environment. Your runner won't persist any macOS changes done in build pipeline which can make runner unstable in time.
 - You can install and run only one instance of self-hosted runner on a physical machine. On the other hand, using virtualization infrastructure brings us concurrency. We can run multiple instances of runner on the same host.
 
+:::tip
+After the [Requirements](#requirements) below, you can install the runners with one command instead of the manual steps on this page, and upgrade them to a new image later without repeating your configuration. See [Install and Upgrade macOS VM Runners with runner-vm.sh](/self-hosted-appcircle/self-hosted-runner/runner-vm-tool).
+:::
+
 ## Requirements
 
 In order to use macOS VM, we need to install some dependencies on macOS host.
@@ -1687,6 +1691,10 @@ After a couple of minutes later, "runner1" will also become offline at self-host
 Steps are also similar for "runner2". You need to touch `.stop` file in its working directory and after getting its VM name from `tart list`, you can shutdown "runner2" over SSH.
 
 ## Update Base Images
+
+:::tip
+A change made in a base VM is lost when you move to a new macOS VM image. With [runner-vm.sh](/self-hosted-appcircle/self-hosted-runner/runner-vm-tool), you keep certificates, settings, tools and files in a folder on the host instead, and every new image gets them.
+:::
 
 On some cases, you may need to update to your macOS base images in order to make your changes permanent.
 
