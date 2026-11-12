@@ -35,9 +35,7 @@ Before running the **Maestro Cloud Upload** step, you must complete certain prer
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_2_v2.png'/>
+| [**Xcodebuild for iOS Simulator**](/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator) | Builds the application for the iOS Simulator and exports the `.app` path as `$AC_SIMULATOR_APP_PATH`. Maestro Cloud runs iOS tests on simulators, so an `IPA` built for devices cannot be used. |
 
 ### For Android Flutter 
 
@@ -52,10 +50,8 @@ Before running the **Maestro Cloud Upload** step, you must complete certain prer
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_4_v2.png'/>
+| [**Xcodebuild for iOS Simulator**](/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator) | Builds the application for the iOS Simulator and exports the `.app` path as `$AC_SIMULATOR_APP_PATH`. Maestro Cloud runs iOS tests on simulators, so an `IPA` built for devices cannot be used. |
 
 ## Input Variables
 
