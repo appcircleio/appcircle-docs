@@ -9,38 +9,38 @@ This page provides a checklist to be followed before installing the self-hosted 
 
 Please ensure all the checks are completed for a smooth installation process.
 
+## Server Requirements
+
+The table below lists the requirements of the Appcircle server and the Appcircle DMZ server. Use the recommended values for enterprise installations and production environments.
+
+| Requirement              | Minimum                                               | Recommended           |
+| ------------------------ | ----------------------------------------------------- | --------------------- |
+| CPU                      | 8 cores                                               | 16 or 32 cores        |
+| CPU architecture         | `x86_64` (AMD or Intel 64-bit)                        | `x86_64`              |
+| RAM                      | 16 GB                                                 | 64 GB                 |
+| Disk                     | 500 GB                                                | 1 TB SSD              |
+| Swap                     | Half of the RAM size                                  | Equal to the RAM size |
+| Operating system, Docker | Ubuntu 20.04, Debian 11, CentOS 8 or RHEL 8, or later | Same as minimum       |
+| Operating system, Podman | CentOS Stream 8 or RHEL 8, or later                   | Same as minimum       |
+| DMZ server CPU           | 4 cores                                               | 32 cores              |
+| DMZ server RAM           | 8 GB                                                  | 64 GB                 |
+| DMZ server disk          | 20 GB                                                 | 50 GB SSD             |
+
+The Appcircle DMZ server uses the same CPU architecture, operating system, and container engine as the Appcircle server.
+
 ## Server Checklist
 
 ### Check the Operating System
 
-- [ ] If you are using RHEL, it should be **RHEL 8 or later**.
-
-```bash
-cat /etc/redhat-release
-```
-
-- [ ] If you are using Ubuntu, it should be **Ubuntu 20.04 or later**.
+- [ ] The operating system and its version are listed in the [server requirements](#server-requirements).
 
 ```bash
 cat /etc/os-release
-```
-
-- [ ] If you are using Debian, it should be **Debian 11 or later**.
-
-```bash
-cat /etc/os-release
-```
-
-- [ ] If you are using CentOS, it should be **CentOS 8 or later**.
-
-```bash
-cat /etc/centos-release
 ```
 
 ### Check the CPU Cores
 
-- [ ] Minimum CPU core count should be **8 cores**.
-  - For enterprise installations and production environments, **16 or 32 CPU cores** are recommended.
+- [ ] The CPU core count meets the [server requirements](#server-requirements).
 
 ```bash
 nproc --all
@@ -62,8 +62,7 @@ arch
 
 ### Check the RAM Size
 
-- [ ] Minimum RAM size should be **16 GB**.
-  - For enterprise installations and production environments, **32 GB or 64 GB of RAM** is recommended.
+- [ ] The RAM size meets the [server requirements](#server-requirements).
 
 ```bash
 free -h
@@ -71,8 +70,7 @@ free -h
 
 ### Check the Disk Size
 
-- [ ] Minimum disk size should be **500 GB**.
-  - For enterprise installations and production environments, **1 TB of disk space** is recommended.
+- [ ] The disk size meets the [server requirements](#server-requirements).
 
 ```bash
 df -h
@@ -84,7 +82,7 @@ Keep in mind that **SSDs** are a better and **recommended** choice for faster di
 
 ### Check the Swap Size
 
-- [ ] The swap size should be minimum half of the RAM size.
+- [ ] The swap size meets the [server requirements](#server-requirements).
 
 ```bash
 free -h
