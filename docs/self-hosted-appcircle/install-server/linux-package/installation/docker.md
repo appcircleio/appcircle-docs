@@ -332,22 +332,26 @@ See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package
 
 `keycloak.initialPassword` value can not be empty since default organization's admin user will login with that password.
 
-Same as in cloud, it must be compatible with Appcircle password policy;
+It must be compatible with the Appcircle password policy:
 
-- minimum character **length must be at least 6**
+- minimum character **length must be at least 8**
 - must contain at least **one lower** case character
 - must contain at least **one upper** case character
 - must contain at least **one numerical** digit
+- must not be the same as `keycloak.initialUsername`
+- must not be a common password, such as `Password1`
 
 #### Troubleshooting
 
-If `keycloak.initialPassword` value is not compatible with password policy, you will get below error on service start while [running Appcircle server](/self-hosted-appcircle/install-server/linux-package/installation/docker#6-run-server).
+If `keycloak.initialPassword` is shorter than 8 characters or misses one of the required character types, `export` stops with the error below. Update the password and run `export` again.
 
 ```txt
-service "keycloak_migration" didn't completed successfully: exit 1
+keycloak.initialPassword does not meet the password policy.
 ```
 
-In this case, before updating initial password in `global.yaml`, you need to **stop** partially started docker services with below command. See [reset configuration](/self-hosted-appcircle/install-server/linux-package/installation/docker#reset-configuration) section for more details.
+The username and common password rules are checked only when the services start for the first time, while [running Appcircle server](/self-hosted-appcircle/install-server/linux-package/installation/docker#6-run-server). If the password breaks one of them, the services start without an error, but you can't log in with the initial username and password.
+
+In this case, before updating initial password in `global.yaml`, you need to **stop** the Docker services with below command. See [reset configuration](/self-hosted-appcircle/install-server/linux-package/installation/docker#reset-configuration) section for more details.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" reset
