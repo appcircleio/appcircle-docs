@@ -84,27 +84,31 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 Patch for [3.34.0](#3-34-0)
 
-- <ImprovementTag/> [CAPTCHA](/testing-distribution/create-or-select-a-distribution-profile#enable-captcha) can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/>
-- <ImprovementTag/> The upload timeout of the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step can now be configured (default 60 seconds). Increase it if large binaries fail with `Net::ReadTimeout` behind slow or inspecting proxies. <PublishIntegrationsBadge/> <CloudBadge/>
-- <ImprovementTag/> Recipients who unsubscribe from notification emails by mistake can now resubscribe from the unsubscribe confirmation page. <IntegrationsBadge/> <CloudBadge/>
-- <ImprovementTag/> Re-sign history and logs now have their own permissions (List / Get Resign), which can be assigned through custom roles. <PublishBadge/> <AccountBadge/> <CloudBadge/>
-- <ImprovementTag/> General stability improvements across services. <CloudBadge/>
+- <ImprovementTag/> [CAPTCHA](/testing-distribution/create-or-select-a-distribution-profile#enable-captcha) can now be enabled on Testing Distribution profiles. When it is enabled, the Testing Portal asks for a CAPTCHA after failed login attempts, with the same rules as the Enterprise App Store. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> The upload timeout of the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step can now be configured (default 60 seconds). Increase it if large binaries fail with `Net::ReadTimeout` behind slow or inspecting proxies. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> Recipients who unsubscribe from notification emails by mistake can now resubscribe from the unsubscribe confirmation page. <IntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/> 
+- <ImprovementTag/> Re-sign history and logs now have their own permissions (List / Get Resign), which can be assigned through custom roles. <PublishBadge/> <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> General stability improvements across services. <CloudBadge/> <SelfHostedBadge/>
 - <ImprovementTag/> The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) now has the stable release of Xcode 27.2 installed on runners (replacing Xcode 27.2 RC), with the 27.2 SDKs for all Apple platforms. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
-- <FixTag/> An issue has been fixed where saving several scheduled triggers left orphan schedules when one of them was invalid. Invalid cron expressions and time zones now return a clear validation error. <BuildBadge/> <CloudBadge/>
-- <FixTag/> An issue has been fixed where the version, added by and source profile filters of the app versions report matched unrelated values (for example, `1.0` also returned `1.100`). <ReportsBadge/> <CloudBadge/>
-- <FixTag/> An issue has been fixed where the verification code on the Testing Portal accepted fewer attempts than documented. <DistributionBadge/> <CloudBadge/>
+- <ImprovementTag/> Each service now has its own memory limit, so one service can no longer use up the server's memory. If you changed `resources.limits.memory`, set `resources.services` before you upgrade. <InfrastructureBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> Failed sign-in attempts on the Testing Portal and the Enterprise App Store are now limited to 3 attempts, even when captcha is off. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- <ImprovementTag/> Login lockout for the Enterprise App Store and the Testing Portal can be turned on with `loginLockout.enabled`. It is off by default. <DistributionBadge/> <EnterpriseStoreBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> On DMZ installations, add the DMZ server's address to `nginx.trustedProxies` so the real client IP address is recorded. <InfrastructureBadge/> <SelfHostedBadge/>
+- <FixTag/> An issue has been fixed where saving several scheduled triggers left orphan schedules when one of them was invalid. Invalid cron expressions and time zones now return a clear validation error. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <FixTag/> An issue has been fixed where the version, added by and source profile filters of the app versions report matched unrelated values (for example, `1.0` also returned `1.100`). <ReportsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <FixTag/> An issue has been fixed where the verification code on the Testing Portal accepted fewer attempts than documented. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.34.4 - 2026-10-28 <PatchBadge/>
 
 Patch for [3.34.0](#3-34-0)
 
-- <ImprovementTag/> General stability improvements for organization roles, permissions and sessions. <AccountBadge/> <CloudBadge/> 
-- <ImprovementTag/> General stability improvements for resource and artifact downloads. <CloudBadge/>
-- <ImprovementTag/> General stability improvements for CodePush. <CloudBadge/> 
-- <FixTag/> An issue has been fixed where over-the-air downloads on iOS stayed on "Waiting" instead of showing download progress. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
-- <FixTag/> Leading and trailing spaces are now trimmed from build profile and environment variable group names. <BuildBadge/> <EnvironmentVariablesBadge/> <CloudBadge/>
-- <FixTag/> An issue has been fixed where a Testing Distribution profile could be created or renamed with a name that was already in use. <DistributionBadge/> <CloudBadge/>
-- <FixTag/> An issue has been fixed where the sharing settings of an environment variable group were applied at creation instead of only through the share action. <EnvironmentVariablesBadge/> <CloudBadge/>
+- <ImprovementTag/> General stability improvements for organization roles, permissions and sessions. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> General stability improvements for resource and artifact downloads. <CloudBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> General stability improvements for CodePush. <CloudBadge/>  <SelfHostedBadge/>
+- <FixTag/> An issue has been fixed where over-the-air downloads on iOS stayed on "Waiting" instead of showing download progress. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/> 
+- <FixTag/> Leading and trailing spaces are now trimmed from build profile and environment variable group names. <BuildBadge/> <EnvironmentVariablesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <FixTag/> An issue has been fixed where a Testing Distribution profile could be created or renamed with a name that was already in use. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <FixTag/> An issue has been fixed where the sharing settings of an environment variable group were applied at creation instead of only through the share action. <EnvironmentVariablesBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.34.3 - 2026-10-21 <PatchBadge/>
 
