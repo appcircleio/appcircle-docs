@@ -10,11 +10,18 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Build Insights Report
 
-The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) or [Appcircle Copilot Assistant](/appcircle-ai/ai-assistants/appcircle-copilot-assistant) to get a visual report, or use the [Appcircle MCP client](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp) directly.
+The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score.
 
 ## How to Generate a Report
 
+Each option needs the Appcircle MCP Server connected to your client. See the [Installation Guides](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/installation-guides) for Appcircle Cloud and self-hosted Appcircle servers.
+
 **With the Appcircle Claude Assistant**
+
+- Ask in natural language, for example *give me a build insights report for last month* or *how is our CI maturity*.
+- The `build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
+
+**With the Appcircle Codex Assistant**
 
 - Ask in natural language, for example *give me a build insights report for last month* or *how is our CI maturity*.
 - The `build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
@@ -26,7 +33,7 @@ The **Build Insights Report** gives you a snapshot of your CI health: build tren
 
 **With Any Other MCP Client**
 
-- Call `get_build_insights_report` directly from any MCP-compatible client (Cursor, VS Code, Codex, and so on).
+- Call `get_build_insights_report` directly from any MCP-compatible client (Cursor, Windsurf, Gemini CLI, and so on).
 - You get the same metrics as structured JSON, which you can read, feed into another tool, or visualize yourself.
 
 ## Report Sections
@@ -118,13 +125,13 @@ How long builds waited before starting, tree-wide for the period:
 
 The last 30 days, compared against the 30 days before that for deltas. Pass `start_date` and `end_date` to the tool to use a different window; the tool compares it against a preceding period of the same length.
 
-### Can I Get This Report Outside the Appcircle Claude or Copilot Assistant?
+### Can I Get This Report Without the Appcircle Claude, Codex, or Copilot Assistant?
 
-Yes, for the underlying data. Any MCP client can call `get_build_insights_report` and get the same metrics as JSON. The visual HTML report rendering shown on this page is produced by the `build-insights-report` skill, which is currently exclusive to the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) and [Appcircle Copilot Assistant](/appcircle-ai/ai-assistants/appcircle-copilot-assistant).
+Yes, for the underlying data. Any MCP client can call `get_build_insights_report` and get the same metrics as JSON. The visual HTML report rendering shown on this page is produced by the `build-insights-report` skill, which is currently available only in the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant), the [Appcircle Codex Assistant](/appcircle-ai/ai-assistants/appcircle-gpt-assistant), and the [Appcircle Copilot Assistant](/appcircle-ai/ai-assistants/appcircle-copilot-assistant).
 
 ### Why Is a Section Missing From My Report?
 
-A section can be absent because there was not enough build activity to compute it for the requested period (for example, no builds, no queued builds, or no profiles with a comparable previous period), which is not an error and not a zero value. It can also be absent because your [access token](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp#authentication) lacks the required permission for the data that section depends on. Generating the full report requires a token with at least the **Manager** role. Check your token's role permissions if a section you expect to see is consistently absent.
+A section can be absent because there was not enough build activity to compute it for the requested period (for example, no builds, no queued builds, or no profiles with a comparable previous period), which is not an error and not a zero value. It can also be absent because your [access token](/appcircle-ai/ai-features-on-appcircle/appcircle-mcp/authentication) lacks the required permission for the data that section depends on. Generating the full report requires a token with at least the **Manager** role. Check your token's role permissions if a section you expect to see is consistently absent.
 
 ### Does the Report Include Builds From Sub-Organizations?
 

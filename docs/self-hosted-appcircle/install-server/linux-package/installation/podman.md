@@ -486,6 +486,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - store
 - monitor
 - redis
+- mcp
 - (optional) Enterprise App Store's Custom Domain
 
 :::info
@@ -539,6 +540,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  store.appcircle.spacetech.com
 0.0.0.0  monitor.appcircle.spacetech.com
 0.0.0.0  redis.appcircle.spacetech.com
+0.0.0.0  mcp.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
 ```
 
@@ -564,6 +566,7 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  store.appcircle.spacetech.com
 35.241.181.2  monitor.appcircle.spacetech.com
 35.241.181.2  redis.appcircle.spacetech.com
+35.241.181.2  mcp.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
 
