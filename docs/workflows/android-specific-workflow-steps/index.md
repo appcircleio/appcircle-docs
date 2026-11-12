@@ -75,6 +75,10 @@ This step runs your Android tests on Firebase Test Lab.
 
 This step runs given Gradle task.
 
+## [Gradle Mirror](/workflows/android-specific-workflow-steps/gradle-mirror)
+
+Points Gradle at a Maven repository on your artifact proxy, for Android builds on runners without internet access.
+
 ## [LambdaTest App Automate - Espresso](/workflows/android-specific-workflow-steps/lambdatest-app-automate-espresso)
 
 [LambdaTest App Automate - Espresso](https://www.lambdatest.com/support/docs/getting-started-with-espresso-testing/) is a cloud-based testing solution designed for Android applications using the [Espresso](https://developer.android.com/training/testing/espresso) testing framework. It enables developers to run automated tests for Android apps across a wide range of real devices hosted in the LambdaTest cloud infrastructure. This solution allows efficient, scalable, and reliable testing of Android applications to ensure app quality and compatibility.
