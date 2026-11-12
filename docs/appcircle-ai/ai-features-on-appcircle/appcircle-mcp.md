@@ -174,7 +174,7 @@ The access token is valid for **24 hours** from the time it's issued. The MCP se
 :::
 
 :::info Sub-organization scope
-An access token only lists profiles, builds, and reports from the organization it was generated or exchanged in. If you work with a sub-organization, generate or exchange your Personal Access Key or API Key in that sub-organization's context (or pass the `subOrganization` parameter during the exchange) rather than reusing a token issued for the parent organization.
+An access token works in one organization: the one it was issued for. Profiles, builds, signing, distribution and publish tools only see that organization. Reports from a root-organization token also include its sub-organizations. To work in a sub-organization, exchange a root-organization Personal Access Key with the `Sub-Organization-Id` header set to the sub-organization ID (see [Personal Access Key](/account/my-organization/security/personal-access-key)), or use a key created in that sub-organization.
 :::
 
 :::warning Restrict write access when possible
