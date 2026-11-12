@@ -99,7 +99,7 @@ Create an [API Key](/account/my-organization/security/api-keys) and exchange its
 
 ## Sub-Organizations
 
-An access token works in one organization: the one it was issued for. Profiles, builds, signing, distribution and publish tools only see that organization. Reports from a root-organization token also include its sub-organizations.
+An access token works in one organization: the one it was issued for. Profiles, builds, signing, distribution and publish tools only see that organization.
 
 To work in a sub-organization, use one of these:
 
@@ -129,3 +129,5 @@ If you only need to read data, such as listing build profiles, distribution prof
 
 - **API Key:** select **Viewer** or read-only roles for the relevant modules.
 - **Personal Access Key:** your user role in the organization applies. Use an account with read-only access if you don't need write operations.
+
+If you run the MCP server yourself, you can also set `AC_MCP_ENABLE_WRITE_TOOLS=false` in the server environment. Write tools such as `trigger_build` and `start_publish` are then not registered at all, whatever the token's permissions.
