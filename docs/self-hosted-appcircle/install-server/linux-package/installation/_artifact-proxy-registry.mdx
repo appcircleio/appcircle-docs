@@ -1,0 +1,17 @@
+Point the server at the `appcircle-docker` repository on your artifact proxy. Add the `image.registry` section below to `global.yaml`, and replace the host, port, username and password with your own.
+
+```yaml
+image:
+  registry:
+    url: nexus.example.com:8083/appcircle/docker-registry
+    username: appcircle-pull
+    password: <password>
+    requiredLogin: true
+```
+
+- `url` has no `https://` prefix and no `/` at the end. It ends with `/appcircle/docker-registry`, the path of the Appcircle images on the remote registry.
+- The server logs in to the artifact proxy with these credentials when you initialize the vault and start the server, so add them now. `cred.json` isn't used.
+- Use a user with read access only. If the repository allows anonymous pulls, set `requiredLogin: false` and leave out `username` and `password`.
+- Keep `environment: Production` in `global.yaml`. With another value, or without the key, the server pulls development image tags instead of the release images.
+
+If your Git provider, LDAP server or SMTP server uses a certificate from your corporate certificate authority, also add the root certificate to `external.ca` as described in [External Services](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#external-services). `external.ca` makes the Appcircle services trust it. The container engine uses the system trust store you configured in [Choose the Download Source](#choose-the-download-source).
