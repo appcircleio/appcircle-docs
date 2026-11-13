@@ -17,6 +17,8 @@ Each build session is defined as an initiated manual or automatic build for a co
 
 The duration indicates the minutes spent by the build agent for the specified build operation. This value only includes the actual duration that the agent was active, including the agent boot duration but excluding the queue wait duration.
 
+The **Initiated by** column shows who started the build. For webhook-triggered builds, this value comes from the Git provider. For details, see [Build Initiator Shown in Appcircle](/build/build-process-management/build-manually-or-with-triggers#build-initiator-shown-in-appcircle).
+
 The date and time are displayed in the current timezone.
 
 You can filter the report pages according to the organization.
