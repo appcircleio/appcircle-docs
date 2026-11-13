@@ -472,21 +472,12 @@ Some Git providers send a username or an account name instead of an email. In th
 | Bitbucket Cloud            | Commit author email | Pull request author                                        | Pusher nickname                                  |
 | Bitbucket Server           | Commit author email | Pull request author email                                  | Pusher email                                     |
 | Azure DevOps               | Commit author email | Pull request creator account (for example, `DOMAIN\user`) | Pusher account (for example, `DOMAIN\user`)      |
-| AWS CodeCommit             | IAM user name       | IAM user name                                              | Not available                                    |
 
 :::info
 If the Git provider sends no identity for the event, Appcircle shows an email from your organization instead.
 :::
 
 ## FAQ
-
-### Why does a build show a different user than the commit author?
-
-Appcircle shows the user who triggered the build, not always the commit author. A tag build shows the user who pushed the tag. A manual build shows the Appcircle user who started it. A pull request build shows the identity the Git provider sends for the pull request. For the full list, see [Build Initiator Shown in Appcircle](/build/build-process-management/build-manually-or-with-triggers#build-initiator-shown-in-appcircle).
-
-### Why do two pull request builds show the initiator differently?
-
-The initiator of a pull request build comes from the data the Git provider sends, and from the commit data Appcircle already has. Depending on the Git provider and on how the commit first reached Appcircle, the same field can show an email, a username, or an account name. This does not affect the build itself. For the values each provider sends, see [Build Initiator Shown in Appcircle](/build/build-process-management/build-manually-or-with-triggers#build-initiator-shown-in-appcircle).
 
 ### Why is my Appcircle trigger not working and how can I fix it?
 
@@ -567,6 +558,14 @@ After you follow the steps in the referenced document above to create a trigger,
 Then select the "Enable raw message delivery" option while adding the webhook URL as a subscription to the topic.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/enable-raw-message-delivery.png' />
+
+### Why does a build show a different user than the commit author?
+
+Appcircle shows the user who triggered the build, not always the commit author. A tag build shows the user who pushed the tag. A manual build shows the Appcircle user who started it. A pull request build shows the identity the Git provider sends for the pull request. For the full list, see [Build Initiator Shown in Appcircle](/build/build-process-management/build-manually-or-with-triggers#build-initiator-shown-in-appcircle).
+
+### Why do two pull request builds show the initiator differently?
+
+The initiator of a pull request build comes from the data the Git provider sends, and from the commit data Appcircle already has. Depending on the Git provider and on how the commit first reached Appcircle, the same field can show an email, a username, or an account name. This does not affect the build itself. For the values each provider sends, see [Build Initiator Shown in Appcircle](/build/build-process-management/build-manually-or-with-triggers#build-initiator-shown-in-appcircle).
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
