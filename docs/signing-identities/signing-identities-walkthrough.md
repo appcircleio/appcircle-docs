@@ -286,6 +286,9 @@ For more information, see the [Signing Reports](/signing-identities/signing-repo
 - **Certificate creation or renewal fails**: You can be at the Apple certificate limit, or the API key can be invalid or without enough permissions. Check the API key and the number of certificates in your Apple Developer account.
 - **Multi-target application fails to sign**: Add a provisioning profile for each bundle identifier, including extensions and widgets, in the build profile signing configuration.
 - **Invited user cannot register a device**: The UDID collection needs Safari. It does not work in Microsoft Edge. If **Lost/Stolen Device Protection** is enabled on iOS 17 or later, the profile installation can need a one-hour security delay.
+- **A certificate downloaded from the Apple Developer Portal cannot be used**: The `.cer` file contains only the public certificate. It does not contain the private key. On the Mac that generated the CSR, export the certificate with its private key as a `.p12` file from Keychain Access, then upload the `.p12` file. For the steps, see [Can I upload a certificate that I downloaded from the Apple Developer Portal?](#can-i-upload-a-certificate-that-i-downloaded-from-the-apple-developer-portal).
+- **A certificate cannot be renewed in Appcircle**: Appcircle can renew only a certificate whose CSR was generated in Appcircle. A certificate that you created with a CSR from Keychain Access and uploaded as a `.p12` file cannot be renewed in Appcircle. For more information, see [Can Appcircle renew a certificate whose CSR was not generated in Appcircle?](#can-appcircle-renew-a-certificate-whose-csr-was-not-generated-in-appcircle).
+- **Automatic signing creates new certificates in the Apple Developer account**: The development or distribution certificate is not in Appcircle. Xcode then creates a new certificate on each build. Add both certificates to Appcircle and select them in the build configuration.
 
 ### Frequently Asked Questions About the Signing Identities Module
 
@@ -310,9 +313,52 @@ No. Delete removes the item only from Appcircle. To invalidate a certificate on 
 
 No. Only members of the Apple Developer Enterprise Program can create Enterprise certificates. Appcircle is not an enterprise signing service.
 
-#### What happens to my build profiles when a certificate is renewed?
+#### Can I upload a certificate that I downloaded from the Apple Developer Portal?
 
-Appcircle regenerates the related provisioning profiles and replaces the old certificate in your build and re-sign profiles. You do not need to change the build profile configuration.
+Not as a `.cer` file alone. The `.cer` file contains only the public certificate. The private key stays in the Keychain of the Mac that generated the CSR, and Appcircle needs the private key to sign your application.
+
+To upload the certificate:
+
+1. On the Mac that generated the CSR, double-click the `.cer` file to add it to Keychain Access.
+2. In Keychain Access, open **My Certificates** and find the certificate. Expand it and make sure that a private key shows under it.
+3. Right-click the certificate and select **Export**. Select the `.p12` format and set a password.
+4. In Appcircle, upload the `.p12` file with **Upload certificate bundle (.p12)** and enter the same password.
+
+If the private key is not in Keychain Access, you cannot use the certificate. Create a new certificate with a CSR generated in Appcircle. For more information, see [What happens if I lose the private key of a certificate?](#what-happens-if-i-lose-the-private-key-of-a-certificate).
+
+#### Can Appcircle renew a certificate whose CSR was not generated in Appcircle?
+
+No. Appcircle does not accept an external CSR, and it renews a certificate only with a CSR generated in Appcircle. If you created the certificate with a CSR from Keychain Access, renew it on the Apple Developer Portal and upload the new `.p12` file. To renew your certificates in Appcircle in the future, create the next certificate with a CSR generated in Appcircle.
+
+#### Who owns a development certificate? Can more than one person use it?
+
+A development certificate belongs to the Apple Developer account member who created it. More than one person can use the certificate, but the signature always shows the name of the certificate owner.
+
+#### What happens to my build and provisioning profiles when a certificate is renewed?
+
+A provisioning profile is linked to the certificate that it was created with. When you renew a certificate, Appcircle regenerates the related provisioning profiles and replaces the old certificate in your build and re-sign profiles. You do not need to change the build profile configuration.
+
+Applications that are already distributed keep their old signature. If you revoke an Ad Hoc or Enterprise distribution certificate, the applications signed with it stop working on user devices. For more information, see [Renewing Apple Certificates](#renewing-apple-certificates).
+
+#### What happens if I lose the private key of a certificate?
+
+You cannot recover it. You must create a new certificate, revoke the old certificate, and regenerate the provisioning profiles that use it.
+
+To prevent this, generate the CSR in Appcircle. Appcircle then keeps the private key with the certificate. You do not lose the certificate if you change your computer or clear your Keychain.
+
+#### What does a `.p12` file downloaded from Appcircle contain?
+
+It is the same file that was uploaded. It contains the private key and it is protected with the same password. Only users with the Owner or Manager role can download certificates, and each download is recorded in the [Activity Log](/signing-identities/signing-identities-activity-log).
+
+#### What does automatic signing do?
+
+With automatic signing, you do not upload provisioning profiles. Xcode creates or downloads the provisioning profiles during the build with your App Store Connect API Key. In the build configuration, select both a development certificate and a distribution certificate. Xcode signs the archive with the development certificate and signs the exported application with the distribution certificate. If a certificate is not in Appcircle, Xcode creates a new certificate on each build. You do not have the private key of that certificate, and it counts against your Apple certificate limit.
+
+For more information, see [Automatic Signing](/signing-identities/apple-profiles).
+
+#### Where are the provisioning profiles that automatic signing creates? Does each build create a new one?
+
+Xcode creates them in your Apple Developer account, where they show as "Managed by Xcode". Appcircle does not store them. Xcode does not create a new profile on each build. It uses the existing profile if the profile is still valid. Xcode replaces the profile when the certificate changes, a capability is added, a new device is registered, or the profile expires.
 
 #### Can sub-organizations use signing identities from the root organization?
 
