@@ -25,6 +25,12 @@ For a complete overview of the Build Module’s capabilities, check out the [App
     allowfullscreen>
 </iframe>
 
+## [Build Module Onboarding](/build/build-module-onboarding)
+
+New to Appcircle? Follow the onboarding guide step by step, from preparing your project and repository access to running and automating your first build, with a checkpoint at the end of each step.
+
+<ContentRef url="/build/build-module-onboarding">Build Module Onboarding</ContentRef>
+
 ## [Build Profiles](/build/build-process-management)
 
 Follow our getting started guide to build your iOS and Android apps in the cloud. This guide will walk you through creating a build profile, managing profiles, branches, configurations, triggers, and more.
