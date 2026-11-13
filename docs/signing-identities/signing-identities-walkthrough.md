@@ -354,7 +354,7 @@ It is the same file that was uploaded. It contains the private key and it is pro
 
 With automatic signing, you do not upload provisioning profiles. Xcode creates or downloads the provisioning profiles during the build with your App Store Connect API Key. In the build configuration, select both a development certificate and a distribution certificate. Xcode signs the archive with the development certificate and signs the exported application with the distribution certificate. If a certificate is not in Appcircle, Xcode creates a new certificate on each build. You do not have the private key of that certificate, and it counts against your Apple certificate limit.
 
-For more information, see [Automatic Signing](/signing-identities/apple-profiles).
+For more information, see [Automatic Signing](/signing-identities/apple-profiles#automatic-signing).
 
 #### Where are the provisioning profiles that automatic signing creates? Does each build create a new one?
 
