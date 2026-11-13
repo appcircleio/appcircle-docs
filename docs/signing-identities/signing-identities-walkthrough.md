@@ -288,8 +288,6 @@ For more information, see the [Signing Reports](/signing-identities/signing-repo
 - **Invited user cannot register a device**: The UDID collection needs Safari. It does not work in Microsoft Edge. If **Lost/Stolen Device Protection** is enabled on iOS 17 or later, the profile installation can need a one-hour security delay.
 - **A certificate downloaded from the Apple Developer Portal cannot be used**: The `.cer` file contains only the public certificate. It does not contain the private key. On the Mac that generated the CSR, export the certificate with its private key as a `.p12` file from Keychain Access, then upload the `.p12` file. For the steps, see [Can I upload a certificate that I downloaded from the Apple Developer Portal?](#can-i-upload-a-certificate-that-i-downloaded-from-the-apple-developer-portal).
 - **A certificate cannot be renewed in Appcircle**: Appcircle can renew only a certificate whose CSR was generated in Appcircle. A certificate that you created with a CSR from Keychain Access and uploaded as a `.p12` file cannot be renewed in Appcircle. For more information, see [Can Appcircle renew a certificate whose CSR was not generated in Appcircle?](#can-appcircle-renew-a-certificate-whose-csr-was-not-generated-in-appcircle).
-- **Automatic signing creates new certificates in the Apple Developer account**: The development or distribution certificate is not in Appcircle. Xcode then creates a new certificate on each build. Add both certificates to Appcircle and select them in the build configuration.
-
 ### Frequently Asked Questions About the Signing Identities Module
 
 #### Can I create an iOS certificate without a Mac?
