@@ -445,6 +445,38 @@ You can specify branch names or tags with an asterisk wildcard to automate build
 | `fix-*-build` | Build if it starts with `fix-` and ends with `-build` |
 | `*`           | Build everything                                      |
 
+### Build Initiator Shown in Appcircle
+
+Appcircle shows who started a build in three places:
+
+- **Started by** in the active process panel
+- **Triggered User** in the "Starting workflow" section of the build logs
+- **Initiated by** in the [Build History](/build/build-history) report
+
+All three show the same value. Appcircle sets this value when the build enters the queue, and the value depends on the trigger type:
+
+| Trigger type       | Value shown                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| Manual build       | The email of the Appcircle user who started the build                                |
+| Push               | The commit author's email, as sent by the Git provider                               |
+| Pull/merge request | The identity of the pull request, as sent by the Git provider (see the table below) |
+| Tag                | The user who pushed the tag, not the author of the tagged commit                     |
+| Scheduled build    | `system`                                                                             |
+
+Some Git providers send a username or an account name instead of an email. In that case, Appcircle shows that value as it is:
+
+| Git provider               | Push                | Pull/merge request                                         | Tag                                              |
+| -------------------------- | ------------------- | ---------------------------------------------------------- | ------------------------------------------------ |
+| GitHub / GitHub Enterprise | Commit author email | Pull request author's GitHub username                      | Pusher email                                     |
+| GitLab                     | Commit author email | Last commit author email                                   | Pusher email, or username if the email is hidden |
+| Bitbucket Cloud            | Commit author email | Pull request author                                        | Pusher nickname                                  |
+| Bitbucket Server           | Commit author email | Pull request author email                                  | Pusher email                                     |
+| Azure DevOps               | Commit author email | Pull request creator account (for example, `DOMAIN\user`) | Pusher account (for example, `DOMAIN\user`)      |
+
+:::info
+If the Git provider sends no identity for the event, Appcircle shows an email from your organization instead.
+:::
+
 ## FAQ
 
 ### Why is my Appcircle trigger not working and how can I fix it?
@@ -526,6 +558,14 @@ After you follow the steps in the referenced document above to create a trigger,
 Then select the "Enable raw message delivery" option while adding the webhook URL as a subscription to the topic.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/enable-raw-message-delivery.png' />
+
+### Why does a build show a different user than the commit author?
+
+Appcircle shows the user who triggered the build, not always the commit author. A tag build shows the user who pushed the tag. A manual build shows the Appcircle user who started it. A pull request build shows the identity the Git provider sends for the pull request. For the full list, see [Build Initiator Shown in Appcircle](/build/build-process-management/build-manually-or-with-triggers#build-initiator-shown-in-appcircle).
+
+### Why do two pull request builds show the initiator differently?
+
+The initiator of a pull request build comes from the data the Git provider sends, and from the commit data Appcircle already has. Depending on the Git provider and on how the commit first reached Appcircle, the same field can show an email, a username, or an account name. This does not affect the build itself. For the values each provider sends, see [Build Initiator Shown in Appcircle](/build/build-process-management/build-manually-or-with-triggers#build-initiator-shown-in-appcircle).
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
