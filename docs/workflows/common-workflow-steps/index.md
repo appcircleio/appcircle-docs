@@ -110,6 +110,10 @@ This component runs a full MobSF static analysis on the built APK, AAB, or IPA, 
 
 This component runs MobSF static analysis on Android and iOS source code, reporting the file, line, severity, and CWE or OWASP MASVS references of each finding.
 
+## [Ostorlab Security Scan](/workflows/common-workflow-steps/ostorlab-security-scan)
+
+This component uploads the built APK, AAB, or IPA to Ostorlab, starts a security scan, and can break the pipeline when the scan risk rating is too high.
+
 ## [Repeato Mobile Test Automation](/workflows/common-workflow-steps/repeato-test-runner)
 
 This component creates and automates UI tests for iOS and Android.
