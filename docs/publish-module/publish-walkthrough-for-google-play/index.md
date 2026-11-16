@@ -134,7 +134,7 @@ Here is a sample Publish flow for an Android app, including track selection and 
 
 - [**Custom Script**](/publish-integrations/common-publish-integrations/custom-script): You can use the Custom Script steps to add extra functionalities in your Publish flow. Appcircle will execute the commands specified in your custom scripts, allowing you to perform custom actions. These scripts will run on the runner, giving you access to all the capabilities of the Publish environment.
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): The Get Approval via Email step allows you to get approval from the email addresses entered as input in the step before moving on to the next steps in Publish.
-- [**Send to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play): With this step, the binary is uploaded to the desired Google Play Console Track.
+- [**Send to Google Play Console**](/publish-integrations/android-publish-integrations/publish-to-google-play): With this step, the binary is uploaded to the desired Google Play Console Track.
 You can select one of the following options:
 
    - Internal track

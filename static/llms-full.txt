@@ -6393,7 +6393,7 @@ Send to App Store
 </ContentRef>
 
 <ContentRef url="/publish-integrations/android-publish-integrations/publish-to-google-play">
-Send to Google Play
+Send to Google Play Console
 </ContentRef>
 
 <ContentRef url="/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery">
@@ -16767,7 +16767,7 @@ The **App Information from Google Play** step monitors the general status inform
 
 ## Prerequisites
 
-To run the **App Information from Google Play** step, you need to have previously uploaded at least one version of the app to the Google Play Console. However, if you want to monitor the app information after publishing it to Google Play, you can add the [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) step before this step in the publish flow.
+To run the **App Information from Google Play** step, you need to have previously uploaded at least one version of the app to the Google Play Console. However, if you want to monitor the app information after publishing it to Google Play, you can add the [**Send to Google Play Console**](/publish-integrations/android-publish-integrations/publish-to-google-play) step before this step in the publish flow.
 
 You also need to have a Google Service Account and its key as a JSON file. Please refer to the following document for more information about service accounts:
 
@@ -16775,7 +16775,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Console API Key you uploaded, from the drop-down list.
 
 :::info
 
@@ -16810,12 +16810,12 @@ The Publish flow steps that need to be executed before running the **Distribute 
 
 | Prerequisite Workflow Step                                                                          | Description                                                                                             |
 |------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
+| [**Send to Google Play Console**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
 
 
 :::warning
 
-If you have previously submitted this app version to the Google Play Console, you do not need to add the **Publish to Google Play** step.
+If you have previously submitted this app version to the Google Play Console, you do not need to add the **Send to Google Play Console** step.
 
 :::
 
@@ -16866,12 +16866,12 @@ The Publish flow steps that need to be executed before running the **Get Approva
 
 | Prerequisite Workflow Step                                                                          | Description                                                                                             |
 |------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
+| [**Send to Google Play Console**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
 
 
 :::warning
 
-If you have previously submitted this app version to the Google Play Console, you do not need to add the **Publish to Google Play** step.
+If you have previously submitted this app version to the Google Play Console, you do not need to add the **Send to Google Play Console** step.
 
 :::
 
@@ -16881,7 +16881,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Console API Key you uploaded, from the drop-down list.
 
 :::info
 
@@ -16936,7 +16936,7 @@ Click on the **Save** button if you make any changes to your flow steps, or use 
 
 You can find Android specific steps in the Publish Flow under the headings below. For common steps, please refer to [this document](/publish-integrations/common-publish-integrations/).
 
-## [Publish to Google Play](/publish-integrations/android-publish-integrations/publish-to-google-play)
+## [Send to Google Play Console](/publish-integrations/android-publish-integrations/publish-to-google-play)
 
 - Quickly send APK and AAB binaries to Google Play.
 - Initial setup requires an app listing and uploaded binary with a keystore.
@@ -16976,7 +16976,7 @@ Appcircle's integration tools are designed to simplify and automate the publishi
 
 ---
 
-## Publish to Google Play
+## Send to Google Play Console
 
 
 Appcircle supports sending APK and AAB binaries to [Google Play](https://play.google.com) through the Publish module.
@@ -16994,7 +16994,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Console API Key you uploaded, from the drop-down list.
 
 If you are using [Publish Variables](/publish-to-stores-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-to-stores-module/publish-settings) window.
 
@@ -17041,7 +17041,7 @@ For track type differences and best practices, please refer to the following off
 
 ## Output Variables
 
-**Publish to Google Play** step does not produce any output. However, you can check the logs to see whether your app has successfully accessed Google Play.
+**Send to Google Play Console** step does not produce any output. However, you can check the logs to see whether your app has successfully accessed Google Play.
 
 
 ---
@@ -20524,8 +20524,8 @@ User can use `AC_RELEASE_NOTES` environment variable, if the `apk`, `aab` or `ip
 
 | Variable                      | Description                                                                                                                                                                                                                                |
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AC_RELEASE_STATUS             | Used for the [Send to Google Play](/publish-integrations/android-publish-integrations/publish-to-google-play) step. Allows you to specify `draft` or `completed` app statuses on the Google Play Console.                                  |
-| AC_STACK_TYPE                 | Used for the [Send to Google Play](/publish-integrations/android-publish-integrations/publish-to-google-play) step. Specifies the release track to send the binary. After the binary is uploaded, you can release it from the Google Play. |
+| AC_RELEASE_STATUS             | Used for the [Send to Google Play Console](/publish-integrations/android-publish-integrations/publish-to-google-play) step. Allows you to specify `draft` or `completed` app statuses on the Google Play Console.                                  |
+| AC_STACK_TYPE                 | Used for the [Send to Google Play Console](/publish-integrations/android-publish-integrations/publish-to-google-play) step. Specifies the release track to send the binary. After the binary is uploaded, you can release it from the Google Play. |
 | AC_TRACK_TO_CHECK             | Used for the [Get Approval from Google Play](/publish-integrations/android-publish-integrations/get-approval-from-google-play) step. It's recommended to check the track that you've sent the app in previous steps.                       |
 | AC_ACCEPTED_STATUSES          | Used for the [Get Approval from Google Play](/publish-integrations/android-publish-integrations/get-approval-from-google-play) step. Statuses of `completed`,`inProgress`,`draft`,`halted` can be used.                                    |
 | AC_HUAWEI_APP_ID              | Used for the [Send to Huawei AppGallery](/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery) step. Huawei requires `Huawei App ID` to be sent app to Huawei App Gallery.                                      |
@@ -21047,7 +21047,7 @@ Here is a sample Publish flow for an Android app, including track selection and 
 
 - [**Custom Script**](/publish-integrations/common-publish-integrations/custom-script): You can use the Custom Script steps to add extra functionalities in your Publish flow. Appcircle will execute the commands specified in your custom scripts, allowing you to perform custom actions. These scripts will run on the runner, giving you access to all the capabilities of the Publish environment.
 - [**Get Approval via Email**](/publish-integrations/common-publish-integrations/get-approval-via-email): The Get Approval via Email step allows you to get approval from the email addresses entered as input in the step before moving on to the next steps in Publish.
-- [**Send to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play): With this step, the binary is uploaded to the desired Google Play Console Track.
+- [**Send to Google Play Console**](/publish-integrations/android-publish-integrations/publish-to-google-play): With this step, the binary is uploaded to the desired Google Play Console Track.
 You can select one of the following options:
 
    - Internal track
