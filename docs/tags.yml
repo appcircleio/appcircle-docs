@@ -3318,6 +3318,11 @@ quay:
   description: "Documentation related to static analysis"
   permalink: "/static-analysis"
 
+"ostorlab":
+  label: "ostorlab"
+  description: "Documentation related to ostorlab"
+  permalink: "/ostorlab"
+
 "binary scan":
   label: "binary scan"
   description: "Documentation related to binary scan"
