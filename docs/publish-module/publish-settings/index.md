@@ -109,7 +109,3 @@ This functionality allows for better management of publish processes, enabling t
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority1_v2.png' alt="Publish Priority" />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority2_v2.png' alt="Publish Priority Selection" />
-
-:::info
-This feature is only available for organizations with Enterprise license.
-:::

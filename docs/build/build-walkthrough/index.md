@@ -150,7 +150,7 @@ The **Config** tab holds the project details, such as the project path, scheme, 
 On this tab, you can also:
 
 - Select a self-hosted runner pool in the **Organization pool** field. See [Self-hosted Runners](/self-hosted-appcircle/self-hosted-runner).
-- Set the **Build Priority** (Low, Medium, or High) to decide which queued build starts first (Enterprise plans).
+- Set the **Build Priority** (Low, Medium, or High) to decide which queued build starts first.
 - Enable **Auto cancel** so that a new build cancels a running build with the same configuration, workflow, trigger type, and branch. See [Auto Cancel Redundant Pipeline](/build/build-process-management/build-manually-or-with-triggers#auto-cancel-redundant-pipeline).
 
 #### Signing
@@ -362,7 +362,7 @@ The build was not signed. Select a certificate and a provisioning profile in the
 
 ### Why does my build wait in the queue?
 
-When the number of running builds reaches the concurrency limit of your plan, new builds wait in the queue and start when a slot is free. With an Enterprise license, set a higher **Build Priority** in the configuration so that critical builds start first. To remove outdated builds from the queue, enable **Auto cancel**.
+When the number of running builds reaches the concurrency limit of your plan, new builds wait in the queue and start when a slot is free. Set a higher **Build Priority** in the configuration so that critical builds start first. To remove outdated builds from the queue, enable **Auto cancel**.
 
 ### Can I use the same configuration in an iOS and an Android build profile?
 

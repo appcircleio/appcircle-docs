@@ -115,10 +115,6 @@ This feature allows for better management of build processes, enabling teams to 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7131-6_v2.png' alt="Build Priority" />
 
-:::info
-This feature is only available for organizations with Enterprise license.
-:::
-
 #### ACRP - Auto Cancel Redundant Pipeline
 
 When enabled, this feature automatically cancels any previously running build that matches the same configuration, workflow, branch, and trigger type, if a new run is triggered.
