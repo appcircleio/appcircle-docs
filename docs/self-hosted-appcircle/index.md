@@ -43,7 +43,7 @@ If the Appcircle server and runners have no internet access, see the [air-gapped
 
 If you plan to use the Enterprise App Store and Testing Distribution modules isolated from the internal network in which these modules are only exposed to the external networks, you can use Docker/Podman Architecture in DMZ formation.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-755-dmz-topology_v2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/PL-755-dmz-topology_v3.png' alt='DMZ architecture of self-hosted Appcircle' />
 
 For more information about the Appcircle DMZ architecture, you can check the [Enterprise App Store and Testing Distribution in DMZ](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz) document.
 
