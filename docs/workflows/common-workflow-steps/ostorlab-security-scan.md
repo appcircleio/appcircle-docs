@@ -91,8 +91,8 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name | Description | Status |
 | ------------- | ----------- | ------ |
 | `$AC_OSTORLAB_API_KEY` | The Ostorlab API key. Default: `$OSTORLAB_API_KEY`. | Required |
+| `$AC_OSTORLAB_ARTIFACT_PATH` | Path of the APK, AAB, or IPA to scan, or of the folder holding it. On Android, use `$AC_SIGNED_APK_PATH` or `$AC_SIGNED_AAB_PATH` from the **Android Sign** step. On iOS, use `$AC_EXPORT_DIR` from the **Xcodebuild for Devices** step, because iOS builds do not expose the IPA path as a variable. A folder must hold exactly one APK, AAB, or IPA. The step does not pick an artifact on its own. | Required |
 | `$AC_OSTORLAB_SCAN_PROFILE` | The scan profile. `fast_scan` runs static analysis only. `full_scan` runs static, dynamic, and backend analysis, so it takes longer. Options: `fast_scan`, `full_scan`. Default: `fast_scan`. | Required |
-| `$AC_OSTORLAB_ARTIFACT_PATH` | Path of the APK, AAB, or IPA to scan, or of the folder holding it. When empty, the step looks at `$AC_SIGNED_APK_PATH`, `$AC_APK_PATH`, `$AC_SIGNED_AAB_PATH`, and `$AC_AAB_PATH`, then for an `.ipa` file under `$AC_EXPORT_DIR` and `$AC_OUTPUT_DIR`. A folder is accepted because iOS builds do not expose the IPA path as a variable. | Optional |
 | `$AC_OSTORLAB_SCAN_TITLE` | The scan title shown in Ostorlab. Default: `Appcircle scan`. | Optional |
 | `$AC_OSTORLAB_BREAK_ON_RISK_RATING` | Waits for the scan result and breaks the pipeline when the risk rating is higher than the selected value. For details, see [Risk Rating](#risk-rating). Options: `none`, `high`, `medium`, `low`, `potentially`, `hardening`. Default: `none`. | Optional |
 | `$AC_OSTORLAB_MAX_WAIT_MINUTES` | How many minutes to wait for the scan result when `$AC_OSTORLAB_BREAK_ON_RISK_RATING` is set. The step fails when the scan does not finish in time. Default: `30`. | Optional |
@@ -177,6 +177,10 @@ Set `$AC_OSTORLAB_TEST_CREDENTIALS_LOGIN` and `$AC_OSTORLAB_TEST_CREDENTIALS_PAS
 accept-terms: Scroll down and select the Accept Terms checkbox.
 login: Tap the Login button and sign in with the test credentials.
 ```
+
+### Why does the step fail with a message about the artifact path?
+
+The step scans only the artifact set in `$AC_OSTORLAB_ARTIFACT_PATH`. It fails when the input is empty, when the variable it refers to, for example `$AC_SIGNED_APK_PATH`, was not exported by an earlier step, or when the folder it points to holds more than one APK, AAB, or IPA. Place the step after the step that signs your app, or set the input to the full path of the file to scan.
 
 ### Why does the step fail with a message about the Python version?
 
