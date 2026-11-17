@@ -21,13 +21,13 @@ The Publish flow steps that need to be executed before running the **Get Approva
 
 | Prerequisite Workflow Step                                                                          | Description                                                                                             |
 |------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
+| [**Send to Google Play Console**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-approve-from-google-play-0_v2.png'/>
 
 :::warning
 
-If you have previously submitted this app version to the Google Play Console, you do not need to add the **Publish to Google Play** step.
+If you have previously submitted this app version to the Google Play Console, you do not need to add the **Send to Google Play Console** step.
 
 :::
 
@@ -37,7 +37,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Console API Key you uploaded, from the drop-down list.
 
 :::info
 

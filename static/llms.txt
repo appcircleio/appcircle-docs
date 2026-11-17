@@ -270,7 +270,7 @@
 - [App Information from App Store](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/app-information-app-store): Fetch your app's current listing information from the App Store.
 - [Update Metadata on App Store Connect](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect): Upload Metadata information of application on App Store Connect.
 - [Android Integrations Overview](https://docs.appcircle.io/publish-integrations/android-publish-integrations): Android Integrations facilitate distribution of Android applications to major app stores.
-- [Publish to Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/publish-to-google-play): Publish Android applications to the Google Play Store.
+- [Send to Google Play Console](https://docs.appcircle.io/publish-integrations/android-publish-integrations/publish-to-google-play): Publish Android applications to the Google Play Store.
 - [Distribute to Track](https://docs.appcircle.io/publish-integrations/android-publish-integrations/distribute-to-track): Release apps to different testing or production tracks via Google Play Console.
 - [Get Approval From Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/get-approval-from-google-play): Check your app release approval status on Google Play Console.
 - [App Information from Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/app-information-from-google-play): Check status of app releases in Google Play Console.

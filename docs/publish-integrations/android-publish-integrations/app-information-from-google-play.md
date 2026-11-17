@@ -25,7 +25,7 @@ The **App Information from Google Play** step monitors the general status inform
 
 ## Prerequisites
 
-To run the **App Information from Google Play** step, you need to have previously uploaded at least one version of the app to the Google Play Console. However, if you want to monitor the app information after publishing it to Google Play, you can add the [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) step before this step in the publish flow.
+To run the **App Information from Google Play** step, you need to have previously uploaded at least one version of the app to the Google Play Console. However, if you want to monitor the app information after publishing it to Google Play, you can add the [**Send to Google Play Console**](/publish-integrations/android-publish-integrations/publish-to-google-play) step before this step in the publish flow.
 
 You also need to have a Google Service Account and its key as a JSON file. Please refer to the following document for more information about service accounts:
 
@@ -33,7 +33,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Console API Key you uploaded, from the drop-down list.
 
 :::info
 
