@@ -89,7 +89,7 @@ Patch for [3.34.0](#3-34-0)
 - <FixTag/> General stability improvements across services. <InfrastructureBadge/> <SelfHostedBadge/>
 - <FixTag/> An issue has been fixed where the approval link in the "Get Approval via Email" mail did not open the approval panel. <PublishBadge/> <SelfHostedBadge/>
 - <FixTag/> An issue has been fixed where [Flutter Install](/workflows/flutter-specific-workflow-steps/flutter-install) 1.0.4 and 1.0.5 failed on Linux runners. Flutter Install 1.0.6 selects the Flutter SDK for the operating system of the runner. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
-- <FixTag/> [App Center Android Distribute](/workflows/android-specific-workflow-steps/app-center-android-distribution) 1.0.3, [Appium Server](/workflows/common-workflow-steps/appium-server) 1.0.3 and [Appcircle CodePush](/workflows/react-native-specific-workflow-steps/appcircle-codepush) 1.0.1 no longer require `sudo` on Linux runners. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- <FixTag/> [Appium Server](/workflows/common-workflow-steps/appium-server) 1.0.3 and [Appcircle CodePush](/workflows/react-native-specific-workflow-steps/appcircle-codepush) 1.0.1 no longer require `sudo` on Linux runners. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 :::caution
 Servers on 3.31.0 or older versions must have SMTP configured before upgrading to 3.34.6.
