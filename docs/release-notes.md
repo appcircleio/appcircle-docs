@@ -21,6 +21,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - [Custom tags](/testing-distribution/create-or-select-a-distribution-profile#custom-tags) and a message for test details can now be added when a binary is uploaded manually to a Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
+- The new [Ostorlab Security Scan](/workflows/common-workflow-steps/ostorlab-security-scan) step uploads the built APK, AAB or IPA to Ostorlab, starts a security scan and can break the pipeline when the risk rating is too high. <BuildIntegrationsBadge/> <CloudBadge/>
 {/* - Self-hosted Appcircle can now run in air-gapped mode. Integrations that need an external SaaS service (App Store Connect, Google Play, Huawei AppGallery, Intune, Slack, Microsoft Teams and outgoing webhooks) can be disabled per service, social login providers are disabled, and the related features and workflow steps are hidden in the UI. <SelfHostedBadge/>*/}
 {/* - Workflow and publish components no longer need GitHub access on self-hosted runners. They are embedded in the runner as one versioned snapshot and served by the Build Server, with git clone as the last fallback. <InfrastructureBadge/> <SelfHostedBadge/>*/}
 
@@ -78,7 +79,21 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where updating a bundle identifier failed with an Apple 403 error because of the read-only In-App Purchase capability. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue has been fixed where Apple API keys whose private key starts with a zero byte could not sign App Store Connect and Enterprise requests. <SigningIdentitiesBadge/> <PublishBadge/> <CloudBadge/>
 - An issue has been fixed where the limit warning closed immediately after it opened. <CloudBadge/>
+- An issue has been fixed where [Flutter Install](/workflows/flutter-specific-workflow-steps/flutter-install) 1.0.4 and 1.0.5 failed on Linux runners. Flutter Install 1.0.6 selects the Flutter SDK for the operating system of the runner. <BuildIntegrationsBadge/> <CloudBadge/>
+- [Appium Server](/workflows/common-workflow-steps/appium-server) 1.0.3 and [Appcircle CodePush](/workflows/react-native-specific-workflow-steps/appcircle-codepush) 1.0.1 no longer require `sudo` on Linux runners. <BuildIntegrationsBadge/> <CloudBadge/>
 {/* - An issue has been fixed where looking up a user by email imported the user from LDAP automatically. <AccountBadge/> <SelfHostedBadge/> */}
+
+## 3.34.6 - 2026-11-18 <PatchBadge/>
+
+Patch for [3.34.0](#3-34-0)
+
+- <FixTag/> An issue has been fixed where upgrades from 3.31.0 or older versions stopped during the configuration migration. <InfrastructureBadge/> <SelfHostedBadge/>
+- <FixTag/> General stability improvements across services. <InfrastructureBadge/> <SelfHostedBadge/>
+- <FixTag/> An issue has been fixed where the approval link in the "Get Approval via Email" mail did not open the approval panel. <PublishBadge/> <SelfHostedBadge/>
+
+:::caution
+Servers on 3.31.0 or older versions must have SMTP configured before upgrading to 3.34.6.
+:::
 
 ## 3.34.5 - 2026-11-03 <PatchBadge/>
 
