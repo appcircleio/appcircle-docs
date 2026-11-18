@@ -80,6 +80,18 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where the limit warning closed immediately after it opened. <CloudBadge/>
 {/* - An issue has been fixed where looking up a user by email imported the user from LDAP automatically. <AccountBadge/> <SelfHostedBadge/> */}
 
+## 3.34.6 - 2026-11-18 <PatchBadge/>
+
+Patch for [3.34.0](#3-34-0)
+
+- <FixTag/> An issue has been fixed where upgrades from 3.31.0 or older versions stopped during the configuration migration. <InfrastructureBadge/> <SelfHostedBadge/>
+- <FixTag/> General stability improvements across services. <InfrastructureBadge/> <SelfHostedBadge/>
+- <FixTag/> An issue has been fixed where the approval link in the "Get Approval via Email" mail did not open the approval panel. <PublishBadge/> <SelfHostedBadge/>
+
+:::caution
+Servers on 3.31.0 or older versions must have SMTP configured before upgrading to 3.34.6.
+:::
+
 ## 3.34.5 - 2026-11-03 <PatchBadge/>
 
 Patch for [3.34.0](#3-34-0)
