@@ -83,6 +83,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - [Appium Server](/workflows/common-workflow-steps/appium-server) 1.0.3 and [Appcircle CodePush](/workflows/react-native-specific-workflow-steps/appcircle-codepush) 1.0.1 no longer require `sudo` on Linux runners. <BuildIntegrationsBadge/> <CloudBadge/>
 {/* - An issue has been fixed where looking up a user by email imported the user from LDAP automatically. <AccountBadge/> <SelfHostedBadge/> */}
 
+## 3.34.7 - 2026-11-20 <PatchBadge/>
+
+Patch for [3.34.0](#3-34-0)
+
+- <FixTag/> nginx on the main and DMZ servers is updated to 1.31.9, fixing the NGINX2ROOT vulnerabilities (CVE-2026-123007, CVE-2026-123633). <InfrastructureBadge/> <SelfHostedBadge/>
+- <FixTag/> Keycloak now runs with a JVM setting that blocks the Java4Shell vulnerability (CVE-2026-114938). <InfrastructureBadge/> <SelfHostedBadge/>
+- <ImprovementTag/> Services now use less memory on servers with many CPU cores. The limit can be changed in `global.yaml`. <InfrastructureBadge/> <SelfHostedBadge/>
+
 ## 3.34.6 - 2026-11-18 <PatchBadge/>
 
 Patch for [3.34.0](#3-34-0)
