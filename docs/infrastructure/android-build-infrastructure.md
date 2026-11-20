@@ -44,6 +44,12 @@ Appcircle runners have Java 8, 11, 17, and 21 installed. Java 17 is set as the d
 
 If you want to use a different Java version, please add the [Select Java Version](/workflows/common-workflow-steps/select-java-version) component to your workflow.
 
+On a self-hosted runner you can also install a JDK version that is not preinstalled, such as a version outside the 8, 11, 17 and 21 range offered by the Select Java Version component.
+
+<ContentRef url="/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-jdk-versions">
+Installing Additional JDK Versions
+</ContentRef>
+
 When you select "Appcircle Linux Pool (x86_64)" for Android builds, the following JDK locations are available within the environment variables:
 
 - **JAVA_HOME_8_X64**: `/root/.sdkman/candidates/java/8.0.392-zulu`
