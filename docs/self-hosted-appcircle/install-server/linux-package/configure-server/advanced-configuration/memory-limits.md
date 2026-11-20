@@ -32,7 +32,7 @@ The table shows the default limit and reservation of each container in MiB. Setu
 | Container                                            | Limit (MiB) | Reservation (MiB) |
 | ---------------------------------------------------- | ----------- | ----------------- |
 | `agent_cache`                                        | 640         | 128               |
-| `api_gateway`                                        | 896         | 128               |
+| `api_gateway`                                        | 1280        | 128               |
 | `app_parser`                                         | 9216        | 128               |
 | `build`                                              | 3456        | 256               |
 | `codepush`                                           | 896         | 128               |
@@ -230,6 +230,33 @@ If you see the warning below, add memory to the host. For the recommended host s
 
 ```text
 WARNING: The host has 7680 MiB of memory, less than the 12608 MiB the services reserve plus MongoDB and the OS. Add memory to the host.
+```
+
+## CPU Limit
+
+Each service container can use up to 80% of the CPU cores of the host, and at most 8 cores. MongoDB has its own limit: the primary can use up to 25% of the cores and each secondary up to 12.5%.
+
+:::info
+The limit of 8 cores is available in Appcircle server `3.34.7` and later.
+:::
+
+The memory limits on this page are set for this CPU limit, because services use more memory when they can use more cores. If you raise the CPU limit, check the memory usage of the services and raise their memory limits when needed.
+
+To change the limit, set `resources.limits.maxCpuCount` in the `global.yaml` file, then restart the Appcircle server with the `down`, `export` and `up` commands as shown in [Change the Memory of a Service](#change-the-memory-of-a-service). The example below lets each service use up to 12 cores.
+
+```yaml
+resources:
+  limits:
+    maxCpuCount: 12
+```
+
+The `export` command prints the limit it applies. Below is a sample output for the example above on a host with 16 cores.
+
+```text
+  - Total CPU Count: 16
+    - Primary Mongo CPU Limit: 4
+    - Secondary Mongo CPU Limit: 2
+    - Services CPU Limit: 12 (at most 12 per service)
 ```
 
 <NeedHelp />

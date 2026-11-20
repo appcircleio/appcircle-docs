@@ -64,6 +64,7 @@ Below is the version history of the self-hosted Appcircle server. This table hel
 
 <!-- Version anchor links to release notes -->
 
+[3.34.7]: https://docs.appcircle.io/release-notes#3-34-7
 [3.34.6]: https://docs.appcircle.io/release-notes#3-34-6
 [3.34.5]: https://docs.appcircle.io/release-notes#3-34-5
 [3.34.3]: https://docs.appcircle.io/release-notes#3-34-3
@@ -125,6 +126,7 @@ Below is the version history of the self-hosted Appcircle server. This table hel
         
         | Version   | Release Date |
         |-----------|--------------|
+        | [3.34.7]  | 20/11/2026   |
         | [3.34.6]  | 18/11/2026   |
         | [3.34.5]  | 11/11/2026   |
         | [3.34.3]  | 03/11/2026   |
