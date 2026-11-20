@@ -16,6 +16,13 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 4.0.1 - 2026-11-20 <PatchBadge/>
+
+Patch for [4.0.0](#4-0-0)
+
+- <ImprovementTag/> General stability and performance improvements across services. <CloudBadge/>
+- <FixTag/> General bug fixes. <CloudBadge/>
+
 ## 4.0.0 - 2026-11-08 Custom Tags for Testing Distribution Manual Uploads, Consistent Permission States, Bug Fixes and more
 
 ### 🆕 New Features
