@@ -158,6 +158,34 @@ build:
 Not all images support vanilla variants. Eligible images include: `agentcacheservice`, `codepushservice`, `codepushproxyservice`, `dashboardserver`, `distributionserver`, `licenseserver`, `notificationserver`, `otpservice`, `privateapigateway`, `reportserver`, `resignservice`, `resourceserver`, `schedulemanagerservice`, `storeadminservice`, `storeapiservice`, `storereportservice`, `taskserver`, `testeradminservice`, `testerapiservice`, `uiserver`, and `webhookservice`. Infrastructure images (Keycloak, Redis, Kafka, MinIO, Vault, PostgreSQL) are not affected.
 :::
 
+## CodePush
+
+CodePush lets you deliver over-the-air updates to React Native apps. It is not installed by default. When it is enabled, apps reach it at `https://api.appcircle.spacetech.com/codepush`, so it needs no extra domain.
+
+To install CodePush with its own Redis and PostgreSQL, set the following in your `values.yaml`:
+
+```yaml
+codepush:
+  enabled: true
+  codepush-redis:
+    enabled: true
+  codepush-postgresql:
+    enabled: true
+```
+
+If you enable CodePush on an existing installation, also set a password for its PostgreSQL database. Use the same value in both keys, because the database is created during the upgrade and the upgrade stops without a password:
+
+```yaml
+codepush:
+  database:
+    password: <codepush-db-password>
+  codepush-postgresql:
+    auth:
+      password: <codepush-db-password>
+```
+
+<ApplyHelmConfigurationChanges />
+
 ## .NET Service Logging Configuration
 
 Starting from server version **3.30.0**, logging and health-check paths for all .NET-based microservices can be configured globally. These settings inject `ASPNETCORE_*` environment variables into every .NET service deployment.
@@ -234,7 +262,7 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `global.urls.store.subdomain`                                 | Subdomain used for the store service.                                                                | 'store'                       |
 | `global.urls.webEventRedis.subdomain`                         | Subdomain used for the web event Redis service.                                                      | 'kvs'                         |
 | `global.urls.resource.subdomain`                              | Subdomain used for the resource service.                                                             | 'resource'                    |
-| `global.urls.codepush.subdomain`                              | Subdomain used for the CodePush service.                                                             | 'codepush'                    |
+| `global.urls.codepush.subdomain`                              | Subdomain of the CodePush proxy in an External Zone installation.                                    | 'codepush'                    |
 | `global.urls.mcp.subdomain`                                   | Subdomain used for the MCP service.                                                                  | 'mcp'                         |
 | `global.dotnet.logging.minLevel`                              | Minimum log level for all .NET services. One of: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`. | `"Info"`                     |
 | `global.dotnet.logging.ignoreHealthLogs`                      | When `true`, suppresses health-check endpoint log lines on .NET services.                            | `true`                        |

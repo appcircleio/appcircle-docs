@@ -39,8 +39,7 @@ By default, Appcircle uses the following subdomains:
 5. resource.appcircle.spacetech.com
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
-8. codepush.appcircle.spacetech.com
-9. mcp.appcircle.spacetech.com
+8. mcp.appcircle.spacetech.com
 
 **Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the Ingress objects created in Kubernetes.
 
@@ -120,9 +119,9 @@ Additionally, ensure that your Kubernetes version is 1.29.1 or later to maintain
 
 The **`kubectl`** CLI is **required**.
 
-### 5. Helm v3
+### 5. Helm
 
-**Helm version `3.11.0`** or later is **required**.
+**Helm version `3.11.0`** or later is **required**. Helm 3 and Helm 4 are both supported.
 
 ## Pre-installation Steps
 
@@ -481,7 +480,6 @@ According to the example output below, you need to configure your DNS as follows
 ```bash
 NAME                               CLASS   HOSTS                                                          ADDRESS        PORTS      AGE
 appcircle-apigateway               nginx   api.appcircle.spacetech.com,auth.appcircle.spacetech.com       10.45.140.78   80,443     24m
-appcircle-codepush                 nginx   codepush.appcircle.spacetech.com                               10.45.140.78   80,443     24m
 appcircle-distribution-testerweb   nginx   dist.appcircle.spacetech.com                                   10.45.140.78   80,443     24m
 appcircle-mcp                      nginx   mcp.appcircle.spacetech.com                                    10.45.140.78   80,443     24m
 appcircle-resource                 nginx   resource.appcircle.spacetech.com                               10.45.140.78   80,443     24m
@@ -503,7 +501,6 @@ appcircle-webeventredis            nginx   kvs.appcircle.spacetech.com          
    - `my.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `hook.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `kvs.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
-   - `codepush.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `mcp.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
 
 ### 2. Login to the Appcircle Dashboard
