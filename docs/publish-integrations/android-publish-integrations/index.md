@@ -24,7 +24,7 @@ Click on the **Save** button if you make any changes to your flow steps, or use 
 
 You can find Android specific steps in the Publish Flow under the headings below. For common steps, please refer to [this document](/publish-integrations/common-publish-integrations/).
 
-## [Publish to Google Play](/publish-integrations/android-publish-integrations/publish-to-google-play)
+## [Send to Google Play Console](/publish-integrations/android-publish-integrations/publish-to-google-play)
 
 - Quickly send APK and AAB binaries to Google Play.
 - Initial setup requires an app listing and uploaded binary with a keystore.

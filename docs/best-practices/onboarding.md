@@ -158,7 +158,7 @@ Send to App Store
 </ContentRef>
 
 <ContentRef url="/publish-integrations/android-publish-integrations/publish-to-google-play">
-Send to Google Play
+Send to Google Play Console
 </ContentRef>
 
 <ContentRef url="/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery">

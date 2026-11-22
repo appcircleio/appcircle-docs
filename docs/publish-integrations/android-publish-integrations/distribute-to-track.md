@@ -20,13 +20,13 @@ The Publish flow steps that need to be executed before running the **Distribute 
 
 | Prerequisite Workflow Step                                                                          | Description                                                                                             |
 |------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| [**Publish to Google Play**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
+| [**Send to Google Play Console**](/publish-integrations/android-publish-integrations/publish-to-google-play) | The app must be published to Google Play before checking the status of the app version in the Google Play Console. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4602-track1_v2.png'/>
 
 :::warning
 
-If you have previously submitted this app version to the Google Play Console, you do not need to add the **Publish to Google Play** step.
+If you have previously submitted this app version to the Google Play Console, you do not need to add the **Send to Google Play Console** step.
 
 :::
 

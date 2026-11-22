@@ -1,5 +1,5 @@
 ---
-title: Publish to Google Play
+title: Send to Google Play Console
 description: Publish your Android applications to the Google Play Store with Appcircle's Publish module.
 tags: [android, publish google play, android publish integrations]
 sidebar_position: 2
@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
-# Publish to Google Play
+# Send to Google Play Console
 
 Appcircle supports sending APK and AAB binaries to [Google Play](https://play.google.com) through the Publish module.
 
@@ -28,7 +28,7 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, open the [Publishing Settings](/publish-to-stores-module/publish-settings) of your publish profile by selecting **Settings** from the **...** menu next to the profile name. In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Console API Key you uploaded, from the drop-down list.
 
 If you are using [Publish Variables](/publish-to-stores-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-to-stores-module/publish-settings) window.
 
@@ -77,7 +77,7 @@ For track type differences and best practices, please refer to the following off
 
 ## Output Variables
 
-**Publish to Google Play** step does not produce any output. However, you can check the logs to see whether your app has successfully accessed Google Play.
+**Send to Google Play Console** step does not produce any output. However, you can check the logs to see whether your app has successfully accessed Google Play.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-publish-google-play-3.png'/>
 
