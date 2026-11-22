@@ -26,6 +26,10 @@ The auto-update tool does not currently support the handling of proxy environmen
 :::
 
 :::caution
+The auto-update tool needs internet access to download the server package. It can't be used on a server that downloads through an artifact proxy; update that server with the [update steps](/self-hosted-appcircle/install-server/linux-package/update).
+:::
+
+:::caution
 The auto-update tool does not currently support Appcircle DMZ server configuration. If you are using the Appcircle DMZ server configuration, please follow the normal update procedure.
 :::
 

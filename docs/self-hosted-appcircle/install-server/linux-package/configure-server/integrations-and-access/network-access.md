@@ -142,11 +142,11 @@ oauth2.googleapis.com/token
 europe-west1-docker.pkg.dev/appcircle/docker-registry
 ```
 
-##### If you want to install the Appcircle server using offline packages:
+##### If you want to use the offline image package:
 
-- If you want to install the Appcircle server without an internet connection, a `zip` package should be downloaded and transferred to the Appcircle server host.
+- The [offline image package](/self-hosted-appcircle/install-server/linux-package/configure-server/offline-installation) is downloaded on another host and loaded on the Appcircle server. If you plan to do that, the Appcircle server doesn't need to access these URLs; the downloading host does.
 
-- This `zip` package can be downloaded from another host and transferred to the actual Appcircle server. If you plan to do that, the Appcircle server doesn't need to access these URLs.
+- If the Appcircle server has no internet access and downloads through an artifact proxy, see [Air-Gapped Network](#air-gapped-network) instead.
 
 ```access_list
 storage.googleapis.com/appcircle-self-hosted
@@ -500,7 +500,14 @@ The Appcircle server, the macOS hosts and the runner VMs need access only to:
 - The Appcircle server. Runner VMs connect to it as described in [Appcircle Runner Runtime](#appcircle-runner-runtime).
 - Your internal services: Git provider, identity provider (LDAP or SSO), SMTP server, SMS gateway if you use SMS, NTP and DNS.
 
-The Appcircle server package is downloaded on a separate host with internet access and brought into your network, for example by uploading it to a hosted repository on the artifact proxy or by copying it to the server. See [Appcircle Server Install and Update](#appcircle-server-install-and-update).
+The Appcircle server package is downloaded on a separate computer with internet access and uploaded to a hosted repository on the artifact proxy, as described in [Choose the Download Source](/self-hosted-appcircle/install-server/linux-package/installation/docker#choose-the-download-source). That computer needs access to:
+
+```access_list
+cdn.appcircle.io
+storage.googleapis.com/storage/v1/b/appcircle-self-hosted
+www.googleapis.com/oauth2/v4/token
+oauth2.googleapis.com/token
+```
 
 The artifact proxy needs access to the hosts below. Several downloads redirect to another host, so the list includes the redirect targets, and the proxy must follow redirects.
 
@@ -509,6 +516,8 @@ The artifact proxy needs access to the hosts below. Several downloads redirect t
 ```access_list
 europe-west1-docker.pkg.dev
 ```
+
+- Operating system packages for the Appcircle server, if the artifact proxy serves them instead of an internal mirror: your Linux vendor's repositories (for example `cdn.redhat.com`) and, for Docker, `download.docker.com`. Podman Compose comes from the PyPI hosts listed below.
 
 - macOS VM and Xcode images, runner files, Flutter SDK artifacts:
 

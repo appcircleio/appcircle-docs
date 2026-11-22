@@ -1,0 +1,5 @@
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+The first start of a new version pulls every image through the artifact proxy, which fetches them from Appcircle. If a pull fails with `manifest unknown` or `not found`, the artifact proxy may remember the missing image for a while (in Nexus, the negative cache of the repository). Ask the administrator to invalidate the cache of the `appcircle-docker` repository, then run the command again.

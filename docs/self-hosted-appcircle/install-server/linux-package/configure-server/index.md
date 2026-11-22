@@ -30,7 +30,7 @@ Learn how to safely restart your Appcircle host server to apply updates or troub
 
 ## [Offline Install/Upgrade](/self-hosted-appcircle/install-server/linux-package/configure-server/offline-installation)
 
-Guidelines for installing or upgrading your Appcircle server without an active internet connection, ensuring continuity in restrictive network environments.
+Guidelines for installing or upgrading your Appcircle server from container image packages, for servers that can't reach any container registry. For a server without internet access that uses an artifact proxy, follow the installation guides.
 
 ## [External Image Registries](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry)
 

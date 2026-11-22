@@ -10,6 +10,12 @@ import TabItem from '@theme/TabItem';
 
 In this document, we will explore the configuration of a proxy server to enable internet connectivity from your Appcircle containers for accessing external resources.
 
+:::info
+
+This page is about an HTTP proxy that gives the server access to the internet. If your server has no internet access and downloads through an artifact proxy, such as Sonatype Nexus or JFrog Artifactory, you don't need anything on this page. See [Choose the Download Source](/self-hosted-appcircle/install-server/linux-package/installation/docker#choose-the-download-source) instead.
+
+:::
+
 We will cover Docker and Podman, providing step-by-step instructions to set up and utilize the proxy server effectively.
 
 Using proxies on Appcircle containers ensures smooth connectivity to external resources.

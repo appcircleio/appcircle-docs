@@ -693,6 +693,8 @@ If you are using external services that have self-signed SSL certificates, you w
 
 You can add **multiple** certificates to the `external.ca` section. If you are using multiple services, you will need to add each certificate to this section.
 
+`external.ca` is used by the Appcircle services only. It doesn't make the container engine trust an image registry; for that, see [HTTPS Registry With a Private Certificate Authority](/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry#https-registry-with-a-private-certificate-authority).
+
 :::info
 
 A certificate included in `external.ca` must be in PEM form.
