@@ -42,6 +42,10 @@ This step runs the `pod deintegrate` command to remove CocoaPods from the projec
 
 Runs the Cocoapods install command for dependency management.
 
+## [CocoaPods Mirror](/workflows/ios-specific-workflow-steps/cocoapods-mirror)
+
+Points CocoaPods at your artifact proxy, for iOS builds on runners without internet access.
+
 ## [Convert Xcresult to HTML/XML](/workflows/ios-specific-workflow-steps/convert-xcresult-to-xml-html)
 
 This step converts Xcresult files to HTML or XML format.

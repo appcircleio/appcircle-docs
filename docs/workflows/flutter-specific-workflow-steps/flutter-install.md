@@ -49,10 +49,17 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name                 | Description                                    | Status 			|
 |-------------------------------|------------------------------------------------|------------------|
 | `$AC_SELECTED_FLUTTER_VERSION`| Specifies the Flutter version to install. Defaults to: `stable`. The version you set in the [Configuration](/build/platform-build-guides/building-flutter-applications#build-configuration-for-flutter-ios-applications) section will override this setting. | Optional |  
+| `$AC_FLUTTER_STORAGE_BASE_URL` | Base URL of the Flutter release archives. If empty, the step uses `FLUTTER_STORAGE_BASE_URL`, which the [**Flutter Mirror**](/workflows/flutter-specific-workflow-steps/flutter-mirror) step sets, and then `https://storage.googleapis.com`. Set it to your artifact proxy to install Flutter on runners without internet access. | Optional |
 
 :::caution
 
 If no specific version is specified, this step will automatically install the latest [**stable**](https://docs.flutter.dev/release/archive?tab=macos) version released by Flutter.
+
+:::
+
+:::info
+
+The step downloads released versions and channels (`stable`, `beta`) from the official Flutter release archives. A branch or a commit, such as `main`, is cloned from the [Flutter repository](https://github.com/flutter/flutter) on GitHub, so it needs internet access.
 
 :::
 
