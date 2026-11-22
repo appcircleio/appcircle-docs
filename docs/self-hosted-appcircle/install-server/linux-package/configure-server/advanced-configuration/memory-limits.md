@@ -236,6 +236,8 @@ WARNING: The host has 7680 MiB of memory, less than the 12608 MiB the services r
 
 Each service container can use up to 80% of the CPU cores of the host, and at most 8 cores. MongoDB has its own limit: the primary can use up to 25% of the cores and each secondary up to 12.5%.
 
+The limit applies to the containers of the Appcircle server. The containers of the Appcircle DMZ server have no CPU limit.
+
 :::info
 The limit of 8 cores is available in Appcircle server `3.34.7` and later.
 :::
