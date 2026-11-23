@@ -23,9 +23,7 @@ Patch for [4.0.0](#4-0-0)
 - <ImprovementTag/> General stability and performance improvements across services. <CloudBadge/>
 - <ImprovementTag/> Google Play key files must now be service account key files. <PublishBadge/> <CloudBadge/>
 - <ImprovementTag/> Publish priority on iOS publish profiles now accepts only valid values. <PublishBadge/> <CloudBadge/>
-- <ImprovementTag/> Password handling for Testing Distribution profiles with static authentication has been improved. <DistributionBadge/> <CloudBadge/>
 - <ImprovementTag/> Downloading an app in a browser from the Enterprise App Store or the Testing Portal now requires a signed-in session. iOS installation links keep working. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/>
-- <ImprovementTag/> Build caches are now scoped to each organization. <BuildIntegrationsBadge/> <CloudBadge/>
 - <ImprovementTag/> When a member leaves or is removed from an organization, the member's SSO link to that organization is also removed. <AccountBadge/> <CloudBadge/>
 - <ImprovementTag/> Invitation and identity provider linking emails now show user-entered values as plain text. <AccountBadge/> <CloudBadge/>
 {/*- <ImprovementTag/> The SMTP test connection now uses the saved SMTP server settings. <IntegrationsBadge/> <SelfHostedBadge/>*/}
