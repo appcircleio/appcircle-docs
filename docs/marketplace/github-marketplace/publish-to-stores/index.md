@@ -117,6 +117,7 @@ If the profile's publish flow contains a manual step (e.g. "Get Approval via Ema
 ### Inputs[​](#inputs "Direct link to Inputs")
 
 - `personalAPIToken` (required): Appcircle Personal API Token used to authenticate and secure access to Appcircle services.
+- `subOrganizationName` (optional): The exact name (case-sensitive) of the sub-organization that owns the target Publish profile. Use it when your Personal API Token belongs to the root organization. Leave it empty to use the organization of the token. If the sub-organization cannot be found or the token cannot access it, the workflow step fails and does not fall back to the root organization.
 - `platform` (required): Target platform of the Publish profile, `ios` or `android`.
 - `publishProfile` (required): Name of the Publish profile to target. Resolved to the profile for the selected platform.
 - `upload` (optional, default `false`): Upload `appPath` as a new app version.
@@ -142,6 +143,7 @@ If you run a self-hosted Appcircle installation, point the action to your own se
 
 - `authEndpoint`: Base URL of the self-hosted Appcircle authentication server. Optional; defaults to `https://auth.appcircle.io`.
 - `apiEndpoint`: Base URL of the self-hosted Appcircle API server. Optional; defaults to `https://api.appcircle.io`.
+- Set `authEndpoint` and `apiEndpoint` together. If you set only one of them, the step stops before it sends a request, so a self-hosted token never goes to the Appcircle cloud.
 
 :::caution Self-Signed or Private CA Certificates
 

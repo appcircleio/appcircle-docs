@@ -76,7 +76,7 @@ fastlane add_plugin appcircle_testing_distribution
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) used to authenticate and authorize access to Appcircle services within this plugin.
-- `subOrganizationName` (optional): Required when the Root Organization's `personalAPIToken` is used, and you want to create the profile under a sub-organization. In this case, provide the name of the sub-organization in this field. If you directly used the sub-organization's `personalAPIToken`, this parameter is not needed.
+- `subOrganizationName` (optional): Required when the Root Organization's `personalAPIToken` (or its Personal Access Key) is used, and you want to create the profile under a sub-organization. In this case, provide the exact name of the sub-organization (case-sensitive) in this field. If you directly used the sub-organization's Personal API Token or Personal Access Key, this parameter is not needed. If the sub-organization cannot be found or the token cannot access it, the lane fails and does not fall back to the root organization. The option also reads the `AC_SUB_ORGANIZATION_NAME` environment variable, which the other Appcircle Fastlane plugins share.
 - `profileName`: Specifies the profile that will be used for uploading the app.
 - `createProfileIfNotExists` (optional): Ensures that a testing distribution profile is automatically created if it does not already exist; if the profile name already exists, the app will be uploaded to that existing profile instead.
 - `profileCreationSettings` (optional): If `createProfileIfNotExists` is `true` and a new profile being created, the profile will be configured with these settings.
@@ -105,7 +105,7 @@ To distribute your app to a sub-organization, you can use one of the following m
 
 #### 1. Using the Root Organization's Personal API Token
 
-- Obtain the `personalAPIToken` for the Root Organization. This token is used to authenticate and authorize actions within Appcircle.
+- Obtain the `personalAPIToken` (or the Personal Access Key) for the Root Organization. This token is used to authenticate and authorize actions within Appcircle.
 - Specify the `subOrganizationName` parameter in your configuration. This parameter indicates the target sub-organization where the profile will be created and the app will be distributed.
 
 #### 2. Using the Sub-Organization's Personal API Token

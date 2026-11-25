@@ -94,6 +94,7 @@ After filling out the required fields, the `AppcirclePublish@0` task will appear
 - `authEndpoint` (optional): Authentication endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`auth.appcircle.io`).
 
 - `apiEndpoint` (optional): API endpoint URL for self-hosted Appcircle installations. If not specified, uses Appcircle Cloud by default (`api.appcircle.io`).
+- Set `authEndpoint` and `apiEndpoint` together. If you set only one of them, the task stops before it sends a request, so a self-hosted token never goes to the Appcircle Cloud.
 
 - `subOrganizationName` (optional): Sub-organization name for the publish profile. Leave empty to use the root organization. Use this when your Personal API Token (Personal Access Key) belongs to the root organization but the target publish profile lives in a sub-organization.
 

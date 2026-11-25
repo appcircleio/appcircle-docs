@@ -62,6 +62,7 @@ After adding the plugin to your project, configure your Fastfile as follows:
 ```
 
 - `personalAPIToken`: The Appcircle Personal API Token (Personal Access Key) is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
+- `subOrganizationName` (optional): The exact name (case-sensitive) of the sub-organization that owns the target Enterprise App Store profile. Use it when your Personal API Token or Personal Access Key belongs to the root organization. Leave it empty to use the organization of the token. If the sub-organization cannot be found or the token cannot access it, the lane fails and does not fall back to the root organization. The option also reads the `AC_SUB_ORGANIZATION_NAME` environment variable, which the other Appcircle Fastlane plugins share.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.

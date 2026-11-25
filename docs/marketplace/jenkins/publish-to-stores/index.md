@@ -55,6 +55,7 @@ Go to your configuration page of the project and add a build step for **Appcircl
 After adding the plugin to your build steps, ensure that you provide all required inputs.
 
 - **Personal Access Key** — Appcircle Personal Access Key used to authenticate Appcircle services.
+- **Sub-Organization Name** (optional) — exact name of the sub-organization that owns the Publish profile. See `subOrganizationName` below.
 - **Platform** — `iOS` or `Android`.
 - **Publish Profile Name** — the name of the Publish profile to target. Create the profile in Appcircle first; profile names are unique per platform.
 - **Upload binary** — uploads the file at App Path as a new app version on the profile.
@@ -101,6 +102,7 @@ stage('Publish') {
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) is used to authenticate and secure access to Appcircle services. Add this token to your credentials to enable its use in your pipeline and ensure authorized actions within the platform.
+- `subOrganizationName` (optional): The exact name (case-sensitive) of the sub-organization that owns the target Publish profile. Use it when your Personal API Token belongs to the root organization. Leave it empty to use the organization of the token. If the sub-organization cannot be found or the token cannot access it, the build fails and does not fall back to the root organization.
 - `platform`: Specifies the target platform, either `ios` or `android`.
 - `publishProfile`: Specifies the Publish profile that will be used for uploading and/or publishing the app. Profile names are unique per platform.
 - `upload`: Optional boolean. When `true`, uploads the binary at `appPath` as a new app version on the profile.
@@ -108,6 +110,7 @@ stage('Publish') {
 - `appPath`: Indicates the file path to the application package that will be uploaded to the Appcircle Publish profile. Required when `upload` is `true`.
 - `authEndpoint`: Optional. For self-hosted Appcircle installations, sets the authentication server base URL (for example, `https://auth.your-appcircle-domain.com`). Leave empty to use the Appcircle cloud default (`https://auth.appcircle.io`).
 - `apiEndpoint`: Optional. For self-hosted Appcircle installations, sets the API server base URL (for example, `https://api.your-appcircle-domain.com`). Leave empty to use the Appcircle cloud default (`https://api.appcircle.io`).
+- Set `authEndpoint` and `apiEndpoint` together. If you set only one of them, the build stops before it sends a request, so a self-hosted token never goes to the Appcircle cloud.
 
 #### Upload / Publish Behavior[​](#upload--publish-behavior "Direct link to Upload / Publish Behavior")
 

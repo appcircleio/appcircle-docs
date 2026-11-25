@@ -125,6 +125,7 @@ end
 ```
 
 - `personalAPIToken` / `personalAccessKey`: Provide exactly one of these to authenticate Appcircle services.
+- `subOrganizationName` (optional): The exact name (case-sensitive) of the sub-organization that owns the target Publish profile. Use it when your Personal API Token or Personal Access Key belongs to the root organization. Leave it empty to use the organization of the token. If the sub-organization cannot be found or the token cannot access it, the lane fails and does not fall back to the root organization. The option also reads the `AC_SUB_ORGANIZATION_NAME` environment variable, which the other Appcircle Fastlane plugins share.
 - `platform`: Target platform of the Publish profile, `ios` or `android`.
 - `publishProfile`: Name of the Publish profile to target.
 - `upload` (default `false`): Upload `appPath` as a new app version.
@@ -143,6 +144,7 @@ If you run a self-hosted Appcircle installation, point the action to your own en
 
 - `authEndpoint` (optional): Authentication endpoint URL. Defaults to `https://auth.appcircle.io`.
 - `apiEndpoint` (optional): API endpoint URL. Defaults to `https://api.appcircle.io`.
+- Set `authEndpoint` and `apiEndpoint` together. If you set only one of them, the lane stops before it sends a request, so a self-hosted token never goes to the Appcircle cloud.
 
 ```ruby
 appcircle_publish(
