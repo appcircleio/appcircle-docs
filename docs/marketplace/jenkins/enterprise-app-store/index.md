@@ -78,6 +78,7 @@ Additionally, remember to place the plugin after your build steps as you will ne
 ```
 
 - `personalAPIToken`: The Appcircle Personal API token (Personal Access Key) is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
+- `subOrganizationName` (optional): The exact name (case-sensitive) of the sub-organization that owns the target Enterprise App Store profile. Use it when your Personal API Token belongs to the root organization. Leave it empty to use the organization of the token. If the sub-organization cannot be found or the token cannot access it, the build fails and does not fall back to the root organization.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Enterprise App Store Profile.
 - `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.
