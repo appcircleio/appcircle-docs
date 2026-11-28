@@ -21,10 +21,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 Patch for [4.0.0](#4-0-0)
 
 - <ImprovementTag/> General stability and performance improvements for artifact storage and management. <BuildBadge/> <DistributionBadge/> <PublishBadge/> <CloudBadge/>
-- <ImprovementTag/> Organization deletion is now processed in the background, in stages. <AccountBadge/> <CloudBadge/>
-- <FixTag/> Deleting a Testing Distribution or Enterprise App Store profile now also removes the artifacts of all its app versions. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
-- <FixTag/> An issue has been fixed where the artifacts of an app version could be removed before the version was rejected. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
-- <FixTag/> General bug fixes. <CloudBadge/>
+- <FixTag/> General bug fixes for app version management. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- <FixTag/> General bug fixes across modules. <CloudBadge/>
 
 ## 4.0.1 - 2026-11-20 <PatchBadge/>
 
