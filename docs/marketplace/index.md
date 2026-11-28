@@ -17,6 +17,11 @@ The Testing Distribution process allows you to distribute test builds to designa
 Maximize the efficiency of your app distribution by leveraging Appcircle's Testing Distribution and Enterprise App Store actions on GitHub Marketplace.
 Testing Distribution simplifies the process of sending test builds to specific test groups or individuals. The Enterprise App Store enables you to create a private mobile app store, offering access to internal apps with a customizable storefront tailored to your needs.
 
+## [GitLab CI/CD Catalog](/marketplace/gitlab-ci-cd-catalog)
+
+Upload your iOS and Android binaries to Appcircle from GitLab CI/CD pipelines with the Testing Distribution, Enterprise App Store, and Publish to Stores components in the GitLab CI/CD Catalog.
+The components run in a container image on Linux runners and work with the Appcircle cloud and self-hosted Appcircle servers.
+
 ## [Jenkins Marketplace](/marketplace/jenkins)
 
 In the Jenkins Marketplace, Appcircle offers robust solutions for automating build distribution and app management.
