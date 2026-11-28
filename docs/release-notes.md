@@ -22,7 +22,7 @@ Patch for [4.0.0](#4-0-0)
 
 - <ImprovementTag/> General stability and performance improvements for artifact storage and management. <BuildBadge/> <DistributionBadge/> <PublishBadge/> <CloudBadge/>
 - <FixTag/> General bug fixes for app version management. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
-- <FixTag/> General bug fixes. <CloudBadge/>
+- <FixTag/> General bug fixes across modules. <CloudBadge/>
 
 ## 4.0.1 - 2026-11-20 <PatchBadge/>
 
