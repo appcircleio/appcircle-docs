@@ -19,7 +19,7 @@ Appcircle requires direct access to the repositories for the following use cases
 If the repositories cannot be exposed to the public internet in general, the following Appcircle platform IP addresses must be allowed through the firewall (whitelisted) to access such repositories:
 
 - 34.147.2.16
-- 162.19.204.13
+- 51.195.234.155
 - 77.92.96.46
 - 77.92.124.2/27
 - 77.92.102.192/28
